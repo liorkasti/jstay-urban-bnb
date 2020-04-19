@@ -34,7 +34,7 @@ export default function Untitled(props) {
                         </View>
                         <Text style={loginStyles.loremIpsum}>
                             Please Enter Your Login Information:
-            </Text>
+                        </Text>
                         <View style={loginStyles.group2}>
                             <View style={loginStyles.icon2Row}>
                                 <IoniconsIcon name="ios-lock" style={loginStyles.icon2}></IoniconsIcon>

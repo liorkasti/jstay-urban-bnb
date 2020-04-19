@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2
   },
   btnWrapper1: {
-    width: 94,
+    width: "25%",
     alignItems: "center",
     paddingTop: 8,
     paddingBottom: 6,
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   btn1Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   activebtnWrapper: {
-    width: 94,
+    width: "25%",
     alignItems: "center",
     paddingTop: 6,
     paddingBottom: 6,
@@ -93,11 +93,11 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     paddingTop: 4,
     fontSize: 14,
-
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   btnWrapper2: {
-    width: 94,
+    width: "25%",
     alignItems: "center",
     paddingTop: 8,
     paddingBottom: 6,
@@ -114,11 +114,11 @@ const styles = StyleSheet.create({
   btn2Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   btnWrapper3: {
-    width: 94,
+    width: "25%",
     alignItems: "center",
     paddingTop: 8,
     paddingBottom: 6,
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   btn3Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-
+    fontFamily: "roboto-regular",
     textAlign: "center"
   }
 });

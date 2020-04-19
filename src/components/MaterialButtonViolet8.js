@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonViolet2(props) {
+function MaterialButtonViolet8(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Kosher</Text>
+      <Text style={styles.caption}>Mehadrin</Text>
     </TouchableOpacity>
   );
 }
@@ -29,14 +29,11 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   caption: {
-    width: 98,
-    height: 9,
     color: "rgba(230,230,230,1)",
+    margin: 0,
     fontSize: 14,
-    fontFamily: "roboto-regular",
-    lineHeight: 8,
-    textAlign: "center"
+    fontFamily: "roboto-regular"
   }
 });
 
-export default MaterialButtonViolet2;
+export default MaterialButtonViolet8;

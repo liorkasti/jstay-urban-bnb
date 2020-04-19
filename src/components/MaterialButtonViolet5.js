@@ -28,13 +28,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.35,
     shadowRadius: 5
   },
-  caption: {
-    width: 102,
-    height: 15,
+  hotels: {
+    width: 82,
+    height: 36,
     color: "rgba(230,230,230,1)",
+    marginTop: 4,
+    marginRight: -7,
+    marginLeft: -7,
+    paddingTop: 12,
     fontSize: 14,
-    marginLeft: 56,
-    lineHeight: 15
+    fontFamily: "roboto-regular",
+    lineHeight: 8,
+    letterSpacing: 0,
+    textAlign: "center"
   }
 });
 

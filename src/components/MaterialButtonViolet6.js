@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import Icon from "react-native-vector-icons/Entypo";
 
-function MaterialButtonViolet2(props) {
+function MaterialButtonViolet6(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Kosher</Text>
+      <Text style={styles.caption}>Next</Text>
+      <Icon name="chevron-right" style={styles.icon}></Icon>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#3F51B5",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     elevation: 2,
     minWidth: 88,
-    borderRadius: 10,
+    borderRadius: 2,
     shadowOffset: {
       height: 1,
       width: 0
@@ -29,14 +30,17 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   caption: {
-    width: 98,
-    height: 9,
-    color: "rgba(230,230,230,1)",
-    fontSize: 14,
-    fontFamily: "roboto-regular",
-    lineHeight: 8,
-    textAlign: "center"
+    color: "rgba(0,88,155,1)",
+    fontSize: 16,
+    fontFamily: "roboto-700"
+  },
+  icon: {
+    left: 70,
+    position: "absolute",
+    color: "rgba(0,88,155,1)",
+    fontSize: 20,
+    top: "27.78%"
   }
 });
 
-export default MaterialButtonViolet2;
+export default MaterialButtonViolet6;

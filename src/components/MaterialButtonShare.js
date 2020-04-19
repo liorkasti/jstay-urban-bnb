@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2
   },
   icon: {
+    top: 8,
+    left: 8,
+    position: "absolute",
     color: "rgba(230,230,230,1)",
-    fontSize: 40,
-    marginTop: 8,
-    marginLeft: 8
+    fontSize: 40
   }
 });
 

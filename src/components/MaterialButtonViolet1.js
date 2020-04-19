@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
   },
   caption: {
     width: 102,
-    height: 15,
+    height: 11,
     color: "rgba(230,230,230,1)",
     fontSize: 14,
-    marginLeft: 25,
-    lineHeight: 15
+    fontFamily: "roboto-regular",
+    lineHeight: 8
   }
 });
 
