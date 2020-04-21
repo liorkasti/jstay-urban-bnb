@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   btn1Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    fontFamily: "roboto-regular",
+    
     textAlign: "center"
   },
   activebtnWrapper: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     paddingTop: 4,
     fontSize: 14,
-    fontFamily: "roboto-regular",
+    
     textAlign: "center"
   },
   btnWrapper2: {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   btn2Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    fontFamily: "roboto-regular",
+    
     textAlign: "center"
   },
   btnWrapper3: {
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
   btn3Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    fontFamily: "roboto-regular",
+    
     textAlign: "center"
   }
 });

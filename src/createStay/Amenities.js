@@ -791,7 +791,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 44,
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   whatAmenities: {
     top: 0,
@@ -810,7 +810,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "space-between",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   button: {
     top: 90,
@@ -826,7 +826,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox110: {
     top: 0,
@@ -848,7 +848,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox211: {
     top: 0,
@@ -870,7 +870,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox3583: {
     top: 0,
@@ -892,7 +892,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox410: {
     top: 0,
@@ -914,7 +914,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox58: {
     top: 0,
@@ -936,7 +936,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox6: {
     top: 0,
@@ -958,7 +958,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox7: {
     top: 0,
@@ -980,7 +980,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox8: {
     top: 0,
@@ -1002,7 +1002,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox9: {
     top: 0,
@@ -1024,7 +1024,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   clothingHangers: {
     top: 10,
@@ -1032,7 +1032,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox14: {
     top: 0,
@@ -1047,7 +1047,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   button10: {
     top: 490,
@@ -1062,7 +1062,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox10: {
     top: 0,
@@ -1084,7 +1084,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox11: {
     top: 0,
@@ -1107,7 +1107,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox12: {
     top: 0,
@@ -1129,7 +1129,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox13: {
     top: 0,
@@ -1151,7 +1151,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox15: {
     top: 0,
@@ -1173,7 +1173,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox16: {
     top: 0,
@@ -1195,7 +1195,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox18: {
     top: 0,
@@ -1217,7 +1217,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox19: {
     top: 0,
@@ -1239,7 +1239,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox212: {
     top: 0,
@@ -1261,7 +1261,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox22: {
     top: 0,
@@ -1283,7 +1283,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox23: {
     top: 0,
@@ -1305,7 +1305,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox25: {
     top: 0,
@@ -1327,7 +1327,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox26: {
     top: 0,
@@ -1349,7 +1349,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox27: {
     top: 0,
@@ -1371,7 +1371,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox28: {
     top: 0,
@@ -1394,7 +1394,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox29: {
     top: 0,
@@ -1417,7 +1417,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox30: {
     top: 0,
@@ -1432,7 +1432,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum28: {
     top: 224,
@@ -1440,7 +1440,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum29: {
     top: 274,
@@ -1448,7 +1448,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   button17: {
     top: 770,
@@ -1463,7 +1463,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox17: {
     top: 0,
@@ -1478,7 +1478,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   text: {
     top: 124,
@@ -1488,7 +1488,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   group9: {
     top: 1390,
@@ -1518,7 +1518,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox37: {
     top: 0,
@@ -1540,7 +1540,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox38: {
     top: 0,
@@ -1562,7 +1562,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox3410: {
     top: 0,
@@ -1584,7 +1584,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox3593: {
     top: 0,
@@ -1606,7 +1606,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox39: {
     top: 0,
@@ -1621,7 +1621,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   group8: {
     top: 1670,
@@ -1651,7 +1651,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox40: {
     top: 0,
@@ -1673,7 +1673,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox42: {
     top: 0,
@@ -1695,7 +1695,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox43: {
     top: 0,
@@ -1717,7 +1717,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox44: {
     top: 0,
@@ -1739,7 +1739,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox45: {
     top: 0,
@@ -1761,7 +1761,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox46: {
     top: 0,
@@ -1783,7 +1783,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox48: {
     top: 0,
@@ -1798,7 +1798,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum32: {
     top: 64,
@@ -1806,7 +1806,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum33: {
     top: 154,
@@ -1814,7 +1814,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum34: {
     top: 204,
@@ -1822,7 +1822,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum36: {
     top: 334,
@@ -1830,7 +1830,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   group7: {
     top: 2040,
@@ -1852,7 +1852,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   kosherRestaurants: {
     top: 10,
@@ -1860,7 +1860,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox53: {
     top: 0,
@@ -1890,7 +1890,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox52: {
     top: 0,
@@ -1912,7 +1912,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox51: {
     top: 0,
@@ -1934,7 +1934,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox54: {
     top: 0,
@@ -1956,7 +1956,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox55: {
     top: 0,
@@ -1978,7 +1978,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox56: {
     top: 0,
@@ -1993,7 +1993,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum37: {
     top: 30,
@@ -2001,7 +2001,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   group5: {
     top: 2340,
@@ -2024,7 +2024,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   dishesAndCups: {
     top: 140,
@@ -2032,7 +2032,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   cutlery: {
     top: 180,
@@ -2040,7 +2040,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   potsPans: {
     top: 220,
@@ -2048,7 +2048,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   cookinUtensils: {
     top: 260,
@@ -2056,7 +2056,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   ovenS: {
     top: 300,
@@ -2064,7 +2064,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   sinkS: {
     top: 100,
@@ -2072,7 +2072,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   microwaveS: {
     top: 340,
@@ -2080,7 +2080,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   crocPotS: {
     top: 380,
@@ -2088,7 +2088,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   toasterOvenS: {
     top: 420,
@@ -2096,7 +2096,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   cookStoveTopS: {
     top: 460,
@@ -2104,7 +2104,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   group4: {
     top: 50,
@@ -2786,7 +2786,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-regular"
+    
   },
   pareve: {
     top: 0,
@@ -2794,7 +2794,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-regular"
+    
   },
   passover2: {
     top: 0,
@@ -2802,7 +2802,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-regular"
+    
   },
   dairy: {
     top: 0,
@@ -2810,7 +2810,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 9,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum46: {
     top: 26,
@@ -2818,7 +2818,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-regular"
+    
   },
   group6: {
     top: 2840,
@@ -2848,7 +2848,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox351: {
     top: 0,
@@ -2870,7 +2870,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox352: {
     top: 0,
@@ -2892,7 +2892,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox353: {
     top: 0,
@@ -2914,7 +2914,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox354: {
     top: 0,
@@ -2936,7 +2936,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox356: {
     top: 0,
@@ -2951,7 +2951,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   button52: {
     top: 240,
@@ -2966,7 +2966,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox355: {
     top: 0,
@@ -2981,7 +2981,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   button53: {
     top: 290,
@@ -3003,7 +3003,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   button56: {
     top: 440,
@@ -3018,7 +3018,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox360: {
     top: 0,
@@ -3040,7 +3040,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox3582: {
     top: 0,
@@ -3062,7 +3062,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox3592: {
     top: 0,
@@ -3084,7 +3084,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox361: {
     top: 0,
@@ -3106,7 +3106,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox362: {
     top: 0,
@@ -3128,7 +3128,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox363: {
     top: 0,
@@ -3150,7 +3150,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox364: {
     top: 0,
@@ -3172,7 +3172,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox365: {
     top: 0,
@@ -3194,7 +3194,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox366: {
     top: 0,
@@ -3216,7 +3216,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox367: {
     top: 0,
@@ -3238,7 +3238,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox368: {
     top: 0,
@@ -3260,7 +3260,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox369: {
     top: 0,
@@ -3282,7 +3282,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    
   },
   materialCheckbox370: {
     top: 0,
@@ -3297,7 +3297,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum41: {
     top: 425,
@@ -3305,7 +3305,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum42: {
     top: 674,
@@ -3313,7 +3313,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum43: {
     top: 724,
@@ -3321,7 +3321,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum44: {
     top: 825,
@@ -3329,7 +3329,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   loremIpsum45: {
     top: 874,
@@ -3337,7 +3337,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-regular"
+    
   },
   materialButtonViolet1: {
     top: 3780,

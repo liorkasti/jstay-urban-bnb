@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     height: 9,
     color: "rgba(230,230,230,1)",
     fontSize: 14,
-    fontFamily: "roboto-regular",
+    
     lineHeight: 8,
     textAlign: "center"
   }

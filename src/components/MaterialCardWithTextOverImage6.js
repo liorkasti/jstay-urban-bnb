@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     color: "#FFF",
     opacity: 0.5,
     fontSize: 14,
-    fontFamily: "roboto-regular",
+    
     lineHeight: 16
   },
   actionBody: {

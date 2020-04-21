@@ -5,6 +5,8 @@ import DynamicQuestionnaireController from './src/createAccount/index';
 import MainHome from "./src/MainHome";
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
+import Icon from 'react-native-vector-icons/MaterialIcons'
+
 
 export default function App() {
   const [createAccount, setCreateAccount] = useState(false);
@@ -16,6 +18,7 @@ export default function App() {
   }
   useEffect(() => {
     Orientation.lockToPortrait();
+Icon.loadFont();
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
   }, [])

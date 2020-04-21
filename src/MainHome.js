@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     color: "#121212",
     position: "absolute",
     borderRadius: 10,
-    fontFamily: "roboto-regular",
+    
     letterSpacing: 0,
     textAlign: "center"
   },
