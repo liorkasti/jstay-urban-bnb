@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -30,6 +30,8 @@ const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 
 function Untitled2(props) {
+  useEffect(()=>{
+  },[])
   return (
     <View style={styles.container}>
 
