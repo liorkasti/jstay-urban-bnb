@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native"
+import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
-import ComingSoon from "../account/ComingSoon";
+import ComingSoon from "../home/ComingSoon";
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
-
-
+    
+    //this send user to route if they want to create a stay
+    let history = useHistory();
+    function createStay() {
+        history.push("/createStay");
+    }
+    
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
     const componentKeys = ["ComingSoon"];

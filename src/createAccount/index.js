@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { View } from "react-native"
 
 //import all builder x files related to this directory
-import BuilderxScreenFilename from "../login/BuilderxScreenFilename";
+import ComingSoon from "../login/ComingSoon";
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -10,7 +10,7 @@ export default function Index(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["BuilderxScreenFilename"];
+    const componentKeys = ["ComingSoon"];
 
     return (
         <View>
@@ -20,10 +20,10 @@ export default function Index(props) {
                 //replace this string with the string 
                 //in componentKeys related to this import
                 
-                componentKeys[setComponentIndex] === "BuilderxScreenFilename"
+                componentKeys[setComponentIndex] === "ComingSoon"
                 &&
                 //change component name to the new import 
-                <BuilderxScreenFilename
+                <ComingSoon
                     
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}

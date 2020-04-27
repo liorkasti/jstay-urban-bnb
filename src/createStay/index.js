@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native"
+import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
-import BuilderxScreenFilename from "../login/BuilderxScreenFilename";
+import ComingSoon from "../createStay/ComingSoon";
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
-
+    
+    //this send user to route if they want to create a stay
+    let history = useHistory();
+    //user finished create a stay
+    function done() {
+        history.push("/home");
+    }
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["BuilderxScreenFilename"];
+    const componentKeys = ["ComingSoon"];
 
     return (
         <View>
@@ -20,10 +27,10 @@ export default function Index(props) {
                 //replace this string with the string 
                 //in componentKeys related to this import
                 
-                componentKeys[setComponentIndex] === "BuilderxScreenFilename"
+                componentKeys[setComponentIndex] === "ComingSoon"
                 &&
                 //change component name to the new import 
-                <BuilderxScreenFilename
+                <ComingSoon
                     
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -35,6 +42,11 @@ export default function Index(props) {
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
                         setComponentIndex(componentIndex - 1)
+                    }}
+
+                    //sends user to home
+                    onExitBack={()=>{
+                        done();
                     }}
 
                     //if builder x component has skip button

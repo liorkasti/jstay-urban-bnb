@@ -1,27 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Login from "./src/login/Depricated-Login";
-import DynamicQuestionnaireController from './src/dynamicQuestionnaire/index';
-import MainHome from "./src/home/Home";
+import { StyleSheet } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import { NativeRouter, Route, Link } from "react-router-native";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
+
+import { NativeRouter, Route, Link } from "react-router-native";
+import Login from "./src/login"
+import Home from "./src/home"
+import CreateStay from "./src/createStay"
+import CreateAccount from "./src/createAccount"
+import Account from "./src/account"
 
 export default function App() {
-  const [createAccount, setCreateAccount] = useState(false);
-  const [showMainHome, setShowMainHome] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
 
-  const beginCreateAccount = () => {
-    userWantsToCreateAccount(true)
-  }
   useEffect(() => {
-    setTimeout(()=>{
+    setTimeout(() => {
       Orientation.lockToPortrait();
-    })
+    });
+    
+    //this is for the icon library to work
+    EntypoIcon.loadFont();
+    MaterialCommunityIconsIcon.loadFont();
     Icon.loadFont();
     FontAwesomeIcon.loadFont();
 
@@ -30,27 +33,16 @@ export default function App() {
   }, [])
 
   return (
-    <View style={{ flex: 1 }}>
-      {createAccount &&
-        <View>
-          <DynamicQuestionnaireController backToLogin={() => { setCreateAccount(false); setShowLogin(true); }} />
-        </View >}
-      {
-        showLogin &&
-        <Login createAccount={() => { setCreateAccount(true); }} loggedIn={() => { setShowLogin(false); setShowMainHome(true) }} />
-      }{
-        showMainHome &&
-        <MainHome />
-      }
+    <View>
+      <Route exact path="/" component={Login} />
+      <Route path="/home" component={Home} />
+      <Route path="/createStay" component={CreateStay} />
+      <Route path="/createAccount" component={CreateAccount} />
+      <Route path="/account" component={Account} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
 });
