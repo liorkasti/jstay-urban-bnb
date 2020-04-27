@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -8,11 +8,13 @@ function ComingSoonDark(props) {
     <View style={styles.container}>
       <View style={styles.rect1Column}>
         <View style={styles.rect1}>
-          <View style={styles.icon1Row}>
-            <EntypoIcon name="chevron-left" style={styles.icon1}></EntypoIcon>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.button}>
+              <EntypoIcon name="chevron-left" style={styles.icon1}></EntypoIcon>
+            </TouchableOpacity>
             <Text style={styles.comingSoon}>Coming Soon</Text>
           </View>
-          <View style={styles.icon1RowFiller}></View>
+          <View style={styles.buttonRowFiller}></View>
           <MaterialCommunityIconsIcon
             name="screwdriver"
             style={styles.icon2}
@@ -20,7 +22,7 @@ function ComingSoonDark(props) {
         </View>
         <View style={styles.image1Stack}>
           <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
+            source={require("../../assets/images/JStay-Logo-blue-shin7.png")}
             resizeMode="contain"
             style={styles.image1}
           ></Image>
@@ -30,7 +32,7 @@ function ComingSoonDark(props) {
         </View>
       </View>
       <View style={styles.rect1ColumnFiller}></View>
-  <Text style={styles.src}>src/{props.currentDirectory}</Text>
+      <Text style={styles.src}>src/{props.comingSoonDirectory}</Text>
     </View>
   );
 }
@@ -51,11 +53,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     flexDirection: "row"
   },
+  button: {
+    width: 40,
+    height: 40
+  },
   icon1: {
     color: "rgba(2,172,235,1)",
-    fontSize: 40,
-    height: 40,
-    width: 40
+    fontSize: 40
   },
   comingSoon: {
     color: "rgba(2,172,235,1)",
@@ -65,13 +69,13 @@ const styles = StyleSheet.create({
     marginLeft: 54,
     marginTop: 8
   },
-  icon1Row: {
+  buttonRow: {
     height: 40,
     flexDirection: "row",
     marginLeft: 10,
     marginTop: 40
   },
-  icon1RowFiller: {
+  buttonRowFiller: {
     flex: 1,
     flexDirection: "row"
   },

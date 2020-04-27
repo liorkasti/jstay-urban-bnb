@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -8,7 +8,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 
-import { NativeRouter, Route, Link } from "react-router-native";
+import { NativeRouter, Route, Switch, Redirect } from "react-router-native";
 import Login from "./src/login"
 import Home from "./src/home"
 import CreateStay from "./src/createStay"
@@ -21,7 +21,7 @@ export default function App() {
     setTimeout(() => {
       Orientation.lockToPortrait();
     });
-    
+
     //this is for the icon library to work
     EntypoIcon.loadFont();
     MaterialCommunityIconsIcon.loadFont();
@@ -31,18 +31,18 @@ export default function App() {
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
   }, [])
-
+return (<View><Login/></View>)
   return (
-    <View>
-      <Route exact path="/" component={Login} />
-      <Route path="/home" component={Home} />
-      <Route path="/createStay" component={CreateStay} />
-      <Route path="/createAccount" component={CreateAccount} />
-      <Route path="/account" component={Account} />
-    </View>
+    <NativeRouter>
+      <Switch>
+        <View style={{ flex: 1 }}>
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="/createStay" component={CreateStay} />
+          <Route path="/createAccount" component={CreateAccount} />
+          <Route path="/account" component={Account} />
+        </View>
+      </Switch>
+    </NativeRouter>
   );
 }
-
-const styles = StyleSheet.create({
-
-});

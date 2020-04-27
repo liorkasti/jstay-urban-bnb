@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { View } from "react-native"
 
 //import all builder x files related to this directory
-import ComingSoon from "../login/ComingSoon";
+import ComingSoon from "../modules/comingSoon";
 
-export default function Index(props) {
+export default function Login(props) {
     const [componentIndex, setComponentIndex] = useState(0);
 
 
@@ -13,7 +13,7 @@ export default function Index(props) {
     const componentKeys = ["ComingSoon"];
 
     return (
-        <View>
+        <View style={{backgroundColor: "green"}}>
             {/* copy paste below component*/}
             
             {
@@ -23,7 +23,7 @@ export default function Index(props) {
                 componentKeys[setComponentIndex] === "ComingSoon"
                 &&
                 //change component name to the new import 
-                <ComingSoon
+                <ComingSoon /*coming soon requires */ comingSoonPath="login"
                     
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -47,9 +47,3 @@ export default function Index(props) {
         </View>
     );
 }
-
-const loginStyles = StyleSheet.create({
-
-});
-
-

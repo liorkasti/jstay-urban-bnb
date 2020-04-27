@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -8,11 +8,13 @@ function CommingSoonLight(props) {
     <View style={styles.container}>
       <View style={styles.rect1Column}>
         <View style={styles.rect1}>
-          <View style={styles.icon1Row}>
-            <EntypoIcon name="chevron-left" style={styles.icon1}></EntypoIcon>
+          <View style={styles.buttonRow}>
+            <TouchableOpacity style={styles.button}>
+              <EntypoIcon name="chevron-left" style={styles.icon1}></EntypoIcon>
+            </TouchableOpacity>
             <Text style={styles.bsD1}>BS&quot;D</Text>
           </View>
-          <View style={styles.icon1RowFiller}></View>
+          <View style={styles.buttonRowFiller}></View>
           <View style={styles.comingSoon3Row}>
             <Text style={styles.comingSoon3}>Coming Soon</Text>
             <MaterialCommunityIconsIcon
@@ -22,7 +24,7 @@ function CommingSoonLight(props) {
           </View>
         </View>
         <Image
-          source={require("../assets/images/jstay-icon-inverted8.png")}
+          source={require("../../assets/images/jstay-icon-inverted8.png")}
           resizeMode="contain"
           style={styles.image1}
         ></Image>
@@ -37,7 +39,7 @@ function CommingSoonLight(props) {
         </Text>
       </View>
       <View style={styles.rect1ColumnFiller}></View>
-  <Text style={styles.src}>src/{props.currentDirectory}</Text>
+      <Text style={styles.src}>src/{props.comingSoonDirectory}</Text>
     </View>
   );
 }
@@ -58,12 +60,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.22,
     flexDirection: "row"
   },
+  button: {
+    width: 40,
+    height: 40,
+    marginTop: 26
+  },
   icon1: {
     color: "rgba(0,88,155,1)",
-    fontSize: 40,
-    height: 40,
-    width: 40,
-    marginTop: 26
+    fontSize: 40
   },
   bsD1: {
     color: "rgba(177,177,177,1)",
@@ -72,13 +76,13 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     marginLeft: 314
   },
-  icon1Row: {
+  buttonRow: {
     height: 66,
     flexDirection: "row",
     marginLeft: 6,
     marginTop: 14
   },
-  icon1RowFiller: {
+  buttonRowFiller: {
     flex: 1,
     flexDirection: "row"
   },
