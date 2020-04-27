@@ -6,9 +6,10 @@ import MaterialButtonWithVioletText2 from "../components/MaterialButtonWithViole
 import MaterialButtonWithVioletText3 from "../components/MaterialButtonWithVioletText3";
 import MaterialButtonViolet from "../components/MaterialButtonViolet";
 
-function WelcomePage(props) {
+export default function WelcomePage(props) {
+
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1 }}>
       <View style={styles.materialButtonWithVioletText12Column}>
         <MaterialButtonWithVioletText1
           text1="Continue with Google"
@@ -144,5 +145,3 @@ const styles = StyleSheet.create({
     marginLeft: 35
   }
 });
-
-export default WelcomePage;

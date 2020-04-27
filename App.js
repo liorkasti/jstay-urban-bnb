@@ -32,24 +32,26 @@ export default function App() {
     console.disableYellowBox = true;
   }, [])
 
-  return (
-    <View style={styles.screen}>
-      <Login />
-    </View>
-  );
+  // return (
+  //   <View style={styles.screen}>
+  //     <Login />
+  //   </View>
+  // );
 
   return (
-    <NativeRouter>
-      <Switch>
-        <View style={{ flex: 1 }}>
-          <Route exact path="/" component={Login} />
-          <Route path="/home" component={Home} />
-          <Route path="/createStay" component={CreateStay} />
-          <Route path="/createAccount" component={CreateAccount} />
-          <Route path="/account" component={Account} />
-        </View>
-      </Switch>
-    </NativeRouter>
+    <View style={styles.screen}>
+      <NativeRouter>
+        <Switch>
+          <View style={{ flex: 1 }}>
+            <Route exact path="/" component={Login} />
+            <Route path="/home" component={Home} />
+            <Route path="/createStay" component={CreateStay} />
+            <Route path="/createAccount" component={CreateAccount} />
+            <Route path="/account" component={Account} />
+          </View>
+        </Switch>
+      </NativeRouter>
+    </View>
   );
 }
 
