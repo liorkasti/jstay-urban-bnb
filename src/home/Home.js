@@ -11,21 +11,21 @@ import {
   Dimensions,
   ScrollView
 } from "react-native";
-import MaterialCard5 from "./components/MaterialCard5";
-import MaterialCard12 from "./components/MaterialCard12";
+import MaterialCard5 from "../components/MaterialCard5";
+import MaterialCard12 from "../components/MaterialCard12";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import MaterialCardWithTextOverImage4 from "./components/MaterialCardWithTextOverImage4";
-import MaterialCardWithTextOverImage5 from "./components/MaterialCardWithTextOverImage5";
-import MaterialCardWithTextOverImage6 from "./components/MaterialCardWithTextOverImage6";
-import MaterialCardWithTextOverImage7 from "./components/MaterialCardWithTextOverImage7";
-import MaterialBasicFooter1 from "./components/MaterialBasicFooter1";
-import MaterialButtonShare from "./components/MaterialButtonShare";
-import MaterialButtonViolet4 from "./components/MaterialButtonViolet4";
-import MaterialButtonViolet8 from "./components/MaterialButtonViolet8";
-import MaterialButtonViolet5 from "./components/MaterialButtonViolet5";
-import MaterialButtonViolet2 from "./components/MaterialButtonViolet2";
-import MaterialButtonViolet1 from "./components/MaterialButtonViolet1";
+import MaterialCardWithTextOverImage4 from "../components/MaterialCardWithTextOverImage4";
+import MaterialCardWithTextOverImage5 from "../components/MaterialCardWithTextOverImage5";
+import MaterialCardWithTextOverImage6 from "../components/MaterialCardWithTextOverImage6";
+import MaterialCardWithTextOverImage7 from "../components/MaterialCardWithTextOverImage7";
+import MaterialBasicFooter1 from "../components/MaterialBasicFooter1";
+import MaterialButtonShare from "../components/MaterialButtonShare";
+import MaterialButtonViolet4 from "../components/MaterialButtonViolet4";
+import MaterialButtonViolet8 from "../components/MaterialButtonViolet8";
+import MaterialButtonViolet5 from "../components/MaterialButtonViolet5";
+import MaterialButtonViolet2 from "../components/MaterialButtonViolet2";
+import MaterialButtonViolet1 from "../components/MaterialButtonViolet1";
 const width = Dimensions.get("window").width;
 const height = Dimensions.get("window").height;
 

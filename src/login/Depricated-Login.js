@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Image, Text, TextInput } from "react-native";
 import Svg, { Path } from "react-native-svg";
-import MaterialButtonWithVioletText from "./components/MaterialButtonWithVioletText";
-import MaterialButtonWithVioletText2 from "./components/MaterialButtonWithVioletText2";
-import MaterialButtonWithVioletText3 from "./components/MaterialButtonWithVioletText3";
+import MaterialButtonWithVioletText from "../components/MaterialButtonWithVioletText";
+import MaterialButtonWithVioletText2 from "../components/MaterialButtonWithVioletText2";
+import MaterialButtonWithVioletText3 from "../components/MaterialButtonWithVioletText3";
 import FeatherIcon from "react-native-vector-icons/Feather";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import MaterialCheckboxWithLabel from "./components/MaterialCheckboxWithLabel";
+import MaterialCheckboxWithLabel from "../components/MaterialCheckboxWithLabel";
 
 export default function Untitled(props) {
     const [showLogin, setShowLogin] = useState(false);

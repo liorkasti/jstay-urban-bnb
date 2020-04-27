@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Login from "./src/Login";
-import DynamicQuestionnaireController from './src/createAccount/index';
-import MainHome from "./src/MainHome";
+import Login from "./src/login/Depricated-Login";
+import DynamicQuestionnaireController from './src/dynamicQuestionnaire/index';
+import MainHome from "./src/home/Home";
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
+import { NativeRouter, Route, Link } from "react-router-native";
 
 
 export default function App() {
@@ -18,9 +19,11 @@ export default function App() {
     userWantsToCreateAccount(true)
   }
   useEffect(() => {
-    Orientation.lockToPortrait();
-Icon.loadFont();
-FontAwesomeIcon.loadFont();
+    setTimeout(()=>{
+      Orientation.lockToPortrait();
+    })
+    Icon.loadFont();
+    FontAwesomeIcon.loadFont();
 
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
