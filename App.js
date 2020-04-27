@@ -31,7 +31,13 @@ export default function App() {
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
   }, [])
-return (<View><Login/></View>)
+
+  return (
+    <View style={styles.screen}>
+      <Login />
+    </View>
+  );
+
   return (
     <NativeRouter>
       <Switch>
@@ -46,3 +52,12 @@ return (<View><Login/></View>)
     </NativeRouter>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: "rgba(0,88,155,1)",
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+});

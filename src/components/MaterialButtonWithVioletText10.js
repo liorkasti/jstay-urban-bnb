@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import Icon from "react-native-vector-icons/Entypo";
 
-function MaterialButtonWithVioletText3(props) {
+function MaterialButtonWithVioletText10(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>{props.text1 || "BUTTON"}</Text>
+      <Text style={styles.caption}>Next</Text>
+      <Icon name="chevron-right" style={styles.icon}></Icon>
     </TouchableOpacity>
   );
 }
@@ -21,10 +23,16 @@ const styles = StyleSheet.create({
   },
   caption: {
     color: "rgba(2,172,235,1)",
-    alignSelf: "flex-start",
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: "roboto-700"
+  },
+  icon: {
+    top: 8,
+    left: 67,
+    position: "absolute",
+    color: "rgba(2,172,235,1)",
+    fontSize: 20
   }
 });
 
-export default MaterialButtonWithVioletText3;
+export default MaterialButtonWithVioletText10;

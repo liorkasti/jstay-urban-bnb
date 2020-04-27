@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-function MaterialRadio5(props) {
+function MaterialRadio8(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
       <Icon
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default MaterialRadio5;
+export default MaterialRadio8;

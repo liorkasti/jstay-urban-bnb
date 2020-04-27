@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonLight(props) {
+function MaterialButtonViolet(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Log In</Text>
+      <Text style={styles.caption}>Continue with Facebook</Text>
+      <Text style={styles.loremIpsum}></Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(204,204,204,1)",
+    backgroundColor: "#3F51B5",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -31,8 +32,17 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-700",
+    textAlign: "center"
+  },
+  loremIpsum: {
+    top: 17,
+    left: 62,
+    color: "rgba(2,172,235,1)",
+    position: "absolute",
+    fontSize: 14,
+    fontFamily: "roboto-regular"
   }
 });
 
-export default MaterialButtonLight;
+export default MaterialButtonViolet;

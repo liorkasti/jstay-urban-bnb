@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonWithVioletText3(props) {
+function MaterialButtonWithVioletText11(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>{props.text1 || "BUTTON"}</Text>
+      <Text style={styles.skip}>Skip</Text>
     </TouchableOpacity>
   );
 }
@@ -19,12 +19,13 @@ const styles = StyleSheet.create({
     paddingLeft: 16,
     minWidth: 88
   },
-  caption: {
-    color: "rgba(2,172,235,1)",
-    alignSelf: "flex-start",
-    fontSize: 18,
+  skip: {
+    width: 44,
+    height: 21,
+    color: "rgba(177,177,177,1)",
+    fontSize: 20,
     fontFamily: "roboto-700"
   }
 });
 
-export default MaterialButtonWithVioletText3;
+export default MaterialButtonWithVioletText11;

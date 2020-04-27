@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonWithVioletText3(props) {
+function MaterialButtonWithVioletText9(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>{props.text1 || "BUTTON"}</Text>
+      <Text style={styles.caption}>Create Account</Text>
     </TouchableOpacity>
   );
 }
@@ -21,10 +21,9 @@ const styles = StyleSheet.create({
   },
   caption: {
     color: "rgba(2,172,235,1)",
-    alignSelf: "flex-start",
-    fontSize: 18,
+    fontSize: 16,
     fontFamily: "roboto-700"
   }
 });
 
-export default MaterialButtonWithVioletText3;
+export default MaterialButtonWithVioletText9;

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialCheckboxWithLabel(props) {
-
   return (
-    <TouchableOpacity onPress={() => { props.onPress(); }} style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]}>
       <Icon
         name={props.checked ? "checkbox-marked" : "checkbox-blank-outline"}
         style={styles.checkIcon}
@@ -25,11 +24,12 @@ const styles = StyleSheet.create({
   },
   checkIcon: {
     color: "rgba(177,177,177,1)",
+    fontFamily: "Roboto",
     fontSize: 28,
     lineHeight: 28
   },
   checkLabel: {
-    width: 94,
+    width: 117,
     height: 17,
     color: "rgba(177,177,177,1)",
     marginLeft: 2,
