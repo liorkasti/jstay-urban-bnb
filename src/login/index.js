@@ -10,14 +10,22 @@ export default function Login(props) {
 
     //this send user to route if they want to create a stay
     let history = useHistory();
+
+    //add the import as a string to this array 
+    //the array should be in the order that the screens show up
+    const componentKeys = ["Login"];
+
     //user finished create a stay
     function onSuccessfulLogin() {
         history.push("/home");
     };
 
-    //add the import as a string to this array 
-    //the array should be in the order that the screens show up
-    const componentKeys = ["Login"];
+    useEffect(() => {
+        //this is if they press next on the last screen in the list
+        if(componentIndex >componentKeys.length){
+            history.push("/home");
+        }
+    },[componentIndex])
 
     return (
         <View style={{ backgroundColor: "green" }}>
