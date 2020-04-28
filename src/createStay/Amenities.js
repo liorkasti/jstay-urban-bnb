@@ -775,7 +775,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 35,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   group11: {
     top: 120,
@@ -800,7 +800,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   loremIpsum2: {
     top: 50,
@@ -1503,7 +1503,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   button31: {
     top: 150,
@@ -1636,7 +1636,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   button34: {
     top: 30,
@@ -1875,7 +1875,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   button42: {
     top: 90,
@@ -2016,7 +2016,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   countertops: {
     top: 60,
@@ -2833,7 +2833,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   button47: {
     top: 30,

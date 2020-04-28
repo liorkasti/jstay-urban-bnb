@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   comingSoon3: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     textAlign: "center",
     marginRight: 59,
     marginTop: 9
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     height: 56,
     color: "#03589b",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     textAlign: "center",
     marginTop: 71,
     marginLeft: 78
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
   walkingDistance1: {
     color: "rgba(230,230,230,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     marginTop: 1550,
     marginLeft: 46
   },
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   src: {
     color: "rgba(230,230,230,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     alignSelf: "flex-end",
     marginBottom: 87,
     marginRight: 165

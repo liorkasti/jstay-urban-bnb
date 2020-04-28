@@ -9,7 +9,7 @@ import MaterialButtonViolet from "../components/MaterialButtonViolet";
 export default function Welcome(props) {
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
       <View style={styles.materialButtonWithVioletText12Column}>
         <MaterialButtonWithVioletText1
           text1="Continue with Google"
@@ -33,6 +33,9 @@ export default function Welcome(props) {
         <TouchableOpacity style={styles.button}>
           <View style={styles.materialButtonWithVioletText2Filler}></View>
           <MaterialButtonWithVioletText2
+            onPress={()=>{
+              props.onNext()
+            }}
             text1="Log In"
             style={styles.materialButtonWithVioletText2}
           ></MaterialButtonWithVioletText2>
@@ -60,6 +63,7 @@ export default function Welcome(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   materialButtonWithVioletText12: {

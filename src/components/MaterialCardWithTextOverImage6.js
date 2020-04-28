@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     color: "#FFF",
     paddingBottom: 12,
     fontSize: 35,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   subtitleStyle: {
     color: "#FFF",

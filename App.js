@@ -39,18 +39,15 @@ export default function App() {
   // );
   return (
     <View style={styles.container}>
-      <Login />
-      {/* <NativeRouter>
+      <NativeRouter>
         <Switch>
-          <View style={{ flex: 1 }}>
-            <Route exact path="/" component={Login} />
-            <Route path="/home" component={Home} />
-            <Route path="/createStay" component={CreateStay} />
-            <Route path="/createAccount" component={CreateAccount} />
-            <Route path="/account" component={Account} />
-          </View>
+          <Route exact path="/" component={Login} />
+          <Route path="/home" component={Home} />
+          <Route path="/createStay" component={CreateStay} />
+          <Route path="/createAccount" component={CreateAccount} />
+          <Route path="/account" component={Account} />
         </Switch>
-      </NativeRouter> */}
+      </NativeRouter>
     </View>
   );
 }
@@ -58,5 +55,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    }
+    alignItems: "center",
+    width: "100%"
+  }
 });

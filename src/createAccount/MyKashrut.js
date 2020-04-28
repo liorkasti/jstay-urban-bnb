@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   image1: {
     top: 0,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
   createAnAccount2: {
     color: "rgba(2,172,235,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     textAlign: "center",
     marginLeft: 74,
     marginTop: 8

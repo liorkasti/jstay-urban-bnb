@@ -17,6 +17,8 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* JSTAYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JSTAYTests.m */; };
 		66A153D1AF4F1EFC30120A9F /* libPods-JSTAY-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */; };
+		8672344B2457D66800938DF8 /* roboto-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867234492457D66800938DF8 /* roboto-regular.ttf */; };
+		8672344C2457D66800938DF8 /* roboto-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8672344A2457D66800938DF8 /* roboto-700.ttf */; };
 		A981E07093741841AECB46D0 /* libPods-JSTAY-JSTAYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */; };
 		E8E634FDDEA0889B12436E1D /* libPods-JSTAY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9299DDDE249123A7BA3B98F1 /* libPods-JSTAY.a */; };
 		F282BCCF089B304ADC64589E /* libPods-JSTAY-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839A1872D1A229B34B1B2FA /* libPods-JSTAY-tvOSTests.a */; };
@@ -71,6 +73,8 @@
 		613CD87F8D2B44DFA9F3F47B /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7865E189C000479EBCB750F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		867234492457D66800938DF8 /* roboto-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-regular.ttf"; path = "../../src/assets/fonts/roboto-regular.ttf"; sourceTree = "<group>"; };
+		8672344A2457D66800938DF8 /* roboto-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-700.ttf"; path = "../../src/assets/fonts/roboto-700.ttf"; sourceTree = "<group>"; };
 		86C21439244EA716001487B8 /* react-native-vector-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-vector-icons"; path = "../node_modules/react-native-vector-icons"; sourceTree = "<group>"; };
 		86C2143B244EA73B001487B8 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		8839A1872D1A229B34B1B2FA /* libPods-JSTAY-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +195,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				867234482457D5E100938DF8 /* Fonts */,
 				86C2143B244EA73B001487B8 /* FontAwesome.ttf */,
 				86C21439244EA716001487B8 /* react-native-vector-icons */,
 				13B07FAE1A68108700A75B9A /* JSTAY */,
@@ -215,6 +220,15 @@
 				2D02E4901E0B4A5D006451C7 /* JSTAY-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		867234482457D5E100938DF8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8672344A2457D66800938DF8 /* roboto-700.ttf */,
+				867234492457D66800938DF8 /* roboto-regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F1EB0CFD857D4656A8155EE5 /* Resources */ = {
@@ -383,8 +397,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8672344B2457D66800938DF8 /* roboto-regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				8672344C2457D66800938DF8 /* roboto-700.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

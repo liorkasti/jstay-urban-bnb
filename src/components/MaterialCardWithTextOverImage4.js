@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     paddingBottom: 12,
     fontSize: 35,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   stayIn: {
     width: 49,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     opacity: 0.5,
     fontSize: 14,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     lineHeight: 16
   },
   actionBody: {

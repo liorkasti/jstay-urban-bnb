@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
@@ -31,8 +31,7 @@ export default function LoginIndex(props) {
     }, [componentIndex])
 
     return (
-        <View>
-            <Text>Basterds</Text>
+        <View style={styles.container}>
             {//WelcomePage Component
                 //replace this string with the string 
                 //in componentKeys related to this import
@@ -85,8 +84,18 @@ export default function LoginIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+                    login={()=>{
+                        setComponentIndex(componentIndex + 1)
+                    }}
                 />
             }
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      alignItems: "center",
+    }
+  });

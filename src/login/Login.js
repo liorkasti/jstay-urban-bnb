@@ -21,6 +21,7 @@ function Login(props) {
     <View style={styles.container}>
       <View style={styles.materialButtonWithVioletTextColumn}>
         <MaterialButtonWithVioletText
+          onPress={()=>{props.onBack()}}
           style={styles.materialButtonWithVioletText}
         ></MaterialButtonWithVioletText>
         <View style={styles.materialIconTextbox4Stack}>
@@ -84,7 +85,6 @@ function Login(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent:"center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   materialButtonWithVioletText: {
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     textAlign: "center"
   },
   image1: {

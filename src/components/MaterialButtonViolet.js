@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-bold",
     textAlign: "center"
   },
   loremIpsum: {

@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 16,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-bold"
   },
   icon: {
     top: 8,
