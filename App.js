@@ -37,10 +37,10 @@ export default function App() {
   //     <Login />
   //   </View>
   // );
-
   return (
-    <View style={styles.screen}>
-      <NativeRouter>
+    <View style={styles.container}>
+      <Login />
+      {/* <NativeRouter>
         <Switch>
           <View style={{ flex: 1 }}>
             <Route exact path="/" component={Login} />
@@ -50,16 +50,13 @@ export default function App() {
             <Route path="/account" component={Account} />
           </View>
         </Switch>
-      </NativeRouter>
+      </NativeRouter> */}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)",
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+    }
 });

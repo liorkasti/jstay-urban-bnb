@@ -6,7 +6,7 @@ import MaterialButtonWithVioletText2 from "../components/MaterialButtonWithViole
 import MaterialButtonWithVioletText3 from "../components/MaterialButtonWithVioletText3";
 import MaterialButtonViolet from "../components/MaterialButtonViolet";
 
-export default function WelcomePage(props) {
+export default function Welcome(props) {
 
   return (
     <View style={{ flex: 1 }}>
