@@ -20,7 +20,7 @@ export default function Index(props) {
                 //replace this string with the string 
                 //in componentKeys related to this import
                 
-                componentKeys[setComponentIndex] === "ComingSoon"
+                componentKeys[componentIndex] === "ComingSoon"
                 &&
                 //change component name to the new import 
                 <ComingSoon /*coming soon requires */ comingSoonPath="account"
