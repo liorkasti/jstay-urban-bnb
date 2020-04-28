@@ -45,6 +45,7 @@ function ProfilePicture(props) {
       <View style={styles.group1}>
         <View style={styles.materialButtonWithVioletText9Stack}>
           <MaterialButtonWithVioletText9
+          onPress={props.onNext}
             style={styles.materialButtonWithVioletText9}
           ></MaterialButtonWithVioletText9>
           <IoniconsIcon
@@ -60,6 +61,7 @@ function ProfilePicture(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   materialButtonViolet11: {

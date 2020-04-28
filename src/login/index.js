@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, Dimensions } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
@@ -11,16 +11,20 @@ export default function LoginIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
 
     //this send user to route if they want to create a stay
-    // let history = useHistory();
+    let history = useHistory();
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["Welcome","Login"];
+    const componentKeys = ["Welcome", "Login"];
 
     //user finished create a stay
     function onSuccessfulLogin() {
         history.push("/home");
     };
+
+    function onCreateAccount() {
+            history.push("/createAccount");
+    }
 
     useEffect(() => {
         console.warn(componentKeys[componentIndex])
@@ -47,17 +51,7 @@ export default function LoginIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        setComponentIndex(componentIndex - 1)
-                    }}
-
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
+                    createAccount={()=>onCreateAccount()}
                 />
             }
 
@@ -66,7 +60,7 @@ export default function LoginIndex(props) {
                 componentKeys[componentIndex] === "Login"
                 &&
                 //change component name to the new import 
-                <Login 
+                <Login
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
                     onNext={() => {
@@ -84,7 +78,7 @@ export default function LoginIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
-                    login={()=>{
+                    login={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
                 />
@@ -93,9 +87,14 @@ export default function LoginIndex(props) {
     );
 }
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: "center",
+        flex: 1,
+        alignItems: "center",
+        width: windowWidth,
+        height: windowHeight
     }
-  });
+});

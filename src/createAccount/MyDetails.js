@@ -33,6 +33,7 @@ function MyDetails(props) {
         </View>
       </View>
       <MaterialButtonWithVioletText10
+        onPress={props.onNext}
         style={styles.materialButtonWithVioletText1}
       ></MaterialButtonWithVioletText10>
       <View style={styles.rect3}>
@@ -60,6 +61,7 @@ function MyDetails(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   materialIconTextbox: {

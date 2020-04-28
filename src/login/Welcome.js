@@ -41,6 +41,7 @@ export default function Welcome(props) {
           ></MaterialButtonWithVioletText2>
         </TouchableOpacity>
         <MaterialButtonWithVioletText3
+          onPress={props.createAccount}
           text1="Create an Account"
           style={styles.materialButtonWithVioletText32}
         ></MaterialButtonWithVioletText3>

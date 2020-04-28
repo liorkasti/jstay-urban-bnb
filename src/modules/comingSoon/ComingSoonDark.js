@@ -40,6 +40,7 @@ function ComingSoonDark(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   rect1: {

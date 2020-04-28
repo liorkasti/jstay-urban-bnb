@@ -68,6 +68,7 @@ function MyKashrut(props) {
       </View>
       <View style={styles.myLevelOfKashrutStackColumnFiller}></View>
       <MaterialButtonWithVioletText10
+         onPress={props.onNext}
         style={styles.materialButtonWithVioletText10}
       ></MaterialButtonWithVioletText10>
     </View>
@@ -77,6 +78,7 @@ function MyKashrut(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   myLevelOfKashrut: {
