@@ -10,11 +10,11 @@ export default function Index(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["ComingSoon"];
+    const componentKeys = ["DescribeStay","Address","AppartmentPinDrop","StayLayout","StayPictures","Amenities","Nearby","StayRules","Accessibility","ChangesAndDeposites","Pricing","CheckinInfo","Policies","StayCalender"];
 
     return (
         <View>
-            {/* copy paste below component*/}
+            {/* copy paste below component including the wrapping jsx breakouts*/}
             
             {
                 //replace this string with the string 

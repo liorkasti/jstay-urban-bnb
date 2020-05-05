@@ -49,7 +49,7 @@ export default function Untitled(props) {
                         </View>
                         <View style={loginStyles.imageStack}>
                             <Image
-                                source={require("./images/JStay_Logo.png")}
+                                source={require("../assets/images/JStay_Logo.png")}
                                 resizeMode="contain"
                                 style={loginStyles.image}
                             ></Image>
@@ -85,7 +85,7 @@ export default function Untitled(props) {
                                 </Svg>
                                 <View style={styles.imageStack}>
                                     <Image
-                                        source={require("./images/Jstay_081119_2-01.png")}
+                                        source={require("../assets/images/Jstay_081119_2-01.png")}
                                         resizeMode="contain"
                                         style={styles.image}
                                     ></Image>

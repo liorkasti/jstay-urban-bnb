@@ -5,7 +5,7 @@ function MaterialCardWithTextOverImage6(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Image
-        source={require("../images/cardImage3.png")}
+        source={require("../assets/images/cardImage3.png")}
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.cardBody}>

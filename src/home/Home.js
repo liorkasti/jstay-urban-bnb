@@ -1,107 +1,116 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import {
   StyleSheet,
   View,
-  TextInput,
   TouchableOpacity,
-  Image,
   StatusBar,
-  FlatList,
-  SafeAreaView,
-  Dimensions,
-  ScrollView
+  Text
 } from "react-native";
-import MaterialCard5 from "../components/MaterialCard5";
-import MaterialCard12 from "../components/MaterialCard12";
-import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import MaterialCardWithTextOverImage4 from "../components/MaterialCardWithTextOverImage4";
-import MaterialCardWithTextOverImage5 from "../components/MaterialCardWithTextOverImage5";
-import MaterialCardWithTextOverImage6 from "../components/MaterialCardWithTextOverImage6";
-import MaterialCardWithTextOverImage7 from "../components/MaterialCardWithTextOverImage7";
-import MaterialBasicFooter1 from "../components/MaterialBasicFooter1";
-import MaterialButtonShare from "../components/MaterialButtonShare";
-import MaterialButtonViolet4 from "../components/MaterialButtonViolet4";
-import MaterialButtonViolet8 from "../components/MaterialButtonViolet8";
-import MaterialButtonViolet5 from "../components/MaterialButtonViolet5";
-import MaterialButtonViolet2 from "../components/MaterialButtonViolet2";
-import MaterialButtonViolet1 from "../components/MaterialButtonViolet1";
-const width = Dimensions.get("window").width;
-const height = Dimensions.get("window").height;
+import MaterialCard5 from "./components/MaterialCard5";
+import CityCards from "./components/CityCards";
+import SmallSeach from "./components/SmallSeach";
+import HomeSearch from "./components/HomeSearch";
+import HeaderBar from "./components/HeaderBar";
+import JstayLogoDark from "./components/JstayLogoDark";
+import StayCard from "./components/StayCard";
+import CreateStayButton from "./components/CreateStayButton";
+import FooterBar from "./components/FooterBar";
+import MaterialButtonWithVioletText21 from "./components/MaterialButtonWithVioletText21";
+import MaterialButtonWithVioletText22 from "./components/MaterialButtonWithVioletText22";
+import MaterialButtonWithVioletText23 from "./components/MaterialButtonWithVioletText23";
+import MaterialButtonWithVioletText24 from "./components/MaterialButtonWithVioletText24";
+import MaterialButtonWithVioletText25 from "./components/MaterialButtonWithVioletText25";
+import MaterialButtonWithVioletText26 from "./components/MaterialButtonWithVioletText26";
+import MaterialButtonWithVioletText28 from "./components/MaterialButtonWithVioletText28";
+import MapButton from "./components/MapButton";
 
-function Untitled2(props) {
-  useEffect(()=>{
-  },[])
+function Home(props) {
   return (
     <View style={styles.container}>
-
-      <MaterialCard12 style={styles.materialCard12}></MaterialCard12>
-      <View style={styles.group}>
-        <TextInput
-          placeholder="Location, comunity, or address"
-          placeholderTextColor="rgba(177,177,177,1)"
-          returnKeyType="search"
-          returnKeyLabel="Search"
-          style={styles.textInput}
-        ></TextInput>
-        <FontAwesomeIcon name="sliders" style={styles.icon2}></FontAwesomeIcon>
-        <IoniconsIcon name="ios-search" style={styles.icon3}></IoniconsIcon>
-        <TouchableOpacity style={styles.button}>
-          <Image
-            source={require("./images/jstay_icon_final_inverted_colors_-_Palette_e6e6e6.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
+      <View style={styles.button4Column}>
+        <TouchableOpacity style={styles.button4}>
+          <MaterialCard5 style={styles.materialCard5}></MaterialCard5>
+        </TouchableOpacity>
+        <View style={styles.cityCardsStackStack}>
+          <View style={styles.cityCardsStack}>
+            <CityCards style={styles.cityCards}></CityCards>
+            <View style={styles.group2}>
+              <View style={styles.rect10}>
+                <SmallSeach style={styles.smallSeach}></SmallSeach>
+              </View>
+            </View>
+          </View>
+          <View style={styles.group}>
+            <HomeSearch style={styles.homeSearch}></HomeSearch>
+          </View>
+          <StatusBar animated={false} hidden={false}></StatusBar>
+          <HeaderBar style={styles.headerBar}></HeaderBar>
+          <View style={styles.bsD1Stack}>
+            <Text style={styles.bsD1}>BS&quot;D</Text>
+            <Text style={styles.bsD2}>BS&quot;D</Text>
+          </View>
+          <TouchableOpacity style={styles.button52}>
+            <JstayLogoDark style={styles.jstayLogoDark}></JstayLogoDark>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity style={styles.button3}>
+          <StayCard style={styles.stayCard}></StayCard>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button2}>
+          <CreateStayButton style={styles.createStayButton}></CreateStayButton>
+        </TouchableOpacity>
+        <Text style={styles.topStays}>Top Stays</Text>
+        <Text style={styles.nearby}>Nearby</Text>
+        <Text style={styles.becomeAHost}>Become A Host</Text>
+      </View>
+      <View style={styles.button4ColumnFiller}></View>
+      <View style={styles.footerBarStackStack}>
+        <View style={styles.footerBarStack}>
+          <FooterBar style={styles.footerBar}></FooterBar>
+          <View style={styles.group1}>
+            <View style={styles.rect9}>
+              <View style={styles.materialButtonWithVioletText21Stack}>
+                <MaterialButtonWithVioletText21
+                  style={styles.materialButtonWithVioletText21}
+                ></MaterialButtonWithVioletText21>
+                <MaterialButtonWithVioletText22
+                  style={styles.materialButtonWithVioletText22}
+                ></MaterialButtonWithVioletText22>
+                <View style={styles.rect3}></View>
+                <View style={styles.rect4}></View>
+              </View>
+              <View style={styles.materialButtonWithVioletText23Stack}>
+                <MaterialButtonWithVioletText23
+                  style={styles.materialButtonWithVioletText23}
+                ></MaterialButtonWithVioletText23>
+                <View style={styles.rect5}></View>
+              </View>
+              <View style={styles.materialButtonWithVioletText24Stack}>
+                <MaterialButtonWithVioletText24
+                  style={styles.materialButtonWithVioletText24}
+                ></MaterialButtonWithVioletText24>
+                <View style={styles.rect6}></View>
+              </View>
+              <View style={styles.materialButtonWithVioletText25Stack}>
+                <MaterialButtonWithVioletText25
+                  style={styles.materialButtonWithVioletText25}
+                ></MaterialButtonWithVioletText25>
+                <MaterialButtonWithVioletText26
+                  style={styles.materialButtonWithVioletText26}
+                ></MaterialButtonWithVioletText26>
+                <View style={styles.rect7}></View>
+                <View style={styles.rect8}></View>
+                <MaterialButtonWithVioletText28
+                  style={styles.materialButtonWithVioletText28}
+                ></MaterialButtonWithVioletText28>
+              </View>
+            </View>
+          </View>
+        </View>
+        <TouchableOpacity style={styles.button5}>
+          <MapButton style={styles.mapButton}></MapButton>
         </TouchableOpacity>
       </View>
-
-
-      <View style={styles.group2}>
-        <MaterialButtonViolet8
-          style={styles.materialButtonViolet8}
-        ></MaterialButtonViolet8>
-        <MaterialButtonViolet5
-          style={styles.materialButtonViolet5}
-        ></MaterialButtonViolet5>
-        <MaterialButtonViolet2
-          style={styles.materialButtonViolet2}
-        ></MaterialButtonViolet2>
-        <MaterialButtonViolet1
-          style={styles.materialButtonViolet1}
-        ></MaterialButtonViolet1>
-      </View>
-
-      <ScrollView style={styles.group4}>
-        <MaterialCard5 
-        style={styles.materialCard5}
-        ></MaterialCard5>
-        <View style={{flexDirection: "row", flexWrap:"wrap", marginTop: 10}}>
-        <MaterialCardWithTextOverImage4
-          style={styles.materialCardWithTextOverImage4}
-        ></MaterialCardWithTextOverImage4>
-        <MaterialCardWithTextOverImage5
-          style={styles.materialCardWithTextOverImage4}
-        ></MaterialCardWithTextOverImage5>
-        <MaterialCardWithTextOverImage6
-          style={styles.materialCardWithTextOverImage4}
-        ></MaterialCardWithTextOverImage6>
-        <MaterialCardWithTextOverImage7
-          style={styles.materialCardWithTextOverImage4}
-        ></MaterialCardWithTextOverImage7>
-        </View>
-      </ScrollView>
-
-      <MaterialBasicFooter1
-        style={styles.materialBasicFooter1}
-      ></MaterialBasicFooter1>
-
-      <MaterialButtonShare
-        style={styles.materialButtonShare}
-      ></MaterialButtonShare>
-      <StatusBar hidden={false}></StatusBar>
-      <MaterialButtonViolet4
-        style={styles.materialButtonViolet6}
-      ></MaterialButtonViolet4>
     </View>
   );
 }
@@ -109,188 +118,319 @@ function Untitled2(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: width,
-    height: height,
     backgroundColor: "rgba(2,172,235,1)"
   },
-  materialCard5: {
-    left: "1.65%",
+  button4: {
+    width: 405,
     height: 349,
-    width: 336,
-    backgroundColor: "rgba(230,230,230,1)",
-    display: "flex",
-    flexDirection: "column",
-    borderRadius: 10
+    marginTop: 563,
+    marginLeft: 18
   },
-  materialCard12: {
-    top: 986,
-    left: 3,
-    height: 206,
-    position: "absolute",
-    right: 1
-  },
-  group: {
-    top: 40,
-    left: 10,
-    height: 52,
-    position: "absolute",
-    right: 22
-  },
-  textInput: {
-    top: 5,
-    left: "0%",
-    width: "89.85%",
-    height: 46,
-    backgroundColor: "rgba(230,230,230,1)",
-    color: "#121212",
-    position: "absolute",
+  materialCard5: {
+    height: 349,
+    backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10,
-    
-    letterSpacing: 0,
-    textAlign: "center"
+    borderColor: "rgba(0,88,155,1)",
+    borderWidth: 5
   },
-  icon2: {
-    top: 9,
-    position: "absolute",
-    color: "rgba(128,128,128,1)",
-    fontSize: 37,
-    left: "78.22%"
-  },
-  icon3: {
-    top: 7,
-    position: "absolute",
-    color: "rgba(0,88,155,1)",
-    fontSize: 45,
-    left: "3.88%",
-    width: 34,
-    height: 45
-  },
-  button: {
-    top: 3,
-    width: "18.4%",
-    height: 51,
-    position: "absolute",
-    right: "-4.34%"
-  },
-  image1: {
-    top: 0,
-    left: 21,
-    width: 50,
-    height: 51,
+  cityCards: {
+    top: 163,
+    left: 5,
+    width: 406,
+    height: 342,
     position: "absolute"
-  },
-  group4: {
-    zIndex: 1,
-    maxHeight: 425,
-    width: 340,
-    marginLeft: 10,
-    marginTop: 145,
-    flex: 1,
-    display: "flex",
-    flexDirection: "column"
-  },
-  group3: {
-    top: 0,
-    left: "0.63%",
-    width: 440,
-    height: "55.47%",
-    position: "absolute"
-  },
-  materialCardWithTextOverImage4: {
-    width: 170,
-    height: 170,
-    borderTopLeftRadius: 10
-  },
-  materialCardWithTextOverImage5: {
-    top: 204,
-    left: 1,
-    width: 200,
-    height: 200,
-    position: "absolute",
-    borderBottomLeftRadius: 10
-  },
-  materialCardWithTextOverImage6: {
-    top: 0,
-    width: 200,
-    height: 200,
-    position: "absolute",
-    right: 34,
-    borderTopRightRadius: 10
-  },
-  materialCardWithTextOverImage7: {
-    top: 203,
-    width: 200,
-    height: 200,
-    position: "absolute",
-    right: 35,
-    borderBottomRightRadius: 10
-  },
-  materialBasicFooter1: {
-    zIndex: 10,
-    left: -2,
-    height: 76,
-    position: "absolute",
-    right: -15,
-    top: 575
-  },
-  materialButtonShare: {
-    zIndex: 10,
-    width: 56,
-    height: 56,
-    position: "absolute",
-    right: 14,
-    bottom: 87,
-    borderColor: "#000000",
-    borderWidth: 0
-  },
-  materialButtonViolet6: {
-    zIndex: 10,
-    left: "64.28%",
-    height: 60,
-    position: "absolute",
-    right: 14,
-    bottom: 85
   },
   group2: {
-    top: 106,
-    left: "0.79%",
-    width: 409,
-    height: 37,
-    position: "absolute"
-  },
-  materialButtonViolet8: {
     top: 0,
-    left: 215,
-    width: 88,
-    height: 36,
-    backgroundColor: "rgba(0,88,155,1)",
+    left: 0,
+    width: 414,
+    height: 448,
+    position: "absolute",
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10
+  },
+  rect10: {
+    width: 414,
+    height: 448,
+    backgroundColor: "rgba(2,172,235,1)",
+    marginLeft: 10
+  },
+  smallSeach: {
+    height: 421,
+    marginTop: 14,
+    marginLeft: 14,
+    marginRight: 20
+  },
+  cityCardsStack: {
+    top: 0,
+    left: 13,
+    width: 414,
+    height: 505,
     position: "absolute"
   },
-  materialButtonViolet5: {
-    top: "3.52%",
-    left: "78.64%",
-    width: 88,
-    height: 36,
-    position: "absolute",
-    overflow: "visible"
-  },
-  materialButtonViolet2: {
-    top: "3.52%",
-    left: "26.75%",
-    width: 88,
-    height: 36,
-    backgroundColor: "rgba(0,88,155,1)",
+  group: {
+    top: 49,
+    left: 37,
+    width: 319,
+    height: 46,
     position: "absolute"
   },
-  materialButtonViolet1: {
-    top: "3.52%",
-    left: "1.2%",
-    width: 88,
-    height: 36,
-    backgroundColor: "rgba(0,88,155,1)",
+  homeSearch: {
+    width: 319,
+    height: 46
+  },
+  headerBar: {
+    top: 103,
+    left: 0,
+    width: 440,
+    height: 56,
+    position: "absolute"
+  },
+  bsD1: {
+    top: 0,
+    left: 3,
+    color: "rgba(177,177,177,1)",
     position: "absolute",
-    overflow: "visible"
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  bsD2: {
+    top: 0,
+    color: "rgba(177,177,177,1)",
+    position: "absolute",
+    right: 3,
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  bsD1Stack: {
+    top: 14,
+    left: 363,
+    width: 29,
+    height: 12,
+    position: "absolute"
+  },
+  button52: {
+    top: 39,
+    left: 358,
+    width: 62,
+    height: 62,
+    position: "absolute"
+  },
+  jstayLogoDark: {
+    width: 62,
+    height: 62
+  },
+  cityCardsStackStack: {
+    width: 440,
+    height: 505,
+    marginTop: -912
+  },
+  button3: {
+    width: 405,
+    height: 266,
+    justifyContent: "center",
+    marginTop: 466,
+    marginLeft: 18
+  },
+  stayCard: {
+    width: 405,
+    height: 266
+  },
+  button2: {
+    width: 405,
+    height: 60,
+    marginTop: 56,
+    marginLeft: 18
+  },
+  createStayButton: {
+    width: 405,
+    height: 60
+  },
+  topStays: {
+    color: "rgba(0,88,155,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginTop: -422,
+    marginLeft: 19
+  },
+  nearby: {
+    color: "rgba(0,88,155,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginTop: -426,
+    marginLeft: 22
+  },
+  becomeAHost: {
+    color: "rgba(0,88,155,1)",
+    fontSize: 18,
+    fontFamily: "roboto-regular",
+    marginTop: 716,
+    marginLeft: 18
+  },
+  button4Column: {
+    width: 440,
+    marginLeft: -13
+  },
+  button4ColumnFiller: {
+    flex: 1
+  },
+  footerBar: {
+    left: 0,
+    height: 80,
+    position: "absolute",
+    bottom: 0,
+    right: 0
+  },
+  group1: {
+    width: 207,
+    height: 350,
+    position: "absolute",
+    right: 0,
+    bottom: 76
+  },
+  rect9: {
+    width: 207,
+    height: 350,
+    backgroundColor: "rgba(0,88,155,1)"
+  },
+  materialButtonWithVioletText21: {
+    top: 0,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  materialButtonWithVioletText22: {
+    top: 49,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  rect3: {
+    top: 48,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  rect4: {
+    top: 98,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  materialButtonWithVioletText21Stack: {
+    width: 207,
+    height: 99,
+    marginTop: 2
+  },
+  materialButtonWithVioletText23: {
+    top: 0,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  rect5: {
+    top: 49,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  materialButtonWithVioletText23Stack: {
+    width: 207,
+    height: 50
+  },
+  materialButtonWithVioletText24: {
+    top: 0,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  rect6: {
+    top: 49,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  materialButtonWithVioletText24Stack: {
+    width: 207,
+    height: 50
+  },
+  materialButtonWithVioletText25: {
+    top: 0,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  materialButtonWithVioletText26: {
+    top: 49,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  rect7: {
+    top: 49,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  rect8: {
+    top: 94,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  materialButtonWithVioletText28: {
+    top: 95,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
+  materialButtonWithVioletText25Stack: {
+    width: 207,
+    height: 145
+  },
+  footerBarStack: {
+    height: 426,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    left: 0
+  },
+  button5: {
+    left: 5,
+    width: 405,
+    height: 66,
+    position: "absolute",
+    bottom: 91
+  },
+  mapButton: {
+    width: 405,
+    height: 66
+  },
+  footerBarStackStack: {
+    height: 426,
+    marginBottom: -1
   }
 });
 
-export default Untitled2;
+export default Home;

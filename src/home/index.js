@@ -3,7 +3,7 @@ import { View, StyleSheet} from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
-import ComingSoon from "../modules/comingSoon";
+import Home from "./Home";
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -25,7 +25,7 @@ export default function Index(props) {
                 componentKeys[componentIndex] === "ComingSoon"
                 &&
                 //change component name to the new import 
-                <ComingSoon comingSoonDirectory="home"
+                <Home comingSoonDirectory="home"
                     
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}

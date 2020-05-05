@@ -13,7 +13,7 @@ function Untitled5(props) {
     <View style={styles.container}>
       <View style={styles.rect}></View>
       <Image
-        source={require("../images/jstay_icon_final_inverted_colors_-_Palette_e6e6e6.png")}
+        source={require("../assets/images/jstay_icon_final_inverted_colors_-_Palette_e6e6e6.png")}
         resizeMode="contain"
         style={styles.image1}
       ></Image>

@@ -12,7 +12,7 @@ function MaterialCard12(props) {
           </Text>
         </View>
         <Image
-          source={require("../images/cardImage2.png")}
+          source={require("../assets/images/cardImage2.png")}
           style={styles.cardItemImagePlace}
         ></Image>
       </View>
