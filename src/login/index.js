@@ -44,6 +44,7 @@ export default function LoginIndex(props) {
                 &&
                 //change component name to the new import 
                 <Welcome
+                style={styles.componentStyle}
 
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -51,7 +52,7 @@ export default function LoginIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    createAccount={()=>onCreateAccount()}
+                    createAccount={() => onCreateAccount()}
                 />
             }
 
@@ -61,6 +62,7 @@ export default function LoginIndex(props) {
                 &&
                 //change component name to the new import 
                 <Login
+                    style={styles.componentStyle}
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
                     onNext={() => {
@@ -93,7 +95,7 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        // alignItems: "center",
         width: windowWidth,
         height: windowHeight
     }

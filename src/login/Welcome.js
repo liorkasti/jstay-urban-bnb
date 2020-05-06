@@ -1,21 +1,20 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
-import MaterialButtonWithVioletText1 from "../components/MaterialButtonWithVioletText1";
+import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
+import ContinueGoogleButton from "./components/ContinueGoogleButton";
 import Svg, { Path } from "react-native-svg";
-import MaterialButtonWithVioletText2 from "../components/MaterialButtonWithVioletText2";
-import MaterialButtonWithVioletText3 from "../components/MaterialButtonWithVioletText3";
-import MaterialButtonViolet from "../components/MaterialButtonViolet";
+import GotoLoginButton from "./components/GotoLoginButton";
+import CreateAccountButton from "./components/CreateAccountButton";
+import ContinueFacebookButton from "./components/ContinueFacebookButton";
+import Icon from "react-native-vector-icons/Entypo";
 
-export default function Welcome(props) {
-
+function WelcomePage(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.materialButtonWithVioletText12Column}>
-        <MaterialButtonWithVioletText1
-          text1="Continue with Google"
-          style={styles.materialButtonWithVioletText12}
-        ></MaterialButtonWithVioletText1>
-        <View style={styles.pathRow}>
+      <TouchableOpacity style={styles.button2}>
+        <ContinueGoogleButton
+          style={styles.continueGoogleButton}
+        ></ContinueGoogleButton>
+      </TouchableOpacity>
           <Svg viewBox="0 0 44 63.01159786070548" style={styles.path}>
             <Path
               strokeWidth={1}
@@ -24,39 +23,36 @@ export default function Welcome(props) {
               d="M0.00 0.01 C0.00 1.01 44.00 63.01 44.00 63.01 C44.00 63.01 0.00 -0.99 0.00 0.01 Z"
             ></Path>
           </Svg>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin6.png")}
-            resizeMode="contain"
-            style={styles.image2}
-          ></Image>
-        </View>
-        <TouchableOpacity style={styles.button}>
-          <View style={styles.materialButtonWithVioletText2Filler}></View>
-          <MaterialButtonWithVioletText2
-            onPress={()=>{
-              props.onNext()
-            }}
-            text1="Log In"
-            style={styles.materialButtonWithVioletText2}
-          ></MaterialButtonWithVioletText2>
+      <TouchableOpacity style={styles.button4}>
+        <GotoLoginButton onPress={props.onNext} style={styles.gotoLoginButton}></GotoLoginButton>
         </TouchableOpacity>
-        <MaterialButtonWithVioletText3
-          onPress={props.createAccount}
-          text1="Create an Account"
-          style={styles.materialButtonWithVioletText32}
-        ></MaterialButtonWithVioletText3>
-        <MaterialButtonViolet
-          style={styles.materialButtonViolet}
-        ></MaterialButtonViolet>
-        <Text style={styles.bsD}>BS&quot;D</Text>
-      </View>
-      <View style={styles.materialButtonWithVioletText12ColumnFiller}></View>
+      <TouchableOpacity style={styles.button5}>
+        <CreateAccountButton
+        onPress={props.createAccount}
+          style={styles.createAccountButton}
+        ></CreateAccountButton>
+      </TouchableOpacity>
       <Text style={styles.text}>
         By tapping &#39;Continue with Facebook&#39;, &#39;Continue with
         Google&#39; or &#39;Create an Account&#39; you agree to Jstays&#39;
         Terms of Service, Payments Terms of Service, Privacy Policy and
         Non-Discrimination Policy.
       </Text>
+      <TouchableOpacity style={styles.button3}>
+        <ContinueFacebookButton
+          style={styles.continueFacebookButton}
+        ></ContinueFacebookButton>
+      </TouchableOpacity>
+      <Text style={styles.bsD}>BS&quot;D</Text>
+      <Image
+        source={require("../assets/images/JStay-Logo-blue-shin6.png")}
+        resizeMode="contain"
+        style={styles.image2}
+      ></Image>
+      <TouchableOpacity style={styles.button6}>
+        <Icon name="chevron-down" style={styles.icon}></Icon>
+        <Text style={styles.chooseLanguage}>Choose language</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -67,86 +63,124 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
-  materialButtonWithVioletText12: {
+  button2: {
+    top: 425,
+    left: 31,
     width: 352,
     height: 62,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    borderRadius: 10,
-    marginTop: 412,
-    marginLeft: 152
+    position: "absolute"
+  },
+  continueGoogleButton: {
+    top: 0,
+    left: 0,
+    width: 352,
+    height: 62,
+    position: "absolute"
   },
   path: {
+    top: 151,
+    left: -121,
     width: 29,
     height: 42,
-    marginTop: 14
+    position: "absolute"
   },
-  image2: {
-    height: 150,
-    flex: 1,
-    marginLeft: 92
-  },
-  pathRow: {
-    height: 150,
-    flexDirection: "row",
-    marginTop: -350,
-    marginRight: 14
-  },
-  button: {
+  button4: {
+    top: 40,
     width: 108,
     height: 48,
-    flexDirection: "row",
-    marginTop: -247,
-    marginLeft: 441
+    position: "absolute",
+    right: -14
   },
-  materialButtonWithVioletText2Filler: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  materialButtonWithVioletText2: {
+  gotoLoginButton: {
+    top: 0,
+    left: 0,
     width: 108,
-    height: 48
+    height: 48,
+    position: "absolute"
   },
-  materialButtonWithVioletText32: {
-    width: 187,
-    height: 31,
-    marginTop: 431,
-    marginLeft: 236
-  },
-  materialButtonViolet: {
+  button5: {
+    top: 507,
+    left: 31,
     width: 352,
     height: 62,
-    backgroundColor: "rgba(230,230,230,1)",
-    borderRadius: 10,
-    borderColor: "#000000",
-    borderWidth: 0,
-    marginTop: -200,
-    marginLeft: 152
+    position: "absolute"
   },
-  bsD: {
-    color: "rgba(177,177,177,1)",
-    opacity: 0.35,
-    fontSize: 10,
-    fontFamily: "roboto-regular",
-    alignSelf: "flex-end",
-    marginTop: -399,
-    marginRight: 52
-  },
-  materialButtonWithVioletText12Column: {
-    marginTop: 13,
-    marginLeft: -121,
-    marginRight: -14
-  },
-  materialButtonWithVioletText12ColumnFiller: {
-    flex: 1
+  createAccountButton: {
+    top: 0,
+    left: 0,
+    width: 352,
+    height: 62,
+    position: "absolute"
   },
   text: {
+    left: "7.51%",
     width: 304,
     height: 60,
     color: "rgba(168,219,243,1)",
+    position: "absolute",
+    bottom: 54,
     fontSize: 12,
     fontFamily: "roboto-regular",
-    textAlign: "left",
-    marginBottom: 54,
-    marginLeft: 35
+    textAlign: "left"
+  },
+  button3: {
+    top: 350,
+    left: 31,
+    width: 352,
+    height: 62,
+    position: "absolute"
+  },
+  continueFacebookButton: {
+    top: 0,
+    left: 0,
+    width: 352,
+    height: 62,
+    position: "absolute"
+  },
+  bsD: {
+    top: 13,
+    color: "rgba(177,177,177,1)",
+    position: "absolute",
+    right: 38,
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  image2: {
+    width:"auto",
+    top: "15.29%",
+    left: 0,
+    height: 150,
+    position: "absolute",
+    right: 0
+  },
+  button6: {
+    top: 46,
+    left: 31,
+    width: 150,
+    height: 33,
+    position: "absolute"
+  },
+  icon: {
+    top: 0,
+    left: 125,
+    position: "absolute",
+    color: "rgba(2,172,235,1)",
+    fontSize: 25
+  },
+  chooseLanguage: {
+    top: 3,
+    left: 0,
+    width: 149,
+    height: 30,
+    color: "rgba(2,172,235,1)",
+    position: "absolute",
+    borderRadius: 10,
+    borderColor: "rgba(2,172,235,1)",
+    borderWidth: 2,
+    fontSize: 16,
+    fontFamily: "roboto-regular"
   }
 });
+
+export default WelcomePage;
