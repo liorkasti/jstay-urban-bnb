@@ -1,15 +1,25 @@
-import React, { Component } from "react";
+import React, { useState,useEffect } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { sendValue } from "../LoginHandler"
 
 function MaterialIconTextbox4(props) {
+  const [value, setValue] = useState("");
+  
+  useEffect(()=>{
+      sendValue({value, type: "email", url: undefined })
+  },[value]);
+
   return (
     <View style={[styles.container, props.style]}>
       <Icon name="email-outline" style={styles.iconStyle}></Icon>
       <TextInput
+        value={value}
+        autoCompleteType="email"
         placeholder={props.textInput1 || "Label"}
         placeholderTextColor="rgba(177,177,177,1)"
         style={styles.inputStyle}
+        onChangeText={(res)=>{setValue(res);}}
       ></TextInput>
     </View>
   );
