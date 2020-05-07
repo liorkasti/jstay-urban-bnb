@@ -8,3 +8,11 @@ export const sendValue = (loginInfo)=>{
 export const requestLogin = () =>{
     
 }
+
+export const requestGoogleLogin = async () => {
+    const googleResponse = await logInWithGoogle();
+    saveUserLoginData(googleResponse)
+}
+const saveUserLoginData = (responseData) => {
+    console.warn(responseData)
+}
