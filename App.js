@@ -30,7 +30,7 @@ export default function App() {
     FontAwesomeIcon.loadFont();
 
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
-    // console.disableYellowBox = true;
+    console.disableYellowBox = true;
   }, [])
 
   return (

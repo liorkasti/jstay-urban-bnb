@@ -6,53 +6,62 @@ import GotoLoginButton from "./components/GotoLoginButton";
 import CreateAccountButton from "./components/CreateAccountButton";
 import ContinueFacebookButton from "./components/ContinueFacebookButton";
 import Icon from "react-native-vector-icons/Entypo";
+// import {signInWithGoogle} from "../firebase/firebase.utils";
 
 function WelcomePage(props) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button2}>
-        <ContinueGoogleButton
-          style={styles.continueGoogleButton}
-        ></ContinueGoogleButton>
-      </TouchableOpacity>
-          <Svg viewBox="0 0 44 63.01159786070548" style={styles.path}>
-            <Path
-              strokeWidth={1}
-              fill="rgba(230, 230, 230,1)"
-              stroke="rgba(230, 230, 230,1)"
-              d="M0.00 0.01 C0.00 1.01 44.00 63.01 44.00 63.01 C44.00 63.01 0.00 -0.99 0.00 0.01 Z"
-            ></Path>
-          </Svg>
-      <TouchableOpacity style={styles.button4}>
-        <GotoLoginButton onPress={props.onNext} style={styles.gotoLoginButton}></GotoLoginButton>
-        </TouchableOpacity>
-      <TouchableOpacity style={styles.button5}>
-        <CreateAccountButton
-        onPress={props.createAccount}
-          style={styles.createAccountButton}
-        ></CreateAccountButton>
-      </TouchableOpacity>
-      <Text style={styles.text}>
-        By tapping &#39;Continue with Facebook&#39;, &#39;Continue with
-        Google&#39; or &#39;Create an Account&#39; you agree to Jstays&#39;
-        Terms of Service, Payments Terms of Service, Privacy Policy and
-        Non-Discrimination Policy.
-      </Text>
-      <TouchableOpacity style={styles.button3}>
-        <ContinueFacebookButton
-          style={styles.continueFacebookButton}
-        ></ContinueFacebookButton>
-      </TouchableOpacity>
+      <Svg viewBox="0 0 44 63.01159786070548" style={styles.path}>
+        <Path
+          strokeWidth={1}
+          fill="rgba(230, 230, 230,1)"
+          stroke="rgba(230, 230, 230,1)"
+          d="M0.00 0.01 C0.00 1.01 44.00 63.01 44.00 63.01 C44.00 63.01 0.00 -0.99 0.00 0.01 Z"
+        ></Path>
+      </Svg>
+
       <Text style={styles.bsD}>BS&quot;D</Text>
       <Image
         source={require("../assets/images/JStay-Logo-blue-shin6.png")}
         resizeMode="contain"
         style={styles.image2}
       ></Image>
+
       <TouchableOpacity style={styles.button6}>
         <Icon name="chevron-down" style={styles.icon}></Icon>
         <Text style={styles.chooseLanguage}>Choose language</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button4}>
+        <GotoLoginButton onPress={props.onNext} style={styles.gotoLoginButton}></GotoLoginButton>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button5}>
+        <CreateAccountButton
+          onPress={props.createAccount}
+          style={styles.createAccountButton}
+        ></CreateAccountButton>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button3}>
+        <ContinueFacebookButton
+          style={styles.continueFacebookButton}
+        ></ContinueFacebookButton>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button2}>
+        <ContinueGoogleButton
+          // onClick={signInWithGoogle}
+          style={styles.continueGoogleButton}
+        ></ContinueGoogleButton>
+      </TouchableOpacity>
+
+      <Text style={styles.text}>
+        By tapping &#39;Continue with Facebook&#39;, &#39;Continue with
+        Google&#39; or &#39;Create an Account&#39; you agree to Jstays&#39;
+        Terms of Service, Payments Terms of Service, Privacy Policy and
+        Non-Discrimination Policy.
+      </Text>
+
     </View>
   );
 }
@@ -62,20 +71,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
-  },
-  button2: {
-    top: 425,
-    left: 31,
-    width: 352,
-    height: 62,
-    position: "absolute"
-  },
-  continueGoogleButton: {
-    top: 0,
-    left: 0,
-    width: 352,
-    height: 62,
-    position: "absolute"
   },
   path: {
     top: 151,
@@ -92,33 +87,34 @@ const styles = StyleSheet.create({
     right: -14
   },
   gotoLoginButton: {
-    top: 0,
+    top: 6,
     left: 0,
-    width: 108,
-    height: 48,
+    width: '95%',
+    height: '95%',
     position: "absolute"
   },
   button5: {
     top: 507,
-    left: 31,
-    width: 352,
-    height: 62,
+    // left: 31,
+    // width: '70%',
+    height: '10%',
     position: "absolute"
   },
   createAccountButton: {
     top: 0,
     left: 0,
-    width: 352,
-    height: 62,
+    alignItems: 'center',
+    width: '100%',
+    height: '95%',
     position: "absolute"
   },
   text: {
     left: "7.51%",
-    width: 304,
-    height: 60,
+    width: '85%',
+    height: '10%',
     color: "rgba(168,219,243,1)",
     position: "absolute",
-    bottom: 54,
+    bottom: 46,
     fontSize: 12,
     fontFamily: "roboto-regular",
     textAlign: "left"
@@ -126,15 +122,29 @@ const styles = StyleSheet.create({
   button3: {
     top: 350,
     left: 31,
-    width: 352,
-    height: 62,
+    width: '85%',
+    height: '8%',
     position: "absolute"
   },
   continueFacebookButton: {
+    // top: 0,
+    // left: 0,
+    width: '100%',
+    height: '90%',
+    // position: "absolute"
+  },
+  button2: {
+    top: 425,
+    // left: 31,
+    width: '85%',
+    height: '8%',
+    position: "absolute"
+  },
+  continueGoogleButton: {
     top: 0,
     left: 0,
-    width: 352,
-    height: 62,
+    width: '100%',
+    height: '90%',
     position: "absolute"
   },
   bsD: {
@@ -147,7 +157,7 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
   image2: {
-    width:"auto",
+    width: "auto",
     top: "15.29%",
     left: 0,
     height: 150,
@@ -157,8 +167,8 @@ const styles = StyleSheet.create({
   button6: {
     top: 46,
     left: 31,
-    width: 150,
-    height: 33,
+    width: '38%',
+    height: '4%',
     position: "absolute"
   },
   icon: {
@@ -169,10 +179,13 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
   chooseLanguage: {
-    top: 3,
-    left: 0,
-    width: 149,
-    height: 30,
+    // top: 3,
+    // left: 0,
+    alignSelf: 'center',
+    width: '130%',
+    paddingLeft: 10,
+    paddingTop: 2,
+    height: '95%',
     color: "rgba(2,172,235,1)",
     position: "absolute",
     borderRadius: 10,
