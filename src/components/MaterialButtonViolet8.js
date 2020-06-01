@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     margin: 0,
     fontSize: 14,
-    
+    fontFamily: "roboto-regular"
   }
 });
 

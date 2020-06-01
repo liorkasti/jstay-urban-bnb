@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonWithVioletText9(props) {
   return (
-    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]}>
       <Text style={styles.caption}>Create Account</Text>
     </TouchableOpacity>
   );
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 16,
-    fontFamily: "roboto-bold"
+    fontFamily: "roboto-700"
   }
 });
 

@@ -8,7 +8,7 @@ function CityCards(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.image3Row}>
         <ImageBackground
-          source={require("../../assets/images/palace-of-westminster-and-big-ben-london-england-3071145.jpg")}
+          source={require("../assets/images/palace-of-westminster-and-big-ben-london-england-3071145.jpg")}
           resizeMode="stretch"
           style={styles.image3}
           imageStyle={styles.image3_imageStyle}
@@ -24,7 +24,7 @@ function CityCards(props) {
           </View>
         </ImageBackground>
         <ImageBackground
-          source={require("../../assets/images/eriffel_tower.jpeg")}
+          source={require("../assets/images/eriffel_tower.jpeg")}
           resizeMode="stretch"
           style={styles.image2}
           imageStyle={styles.image2_imageStyle}
@@ -43,7 +43,7 @@ function CityCards(props) {
       <View style={styles.image5StackRow}>
         <View style={styles.image5Stack}>
           <ImageBackground
-            source={require("../../assets/images/Jerusalem_Western_Wall_BW_1.jpeg")}
+            source={require("../assets/images/Jerusalem_Western_Wall_BW_1.jpeg")}
             resizeMode="stretch"
             style={styles.image5}
             imageStyle={styles.image5_imageStyle}
@@ -58,7 +58,7 @@ function CityCards(props) {
           ></MaterialButtonWithVioletText13>
         </View>
         <ImageBackground
-          source={require("../../assets/images/newyork.jpeg")}
+          source={require("../assets/images/newyork.jpeg")}
           resizeMode="stretch"
           style={styles.image4}
           imageStyle={styles.image4_imageStyle}
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   london: {
     color: "rgba(2,172,235,1)",
     fontSize: 24,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     marginTop: 17,
     marginLeft: 14
   },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText1430Stack: {
     width: 199,
     height: 36,
-    marginTop: 73
+    marginTop: 68
   },
   image2: {
     width: 200,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   paris: {
     color: "rgba(2,172,235,1)",
     fontSize: 24,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     marginTop: 17,
     marginLeft: 13
   },
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText1435Stack: {
     width: 199,
     height: 36,
-    marginTop: 73
+    marginTop: 68
   },
   image3Row: {
     height: 150,
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-700"
   },
   materialButtonWithVioletText1437: {
     top: 114,
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
   newYork: {
     color: "rgba(2,172,235,1)",
     fontSize: 24,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     marginTop: 19,
     marginLeft: 13
   },
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText1439Stack: {
     width: 199,
     height: 36,
-    marginTop: 71
+    marginTop: 66
   },
   image5StackRow: {
     height: 150,
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   aroundTheGlobe: {
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     marginTop: -342
   }
 });

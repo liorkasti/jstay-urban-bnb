@@ -5,7 +5,7 @@ function MaterialCard5(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Image
-        source={require("../../assets/images/7884c76e-dd6b-40f7-9957-711355f90456.jpg")}
+        source={require("../assets/images/7884c76e-dd6b-40f7-9957-711355f90456.jpg")}
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.bodyContent}>
@@ -40,20 +40,22 @@ const styles = StyleSheet.create({
   },
   bodyContent: {
     backgroundColor: "rgba(15,15, 15,0)",
-    justifyContent: "center",
+    justifyContent: "space-between",
     padding: 16,
     paddingTop: 24
   },
   titleStyle: {
     color: "rgba(2,172,235,1)",
+    alignSelf: "stretch",
     paddingBottom: 12,
     fontSize: 24,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-700"
   },
   subtitleStyle: {
     color: "rgba(2,172,235,1)",
+    alignSelf: "stretch",
     fontSize: 14,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     lineHeight: 16
   }
 });

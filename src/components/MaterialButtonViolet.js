@@ -30,9 +30,9 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   caption: {
-    color: "rgba(2,172,235,1)",
-    fontSize: 18,
-    fontFamily: "roboto-bold",
+    color: "rgba(0,88,155,1)",
+    fontSize: 20,
+    fontFamily: "roboto-700",
     textAlign: "center"
   },
   loremIpsum: {

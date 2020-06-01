@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   },
   caption: {
     color: "#b1b1b1",
-    fontSize: 18,
-    fontFamily: "roboto-bold"
+    fontSize: 20,
+    fontFamily: "roboto-700"
   }
 });
 

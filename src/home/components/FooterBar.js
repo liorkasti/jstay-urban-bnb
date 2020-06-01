@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   materialBasicFooter1: {
     left: 0,
-    height: 76,
+    height: 100,
     position: "absolute",
     right: 0,
     bottom: 0
@@ -42,17 +42,18 @@ const styles = StyleSheet.create({
     color: "rgba(208,2,27,1)",
     fontSize: 20,
     right: 134,
-    bottom: 54
+    bottom: 83
   },
   icon5: {
     position: "absolute",
     color: "rgba(208,2,27,1)",
     fontSize: 15,
-    bottom: 45,
-    right: 40
+    bottom: 88,
+    right: 39
   },
   materialBasicFooter1Stack: {
-    height: 80
+    height: 105,
+    marginBottom: -2
   }
 });
 

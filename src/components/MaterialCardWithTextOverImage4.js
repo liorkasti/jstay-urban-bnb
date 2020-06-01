@@ -6,12 +6,12 @@ function MaterialCardWithTextOverImage4(props) {
     <View style={[styles.container, props.style]}>
       <Image
         source={require("../assets/images/cardImage3.png")}
+        resizeMode="cover"
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.cardBody}>
         <View style={styles.bodyContent}>
-          <Text style={styles.jerusalem}>Jerusalem</Text>
-          <Text style={styles.stayIn}>Stay in</Text>
+          <Text style={styles.jerusalem}>London</Text>
         </View>
         <View style={styles.actionBody}>
           <TouchableOpacity style={styles.actionButton1}>
@@ -41,19 +41,21 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
-    overflow: "hidden",
+    overflow: "hidden"
   },
   cardItemImagePlace: {
-    flex: 1,
+    width: "99.72%",
+    height: "100%",
     backgroundColor: "#ccc",
-    height: "100%"
+    minHeight: 359
   },
   cardBody: {
-    left: 0,
+    top: 0,
+    left: "0.7%",
+    width: "100%",
     backgroundColor: "rgba(0,0,0,0.2)",
     position: "absolute",
-    right: 0,
-    bottom: 0
+    bottom: 220
   },
   bodyContent: {
     justifyContent: "center",
@@ -61,21 +63,11 @@ const styles = StyleSheet.create({
     paddingTop: 24
   },
   jerusalem: {
-    width: 199,
-    height: 36,
-    color: "rgba(230,230,230,1)",
+    color: "#e6e6e6",
+    alignSelf: "flex-start",
     paddingBottom: 12,
     fontSize: 35,
-    fontFamily: "roboto-bold"
-  },
-  stayIn: {
-    width: 49,
-    height: 16,
-    color: "rgba(230,230,230,1)",
-    opacity: 0.5,
-    fontSize: 14,
-    fontFamily: "roboto-bold",
-    lineHeight: 16
+    fontFamily: "roboto-700"
   },
   actionBody: {
     flexDirection: "row",

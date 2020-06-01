@@ -14,10 +14,10 @@ function MaterialBasicFooter1(props) {
       </TouchableOpacity>
       <TouchableOpacity style={styles.activebtnWrapper}>
         <MaterialCommunityIconsIcon
-          name="apple-safari"
+          name="airplane-landing"
           style={styles.activeIcon}
         ></MaterialCommunityIconsIcon>
-        <Text style={styles.activeText}>My Stays</Text>
+        <Text style={styles.activeText}>My Trips</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.btnWrapper2}>
         <MaterialCommunityIconsIcon
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   btnWrapper1: {
     width: "25%",
     alignItems: "center",
+    alignSelf: "flex-start",
     paddingTop: 8,
     paddingBottom: 6,
     minWidth: 80,
@@ -69,12 +70,13 @@ const styles = StyleSheet.create({
   btn1Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   activebtnWrapper: {
     width: "25%",
     alignItems: "center",
+    alignSelf: "flex-start",
     paddingTop: 6,
     paddingBottom: 6,
     minWidth: 80,
@@ -85,20 +87,23 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     color: "rgba(230,230,230,1)",
     fontSize: 24,
-    opacity: 1,
-    paddingTop: 5
+    paddingTop: 0,
+    opacity: 0.8,
+    marginTop: 0
   },
   activeText: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
     paddingTop: 4,
     fontSize: 14,
-    
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   btnWrapper2: {
     width: "25%",
     alignItems: "center",
+    alignSelf: "flex-start",
+    flexWrap: "nowrap",
     paddingTop: 8,
     paddingBottom: 6,
     minWidth: 80,
@@ -114,12 +119,14 @@ const styles = StyleSheet.create({
   btn2Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   btnWrapper3: {
     width: "25%",
     alignItems: "center",
+    alignSelf: "flex-start",
+    flexWrap: "nowrap",
     paddingTop: 8,
     paddingBottom: 6,
     minWidth: 80,
@@ -135,7 +142,7 @@ const styles = StyleSheet.create({
   btn3Text: {
     color: "rgba(230,230,230,1)",
     opacity: 0.8,
-    
+    fontFamily: "roboto-regular",
     textAlign: "center"
   }
 });

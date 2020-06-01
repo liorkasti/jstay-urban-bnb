@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginLeft: -7,
     paddingTop: 12,
     fontSize: 14,
-    
+    fontFamily: "roboto-regular",
     lineHeight: 8,
     letterSpacing: 0,
     textAlign: "center"

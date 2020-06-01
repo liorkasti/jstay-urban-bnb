@@ -29,9 +29,9 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   caption: {
-    color: "rgba(2,172,235,1)",
+    color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-bold"
+    fontFamily: "roboto-700"
   }
 });
 

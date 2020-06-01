@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/Entypo";
 function MaterialButtonViolet6(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Next</Text>
+      <Text style={styles.caption}>{props.text1 || "Next"}</Text>
       <Icon name="chevron-right" style={styles.icon}></Icon>
     </TouchableOpacity>
   );
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(0,88,155,1)",
     fontSize: 16,
-    fontFamily: "roboto-bold"
+    fontFamily: "roboto-700"
   },
   icon: {
     left: 70,

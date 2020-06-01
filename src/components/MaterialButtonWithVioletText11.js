@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
     height: 21,
     color: "rgba(177,177,177,1)",
     fontSize: 20,
-    fontFamily: "roboto-bold"
+    fontFamily: "roboto-700",
+    textAlign: "center"
   }
 });
 

@@ -5,7 +5,7 @@ function MaterialCardWithTextOverImage5(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Image
-        source={require("../assets/images/cardImage3.png")}
+        source={require("../assets/images/cardImage4.png")}
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.cardBody}>
@@ -64,13 +64,13 @@ const styles = StyleSheet.create({
     color: "#FFF",
     paddingBottom: 12,
     fontSize: 35,
-    fontFamily: "roboto-bold"
+    fontFamily: "roboto-700"
   },
   subtitleStyle: {
     color: "#FFF",
     opacity: 0.5,
     fontSize: 14,
-    fontFamily: "roboto-bold",
+    fontFamily: "roboto-700",
     lineHeight: 16
   },
   actionBody: {

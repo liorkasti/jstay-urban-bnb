@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   radioIcon: {
-    color: "rgba(230,230,230,1)",
+    color: "rgba(0,88,155,1)",
     fontFamily: "Roboto",
     fontSize: 23,
     lineHeight: 24

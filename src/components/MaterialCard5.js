@@ -1,28 +1,16 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { StyleSheet, View, Image, Text } from "react-native";
 
 function MaterialCard5(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Image
-        source={require("../assets/images/cardImage1.png")}
+        source={require("../assets/images/7884c76e-dd6b-40f7-9957-711355f90456.jpg")}
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.bodyContent}>
-        <Text style={styles.titleStyle}>Local</Text>
-        <Text style={styles.subtitleStyle}>Checkout local listings</Text>
-      </View>
-      <View style={styles.rect}>
-        <TouchableOpacity style={styles.actionButton1}>
-          <Text style={styles.actionText1}>Stays</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton2}>
-          <Text style={styles.actionText2}>Hotels</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionButton3}>
-          <Icon name="chevron-up" style={styles.iconStyle}></Icon>
-        </TouchableOpacity>
+        <Text style={styles.titleStyle}>Local Stays</Text>
+        <Text style={styles.subtitleStyle}>Check out local listings</Text>
       </View>
     </View>
   );
@@ -30,7 +18,7 @@ function MaterialCard5(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(230,230,230,1)",
+    backgroundColor: "rgba(0,88,155,1)",
     flexWrap: "nowrap",
     elevation: 3,
     borderRadius: 10,
@@ -48,59 +36,27 @@ const styles = StyleSheet.create({
   cardItemImagePlace: {
     flex: 1,
     backgroundColor: "#ccc",
-    minHeight: 100
+    minHeight: 210
   },
   bodyContent: {
-    justifyContent: "center",
+    backgroundColor: "rgba(15,15, 15,0)",
+    justifyContent: "space-between",
     padding: 16,
     paddingTop: 24
   },
   titleStyle: {
-    color: "#000",
+    color: "rgba(2,172,235,1)",
+    alignSelf: "stretch",
     paddingBottom: 12,
     fontSize: 24,
-    
+    fontFamily: "roboto-700"
   },
   subtitleStyle: {
-    color: "#000",
-    opacity: 0.5,
+    color: "rgba(2,172,235,1)",
+    alignSelf: "stretch",
     fontSize: 14,
-    
+    fontFamily: "roboto-700",
     lineHeight: 16
-  },
-  rect: {
-    flexDirection: "row",
-    padding: 8
-  },
-  actionButton1: {
-    height: 36,
-    padding: 8
-  },
-  actionText1: {
-    color: "rgba(0,88,155,1)",
-    opacity: 0.9,
-    fontSize: 14
-  },
-  actionButton2: {
-    height: 36,
-    padding: 8
-  },
-  actionText2: {
-    color: "rgba(0,88,155,1)",
-    opacity: 0.9,
-    fontSize: 14
-  },
-  actionButton3: {
-    height: 36,
-    position: "absolute",
-    right: 8,
-    bottom: 12,
-    padding: 8
-  },
-  iconStyle: {
-    fontSize: 24,
-    color: "#000",
-    opacity: 0.7
   }
 });
 

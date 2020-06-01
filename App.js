@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+      <StatusBar animated={false} hidden={false}></StatusBar>
+import { StyleSheet, View, StatusBar } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -35,13 +36,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <StatusBar animated={true} hidden={false}></StatusBar>
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route exact path="/" >
+            {/* <Route exact path="/" >
               {loggedIn ? <Redirect to="/home" /> : <Login />}
-            </Route>
-            <Route path="/home" component={Home} />
+            </Route> */}
+            <Route path="/" component={Home} />
             <Route path="/createStay" component={CreateStay} />
             <Route path="/createAccount" component={CreateAccount} />
             <Route path="/account" component={Account} />

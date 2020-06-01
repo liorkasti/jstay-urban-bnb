@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 function MaterialButtonViolet4(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Become a Host</Text>
+      <Text style={styles.caption}>Book A Stay</Text>
     </TouchableOpacity>
   );
 }
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
   },
   caption: {
     color: "rgba(230,230,230,1)",
-    fontSize: 15,
-    
+    fontSize: 18,
+    fontFamily: "roboto-700",
     textAlign: "center"
   }
 });

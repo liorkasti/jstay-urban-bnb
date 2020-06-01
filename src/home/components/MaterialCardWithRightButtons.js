@@ -7,7 +7,7 @@ function MaterialCardWithRightButtons(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Image
-        source={require("../../assets/images/IMG_3025.jpg")}
+        source={require("../assets/images/IMG_3025.jpg")}
         style={styles.cardItemImagePlace}
       ></Image>
       <View style={styles.buttonGroup}>
@@ -32,14 +32,19 @@ function MaterialCardWithRightButtons(props) {
         name="home-heart"
         style={styles.icon5}
       ></MaterialCommunityIconsIcon>
-      <Text style={styles.shollisPlace}>Sholli&#39;s Place</Text>
-      <View style={styles.group}>
-        <View style={styles.icon6Row}>
-          <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
-          <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
-          <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
-          <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
-          <FontAwesomeIcon name="star" style={styles.icon10}></FontAwesomeIcon>
+      <View style={styles.shollisPlaceStack}>
+        <Text style={styles.shollisPlace}>Sholli&#39;s Place</Text>
+        <View style={styles.group}>
+          <View style={styles.icon6Row}>
+            <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
+            <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
+            <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
+            <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
+            <FontAwesomeIcon
+              name="star"
+              style={styles.icon10}
+            ></FontAwesomeIcon>
+          </View>
         </View>
       </View>
       <MaterialCommunityIconsIcon
@@ -69,7 +74,8 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
-    overflow: "hidden"
+    overflow: "hidden",
+    flexDirection: "row"
   },
   cardItemImagePlace: {
     flex: 1,
@@ -114,16 +120,16 @@ const styles = StyleSheet.create({
     opacity: 0.8
   },
   shollisPlace: {
-    top: 217,
-    left: 9,
+    top: 0,
+    left: 0,
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 18,
     fontFamily: "roboto-regular"
   },
   group: {
-    top: 238,
-    left: 10,
+    top: 21,
+    left: 1,
     width: 97,
     height: 18,
     position: "absolute",
@@ -158,16 +164,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1
   },
+  shollisPlaceStack: {
+    top: 217,
+    left: 9,
+    width: 105,
+    height: 39,
+    position: "absolute"
+  },
   icon11: {
     top: 214,
-    left: 150,
+    left: 146,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24
   },
   icon12: {
     top: 214,
-    left: 188,
+    left: 183,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24

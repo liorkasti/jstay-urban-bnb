@@ -2,81 +2,55 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   View,
-  TouchableOpacity,
   StatusBar,
-  Text
+  Text,
+  TouchableOpacity,
+  ScrollView
 } from "react-native";
-import MaterialCard5 from "./components/MaterialCard5";
-import CityCards from "./components/CityCards";
-import SmallSeach from "./components/SmallSeach";
-import HomeSearch from "./components/HomeSearch";
-import HeaderBar from "./components/HeaderBar";
-import JstayLogoDark from "./components/JstayLogoDark";
-import StayCard from "./components/StayCard";
-import CreateStayButton from "./components/CreateStayButton";
-import FooterBar from "./components/FooterBar";
-import MaterialButtonWithVioletText21 from "./components/MaterialButtonWithVioletText21";
-import MaterialButtonWithVioletText22 from "./components/MaterialButtonWithVioletText22";
-import MaterialButtonWithVioletText23 from "./components/MaterialButtonWithVioletText23";
-import MaterialButtonWithVioletText24 from "./components/MaterialButtonWithVioletText24";
-import MaterialButtonWithVioletText25 from "./components/MaterialButtonWithVioletText25";
-import MaterialButtonWithVioletText26 from "./components/MaterialButtonWithVioletText26";
-import MaterialButtonWithVioletText28 from "./components/MaterialButtonWithVioletText28";
-import MapButton from "./components/MapButton";
+import CityCards from "../components/CityCards";
+import SearchDropdown from "../components/SearchDropdown";
+import MaterialButtonWithVioletText21 from "../components/MaterialButtonWithVioletText21";
+import MaterialButtonWithVioletText22 from "../components/MaterialButtonWithVioletText22";
+import MaterialButtonWithVioletText23 from "../components/MaterialButtonWithVioletText23";
+import MaterialButtonWithVioletText24 from "../components/MaterialButtonWithVioletText24";
+import MaterialButtonWithVioletText25 from "../components/MaterialButtonWithVioletText25";
+import MaterialButtonWithVioletText26 from "../components/MaterialButtonWithVioletText26";
+import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithVioletText28";
+import HeaderBar from "../components/HeaderBar";
+import FooterBar from "../components/FooterBar";
+import MaterialCard5 from "../components/MaterialCard5";
+import MapButton2 from "../components/MapButton2";
+import JstayLogoDark from "../components/JstayLogoDark";
+import SearchBar from "../components/SearchBar";
+import MaterialCardWithRightButtons from "../components/MaterialCardWithRightButtons";
 
 function Home(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.button4Column}>
-        <TouchableOpacity style={styles.button4}>
-          <MaterialCard5 style={styles.materialCard5}></MaterialCard5>
-        </TouchableOpacity>
-        <View style={styles.cityCardsStackStack}>
-          <View style={styles.cityCardsStack}>
-            <CityCards style={styles.cityCards}></CityCards>
-            <View style={styles.group2}>
-              <View style={styles.rect10}>
-                <SmallSeach style={styles.smallSeach}></SmallSeach>
-              </View>
-            </View>
-          </View>
-          <View style={styles.group}>
-            <HomeSearch style={styles.homeSearch}></HomeSearch>
-          </View>
-          <StatusBar animated={false} hidden={false}></StatusBar>
-          <HeaderBar style={styles.headerBar}></HeaderBar>
-          <View style={styles.bsD1Stack}>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-            <Text style={styles.bsD2}>BS&quot;D</Text>
-          </View>
-          <TouchableOpacity style={styles.button52}>
-            <JstayLogoDark style={styles.jstayLogoDark}></JstayLogoDark>
-          </TouchableOpacity>
-        </View>
-        <TouchableOpacity style={styles.button3}>
-          <StayCard style={styles.stayCard}></StayCard>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button2}>
-          <CreateStayButton style={styles.createStayButton}></CreateStayButton>
-        </TouchableOpacity>
-        <Text style={styles.topStays}>Top Stays</Text>
-        <Text style={styles.nearby}>Nearby</Text>
-        <Text style={styles.becomeAHost}>Become A Host</Text>
-      </View>
-      <View style={styles.button4ColumnFiller}></View>
-      <View style={styles.footerBarStackStack}>
-        <View style={styles.footerBarStack}>
-          <FooterBar style={styles.footerBar}></FooterBar>
+      <ScrollView>
+      <StatusBar barStyle="undefined" />
+      <View style={styles.cityCardsStackStack}>
+        <View style={styles.cityCardsStack}>
+          <CityCards style={styles.cityCards}></CityCards>
+          <Text style={styles.loremIpsum2}></Text>
+          <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
           <View style={styles.group1}>
             <View style={styles.rect9}>
-              <View style={styles.materialButtonWithVioletText21Stack}>
-                <MaterialButtonWithVioletText21
-                  style={styles.materialButtonWithVioletText21}
-                ></MaterialButtonWithVioletText21>
+              <View style={styles.button54Stack}>
+                <TouchableOpacity
+                  onPress={() => props.navigation.navigate("MyStaysList")}
+                  style={styles.button54}
+                >
+                  <View style={styles.materialButtonWithVioletText21Stack}>
+                    <MaterialButtonWithVioletText21
+                      style={styles.materialButtonWithVioletText21}
+                    ></MaterialButtonWithVioletText21>
+                    <View style={styles.rect3}></View>
+                  </View>
+                </TouchableOpacity>
                 <MaterialButtonWithVioletText22
                   style={styles.materialButtonWithVioletText22}
                 ></MaterialButtonWithVioletText22>
-                <View style={styles.rect3}></View>
                 <View style={styles.rect4}></View>
               </View>
               <View style={styles.materialButtonWithVioletText23Stack}>
@@ -107,10 +81,32 @@ function Home(props) {
             </View>
           </View>
         </View>
-        <TouchableOpacity style={styles.button5}>
-          <MapButton style={styles.mapButton}></MapButton>
-        </TouchableOpacity>
+        <HeaderBar style={styles.headerBar}></HeaderBar>
+        <Text style={styles.nearby}>Nearby</Text>
+        <View style={styles.footerBar1Stack}>
+          <FooterBar style={styles.footerBar1}></FooterBar>
+          <TouchableOpacity style={styles.button4}>
+            <MaterialCard5 style={styles.materialCard5}></MaterialCard5>
+          </TouchableOpacity>
+          <MapButton2 style={styles.mapButton2}></MapButton2>
+          <FooterBar style={styles.footerBar2}></FooterBar>
+        </View>
       </View>
+      <Text style={styles.topStays}>Top Stays</Text>
+      <View style={styles.bsD1Stack}>
+        <Text style={styles.bsD1}>BS&quot;D</Text>
+        <Text style={styles.bsD2}>BS&quot;D</Text>
+      </View>
+      <View style={styles.button52Stack}>
+        <TouchableOpacity style={styles.button52}>
+          <JstayLogoDark style={styles.jstayLogoDark}></JstayLogoDark>
+        </TouchableOpacity>
+        <SearchBar style={styles.searchBar}></SearchBar>
+      </View>
+      <MaterialCardWithRightButtons
+        style={styles.materialCardWithRightButtons1}
+      ></MaterialCardWithRightButtons>
+      </ScrollView>
     </View>
   );
 }
@@ -120,190 +116,49 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)"
   },
-  button4: {
-    width: 405,
-    height: 349,
-    marginTop: 563,
-    marginLeft: 18
-  },
-  materialCard5: {
-    height: 349,
-    backgroundColor: "rgba(0,88,155,1)",
-    borderRadius: 10,
-    borderColor: "rgba(0,88,155,1)",
-    borderWidth: 5
-  },
   cityCards: {
-    top: 163,
-    left: 5,
-    width: 406,
+    top: 62,
+    left: 4,
     height: 342,
-    position: "absolute"
-  },
-  group2: {
-    top: 0,
-    left: 0,
-    width: 414,
-    height: 448,
     position: "absolute",
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10
+    right: 3
   },
-  rect10: {
-    width: 414,
-    height: 448,
-    backgroundColor: "rgba(2,172,235,1)",
-    marginLeft: 10
-  },
-  smallSeach: {
-    height: 421,
-    marginTop: 14,
-    marginLeft: 14,
-    marginRight: 20
-  },
-  cityCardsStack: {
-    top: 0,
-    left: 13,
-    width: 414,
-    height: 505,
-    position: "absolute"
-  },
-  group: {
-    top: 49,
-    left: 37,
-    width: 319,
-    height: 46,
-    position: "absolute"
-  },
-  homeSearch: {
-    width: 319,
-    height: 46
-  },
-  headerBar: {
-    top: 103,
-    left: 0,
-    width: 440,
-    height: 56,
-    position: "absolute"
-  },
-  bsD1: {
-    top: 0,
-    left: 3,
-    color: "rgba(177,177,177,1)",
+  loremIpsum2: {
+    top: 201,
+    left: 385,
+    color: "rgba(230,230,230,1)",
     position: "absolute",
-    opacity: 0.35,
-    fontSize: 10,
+    fontSize: 14,
     fontFamily: "roboto-regular"
   },
-  bsD2: {
-    top: 0,
-    color: "rgba(177,177,177,1)",
+  searchDropdown: {
     position: "absolute",
-    right: 3,
-    opacity: 0.35,
-    fontSize: 10,
-    fontFamily: "roboto-regular"
-  },
-  bsD1Stack: {
-    top: 14,
-    left: 363,
-    width: 29,
-    height: 12,
-    position: "absolute"
-  },
-  button52: {
-    top: 39,
-    left: 358,
-    width: 62,
-    height: 62,
-    position: "absolute"
-  },
-  jstayLogoDark: {
-    width: 62,
-    height: 62
-  },
-  cityCardsStackStack: {
-    width: 440,
-    height: 505,
-    marginTop: -912
-  },
-  button3: {
-    width: 405,
-    height: 266,
-    justifyContent: "center",
-    marginTop: 466,
-    marginLeft: 18
-  },
-  stayCard: {
-    width: 405,
-    height: 266
-  },
-  button2: {
-    width: 405,
-    height: 60,
-    marginTop: 56,
-    marginLeft: 18
-  },
-  createStayButton: {
-    width: 405,
-    height: 60
-  },
-  topStays: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 18,
-    fontFamily: "roboto-regular",
-    marginTop: -422,
-    marginLeft: 19
-  },
-  nearby: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 18,
-    fontFamily: "roboto-regular",
-    marginTop: -426,
-    marginLeft: 22
-  },
-  becomeAHost: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 18,
-    fontFamily: "roboto-regular",
-    marginTop: 716,
-    marginLeft: 18
-  },
-  button4Column: {
-    width: 440,
-    marginLeft: -13
-  },
-  button4ColumnFiller: {
-    flex: 1
-  },
-  footerBar: {
     left: 0,
-    height: 80,
-    position: "absolute",
-    bottom: 0,
-    right: 0
+    top: 0,
+    height: 345,
+    right: 1
   },
   group1: {
     width: 207,
     height: 350,
     position: "absolute",
     right: 0,
-    bottom: 76
+    bottom: 0
   },
   rect9: {
     width: 207,
     height: 350,
     backgroundColor: "rgba(0,88,155,1)"
   },
-  materialButtonWithVioletText21: {
+  button54: {
     top: 0,
     left: 0,
     width: 207,
     height: 50,
     position: "absolute"
   },
-  materialButtonWithVioletText22: {
-    top: 49,
+  materialButtonWithVioletText21: {
+    top: 0,
     left: 0,
     width: 207,
     height: 50,
@@ -317,6 +172,17 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20
   },
+  materialButtonWithVioletText21Stack: {
+    width: 207,
+    height: 50
+  },
+  materialButtonWithVioletText22: {
+    top: 49,
+    left: 0,
+    width: 207,
+    height: 50,
+    position: "absolute"
+  },
   rect4: {
     top: 98,
     width: 174,
@@ -325,7 +191,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 20
   },
-  materialButtonWithVioletText21Stack: {
+  button54Stack: {
     width: 207,
     height: 99,
     marginTop: 2
@@ -409,27 +275,136 @@ const styles = StyleSheet.create({
     width: 207,
     height: 145
   },
-  footerBarStack: {
-    height: 426,
+  cityCardsStack: {
+    top: 0,
+    left: 14,
+    height: 712,
+    position: "absolute",
+    right: 13
+  },
+  headerBar: {
+    top: 2,
+    left: 0,
+    height: 56,
+    position: "absolute",
+    right: 0
+  },
+  nearby: {
+    top: 422,
+    left: 22,
+    color: "rgba(0,88,155,1)",
+    position: "absolute",
+    fontSize: 18,
+    fontFamily: "roboto-700"
+  },
+  footerBar1: {
+    left: 0,
+    height: 81,
     position: "absolute",
     bottom: 0,
-    right: 0,
-    left: 0
+    right: 0
   },
-  button5: {
-    left: 5,
-    width: 405,
-    height: 66,
+  button4: {
+    top: 0,
+    left: 4,
+    height: 349,
     position: "absolute",
-    bottom: 91
+    right: 5
   },
-  mapButton: {
-    width: 405,
-    height: 66
+  materialCard5: {
+    height: 349,
+    backgroundColor: "rgba(0,88,155,1)",
+    borderRadius: 10,
+    borderColor: "rgba(0,88,155,1)",
+    borderWidth: 5
   },
-  footerBarStackStack: {
-    height: 426,
-    marginBottom: -1
+  mapButton2: {
+    position: "absolute",
+    top: 182,
+    left: 5,
+    height: 60,
+    width: 405
+  },
+  footerBar2: {
+    left: 0,
+    height: 81,
+    position: "absolute",
+    bottom: 0,
+    right: 0
+  },
+  footerBar1Stack: {
+    top: 461,
+    left: 13,
+    height: 349,
+    position: "absolute",
+    right: 13
+  },
+  cityCardsStackStack: {
+    height: 810,
+    marginTop: 101,
+    marginLeft: -13,
+    marginRight: -13
+  },
+  topStays: {
+    color: "rgba(0,88,155,1)",
+    fontSize: 18,
+    fontFamily: "roboto-700",
+    marginTop: 20,
+    marginLeft: 6
+  },
+  bsD1: {
+    top: 0,
+    left: 0,
+    color: "rgba(177,177,177,1)",
+    position: "absolute",
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  bsD2: {
+    top: 0,
+    color: "rgba(177,177,177,1)",
+    position: "absolute",
+    right: 0,
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  bsD1Stack: {
+    width: 23,
+    height: 12,
+    marginTop: -938,
+    marginLeft: 353
+  },
+  button52: {
+    top: 0,
+    width: 62,
+    height: 62,
+    position: "absolute",
+    right: 0
+  },
+  jstayLogoDark: {
+    width: 62,
+    height: 62
+  },
+  searchBar: {
+    top: 11,
+    left: 0,
+    height: 39,
+    position: "absolute",
+    right: 55
+  },
+  button52Stack: {
+    height: 62,
+    marginTop: 8,
+    marginLeft: 34,
+    marginRight: 7
+  },
+  materialCardWithRightButtons1: {
+    height: 266,
+    marginTop: 861,
+    marginLeft: 5,
+    marginRight: 5
   }
 });
 
