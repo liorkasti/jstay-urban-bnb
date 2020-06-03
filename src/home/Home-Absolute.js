@@ -27,7 +27,7 @@ import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithViol
 function Home(props) {
   return (
     <View style={styles.container}>
-      {/* <ScrollView> */}
+      <ScrollView>
         <StatusBar barStyle="undefined" />
         <CityCards style={styles.cityCards}></CityCards>
         <HeaderBar style={styles.headerBar}></HeaderBar>
@@ -85,7 +85,7 @@ function Home(props) {
           ></MaterialButtonWithVioletText28>
         </View>
         <FooterBar style={styles.footerBar2}></FooterBar>
-      {/* </ScrollView> */}
+      </ScrollView>
     </View>
   );
 }

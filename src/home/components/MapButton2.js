@@ -5,12 +5,9 @@ import DragableMap from "./DragableMap";
 function MapButton2(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.button55Filler}></View>
       <TouchableOpacity style={styles.button55}>
-        <View style={styles.dragableMapStack}>
-          <DragableMap style={styles.dragableMap}></DragableMap>
-          <Text style={styles.loremIpsum3}>Find Stays With Map View</Text>
-        </View>
+        <DragableMap style={styles.dragableMap}></DragableMap>
+        <Text style={styles.loremIpsum3}>Find Stays With Map View</Text>
       </TouchableOpacity>
     </View>
   );
@@ -18,11 +15,12 @@ function MapButton2(props) {
 
 const styles = StyleSheet.create({
   container: {},
-  button55Filler: {
-    flex: 1
-  },
   button55: {
-    height: 60
+    left: 0,
+    height: 60,
+    position: "absolute",
+    bottom: 0,
+    right: 0
   },
   dragableMap: {
     position: "absolute",
@@ -38,10 +36,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     fontSize: 20,
     fontFamily: "roboto-700",
-    right: 84
-  },
-  dragableMapStack: {
-    height: 60
+    right: "20.75%"
   }
 });
 

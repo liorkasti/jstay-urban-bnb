@@ -32,20 +32,13 @@ function MaterialCardWithRightButtons(props) {
         name="home-heart"
         style={styles.icon5}
       ></MaterialCommunityIconsIcon>
-      <View style={styles.shollisPlaceStack}>
-        <Text style={styles.shollisPlace}>Sholli&#39;s Place</Text>
-        <View style={styles.group}>
-          <View style={styles.icon6Row}>
-            <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
-            <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
-            <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
-            <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
-            <FontAwesomeIcon
-              name="star"
-              style={styles.icon10}
-            ></FontAwesomeIcon>
-          </View>
-        </View>
+      <Text style={styles.shollisPlace}>Sholli&#39;s Place</Text>
+      <View style={styles.group}>
+        <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
+        <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
+        <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
+        <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
+        <FontAwesomeIcon name="star" style={styles.icon10}></FontAwesomeIcon>
       </View>
       <MaterialCommunityIconsIcon
         name="certificate"
@@ -74,8 +67,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 1.5,
-    overflow: "hidden",
-    flexDirection: "row"
+    overflow: "hidden"
   },
   cardItemImagePlace: {
     flex: 1,
@@ -120,67 +112,65 @@ const styles = StyleSheet.create({
     opacity: 0.8
   },
   shollisPlace: {
-    top: 0,
-    left: 0,
+    top: 217,
+    left: 9,
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 18,
     fontFamily: "roboto-regular"
   },
   group: {
-    top: 21,
-    left: 1,
+    top: 238,
+    left: 10,
     width: 97,
     height: 18,
-    position: "absolute",
-    flexDirection: "row"
+    position: "absolute"
   },
   icon6: {
+    top: 0,
+    left: 0,
+    position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 18
   },
   icon7: {
+    top: 0,
+    left: 20,
+    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18,
-    marginLeft: 3
+    fontSize: 18
   },
   icon8: {
+    top: 0,
+    left: 40,
+    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18,
-    marginLeft: 3
+    fontSize: 18
   },
   icon9: {
+    top: 0,
+    left: 60,
+    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18,
-    marginLeft: 3
+    fontSize: 18
   },
   icon10: {
+    top: 0,
+    left: 80,
+    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18,
-    marginLeft: 3
-  },
-  icon6Row: {
-    height: 18,
-    flexDirection: "row",
-    flex: 1
-  },
-  shollisPlaceStack: {
-    top: 217,
-    left: 9,
-    width: 105,
-    height: 39,
-    position: "absolute"
+    fontSize: 18
   },
   icon11: {
     top: 214,
-    left: 146,
+    left: "41.78%",
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24
   },
   icon12: {
     top: 214,
-    left: 183,
+    left: "52.37%",
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24

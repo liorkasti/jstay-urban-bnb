@@ -15,6 +15,11 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   materialMapView: {
+    top: 0,
+    left: 0,
+    position: "absolute",
+    right: 0,
+    bottom: 0,
     borderRadius: 10,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 5,
@@ -23,8 +28,7 @@ const styles = StyleSheet.create({
       width: 5
     },
     shadowColor: "rgba(0,0,0,1)",
-    shadowOpacity: 0.01,
-    flex: 1
+    shadowOpacity: 0.01
   }
 });
 

@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2
   },
   btnWrapper1: {
-    width: 104,
+    width: "25%",
     alignItems: "center",
     alignSelf: "flex-start",
     paddingTop: 8,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   activebtnWrapper: {
-    width: 104,
+    width: "25%",
     alignItems: "center",
     alignSelf: "flex-start",
     paddingTop: 6,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   btnWrapper2: {
-    width: 104,
+    width: "25%",
     alignItems: "center",
     alignSelf: "flex-start",
     flexWrap: "nowrap",
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   btnWrapper3: {
-    width: 104,
+    width: "25%",
     alignItems: "center",
     alignSelf: "flex-start",
     flexWrap: "nowrap",
