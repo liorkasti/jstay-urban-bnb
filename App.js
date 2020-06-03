@@ -12,9 +12,9 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
 import Login from "./src/login"
 import Home from "./src/home"
-import CreateStay from "./src/createStay"
-import CreateAccount from "./src/createAccount"
-import Account from "./src/account"
+// import CreateStay from "./src/createStay"
+// import CreateAccount from "./src/createAccount"
+// import Account from "./src/account"
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -44,9 +44,9 @@ export default function App() {
               {loggedIn ? <Redirect to="/home" /> : <Login />}
             </Route> */}
             <Route path="/" component={Home} />
-            <Route path="/createStay" component={CreateStay} />
-            <Route path="/createAccount" component={CreateAccount} />
-            <Route path="/account" component={Account} />
+            {/* <Route path="/createStay" component={CreateStay} /> */}
+            {/* <Route path="/createAccount" component={CreateAccount} /> */}
+            {/* <Route path="/account" component={Account} /> */}
           </BackButton>
         </Switch>
       </NativeRouter>

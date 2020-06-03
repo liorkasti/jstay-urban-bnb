@@ -33,8 +33,8 @@ function Home(props) {
         <View style={styles.cityCardsStack}>
           <CityCards style={styles.cityCards}></CityCards>
           <Text style={styles.loremIpsum2}></Text>
-          {/* <SearchDropdown style={styles.searchDropdown}></SearchDropdown> */}
-          {/* <View style={styles.group1}>
+          <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
+          <View style={styles.group1}>
             <View style={styles.rect9}>
               <View style={styles.button54Stack}>
                 <TouchableOpacity
@@ -77,7 +77,7 @@ function Home(props) {
                 <MaterialButtonWithVioletText28 style={styles.materialButtonWithVioletText28} />
               </View>
             </View>
-          </View> */}
+          </View>
         </View>
         <HeaderBar style={styles.headerBar}></HeaderBar>
         <Text style={styles.nearby}>Nearby</Text>
