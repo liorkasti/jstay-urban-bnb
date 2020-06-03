@@ -19,12 +19,8 @@ function HeaderBar(props) {
 const styles = StyleSheet.create({
   container: {},
   cupertinoSegmentWithFourTabs1: {
-    top: 0,
-    left: 0,
     height: 56,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 0
+    backgroundColor: "rgba(2,172,235,1)"
   }
 });
 

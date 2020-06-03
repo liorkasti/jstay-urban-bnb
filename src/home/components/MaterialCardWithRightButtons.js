@@ -34,11 +34,13 @@ function MaterialCardWithRightButtons(props) {
       ></MaterialCommunityIconsIcon>
       <Text style={styles.shollisPlace}>Sholli&#39;s Place</Text>
       <View style={styles.group}>
-        <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
-        <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
-        <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
-        <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
-        <FontAwesomeIcon name="star" style={styles.icon10}></FontAwesomeIcon>
+        <View style={styles.icon6Row}>
+          <FontAwesomeIcon name="star" style={styles.icon6}></FontAwesomeIcon>
+          <FontAwesomeIcon name="star" style={styles.icon7}></FontAwesomeIcon>
+          <FontAwesomeIcon name="star" style={styles.icon8}></FontAwesomeIcon>
+          <FontAwesomeIcon name="star" style={styles.icon9}></FontAwesomeIcon>
+          <FontAwesomeIcon name="star" style={styles.icon10}></FontAwesomeIcon>
+        </View>
       </View>
       <MaterialCommunityIconsIcon
         name="certificate"
@@ -124,53 +126,48 @@ const styles = StyleSheet.create({
     left: 10,
     width: 97,
     height: 18,
-    position: "absolute"
+    position: "absolute",
+    flexDirection: "row"
   },
   icon6: {
-    top: 0,
-    left: 0,
-    position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 18
   },
   icon7: {
-    top: 0,
-    left: 20,
-    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18
+    fontSize: 18,
+    marginLeft: 3
   },
   icon8: {
-    top: 0,
-    left: 40,
-    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18
+    fontSize: 18,
+    marginLeft: 3
   },
   icon9: {
-    top: 0,
-    left: 60,
-    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18
+    fontSize: 18,
+    marginLeft: 3
   },
   icon10: {
-    top: 0,
-    left: 80,
-    position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 18
+    fontSize: 18,
+    marginLeft: 3
+  },
+  icon6Row: {
+    height: 18,
+    flexDirection: "row",
+    flex: 1
   },
   icon11: {
     top: 214,
-    left: "41.78%",
+    left: 146,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24
   },
   icon12: {
     top: 214,
-    left: "52.37%",
+    left: 183,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 24

@@ -6,13 +6,13 @@ function MaterialCardWithImageAndTitle(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.cardBody}>
         <View style={styles.bodyContent}>
-          <Text style={styles.titleStyle}>The Cottage</Text>
-          <Text style={styles.subtitleStyle}>
+          <Text style={styles.theCottage}>The Cottage</Text>
+          <Text style={styles.text}>
             Beautiful cozy cottage in central jerusalem..
           </Text>
         </View>
         <Image
-          source={require("../../assets/images/Cottage.jpg")}
+          source={require("../assets/images/Cottage.jpg")}
           style={styles.cardItemImagePlace}
         ></Image>
       </View>
@@ -58,18 +58,21 @@ const styles = StyleSheet.create({
     padding: 16,
     paddingTop: 24
   },
-  titleStyle: {
+  theCottage: {
     color: "rgba(0,88,155,1)",
     paddingBottom: 12,
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-700"
   },
-  subtitleStyle: {
+  text: {
     color: "rgba(0,88,155,1)",
     opacity: 0.5,
     fontSize: 14,
     fontFamily: "roboto-regular",
-    lineHeight: 16
+    lineHeight: 16,
+    width: 167,
+    height: 36,
+    textAlign: "left"
   },
   cardItemImagePlace: {
     width: 80,
@@ -83,7 +86,8 @@ const styles = StyleSheet.create({
   },
   actionButton1: {
     height: 36,
-    padding: 8
+    padding: 8,
+    width: 75
   },
   actionText1: {
     color: "rgba(0,88,155,1)",
@@ -92,7 +96,8 @@ const styles = StyleSheet.create({
   },
   actionButton2: {
     height: 36,
-    padding: 8
+    padding: 8,
+    width: 122
   },
   actionText2: {
     color: "rgba(0,88,155,1)",
@@ -111,11 +116,11 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   from000Night: {
-    top: 100,
+    top: 108,
     left: 15,
     color: "rgba(230,230,230,1)",
     position: "absolute",
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-700"
   }
 });
 

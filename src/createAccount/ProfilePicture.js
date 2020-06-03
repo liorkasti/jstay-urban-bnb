@@ -1,59 +1,50 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
-import MaterialButtonViolet11 from "../components/MaterialButtonViolet11";
-import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import MaterialButtonWithVioletText9 from "../components/MaterialButtonWithVioletText9";
-import IoniconsIcon from "react-native-vector-icons/Ionicons";
+import AddProfileProfilePictureButton from "../components/AddProfileProfilePictureButton";
+import SkipButton from "../components/SkipButton";
+import JstayLogoFullDark from "../components/JstayLogoFullDark";
+import HeaderBarDark from "../components/HeaderBarDark";
+import DoneCreateAccount from "../components/DoneCreateAccount";
 
 function ProfilePicture(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.materialButtonViolet11Column}>
-        <MaterialButtonViolet11
-          style={styles.materialButtonViolet11}
-        ></MaterialButtonViolet11>
-        <MaterialButtonWithVioletText11
-          style={styles.materialButtonWithVioletText11}
-        ></MaterialButtonWithVioletText11>
-        <View style={styles.rect1}>
-          <View style={styles.buttonRow}>
-            <TouchableOpacity style={styles.button}>
-              <EntypoIcon
-                name="chevron-left"
-                style={styles.icon12}
-              ></EntypoIcon>
-            </TouchableOpacity>
-            <Text style={styles.createAnAccount2}>Create An Account</Text>
-          </View>
-          <View style={styles.buttonRowFiller}></View>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-        </View>
+      <View style={styles.button4Column}>
+        <TouchableOpacity style={styles.button4}>
+          <AddProfileProfilePictureButton
+            style={styles.addProfileProfilePictureButton}
+          ></AddProfileProfilePictureButton>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button2}>
+          <SkipButton style={styles.skipButton}></SkipButton>
+        </TouchableOpacity>
         <View style={styles.addRecentPictureStack}>
           <Text style={styles.addRecentPicture}>
             Please add a recent picture
           </Text>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
+          <JstayLogoFullDark
+            style={styles.jstayLogoFullDark}
+          ></JstayLogoFullDark>
         </View>
-        <View style={styles.rect2}></View>
-      </View>
-      <View style={styles.materialButtonViolet11ColumnFiller}></View>
-      <View style={styles.group1}>
-        <View style={styles.materialButtonWithVioletText9Stack}>
-          <MaterialButtonWithVioletText9
-          onPress={props.onNext}
-            style={styles.materialButtonWithVioletText9}
-          ></MaterialButtonWithVioletText9>
-          <IoniconsIcon
-            name="ios-arrow-forward"
-            style={styles.icon10}
-          ></IoniconsIcon>
+        <Image
+          source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
+          resizeMode="stretch"
+          style={styles.image1}
+        ></Image>
+        <View style={styles.group1}>
+          <View style={styles.headerBarDark1Stack}>
+            <HeaderBarDark
+              text1=""
+              style={styles.headerBarDark1}
+            ></HeaderBarDark>
+            <Text style={styles.bsD1}>BS&quot;D</Text>
+          </View>
         </View>
       </View>
+      <View style={styles.button4ColumnFiller}></View>
+      <DoneCreateAccount
+        style={styles.createAccountDoneButton1}
+      ></DoneCreateAccount>
     </View>
   );
 }
@@ -61,69 +52,25 @@ function ProfilePicture(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
-  materialButtonViolet11: {
+  button4: {
     height: 62,
-    borderRadius: 10,
     marginTop: 525,
-    marginLeft: 39,
+    marginLeft: 29,
     marginRight: 30
   },
-  materialButtonWithVioletText11: {
-    width: 101,
+  addProfileProfilePictureButton: {
+    height: 62
+  },
+  button2: {
     height: 36,
-    opacity: 0.46,
-    marginTop: 30,
-    marginLeft: 180
+    marginTop: 26,
+    marginLeft: 115,
+    marginRight: 116
   },
-  rect1: {
-    width: 424,
-    height: 85,
-    backgroundColor: "rgba(0,88,155,1)",
-    shadowOffset: {
-      height: 5,
-      width: 5
-    },
-    shadowColor: "rgba(2,172,235,1)",
-    shadowOpacity: 0.22,
-    flexDirection: "row",
-    marginTop: -653
-  },
-  button: {
-    width: 29,
-    height: 40
-  },
-  icon12: {
-    color: "rgba(2,172,235,1)",
-    fontSize: 40
-  },
-  createAnAccount2: {
-    color: "rgba(2,172,235,1)",
-    fontSize: 25,
-    fontFamily: "roboto-bold",
-    textAlign: "center",
-    marginLeft: 74,
-    marginTop: 8
-  },
-  buttonRow: {
-    height: 40,
-    flexDirection: "row",
-    marginLeft: 10,
-    marginTop: 40
-  },
-  buttonRowFiller: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  bsD1: {
-    color: "rgba(177,177,177,1)",
-    opacity: 0.35,
-    fontSize: 10,
-    fontFamily: "roboto-regular",
-    marginRight: 38,
-    marginTop: 14
+  skipButton: {
+    height: 36
   },
   addRecentPicture: {
     top: 140,
@@ -132,10 +79,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 81,
     fontSize: 20,
-    fontFamily: "roboto-bold",
+    fontFamily: "roboto-700",
     textAlign: "center"
   },
-  image1: {
+  jstayLogoFullDark: {
     top: 0,
     left: 0,
     height: 150,
@@ -144,46 +91,51 @@ const styles = StyleSheet.create({
   },
   addRecentPictureStack: {
     height: 168,
-    marginTop: 52,
-    marginLeft: 10
+    marginTop: -512
   },
-  rect2: {
+  image1: {
     width: 150,
     height: 150,
-    backgroundColor: "rgba(230, 230, 230,1)",
-    marginTop: 36,
-    marginLeft: 143
-  },
-  materialButtonViolet11Column: {
-    marginLeft: -10
-  },
-  materialButtonViolet11ColumnFiller: {
-    flex: 1
+    borderRadius: 100,
+    marginTop: 35,
+    marginLeft: 127
   },
   group1: {
+    height: 90,
+    marginTop: -490
+  },
+  headerBarDark1: {
+    top: 0,
+    left: 0,
+    height: 90,
+    position: "absolute",
+    right: 0,
+    borderColor: "rgba(2,172,235,1)",
+    borderWidth: 0,
+    borderBottomWidth: 90
+  },
+  bsD1: {
+    top: 13,
+    color: "rgba(177,177,177,1)",
+    position: "absolute",
+    right: 38,
+    opacity: 0.35,
+    fontSize: 10,
+    fontFamily: "roboto-regular"
+  },
+  headerBarDark1Stack: {
+    height: 90
+  },
+  button4Column: {},
+  button4ColumnFiller: {
+    flex: 1
+  },
+  createAccountDoneButton1: {
     width: 154,
     height: 36,
     alignSelf: "flex-end",
     marginBottom: 30,
-    marginRight: 20
-  },
-  materialButtonWithVioletText9: {
-    top: 0,
-    left: 0,
-    width: 154,
-    height: 36,
-    position: "absolute"
-  },
-  icon10: {
-    top: 8,
-    left: 139,
-    position: "absolute",
-    color: "rgba(2,172,235,1)",
-    fontSize: 20
-  },
-  materialButtonWithVioletText9Stack: {
-    width: 154,
-    height: 36
+    marginRight: 30
   }
 });
 

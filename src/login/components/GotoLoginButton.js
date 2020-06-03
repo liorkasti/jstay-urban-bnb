@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import MaterialButtonWithVioletText2 from "./MaterialButtonWithVioletText2";
 
 function GotoLoginButton(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
+      <View style={styles.materialButtonWithVioletText2Filler}></View>
       <MaterialButtonWithVioletText2
-      onPress={props.onPress}
         text1="Log In"
         style={styles.materialButtonWithVioletText2}
       ></MaterialButtonWithVioletText2>
@@ -15,13 +15,16 @@ function GotoLoginButton(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flexDirection: "row"
+  },
+  materialButtonWithVioletText2Filler: {
+    flex: 1,
+    flexDirection: "row"
+  },
   materialButtonWithVioletText2: {
-    top: 0,
     width: 108,
-    height: 48,
-    position: "absolute",
-    right: 0
+    height: 48
   }
 });
 

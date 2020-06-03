@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonWithVioletText2(props) {
   return (
-    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+    <TouchableOpacity style={[styles.container, props.style]}>
       <Text style={styles.caption}>{props.text1 || "BUTTON"}</Text>
     </TouchableOpacity>
   );
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 28,
     color: "rgba(2,172,235,1)",
     fontSize: 20,
-    fontFamily: "roboto-regular",
+    fontFamily: "roboto-700",
     lineHeight: 16
   }
 });

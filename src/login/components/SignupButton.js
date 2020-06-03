@@ -5,6 +5,7 @@ import MaterialButtonWithVioletText12 from "./MaterialButtonWithVioletText12";
 function SignupButton(props) {
   return (
     <View style={[styles.container, props.style]}>
+      <View style={styles.materialButtonWithVioletText12Filler}></View>
       <MaterialButtonWithVioletText12
         style={styles.materialButtonWithVioletText12}
       ></MaterialButtonWithVioletText12>
@@ -14,12 +15,11 @@ function SignupButton(props) {
 
 const styles = StyleSheet.create({
   container: {},
+  materialButtonWithVioletText12Filler: {
+    flex: 1
+  },
   materialButtonWithVioletText12: {
-    left: "0%",
-    width: "100%",
     height: 36,
-    position: "absolute",
-    bottom: "0%",
     opacity: 0.46
   }
 });
