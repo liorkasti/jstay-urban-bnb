@@ -137,13 +137,13 @@ function Pricing(props) {
         <MaterialSwitch1 style={styles.materialSwitch5}></MaterialSwitch1>
       </View>
       <View style={styles.materialButtonViolet1Stack}>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet1}
         ></MaterialButtonViolet6>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet2}
         ></MaterialButtonViolet6>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet3}
         ></MaterialButtonViolet6>
       </View>
@@ -152,7 +152,7 @@ function Pricing(props) {
           style={styles.materialButtonWithVioletText2}
         ></MaterialButtonWithVioletText11>
         <View style={styles.materialButtonWithVioletText2Filler}></View>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>

@@ -73,7 +73,7 @@ function Address(props) {
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText1}
         ></MaterialButtonWithVioletText11>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet6}
         ></MaterialButtonViolet6>
       </View>

@@ -101,7 +101,7 @@ function Policies(props) {
         <Text style={styles.loremIpsum6}>
           Free cancelation prior to check-in
         </Text>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet1}
         ></MaterialButtonViolet6>
         <View style={styles.materialButtonWithVioletText2Row}>
@@ -109,7 +109,7 @@ function Policies(props) {
             style={styles.materialButtonWithVioletText2}
           ></MaterialButtonWithVioletText11>
           <View style={styles.materialButtonWithVioletText2Filler}></View>
-          <MaterialButtonViolet6
+          <MaterialButtonViolet6 onPress={props.onNext}
             style={styles.materialButtonViolet2}
           ></MaterialButtonViolet6>
         </View>

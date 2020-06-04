@@ -21,7 +21,7 @@ function Amenities(props) {
         style={styles.kosherKitchenAmenities}
       ></KosherKitchenAmenities>
       <MaterialButtonViolet6
-        text1="Next"
+        onPress={props.onNext}
         style={styles.materialButtonViolet1}
       ></MaterialButtonViolet6>
       <ShabbatHolidayEssentials

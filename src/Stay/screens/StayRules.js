@@ -34,7 +34,7 @@ function StayRules(props) {
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText2}
         ></MaterialButtonWithVioletText11>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>

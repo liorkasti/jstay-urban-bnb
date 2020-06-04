@@ -4,8 +4,9 @@ import MaterialButtonWithVioletText10 from "./MaterialButtonWithVioletText10";
 
 function NextButton(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText10
+      onPress={props.onPress}
         style={styles.materialButtonWithVioletText1}
       ></MaterialButtonWithVioletText10>
     </TouchableOpacity>

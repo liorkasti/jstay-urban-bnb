@@ -43,7 +43,7 @@ function Nearby(props) {
           style={styles.materialButtonWithVioletText2}
         ></MaterialButtonWithVioletText11>
         <View style={styles.materialButtonWithVioletText2Filler}></View>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>

@@ -63,7 +63,7 @@ function StayPictures(props) {
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText1}
         ></MaterialButtonWithVioletText11>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet11}
         ></MaterialButtonViolet6>
       </View>

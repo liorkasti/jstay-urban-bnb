@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/Entypo";
 
 function MaterialButtonWithVioletText10(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Text style={styles.caption}>{props.text1 || "Next"}</Text>
       <Icon name="chevron-right" style={styles.icon}></Icon>
     </TouchableOpacity>

@@ -63,7 +63,7 @@ function DescribeStay(props) {
           style={styles.materialButtonWithVioletText1}
         ></MaterialButtonWithVioletText11>
         <View style={styles.materialButtonWithVioletText1Filler}></View>
-        <MaterialButtonViolet6
+        <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet6}
         ></MaterialButtonViolet6>
       </View>

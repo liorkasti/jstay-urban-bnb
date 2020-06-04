@@ -17,7 +17,7 @@ import Home from "./src/home"
 // import Account from "./src/account"
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loginInfo, saveLoginInfo] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -40,13 +40,11 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            {/* <Route exact path="/" >
-              {loggedIn ? <Redirect to="/home" /> : <Login />}
-            </Route> */}
-            <Route path="/" component={Home} />
-            {/* <Route path="/createStay" component={CreateStay} /> */}
-            {/* <Route path="/createAccount" component={CreateAccount} /> */}
-            {/* <Route path="/account" component={Account} /> */}
+            <Route path="/" exact render={(props) => (<Login pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} saveUserLoginData={(loginInfo)=>{saveLoginIno(loginInfo)}} {...props}/>)} />
+            <Route path="/home" render={(props) => (<Home pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
+            <Route path="/createStay" render={(props) => (<CreateStay pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
+            <Route path="/createAccount" render={(props) => (<CreateAccount pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
+            <Route path="/account" render={(props) => (<Account pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
           </BackButton>
         </Switch>
       </NativeRouter>
