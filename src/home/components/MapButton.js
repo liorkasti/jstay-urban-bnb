@@ -5,7 +5,7 @@ import MapViewButton from "./MapViewButton";
 function MapButton(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={props.onPress} style={styles.button}>
         <View style={styles.mapViewButtonFiller}></View>
         <MapViewButton style={styles.mapViewButton}></MapViewButton>
       </TouchableOpacity>

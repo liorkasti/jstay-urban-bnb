@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 
 function JstayLogoDark(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <View style={styles.image6Filler}></View>
       <Image
         source={require("../assets/images/jstay-icon-inverted8.png")}

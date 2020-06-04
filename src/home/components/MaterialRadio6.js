@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialRadio6(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Icon
         name={props.selected ? "radiobox-marked" : "radiobox-blank"}
         style={styles.radioIcon}

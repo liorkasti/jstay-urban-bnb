@@ -7,7 +7,7 @@ function MapButtonClosed(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.dragableMapStack}>
         <DragableMap style={styles.dragableMap}></DragableMap>
-        <TouchableOpacity style={styles.button6}>
+        <TouchableOpacity onPress={props.onPress} style={styles.button6}>
           <View style={styles.dragableMap1Stack}>
             <DragableMap style={styles.dragableMap1}></DragableMap>
             <Text style={styles.loremIpsum1}>Find Stays With Map View</Text>

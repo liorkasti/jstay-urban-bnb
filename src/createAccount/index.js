@@ -44,6 +44,8 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
+onHome={()=>{goToHome()}}
+
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
@@ -72,6 +74,8 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
+                    onHome={()=>{goToHome()}}
+
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
@@ -99,6 +103,8 @@ export default function CreateAccountIndex(props) {
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+
+                    onHome={()=>{goToHome()}}
 
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
