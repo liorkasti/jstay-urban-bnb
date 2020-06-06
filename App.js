@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-      <StatusBar animated={false} hidden={false}></StatusBar>
 import { StyleSheet, View, StatusBar } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';

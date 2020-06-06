@@ -84,7 +84,10 @@ function SearchDropdown(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    margin: 0,
+    padding: 0,
+  },
   rect10: {
     top: 0,
     left: 0,
