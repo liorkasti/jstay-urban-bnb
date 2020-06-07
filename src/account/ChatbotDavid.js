@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   david: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 148,
     marginTop: 27
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
   theCottage9: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1: {
     top: 0,
@@ -307,7 +307,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalemIsrael: {
     top: 0,
@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1Stack: {
     width: 108,

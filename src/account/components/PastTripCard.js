@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   theCottage92: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips12: {
     top: 0,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalemIsrael2: {
     top: 0,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   checkOut22: {
     top: 16,

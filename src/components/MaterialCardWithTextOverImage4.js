@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     paddingBottom: 12,
     fontSize: 35,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   actionBody: {
     flexDirection: "row",

@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   backButton: {

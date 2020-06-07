@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   jerusalemIsrael: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginLeft: 17,
     marginTop: 2
   },

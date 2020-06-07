@@ -6,6 +6,7 @@ function ContinueGoogleButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText1
+      onPress={props.onPress}
         text1="Continue with Google"
         style={styles.materialButtonWithVioletText12}
       ></MaterialButtonWithVioletText1>

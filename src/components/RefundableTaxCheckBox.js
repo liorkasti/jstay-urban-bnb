@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night3: {
     top: 14,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     right: 42,
     width: 52
   },

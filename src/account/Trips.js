@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   group3: {
     top: 34,
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   theCottage9: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1: {
     top: 0,
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalemIsrael: {
     top: 0,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1Stack: {
     width: 108,
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
   checkIn: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   checkOut2: {
     color: "rgba(0,88,155,1)",
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   checkOut: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   checkOut1: {
     color: "rgba(0,88,155,1)",
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon2: {
     top: 0,
@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
   myTrips: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 124,
     marginTop: 8

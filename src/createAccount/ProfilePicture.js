@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 81,
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   jstayLogoFullDark: {

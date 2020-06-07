@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 function MaterialButtonWithVioletText(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Text style={styles.caption}>{props.text1 || "Back"}</Text>
       <Icon name="ios-arrow-back" style={styles.icon}></Icon>
     </TouchableOpacity>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     height: 16,
     color: "rgba(2,172,235,1)",
     fontSize: 16,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon: {
     left: 6,

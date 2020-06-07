@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   lengthOfStay1: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     alignSelf: "flex-end",
     marginTop: 120,
     marginRight: 42
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     height: 24,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: 128,
     marginLeft: 30
   },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   cancelation: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 105,
     marginTop: 8

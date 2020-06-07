@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     width: 247
   },
   pricesFluctuate5: {

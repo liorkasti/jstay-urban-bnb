@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   messages: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 121,
     marginTop: 8

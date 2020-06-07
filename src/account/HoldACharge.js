@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   holdACharge: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 91,
     marginTop: 18
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   priceForThisStay2: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: 17,
     marginLeft: 22
   },

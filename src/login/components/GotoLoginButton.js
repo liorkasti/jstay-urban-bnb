@@ -4,9 +4,10 @@ import MaterialButtonWithVioletText2 from "./MaterialButtonWithVioletText2";
 
 function GotoLoginButton(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <View style={styles.materialButtonWithVioletText2Filler}></View>
       <MaterialButtonWithVioletText2
+        onPress={props.onPress}
         text1="Log In"
         style={styles.materialButtonWithVioletText2}
       ></MaterialButtonWithVioletText2>

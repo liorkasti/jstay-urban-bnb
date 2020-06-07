@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonViolet(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Text style={styles.caption}>Continue with Facebook</Text>
       <Text style={styles.loremIpsum}></Text>
     </TouchableOpacity>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   loremIpsum: {

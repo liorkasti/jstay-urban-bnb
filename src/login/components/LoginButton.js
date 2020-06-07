@@ -7,6 +7,7 @@ function LoginButton(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.materialButtonLightFiller}></View>
       <MaterialButtonLight
+      onPress={props.onPress}
         style={styles.materialButtonLight}
       ></MaterialButtonLight>
     </View>

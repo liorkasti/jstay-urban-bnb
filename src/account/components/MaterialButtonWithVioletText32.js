@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(230,230,230,1)",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   }
 });
 

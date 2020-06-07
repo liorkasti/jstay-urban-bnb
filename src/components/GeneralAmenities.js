@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     right: 0,
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   loremIpsum2: {
     top: 50,

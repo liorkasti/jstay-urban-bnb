@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     height: 16,
     color: "rgba(2,172,235,1)",
     fontSize: 16,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon: {
     left: 6,

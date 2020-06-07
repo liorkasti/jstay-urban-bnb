@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
   text: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 115,
     marginTop: 8

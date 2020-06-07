@@ -49,13 +49,13 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     paddingBottom: 12,
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   subtitleStyle: {
     color: "rgba(2,172,235,1)",
     alignSelf: "stretch",
     fontSize: 14,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     lineHeight: 16
   }
 });

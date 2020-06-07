@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 9,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textDecorationLine: "underline"
   },
   january3: {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon4Stack: {
     top: 0,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   rect1: {
     top: 0,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon6Stack: {
     top: 0,
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 9,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textDecorationLine: "underline"
   },
   january4: {
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon53Stack: {
     top: 0,
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     right: 1
   },
   loremIpsum1: {
@@ -334,7 +334,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialSlider2: {
     top: 269,
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   text4: {
     top: 17,
@@ -411,7 +411,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   text3: {
     top: 139,
@@ -429,7 +429,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   listedAsKosher1: {
     top: 18,
@@ -474,7 +474,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   textInput1: {
     top: 254,
@@ -495,7 +495,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   cupertinoStepper2: {
     top: 275,

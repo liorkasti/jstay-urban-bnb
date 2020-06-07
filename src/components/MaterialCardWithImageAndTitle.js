@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     paddingBottom: 12,
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   text: {
     color: "rgba(0,88,155,1)",
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     left: 15,
     color: "rgba(230,230,230,1)",
     position: "absolute",
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   }
 });
 

@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   image1: {

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   theCottage: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginLeft: 32
   },
   materialButtonWithVioletText19: {

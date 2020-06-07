@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   kosherSelect1Stack: {
     height: 397,
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
   kashrut: {
     color: "rgba(2,172,235,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 129,
     marginTop: 8

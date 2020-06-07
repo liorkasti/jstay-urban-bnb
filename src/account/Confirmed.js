@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   theCottage9: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1: {
     top: 0,
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalemIsrael: {
     top: 0,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1Stack: {
     width: 110,
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   guest: {
     color: "rgba(0,88,155,1)",
     fontSize: 14,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     alignSelf: "center"
   },
   image10RowRow: {
@@ -224,12 +224,12 @@ const styles = StyleSheet.create({
   checkIn1: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   checkOut1: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginLeft: 100
   },
   checkIn1Row: {
@@ -328,7 +328,7 @@ const styles = StyleSheet.create({
   confirmed: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginLeft: 113,
     marginTop: 8
@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
   pricingForStay: {
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: -512,
     marginLeft: 27
   },
@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night1Filler: {
     flex: 1,
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night1Row: {
     height: 22,
@@ -406,7 +406,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night2Filler: {
     flex: 1,
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night2Row: {
     height: 22,
@@ -431,7 +431,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night3Filler: {
     flex: 1,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night3Row: {
     height: 22,
@@ -456,7 +456,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night4Filler: {
     flex: 1,
@@ -467,7 +467,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night4Row: {
     height: 22,
@@ -481,7 +481,7 @@ const styles = StyleSheet.create({
     height: 25,
     color: "rgba(0,88,155,1)",
     fontSize: 14,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginLeft: 27
   },
   night6: {
@@ -489,7 +489,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night6Filler: {
     flex: 1,
@@ -500,7 +500,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night6Row: {
     height: 22,
@@ -514,7 +514,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night7Filler: {
     flex: 1,
@@ -525,7 +525,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   night7Row: {
     height: 22,
@@ -544,14 +544,14 @@ const styles = StyleSheet.create({
   },
   loremIpsum1: {
     color: "rgba(0,88,155,1)",
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: -281,
     marginLeft: 26
   },
   text4: {
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center",
     marginTop: 274,
     marginLeft: 37,

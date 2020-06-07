@@ -32,9 +32,10 @@ function WelcomePage(props) {
         <Text style={styles.chooseLanguage}>Choose language</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button4}>
-        <GotoLoginButton onPress={props.onNext} style={styles.gotoLoginButton}></GotoLoginButton>
+      <TouchableOpacity onPress={props.login} style={styles.button4}>
+        <GotoLoginButton onPress={props.login} style={styles.gotoLoginButton}></GotoLoginButton>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.button5}>
         <CreateAccountButton
           onPress={props.createAccount}

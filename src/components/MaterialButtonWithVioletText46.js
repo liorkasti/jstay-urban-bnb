@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     height: 21,
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "justify",
     top: 18,
     left: -9

@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(2,172,235,1)",
     borderWidth: 2,
     fontSize: 16,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   iconStack: {
     width: 151,

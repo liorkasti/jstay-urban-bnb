@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 9,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textDecorationLine: "underline"
   },
   january3: {
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   button10: {
     top: 75,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 9,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textDecorationLine: "underline"
   },
   january4: {
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialSlider1: {
     top: 204,
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     right: 201
   },
   dates1: {
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   icon6: {
     top: 0,
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialSlider2: {
     top: 269,
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialRadio1: {
     top: 0,
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialRadio2: {
     top: 109,
@@ -318,7 +318,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   text3: {
     top: 139,
@@ -344,7 +344,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   listedAsKosher1: {
     top: 82,
@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   bedrooms: {
     top: 250,
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   text4: {
     top: 26,

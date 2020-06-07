@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   footerBar1: {
     left: 0,
@@ -348,7 +348,7 @@ const styles = StyleSheet.create({
   topStays: {
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: 20,
     marginLeft: 6
   },

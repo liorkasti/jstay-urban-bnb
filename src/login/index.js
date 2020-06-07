@@ -53,6 +53,11 @@ export default function LoginIndex(props) {
                     }}
 
                     createAccount={() => onCreateAccount()}
+                    
+                    login={() => {
+                        console.warn("setcomponentIndex for login ")
+                        setComponentIndex(componentIndex + 1)
+                    }}
                 />
             }
 
@@ -80,7 +85,9 @@ export default function LoginIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+                    
                     login={() => {
+                        console.warn("setcomponentIndex for login ")
                         setComponentIndex(componentIndex + 1)
                     }}
                 />

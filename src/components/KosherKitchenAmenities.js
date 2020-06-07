@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   countertops: {
     top: 101,
@@ -1171,7 +1171,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve: {
     top: 35,
@@ -1179,7 +1179,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover2: {
     top: 35,
@@ -1187,7 +1187,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy: {
     top: 35,
@@ -1195,7 +1195,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy1: {
     top: 75,
@@ -1203,7 +1203,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat1: {
     top: 75,
@@ -1211,7 +1211,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve1: {
     top: 75,
@@ -1219,7 +1219,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover3: {
     top: 75,
@@ -1227,7 +1227,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy2: {
     top: 115,
@@ -1235,7 +1235,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat2: {
     top: 115,
@@ -1243,7 +1243,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve2: {
     top: 115,
@@ -1251,7 +1251,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover4: {
     top: 115,
@@ -1259,7 +1259,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy3: {
     top: 155,
@@ -1267,7 +1267,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat3: {
     top: 155,
@@ -1275,7 +1275,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve3: {
     top: 155,
@@ -1283,7 +1283,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover5: {
     top: 155,
@@ -1291,7 +1291,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy4: {
     top: 195,
@@ -1299,7 +1299,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat4: {
     top: 195,
@@ -1307,7 +1307,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve4: {
     top: 195,
@@ -1315,7 +1315,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover6: {
     top: 195,
@@ -1323,7 +1323,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy5: {
     top: 235,
@@ -1331,7 +1331,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat5: {
     top: 235,
@@ -1339,7 +1339,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve5: {
     top: 235,
@@ -1347,7 +1347,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover7: {
     top: 235,
@@ -1355,7 +1355,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy6: {
     top: 275,
@@ -1363,7 +1363,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat6: {
     top: 275,
@@ -1371,7 +1371,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve6: {
     top: 275,
@@ -1379,7 +1379,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover8: {
     top: 275,
@@ -1387,7 +1387,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy7: {
     top: 315,
@@ -1395,7 +1395,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat7: {
     top: 315,
@@ -1403,7 +1403,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve7: {
     top: 315,
@@ -1411,7 +1411,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover9: {
     top: 315,
@@ -1419,7 +1419,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy8: {
     top: 355,
@@ -1427,7 +1427,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat8: {
     top: 355,
@@ -1435,7 +1435,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve8: {
     top: 355,
@@ -1443,7 +1443,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover10: {
     top: 355,
@@ -1451,7 +1451,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy9: {
     top: 395,
@@ -1459,7 +1459,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat9: {
     top: 395,
@@ -1467,7 +1467,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve9: {
     top: 395,
@@ -1475,7 +1475,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover11: {
     top: 395,
@@ -1483,7 +1483,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy10: {
     top: 435,
@@ -1491,7 +1491,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat10: {
     top: 435,
@@ -1499,7 +1499,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve10: {
     top: 435,
@@ -1507,7 +1507,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover12: {
     top: 435,
@@ -1515,7 +1515,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   dairy11: {
     top: 476,
@@ -1523,7 +1523,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   meat11: {
     top: 476,
@@ -1531,7 +1531,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   pareve11: {
     top: 476,
@@ -1539,7 +1539,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   passover13: {
     top: 476,
@@ -1547,7 +1547,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 10,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   loremIpsum46: {
     top: 34,

@@ -21,11 +21,12 @@ function Login(props) {
     <View style={styles.container}>
       <View style={styles.group}></View>
       <View style={styles.group2}></View>
-      <TouchableOpacity style={styles.button3}>
+      <TouchableOpacity onPress={props.login} style={styles.button3}>
         <LoginButton onPress={props.login} style={styles.loginButton}></LoginButton>
       </TouchableOpacity>
+
       <MaterialButtonWithVioletText
-      onPress={props.onBack}
+        onPress={props.onBack}
         style={styles.materialButtonWithVioletText}
       ></MaterialButtonWithVioletText>
       <TouchableOpacity style={styles.button4}>

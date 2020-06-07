@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   newYork: {
     top: 211,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialButtonWithVioletText1430: {
     top: 150,
@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalem: {
     top: 211,
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   materialButtonWithVioletText1429: {
     top: 150,
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 18,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   }
 });
 

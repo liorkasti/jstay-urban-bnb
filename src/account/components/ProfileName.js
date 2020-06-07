@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   sholliKestecher: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginLeft: 16,
     marginTop: 2
   },

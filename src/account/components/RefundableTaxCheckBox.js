@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     height: 24,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     marginTop: 13
   },
   night1Filler: {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     height: 22,
     color: "rgba(0,88,155,1)",
     fontSize: 18,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     width: 52,
     marginRight: 2,
     marginTop: 14

@@ -6,6 +6,7 @@ function CreateAccountButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText3
+      onPress={props.onPress}
         style={styles.materialButtonWithVioletText32}
       ></MaterialButtonWithVioletText3>
     </View>

@@ -7,6 +7,7 @@ function SignupButton(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.materialButtonWithVioletText12Filler}></View>
       <MaterialButtonWithVioletText12
+      onPress={props.onPress}
         style={styles.materialButtonWithVioletText12}
       ></MaterialButtonWithVioletText12>
     </View>
