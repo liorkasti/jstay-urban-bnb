@@ -108,7 +108,8 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-700",
+    borderTopRightRadius: 10
   },
   newYork: {
     top: 211,
@@ -116,7 +117,8 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-700",
+    borderBottomRightRadius: 10
   },
   materialButtonWithVioletText1430: {
     top: 150,
@@ -131,7 +133,8 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-700",
+    borderTopLeftRadius: 10
   },
   jerusalem: {
     top: 211,
@@ -139,7 +142,8 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 24,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-700",
+    borderBottomLeftRadius: 10
   },
   materialButtonWithVioletText1429: {
     top: 150,

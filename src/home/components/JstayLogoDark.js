@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
+import { StyleSheet, TouchableOpacity, Image } from "react-native";
 
 function JstayLogoDark(props) {
   return (
     <TouchableOpacity style={[styles.container, props.style]}>
-      <View style={styles.image6Filler}></View>
       <Image
         source={require("../assets/images/jstay-icon-inverted8.png")}
         resizeMode="contain"
@@ -15,16 +14,13 @@ function JstayLogoDark(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row"
-  },
-  image6Filler: {
-    flex: 1,
-    flexDirection: "row"
-  },
+  container: {},
   image6: {
+    top: 40,
+    left: "50%",
     height: 62,
-    width: 62
+    position: "absolute",
+    right: 0
   }
 });
 

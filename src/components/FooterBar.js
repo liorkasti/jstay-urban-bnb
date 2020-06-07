@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   container: {},
   materialBasicFooter1: {
     left: 0,
-    height: 100,
+    height: 70,
     position: "absolute",
     right: 0,
     bottom: -1

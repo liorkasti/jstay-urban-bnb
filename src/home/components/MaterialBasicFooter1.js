@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import FooterMenuDropdown from "../components/FooterMenuDropdown";
 
 function MaterialBasicFooter1(props) {
+  
   return (
     <View style={[styles.container, props.style]}>
+      <FooterMenuDropdown style={styles.materialBasicFooter1} />
+
       <TouchableOpacity style={styles.btnWrapper1}>
         <MaterialCommunityIconsIcon
           name="home-heart"
@@ -50,6 +54,13 @@ const styles = StyleSheet.create({
     shadowColor: "#111",
     shadowOpacity: 0.2,
     shadowRadius: 1.2
+  },
+  materialBasicFooter1: {
+    left: "300%",
+    height: 700,
+    // position: "relaative",
+    right: 0,
+    bottom: 48
   },
   btnWrapper1: {
     width: 104,

@@ -1,88 +1,33 @@
 import React, { Component } from "react";
 import { StyleSheet, View, StatusBar, Text, TouchableOpacity, ScrollView } from "react-native";
-import CityCards from "../components/CityCards";
-import SearchDropdown from "../components/SearchDropdown";
-import MaterialButtonWithVioletText21 from "../components/MaterialButtonWithVioletText21";
-import MaterialButtonWithVioletText22 from "../components/MaterialButtonWithVioletText22";
-import MaterialButtonWithVioletText23 from "../components/MaterialButtonWithVioletText23";
-import MaterialButtonWithVioletText24 from "../components/MaterialButtonWithVioletText24";
-import MaterialButtonWithVioletText25 from "../components/MaterialButtonWithVioletText25";
-import MaterialButtonWithVioletText26 from "../components/MaterialButtonWithVioletText26";
-import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithVioletText28";
-import HeaderBar from "../components/HeaderBar";
-import FooterBar from "../components/FooterBar";
-import MaterialCard5 from "../components/MaterialCard5";
-import MapButton2 from "../components/MapButton2";
-import JstayLogoDark from "../components/JstayLogoDark";
-import SearchBar from "../components/SearchBar";
-import MaterialCardWithRightButtons from "../components/MaterialCardWithRightButtons";
+import CityCards from "./components/CityCards";
+import SearchDropdown from "./components/SearchDropdown";
+import HeaderBar from "./components/HeaderBar";
+import FooterBar from "./components/FooterBar";
+import MaterialCard5 from "./components/MaterialCard5";
+import MapButton2 from "./components/MapButton2";
+import JstayLogoDark from "./components/JstayLogoDark";
+import SearchBar from "./components/SearchBar";
+import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
+import FooterMenuDropdown from "./components/FooterMenuDropdown";
+
 
 function Home(props) {
   return (
     <View style={styles.container}>
       <ScrollView>
         <StatusBar backgroundColor="rgba(2,172,235,1)" />
-        {/* <StatusBar style={styles.statusBarStyle} /> */}
         <View style={styles.cityCardsStackStack}>
           <View style={styles.cityCardsStack}>
             {/* Around the globe */}
             <CityCards style={styles.cityCards}></CityCards>
             <Text style={styles.loremIpsum2}></Text>
-            {/* Bottom navigateMenu */}
-            {/* <View style={styles.group1}>
-              <View style={styles.rect9}>
-                <View style={styles.button54Stack}>
-                  <TouchableOpacity
-                    onPress={() => props.navigation.navigate("MyStaysList")}
-                    style={styles.button54}
-                  >
-                    <View style={styles.materialButtonWithVioletText21Stack}>
-                      <MaterialButtonWithVioletText21
-                        style={styles.materialButtonWithVioletText21}
-                      ></MaterialButtonWithVioletText21>
-                      <View style={styles.rect3}></View>
-                    </View>
-                  </TouchableOpacity>
-                  <MaterialButtonWithVioletText22
-                    style={styles.materialButtonWithVioletText22}
-                  ></MaterialButtonWithVioletText22>
-                  <View style={styles.rect4}></View>
-                </View>
-                <View style={styles.materialButtonWithVioletText23Stack}>
-                  <MaterialButtonWithVioletText23
-                    style={styles.materialButtonWithVioletText23}
-                  ></MaterialButtonWithVioletText23>
-                  <View style={styles.rect5}></View>
-                </View>
-                <View style={styles.materialButtonWithVioletText24Stack}>
-                  <MaterialButtonWithVioletText24
-                    style={styles.materialButtonWithVioletText24}
-                  ></MaterialButtonWithVioletText24>
-                  <View style={styles.rect6}></View>
-                </View>
-                <View style={styles.materialButtonWithVioletText25Stack}>
-                  <MaterialButtonWithVioletText25
-                    style={styles.materialButtonWithVioletText25}
-                  ></MaterialButtonWithVioletText25>
-                  <MaterialButtonWithVioletText26
-                    style={styles.materialButtonWithVioletText26}
-                  ></MaterialButtonWithVioletText26>
-                  <View style={styles.rect7}></View>
-                  <View style={styles.rect8}></View>
-                  <MaterialButtonWithVioletText28
-                    style={styles.materialButtonWithVioletText28}
-                  ></MaterialButtonWithVioletText28>
-                </View>
-              </View>
-            </View> */}
           </View>
           {/* HeaderBar */}
           <HeaderBar style={styles.headerBar}></HeaderBar>
           {/* Nearby */}
           <Text style={styles.nearby}>Nearby</Text>
           <View style={styles.footerBar1Stack}>
-
-
             <TouchableOpacity style={styles.button4}>
               <MaterialCard5 style={styles.materialCard5}></MaterialCard5>
             </TouchableOpacity>
@@ -96,12 +41,9 @@ function Home(props) {
         <Text style={styles.topStays}>Top Stays</Text>
         <View style={styles.bsD1Stack}>
           <Text style={styles.bsD1}>BS"D</Text>
-          {/* <Text style={styles.bsD2}>BS&quot;D</Text> */}
         </View>
 
         <View style={styles.button52Stack}>
-          {/* <JstayLogoDark style={styles.jstayLogoDark}></JstayLogoDark> */}
-
           <TouchableOpacity style={styles.jstayLogoDark}>
             <JstayLogoDark />
           </TouchableOpacity>
@@ -109,10 +51,11 @@ function Home(props) {
           <SearchBar style={styles.searchBar}></SearchBar>
         </View>
         <MaterialCardWithRightButtons style={styles.materialCardWithRightButtons1} />
-
+        {/* FooterMenuDropdown */}
+        {/* <FooterMenuDropdown /> */}
         {/* Footer */}
-        {/* <FooterBar style={styles.footerBar1}></FooterBar> */}
-        <FooterBar style={styles.footerBar2}></FooterBar>
+        <FooterBar style={styles.footerBar1}></FooterBar>
+        {/* <FooterBar style={styles.footerBar2}></FooterBar> */}
       </ScrollView>
     </View>
   );
@@ -122,12 +65,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)"
-  },
-  statusBarStyle: {
-    //   backgroundColor: "rgba(0,88,155,1)",
-    //    barStyle:"light-content",
-    //    animated: false,
-    //    hidden: false
   },
   cityCards: {
     top: 62,
@@ -152,143 +89,6 @@ const styles = StyleSheet.create({
     top: 0,
     height: 345,
     right: 1
-  },
-  group1: {
-    width: 207,
-    height: 350,
-    position: "absolute",
-    right: 0,
-    bottom: 0
-  },
-  rect9: {
-    width: 207,
-    height: 350,
-    backgroundColor: "rgba(0,88,155,1)"
-  },
-  button54: {
-    top: 0,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  materialButtonWithVioletText21: {
-    top: 0,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  rect3: {
-    top: 48,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText21Stack: {
-    width: 207,
-    height: 50
-  },
-  materialButtonWithVioletText22: {
-    top: 49,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  rect4: {
-    top: 98,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  button54Stack: {
-    width: 207,
-    height: 99,
-    marginTop: 2
-  },
-  materialButtonWithVioletText23: {
-    top: 0,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  rect5: {
-    top: 49,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText23Stack: {
-    width: 207,
-    height: 50
-  },
-  materialButtonWithVioletText24: {
-    top: 0,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  rect6: {
-    top: 49,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText24Stack: {
-    width: 207,
-    height: 50
-  },
-  materialButtonWithVioletText25: {
-    top: 0,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  materialButtonWithVioletText26: {
-    top: 49,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  rect7: {
-    top: 49,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  rect8: {
-    top: 94,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText28: {
-    top: 95,
-    left: 0,
-    width: 207,
-    height: 50,
-    position: "absolute"
-  },
-  materialButtonWithVioletText25Stack: {
-    width: 207,
-    height: 145
   },
   cityCardsStack: {
     top: 0,
@@ -315,7 +115,7 @@ const styles = StyleSheet.create({
   footerBar1: {
     left: 0,
     height: 81,
-    position: "absolute",
+    // position: "absolute",
     bottom: 0,
     right: 0
   },
