@@ -16,6 +16,7 @@ function MapButton2(props) {
 const styles = StyleSheet.create({
   container: {},
   button55: {
+    opacity: 0.8,
     left: 0,
     height: 60,
     position: "absolute",
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
   },
   dragableMap: {
     position: "absolute",
+    opacity: 0.8,
     height: 60,
     left: 0,
     borderRadius: 10,

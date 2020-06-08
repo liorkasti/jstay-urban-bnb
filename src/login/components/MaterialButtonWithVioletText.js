@@ -23,17 +23,17 @@ const styles = StyleSheet.create({
   },
   caption: {
     width: 52,
-    height: 16,
+    height: "55%",
     color: "rgba(2,172,235,1)",
     fontSize: 16,
     fontFamily: "roboto-regular"
   },
   icon: {
-    left: 6,
+    left: "10%",
     position: "absolute",
     color: "rgba(2,172,235,1)",
-    fontSize: 30,
-    top: 4
+    fontSize: 20,
+    top: "30%"
   }
 });
 

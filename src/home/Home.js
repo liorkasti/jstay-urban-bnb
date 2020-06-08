@@ -18,6 +18,16 @@ function Home(props) {
 
   return (
     <View style={styles.container}>
+      {/* SearchDropdown */}
+      {showSearchOptions &&
+        <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
+      }
+      {/* todo: add toggleFilterHandler */}
+      <SearchBar
+        onPress={() => { setShowSearchOptions(true) }}
+        style={styles.searchBar}
+      />
+
       <ScrollView onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
         <StatusBar backgroundColor="rgba(2,172,235,1)" />
         <View style={styles.cityCardsStackStack}>
@@ -32,38 +42,41 @@ function Home(props) {
           <Text style={styles.nearby}>Nearby</Text>
           <View style={styles.footerBar1Stack}>
             <TouchableOpacity style={styles.button4}>
-              <MaterialCard5 onPress={()=>{props.showSearchResultsFor("local")}} style={styles.materialCard5}></MaterialCard5>
+              <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
             </TouchableOpacity>
-            {!showMediumMap ?
-              <MapButton2 onPress={() => setShowMediumMap(true)} style={styles.mapButton2}></MapButton2>
-            : null //TODO: replace map with half screen map 
-            }
+
           </View>
-          {/* SearchDropdown */}
-          {showSearchOptions &&
-            <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
-          }
+
         </View>
 
         <Text style={styles.topStays}>Top Stays</Text>
         <View style={styles.bsD1Stack}>
           <Text style={styles.bsD1}>BS"D</Text>
         </View>
+        <TouchableOpacity style={styles.jstayLogoDark}>
+          <JstayLogoDark />
+        </TouchableOpacity>
 
-        <View style={styles.button52Stack}>
-          <TouchableOpacity style={styles.jstayLogoDark}>
-            <JstayLogoDark />
-          </TouchableOpacity>
-          {/* todo: add toggleFilterHandler */}
-          <SearchBar onPress={() => { setShowSearchOptions(true) }} style={styles.searchBar}></SearchBar>
-        </View>
         <MaterialCardWithRightButtons style={styles.materialCardWithRightButtons1} />
         {/* FooterMenuDropdown */}
         {/* <FooterMenuDropdown /> */}
-        {/* Footer */}
-        <FooterBar handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.footerBar1}></FooterBar>
-        {/* <FooterBar style={styles.footerBar2}></FooterBar> */}
       </ScrollView>
+      {/* Map */}
+      {!showMediumMap ?
+        <MapButton2
+          onPress={() => setShowMediumMap(true)}
+          style={styles.mapButton2}
+        />
+        : null //TODO: replace map with half screen map 
+      }
+      {/* Footer */}
+      <FooterBar
+        handleFooterBar={(page) => { props.handleFooterBar(page) }}
+        handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+        style={styles.footerBar1}
+      />
+      {/* <FooterBar style={styles.footerBar2}></FooterBar> */}
+
     </View>
   );
 }
@@ -122,15 +135,14 @@ const styles = StyleSheet.create({
   footerBar1: {
     left: 0,
     height: 81,
-    // position: "absolute",
-    bottom: 0,
+    // position: fixed,
+    bottom: -10,
     right: 0
   },
   button4: {
     top: 0,
     left: 4,
     height: 349,
-    position: "absolute",
     right: 5
   },
   materialCard5: {
@@ -142,7 +154,7 @@ const styles = StyleSheet.create({
   },
   mapButton2: {
     position: "absolute",
-    top: 182,
+    bottom: 80,
     left: 5,
     height: 60,
     width: 405
@@ -176,7 +188,7 @@ const styles = StyleSheet.create({
   },
   bsD1: {
     top: 0,
-    left: 0,
+    left: "20%",
     right: -10,
     color: "rgba(0,88,155,1)",
     position: "absolute",
@@ -194,10 +206,10 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
   bsD1Stack: {
-    width: 23,
-    height: 12,
+    // width: 23,
+    // height: 12,
     marginTop: -938,
-    marginLeft: 353
+    left: "68%",
   },
   button52: {
     top: 0,
@@ -207,24 +219,17 @@ const styles = StyleSheet.create({
     right: 0
   },
   jstayLogoDark: {
-    top: -42,
-    left: 180,
-    height: 39,
+    top: "3.5%",
+    left: "30%",
+    height: 0,
     position: "absolute",
-    // right: 55
+    right: "20%"
   },
   searchBar: {
-    top: 11,
-    left: -20,
-    height: 39,
+    top: "7%",
     position: "absolute",
-    right: 65
-  },
-  button52Stack: {
-    height: 62,
-    marginTop: 8,
-    marginLeft: 34,
-    marginRight: 7
+    right: "20%",
+    left: "20%",
   },
   materialCardWithRightButtons1: {
     height: 266,

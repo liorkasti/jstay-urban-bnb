@@ -34,12 +34,13 @@ function SearchBar(props) {
 const styles = StyleSheet.create({
   container: {},
   group2: {
-    height: 39
+    height: "10%"
   },
   textInput42: {
     top: 0,
-    left: 0,
-    height: 39,
+    width: "130%",
+    // left: 0,
+    height: "100%",
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",
     position: "absolute",

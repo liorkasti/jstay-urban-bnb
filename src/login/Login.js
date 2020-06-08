@@ -19,12 +19,13 @@ import SignupButton from "./components/SignupButton";
 function Login(props) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.group}></View>
       <View style={styles.group2}></View>
       <TouchableOpacity onPress={props.login} style={styles.button3}>
         <LoginButton onPress={props.login} style={styles.loginButton}></LoginButton>
       </TouchableOpacity>
-
+      {/* BackButton */}
       <MaterialButtonWithVioletText
         onPress={props.onBack}
         style={styles.materialButtonWithVioletText}
@@ -38,7 +39,6 @@ function Login(props) {
       <MaterialButtonWithVioletText15
         style={styles.materialButtonWithVioletText15}
       ></MaterialButtonWithVioletText15>
-      <StatusBar></StatusBar>
       <PasswordTextInput style={styles.passwordTextInput}></PasswordTextInput>
       <EmailTextInput style={styles.emailTextInput}></EmailTextInput>
       <Text style={styles.loremIpsum2}></Text>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   loginButton: {
-    top: 0,
+    bottom: 50,
     left: 0,
     width: 353,
     height: 62,
@@ -175,10 +175,10 @@ const styles = StyleSheet.create({
   myDetails1: {
     left: "11.71%",
     width: "77.71%",
-    height: 20,
+    height: 30,
     color: "rgba(2,172,235,1)",
     position: "absolute",
-    bottom: "66%",
+    bottom: "65%",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"
