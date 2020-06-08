@@ -8,16 +8,9 @@ function FooterBar(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialBasicFooter1
+      handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
         style={styles.materialBasicFooter1}
       ></MaterialBasicFooter1>
-      <MaterialCommunityIconsIcon
-        name="numeric-3-box"
-        style={styles.icon4}
-      ></MaterialCommunityIconsIcon>
-      <FontAwesomeIcon
-        name="exclamation"
-        style={styles.icon5}
-      ></FontAwesomeIcon>
     </View>
   );
 }
@@ -26,7 +19,7 @@ const styles = StyleSheet.create({
   container: {},
   materialBasicFooter1: {
     left: 0,
-    height: 100,
+    height: 70,
     position: "absolute",
     right: 0,
     bottom: -1

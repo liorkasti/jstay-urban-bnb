@@ -9,7 +9,7 @@ function HeaderBarDark(props) {
       <Text style={styles.createAccount}>
         {props.text2 || "Create Account"}
       </Text>
-      <BackButton style={styles.backButton}></BackButton>
+      <BackButton onPress={props.onBack} style={styles.backButton}></BackButton>
     </View>
   );
 }

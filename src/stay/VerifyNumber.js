@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
   Image
 } from "react-native";
-import MaterialSpinner from "../components/MaterialSpinner";
-import MaterialButtonWithVioletText17 from "../components/MaterialButtonWithVioletText17";
+import MaterialSpinner from "../createStay/components/MaterialSpinner";
+import MaterialButtonWithVioletText17 from "../createStay/components/MaterialButtonWithVioletText17";
 import Icon from "react-native-vector-icons/Entypo";
 
 function Untitled8(props) {
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.03,
-    fontFamily: "calibri-regular",
+    fontFamily: "roboto-regular",
     textAlign: "left"
   },
   textInput2: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.03,
-    fontFamily: "calibri-regular",
+    fontFamily: "roboto-regular",
     textAlign: "left",
     marginLeft: 10
   },
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.03,
-    fontFamily: "calibri-regular",
+    fontFamily: "roboto-regular",
     textAlign: "left"
   },
   materialSpinner2: {

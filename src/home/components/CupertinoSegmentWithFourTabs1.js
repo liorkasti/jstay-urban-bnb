@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: "rgba(177,177,177,1)",
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: "roboto-regular"
   },
   segmentTextWrapper2: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   text2: {
     color: "rgba(177,177,177,1)",
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: "roboto-regular"
   },
   segmentTextWrapper3: {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   text3: {
     color: "rgba(177,177,177,1)",
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: "roboto-regular"
   },
   segmentTextWrapper4: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   },
   text4: {
     color: "rgba(177,177,177,1)",
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: "roboto-regular"
   }
 });

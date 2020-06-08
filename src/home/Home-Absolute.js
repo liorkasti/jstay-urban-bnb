@@ -28,7 +28,7 @@ function Home(props) {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <StatusBar barStyle="undefined" />
+        <StatusBar barStyle="light-content" />
         <CityCards style={styles.cityCards}></CityCards>
         <HeaderBar style={styles.headerBar}></HeaderBar>
         <Text style={styles.topStays}>Top Stays</Text>

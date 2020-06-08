@@ -20,12 +20,16 @@ export default function CreateAccountIndex(props) {
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
         }
+        if(componentIndex < 0){
+            history.push("/");
+        }
+
     }, [componentIndex])
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
     const componentKeys = ["MyDetails", "MyKashrut", "ProfilePicture"];
-  
+
     return (
         <View style={styles.container}>
             {/* copy paste below component*/}
@@ -44,7 +48,7 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-onHome={()=>{goToHome()}}
+                    onHome={() => { goToHome() }}
 
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -74,7 +78,7 @@ onHome={()=>{goToHome()}}
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    onHome={()=>{goToHome()}}
+                    onHome={() => { goToHome() }}
 
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -104,7 +108,7 @@ onHome={()=>{goToHome()}}
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    onHome={()=>{goToHome()}}
+                    onHome={() => { goToHome() }}
 
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -125,7 +129,7 @@ onHome={()=>{goToHome()}}
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: "center",
+        flex: 1,
+        alignItems: "center",
     }
-  });
+});

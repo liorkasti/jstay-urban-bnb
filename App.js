@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-      <StatusBar animated={false} hidden={false}></StatusBar>
 import { StyleSheet, View, StatusBar } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
@@ -12,13 +11,11 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
 import Login from "./src/login"
 import Home from "./src/home"
-// import CreateStay from "./src/createStay"
-// import CreateAccount from "./src/createAccount"
-// import Account from "./src/account"
+import CreateStay from "./src/createStay"
+import CreateAccount from "./src/createAccount"
+import Account from "./src/account"
 
 export default function App() {
-  const [loginInfo, saveLoginInfo] = useState(false);
-
   useEffect(() => {
     setTimeout(() => {
       Orientation.lockToPortrait();
@@ -34,17 +31,18 @@ export default function App() {
     console.disableYellowBox = true;
   }, [])
 
+
   return (
     <View style={styles.container}>
       <StatusBar animated={true} hidden={false}></StatusBar>
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route path="/" exact render={(props) => (<Login pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} saveUserLoginData={(loginInfo)=>{saveLoginIno(loginInfo)}} {...props}/>)} />
-            <Route path="/home" render={(props) => (<Home pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
-            <Route path="/createStay" render={(props) => (<CreateStay pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
-            <Route path="/createAccount" render={(props) => (<CreateAccount pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
-            <Route path="/account" render={(props) => (<Account pushHistory={({newRoute, options})=>{changeRoute(newRoute)}} loginInfo={loginInfo} {...props}/>)} />
+            <Route path="/" exact component={Login}/>
+            <Route path="/account" component={Account}/>
+            <Route path="/CreateAccount" component={CreateAccount}/>
+            <Route path="/createStay" component={CreateStay}/>
+            <Route path="/home" component={Home}/>
           </BackButton>
         </Switch>
       </NativeRouter>

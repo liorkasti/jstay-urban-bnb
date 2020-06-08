@@ -34,6 +34,7 @@ function ProfilePicture(props) {
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
+            onBack={props.onBack}
               text1=""
               style={styles.headerBarDark1}
             ></HeaderBarDark>
@@ -43,6 +44,7 @@ function ProfilePicture(props) {
       </View>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
+      onPress={props.onNext}
         style={styles.createAccountDoneButton1}
       ></DoneCreateAccount>
     </View>

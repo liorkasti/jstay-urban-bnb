@@ -16,8 +16,8 @@ function JstayLogoDark(props) {
 const styles = StyleSheet.create({
   container: {},
   image6: {
-    top: 0,
-    left: "0%",
+    top: 40,
+    left: "50%",
     height: 62,
     position: "absolute",
     right: 0

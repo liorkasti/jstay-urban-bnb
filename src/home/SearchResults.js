@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import StayResultCard from "../components/StayResultCard";
-import FooterBar from "../components/FooterBar";
-import HeaderBar from "../components/HeaderBar";
-import MaterialCardWithRightButtons from "../components/MaterialCardWithRightButtons";
-import JstayLogoDark from "../components/JstayLogoDark";
-import SearchBar from "../components/SearchBar";
-import MapButtonClosed from "../components/MapButtonClosed";
+import StayResultCard from "./components/StayResultCard";
+import FooterBar from "./components/FooterBar";
+import HeaderBar from "./components/HeaderBar";
+import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
+import JstayLogoDark from "./components/JstayLogoDark";
+import SearchBar from "./components/SearchBar";
+import MapButtonClosed from "./components/MapButtonClosed";
 
 function SearchResults(props) {
   return (
     <View style={styles.container}>
       <View style={styles.stayResultCard2Stack}>
         <StayResultCard style={styles.stayResultCard2}></StayResultCard>
-        <FooterBar style={styles.footerBar1}></FooterBar>
+        <FooterBar handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.footerBar1}></FooterBar>
       </View>
       <Text style={styles.bsD1}>BS&quot;D</Text>
       <StayResultCard style={styles.stayResultCard3}></StayResultCard>
       <View style={styles.headerBar1Stack}>
         <HeaderBar style={styles.headerBar1}></HeaderBar>
+       
         <MaterialCardWithRightButtons
+        onPress={()=>{props.showStayProfile()}}
           style={styles.materialCardWithRightButtons}
         ></MaterialCardWithRightButtons>
+
       </View>
       <View style={styles.button5Stack}>
         <TouchableOpacity style={styles.button5}>
@@ -29,7 +32,7 @@ function SearchResults(props) {
         </TouchableOpacity>
         <SearchBar style={styles.searchBar1}></SearchBar>
       </View>
-      <StayResultCard style={styles.stayResultCard1}></StayResultCard>
+      <StayResultCard onPress={()=>{props.showStayProfile()}} style={styles.stayResultCard1}></StayResultCard>
       <MapButtonClosed style={styles.mapButtonClosed}></MapButtonClosed>
     </View>
   );

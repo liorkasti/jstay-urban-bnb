@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import MyStayCardGroupUl from "../components/MyStayCardGroupUl";
-import MaterialButtonShare2 from "../components/MaterialButtonShare2";
+import MyStayCardGroupUL from "./components/MyStayCardGroupUL";
+import MaterialButtonShare2 from "./components/MaterialButtonShare2";
 import Icon from "react-native-vector-icons/Entypo";
 
 function MyStaysList(props) {

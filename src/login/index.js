@@ -3,7 +3,6 @@ import { View, StyleSheet, Dimensions } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
-import ComingSoon from "../modules/comingSoon";
 import Welcome from "./Welcome";
 import Login from "./Login";
 
@@ -86,6 +85,8 @@ export default function LoginIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
                     
+                    createAccount={()=>{onCreateAccount()}}
+
                     login={() => {
                         console.warn("setcomponentIndex for login ")
                         setComponentIndex(componentIndex + 1)

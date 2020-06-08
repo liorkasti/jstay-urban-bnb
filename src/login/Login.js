@@ -44,7 +44,7 @@ function Login(props) {
       <Text style={styles.loremIpsum2}></Text>
       <Icon name="lock" style={styles.icon}></Icon>
       <TouchableOpacity style={styles.button2}>
-        <SignupButton style={styles.signupButton}></SignupButton>
+        <SignupButton onPress={props.createAccount} style={styles.signupButton}></SignupButton>
       </TouchableOpacity>
       <Text style={styles.bsD1}>BS&quot;D</Text>
       <Text style={styles.myDetails1}>

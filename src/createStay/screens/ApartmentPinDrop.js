@@ -16,7 +16,7 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 function ApartmentPinDrop(props) {
   return (
     <View style={styles.container}>
-      <StatusBar hidden barStyle="undefined" />
+      <StatusBar hidden barStyle="light-content" />
       <View style={styles.editThePinColumn}>
         <Text style={styles.editThePin}>Edit the pin</Text>
         <Text style={styles.loremIpsum}>

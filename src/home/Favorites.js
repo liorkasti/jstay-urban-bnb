@@ -27,6 +27,7 @@ function Untitled5(props) {
           </View>
         </View>
       </View>
+
       <View style={styles.group3}>
         <View style={styles.group12}>
           <View style={styles.rect22}>
@@ -48,13 +49,14 @@ function Untitled5(props) {
           </View>
         </View>
       </View>
+
       <View style={styles.group13}>
         <View style={styles.rect23}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
-              <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity style={styles.button5}>
+              <TouchableOpacity onPress={props.onBack} style={styles.button4}>
+                <TouchableOpacity onPress={props.onBack} style={styles.button5}>
                   <EntypoIcon
                     name="chevron-left"
                     style={styles.icon1}
@@ -64,7 +66,8 @@ function Untitled5(props) {
               <Text style={styles.favorites}>Favorites</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
+
+            <TouchableOpacity onPress={props.onHome} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

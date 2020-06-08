@@ -9,6 +9,7 @@ function SearchBar(props) {
       <View style={styles.group2}>
         <View style={styles.textInput42Stack}>
           <TextInput
+            onFocus={() => { props.onPress() }}
             placeholder="Location, neighbourhood, or address"
             style={styles.textInput42}
           ></TextInput>

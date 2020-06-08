@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text,TouchableOpacity } from "react-native";
 
 function MaterialCard5(props) {
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Image
         source={require("../assets/images/7884c76e-dd6b-40f7-9957-711355f90456.jpg")}
         style={styles.cardItemImagePlace}
@@ -12,7 +12,7 @@ function MaterialCard5(props) {
         <Text style={styles.titleStyle}>Local Stays</Text>
         <Text style={styles.subtitleStyle}>Check out local listings</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

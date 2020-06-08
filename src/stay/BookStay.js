@@ -8,10 +8,10 @@ import {
   Image
 } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import MaterialSlider1 from "../components/MaterialSlider1";
+import MaterialSlider1 from "../createStay/components/MaterialSlider1";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import MaterialButtonViolet14 from "../components/MaterialButtonViolet14";
-import LargeTextInput from "../components/LargeTextInput";
+import MaterialButtonViolet14 from "../createStay/components/MaterialButtonViolet14";
+import LargeTextInput from "../createStay/components/LargeTextInput";
 
 function BookStay(props) {
   return (

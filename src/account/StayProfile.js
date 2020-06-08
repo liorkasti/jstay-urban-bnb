@@ -9,20 +9,20 @@ import {
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import StayLocationDetails from "../components/StayLocationDetails";
+import StayLocationDetails from "../createStay/components/StayLocationDetails";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import FeatherIcon from "react-native-vector-icons/Feather";
-import MaxStayDetails from "../components/MaxStayDetails";
-import BedroomDetails from "../components/BedroomDetails";
-import OveralStayRating from "../components/OveralStayRating";
-import OveralKashrutRating from "../components/OveralKashrutRating";
-import AddToFavoritesButton from "../components/AddToFavoritesButton";
-import RequestToBookButton from "../components/RequestToBookButton";
-import MessageHostButton from "../components/MessageHostButton";
-import MaterialButtonWithVioletText16 from "../components/MaterialButtonWithVioletText16";
-import MaterialButtonWithVioletText50 from "../components/MaterialButtonWithVioletText50";
-import MaterialButtonWithVioletText30 from "../components/MaterialButtonWithVioletText30";
-import CheckAvailabilityButton from "../components/CheckAvailabilityButton";
+import MaxStayDetails from "../createStay/components/MaxStayDetails";
+import BedroomDetails from "../createStay/components/BedroomDetails";
+import OveralStayRating from "../createStay/components/OveralStayRating";
+import OveralKashrutRating from "../createStay/components/OveralKashrutRating";
+import AddToFavoritesButton from "../createStay/components/AddToFavoritesButton";
+import RequestToBookButton from "../createStay/components/RequestToBookButton";
+import MessageHostButton from "../createStay/components/MessageHostButton";
+import MaterialButtonWithVioletText16 from "../createStay/components/MaterialButtonWithVioletText16";
+import MaterialButtonWithVioletText50 from "../createStay/components/MaterialButtonWithVioletText50";
+import MaterialButtonWithVioletText30 from "../createStay/components/MaterialButtonWithVioletText30";
+import CheckAvailabilityButton from "../createStay/components/CheckAvailabilityButton";
 
 function StayProfile(props) {
   return (
@@ -41,8 +41,8 @@ function StayProfile(props) {
                 <Text style={styles.bsD12}>BS&quot;D</Text>
                 <View style={styles.button4RowRow}>
                   <View style={styles.button4Row}>
-                    <TouchableOpacity style={styles.button4}>
-                      <TouchableOpacity style={styles.button5}>
+                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
+                      <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
                         <EntypoIcon
                           name="chevron-left"
                           style={styles.icon110}

@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import MaterialButtonWithVioletText35 from "../components/MaterialButtonWithVioletText35";
+import MaterialButtonWithVioletText35 from "../createStay/components/MaterialButtonWithVioletText35";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import MaterialButtonWithVioletText36 from "../components/MaterialButtonWithVioletText36";
-import MaterialButtonWithVioletText37 from "../components/MaterialButtonWithVioletText37";
-import MaterialButtonWithVioletText38 from "../components/MaterialButtonWithVioletText38";
-import MaterialButtonWithVioletText40 from "../components/MaterialButtonWithVioletText40";
-import MaterialButtonWithVioletText42 from "../components/MaterialButtonWithVioletText42";
-import MaterialButtonWithVioletText43 from "../components/MaterialButtonWithVioletText43";
-import MaterialButtonWithVioletText44 from "../components/MaterialButtonWithVioletText44";
-import MaterialButtonWithVioletText45 from "../components/MaterialButtonWithVioletText45";
-import MaterialButtonWithVioletText47 from "../components/MaterialButtonWithVioletText47";
+import MaterialButtonWithVioletText36 from "../createStay/components/MaterialButtonWithVioletText36";
+import MaterialButtonWithVioletText37 from "../createStay/components/MaterialButtonWithVioletText37";
+import MaterialButtonWithVioletText38 from "../createStay/components/MaterialButtonWithVioletText38";
+import MaterialButtonWithVioletText40 from "../createStay/components/MaterialButtonWithVioletText40";
+import MaterialButtonWithVioletText42 from "../createStay/components/MaterialButtonWithVioletText42";
+import MaterialButtonWithVioletText43 from "../createStay/components/MaterialButtonWithVioletText43";
+import MaterialButtonWithVioletText44 from "../createStay/components/MaterialButtonWithVioletText44";
+import MaterialButtonWithVioletText45 from "../createStay/components/MaterialButtonWithVioletText45";
+import MaterialButtonWithVioletText47 from "../createStay/components/MaterialButtonWithVioletText47";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import MaterialButtonWithVioletText57 from "../components/MaterialButtonWithVioletText57";
-import MaterialButtonWithVioletText39 from "../components/MaterialButtonWithVioletText39";
+import MaterialButtonWithVioletText57 from "../createStay/components/MaterialButtonWithVioletText57";
+import MaterialButtonWithVioletText39 from "../createStay/components/MaterialButtonWithVioletText39";
 
 function EditMyListings(props) {
   return (

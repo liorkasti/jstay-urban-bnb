@@ -5,7 +5,7 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 function MaterialCardWithRightButtons(props) {
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Image
         source={require("../assets/images/IMG_3025.jpg")}
         style={styles.cardItemImagePlace}
@@ -50,7 +50,7 @@ function MaterialCardWithRightButtons(props) {
         name="magnify"
         style={styles.icon12}
       ></MaterialCommunityIconsIcon>
-    </View>
+    </TouchableOpacity>
   );
 }
 

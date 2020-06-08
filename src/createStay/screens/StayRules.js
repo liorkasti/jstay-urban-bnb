@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.03,
-    fontFamily: "calibri-regular",
+    fontFamily: "roboto-regular",
     textAlign: "left",
     marginTop: 541,
     marginLeft: 24

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import ReviewCard from "../components/ReviewCard";
-import MaterialButtonWithVioletText48 from "../components/MaterialButtonWithVioletText48";
-import MaterialButtonWithVioletText50 from "../components/MaterialButtonWithVioletText50";
+import ReviewCard from "../createStay/components/ReviewCard";
+import MaterialButtonWithVioletText48 from "../createStay/components/MaterialButtonWithVioletText48";
+import MaterialButtonWithVioletText50 from "../createStay/components/MaterialButtonWithVioletText50";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 
 function PreBookingProfile(props) {

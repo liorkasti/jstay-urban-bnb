@@ -6,7 +6,8 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  TextInput
+  TextInput,
+  ScrollView
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
@@ -24,7 +25,7 @@ import CupertinoStepper1 from "../components/CupertinoStepper1";
 function DescribeStay(props) {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="undefined" />
+      <StatusBar barStyle="light-content" />
       <View style={styles.icon2Row}>
         <EntypoIcon name="chevron-left" style={styles.icon2}></EntypoIcon>
         <View style={styles.bsD1Stack}>
@@ -34,8 +35,8 @@ function DescribeStay(props) {
               <Text style={styles.bsD12}>BS&quot;D</Text>
               <View style={styles.button4RowRow}>
                 <View style={styles.button4Row}>
-                  <TouchableOpacity style={styles.button4}>
-                    <TouchableOpacity style={styles.button5}>
+                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
+                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
                       <EntypoIcon
                         name="chevron-left"
                         style={styles.icon1}
@@ -45,7 +46,7 @@ function DescribeStay(props) {
                   <Text style={styles.createAStay3}>Create A Stay</Text>
                 </View>
                 <View style={styles.button4RowFiller}></View>
-                <TouchableOpacity style={styles.button3}>
+                <TouchableOpacity onPress={props.onHome} style={styles.button3}>
                   <View style={styles.image1Filler}></View>
                   <Image
                     source={require("../assets/images/jstay-icon-inverted8.png")}
@@ -58,170 +59,171 @@ function DescribeStay(props) {
           </View>
         </View>
       </View>
-      <View style={styles.materialButtonWithVioletText1Row}>
-        <MaterialButtonWithVioletText11
-          style={styles.materialButtonWithVioletText1}
-        ></MaterialButtonWithVioletText11>
-        <View style={styles.materialButtonWithVioletText1Filler}></View>
-        <MaterialButtonViolet6 onPress={props.onNext}
-          style={styles.materialButtonViolet6}
-        ></MaterialButtonViolet6>
-      </View>
-      <View style={styles.materialRadio11ColumnRow}>
-        <View style={styles.materialRadio11Column}>
-          <MaterialRadio7 style={styles.materialRadio11}></MaterialRadio7>
-          <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
-        </View>
-        <View style={styles.standardKosherStackColumn}>
-          <View style={styles.standardKosherStack}>
-            <Text style={styles.standardKosher}>Standard Kosher</Text>
-            <Text style={styles.loremIpsum7}>
-              This stay is kept strictly kosher to basic requirements, with
-              separate dishes and utensils for meat and milk, but available to
-              non-Kosher users (with separate dishes)
-            </Text>
+
+          <View style={styles.materialButtonWithVioletText1Row}>
+            <MaterialButtonWithVioletText11
+              style={styles.materialButtonWithVioletText1}
+            ></MaterialButtonWithVioletText11>
+            <View style={styles.materialButtonWithVioletText1Filler}></View>
+            <MaterialButtonViolet6 onPress={props.onNext}
+              style={styles.materialButtonViolet6}
+            ></MaterialButtonViolet6>
           </View>
-          <View style={styles.loremIpsum8Stack}>
-            <Text style={styles.loremIpsum8}>
-              This stay is kept strictly kosher with separate {"\n"}kitchens,
+          <View style={styles.materialRadio11ColumnRow}>
+            <View style={styles.materialRadio11Column}>
+              <MaterialRadio7 style={styles.materialRadio11}></MaterialRadio7>
+              <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
+            </View>
+            <View style={styles.standardKosherStackColumn}>
+              <View style={styles.standardKosherStack}>
+                <Text style={styles.standardKosher}>Standard Kosher</Text>
+                <Text style={styles.loremIpsum7}>
+                  This stay is kept strictly kosher to basic requirements, with
+                  separate dishes and utensils for meat and milk, but available to
+                  non-Kosher users (with separate dishes)
+            </Text>
+              </View>
+              <View style={styles.loremIpsum8Stack}>
+                <Text style={styles.loremIpsum8}>
+                  This stay is kept strictly kosher with separate {"\n"}kitchens,
               and is only available to other Strictly Kosher guests
             </Text>
-            <Text style={styles.strictlyKosher}>Strictly Kosher</Text>
+                <Text style={styles.strictlyKosher}>Strictly Kosher</Text>
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
-      <Text style={styles.stayType}>What will guests be booking?</Text>
-      <View style={styles.materialRadioRow}>
-        <MaterialRadio style={styles.materialRadio}></MaterialRadio>
-        <View style={styles.privatePlaceStack}>
-          <Text style={styles.privatePlace}>Private Place</Text>
-          <Text style={styles.guestsWill}>
-            Guests will have the entire place to themselves.{"\n"}Usually
+          <Text style={styles.stayType}>What will guests be booking?</Text>
+          <View style={styles.materialRadioRow}>
+            <MaterialRadio style={styles.materialRadio}></MaterialRadio>
+            <View style={styles.privatePlaceStack}>
+              <Text style={styles.privatePlace}>Private Place</Text>
+              <Text style={styles.guestsWill}>
+                Guests will have the entire place to themselves.{"\n"}Usually
             includes a bedroom, bathroom, and kitchen
           </Text>
-        </View>
-      </View>
-      <View style={styles.materialRadio1Row}>
-        <MaterialRadio1 style={styles.materialRadio1}></MaterialRadio1>
-        <View style={styles.privateRoomColumn}>
-          <Text style={styles.privateRoom}>Private Room</Text>
-          <Text style={styles.loremIpsum2}>
-            Guests have their own private room for sleeping.{"\n"}Other areas
+            </View>
+          </View>
+          <View style={styles.materialRadio1Row}>
+            <MaterialRadio1 style={styles.materialRadio1}></MaterialRadio1>
+            <View style={styles.privateRoomColumn}>
+              <Text style={styles.privateRoom}>Private Room</Text>
+              <Text style={styles.loremIpsum2}>
+                Guests have their own private room for sleeping.{"\n"}Other areas
             may be shared
           </Text>
-        </View>
-      </View>
-      <View style={styles.materialRadio2ColumnRow}>
-        <View style={styles.materialRadio2Column}>
-          <MaterialRadio2 style={styles.materialRadio2}></MaterialRadio2>
-          <MaterialRadio2 style={styles.materialRadio13}></MaterialRadio2>
-        </View>
-        <View style={styles.sharedRoomStackColumn}>
-          <View style={styles.sharedRoomStack}>
-            <Text style={styles.sharedRoom}>Shared Room</Text>
-            <Text style={styles.guestsSleepIn}>
-              Guests sleep in a bedroom or common area that may be shared with
-              others
-            </Text>
+            </View>
           </View>
-          <Text style={styles.hotelSuite}>Hotel suite</Text>
-          <Text style={styles.guestsSleepIn3}>
-            How many duplicate suites do you have?
+          <View style={styles.materialRadio2ColumnRow}>
+            <View style={styles.materialRadio2Column}>
+              <MaterialRadio2 style={styles.materialRadio2}></MaterialRadio2>
+              <MaterialRadio2 style={styles.materialRadio13}></MaterialRadio2>
+            </View>
+            <View style={styles.sharedRoomStackColumn}>
+              <View style={styles.sharedRoomStack}>
+                <Text style={styles.sharedRoom}>Shared Room</Text>
+                <Text style={styles.guestsSleepIn}>
+                  Guests sleep in a bedroom or common area that may be shared with
+                  others
+            </Text>
+              </View>
+              <Text style={styles.hotelSuite}>Hotel suite</Text>
+              <Text style={styles.guestsSleepIn3}>
+                How many duplicate suites do you have?
           </Text>
-        </View>
-      </View>
-      <View style={styles.loremIpsum3StackStackStackStack}>
-        <View style={styles.loremIpsum3StackStackStack}>
-          <View style={styles.loremIpsum3StackStack}>
-            <View style={styles.loremIpsum3Stack}>
-              <Text style={styles.loremIpsum3}>
-                Is this set up as a dedicated guest stay?
-              </Text>
-              <MaterialRadio3 style={styles.materialRadio3}></MaterialRadio3>
-            </View>
-            <View style={styles.yesStack}>
-              <Text style={styles.yes}>Yes</Text>
-              <Text style={styles.guestsSleepIn1}>
-                Its set up for guests only
-              </Text>
             </View>
           </View>
-          <MaterialRadio4 style={styles.materialRadio4}></MaterialRadio4>
-        </View>
-        <Text style={styles.no2}>No</Text>
-      </View>
-      <Text style={styles.isThisStayKosher}>Is this stay kosher?</Text>
-      <Text style={styles.guestsSleepIn2}>
-        I keep my personal belongings here
+          <View style={styles.loremIpsum3StackStackStackStack}>
+            <View style={styles.loremIpsum3StackStackStack}>
+              <View style={styles.loremIpsum3StackStack}>
+                <View style={styles.loremIpsum3Stack}>
+                  <Text style={styles.loremIpsum3}>
+                    Is this set up as a dedicated guest stay?
+              </Text>
+                  <MaterialRadio3 style={styles.materialRadio3}></MaterialRadio3>
+                </View>
+                <View style={styles.yesStack}>
+                  <Text style={styles.yes}>Yes</Text>
+                  <Text style={styles.guestsSleepIn1}>
+                    Its set up for guests only
+              </Text>
+                </View>
+              </View>
+              <MaterialRadio4 style={styles.materialRadio4}></MaterialRadio4>
+            </View>
+            <Text style={styles.no2}>No</Text>
+          </View>
+          <Text style={styles.isThisStayKosher}>Is this stay kosher?</Text>
+          <Text style={styles.guestsSleepIn2}>
+            I keep my personal belongings here
       </Text>
-      <View style={styles.nameYourStayStack}>
-        <Text style={styles.nameYourStay}>Name your stay</Text>
-        <TextInput
-          placeholder="e.g. David's Penthouse"
-          placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
-          style={styles.textInput}
-        ></TextInput>
-      </View>
-      <Text style={styles.describeYourStay}>Describe your stay</Text>
-      <TextInput
-        placeholder="e.g. Beautiful apartment with city views.."
-        placeholderTextColor="rgba(177,177,177,1)"
-        autoCapitalize="sentences"
-        autoCorrect={true}
-        maxLength={200}
-        multiline={true}
-        returnKeyType="done"
-        inlineImagePadding={0}
-        numberOfLines={4}
-        returnKeyLabel="Save"
-        spellCheck={true}
-        style={styles.textInput2}
-      ></TextInput>
-      <Text style={styles.isThisStayKosher1}>
-        Is this stay gender specific?
+          <View style={styles.nameYourStayStack}>
+            <Text style={styles.nameYourStay}>Name your stay</Text>
+            <TextInput
+              placeholder="e.g. David's Penthouse"
+              placeholderTextColor="rgba(177,177,177,1)"
+              autoFocus={true}
+              style={styles.textInput}
+            ></TextInput>
+          </View>
+          <Text style={styles.describeYourStay}>Describe your stay</Text>
+          <TextInput
+            placeholder="e.g. Beautiful apartment with city views.."
+            placeholderTextColor="rgba(177,177,177,1)"
+            autoCapitalize="sentences"
+            autoCorrect={true}
+            maxLength={200}
+            multiline={true}
+            returnKeyType="done"
+            inlineImagePadding={0}
+            numberOfLines={4}
+            returnKeyLabel="Save"
+            spellCheck={true}
+            style={styles.textInput2}
+          ></TextInput>
+          <Text style={styles.isThisStayKosher1}>
+            Is this stay gender specific?
       </Text>
-      <View style={styles.materialRadio8StackStack}>
-        <View style={styles.materialRadio8Stack}>
-          <MaterialRadio5 style={styles.materialRadio8}></MaterialRadio5>
-          <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
-        </View>
-        <View style={styles.maleOnlyStack}>
-          <Text style={styles.maleOnly}>Male Only</Text>
-          <View style={styles.group}>
-            <Text style={styles.text3}>
-              My stay is only available to men (female users will not be shown
-              this listing)
+          <View style={styles.materialRadio8StackStack}>
+            <View style={styles.materialRadio8Stack}>
+              <MaterialRadio5 style={styles.materialRadio8}></MaterialRadio5>
+              <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
+            </View>
+            <View style={styles.maleOnlyStack}>
+              <Text style={styles.maleOnly}>Male Only</Text>
+              <View style={styles.group}>
+                <Text style={styles.text3}>
+                  My stay is only available to men (female users will not be shown
+                  this listing)
             </Text>
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
-      <View style={styles.materialRadio12Row}>
-        <MaterialRadio7 style={styles.materialRadio12}></MaterialRadio7>
-        <View style={styles.femaleOnlyStack}>
-          <Text style={styles.femaleOnly}>Female Only</Text>
-          <Text style={styles.loremIpsum11}>
-            My stay is only available to women (male users{"\n"}will not be
+          <View style={styles.materialRadio12Row}>
+            <MaterialRadio7 style={styles.materialRadio12}></MaterialRadio7>
+            <View style={styles.femaleOnlyStack}>
+              <Text style={styles.femaleOnly}>Female Only</Text>
+              <Text style={styles.loremIpsum11}>
+                My stay is only available to women (male users{"\n"}will not be
             shown this listing)
           </Text>
-        </View>
-      </View>
-      <View style={styles.materialRadio10Row}>
-        <MaterialRadio5 style={styles.materialRadio10}></MaterialRadio5>
-        <View style={styles.notKosher1Stack}>
-          <Text style={styles.notKosher1}>Not Kosher</Text>
-          <Text style={styles.loremIpsum13}>
-            This stay is not kosher, but has kosher options {"\n"}and/or is
+            </View>
+          </View>
+          <View style={styles.materialRadio10Row}>
+            <MaterialRadio5 style={styles.materialRadio10}></MaterialRadio5>
+            <View style={styles.notKosher1Stack}>
+              <Text style={styles.notKosher1}>Not Kosher</Text>
+              <Text style={styles.loremIpsum13}>
+                This stay is not kosher, but has kosher options {"\n"}and/or is
             located within the local Jewish area
           </Text>
-        </View>
-      </View>
-      <Text style={styles.stayType2}>Stay type</Text>
-      <DropDown textInput1="House" style={styles.dropDown}></DropDown>
-      <CupertinoStepper1
-        text1=""
-        style={styles.cupertinoStepper1}
-      ></CupertinoStepper1>
+            </View>
+          </View>
+          <Text style={styles.stayType2}>Stay type</Text>
+          <DropDown textInput1="House" style={styles.dropDown}></DropDown>
+          <CupertinoStepper1
+            text1=""
+            style={styles.cupertinoStepper1}
+          ></CupertinoStepper1>
     </View>
   );
 }
@@ -231,6 +233,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)"
   },
+
   icon2: {
     color: "rgba(0,88,155,1)",
     fontSize: 40,
@@ -682,7 +685,7 @@ const styles = StyleSheet.create({
     },
     shadowColor: "rgba(0,0,0,1)",
     shadowOpacity: 0.03,
-    fontFamily: "calibri-regular",
+    fontFamily: "roboto-regular",
     textAlign: "left",
     marginTop: 9,
     marginLeft: 24

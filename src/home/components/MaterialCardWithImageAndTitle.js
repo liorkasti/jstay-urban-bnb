@@ -17,7 +17,7 @@ function MaterialCardWithImageAndTitle(props) {
         ></Image>
       </View>
       <View style={styles.actionBody}>
-        <TouchableOpacity style={styles.actionButton1}>
+        <TouchableOpacity onPress={props.onPress} style={styles.actionButton1}>
           <Text style={styles.actionText1}>View Stay</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.actionButton2}>

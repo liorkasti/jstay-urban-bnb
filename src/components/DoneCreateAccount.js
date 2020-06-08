@@ -7,6 +7,7 @@ function DoneCreateAccount(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText9
+      onPress={props.onPress}
         style={styles.materialButtonWithVioletText9}
       ></MaterialButtonWithVioletText9>
       <Icon name="ios-arrow-forward" style={styles.icon10}></Icon>

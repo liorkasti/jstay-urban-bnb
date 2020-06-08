@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
     left: "0%",
     width: "100%",
     height: 39,
+    padding: 10,
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",
     position: "absolute",

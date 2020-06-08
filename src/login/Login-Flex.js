@@ -19,7 +19,7 @@ import SignupButton from "../components/SignupButton";
 function Login(props) {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="undefined" />
+      <StatusBar barStyle="dark-content" />
       <View style={styles.groupStackStackColumn}>
         <View style={styles.groupStackStack}>
           <View style={styles.groupStack}>

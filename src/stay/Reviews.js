@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
-import ReviewCardUl from "../components/ReviewCardUl";
+import ReviewCardUl from "../createStay/components/ReviewCardUl";
 
 function Reviews(props) {
   return (

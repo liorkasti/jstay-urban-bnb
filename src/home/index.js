@@ -1,57 +1,184 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet} from "react-native"
+import { View, StyleSheet } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
 import Home from "./Home";
+import Favorites from "./Favorites"
+import SearchResults from "./SearchResults";
 
 export default function Index(props) {
-    const [componentIndex, setComponentIndex] = useState(0);
-    
+    const [currentComponent, setCurrentComponent] = useState("Home");
+    const [currentSearch, setCurrentSearch] = useState("");
 
-    
-    //add the import as a string to this array 
-    //the array should be in the order that the screens show up
-    const componentKeys = ["ComingSoon"];
+    const history = useHistory();
 
-    return (
-        <View style={styles.container}>
-            {/* copy paste below component*/}
-            
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
-                
-                componentKeys[componentIndex] === "ComingSoon"
-                &&
-                //change component name to the new import 
-                <Home comingSoonDirectory="home"
-                    
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => { 
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                    
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        setComponentIndex(componentIndex - 1)
-                    }}
+    useEffect(() => {
+        if(props.location.state && props.location.state.currentSearch){
+            setCurrentSearch(props.location.state.currentSearch);
+            setCurrentComponent("SearchResults")
+        } 
+    }, [])
 
+    const handleFooterMenu = (menuItem) => {
+        switch (menuItem) {
+            case "createStay":
+                history.push("/createStay");
+                break;
+            case "logout":
+                history.push("/");
+                break;
+            case "profile":
+                history.push("/account",{subroute: "myProfile"});
+                break;
+            case "kashrut":
+                history.push("/account",{subroute:"editMyKashrut"})
+            case "paymentDetails":
+                history.push("/account",{subroute:"guestCardInfo"})
+        }
+        // createStay 
+        // myProfile = myProfile
+        // kashrut = kashrut select
+        // paymentDetails = carddetails
+        // faq = faq
+    };
+
+    onBack = () => {
+        if (currentSearch) {
+            setCurrentComponent("SearchResults")
+        } else {
+            setCurrentComponent("Home")
+        }
+    }
+
+    const handleFooterBar = (page) => {
+        switch (page) {
+            case "favorites":
+                setCurrentComponent("Favorites")
+                break;
+            case "trips":
+                history.push("/account",{subroute:"trips"});
+                break;
+        }
+    };
+
+    const handleCard = (action) => {
+        switch (action) {
+            case "stayProfile":
+                history.push("/account",{subroute: "stayProfile", currentSearch: currentSearch});
+                break;
+        }
+    };
+
+        return (
+            <View style={styles.container}>
+                {/* copy paste below component*/}
+
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
+
+                    currentComponent === "Home"
+                    &&
+                    //change component name to the new import 
+                    <Home
+
+                        showSearchResultsFor={(search) => {
+                            setCurrentComponent("SearchResults");
+                            setCurrentSearch(search);
+                        }}
+
+                        handleFooterMenu={(menuItem) => {
+                            handleFooterMenu(menuItem)
+                        }}
+
+                        handleFooterBar={(page) => {
+                            handleFooterBar(page)
+                        }}
+
+                    />
+                }
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
+
+                    currentComponent === "Favorites"
+                    &&
+                    //change component name to the new import 
+                    <Favorites
+
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onNext={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+
+                        handleFooterMenu={(menuItem) => {
+                            handleFooterMenu(menuItem)
+                        }}
+
+                        handleFooterBar={(page) => {
+                            handleFooterBar(page)
+                        }}
+
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            onBack();
+                        }}
+
+                        onHome={() => {
+                            setCurrentComponent("Home");
+                        }}
+                        //if builder x component has skip button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onSkip={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+                    />
+                }
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
+
+                    currentComponent === "SearchResults"
+                    &&
+                    //change component name to the new import 
+                    <SearchResults
+
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+
+                        showStayProfile={() => { handleCard("stayProfile"); }}
+
+                        handleFooterMenu={(menuItem) => {
+                            handleFooterMenu(menuItem)
+                        }}
+
+                        handleFooterBar={(page) => {
+                            handleFooterBar(page)
+                        }}
+
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            setCurrentComponent("Home");
+                        }}
+
+                        onHome={() => {
+                            setCurrentComponent("Home");
+                        }}
                     //if builder x component has skip button
                     //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-        </View>
-    );
-}
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
+
+                    />
+                }
+            </View>
+        );
     }
-});
+    const styles = StyleSheet.create({
+        container: {
+            flex: 1,
+            alignItems: "center",
+        }
+    });

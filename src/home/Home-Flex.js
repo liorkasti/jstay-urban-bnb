@@ -28,7 +28,7 @@ function Home(props) {
   return (
     <View style={styles.container}>
       <ScrollView>
-      <StatusBar barStyle="undefined" />
+      <StatusBar barStyle="light-content" />
       <View style={styles.cityCardsStackStack}>
         <View style={styles.cityCardsStack}>
           <CityCards style={styles.cityCards}></CityCards>

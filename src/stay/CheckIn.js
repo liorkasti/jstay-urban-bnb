@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import MaterialButtonViolet13 from "../components/MaterialButtonViolet13";
-import MaterialButtonViolet20 from "../components/MaterialButtonViolet20";
+import MaterialButtonViolet13 from "../createStay/components/MaterialButtonViolet13";
+import MaterialButtonViolet20 from "../createStay/components/MaterialButtonViolet20";
 import Icon from "react-native-vector-icons/Entypo";
 
 function Untitled2(props) {

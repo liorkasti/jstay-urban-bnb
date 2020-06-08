@@ -51,7 +51,7 @@ function MyProfile(props) {
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
               <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity style={styles.button5}>
+                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
                   <Icon name="chevron-left" style={styles.icon1}></Icon>
                 </TouchableOpacity>
               </TouchableOpacity>

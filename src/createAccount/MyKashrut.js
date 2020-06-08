@@ -23,6 +23,7 @@ function MyKashrut(props) {
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
+            onBack={props.onBack}
               text1=""
               style={styles.headerBarDark1}
             ></HeaderBarDark>
@@ -31,7 +32,7 @@ function MyKashrut(props) {
         </View>
       </View>
       <View style={styles.myLevelOfKashrutStackColumnFiller}></View>
-      <NextButton style={styles.nextButton1}></NextButton>
+      <NextButton onPress={props.onNext} style={styles.nextButton1}></NextButton>
     </View>
   );
 }

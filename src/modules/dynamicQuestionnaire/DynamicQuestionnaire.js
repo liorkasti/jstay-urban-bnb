@@ -216,7 +216,6 @@ export default function DynamicQuestionnaire(props) {
                                                 index={"location coordinates" + 1}
                                                 draggable
                                                 onDragEnd={(e) => {
-                                                    console.error("is this")
                                                     const newCurrentLocation = { latitude: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude }
                                                     getAddress(newCurrentLocation);
                                                     setCurrentLocation(newCurrentLocation);

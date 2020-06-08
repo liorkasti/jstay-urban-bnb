@@ -8,9 +8,10 @@ import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommun
 function StayResultCard(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <TouchableOpacity style={styles.button9}>
+      <TouchableOpacity onPress={()=>{props.onPress();}} style={styles.button9}>
         <View style={styles.materialCardWithImageAndTitle2Stack}>
           <MaterialCardWithImageAndTitle
+          onPress={()=>{props.onPress();}}
             style={styles.materialCardWithImageAndTitle2}
           ></MaterialCardWithImageAndTitle>
           <FontAwesomeIcon

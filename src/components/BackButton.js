@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/Entypo";
 
 function BackButton(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Icon name="chevron-left" style={styles.icon12}></Icon>
     </TouchableOpacity>
   );

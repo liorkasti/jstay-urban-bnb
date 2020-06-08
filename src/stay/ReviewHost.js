@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import LargeTextInput from "../components/LargeTextInput";
+import LargeTextInput from "../createStay/components/LargeTextInput";
 import FeatherIcon from "react-native-vector-icons/Feather";
-import MaterialButtonWithVioletText49 from "../components/MaterialButtonWithVioletText49";
+import MaterialButtonWithVioletText49 from "../createStay/components/MaterialButtonWithVioletText49";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 
 function ReviewHost(props) {
