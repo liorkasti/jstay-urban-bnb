@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonWithVioletText58(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Text style={styles.caption}>Check-In</Text>
     </TouchableOpacity>
   );

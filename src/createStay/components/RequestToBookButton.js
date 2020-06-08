@@ -6,6 +6,7 @@ function RequestToBookButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonViolet14
+      onPress={props.onPress}
         style={styles.materialButtonViolet14}
       ></MaterialButtonViolet14>
     </View>

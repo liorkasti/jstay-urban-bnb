@@ -14,10 +14,10 @@ export default function Index(props) {
     const history = useHistory();
 
     useEffect(() => {
-        if(props.location.state && props.location.state.currentSearch){
+        if (props.location.state && props.location.state.currentSearch) {
             setCurrentSearch(props.location.state.currentSearch);
             setCurrentComponent("SearchResults")
-        } 
+        }
     }, [])
 
     const handleFooterMenu = (menuItem) => {
@@ -29,12 +29,12 @@ export default function Index(props) {
                 history.push("/");
                 break;
             case "profile":
-                history.push("/account",{subroute: "myProfile"});
+                history.push("/account", { subroute: "myProfile" });
                 break;
             case "kashrut":
-                history.push("/account",{subroute:"editMyKashrut"})
+                history.push("/account", { subroute: "editMyKashrut" })
             case "paymentDetails":
-                history.push("/account",{subroute:"guestCardInfo"})
+                history.push("/account", { subroute: "guestCardInfo" })
         }
         // createStay 
         // myProfile = myProfile
@@ -57,7 +57,7 @@ export default function Index(props) {
                 setCurrentComponent("Favorites")
                 break;
             case "trips":
-                history.push("/account",{subroute:"trips"});
+                history.push("/account", { subroute: "trips" });
                 break;
         }
     };
@@ -65,120 +65,127 @@ export default function Index(props) {
     const handleCard = (action) => {
         switch (action) {
             case "stayProfile":
-                history.push("/account",{subroute: "stayProfile", currentSearch: currentSearch});
+                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch });
+                break;
+            case "bookStay":
+                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch });
                 break;
         }
     };
 
-        return (
-            <View style={styles.container}>
-                {/* copy paste below component*/}
+    return (
+        <View style={styles.container}>
+            {/* copy paste below component*/}
 
-                {
-                    //replace this string with the string 
-                    //in componentKeys related to this import
+            {
+                //replace this string with the string 
+                //in componentKeys related to this import
 
-                    currentComponent === "Home"
-                    &&
-                    //change component name to the new import 
-                    <Home
+                currentComponent === "Home"
+                &&
+                //change component name to the new import 
+                <Home
 
-                        showSearchResultsFor={(search) => {
-                            setCurrentComponent("SearchResults");
-                            setCurrentSearch(search);
-                        }}
+                    showSearchResultsFor={(search) => {
+                        setCurrentComponent("SearchResults");
+                        setCurrentSearch(search);
+                    }}
 
-                        handleFooterMenu={(menuItem) => {
-                            handleFooterMenu(menuItem)
-                        }}
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
 
-                        handleFooterBar={(page) => {
-                            handleFooterBar(page)
-                        }}
+                    handleFooterBar={(page) => {
+                        handleFooterBar(page)
+                    }}
 
-                    />
-                }
-                {
-                    //replace this string with the string 
-                    //in componentKeys related to this import
+                />
+            }
+            {
+                //replace this string with the string 
+                //in componentKeys related to this import
 
-                    currentComponent === "Favorites"
-                    &&
-                    //change component name to the new import 
-                    <Favorites
+                currentComponent === "Favorites"
+                &&
+                //change component name to the new import 
+                <Favorites
 
-                        //if builder x component has next button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onNext={() => {
-                            setComponentIndex(componentIndex + 1)
-                        }}
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
 
-                        handleFooterMenu={(menuItem) => {
-                            handleFooterMenu(menuItem)
-                        }}
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
 
-                        handleFooterBar={(page) => {
-                            handleFooterBar(page)
-                        }}
+                    handleFooterBar={(page) => {
+                        handleFooterBar(page)
+                    }}
 
-                        //if builder x component has back button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onBack={() => {
-                            onBack();
-                        }}
+                    //if builder x component has back button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onBack={() => {
+                        onBack();
+                    }}
 
-                        onHome={() => {
-                            setCurrentComponent("Home");
-                        }}
-                        //if builder x component has skip button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onSkip={() => {
-                            setComponentIndex(componentIndex + 1)
-                        }}
-                    />
-                }
-                {
-                    //replace this string with the string 
-                    //in componentKeys related to this import
-
-                    currentComponent === "SearchResults"
-                    &&
-                    //change component name to the new import 
-                    <SearchResults
-
-                        //if builder x component has next button
-                        //it's button should have onPress={()=>{props.onNext}}
-
-                        showStayProfile={() => { handleCard("stayProfile"); }}
-
-                        handleFooterMenu={(menuItem) => {
-                            handleFooterMenu(menuItem)
-                        }}
-
-                        handleFooterBar={(page) => {
-                            handleFooterBar(page)
-                        }}
-
-                        //if builder x component has back button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onBack={() => {
-                            setCurrentComponent("Home");
-                        }}
-
-                        onHome={() => {
-                            setCurrentComponent("Home");
-                        }}
+                    onHome={() => {
+                        setCurrentComponent("Home");
+                    }}
                     //if builder x component has skip button
                     //it's button should have onPress={()=>{props.onNext}}
+                    onSkip={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+                />
+            }
+            {
+                //replace this string with the string 
+                //in componentKeys related to this import
 
-                    />
-                }
-            </View>
-        );
+                currentComponent === "SearchResults"
+                &&
+                //change component name to the new import 
+                <SearchResults
+
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+
+                    showStayProfile={() => { handleCard("stayProfile"); }}
+
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
+
+                    bookStay={() => {
+                        handleCard("bookStay")
+                    }}
+
+                    handleFooterBar={(page) => {
+                        handleFooterBar(page)
+                    }}
+
+                    //if builder x component has back button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onBack={() => {
+                        setCurrentComponent("Home");
+                    }}
+
+                    onHome={() => {
+                        setCurrentComponent("Home");
+                    }}
+                //if builder x component has skip button
+                //it's button should have onPress={()=>{props.onNext}}
+
+                />
+            }
+        </View>
+    );
+}
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
     }
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            alignItems: "center",
-        }
-    });
+});

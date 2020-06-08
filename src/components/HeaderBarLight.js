@@ -7,7 +7,7 @@ function HeaderBarLight(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.rect1}></View>
       <Text style={styles.bookThisStay}>{props.text2 || "Book This Stay"}</Text>
-      <TouchableOpacity style={styles.button2}>
+      <TouchableOpacity onPress={pros.onBack} style={styles.button2}>
         <Icon name="chevron-left" style={styles.icon1}></Icon>
       </TouchableOpacity>
       <Text style={styles.bsd}>{props.text2 || "bsd"}</Text>

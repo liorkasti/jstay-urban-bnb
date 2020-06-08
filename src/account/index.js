@@ -16,6 +16,9 @@ import NewRequest from "./NewRequest";
 import Previous from "./Previous";
 import Trips from "./Trips";
 import StayProfile from "./StayProfile";
+import BookStay from "./BookStay";
+import PreBookingProfile from "./PreBookingProfile";
+import CheckIn from "./CheckIn";
 
 const components = {
     cancelation: Cancelation,
@@ -29,10 +32,17 @@ const components = {
     newRequest: NewRequest,
     previous: Previous,
     trips: Trips,
-    stayProfile: StayProfile
+    stayProfile: StayProfile,
+    bookStay: BookStay,
+    preBookingProfile: PreBookingProfile,
+    checkIn: CheckIn,
 };
 
 export default function Index(props) {
+    const [render, rerender] = useState(0);
+    const [backHistory, addBackHistory] = useState([])
+    const [historyIndex, setHistoryIndex] = useState(0);
+    const [currentPage, setCurrentPage] = useState("");
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -45,18 +55,37 @@ export default function Index(props) {
     function onHome() {
         history.push("/home");
     };
-    
+
+    useEffect(() => {
+        let newBackHistory = [...backHistory];
+        newBackHistory[historyIndex] = props.location.state.subroute;
+        addBackHistory(newBackHistory);
+    }, []);
+
+    const onUserPress = (page) => {
+        setCurrentPage(page);
+        let newBackHistory = [...backHistory];
+        newBackHistory[historyIndex + 1] = page;
+        addBackHistory(newBackHistory);
+        setHistoryIndex(historyIndex + 1)
+    }
+
     const onBack = () => {
-        const currentSearch = props.location.state.currentSearch;
-        if(currentSearch){
-            history.push("/home", {currentSearch: currentSearch})
-        } else onHome();
-    } 
+        if (historyIndex - 1 < 0) {
+            const currentSearch = props.location.state.currentSearch;
+            if (currentSearch) {
+                history.push("/home", { currentSearch: currentSearch })
+            } else onHome();
+        } else {
+            setCurrentPage(backHistory[historyIndex - 1]);
+            setHistoryIndex(historyIndex - 1);
+        }
+    }
 
     const CurrentComponentRouter = () => {
-        
-        if (!components[props.location.state.subroute]) return  <View/>
-        const CurrentComponent = components[props.location.state.subroute];
+
+        if (!components[props.location.state.subroute]) return <View />
+        const CurrentComponent = components[currentPage || props.location.state.subroute];
         return (<CurrentComponent
             style={styles.componentStyle}
             //if builder x component has next button
@@ -66,9 +95,14 @@ export default function Index(props) {
             //if builder x component has back button
             //it's button should have onPress={()=>{props.onNext}}
             onBack={() => {
-onBack();
+                onBack();
             }}
 
+            goHome={() => {
+                onHome();
+            }}
+
+            onUserPress={(page) => onUserPress(page)}
         />)
     }
 

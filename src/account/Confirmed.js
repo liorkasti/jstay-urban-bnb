@@ -29,7 +29,7 @@ function Untitled10(props) {
                 </View>
               </View>
               <View style={styles.image10RowFiller}></View>
-              <TouchableOpacity style={styles.button7}>
+              <TouchableOpacity onPress={()=>props.onUserPress("preBookingProfile")} style={styles.button7}>
                 <Image
                   source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
                   resizeMode="stretch"
@@ -66,15 +66,15 @@ function Untitled10(props) {
           <Text style={styles.bsD1}>BS&quot;D</Text>
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
-              <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity style={styles.button5}>
+              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
+                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
                   <Icon name="chevron-left" style={styles.icon1}></Icon>
                 </TouchableOpacity>
               </TouchableOpacity>
               <Text style={styles.confirmed}>Confirmed</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
+            <TouchableOpacity onPress={props.goHome} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

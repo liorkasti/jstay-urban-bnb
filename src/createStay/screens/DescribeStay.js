@@ -27,7 +27,6 @@ function DescribeStay(props) {
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.icon2Row}>
-        <EntypoIcon name="chevron-left" style={styles.icon2}></EntypoIcon>
         <View style={styles.bsD1Stack}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
           <View style={styles.group1}>

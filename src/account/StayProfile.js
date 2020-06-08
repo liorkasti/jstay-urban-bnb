@@ -73,7 +73,7 @@ function StayProfile(props) {
             <EntypoIcon name="chevron-right" style={styles.icon7}></EntypoIcon>
           </ImageBackground>
           <Text style={styles.bsD1}>BS&quot;D</Text>
-          <TouchableOpacity style={styles.button6}>
+          <TouchableOpacity onPress={()=>props.onUserPress("preBookingProfile")} style={styles.button6}>
             <Image
               source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
               resizeMode="stretch"
@@ -134,6 +134,7 @@ function StayProfile(props) {
       <Text style={styles.rating}>Rating</Text>
       <View style={styles.requestToBookButtonRow}>
         <RequestToBookButton
+        onPress={()=>{props.onUserPress("bookStay");}}
           style={styles.requestToBookButton}
         ></RequestToBookButton>
         <MessageHostButton style={styles.messageHostButton}></MessageHostButton>

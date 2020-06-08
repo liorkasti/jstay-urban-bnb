@@ -67,8 +67,8 @@ function PreBookingProfile(props) {
           <Text style={styles.bsD1}>BS&quot;D</Text>
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
-              <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity style={styles.button5}>
+              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
+                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
                   <EntypoIcon
                     name="chevron-left"
                     style={styles.icon127}

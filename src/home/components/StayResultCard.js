@@ -11,6 +11,7 @@ function StayResultCard(props) {
       <TouchableOpacity onPress={()=>{props.onPress();}} style={styles.button9}>
         <View style={styles.materialCardWithImageAndTitle2Stack}>
           <MaterialCardWithImageAndTitle
+          bookStay={()=>{props.bookStay()}}
           onPress={()=>{props.onPress();}}
             style={styles.materialCardWithImageAndTitle2}
           ></MaterialCardWithImageAndTitle>

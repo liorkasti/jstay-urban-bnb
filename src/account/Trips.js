@@ -11,9 +11,10 @@ function Trips(props) {
     <View style={styles.container}>
       <View style={styles.upcomingTripsStack}>
         <Text style={styles.upcomingTrips}>Upcoming trips</Text>
+        
         <View style={styles.group3Stack}>
           <View style={styles.group3}>
-            <View style={styles.group2}>
+            <TouchableOpacity onPress={()=>{props.onUserPress("confirmed")}} style={styles.group2}>
               <View style={styles.rect10}>
                 <View style={styles.image10Row}>
                   <Image
@@ -32,7 +33,8 @@ function Trips(props) {
                   </View>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
+            
             <View style={styles.checkInRow}>
               <Text style={styles.checkIn}>Check-in</Text>
               <Text style={styles.checkOut2}>04 March 2021</Text>
@@ -41,12 +43,14 @@ function Trips(props) {
               <Text style={styles.checkOut}>Check-out</Text>
               <Text style={styles.checkOut1}>20 March 2021</Text>
             </View>
+
             <View style={styles.materialButtonWithVioletText52StackRow}>
               <View style={styles.materialButtonWithVioletText52Stack}>
                 <MaterialButtonWithVioletText52
                   style={styles.materialButtonWithVioletText52}
                 ></MaterialButtonWithVioletText52>
                 <MaterialButtonWithVioletText58
+                onPress={()=>{props.onUserPress("checkIn")}}
                   style={styles.materialButtonWithVioletText58}
                 ></MaterialButtonWithVioletText58>
               </View>
