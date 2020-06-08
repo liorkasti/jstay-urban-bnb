@@ -134,7 +134,7 @@ function StayProfile(props) {
       <Text style={styles.rating}>Rating</Text>
       <View style={styles.requestToBookButtonRow}>
         <RequestToBookButton
-        onPress={()=>{props.onUserPress("bookStay");}}
+        onPress={()=>{props.bookStay("bookStay");}}
           style={styles.requestToBookButton}
         ></RequestToBookButton>
         <MessageHostButton style={styles.messageHostButton}></MessageHostButton>

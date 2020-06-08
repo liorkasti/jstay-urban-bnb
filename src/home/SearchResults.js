@@ -32,7 +32,7 @@ function SearchResults(props) {
         </TouchableOpacity>
         <SearchBar style={styles.searchBar1}></SearchBar>
       </View>
-      <StayResultCard bookStay={()=>props.onUserPress("bookStay")} onPress={()=>{props.showStayProfile()}} style={styles.stayResultCard1}></StayResultCard>
+      <StayResultCard bookStay={()=>props.bookStay()} onPress={()=>{props.showStayProfile()}} style={styles.stayResultCard1}></StayResultCard>
       <MapButtonClosed style={styles.mapButtonClosed}></MapButtonClosed>
     </View>
   );
