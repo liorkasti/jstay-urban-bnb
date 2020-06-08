@@ -228,8 +228,8 @@ const styles = StyleSheet.create({
   searchBar: {
     top: "7%",
     position: "absolute",
-    right: "20%",
-    left: "20%",
+    right: "22%",
+    left: "22%",
   },
   materialCardWithRightButtons1: {
     height: 266,

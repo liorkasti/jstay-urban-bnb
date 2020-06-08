@@ -34,29 +34,32 @@ function SearchBar(props) {
 const styles = StyleSheet.create({
   container: {},
   group2: {
-    height: "10%"
+    height: "10%",
+    // position: "absolute",
+    alignItems: "center"
   },
   textInput42: {
     top: 0,
-    width: "130%",
-    // left: 0,
+    width: 290,
     height: "100%",
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",
-    position: "absolute",
+    // position: "absolute",
     borderRadius: 10,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 3,
     fontFamily: "roboto-regular",
+    fontSize: 12,
     textAlign: "center",
-    right: 0
   },
   button1082: {
     top: 8,
     height: 23,
     position: "absolute",
     right: 12,
-    width: 21
+    width: 21,
+    // right: "12%",
+
   },
   icon252: {
     color: "rgba(128,128,128,1)",
@@ -67,7 +70,8 @@ const styles = StyleSheet.create({
     left: 10,
     width: 22,
     height: 21,
-    position: "absolute"
+    position: "absolute",
+    // left: "13%",
   },
   icon352: {
     color: "rgba(0,88,155,1)",
