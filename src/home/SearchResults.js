@@ -12,11 +12,11 @@ function SearchResults(props) {
   return (
     <View style={styles.container}>
       <View style={styles.stayResultCard2Stack}>
-        <StayResultCard style={styles.stayResultCard2}></StayResultCard>
         <FooterBar handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.footerBar1}></FooterBar>
       </View>
       <Text style={styles.bsD1}>BS&quot;D</Text>
-      <StayResultCard style={styles.stayResultCard3}></StayResultCard>
+      {/*this used to be another card but I didn't want it there so i turned it into a view so it doesn't mess with all the designs */}
+      <View style={styles.stayResultCard3}></View>
       <View style={styles.headerBar1Stack}>
         <HeaderBar style={styles.headerBar1}></HeaderBar>
        
