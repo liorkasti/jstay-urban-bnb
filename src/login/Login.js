@@ -79,14 +79,14 @@ const styles = StyleSheet.create({
     right: 34
   },
   button3: {
-    top: 745,
+    bottom: 75,
     left: 32,
     width: 353,
     height: 62,
     position: "absolute"
   },
   loginButton: {
-    bottom: 50,
+    // bottom: "20%",
     left: 0,
     width: 353,
     height: 62,
@@ -150,14 +150,15 @@ const styles = StyleSheet.create({
     bottom: "51.18%"
   },
   button2: {
-    top: 820,
+    bottom: 25,
     left: 151,
     width: 116,
     height: 36,
     position: "absolute"
   },
   signupButton: {
-    top: 0,
+    // top: 0,
+    // bottom: "5%",
     left: 0,
     width: 116,
     height: 36,
