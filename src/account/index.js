@@ -99,7 +99,6 @@ export default function Index(props) {
     }
 
     const CurrentComponentRouter = () => {
-
         if (!components[props.location.state.subroute]) return <View />
         const CurrentComponent = components[currentPage || props.location.state.subroute];
         return (<CurrentComponent
