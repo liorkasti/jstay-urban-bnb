@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity} from "react-native";
 import MaterialButtonWithVioletText53 from "./MaterialButtonWithVioletText53";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 function PastTripCard(props) {
   return (
-    <View style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={()=>props.onPress()} style={[styles.container, props.style]}>
       <View style={styles.group22}>
         <View style={styles.rect102}></View>
         <Image
@@ -16,6 +16,8 @@ function PastTripCard(props) {
         <Text style={styles.theCottage92}>The Cottage</Text>
       </View>
       <MaterialButtonWithVioletText53
+  tag="Book Again"
+  onPress={() => { props.onUserPress("bookStay")}}
         style={styles.materialButtonWithVioletText532}
       ></MaterialButtonWithVioletText53>
       <Text style={styles.upcomingTrips12}></Text>
@@ -33,7 +35,7 @@ function PastTripCard(props) {
       <FontAwesomeIcon name="star" style={styles.icon12}></FontAwesomeIcon>
       <FontAwesomeIcon name="star" style={styles.icon13}></FontAwesomeIcon>
       <Text style={styles.stay}>Stay</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

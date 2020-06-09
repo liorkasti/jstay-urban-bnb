@@ -33,7 +33,7 @@ function Home(props) {
         <View style={styles.cityCardsStackStack}>
           <View style={styles.cityCardsStack}>
             {/* Around the globe */}
-            <CityCards style={styles.cityCards}></CityCards>
+            <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }} style={styles.cityCards}></CityCards>
             <Text style={styles.loremIpsum2}></Text>
           </View>
           {/* HeaderBar */}
@@ -57,7 +57,7 @@ function Home(props) {
           <JstayLogoDark />
         </TouchableOpacity>
 
-        <MaterialCardWithRightButtons style={styles.materialCardWithRightButtons1} />
+        <MaterialCardWithRightButtons onPress={()=>{props.showStayProfile("home")}} style={styles.materialCardWithRightButtons1} />
         {/* FooterMenuDropdown */}
         {/* <FooterMenuDropdown /> */}
       </ScrollView>

@@ -19,6 +19,8 @@ import StayProfile from "./StayProfile";
 import BookStay from "./BookStay";
 import PreBookingProfile from "./PreBookingProfile";
 import CheckIn from "./CheckIn";
+import EditMyListings from "./EditMyListings";
+import Reviews from "./Reviews";
 
 const components = {
     cancelation: Cancelation,
@@ -28,7 +30,7 @@ const components = {
     guestCardInfo: GuestCardInfo,
     holdACharge: HoldACharge,
     myProfile: MyProfile,
-    myStayList: MyStaysList,
+    myStaysList: MyStaysList,
     newRequest: NewRequest,
     previous: Previous,
     trips: Trips,
@@ -36,6 +38,8 @@ const components = {
     bookStay: BookStay,
     preBookingProfile: PreBookingProfile,
     checkIn: CheckIn,
+    editMyListings: EditMyListings,
+    reviews: Reviews,
 };
 
 export default function Index(props) {
@@ -56,6 +60,14 @@ export default function Index(props) {
         history.push("/home");
     };
 
+    const onLogout = () => {
+        history.push("/")
+    }
+    
+    const onCreateStay = (from) => {
+        history.push("/createStay",{route:"/account",page:from })
+    }
+
     useEffect(() => {
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex] = props.location.state.subroute;
@@ -72,10 +84,10 @@ export default function Index(props) {
 
     const onBack = () => {
         if (historyIndex - 1 < 0) {
+            const prevPage = props.location.state.backHistory;
+            console.warn(prevPage)
             const currentSearch = props.location.state.currentSearch;
-            if (currentSearch) {
-                history.push("/home", { currentSearch: currentSearch })
-            } else onHome();
+                history.push("/home", { currentSearch: currentSearch, backHistory: prevPage })
         } else {
             setCurrentPage(backHistory[historyIndex - 1]);
             setHistoryIndex(historyIndex - 1);
@@ -98,19 +110,27 @@ export default function Index(props) {
                 onBack();
             }}
 
+            onCreateStay={(requestSource)=>{
+                onCreateStay(requestSource);
+            }}
+
             goHome={() => {
                 onHome();
             }}
-
+            onDeleteAccount={()=>{
+                onLogout();
+            }}
+            onLogout={()=>{
+                onLogout();
+            }}
             onUserPress={(page) => onUserPress(page)}
         />)
     }
 
     return (
         <View style={styles.container}>
-            {//dynamic component
+            {/*dynamic component*/}
                 <CurrentComponentRouter />
-            }
         </View>
     );
 }

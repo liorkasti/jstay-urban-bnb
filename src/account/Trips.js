@@ -11,10 +11,10 @@ function Trips(props) {
     <View style={styles.container}>
       <View style={styles.upcomingTripsStack}>
         <Text style={styles.upcomingTrips}>Upcoming trips</Text>
-        
+
         <View style={styles.group3Stack}>
           <View style={styles.group3}>
-            <TouchableOpacity onPress={()=>{props.onUserPress("confirmed")}} style={styles.group2}>
+            <TouchableOpacity onPress={() => { props.onUserPress("confirmed") }} style={styles.group2}>
               <View style={styles.rect10}>
                 <View style={styles.image10Row}>
                   <Image
@@ -34,7 +34,7 @@ function Trips(props) {
                 </View>
               </View>
             </TouchableOpacity>
-            
+
             <View style={styles.checkInRow}>
               <Text style={styles.checkIn}>Check-in</Text>
               <Text style={styles.checkOut2}>04 March 2021</Text>
@@ -50,11 +50,12 @@ function Trips(props) {
                   style={styles.materialButtonWithVioletText52}
                 ></MaterialButtonWithVioletText52>
                 <MaterialButtonWithVioletText58
-                onPress={()=>{props.onUserPress("checkIn")}}
+                  onPress={() => { props.onUserPress("checkIn") }}
                   style={styles.materialButtonWithVioletText58}
                 ></MaterialButtonWithVioletText58>
               </View>
               <MaterialButtonWithVioletText54
+                onPress={() => { props.onUserPress("cancelation") }}
                 style={styles.materialButtonWithVioletText54}
               ></MaterialButtonWithVioletText54>
             </View>
@@ -62,19 +63,24 @@ function Trips(props) {
           <EntypoIcon name="chevron-down" style={styles.icon3}></EntypoIcon>
         </View>
       </View>
+
       <View style={styles.pastTripsStack}>
         <Text style={styles.pastTrips}>Past trips</Text>
         <EntypoIcon name="chevron-down" style={styles.icon2}></EntypoIcon>
-        <PastTripCard style={styles.pastTripCard1}></PastTripCard>
+        <PastTripCard onUserPress={(page) => { props.onUserPress(page) }}
+          onPress={() => { props.onUserPress("previous") }} style={styles.pastTripCard1}></PastTripCard>
       </View>
-      <PastTripCard style={styles.pastTripCard}></PastTripCard>
+
+      <PastTripCard onUserPress={(page) => { props.onUserPress(page) }}
+        onPress={() => { props.onUserPress("previous") }} style={styles.pastTripCard}></PastTripCard>
+
       <View style={styles.group223}>
         <View style={styles.rect1023}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
+              <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
+                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
                   <EntypoIcon
                     name="chevron-left"
                     style={styles.icon1}
@@ -84,7 +90,7 @@ function Trips(props) {
               <Text style={styles.myTrips}>My Trips</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={()=>{props.onHome()}} style={styles.button3}>
+            <TouchableOpacity onPress={() => { props.onHome() }} style={styles.button3}>
               <View style={styles.image123Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

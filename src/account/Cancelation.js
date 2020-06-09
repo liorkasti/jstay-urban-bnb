@@ -33,8 +33,10 @@ function Untitled6(props) {
       <Text style={styles.pleaseTellUsWhy}>Please tell us why:</Text>
       <Text style={styles.night1}>Total refund: $0.00</Text>
       <MaterialButtonPrimary5
+      onPress={() =>props.goHome()}
         style={styles.materialButtonPrimary5}
       ></MaterialButtonPrimary5>
+
       <View style={styles.group1}>
         <View style={styles.rect}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -48,7 +50,7 @@ function Untitled6(props) {
               <Text style={styles.cancelation}>Cancelation</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
+            <TouchableOpacity onPress={()=>props.goHome()} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

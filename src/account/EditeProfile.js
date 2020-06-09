@@ -34,7 +34,7 @@ function Untitled12(props) {
       </TouchableOpacity>
       <SaveAndExit style={styles.saveAndExit1}></SaveAndExit>
       <View style={styles.button1Stack}>
-        <TouchableOpacity style={styles.button1}>
+        <TouchableOpacity onPress={()=>{props.gnHome()}} style={styles.button1}>
           <View style={styles.image1Filler}></View>
           <Image
             source={require("../assets/images/jstay-icon-inverted8.png")}
@@ -43,8 +43,8 @@ function Untitled12(props) {
           ></Image>
         </TouchableOpacity>
         <View style={styles.rect1}>
-          <TouchableOpacity style={styles.button2}>
-            <TouchableOpacity style={styles.button3}>
+          <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button2}>
+            <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button3}>
               <EntypoIcon name="chevron-left" style={styles.icon6}></EntypoIcon>
             </TouchableOpacity>
           </TouchableOpacity>

@@ -11,8 +11,9 @@ function Untitled10(props) {
       <View style={styles.group24}>
         <View style={styles.group22}>
           <View style={styles.rect105}>
+
             <View style={styles.image10RowRow}>
-              <View style={styles.image10Row}>
+              <TouchableOpacity onPress={()=>{props.onUserPress("stayProfile")}}style={styles.image10Row}>
                 <Image
                   source={require("../assets/images/Cottage1.jpg")}
                   resizeMode="stretch"
@@ -27,7 +28,8 @@ function Untitled10(props) {
                     </Text>
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
+
               <View style={styles.image10RowFiller}></View>
               <TouchableOpacity onPress={()=>props.onUserPress("preBookingProfile")} style={styles.button7}>
                 <Image
@@ -53,14 +55,17 @@ function Untitled10(props) {
         <Text style={styles.checkOut5}>15:00</Text>
         <Text style={styles.checkOut4}>11:00</Text>
       </View>
+     
       <View style={styles.materialButtonViolet20Row}>
         <MaterialButtonViolet20
+        onPress={() =>props.onUserPress("cancelation")}
           style={styles.materialButtonViolet20}
         ></MaterialButtonViolet20>
         <MaterialButtonViolet25
           style={styles.materialButtonViolet25}
         ></MaterialButtonViolet25>
       </View>
+     
       <View style={styles.group23}>
         <View style={styles.rect106}>
           <Text style={styles.bsD1}>BS&quot;D</Text>

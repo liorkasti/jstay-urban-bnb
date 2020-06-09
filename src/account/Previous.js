@@ -8,11 +8,12 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 function Untitled9(props) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button6}>
+      <View style={styles.button6}>
         <View style={styles.group22}>
           <View style={styles.rect105}>
             <View style={styles.image10RowRow}>
-              <View style={styles.image10Row}>
+             
+              <TouchableOpacity onPress={()=>props.onUserPress("stayProfile")} style={styles.image10Row}>
                 <Image
                   source={require("../assets/images/Cottage1.jpg")}
                   resizeMode="stretch"
@@ -27,9 +28,10 @@ function Untitled9(props) {
                     </Text>
                   </View>
                 </View>
-              </View>
+              </TouchableOpacity>
+
               <View style={styles.image10RowFiller}></View>
-              <TouchableOpacity style={styles.button7}>
+              <TouchableOpacity onPress={()=>{props.onUserPress("preBookingProfile")}} style={styles.button7}>
                 <Image
                   source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
                   resizeMode="stretch"
@@ -40,7 +42,7 @@ function Untitled9(props) {
             </View>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
       <View style={styles.checkedInRow}>
         <Text style={styles.checkedIn}>Checked-in</Text>
         <Text style={styles.checkedOut}>Checked-out</Text>
@@ -51,12 +53,15 @@ function Untitled9(props) {
       </View>
       <View style={styles.materialButtonViolet23Row}>
         <MaterialButtonViolet23
+        tag="Book Again"
+        onPress={() => { props.onUserPress("bookStay")}}
           style={styles.materialButtonViolet23}
         ></MaterialButtonViolet23>
         <MaterialButtonViolet13
           text1="Message Host"
           style={styles.materialButtonViolet1}
         ></MaterialButtonViolet13>
+
       </View>
       <View style={styles.checkOut5Row}>
         <Text style={styles.checkOut5}>15:00</Text>

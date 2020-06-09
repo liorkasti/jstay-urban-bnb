@@ -18,7 +18,7 @@ function Untitled7(props) {
               </TouchableOpacity>
             </TouchableOpacity>
             <Text style={styles.holdACharge}>Hold A Charge</Text>
-            <TouchableOpacity style={styles.button3}>
+            <TouchableOpacity onPress={()=>props.goHome()} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

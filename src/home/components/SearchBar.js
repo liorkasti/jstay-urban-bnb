@@ -1,19 +1,22 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 
 function SearchBar(props) {
+  const [search,setSearch] = useState("")
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.group2}>
         <View style={styles.textInput42Stack}>
           <TextInput
+          value={search || props.searchText}
+            onChangeText={(text)=>{setSearch(text)}}
             onFocus={() => { props.onPress() }}
             placeholder="Location, neighbourhood, or address"
             style={styles.textInput42}
           ></TextInput>
-          <TouchableOpacity style={styles.button1082}>
+          <TouchableOpacity onPress={()=>props.onPress()} style={styles.button1082}>
             <FontAwesomeIcon
               name="sliders"
               style={styles.icon252}
