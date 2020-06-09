@@ -109,9 +109,10 @@ const styles = StyleSheet.create({
     margin: 0,
     paddingRight: 0,
     left: 0,
-    top: 0,
+    top: 115,
     height: 345,
-    right: 1
+    right: 1,
+    zIndex: 20
   },
   cityCardsStack: {
     top: 0,
@@ -229,7 +230,7 @@ const styles = StyleSheet.create({
     height: 0,
     position: "absolute",
     right: "20%",
-    zIndex:20
+    zIndex:19
   },
   searchBar: {
     top: "7%",
