@@ -33,15 +33,15 @@ function FooterMenuDropdown(props) {
 
             <View style={styles.rect4}></View>
           </View>
+          
           <View style={styles.materialButtonWithVioletText23Stack}>
-
             <MaterialButtonWithVioletText23
             onPress={()=>{props.handleFooterMenu("kashrut")}}
               style={styles.materialButtonWithVioletText23}
             ></MaterialButtonWithVioletText23>
-
             <View style={styles.rect5}></View>
           </View>
+
           <View style={styles.materialButtonWithVioletText24Stack}>
 
             <MaterialButtonWithVioletText24

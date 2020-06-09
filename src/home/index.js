@@ -35,8 +35,10 @@ export default function Index(props) {
                 break;
             case "kashrut":
                 history.push("/account", { subroute: "editMyKashrut" })
+                break;
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
+                break;
         }
         // createStay 
         // myProfile = myProfile
@@ -160,7 +162,7 @@ export default function Index(props) {
                     showStayProfile={(backHistory) => { handleCard("stayProfile",backHistory); }}
 
                     handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
+                        handleFooterMenu(menuItem);
                     }}
 
                     bookStay={() => {
