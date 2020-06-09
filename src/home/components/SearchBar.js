@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   textInput42: {
     top: 0,
-    width: 290,
+    width: 340,
     height: "100%",
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",

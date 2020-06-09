@@ -23,12 +23,23 @@ function Home(props) {
         <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
       }
       {/* todo: add toggleFilterHandler */}
+      <View style={styles.searchBarContainer}>
       <SearchBar
         onPress={() => { setShowSearchOptions(true) }}
         style={styles.searchBar}
       />
+        
+        <HeaderBar style={styles.headerBar}></HeaderBar>
+      <Text style={styles.bsD1}>BS"D</Text>
 
-      <ScrollView onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+      <TouchableOpacity style={styles.jstayLogoDark}>
+          <JstayLogoDark />
+        </TouchableOpacity>
+
+      </View>
+
+      <ScrollView style={{marginTop:110, zIndex: 1}} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+        <View style={{marginTop: -110, paddingBottom: 70}}> 
         <StatusBar backgroundColor="rgba(2,172,235,1)" />
         <View style={styles.cityCardsStackStack}>
           <View style={styles.cityCardsStack}>
@@ -37,30 +48,22 @@ function Home(props) {
             <Text style={styles.loremIpsum2}></Text>
           </View>
           {/* HeaderBar */}
-          <HeaderBar style={styles.headerBar}></HeaderBar>
           {/* Nearby */}
           <Text style={styles.nearby}>Nearby</Text>
           <View style={styles.footerBar1Stack}>
             <TouchableOpacity style={styles.button4}>
               <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
             </TouchableOpacity>
-
           </View>
-
         </View>
-
         <Text style={styles.topStays}>Top Stays</Text>
         <View style={styles.bsD1Stack}>
-          <Text style={styles.bsD1}>BS"D</Text>
         </View>
-        <TouchableOpacity style={styles.jstayLogoDark}>
-          <JstayLogoDark />
-        </TouchableOpacity>
-
         <MaterialCardWithRightButtons onPress={()=>{props.showStayProfile("home")}} style={styles.materialCardWithRightButtons1} />
-        {/* FooterMenuDropdown */}
-        {/* <FooterMenuDropdown /> */}
+        </View>
       </ScrollView>
+    
+
       {/* Map */}
       {!showMediumMap ?
         <MapButton2
@@ -118,11 +121,12 @@ const styles = StyleSheet.create({
     right: 13
   },
   headerBar: {
-    top: 2,
+    top: 40,
     left: 0,
     height: 56,
     position: "absolute",
-    right: 0
+    right: 0,
+    zIndex:20
   },
   nearby: {
     top: 422,
@@ -157,7 +161,8 @@ const styles = StyleSheet.create({
     bottom: 80,
     left: 5,
     height: 60,
-    width: 405
+    width: 405,
+    zIndex:20
   },
   footerBar2: {
     left: 0,
@@ -171,7 +176,7 @@ const styles = StyleSheet.create({
     left: 13,
     height: 349,
     position: "absolute",
-    right: 13
+    right: 20
   },
   cityCardsStackStack: {
     height: 810,
@@ -219,23 +224,29 @@ const styles = StyleSheet.create({
     right: 0
   },
   jstayLogoDark: {
-    top: "3.5%",
+    top: -15,
     left: "30%",
     height: 0,
     position: "absolute",
-    right: "20%"
+    right: "20%",
+    zIndex:20
   },
   searchBar: {
     top: "7%",
     position: "absolute",
     right: "22%",
-    left: "22%",
+    left: 35,
+    zIndex:20
+  },
+  searchBarContainer: {
+    top:62,
+    zIndex:19,
   },
   materialCardWithRightButtons1: {
     height: 266,
-    marginTop: 861,
+    marginTop: 900,
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 3
   }
 });
 

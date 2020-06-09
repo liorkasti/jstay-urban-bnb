@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   cardItemImagePlace: {
     flex: 1,
     backgroundColor: "#ccc",
-    minHeight: 210
+    minHeight: 210,
+    width: "auto"
   },
   bodyContent: {
     backgroundColor: "rgba(15,15, 15,0)",
