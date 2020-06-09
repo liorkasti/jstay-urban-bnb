@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import StayResultCard from "./components/StayResultCard";
+import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
 import FooterBar from "./components/FooterBar";
 import HeaderBar from "./components/HeaderBar";
-import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
 import JstayLogoDark from "./components/JstayLogoDark";
 import SearchBar from "./components/SearchBar";
 import MapButtonClosed from "./components/MapButtonClosed";
@@ -20,11 +20,6 @@ function SearchResults(props) {
       <View style={styles.headerBar1Stack}>
         <HeaderBar style={styles.headerBar1}></HeaderBar>
 
-        <MaterialCardWithRightButtons
-          onPress={() => { props.showStayProfile("SearchResults") }}
-          style={styles.materialCardWithRightButtons}
-        ></MaterialCardWithRightButtons>
-
       </View>
       <View style={styles.button5Stack}>
         <TouchableOpacity style={styles.button5}>
@@ -32,7 +27,6 @@ function SearchResults(props) {
         </TouchableOpacity>
         <SearchBar searchText={props.searchText} onPress={() => { console.warn("open dropdown option menu") }} style={styles.searchBar1}></SearchBar>
       </View>
-      <StayResultCard bookStay={() => props.bookStay()} onPress={() => { props.showStayProfile() }} style={styles.stayResultCard1}></StayResultCard>
       <MapButtonClosed style={styles.mapButtonClosed}></MapButtonClosed>
     </View>
   );

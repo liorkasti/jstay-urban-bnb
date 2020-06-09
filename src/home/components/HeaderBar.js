@@ -6,10 +6,11 @@ function HeaderBar(props) {
   return (
     <View style={[styles.container, props.style]}>
       <CupertinoSegmentWithFourTabs1
-        text1="Kosher"
-        text2="Neighborhood"
-        text3="Stays"
-        text4="Hotels"
+      onUserPress={(page) =>props.onUserPress(page)}
+        text1="Language"
+        text2="Kashrut"
+        text3="Create Stay"
+        text4="Arrivals"
         style={styles.cupertinoSegmentWithFourTabs1}
       ></CupertinoSegmentWithFourTabs1>
     </View>

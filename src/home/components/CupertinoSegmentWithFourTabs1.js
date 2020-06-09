@@ -5,17 +5,17 @@ function CupertinoSegmentWithFourTabs1(props) {
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.textWrapper}>
-        <TouchableOpacity style={styles.segmentTextWrapper1}>
-          <Text style={styles.text1}>{props.text1 || "Kosher"}</Text>
+        <TouchableOpacity onPress={()=>{console.warn("add language dropdown")}} style={styles.segmentTextWrapper1}>
+          <Text style={styles.text1}>{props.text1 || "Language"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.segmentTextWrapper2}>
-          <Text style={styles.text2}>{props.text2 || "Community"}</Text>
+        <TouchableOpacity onPress={()=>{props.onUserPress("myKashrut")}} style={styles.segmentTextWrapper2}>
+          <Text style={styles.text2}>{props.text2 || "Kashrut"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.segmentTextWrapper3}>
-          <Text style={styles.text3}>{props.text3 || "Stays"}</Text>
+        <TouchableOpacity onPress={()=>{props.onUserPress("createStay")}} style={styles.segmentTextWrapper3}>
+          <Text style={styles.text3}>{props.text3 || "Create Stay"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.segmentTextWrapper4}>
-          <Text style={styles.text4}>{props.text4 || "Hotels"}</Text>
+        <TouchableOpacity onPress={()=>{props.onUserPress("trips")}} style={styles.segmentTextWrapper4}>
+          <Text style={styles.text4}>{props.text4 || "Arrivals"}</Text>
         </TouchableOpacity>
       </View>
     </View>

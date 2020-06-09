@@ -9,7 +9,7 @@ import MapButton2 from "./components/MapButton2";
 import JstayLogoDark from "./components/JstayLogoDark";
 import SearchBar from "./components/SearchBar";
 import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
-import FooterMenuDropdown from "./components/FooterMenuDropdown";
+import StayResultCard from "./components/StayResultCard";
 
 
 function Home(props) {
@@ -24,45 +24,57 @@ function Home(props) {
       }
       {/* todo: add toggleFilterHandler */}
       <View style={styles.searchBarContainer}>
-      <SearchBar
-        onPress={() => { setShowSearchOptions(true) }}
-        style={styles.searchBar}
-      />
-        
-        <HeaderBar style={styles.headerBar}></HeaderBar>
-      <Text style={styles.bsD1}>BS"D</Text>
+        <SearchBar
+        searchText={props.searchText}
+          onPress={() => { setShowSearchOptions(true) }}
+          style={styles.searchBar}
+        />
 
-      <TouchableOpacity style={styles.jstayLogoDark}>
-          <JstayLogoDark />
+        <HeaderBar onUserPress={(page) => { props.onUserPress(page) }} style={styles.headerBar}></HeaderBar>
+        <Text style={styles.bsD1}>BS"D</Text>
+
+        <TouchableOpacity onPress={()=>{props.goHome()}} style={styles.jstayLogoDark}>
+          <JstayLogoDark onPress={()=>{props.goHome()}} />
         </TouchableOpacity>
 
       </View>
+      {props.searchText ?
+        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+          <View style={{ marginTop: -4, paddingBottom: 70 }}>
 
-      <ScrollView style={{marginTop:110, zIndex: 1}} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
-        <View style={{marginTop: -110, paddingBottom: 70}}> 
-        <StatusBar backgroundColor="rgba(2,172,235,1)" />
-        <View style={styles.cityCardsStackStack}>
-          <View style={styles.cityCardsStack}>
-            {/* Around the globe */}
-            <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }} style={styles.cityCards}></CityCards>
-            <Text style={styles.loremIpsum2}></Text>
+          <MaterialCardWithRightButtons
+            onPress={() => { props.showStayProfile("Home") }}
+            style={styles.materialCardWithRightButtons}
+          ></MaterialCardWithRightButtons>
+          <StayResultCard bookStay={() => props.bookStay()} onPress={() => { props.showStayProfile() }} style={styles.stayResultCard1}></StayResultCard>
+       </View>
+        </ScrollView>
+        :
+        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+          <View style={{ marginTop: -110, paddingBottom: 70 }}>
+            <StatusBar backgroundColor="rgba(2,172,235,1)" />
+            <View style={styles.cityCardsStackStack}>
+              <View style={styles.cityCardsStack}>
+                {/* Around the globe */}
+                <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }} style={styles.cityCards}></CityCards>
+                <Text style={styles.loremIpsum2}></Text>
+              </View>
+              {/* HeaderBar */}
+              {/* Nearby */}
+              <Text style={styles.nearby}>Nearby</Text>
+              <View style={styles.footerBar1Stack}>
+                <TouchableOpacity style={styles.button4}>
+                  <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <Text style={styles.topStays}>Top Stays</Text>
+            <View style={styles.bsD1Stack}>
+            </View>
+            <MaterialCardWithRightButtons onUserPress={(page) => { props.onUserPress(page) }} onPress={() => { props.showStayProfile("Home") }} style={styles.materialCardWithRightButtons1} />
           </View>
-          {/* HeaderBar */}
-          {/* Nearby */}
-          <Text style={styles.nearby}>Nearby</Text>
-          <View style={styles.footerBar1Stack}>
-            <TouchableOpacity style={styles.button4}>
-              <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <Text style={styles.topStays}>Top Stays</Text>
-        <View style={styles.bsD1Stack}>
-        </View>
-        <MaterialCardWithRightButtons onUserPress={(page)=>{props.onUserPress(page)}} onPress={()=>{props.showStayProfile("Home")}} style={styles.materialCardWithRightButtons1} />
-        </View>
-      </ScrollView>
-    
+        </ScrollView>
+      }
 
       {/* Map */}
       {!showMediumMap ?
@@ -104,6 +116,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "roboto-regular"
   },
+  stayResultCard1: {
+    width: 359,
+    height: 166,
+    marginTop: 343,
+    marginLeft: 27
+  },
+  materialCardWithRightButtons: {
+    top: 54,
+    left: 27,
+    width: 359,
+    height: 266,
+    position: "absolute"
+  },
   searchDropdown: {
     position: "absolute",
     margin: 0,
@@ -127,7 +152,7 @@ const styles = StyleSheet.create({
     height: 56,
     position: "absolute",
     right: 0,
-    zIndex:20
+    zIndex: 20
   },
   nearby: {
     top: 422,
@@ -143,7 +168,7 @@ const styles = StyleSheet.create({
     // position: fixed,
     bottom: -10,
     right: 0,
-    zIndex:20
+    zIndex: 20
   },
   button4: {
     top: 0,
@@ -164,7 +189,7 @@ const styles = StyleSheet.create({
     left: 5,
     height: 60,
     width: 405,
-    zIndex:20
+    zIndex: 20
   },
   footerBar2: {
     left: 0,
@@ -231,18 +256,18 @@ const styles = StyleSheet.create({
     height: 0,
     position: "absolute",
     right: "20%",
-    zIndex:19
+    zIndex: 19
   },
   searchBar: {
     top: "7%",
     position: "absolute",
     right: "22%",
     left: 35,
-    zIndex:20
+    zIndex: 20
   },
   searchBarContainer: {
-    top:62,
-    zIndex:19,
+    top: 62,
+    zIndex: 19,
   },
   materialCardWithRightButtons1: {
     height: 266,
