@@ -98,6 +98,11 @@ export default function Index(props) {
                     handleFooterMenu={(menuItem) => {
                         handleFooterMenu(menuItem)
                     }}
+
+                    onUserPress={(page)=>{
+                        handleCard(page);
+                    }}
+
                     showStayProfile={(backHistory) => { handleCard("stayProfile",backHistory); }}
 
                     handleFooterBar={(page) => {

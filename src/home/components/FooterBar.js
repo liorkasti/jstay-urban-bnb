@@ -84,11 +84,12 @@ const styles = StyleSheet.create({
     shadowRadius: 1.2
   },
   materialBasicFooter1: {
-    left: "300%",
+    left: 210,
     height: 700,
     // position: "relaative",
     right: 0,
-    bottom: 48
+    bottom: 48,
+    zIndex:20
   },
   btnWrapper1: {
     width: 104,

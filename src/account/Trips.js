@@ -90,7 +90,7 @@ function Trips(props) {
               <Text style={styles.myTrips}>My Trips</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={() => { props.onHome() }} style={styles.button3}>
+            <TouchableOpacity onPress={() => { props.goHome() }} style={styles.button3}>
               <View style={styles.image123Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

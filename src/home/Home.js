@@ -59,7 +59,7 @@ function Home(props) {
         <Text style={styles.topStays}>Top Stays</Text>
         <View style={styles.bsD1Stack}>
         </View>
-        <MaterialCardWithRightButtons onPress={()=>{props.showStayProfile("home")}} style={styles.materialCardWithRightButtons1} />
+        <MaterialCardWithRightButtons onUserPress={(page)=>{props.onUserPress(page)}} onPress={()=>{props.showStayProfile("Home")}} style={styles.materialCardWithRightButtons1} />
         </View>
       </ScrollView>
     
@@ -142,7 +142,8 @@ const styles = StyleSheet.create({
     height: 81,
     // position: fixed,
     bottom: -10,
-    right: 0
+    right: 0,
+    zIndex:20
   },
   button4: {
     top: 0,
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
   },
   materialCardWithRightButtons1: {
     height: 266,
-    marginTop: 900,
+    marginTop: 960,
     marginLeft: 5,
     marginRight: 3
   }

@@ -17,7 +17,7 @@ function MaterialCardWithRightButtons(props) {
             style={styles.icon1}
           ></MaterialCommunityIconsIcon>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.centerBtn}>
+        <TouchableOpacity onPress={()=>{props.onUserPress("bookStay")}} style={styles.centerBtn}>
           <MaterialCommunityIconsIcon
             name="calendar-range"
             style={styles.icon2}
@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
   cardItemImagePlace: {
     flex: 1,
     backgroundColor: "#ccc",
-    minHeight: 210
+    minHeight: 210,
+    width: "auto"
+
   },
   buttonGroup: {
     flexDirection: "row",
