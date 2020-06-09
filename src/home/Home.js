@@ -18,52 +18,68 @@ function Home(props) {
 
   return (
     <View style={styles.container}>
-      <ScrollView onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+      {/* SearchDropdown */}
+      {showSearchOptions &&
+        <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
+      }
+      {/* todo: add toggleFilterHandler */}
+      <View style={styles.searchBarContainer}>
+      <SearchBar
+        onPress={() => { setShowSearchOptions(true) }}
+        style={styles.searchBar}
+      />
+        
+        <HeaderBar style={styles.headerBar}></HeaderBar>
+      <Text style={styles.bsD1}>BS"D</Text>
+
+      <TouchableOpacity style={styles.jstayLogoDark}>
+          <JstayLogoDark />
+        </TouchableOpacity>
+
+      </View>
+
+      <ScrollView style={{marginTop:110, zIndex: 1}} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+        <View style={{marginTop: -110, paddingBottom: 70}}> 
         <StatusBar backgroundColor="rgba(2,172,235,1)" />
         <View style={styles.cityCardsStackStack}>
           <View style={styles.cityCardsStack}>
             {/* Around the globe */}
-            <CityCards style={styles.cityCards}></CityCards>
+            <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }} style={styles.cityCards}></CityCards>
             <Text style={styles.loremIpsum2}></Text>
           </View>
           {/* HeaderBar */}
-          <HeaderBar style={styles.headerBar}></HeaderBar>
           {/* Nearby */}
           <Text style={styles.nearby}>Nearby</Text>
           <View style={styles.footerBar1Stack}>
             <TouchableOpacity style={styles.button4}>
-              <MaterialCard5 onPress={()=>{props.showSearchResultsFor("local")}} style={styles.materialCard5}></MaterialCard5>
+              <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
             </TouchableOpacity>
-            {!showMediumMap ?
-              <MapButton2 onPress={() => setShowMediumMap(true)} style={styles.mapButton2}></MapButton2>
-            : null //TODO: replace map with half screen map 
-            }
           </View>
-          {/* SearchDropdown */}
-          {showSearchOptions &&
-            <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
-          }
         </View>
-
         <Text style={styles.topStays}>Top Stays</Text>
         <View style={styles.bsD1Stack}>
-          <Text style={styles.bsD1}>BS"D</Text>
         </View>
-
-        <View style={styles.button52Stack}>
-          <TouchableOpacity style={styles.jstayLogoDark}>
-            <JstayLogoDark />
-          </TouchableOpacity>
-          {/* todo: add toggleFilterHandler */}
-          <SearchBar onPress={() => { setShowSearchOptions(true) }} style={styles.searchBar}></SearchBar>
+        <MaterialCardWithRightButtons onPress={()=>{props.showStayProfile("home")}} style={styles.materialCardWithRightButtons1} />
         </View>
-        <MaterialCardWithRightButtons style={styles.materialCardWithRightButtons1} />
-        {/* FooterMenuDropdown */}
-        {/* <FooterMenuDropdown /> */}
-        {/* Footer */}
-        <FooterBar handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.footerBar1}></FooterBar>
-        {/* <FooterBar style={styles.footerBar2}></FooterBar> */}
       </ScrollView>
+    
+
+      {/* Map */}
+      {!showMediumMap ?
+        <MapButton2
+          onPress={() => setShowMediumMap(true)}
+          style={styles.mapButton2}
+        />
+        : null //TODO: replace map with half screen map 
+      }
+      {/* Footer */}
+      <FooterBar
+        handleFooterBar={(page) => { props.handleFooterBar(page) }}
+        handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+        style={styles.footerBar1}
+      />
+      {/* <FooterBar style={styles.footerBar2}></FooterBar> */}
+
     </View>
   );
 }
@@ -93,9 +109,10 @@ const styles = StyleSheet.create({
     margin: 0,
     paddingRight: 0,
     left: 0,
-    top: 0,
+    top: 115,
     height: 345,
-    right: 1
+    right: 1,
+    zIndex: 20
   },
   cityCardsStack: {
     top: 0,
@@ -105,11 +122,12 @@ const styles = StyleSheet.create({
     right: 13
   },
   headerBar: {
-    top: 2,
+    top: 40,
     left: 0,
     height: 56,
     position: "absolute",
-    right: 0
+    right: 0,
+    zIndex:20
   },
   nearby: {
     top: 422,
@@ -122,15 +140,14 @@ const styles = StyleSheet.create({
   footerBar1: {
     left: 0,
     height: 81,
-    // position: "absolute",
-    bottom: 0,
+    // position: fixed,
+    bottom: -10,
     right: 0
   },
   button4: {
     top: 0,
     left: 4,
     height: 349,
-    position: "absolute",
     right: 5
   },
   materialCard5: {
@@ -142,10 +159,11 @@ const styles = StyleSheet.create({
   },
   mapButton2: {
     position: "absolute",
-    top: 182,
+    bottom: 80,
     left: 5,
     height: 60,
-    width: 405
+    width: 405,
+    zIndex:20
   },
   footerBar2: {
     left: 0,
@@ -159,7 +177,7 @@ const styles = StyleSheet.create({
     left: 13,
     height: 349,
     position: "absolute",
-    right: 13
+    right: 20
   },
   cityCardsStackStack: {
     height: 810,
@@ -176,7 +194,7 @@ const styles = StyleSheet.create({
   },
   bsD1: {
     top: 0,
-    left: 0,
+    left: "20%",
     right: -10,
     color: "rgba(0,88,155,1)",
     position: "absolute",
@@ -194,10 +212,10 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
   bsD1Stack: {
-    width: 23,
-    height: 12,
+    // width: 23,
+    // height: 12,
     marginTop: -938,
-    marginLeft: 353
+    left: "68%",
   },
   button52: {
     top: 0,
@@ -207,30 +225,29 @@ const styles = StyleSheet.create({
     right: 0
   },
   jstayLogoDark: {
-    top: -42,
-    left: 180,
-    height: 39,
+    top: -15,
+    left: "30%",
+    height: 0,
     position: "absolute",
-    // right: 55
+    right: "20%",
+    zIndex:19
   },
   searchBar: {
-    top: 11,
-    left: -20,
-    height: 39,
+    top: "7%",
     position: "absolute",
-    right: 65
+    right: "22%",
+    left: 35,
+    zIndex:20
   },
-  button52Stack: {
-    height: 62,
-    marginTop: 8,
-    marginLeft: 34,
-    marginRight: 7
+  searchBarContainer: {
+    top:62,
+    zIndex:19,
   },
   materialCardWithRightButtons1: {
     height: 266,
-    marginTop: 861,
+    marginTop: 900,
     marginLeft: 5,
-    marginRight: 5
+    marginRight: 3
   }
 });
 

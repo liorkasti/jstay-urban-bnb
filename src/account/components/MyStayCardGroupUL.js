@@ -19,9 +19,12 @@ function MyStayCardGroupUL(props) {
               <Text style={styles.theCottage}>The Cottage</Text>
               <View style={styles.materialButtonWithVioletText19Stack}>
                 <MaterialButtonWithVioletText19
+                onPress={()=>{props.onUserPress("editMyListings")}}
+                tag="Edit Stay"
                   style={styles.materialButtonWithVioletText19}
                 ></MaterialButtonWithVioletText19>
                 <MaterialButtonWithVioletText20
+                tag="Calendar"
                   style={styles.materialButtonWithVioletText20}
                 ></MaterialButtonWithVioletText20>
               </View>

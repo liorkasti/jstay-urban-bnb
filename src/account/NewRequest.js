@@ -19,8 +19,8 @@ function Untitled11(props) {
   return (
     <View style={styles.container}>
       <View style={styles.button1Stack}>
-        <TouchableOpacity style={styles.button1}>
-          <TouchableOpacity style={styles.button7}>
+        <TouchableOpacity onPress={()=>{props.onUserPress("stayProfile")}} style={styles.button1}>
+          <TouchableOpacity onPress={()=>{props.onUserPress("stayProfile")}} style={styles.button7}>
             <View style={styles.image10Row}>
               <Image
                 source={require("../assets/images/Cottage1.jpg")}
@@ -37,7 +37,8 @@ function Untitled11(props) {
             </View>
           </TouchableOpacity>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button8}>
+        
+        <TouchableOpacity onPress={()=>{props.onUserPress("preBookingProfile")}} style={styles.button8}>
           <Image
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
@@ -74,8 +75,11 @@ function Untitled11(props) {
         </View>
       </View>
       <MaterialButtonViolet26
+      onPress={() =>props.onUserPress("holdACharge")}
+      text="Collect a Deductable Charge"
         style={styles.materialButtonViolet3}
       ></MaterialButtonViolet26>
+      
       <View style={styles.materialButtonViolet4Row}>
         <MaterialButtonViolet20
           text1="Decline"
@@ -84,8 +88,9 @@ function Untitled11(props) {
         <MaterialButtonViolet25
           text1="Accept"
           style={styles.materialButtonViolet5}
-        ></MaterialButtonViolet25>
+        ></MaterialButtonViolet25> 
       </View>
+
       <View style={styles.checkIn1Row}>
         <Text style={styles.checkIn1}>Check-in</Text>
         <Text style={styles.checkOut1}>Check-out</Text>

@@ -6,7 +6,8 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 function Untitled5(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group2}>
+
+      <TouchableOpacity onPress={()=>{props.showStayProfile("Favorites")}} style={styles.group2}>
         <View style={styles.group1}>
           <View style={styles.rect2}>
             <View style={styles.image2Row}>
@@ -26,9 +27,9 @@ function Untitled5(props) {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
-      <View style={styles.group3}>
+      <TouchableOpacity onPress={()=>{props.showStayProfile("Favorites")}} style={styles.group3}>
         <View style={styles.group12}>
           <View style={styles.rect22}>
             <View style={styles.image22Row}>
@@ -48,7 +49,7 @@ function Untitled5(props) {
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
 
       <View style={styles.group13}>
         <View style={styles.rect23}>
@@ -78,6 +79,7 @@ function Untitled5(props) {
           </View>
         </View>
       </View>
+
     </View>
   );
 }

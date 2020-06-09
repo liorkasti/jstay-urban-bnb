@@ -14,9 +14,11 @@ export default function Index(props) {
     const history = useHistory();
 
     useEffect(() => {
+        if(props.location.state && props.location.state.backHistory){
+            setCurrentComponent(props.location.state.backHistory)
+        }
         if (props.location.state && props.location.state.currentSearch) {
             setCurrentSearch(props.location.state.currentSearch);
-            setCurrentComponent("SearchResults")
         }
     }, [])
 
@@ -33,8 +35,10 @@ export default function Index(props) {
                 break;
             case "kashrut":
                 history.push("/account", { subroute: "editMyKashrut" })
+                break;
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
+                break;
         }
         // createStay 
         // myProfile = myProfile
@@ -62,10 +66,10 @@ export default function Index(props) {
         }
     };
 
-    const handleCard = (action) => {
+    const handleCard = (action,backHistory) => {
         switch (action) {
             case "stayProfile":
-                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch });
+                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory: backHistory });
                 break;
             case "bookStay":
                 history.push("/account", { subroute: "bookStay", currentSearch: currentSearch });
@@ -94,6 +98,7 @@ export default function Index(props) {
                     handleFooterMenu={(menuItem) => {
                         handleFooterMenu(menuItem)
                     }}
+                    showStayProfile={(backHistory) => { handleCard("stayProfile",backHistory); }}
 
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
@@ -124,6 +129,8 @@ export default function Index(props) {
                         handleFooterBar(page)
                     }}
 
+                    showStayProfile={(backHistory) => { handleCard("stayProfile",backHistory); }}
+
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
@@ -152,10 +159,10 @@ export default function Index(props) {
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
 
-                    showStayProfile={() => { handleCard("stayProfile"); }}
+                    showStayProfile={(backHistory) => { handleCard("stayProfile",backHistory); }}
 
                     handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
+                        handleFooterMenu(menuItem);
                     }}
 
                     bookStay={() => {
@@ -165,7 +172,7 @@ export default function Index(props) {
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
                     }}
-
+                    searchText={currentSearch}
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {

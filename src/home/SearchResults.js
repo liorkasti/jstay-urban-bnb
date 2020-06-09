@@ -19,9 +19,9 @@ function SearchResults(props) {
       <View style={styles.stayResultCard3}></View>
       <View style={styles.headerBar1Stack}>
         <HeaderBar style={styles.headerBar1}></HeaderBar>
-       
+
         <MaterialCardWithRightButtons
-        onPress={()=>{props.showStayProfile()}}
+          onPress={() => { props.showStayProfile("SearchResults") }}
           style={styles.materialCardWithRightButtons}
         ></MaterialCardWithRightButtons>
 
@@ -30,9 +30,9 @@ function SearchResults(props) {
         <TouchableOpacity style={styles.button5}>
           <JstayLogoDark style={styles.jstayLogoDark}></JstayLogoDark>
         </TouchableOpacity>
-        <SearchBar style={styles.searchBar1}></SearchBar>
+        <SearchBar searchText={props.searchText} onPress={() => { console.warn("open dropdown option menu") }} style={styles.searchBar1}></SearchBar>
       </View>
-      <StayResultCard bookStay={()=>props.bookStay()} onPress={()=>{props.showStayProfile()}} style={styles.stayResultCard1}></StayResultCard>
+      <StayResultCard bookStay={() => props.bookStay()} onPress={() => { props.showStayProfile() }} style={styles.stayResultCard1}></StayResultCard>
       <MapButtonClosed style={styles.mapButtonClosed}></MapButtonClosed>
     </View>
   );

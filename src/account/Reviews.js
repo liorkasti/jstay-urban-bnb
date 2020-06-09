@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
-import ReviewCardUl from "../createStay/components/ReviewCardUl";
+import ReviewCardUL from "../createStay/components/ReviewCardUL";
 
 function Reviews(props) {
   return (
@@ -30,7 +30,7 @@ function Reviews(props) {
           </View>
         </View>
       </View>
-      <ReviewCardUl style={styles.reviewCardUl}></ReviewCardUl>
+      <ReviewCardUL style={styles.reviewCardUl}></ReviewCardUL>
     </View>
   );
 }

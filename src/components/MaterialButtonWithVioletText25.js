@@ -3,8 +3,8 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonWithVioletText25(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
-      <Text style={styles.caption}>FAQ</Text>
+    <TouchableOpacity onPress={()=>props.onPress()} style={[styles.container, props.style]}>
+      <Text style={styles.caption}>Edit Profile</Text>
     </TouchableOpacity>
   );
 }
@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingRight: 16,
     paddingLeft: 16,
-    minWidth: 88
+    minWidth: 88,
   },
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
   }
 });
 

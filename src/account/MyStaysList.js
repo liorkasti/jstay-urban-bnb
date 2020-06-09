@@ -7,10 +7,14 @@ import Icon from "react-native-vector-icons/Entypo";
 function MyStaysList(props) {
   return (
     <View style={styles.container}>
-      <MyStayCardGroupUl style={styles.myStayCardGroupUl}></MyStayCardGroupUl>
+      
+      <MyStayCardGroupUL onUserPress={(action)=>{props.onUserPress(action)}} style={styles.myStayCardGroupUl}></MyStayCardGroupUL>
+     
       <MaterialButtonShare2
+      onPress={()=>{props.onCreateStay("myStaysList")}}
         style={styles.materialButtonShare2}
       ></MaterialButtonShare2>
+
       <View style={styles.group10}>
         <View style={styles.rect11}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -21,7 +25,7 @@ function MyStaysList(props) {
               </TouchableOpacity>
             </TouchableOpacity>
             <Text style={styles.myStays}>My Stays</Text>
-            <TouchableOpacity style={styles.button3}>
+            <TouchableOpacity onpress={()=>{props.onHome()}} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

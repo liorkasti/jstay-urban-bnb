@@ -49,6 +49,8 @@ function PreBookingProfile(props) {
       <View style={styles.reviewCardStack}>
         <ReviewCard style={styles.reviewCard}></ReviewCard>
         <MaterialButtonWithVioletText48
+        tag="See My Reviews"
+        onPress={() =>{props.onUserPress("reviews")}}
           style={styles.materialButtonWithVioletText48}
         ></MaterialButtonWithVioletText48>
       </View>

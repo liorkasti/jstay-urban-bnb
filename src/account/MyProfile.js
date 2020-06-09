@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -34,6 +34,11 @@ import MyStaysRating from "../components/MyStaysRating";
 import MyKosherRating from "../components/MyKosherRating";
 
 function MyProfile(props) {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const changeProfilePic = () => {
+    console.warn("add change profile pic behavior")
+  }
   return (
     <View style={styles.container}>
       <View style={styles.rect1Stack}>
@@ -51,7 +56,7 @@ function MyProfile(props) {
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
               <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
+                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
                   <Icon name="chevron-left" style={styles.icon1}></Icon>
                 </TouchableOpacity>
               </TouchableOpacity>
@@ -59,16 +64,20 @@ function MyProfile(props) {
             </View>
             <View style={styles.button4RowFiller}></View>
             <MaterialButtonTransparentHamburger
+              onPress={() => {
+                setShowMenu(!showMenu)
+              }}
               style={styles.materialButtonTransparentHamburger}
             ></MaterialButtonTransparentHamburger>
           </View>
         </View>
-        <MaterialButtonViolet28
-          style={styles.materialButtonViolet26}
-        ></MaterialButtonViolet28>
+
       </View>
       <View style={styles.image2StackStack}>
-        <View style={styles.image2Stack}>
+
+
+        {/*TODO: add image picker for single image*/}
+        <TouchableOpacity onPress={()=>{changeProfilePic()}} style={styles.image2Stack}>
           <ImageBackground
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
@@ -76,65 +85,83 @@ function MyProfile(props) {
             imageStyle={styles.image2_imageStyle}
           >
             <MaterialButtonWithVioletText32
+            onPress={() =>{changeProfilePic()}}
               style={styles.materialButtonWithVioletText39}
             ></MaterialButtonWithVioletText32>
           </ImageBackground>
-          <MaterialButtonViolet30
-            style={styles.materialButtonViolet30}
-          ></MaterialButtonViolet30>
+        </TouchableOpacity>
+
+        {showMenu &&
           <View style={styles.rect2}>
             <View style={styles.groupFiller}></View>
             <View style={styles.group}>
               <View style={styles.button6Stack}>
                 <TouchableOpacity
-                  onPress={() => props.navigation.navigate("MyStaysList")}
                   style={styles.button6}
                 >
                   <View
                     style={styles.materialButtonWithVioletText47Filler}
                   ></View>
+
                   <MaterialButtonWithVioletText21
-                    caption="Edit Account"
+                    onPress={() => props.onUserPress("myStaysList")}
+                    caption="My Stays"
                     style={styles.materialButtonWithVioletText47}
                   ></MaterialButtonWithVioletText21>
                 </TouchableOpacity>
                 <MaterialButtonWithVioletText22
-                  caption="Update Kashrut"
+                  onPress={() => props.onUserPress("newRequest")}
+                  tag="Booking Requests"
                   style={styles.materialButtonWithVioletText48}
                 ></MaterialButtonWithVioletText22>
                 <View style={styles.rect4}></View>
               </View>
               <View style={styles.materialButtonWithVioletText49Stack}>
                 <MaterialButtonWithVioletText23
-                  caption="Change Language"
+                  tag="Kashrut"
+                  onPress={() => { props.onUserPress("editMyKashrut") }}
                   style={styles.materialButtonWithVioletText49}
                 ></MaterialButtonWithVioletText23>
                 <View style={styles.rect5}></View>
               </View>
               <View style={styles.materialButtonWithVioletText50Stack}>
                 <MaterialButtonWithVioletText24
+                  tag="Payment Details"
+                  onPress={() => { props.onUserPress("guestCardInfo"); }}
                   style={styles.materialButtonWithVioletText50}
                 ></MaterialButtonWithVioletText24>
                 <View style={styles.rect6}></View>
               </View>
+
               <View style={styles.materialButtonWithVioletText51Stack}>
+                <TouchableOpacity onPress={()=>{props.onUserPress("editeProfile")}}>
                 <MaterialButtonWithVioletText25
+                  tag="Edit Profile"
+                  onPress={() => { props.onUserPress("editeProfile") }}
                   style={styles.materialButtonWithVioletText51}
                 ></MaterialButtonWithVioletText25>
+                </TouchableOpacity>
                 <MaterialButtonWithVioletText26
-                  caption="Delete Account"
+                  onPress={() => { props.onDeleteAccount() }}
+                  tag="Delete Account"
                   style={styles.materialButtonWithVioletText52}
                 ></MaterialButtonWithVioletText26>
                 <MaterialButtonWithVioletText28
+                  onPress={() => props.onLogout()}
+                  tag="logout"
                   style={styles.materialButtonWithVioletText53}
                 ></MaterialButtonWithVioletText28>
                 <View style={styles.rect3}></View>
                 <View style={styles.rect7}></View>
                 <View style={styles.rect8}></View>
               </View>
+
             </View>
           </View>
-        </View>
+        }
+
+
+
         <Text style={styles.loremIpsum}></Text>
         <MyNameDetails style={styles.myNameDetails}></MyNameDetails>
         <DateBirthDetails style={styles.dateBirthDetails}></DateBirthDetails>
@@ -151,6 +178,8 @@ function MyProfile(props) {
         style={styles.materialButtonViolet16}
       ></MaterialButtonViolet16>
       <MaterialButtonWithVioletText46
+        tag="See my reviews"
+        onPress={() => { props.onUserPress("reviews") }}
         style={styles.materialButtonWithVioletText46}
       ></MaterialButtonWithVioletText46>
       <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
@@ -292,7 +321,9 @@ const styles = StyleSheet.create({
     height: 350,
     backgroundColor: "rgba(0,88,155,1)",
     position: "absolute",
-    flexDirection: "row"
+    flexDirection: "row",
+    zIndex: 20
+
   },
   groupFiller: {
     flex: 1,
@@ -389,14 +420,17 @@ const styles = StyleSheet.create({
     width: 207,
     height: 50,
     position: "absolute",
-    right: 0
+    right: 0,
+    zIndex: 20
   },
   materialButtonWithVioletText53: {
     top: 95,
     width: 207,
     height: 50,
     position: "absolute",
-    right: 0
+    right: 0,
+    zIndex: 20
+
   },
   rect3: {
     top: 93,
@@ -447,28 +481,35 @@ const styles = StyleSheet.create({
     top: 243,
     left: 33,
     height: 36,
-    right: 0
+    right: 0,
+    zIndex:0
   },
   dateBirthDetails: {
     position: "absolute",
     top: 283,
     left: 29,
     height: 36,
-    right: 0
+    right: 0,
+    zIndex:0
+
   },
   myLocationDetails: {
     position: "absolute",
     top: 324,
     left: 35,
     height: 36,
-    right: 0
+    right: 0,
+    zIndex:0
+
   },
   titleDetails: {
     position: "absolute",
     top: 203,
     left: 28,
     height: 36,
-    right: 0
+    right: 0,
+    zIndex:0
+
   },
   image2StackStack: {
     height: 360,
@@ -478,17 +519,22 @@ const styles = StyleSheet.create({
   kashrutDetails: {
     height: 36,
     marginTop: 3,
-    marginLeft: 33
+    marginLeft: 33,
+    zIndex:0
+
   },
   emailDetails: {
     height: 36,
     marginTop: 4,
-    marginLeft: 31
+    marginLeft: 31,
+
   },
   phoneDetails: {
     height: 38,
     marginTop: 8,
-    marginLeft: 31
+    marginLeft: 31,
+    zIndex:0
+
   },
   materialButtonViolet15: {
     height: 45,
