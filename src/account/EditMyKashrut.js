@@ -29,11 +29,13 @@ function EditMyKashrut(props) {
                   <Text style={styles.kashrut}>Kashrut</Text>
                 </View>
                 <View style={styles.button4RowFiller}></View>
+                <TouchableOpacity onPress={()=>{props.goHome()}}>
                 <Image
                   source={require("../assets/images/jstay-icon-light-dark-blue.png")}
                   resizeMode="contain"
                   style={styles.image1}
                 ></Image>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
