@@ -65,7 +65,11 @@ export default function Index(props) {
     }
     
     const onCreateStay = (from) => {
-        history.push("/createStay",{route:"/account",page:from })
+        history.push("/createStay",{route:"/account",subroute:from })
+    }
+
+    const onEditStay = (from) => {
+        history.push("/editStay", { subroute:from })
     }
 
     useEffect(() => {
@@ -114,8 +118,16 @@ export default function Index(props) {
                 onCreateStay(requestSource);
             }}
 
+            onEditStay={(page)=>{
+                onEditStay(page);
+            }}
+
             goHome={() => {
                 onHome();
+            }}
+            deleteStay={()=>{
+                console.warn("create delete stay behavior");
+                onBack();
             }}
             onDeleteAccount={()=>{
                 onLogout();

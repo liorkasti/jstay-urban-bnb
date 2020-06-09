@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import MaterialButtonWithVioletText19 from "./MaterialButtonWithVioletText19";
 import MaterialButtonWithVioletText20 from "./MaterialButtonWithVioletText20";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 function MyStayCardGroupUL(props) {
   return (
-    <View style={[styles.container, props.style]}>
+    <View  style={[styles.container, props.style]}>
       <View style={styles.group8}>
         <View style={styles.rect2}>
-          <View style={styles.image2Row}>
+          <TouchableOpacity onPress={()=>{props.onUserPress("stayProfile")}} style={styles.image2Row}>
             <Image
               source={require("../assets/images/Cottage1.jpg")}
               resizeMode="stretch"
@@ -30,10 +30,10 @@ function MyStayCardGroupUL(props) {
               </View>
             </View>
             <Icon name="trash-o" style={styles.icon3}></Icon>
+    </TouchableOpacity>
           </View>
         </View>
       </View>
-    </View>
   );
 }
 

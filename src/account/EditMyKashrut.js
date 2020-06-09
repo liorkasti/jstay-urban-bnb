@@ -10,10 +10,12 @@ function EditMyKashrut(props) {
       <View style={styles.kosherSelect1Stack}>
         <KosherSelect style={styles.kosherSelect1}></KosherSelect>
         <MaterialButtonWithVioletText31
+        onPress={() =>{props.onBack()}}
           style={styles.materialButtonWithVioletText31}
         ></MaterialButtonWithVioletText31>
         <Text style={styles.myLevelOfKashrut1}>My level of kashrut is</Text>
       </View>
+
       <View style={styles.group1}>
         <View style={styles.group2}>
           <View style={styles.group12}>

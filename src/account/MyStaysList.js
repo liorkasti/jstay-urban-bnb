@@ -9,7 +9,6 @@ function MyStaysList(props) {
     <View style={styles.container}>
       
       <MyStayCardGroupUL onUserPress={(action)=>{props.onUserPress(action)}} style={styles.myStayCardGroupUl}></MyStayCardGroupUL>
-     
       <MaterialButtonShare2
       onPress={()=>{props.onCreateStay("myStaysList")}}
         style={styles.materialButtonShare2}
@@ -25,7 +24,7 @@ function MyStaysList(props) {
               </TouchableOpacity>
             </TouchableOpacity>
             <Text style={styles.myStays}>My Stays</Text>
-            <TouchableOpacity onpress={()=>{props.onHome()}} style={styles.button3}>
+            <TouchableOpacity onPress={()=>{props.goHome() }} onpress={()=>{props.onHome()}} style={styles.button3}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

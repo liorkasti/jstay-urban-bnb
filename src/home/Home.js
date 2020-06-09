@@ -25,31 +25,36 @@ function Home(props) {
       {/* todo: add toggleFilterHandler */}
       <View style={styles.searchBarContainer}>
         <SearchBar
-        searchText={props.searchText}
-          onPress={() => { setShowSearchOptions(true) }}
+          searchText={props.searchText}
+          onPress={() => { setShowSearchOptions(true); }}
           style={styles.searchBar}
         />
 
-        <HeaderBar onUserPress={(page) => { props.onUserPress(page) }} style={styles.headerBar}></HeaderBar>
+        <HeaderBar onUserPress={(page) => { props.onUserPress(page,props.searchText) }} style={styles.headerBar}></HeaderBar>
         <Text style={styles.bsD1}>BS"D</Text>
 
-        <TouchableOpacity onPress={()=>{props.goHome()}} style={styles.jstayLogoDark}>
-          <JstayLogoDark onPress={()=>{props.goHome()}} />
+        <TouchableOpacity onPress={() => { props.goHome() }} style={styles.jstayLogoDark}>
+          <JstayLogoDark onPress={() => { props.goHome() }} />
         </TouchableOpacity>
 
       </View>
+
       {props.searchText ?
+      //searchResults
         <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
           <View style={{ marginTop: -4, paddingBottom: 70 }}>
 
-          <MaterialCardWithRightButtons
-            onPress={() => { props.showStayProfile("Home") }}
-            style={styles.materialCardWithRightButtons}
-          ></MaterialCardWithRightButtons>
-          <StayResultCard bookStay={() => props.bookStay()} onPress={() => { props.showStayProfile() }} style={styles.stayResultCard1}></StayResultCard>
-       </View>
+            <MaterialCardWithRightButtons
+              onUserPress={(page) => props.onUserPress(page)}
+              onPress={() => { props.showStayProfile("Home") }}
+              style={styles.materialCardWithRightButtons}
+            ></MaterialCardWithRightButtons>
+            <StayResultCard bookStay={() => props.bookStay()} onPress={() => { props.showStayProfile() }} style={styles.stayResultCard1}></StayResultCard>
+          </View>
         </ScrollView>
+
         :
+        //homeScreen
         <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
           <View style={{ marginTop: -110, paddingBottom: 70 }}>
             <StatusBar backgroundColor="rgba(2,172,235,1)" />

@@ -20,6 +20,7 @@ function EditMyListings(props) {
     <View style={styles.container}>
       <View style={styles.materialButtonWithVioletText35Stack}>
         <MaterialButtonWithVioletText35
+          onPress={() => props.onEditStay("address")}
           style={styles.materialButtonWithVioletText35}
         ></MaterialButtonWithVioletText35>
         <FontAwesomeIcon
@@ -27,8 +28,10 @@ function EditMyListings(props) {
           style={styles.icon3}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText36Stack}>
         <MaterialButtonWithVioletText36
+          onPress={() => props.onEditStay("stayLayout")}
           style={styles.materialButtonWithVioletText36}
         ></MaterialButtonWithVioletText36>
         <FontAwesomeIcon
@@ -36,24 +39,31 @@ function EditMyListings(props) {
           style={styles.icon4}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText37Stack}>
         <MaterialButtonWithVioletText37
+          onPress={() => props.onEditStay("stayPictures")}
           style={styles.materialButtonWithVioletText37}
         ></MaterialButtonWithVioletText37>
+
         <MaterialButtonWithVioletText38
+          onPress={() => props.onEditStay("ameneties")}
           style={styles.materialButtonWithVioletText38}
         ></MaterialButtonWithVioletText38>
         <FontAwesomeIcon
           name="exclamation"
           style={styles.icon5}
         ></FontAwesomeIcon>
+
         <FontAwesomeIcon
           name="exclamation"
           style={styles.icon6}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText40Stack}>
         <MaterialButtonWithVioletText40
+          onPress={() => props.onEditStay("stayRules")}
           style={styles.materialButtonWithVioletText40}
         ></MaterialButtonWithVioletText40>
         <FontAwesomeIcon
@@ -61,31 +71,43 @@ function EditMyListings(props) {
           style={styles.icon8}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText42Stack}>
         <MaterialButtonWithVioletText42
+          onPress={() => props.onEditStay("accessibility")}
+
           style={styles.materialButtonWithVioletText42}
         ></MaterialButtonWithVioletText42>
+
         <MaterialButtonWithVioletText43
+          onPress={() => props.onEditStay("chargesAndDeposites")}
           style={styles.materialButtonWithVioletText43}
         ></MaterialButtonWithVioletText43>
+
         <MaterialButtonWithVioletText44
+          onPress={() => props.onEditStay("pricing")}
           style={styles.materialButtonWithVioletText44}
         ></MaterialButtonWithVioletText44>
+
         <FontAwesomeIcon
           name="exclamation"
           style={styles.icon9}
         ></FontAwesomeIcon>
+
         <FontAwesomeIcon
           name="exclamation"
           style={styles.icon10}
         ></FontAwesomeIcon>
+
         <FontAwesomeIcon
           name="exclamation"
           style={styles.icon11}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText45Stack}>
         <MaterialButtonWithVioletText45
+          onPress={() => props.onEditStay("checkinInfo")}
           style={styles.materialButtonWithVioletText45}
         ></MaterialButtonWithVioletText45>
         <FontAwesomeIcon
@@ -93,8 +115,10 @@ function EditMyListings(props) {
           style={styles.icon13}
         ></FontAwesomeIcon>
       </View>
+
       <View style={styles.materialButtonWithVioletText47Stack}>
         <MaterialButtonWithVioletText47
+          onPress={() => props.onEditStay("policies")}
           style={styles.materialButtonWithVioletText47}
         ></MaterialButtonWithVioletText47>
         <FontAwesomeIcon
@@ -102,18 +126,23 @@ function EditMyListings(props) {
           style={styles.icon14}
         ></FontAwesomeIcon>
       </View>
+
       <Text style={styles.text}>
         Select which area you would like to make changes to
       </Text>
-      <Text style={styles.addRecentPicture1}>Permanently delete this stay</Text>
+
+      <TouchableOpacity onPress={() => { props.deleteStay() }}>
+        <Text style={styles.addRecentPicture1}>Permanently delete this stay</Text>
+      </TouchableOpacity>
+
       <View style={styles.group3}>
         <View style={styles.group2}>
           <View style={styles.group1}>
             <View style={styles.rect106}>
               <Text style={styles.bsD1}>BS&quot;D</Text>
               <View style={styles.button4Row}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
+                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
+                  <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
                     <EntypoIcon
                       name="chevron-left"
                       style={styles.icon1}
@@ -122,7 +151,7 @@ function EditMyListings(props) {
                 </TouchableOpacity>
                 <Text style={styles.editStay}>Edit Stay</Text>
                 <View style={styles.button3Stack}>
-                  <TouchableOpacity style={styles.button3}></TouchableOpacity>
+                  <TouchableOpacity onPress={() => { props.goHome() }} style={styles.button3}></TouchableOpacity>
                   <Image
                     source={require("../assets/images/jstay-icon-light-dark-blue.png")}
                     resizeMode="contain"
@@ -136,6 +165,7 @@ function EditMyListings(props) {
       </View>
       <View style={styles.materialButtonWithVioletText57Stack}>
         <MaterialButtonWithVioletText57
+          onPress={() => props.onEditStay("hostBankInfo")}
           style={styles.materialButtonWithVioletText57}
         ></MaterialButtonWithVioletText57>
         <FontAwesomeIcon
@@ -145,6 +175,7 @@ function EditMyListings(props) {
       </View>
       <View style={styles.materialButtonWithVioletText39Stack}>
         <MaterialButtonWithVioletText39
+          onPress={() => props.onEditStay("nearby")}
           style={styles.materialButtonWithVioletText39}
         ></MaterialButtonWithVioletText39>
         <FontAwesomeIcon
@@ -154,6 +185,7 @@ function EditMyListings(props) {
       </View>
       <View style={styles.materialButtonWithVioletText58Stack}>
         <MaterialButtonWithVioletText38
+          onPress={() => props.onEditStay("amenities")}
           caption="Listing Setup"
           style={styles.materialButtonWithVioletText58}
         ></MaterialButtonWithVioletText38>

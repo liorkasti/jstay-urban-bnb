@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text } from "react-native"
+import { View, StyleSheet, Dimensions,Text } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
@@ -76,46 +76,46 @@ export default function Index(props) {
         console.warn(componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
-            onHome();
-        }
-
-        if (componentIndex < 0) {
-            if (props.location.state.page) {
-                history.push(props.location.state.route, { subroute: props.location.state.page })
+            if(props.location.state.backHistory){
+                history.push("/home", {backHistory: props.location.state.backHistory, currentSearch: props.location.state.currentSearch})
             } else {
                 onHome();
             }
+        }
+
+        if(componentIndex < 0){
+            onHome();
         }
     }, [componentIndex]);
 
     const CurrentComponentRouter = (props) => {
         const CurrentComponent = components[componentKeys[componentIndex]];
-        console.warn("current component", CurrentComponent)
-        if (!CurrentComponent) return <View />
+        console.warn("current component",CurrentComponent)
+        if(!CurrentComponent)return <View />
         return (<CurrentComponent
-            style={styles.componentStyle}
-            //if builder x component has next button
-            //it's button should have onPress={()=>{props.onNext}}
-            onNext={() => {
-                setComponentIndex(componentIndex + 1)
-            }}
+        style={styles.componentStyle}
+        //if builder x component has next button
+        //it's button should have onPress={()=>{props.onNext}}
+        onNext={() => {
+            setComponentIndex(componentIndex + 1)
+        }}
 
-            //if builder x component has back button
-            //it's button should have onPress={()=>{props.onNext}}
-            onBack={() => {
-                setComponentIndex(componentIndex - 1)
-            }}
+        //if builder x component has back button
+        //it's button should have onPress={()=>{props.onNext}}
+        onBack={() => {
+            setComponentIndex(componentIndex - 1)
+        }}
 
-            //if builder x component has skip button
-            //it's button should have onPress={()=>{props.onNext}}
-            onSkip={() => {
-                setComponentIndex(componentIndex + 1)
-            }}
+        //if builder x component has skip button
+        //it's button should have onPress={()=>{props.onNext}}
+        onSkip={() => {
+            setComponentIndex(componentIndex + 1)
+        }}
 
-            onHome={() => {
-                onHome();
-            }}
-        />)
+        onHome={() => {
+            onHome();
+        }}
+         />)
     }
 
     return (

@@ -14,6 +14,7 @@ import Home from "./src/home"
 import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
 import Account from "./src/account"
+import EditStay from "./src/editStay"
 
 export default function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function App() {
           <BackButton>
             <Route path="/" exact component={Login}/>
             <Route path="/account" component={Account}/>
+            <Route path="/editStay" component={EditStay}/>
             <Route path="/CreateAccount" component={CreateAccount}/>
             <Route path="/createStay" component={CreateStay}/>
             <Route path="/home" component={Home}/>

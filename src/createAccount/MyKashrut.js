@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import { Center } from "@builderx/utils";
 import KosherSelect from "../components/KosherSelect";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
@@ -10,9 +9,7 @@ function MyKashrut(props) {
     <View style={styles.container}>
       <View style={styles.myLevelOfKashrutStackColumn}>
         <View style={styles.myLevelOfKashrutStack}>
-          <Center horizontal>
             <Text style={styles.myLevelOfKashrut}>My level of kashrut is</Text>
-          </Center>
           <Image
             source={require("../assets/images/JStay-Logo-blue-shin7.png")}
             resizeMode="contain"

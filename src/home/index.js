@@ -40,11 +40,6 @@ export default function Index(props) {
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
         }
-        // createStay 
-        // myProfile = myProfile
-        // kashrut = kashrut select
-        // paymentDetails = carddetails
-        // faq = faq
     };
 
     onBack = () => {
@@ -69,19 +64,19 @@ export default function Index(props) {
     const handleCard = (action, backHistory) => {
         switch (action) {
             case "stayProfile":
-                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory: backHistory });
+                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory });
                 break;
             case "bookStay":
-                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch });
+                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch, backHistory});
                 break;
             case "trips":
-                history.push("/account", { subroute: "trips" });
+                history.push("/account", { subroute: "trips",currentSearch: currentSearch, backHistory});
                 break;
             case "myKashrut":
-                history.push("/account", { subroute: "editMyKashrut" })
+                history.push("/account", { subroute: "editMyKashrut", currentSearch: currentSearch, backHistory})
                 break;
             case "createStay":
-                history.push("/createStay");
+                history.push("/createStay", { currentSearch: currentSearch, backHistory});
                 break;
         }
     };
@@ -114,7 +109,11 @@ export default function Index(props) {
                     }}
 
                     onUserPress={(page) => {
-                        handleCard(page);
+                        handleCard(page, currentComponent );
+                    }}
+
+                    bookStay={() => {
+                        handleCard("bookStay")
                     }}
 
                     showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
@@ -184,9 +183,7 @@ export default function Index(props) {
                         handleFooterMenu(menuItem);
                     }}
 
-                    bookStay={() => {
-                        handleCard("bookStay")
-                    }}
+         
 
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
