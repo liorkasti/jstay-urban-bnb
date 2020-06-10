@@ -3,7 +3,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 
-function Untitled5(props) {
+export default function Favorites(props) {
   return (
     <View style={styles.container}>
 
@@ -87,6 +87,7 @@ function Untitled5(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // position: 'absolute',
     backgroundColor: "rgba(2,172,235,1)"
   },
   group2: {
@@ -281,4 +282,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled5;
+
