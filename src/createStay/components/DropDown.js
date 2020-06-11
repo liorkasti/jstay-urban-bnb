@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 5,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
+    paddingHorizontal: 10
   },
   icon4: {
     top: 0,
