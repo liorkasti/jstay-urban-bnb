@@ -67,30 +67,7 @@ function StayPictures(props) {
           style={styles.materialButtonViolet11}
         ></MaterialButtonViolet6>
       </View>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.pictures}>Pictures</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+
     </View>
   );
 }
@@ -104,7 +81,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginTop: 115,
+    marginTop: 35,
     marginLeft: 33
   },
   loremIpsum6: {

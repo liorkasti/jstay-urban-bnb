@@ -101,6 +101,7 @@ function Policies(props) {
         <Text style={styles.loremIpsum6}>
           Free cancelation prior to check-in
         </Text>
+
         <MaterialButtonViolet6 onPress={props.onNext}
           style={styles.materialButtonViolet1}
         ></MaterialButtonViolet6>
@@ -113,33 +114,7 @@ function Policies(props) {
             style={styles.materialButtonViolet2}
           ></MaterialButtonViolet6>
         </View>
-        <View style={styles.bsD1Stack}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.group1}>
-            <View style={styles.rect}>
-              <Text style={styles.bsD12}>BS&quot;D</Text>
-              <View style={styles.button4RowRow}>
-                <View style={styles.button4Row}>
-                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                      <Icon name="chevron-left" style={styles.icon1}></Icon>
-                    </TouchableOpacity>
-                  </TouchableOpacity>
-                  <Text style={styles.text8}>Policies</Text>
-                </View>
-                <View style={styles.button4RowFiller}></View>
-                <TouchableOpacity style={styles.button3}>
-                  <View style={styles.image1Filler}></View>
-                  <Image
-                    source={require("../assets/images/jstay-icon-inverted8.png")}
-                    resizeMode="contain"
-                    style={styles.image1}
-                  ></Image>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </View>
+
       </View>
       <View style={styles.lengthOfStayStackRowColumnFiller}></View>
       <MaterialButtonWithVioletText11
@@ -151,7 +126,8 @@ function Policies(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+    height: 800,
     backgroundColor: "rgba(2,172,235,1)"
   },
   lengthOfStay: {
@@ -186,7 +162,7 @@ const styles = StyleSheet.create({
   lengthOfStayStackRow: {
     height: 40,
     flexDirection: "row",
-    marginTop: 121,
+    marginTop: 21,
     marginLeft: 30,
     marginRight: 46
   },

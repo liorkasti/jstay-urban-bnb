@@ -72,30 +72,6 @@ function Accessibility(props) {
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text4}>Accessibility</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
@@ -143,7 +119,7 @@ const styles = StyleSheet.create({
   wheelchairAccesableStackStack: {
     width: 356,
     height: 42,
-    marginTop: 575,
+    marginTop: 500,
     marginLeft: 24
   },
   textInput1: {

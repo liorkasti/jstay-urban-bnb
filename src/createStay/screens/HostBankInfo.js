@@ -30,33 +30,7 @@ function HostBankInfo(props) {
       <Text style={styles.addBillingInfo1}>
         Add banking details to receive payments
       </Text>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon1}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.payments}>Payments</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+
       <View style={styles.icon2Row}>
         <FontAwesomeIcon
           name="cc-paypal"
@@ -89,7 +63,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 2,
     fontFamily: "roboto-regular",
-    marginTop: 170,
+    marginTop: 80,
     marginLeft: 30
   },
   textInput2: {
@@ -253,7 +227,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText2Row: {
     height: 35,
     flexDirection: "row",
-    marginTop: 351,
+    marginTop: 251,
     marginLeft: 168,
     marginRight: 16
   }

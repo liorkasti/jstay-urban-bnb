@@ -12,31 +12,9 @@ function Nearby(props) {
       <View style={styles.walkingDistanceOfColumn}>
         <WalkingDistanceOf style={styles.walkingDistanceOf}></WalkingDistanceOf>
         <Eruv style={styles.eruv}></Eruv>
-        <View style={styles.group1}>
-          <View style={styles.rect}>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-            <View style={styles.button4RowRow}>
-              <View style={styles.button4Row}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                    <Icon name="chevron-left" style={styles.icon1}></Icon>
-                  </TouchableOpacity>
-                </TouchableOpacity>
-                <Text style={styles.text}>Nearby</Text>
-              </View>
-              <View style={styles.button4RowFiller}></View>
-              <TouchableOpacity style={styles.button3}>
-                <View style={styles.image1Filler}></View>
-                <Image
-                  source={require("../assets/images/jstay-icon-inverted8.png")}
-                  resizeMode="contain"
-                  style={styles.image1}
-                ></Image>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
+        
       </View>
+
       <View style={styles.walkingDistanceOfColumnFiller}></View>
       <View style={styles.materialButtonWithVioletText2Row}>
         <MaterialButtonWithVioletText11
@@ -58,7 +36,7 @@ const styles = StyleSheet.create({
   },
   walkingDistanceOf: {
     height: 304,
-    marginTop: 110,
+    marginTop: 20,
     marginLeft: 30
   },
   eruv: {

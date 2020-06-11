@@ -105,37 +105,14 @@ function CheckinInfo(props) {
         text2="Self check-in"
         style={styles.sliderButtonHeader3}
       ></SliderButtonHeader>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.checkIn}>Check-In</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+    height: 1100,
     backgroundColor: "rgba(2,172,235,1)"
   },
   whatAmenities1: {
@@ -159,7 +136,7 @@ const styles = StyleSheet.create({
   },
   whatAmenities1Stack: {
     height: 60,
-    marginTop: 120,
+    marginTop: 20,
     marginLeft: 40,
     marginRight: 38
   },

@@ -23,40 +23,15 @@ function ApartmentPinDrop(props) {
           Move the pin over the exact location of your stay.{"\n"}Only confirmed
           guests will see exact location.
         </Text>
-        <View style={styles.group1}>
-          <View style={styles.rect}>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-            <View style={styles.button4RowRow}>
-              <View style={styles.button4Row}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                    <EntypoIcon
-                      name="chevron-left"
-                      style={styles.icon1}
-                    ></EntypoIcon>
-                  </TouchableOpacity>
-                </TouchableOpacity>
-                <Text style={styles.location}>Location</Text>
-              </View>
-              <View style={styles.button4RowFiller}></View>
-              <TouchableOpacity style={styles.button3}>
-                <View style={styles.image1Filler}></View>
-                <Image
-                  source={require("../assets/images/jstay-icon-inverted8.png")}
-                  resizeMode="contain"
-                  style={styles.image1}
-                ></Image>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
       </View>
+
       <View style={styles.dragablePinMapStack}>
         <DragablePinMap style={styles.dragablePinMap}></DragablePinMap>
         <Center horizontal>
           <EntypoIcon name="location-pin" style={styles.icon}></EntypoIcon>
         </Center>
       </View>
+      
       <View style={styles.materialButtonWithVioletText1Row}>
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText1}
@@ -79,7 +54,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginTop: 120,
+    marginTop: 50,
     marginLeft: 24
   },
   loremIpsum: {
@@ -160,6 +135,7 @@ const styles = StyleSheet.create({
   editThePinColumn: {},
   dragablePinMap: {
     top: 0,
+    height: 500,
     left: 0,
     position: "absolute",
     right: 0,
@@ -198,6 +174,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText1Row: {
     height: 45,
     flexDirection: "row",
+    marginTop:550,
     marginBottom: 34,
     marginLeft: 133,
     marginRight: 14

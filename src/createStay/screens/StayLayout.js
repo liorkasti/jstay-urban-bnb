@@ -193,38 +193,16 @@ function StayLayout(props) {
           style={styles.cupertinoStepper28}
         ></CupertinoStepper1>
       </View>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.layouts}>Layouts</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    flexGrow: 1,
+    height: 990,
+    backgroundColor: "rgba(2,172,235,1)",
+
   },
   loremIpsum: {
     top: 0,
@@ -247,7 +225,7 @@ const styles = StyleSheet.create({
   loremIpsumStack: {
     width: 316,
     height: 51,
-    marginTop: 120,
+    marginTop: 30,
     marginLeft: 30
   },
   loremIpsum2: {

@@ -90,6 +90,7 @@ function Address(props) {
         textInput1="User's current country"
         style={styles.dropDown}
       ></DropDown>
+      
       <View style={styles.group1}>
         <View style={styles.rect}>
           <Text style={styles.bsD1}>BS&quot;D</Text>

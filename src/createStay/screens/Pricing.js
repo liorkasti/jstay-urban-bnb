@@ -18,40 +18,7 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 function Pricing(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group5}>
-        <View style={styles.group4}>
-          <View style={styles.bsD1Stack}>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-            <View style={styles.group7}>
-              <View style={styles.rect}>
-                <Text style={styles.bsD12}>BS&quot;D</Text>
-                <View style={styles.button4RowRow}>
-                  <View style={styles.button4Row}>
-                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                      <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                        <EntypoIcon
-                          name="chevron-left"
-                          style={styles.icon1}
-                        ></EntypoIcon>
-                      </TouchableOpacity>
-                    </TouchableOpacity>
-                    <Text style={styles.text9}>Pricing</Text>
-                  </View>
-                  <View style={styles.button4RowFiller}></View>
-                  <TouchableOpacity style={styles.button3}>
-                    <View style={styles.image1Filler}></View>
-                    <Image
-                      source={require("../assets/images/jstay-icon-inverted8.png")}
-                      resizeMode="contain"
-                      style={styles.image1}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
-      </View>
+     
       <View style={styles.loremIpsum1Stack}>
         <Text style={styles.loremIpsum1}>
           You will be able to change pricing once your stay has been published
@@ -177,7 +144,8 @@ function Pricing(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+    height: 1100,
     backgroundColor: "rgba(2,172,235,1)"
   },
   group5: {

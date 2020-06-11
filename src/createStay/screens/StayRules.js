@@ -30,6 +30,7 @@ function StayRules(props) {
         style={styles.textInput1}
       ></TextInput>
       <Text style={styles.additionalRules}>Additional rules</Text>
+
       <View style={styles.materialButtonWithVioletText2Row}>
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText2}
@@ -38,30 +39,9 @@ function StayRules(props) {
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text2}>Stay Rules</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+      
+   
+
       <View style={styles.petsAllowed1Stack}>
         <Text style={styles.petsAllowed1}>Pets allowed</Text>
         <MaterialSwitch1 style={styles.materialSwitch5}></MaterialSwitch1>
@@ -248,7 +228,7 @@ const styles = StyleSheet.create({
   petsAllowed1Stack: {
     width: 379,
     height: 26,
-    marginTop: 53,
+    marginTop: -753,
     marginLeft: 20
   },
   loremIpsum3: {

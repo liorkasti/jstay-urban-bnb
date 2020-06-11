@@ -5,7 +5,8 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
@@ -29,41 +30,14 @@ function StayProfile(props) {
     <View style={styles.container}>
       <View style={styles.image2StackStackStack}>
         <View style={styles.image2StackStack}>
-          <View style={styles.image2Stack}>
+          <ScrollView horizontal style={styles.image2Stack}>
+           <View>
             <Image
               source={require("../assets/images/Cottage.jpg")}
               resizeMode="contain"
               style={styles.image2}
             ></Image>
-            <Text style={styles.theCottage}>The Cottage</Text>
-            <View style={styles.group1}>
-              <View style={styles.rect}>
-                <Text style={styles.bsD12}>BS&quot;D</Text>
-                <View style={styles.button4RowRow}>
-                  <View style={styles.button4Row}>
-                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                      <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                        <EntypoIcon
-                          name="chevron-left"
-                          style={styles.icon110}
-                        ></EntypoIcon>
-                      </TouchableOpacity>
-                    </TouchableOpacity>
-                    <Text style={styles.stayInfo}>Stay Info</Text>
-                  </View>
-                  <View style={styles.button4RowFiller}></View>
-                  <TouchableOpacity style={styles.button3}>
-                    <View style={styles.image1Filler}></View>
-                    <Image
-                      source={require("../assets/images/jstay-icon-inverted8.png")}
-                      resizeMode="contain"
-                      style={styles.image1}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
+            <Text style={styles.theCottage}>The Cottage</Text>    
           <ImageBackground
             source={require("../assets/images/Cottage_2.jpg")}
             resizeMode="contain"
@@ -72,7 +46,9 @@ function StayProfile(props) {
           >
             <EntypoIcon name="chevron-right" style={styles.icon7}></EntypoIcon>
           </ImageBackground>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
+          </View>
+          </ScrollView>
+
           <TouchableOpacity onPress={()=>props.onUserPress("preBookingProfile")} style={styles.button6}>
             <Image
               source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}

@@ -38,6 +38,7 @@ function StayRules(props) {
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>
+
       <View style={styles.group1}>
         <View style={styles.rect}>
           <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -62,6 +63,7 @@ function StayRules(props) {
           </View>
         </View>
       </View>
+      
       <View style={styles.petsAllowed1Stack}>
         <Text style={styles.petsAllowed1}>Pets allowed</Text>
         <MaterialSwitch1 style={styles.materialSwitch5}></MaterialSwitch1>

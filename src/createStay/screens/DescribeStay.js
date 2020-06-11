@@ -5,12 +5,10 @@ import {
   StatusBar,
   Text,
   TouchableOpacity,
-  Image,
   TextInput,
   ScrollView,
   Dimensions
 } from "react-native";
-import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import MaterialRadio7 from "../components/MaterialRadio7";
@@ -23,52 +21,19 @@ import MaterialRadio5 from "../components/MaterialRadio5";
 import DropDown from "../components/DropDown";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 
-const screenHeight = Dimensions.get('window').height  + 100;
+const screenHeight = Dimensions.get('window').height + 100;
 
 function DescribeStay(props) {
   return (
     <View style={styles.container}>
-      <ScrollView style={{ Height: "auto", maxHeight: screenHeight}} >
-        <StatusBar backgroundColor="rgba(2,172,235,1)" />
-        <View style={styles.icon2Row}>
-          <View style={styles.bsD1Stack}>
-            <Text style={styles.bsD1}>BS"D</Text>
-            <View style={styles.group1}>
-              <View style={styles.rect4}>
-                <Text style={styles.bsD12}>BS"D</Text>
-                <View style={styles.button4RowRow}>
-                  <View style={styles.button4Row}>
-                    <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
-                      <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                        <EntypoIcon
-                          name="chevron-left"
-                          style={styles.icon1}
-                        ></EntypoIcon>
-                      </TouchableOpacity>
-                    </TouchableOpacity>
-                    <Text style={styles.createAStay3}>Create A Stay</Text>
-                  </View>
-                  <View style={styles.button4RowFiller}></View>
-                  <TouchableOpacity onPress={props.onHome} style={styles.button3}>
-                    <View style={styles.image1Filler}></View>
-                    <Image
-                      source={require("../assets/images/jstay-icon-inverted8.png")}
-                      resizeMode="contain"
-                      style={styles.image1}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
-
+      <StatusBar backgroundColor="rgba(2,172,235,1)" />
+      
         <View style={styles.materialButtonWithVioletText1Row}>
           <MaterialButtonWithVioletText11
             style={styles.materialButtonWithVioletText1}
           ></MaterialButtonWithVioletText11>
           <View style={styles.materialButtonWithVioletText1Filler}></View>
-          <MaterialButtonViolet6 onPress={props.onNext}
+          <MaterialButtonViolet6 onPress={()=>props.onNext()}
             style={styles.materialButtonViolet6}
           ></MaterialButtonViolet6>
         </View>
@@ -158,7 +123,7 @@ function DescribeStay(props) {
         <Text style={styles.isThisStayKosher}>Is this stay kosher?</Text>
         <Text style={styles.guestsSleepIn2}>
           I keep my personal belongings here
-      </Text>
+        </Text>
         <View style={styles.nameYourStayStack}>
           <Text style={styles.nameYourStay}>Name your stay</Text>
           <TextInput
@@ -185,7 +150,7 @@ function DescribeStay(props) {
         ></TextInput>
         <Text style={styles.isThisStayKosher1}>
           Is this stay gender specific?
-      </Text>
+        </Text>
         <View style={styles.materialRadio8StackStack}>
           <View style={styles.materialRadio8Stack}>
             <MaterialRadio5 style={styles.materialRadio8}></MaterialRadio5>
@@ -227,17 +192,15 @@ function DescribeStay(props) {
           text1=""
           style={styles.cupertinoStepper1}
         ></CupertinoStepper1>
-      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
+    height: 1600,
     backgroundColor: "rgba(2,172,235,1)",
-    height: "auto", 
-    maxHeight: screenHeight,
   },
 
   icon2: {
@@ -398,7 +361,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     fontFamily: "roboto-regular",
     right: 0,
-    
+
   },
   strictlyKosher: {
     top: 0,
@@ -412,7 +375,7 @@ const styles = StyleSheet.create({
     height: 72,
     marginTop: 7,
     marginRight: 2,
-    
+
   },
   standardKosherStackColumn: {
     width: 317,
