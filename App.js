@@ -39,7 +39,7 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route path="/" exact component={CreateStay}/>
+            <Route path="/" exact component={Login}/>
             <Route path="/account" component={Account}/>
             <Route path="/editStay" component={EditStay}/>
             <Route path="/CreateAccount" component={CreateAccount}/>

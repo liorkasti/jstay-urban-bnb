@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ios-device": "sudo npm install --unsafe-perm=true -g ios-deploy "
   },
   "dependencies": {
     "@builderx/utils": "^0.1.6",

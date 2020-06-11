@@ -151,6 +151,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
+        padding:10,
         backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
         flexDirection: "column"

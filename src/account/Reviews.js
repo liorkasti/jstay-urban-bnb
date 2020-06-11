@@ -19,7 +19,7 @@ function Reviews(props) {
               <Text style={styles.text23}>Reviews</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
+            <TouchableOpacity onPress={()=> { props.goHome() }}style={styles.button3}>
               <View style={styles.image134Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}

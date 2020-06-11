@@ -85,7 +85,7 @@ function BookStay(props) {
               <Text style={styles.bookThisStay}>Book This Stay</Text>
             </View>
             <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button32}>
+            <TouchableOpacity onPress={()=> { props.goHome() }}style={styles.button32}>
               <View style={styles.image1Filler}></View>
               <Image
                 source={require("../assets/images/jstay-icon-inverted8.png")}
