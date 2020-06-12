@@ -13,6 +13,9 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.62.2)
   - Firebase/Analytics (6.25.0):
     - Firebase/Core
+  - Firebase/Auth (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 6.5.3)
   - Firebase/Core (6.25.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.5.1)
@@ -27,6 +30,13 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
+  - FirebaseAuth (6.5.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.1.0)
   - FirebaseCore (6.7.1):
     - FirebaseCoreDiagnostics (~> 1.3)
     - FirebaseCoreDiagnosticsInterop (~> 1.2)
@@ -129,6 +139,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.4.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -371,6 +382,10 @@ PODS:
   - RNFBApp (7.2.1):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
+  - RNFBAuth (8.0.5):
+    - Firebase/Auth (~> 6.25.0)
+    - React
+    - RNFBApp
   - RNPermissions (2.1.3):
     - React
   - RNSVG (12.1.0):
@@ -434,6 +449,7 @@ DEPENDENCIES:
   - ReactCommon/callinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
+  - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -446,6 +462,8 @@ SPEC REPOS:
     - CocoaLibEvent
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
@@ -461,6 +479,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GTMSessionFetcher
     - nanopb
     - OpenSSL-Universal
     - PromisesObjC
@@ -525,6 +544,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
+  RNFBAuth:
+    :path: "../node_modules/@react-native-firebase/auth"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNSVG:
@@ -543,6 +564,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
   Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
   FirebaseAnalytics: 93565f3f0f0f50a5d8770850bfe6a82eaba5db27
+  FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
+  FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
   FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
   FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
@@ -560,6 +583,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
   GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   Permission-LocationWhenInUse: bb552f0e7ba0fce1514fe7708f6210bf1aec0b83
@@ -587,6 +611,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
   RNFBApp: def13f6392e7c9839c938879f065ec0088c4496a
+  RNFBAuth: da10602d9f8644a1669d824c862e7321b1f0fc9e
   RNPermissions: 6772df08e03565f718f7e140d9fccae441b8ca8b
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
