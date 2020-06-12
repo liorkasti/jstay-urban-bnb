@@ -9,24 +9,14 @@ function MyKashrut(props) {
     <View style={styles.container}>
       <View style={styles.myLevelOfKashrutStackColumn}>
         <View style={styles.myLevelOfKashrutStack}>
-            <Text style={styles.myLevelOfKashrut}>My level of kashrut is</Text>
           <Image
             source={require("../assets/images/JStay-Logo-blue-shin7.png")}
             resizeMode="contain"
             style={styles.image1}
           ></Image>
         </View>
+            <Text style={styles.myLevelOfKashrut}>My level of kashrut is</Text>
         <KosherSelect style={styles.kosherSelect}></KosherSelect>
-        <View style={styles.group1}>
-          <View style={styles.headerBarDark1Stack}>
-            <HeaderBarDark
-            onBack={props.onBack}
-              text1=""
-              style={styles.headerBarDark1}
-            ></HeaderBarDark>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-          </View>
-        </View>
       </View>
       <View style={styles.myLevelOfKashrutStackColumnFiller}></View>
       <NextButton onPress={props.onNext} style={styles.nextButton1}></NextButton>
@@ -40,22 +30,22 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,88,155,1)"
   },
   myLevelOfKashrut: {
-    top: 147,
     color: "rgba(2,172,235,1)",
-    position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
+    marginLeft: 110
   },
   image1: {
     top: 0,
     left: 0,
     height: 150,
     position: "absolute",
-    right: 0
+    right: 0,
+    width:"auto"
   },
   myLevelOfKashrutStack: {
     height: 171,
-    marginTop: 137
+    marginTop: 37
   },
   kosherSelect: {
     width: 394,

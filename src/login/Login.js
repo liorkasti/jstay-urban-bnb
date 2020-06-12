@@ -22,9 +22,11 @@ function Login(props) {
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.group}></View>
       <View style={styles.group2}></View>
+     
       <TouchableOpacity onPress={props.login} style={styles.button3}>
         <LoginButton onPress={props.login} style={styles.loginButton}></LoginButton>
       </TouchableOpacity>
+     
       {/* BackButton */}
       <MaterialButtonWithVioletText
         onPress={props.onBack}
@@ -43,9 +45,11 @@ function Login(props) {
       <EmailTextInput style={styles.emailTextInput}></EmailTextInput>
       <Text style={styles.loremIpsum2}></Text>
       <Icon name="lock" style={styles.icon}></Icon>
+      
       <TouchableOpacity style={styles.button2}>
         <SignupButton onPress={props.createAccount} style={styles.signupButton}></SignupButton>
       </TouchableOpacity>
+      
       <Text style={styles.bsD1}>BS&quot;D</Text>
       <Text style={styles.myDetails1}>
         Please enter your log in information
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
     right: 34
   },
   button3: {
-    bottom: 75,
+    bottom: 95,
     left: 32,
     width: 353,
     height: 62,
@@ -150,7 +154,7 @@ const styles = StyleSheet.create({
     bottom: "51.18%"
   },
   button2: {
-    bottom: 25,
+    bottom: 45,
     left: 151,
     width: 116,
     height: 36,

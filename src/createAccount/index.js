@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, ScrollView, Dimensions } from "react-native"
 import { useHistory } from "react-router-dom";
+
+import HeaderBarDark from "../components/HeaderBarDark"
 
 //import all builder x files related to this directory
 import ComingSoon from "../modules/comingSoon";
@@ -31,7 +33,11 @@ export default function CreateAccountIndex(props) {
     const componentKeys = ["MyDetails", "MyKashrut", "ProfilePicture"];
 
     return (
-        <View style={styles.container}>
+
+          <View style={styles.container}>
+            <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Create Account" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            <ScrollView style={styles.scrollView}>
+            
             {/* copy paste below component*/}
             {
                 //replace this string with the string 
@@ -123,13 +129,24 @@ export default function CreateAccountIndex(props) {
                     }}
                 />
             }
-        </View>
-    );
+            </ScrollView>
+        </View>    );
 }
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: "rgba(0,88,155,1)",
         flex: 1,
-        alignItems: "center",
-    }
+        flexDirection: "column"
+    },
+    header: {
+        zIndex: 20,
+    },
+    scrollView: {
+        zIndex: 1,
+        marginTop: 70
+    },
 });

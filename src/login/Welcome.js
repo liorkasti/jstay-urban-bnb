@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button4: {
-    top: 40,
+    top: 47,
     width: 108,
     height: 48,
     position: "absolute",
@@ -166,15 +166,15 @@ const styles = StyleSheet.create({
     right: 0
   },
   button6: {
-    top: 46,
+    top: 56,
     left: 31,
     width: '38%',
     height: '4%',
     position: "absolute"
   },
   icon: {
-    top: 0,
-    left: 125,
+    top: -.5,
+    left: 110,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 25
@@ -189,9 +189,6 @@ const styles = StyleSheet.create({
     height: '95%',
     color: "rgba(2,172,235,1)",
     position: "absolute",
-    borderRadius: 10,
-    borderColor: "rgba(2,172,235,1)",
-    borderWidth: 2,
     fontSize: 16,
     fontFamily: "roboto-regular"
   }

@@ -11,6 +11,7 @@ import NextButton from "../components/NextButton";
 function MyDetails(props) {
   return (
     <View style={styles.container}>
+      
       <View style={styles.materialIconTextboxColumn}>
         <MaterialIconTextbox
           textInput1="first name"
@@ -58,23 +59,11 @@ function MyDetails(props) {
             style={styles.image1}
           ></Image>
         </View>
-        <View style={styles.group3}>
-          <View style={styles.group2}>
-            <View style={styles.group1}>
-              <View style={styles.headerBarDark1Stack}>
-                <HeaderBarDark
-                onBack={props.onBack}
-                  text1=""
-                  style={styles.headerBarDark1}
-                ></HeaderBarDark>
-                <Text style={styles.bsD1}>BS&quot;D</Text>
-              </View>
-            </View>
-          </View>
-        </View>
+
       </View>
       <View style={styles.materialIconTextboxColumnFiller}></View>
       <NextButton onPress={props.onNext} style={styles.nextButton1}></NextButton>
+
     </View>
   );
 }
@@ -86,13 +75,13 @@ const styles = StyleSheet.create({
   },
   materialIconTextbox: {
     height: 43,
-    marginTop: 394,
+    marginTop: 294,
     marginLeft: 20,
     marginRight: 29
   },
   materialIconTextbox1: {
     height: 43,
-    marginTop: 7,
+    marginTop: 17,
     marginLeft: 20,
     marginRight: 29
   },
@@ -104,7 +93,7 @@ const styles = StyleSheet.create({
     right: 0
   },
   materialIconTextbox4: {
-    top: 0,
+    top: 50,
     left: 0,
     height: 43,
     position: "absolute",
@@ -167,7 +156,8 @@ const styles = StyleSheet.create({
     left: 0,
     height: 150,
     position: "absolute",
-    right: 0
+    right: 0,
+    width:"auto"
   },
   textStack: {
     height: 170,

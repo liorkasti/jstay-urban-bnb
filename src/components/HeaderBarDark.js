@@ -15,7 +15,8 @@ function HeaderBarDark(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+  },
   rect1: {
     top: 0,
     left: 0,
