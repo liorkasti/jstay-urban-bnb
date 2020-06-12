@@ -12,6 +12,7 @@ import UpdatesCheckBox from "../components/UpdatesCheckBox";
 function AccountDetails(props) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.emailInputColumn}>
         <EmailInput style={styles.emailInput}></EmailInput>
         <View style={styles.group}>
