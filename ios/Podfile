@@ -79,6 +79,8 @@ target 'JSTAY' do
 
   permissions_path = '../node_modules/react-native-permissions/ios'
  
+  pod 'Firebase/Analytics'
+
   pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse.podspec"
   
   target 'JSTAYTests' do
