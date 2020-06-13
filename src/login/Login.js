@@ -111,18 +111,19 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   materialCheckboxWithLabel: {
-    left: 0,
+    left: 5,
     width: 139,
     height: 40,
     position: "absolute",
-    bottom: "0.01%"
+    bottom: -8
   },
   materialButtonWithVioletText15: {
-    left: 52,
-    width: 108,
+    left: 8,
+    width: 208,
     height: 36,
     position: "absolute",
-    bottom: "45.24%",
+    // bottom: "45.24%",
+    bottom: 286,
     opacity: 0.46
   },
   passwordTextInput: {
@@ -151,7 +152,8 @@ const styles = StyleSheet.create({
     color: "rgba(177,177,177,1)",
     fontSize: 22,
     left: 29,
-    bottom: "51.18%"
+    top: 415,
+    // bottom: "51.18%",
   },
   button2: {
     bottom: 45,
