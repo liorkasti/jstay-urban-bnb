@@ -15,15 +15,20 @@ export default function CreateAccountIndex(props) {
     let history = useHistory();
 
     useEffect(() => {
+        if (props.location.state) {
+            
+        };
+    }, [])
+
+    useEffect(() => {
         console.warn(componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
-        }
-        if(componentIndex < 0){
+        };
+        if (componentIndex < 0) {
             history.push("/");
-        }
-
+        };
     }, [componentIndex])
 
     //add the import as a string to this array 

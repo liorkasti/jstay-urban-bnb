@@ -51,7 +51,7 @@ export default function LoginIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    createAccount={() => onCreateAccount()}
+                    createAccount={() => {onCreateAccount()}}
                     
                     login={() => {
                         console.warn("setcomponentIndex for login ")
