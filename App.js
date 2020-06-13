@@ -40,6 +40,7 @@ export default function App() {
         <Switch>
           <BackButton>
             <Route path="/" exact component={Login}/>
+            {/* <Route path="/" exact component={CreateAccount}/> */}
             <Route path="/account" component={Account}/>
             <Route path="/editStay" component={EditStay}/>
             <Route path="/CreateAccount" component={CreateAccount}/>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
 import MaterialIconTextbox from "../components/MaterialIconTextbox";
 import EmailTextInput4 from "../components/EmailTextInput4";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
@@ -11,7 +11,16 @@ import NextButton from "../components/NextButton";
 function MyDetails(props) {
   return (
     <View style={styles.container}>
-      
+      <StatusBar backgroundColor="rgba(0,88,155,1)" />
+      <View style={styles.group2}>
+        <View style={styles.headerBarDark1Stack}>
+          <HeaderBarDark
+            text1=""
+            style={styles.headerBarDark1}
+          />
+          <Text style={styles.bsD1}>BS&quot;D</Text>
+        </View>
+      </View>
       <View style={styles.materialIconTextboxColumn}>
         <MaterialIconTextbox
           textInput1="first name"
@@ -34,6 +43,7 @@ function MyDetails(props) {
             style={styles.materialIconTextbox4}
           ></EmailTextInput4>
         </View>
+        
         <View style={styles.icon2Row}>
           <MaterialIconsIcon
             name="people"
@@ -49,20 +59,25 @@ function MyDetails(props) {
             ></EntypoIcon>
           </View>
         </View>
+
         <View style={styles.textStack}>
           <Center horizontal>
             <Text style={styles.text}>My details</Text>
+            <Image
+              source={require("../assets/images/JStay-Logo-blue-shin7.png")}
+              resizeMode="contain"
+              style={styles.image1}
+            ></Image>
           </Center>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
         </View>
-
       </View>
-      <View style={styles.materialIconTextboxColumnFiller}></View>
-      <NextButton onPress={props.onNext} style={styles.nextButton1}></NextButton>
+
+
+      <View style={styles.materialIconTextboxColumnFiller} />
+      <NextButton onPress={props.onNext} style={styles.nextButton1} />
+      <NextButton onPress={props.onNext} style={styles.onHome} />
+      <NextButton onPress={props.onNext} style={styles.onBack} />
+      <NextButton onPress={props.onNext} style={styles.onSkip} />
 
     </View>
   );
@@ -138,6 +153,7 @@ const styles = StyleSheet.create({
     marginLeft: 14
   },
   icon2Row: {
+    top: -10,
     height: 41,
     flexDirection: "row",
     marginTop: -188,
@@ -157,7 +173,7 @@ const styles = StyleSheet.create({
     height: 150,
     position: "absolute",
     right: 0,
-    width:"auto"
+    width: "auto"
   },
   textStack: {
     height: 170,

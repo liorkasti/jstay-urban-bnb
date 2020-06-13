@@ -3,20 +3,33 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import KosherSelect from "../components/KosherSelect";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
+import { Center } from "@builderx/utils";
 
 function MyKashrut(props) {
   return (
     <View style={styles.container}>
       <View style={styles.myLevelOfKashrutStackColumn}>
         <View style={styles.myLevelOfKashrutStack}>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
-        </View>
+          <Center horizontal>
             <Text style={styles.myLevelOfKashrut}>My level of kashrut is</Text>
+            <Image
+              source={require("../assets/images/JStay-Logo-blue-shin7.png")}
+              resizeMode="contain"
+              style={styles.image1}
+            ></Image>
+          </Center>
+        </View>
         <KosherSelect style={styles.kosherSelect}></KosherSelect>
+        <View style={styles.group1}>
+          <View style={styles.headerBarDark1Stack}>
+            <HeaderBarDark
+              onBack={props.onBack}
+              text1=""
+              style={styles.headerBarDark1}
+            ></HeaderBarDark>
+            <Text style={styles.bsD1}>BS&quot;D</Text>
+          </View>
+        </View>
       </View>
       <View style={styles.myLevelOfKashrutStackColumnFiller}></View>
       <NextButton onPress={props.onNext} style={styles.nextButton1}></NextButton>
@@ -30,22 +43,20 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,88,155,1)"
   },
   myLevelOfKashrut: {
+    top: 147,
     color: "rgba(2,172,235,1)",
+    position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-regular",
-    marginLeft: 110
+    fontFamily: "roboto-regular"
   },
   image1: {
     top: 0,
-    left: 0,
     height: 150,
     position: "absolute",
-    right: 0,
-    width:"auto"
   },
   myLevelOfKashrutStack: {
     height: 171,
-    marginTop: 37
+    marginTop: 137
   },
   kosherSelect: {
     width: 394,

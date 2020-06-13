@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions, StatusBar } from "react-native";
 import EmailInput from "../components/EmailInput";
 import Icon from "react-native-vector-icons/Feather";
 import MaterialRightIconTextbox1 from "../components/MaterialRightIconTextbox1";
 import ReEnterPassword from "../components/ReEnterPassword";
 import { Center } from "@builderx/utils";
 import HeaderBarDark from "../components/HeaderBarDark";
+
 import NextButton from "../components/NextButton";
+import BackButton from "../components/BackButton";
+// import HomeButton from "../components/HomeButton";
+// import SkipButton from "../components/SkipButton";
 import UpdatesCheckBox from "../components/UpdatesCheckBox";
 
 function AccountDetails(props) {
@@ -26,12 +30,12 @@ function AccountDetails(props) {
         <View style={styles.textStack}>
           <Center horizontal>
             <Text style={styles.text}>Account details</Text>
+            <Image
+              source={require("../assets/images/JStay-Logo-blue-shin7.png")}
+              resizeMode="contain"
+              style={styles.image3}
+            ></Image>
           </Center>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
-            resizeMode="contain"
-            style={styles.image3}
-          ></Image>
         </View>
         <View style={styles.group2}>
           <View style={styles.headerBarDark1Stack}>
@@ -39,30 +43,37 @@ function AccountDetails(props) {
               text1=""
               style={styles.headerBarDark1}
             ></HeaderBarDark>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
           </View>
         </View>
       </View>
       <View style={styles.emailInputColumnFiller}></View>
-      <View style={styles.nextButtonColumn}>
-        <NextButton style={styles.nextButton}></NextButton>
+      <View>
+        {/* <NextButton style={styles.nextButton}></NextButton> */}
         <TouchableOpacity style={styles.button2}>
           <UpdatesCheckBox style={styles.updatesCheckBox}></UpdatesCheckBox>
         </TouchableOpacity>
       </View>
+
+      <View style={styles.materialIconTextboxColumnFiller} />
+      <NextButton onPress={props.onNext} style={styles.nextButton1} />
+      <BackButton onPress={props.onBack} style={styles.onBack} />
     </View>
   );
 }
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)"
+    backgroundColor: "rgba(0,88,155,1)",
+    // width: "100%"
   },
   emailInput: {
     height: 43,
     marginTop: 373,
-    marginLeft: 33,
+    marginLeft: 23,
     marginRight: 27
   },
   group: {
@@ -97,10 +108,8 @@ const styles = StyleSheet.create({
   },
   image3: {
     top: 0,
-    left: 0,
     height: 150,
     position: "absolute",
-    right: 0
   },
   textStack: {
     height: 170,
@@ -108,7 +117,7 @@ const styles = StyleSheet.create({
   },
   group2: {
     height: 90,
-    marginTop: -307
+    marginTop: -307,
   },
   headerBarDark1: {
     height: 90,
@@ -118,15 +127,6 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderBottomWidth: 90,
     left: 0
-  },
-  bsD1: {
-    top: 13,
-    color: "rgba(177,177,177,1)",
-    position: "absolute",
-    right: 38,
-    opacity: 0.35,
-    fontSize: 10,
-    fontFamily: "roboto-regular"
   },
   headerBarDark1Stack: {
     height: 90
@@ -147,12 +147,20 @@ const styles = StyleSheet.create({
     marginBottom: 76
   },
   updatesCheckBox: {
-    width: 300,
-    height: 40
+    top: 300,
+    width: 3200,
+    height: 40,
+    left: 40,
   },
-  nextButtonColumn: {
+  materialIconTextboxColumn: {},
+  materialIconTextboxColumnFiller: {
+    flex: 1
+  },
+  nextButton1: {
+    width: 100,
+    height: 36,
+    alignSelf: "flex-end",
     marginBottom: 40,
-    marginLeft: 20,
     marginRight: 8
   }
 });
