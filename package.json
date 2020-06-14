@@ -22,6 +22,7 @@
     "react-native-datepicker": "^1.7.2",
     "react-native-dropdown-menu": "^2.0.0",
     "react-native-elements": "^1.2.7",
+    "react-native-fbsdk": "^2.0.0",
     "react-native-geocoding": "^0.4.0",
     "react-native-maps": "react-native-community/react-native-maps",
     "react-native-orientation-locker": "^1.1.8",

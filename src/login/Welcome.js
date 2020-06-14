@@ -45,6 +45,7 @@ function WelcomePage(props) {
 
       <TouchableOpacity style={styles.button3}>
         <ContinueFacebookButton
+        onPress={()=>props.facebookSignin()}
           style={styles.continueFacebookButton}
         ></ContinueFacebookButton>
       </TouchableOpacity>
