@@ -18,6 +18,9 @@
 		2DCD954D1E0B4F2C00145EB5 /* JSTAYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JSTAYTests.m */; };
 		66A153D1AF4F1EFC30120A9F /* libPods-JSTAY-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */; };
 		6D598A342493BEF6004055F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D598A332493BEF6004055F6 /* GoogleService-Info.plist */; };
+		6DBC69D92495F6540012045A /* libFBSDKCoreKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC69D82495F6540012045A /* libFBSDKCoreKit.a */; };
+		6DBC69DB2495F6540012045A /* libFBSDKLoginKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC69DA2495F6540012045A /* libFBSDKLoginKit.a */; };
+		6DBC69DD2495F6540012045A /* libFBSDKShareKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DBC69DC2495F6540012045A /* libFBSDKShareKit.a */; };
 		8672344B2457D66800938DF8 /* roboto-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867234492457D66800938DF8 /* roboto-regular.ttf */; };
 		8672344C2457D66800938DF8 /* roboto-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8672344A2457D66800938DF8 /* roboto-700.ttf */; };
 		A981E07093741841AECB46D0 /* libPods-JSTAY-JSTAYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */; };
@@ -74,6 +77,9 @@
 		613CD87F8D2B44DFA9F3F47B /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D598A332493BEF6004055F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6DBC69D82495F6540012045A /* libFBSDKCoreKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKCoreKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DBC69DA2495F6540012045A /* libFBSDKLoginKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKLoginKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DBC69DC2495F6540012045A /* libFBSDKShareKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKShareKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7865E189C000479EBCB750F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		867234492457D66800938DF8 /* roboto-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-regular.ttf"; path = "../../src/assets/fonts/roboto-regular.ttf"; sourceTree = "<group>"; };
 		8672344A2457D66800938DF8 /* roboto-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-700.ttf"; path = "../../src/assets/fonts/roboto-700.ttf"; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DBC69D92495F6540012045A /* libFBSDKCoreKit.a in Frameworks */,
+				6DBC69DB2495F6540012045A /* libFBSDKLoginKit.a in Frameworks */,
+				6DBC69DD2495F6540012045A /* libFBSDKShareKit.a in Frameworks */,
 				E8E634FDDEA0889B12436E1D /* libPods-JSTAY.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +171,9 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6DBC69D82495F6540012045A /* libFBSDKCoreKit.a */,
+				6DBC69DA2495F6540012045A /* libFBSDKLoginKit.a */,
+				6DBC69DC2495F6540012045A /* libFBSDKShareKit.a */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				9299DDDE249123A7BA3B98F1 /* libPods-JSTAY.a */,
 				2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */,
@@ -812,6 +824,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J6P6KC6VRD;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
@@ -843,6 +862,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J6P6KC6VRD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
+					"~/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = JSTAY/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -1016,7 +1042,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -1070,7 +1096,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",

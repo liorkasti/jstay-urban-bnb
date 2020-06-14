@@ -10,14 +10,18 @@ function ProfilePicture(props) {
   return (
     <View style={styles.container}>
       <View style={styles.button4Column}>
-        <TouchableOpacity style={styles.button4}>
+
+        <TouchableOpacity onPress={()=>{props.addProfilePicture()}} style={styles.button4}>
           <AddProfileProfilePictureButton
+            onPress={() => { props.addProfilePicture() }}
             style={styles.addProfileProfilePictureButton}
           ></AddProfileProfilePictureButton>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.button2}>
           <SkipButton style={styles.skipButton}></SkipButton>
         </TouchableOpacity>
+
         <View style={styles.addRecentPictureStack}>
           <Text style={styles.addRecentPicture}>
             Please add a recent picture
@@ -26,16 +30,16 @@ function ProfilePicture(props) {
             style={styles.jstayLogoFullDark}
           ></JstayLogoFullDark>
         </View>
-        <Image
-          source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
-          resizeMode="stretch"
+        <Image 
+        resizeMode="stretch"
           style={styles.image1}
-        ></Image>
-       
+           source={props.profilePictureUri ? { uri: props.profilePictureUri }: require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")} 
+       />
+
       </View>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
-      onPress={props.onNext}
+        onPress={props.onNext}
         style={styles.createAccountDoneButton1}
       ></DoneCreateAccount>
     </View>
@@ -46,13 +50,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: 420,
-    backgroundColor: "rgba(0,88,155,1)"
+    backgroundColor: "rgba(0,88,155,1)",
+    zIndex:1,
   },
   button4: {
     height: 62,
     marginTop: 525,
     marginLeft: 29,
-    marginRight: 30
+    marginRight: 30,
+    zIndex: 20,
   },
   addProfileProfilePictureButton: {
     height: 62
@@ -121,7 +127,9 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  button4Column: {},
+  button4Column: {
+    zIndex:1,
+  },
   button4ColumnFiller: {
     flex: 1
   },
