@@ -15,7 +15,6 @@ import storage from '@react-native-firebase/storage';
 
 const imagePickerOptionsoptions = {
     title: 'Select Avatar',
-    customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
     storageOptions: {
         skipBackup: true,
         path: 'images',
@@ -55,7 +54,7 @@ export default function CreateAccountIndex(props) {
                 // const source = { uri: 'data:image/jpeg;base64,' + response.data };
 
 
-                setProfilePictureUri(source.uri)
+                setProfilePictureUri(source.uri);
             }
         });
     }
