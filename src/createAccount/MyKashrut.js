@@ -3,24 +3,27 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import KosherSelect from "../components/KosherSelect";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
+import { Center } from "@builderx/utils";
 
 function MyKashrut(props) {
   return (
     <View style={styles.container}>
       <View style={styles.myLevelOfKashrutStackColumn}>
         <View style={styles.myLevelOfKashrutStack}>
+          <Center horizontal>
             <Text style={styles.myLevelOfKashrut}>My level of kashrut is</Text>
-          <Image
-            source={require("../assets/images/JStay-Logo-blue-shin7.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
+            <Image
+              source={require("../assets/images/JStay-Logo-blue-shin7.png")}
+              resizeMode="contain"
+              style={styles.image1}
+            ></Image>
+          </Center>
         </View>
         <KosherSelect style={styles.kosherSelect}></KosherSelect>
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
-            onBack={props.onBack}
+              onBack={props.onBack}
               text1=""
               style={styles.headerBarDark1}
             ></HeaderBarDark>
@@ -48,10 +51,8 @@ const styles = StyleSheet.create({
   },
   image1: {
     top: 0,
-    left: 0,
     height: 150,
     position: "absolute",
-    right: 0
   },
   myLevelOfKashrutStack: {
     height: 171,

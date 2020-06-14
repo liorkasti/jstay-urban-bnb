@@ -24,7 +24,7 @@ function KosherSelect(props) {
         <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
       </TouchableOpacity>
       <Text style={styles.text5}>
-        I would only book a stay that is available to kosher{"\n"}guests only
+        I would only book a stay that is available to kosher guests only
       </Text>
       <Text style={styles.text6}>
         I keep kosher according to basic requirements and would book a stay that
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     right: 39
   },
   text6: {
-    top: "10.64%",
+    top: "12%",
     left: 43,
     color: "rgba(230,230,230,1)",
     position: "absolute",
@@ -135,14 +135,13 @@ const styles = StyleSheet.create({
     right: 11
   },
   idoNotKeep1: {
-    top: "79.44%",
+    top: "80%",
     left: 44,
     color: "rgba(230,230,230,1)",
     position: "absolute",
     fontSize: 14,
     fontFamily: "roboto-regular",
-    right: 208
-  },
+    },
   button5: {
     top: "2.2%",
     left: 1,

@@ -22,9 +22,11 @@ function Login(props) {
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.group}></View>
       <View style={styles.group2}></View>
+     
       <TouchableOpacity onPress={props.login} style={styles.button3}>
         <LoginButton onPress={props.login} style={styles.loginButton}></LoginButton>
       </TouchableOpacity>
+     
       {/* BackButton */}
       <MaterialButtonWithVioletText
         onPress={props.onBack}
@@ -43,9 +45,11 @@ function Login(props) {
       <EmailTextInput style={styles.emailTextInput}></EmailTextInput>
       <Text style={styles.loremIpsum2}></Text>
       <Icon name="lock" style={styles.icon}></Icon>
+      
       <TouchableOpacity style={styles.button2}>
         <SignupButton onPress={props.createAccount} style={styles.signupButton}></SignupButton>
       </TouchableOpacity>
+      
       <Text style={styles.bsD1}>BS&quot;D</Text>
       <Text style={styles.myDetails1}>
         Please enter your log in information
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
     right: 34
   },
   button3: {
-    bottom: 75,
+    bottom: 95,
     left: 32,
     width: 353,
     height: 62,
@@ -107,18 +111,19 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   materialCheckboxWithLabel: {
-    left: 0,
+    left: 5,
     width: 139,
     height: 40,
     position: "absolute",
-    bottom: "0.01%"
+    bottom: -8
   },
   materialButtonWithVioletText15: {
-    left: 52,
-    width: 108,
+    left: 8,
+    width: 208,
     height: 36,
     position: "absolute",
-    bottom: "45.24%",
+    // bottom: "45.24%",
+    bottom: 286,
     opacity: 0.46
   },
   passwordTextInput: {
@@ -147,10 +152,11 @@ const styles = StyleSheet.create({
     color: "rgba(177,177,177,1)",
     fontSize: 22,
     left: 29,
-    bottom: "51.18%"
+    top: 415,
+    // bottom: "51.18%",
   },
   button2: {
-    bottom: 25,
+    bottom: 45,
     left: 151,
     width: 116,
     height: 36,

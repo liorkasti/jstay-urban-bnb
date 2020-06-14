@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     width: 93,
     height: 28,
     color: "rgba(2,172,235,1)",
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "roboto-regular",
     lineHeight: 16
   }

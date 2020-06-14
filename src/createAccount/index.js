@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, ScrollView, Dimensions } from "react-native"
 import { useHistory } from "react-router-dom";
+
+import HeaderBarDark from "../components/HeaderBarDark"
 
 //import all builder x files related to this directory
 import ComingSoon from "../modules/comingSoon";
+import AccountDetails from "./AccountDetails";
 import MyDetails from "./MyDetails";
 import ProfilePicture from "./ProfilePicture";
 import MyKashrut from "./MyKashrut";
@@ -33,108 +36,155 @@ export default function CreateAccountIndex(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["MyDetails", "MyKashrut", "ProfilePicture"];
+    const componentKeys = ["AccountDetails", "MyDetails", "MyKashrut", "ProfilePicture"];
+
 
     return (
+
         <View style={styles.container}>
-            {/* copy paste below component*/}
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
+            <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Create Account" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            {/* <ScrollView style={styles.scrollView}> */}
 
-                componentKeys[componentIndex] === "MyDetails"
-                &&
-                //change component name to the new import 
-                <MyDetails
+                {/* copy paste below component*/}
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
 
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
+                    componentKeys[componentIndex] === "AccountDetails"
+                    &&
+                    //change component name to the new import 
+                    <AccountDetails
 
-                    onHome={() => { goToHome() }}
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onNext={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
 
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        setComponentIndex(componentIndex - 1)
-                    }}
+                        onHome={() => { goToHome() }}
 
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            setComponentIndex(componentIndex - 1)
+                        }}
 
-                componentKeys[componentIndex] === "MyKashrut"
-                &&
-                //change component name to the new import 
-                <MyKashrut
+                        //if builder x component has skip button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onSkip={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+                    />
+                }
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
 
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
+                    componentKeys[componentIndex] === "MyDetails"
+                    &&
+                    //change component name to the new import 
+                    <MyDetails
 
-                    onHome={() => { goToHome() }}
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onNext={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
 
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        setComponentIndex(componentIndex - 1)
-                    }}
+                        onHome={() => { goToHome() }}
 
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            setComponentIndex(componentIndex - 1)
+                        }}
 
-                componentKeys[componentIndex] === "ProfilePicture"
-                &&
-                //change component name to the new import 
-                <ProfilePicture
+                        //if builder x component has skip button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onSkip={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+                    />
+                }
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
 
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
+                    componentKeys[componentIndex] === "MyKashrut"
+                    &&
+                    //change component name to the new import 
+                    <MyKashrut
 
-                    onHome={() => { goToHome() }}
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onNext={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
 
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        setComponentIndex(componentIndex - 1)
-                    }}
+                        onHome={() => { goToHome() }}
 
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-        </View>
-    );
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            setComponentIndex(componentIndex - 1)
+                        }}
+
+                        //if builder x component has skip button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onSkip={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+                    />
+                }
+                {
+                    //replace this string with the string 
+                    //in componentKeys related to this import
+
+                    componentKeys[componentIndex] === "ProfilePicture"
+                    &&
+                    //change component name to the new import 
+                    <ProfilePicture
+
+                        //if builder x component has next button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onNext={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+
+                        onHome={() => { goToHome() }}
+
+                        //if builder x component has back button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onBack={() => {
+                            setComponentIndex(componentIndex - 1)
+                        }}
+
+                        //if builder x component has skip button
+                        //it's button should have onPress={()=>{props.onNext}}
+                        onSkip={() => {
+                            setComponentIndex(componentIndex + 1)
+                        }}
+                    />
+                }
+            {/* </ScrollView> */}
+        </View>);
 }
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: "rgba(0,88,155,1)",
         flex: 1,
-        alignItems: "center",
-    }
+        flexDirection: "column",
+        width: windowWidth,
+    },
+    header: {
+        zIndex: 20,
+    },
+    scrollView: {
+        zIndex: 1,
+        marginTop: 70
+    },
 });

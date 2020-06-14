@@ -36,11 +36,11 @@ function WelcomePage(props) {
         <GotoLoginButton onPress={props.login} style={styles.gotoLoginButton}></GotoLoginButton>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button5}>
+      <TouchableOpacity onPress={props.createAccount} style={styles.button5}>
         <CreateAccountButton
           onPress={props.createAccount}
           style={styles.createAccountButton}
-        ></CreateAccountButton>
+        />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.button3}>
@@ -82,38 +82,46 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button4: {
-    top: 40,
+    top: 47,
     width: 108,
-    height: 48,
+    height: 88,
     position: "absolute",
     right: -14
   },
   gotoLoginButton: {
     top: 6,
     left: 0,
-    width: '95%',
-    height: '95%',
+    width: 108,
+    height: 48,
+    // width: '95%',
+    // height: '95%',
     position: "absolute"
   },
   button5: {
     top: 507,
     // left: 31,
     // width: '70%',
-    height: '10%',
+    width: 352,
+    height: 62,
     position: "absolute"
   },
   createAccountButton: {
     top: 0,
     left: 0,
     alignItems: 'center',
-    width: '100%',
-    height: '95%',
+    // width: '100%',
+    // height: '95%',
+    width: 352,
+    height: 62,
     position: "absolute"
   },
   text: {
     left: "7.51%",
-    width: '85%',
-    height: '10%',
+    // width: '85%',
+    // height: '10%',
+    width: 352,
+    height: 68,
+
     color: "rgba(168,219,243,1)",
     position: "absolute",
     bottom: 46,
@@ -124,29 +132,37 @@ const styles = StyleSheet.create({
   button3: {
     top: 350,
     left: 31,
-    width: '85%',
-    height: '8%',
+    // width: '85%',
+    // height: '8%',
+    width: 352,
+    height: 62,
     position: "absolute"
   },
   continueFacebookButton: {
     // top: 0,
     // left: 0,
-    width: '100%',
-    height: '90%',
-    // position: "absolute"
+    // width: '100%',
+    // height: '90%',
+    width: 352,
+    height: 62,
+    position: "absolute"
   },
   button2: {
     top: 425,
     // left: 31,
-    width: '85%',
-    height: '8%',
+    width: 352,
+    height: 62,
+    // width: '85%',
+    // height: '8%',
     position: "absolute"
   },
   continueGoogleButton: {
     top: 0,
     left: 0,
-    width: '100%',
-    height: '90%',
+    width: 352,
+    height: 62,
+    // width: '100%',
+    // height: '90%',
     position: "absolute"
   },
   bsD: {
@@ -167,34 +183,35 @@ const styles = StyleSheet.create({
     right: 0
   },
   button6: {
-    top: 46,
+    top: 56,
     left: 31,
-    width: '38%',
-    height: '4%',
+    // width: '38%',
+    // height: '4%',
+    width: 150,
+    height: 33,
     position: "absolute"
   },
   icon: {
-    top: 0,
-    left: 125,
+    top: 2,
+    left: 136,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 25
   },
   chooseLanguage: {
-    // top: 3,
-    // left: 0,
-    alignSelf: 'center',
+    top: 3,
+    left: 0,
     width: '130%',
-    paddingLeft: 10,
-    paddingTop: 2,
-    height: '95%',
     color: "rgba(2,172,235,1)",
     position: "absolute",
-    borderRadius: 10,
-    borderColor: "rgba(2,172,235,1)",
-    borderWidth: 2,
     fontSize: 16,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
+    width: 149,
+    height: 30,
+    // alignSelf: 'center',
+    // paddingLeft: 10,
+    // paddingTop: 2,
+    // height: '95%',
   }
 });
 

@@ -31,16 +31,7 @@ function ProfilePicture(props) {
           resizeMode="stretch"
           style={styles.image1}
         ></Image>
-        <View style={styles.group1}>
-          <View style={styles.headerBarDark1Stack}>
-            <HeaderBarDark
-            onBack={props.onBack}
-              text1=""
-              style={styles.headerBarDark1}
-            ></HeaderBarDark>
-            <Text style={styles.bsD1}>BS&quot;D</Text>
-          </View>
-        </View>
+       
       </View>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
@@ -54,6 +45,7 @@ function ProfilePicture(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: 420,
     backgroundColor: "rgba(0,88,155,1)"
   },
   button4: {
@@ -89,7 +81,8 @@ const styles = StyleSheet.create({
     left: 0,
     height: 150,
     position: "absolute",
-    right: 0
+    right: 0,
+    width: "auto"
   },
   addRecentPictureStack: {
     height: 168,
@@ -100,7 +93,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 100,
     marginTop: 35,
-    marginLeft: 127
+    marginLeft: 127,
   },
   group1: {
     height: 90,
