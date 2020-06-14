@@ -15,6 +15,8 @@ import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
 import Account from "./src/account"
 import EditStay from "./src/editStay"
+import Messages from "./src/messaging";
+// import Messaging from "./src/messaging";
 
 export default function App() {
   useEffect(() => {
@@ -39,13 +41,14 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route path="/" exact component={Login}/>
-            {/* <Route path="/" exact component={CreateAccount}/> */}
-            <Route path="/account" component={Account}/>
-            <Route path="/editStay" component={EditStay}/>
-            <Route path="/CreateAccount" component={CreateAccount}/>
-            <Route path="/createStay" component={CreateStay}/>
+            <Route path="/" exact component={ Login }/>
+            {/* <Route path="/" exact component={ Messages }/> */}
+            <Route path="/account" component={ Account }/>
+            <Route path="/editStay" component={ EditStay }/>
+            <Route path="/CreateAccount" component={ CreateAccount }/>
+            <Route path="/createStay" component={ CreateStay }/>
             <Route path="/home" component={Home}/>
+            {/* <Route path="/messaging" component={Messages}/> */}
           </BackButton>
         </Switch>
       </NativeRouter>

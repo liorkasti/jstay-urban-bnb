@@ -1,3 +1,6 @@
+import React, { useState, useEffect } from "react";
+import { View, Text, StyleSheet, Dimensions } from "react-native"
+
 const messagesFromMe = [{
     message: "hi",
     index: 0
@@ -11,7 +14,7 @@ const messagesFromMe = [{
     index: 4
 }]
 
-const messagesFromMe = [{
+const messagesFromMe2 = [{
     message: "Sup",
     index: 1
 },
@@ -24,7 +27,7 @@ const messagesFromMe = [{
     index: 5
 }];
 
-export default function Messages() {
+export default function Messaging() {
     return (<View>{
         messagesToMe.map((toMe) => {
             massagesFromMe.map((fromMe) => {

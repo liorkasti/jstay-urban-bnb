@@ -177,9 +177,5 @@ const styles = StyleSheet.create({
     },
     header: {
         zIndex: 20,
-    },
-    scrollView: {
-        zIndex: 1,
-        marginTop: 70
-    },
+    }
 });

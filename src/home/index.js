@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet } from "react-native"
+import { View, StyleSheet, Dimensions } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //import all builder x files related to this directory
 import Home from "./Home";
-import Favorites from "./Favorites"
-import SearchResults from "./SearchResults";
+// import Favorites from "./Favorites";
+import Favorites from "../account/Favorites";
+import Messages from "../messaging/messages";
+import Messaging from "../messaging/messaging";
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
@@ -42,21 +44,26 @@ export default function Index(props) {
         }
     };
 
-    onBack = () => {
-        if (currentSearch) {
-            setCurrentComponent("SearchResults")
-        } else {
-            setCurrentComponent("Home")
-        }
-    }
+    // onBack = () => {
+    //     if (currentSearch) {
+    //         setCurrentComponent("SearchResults")
+    //     } else {
+    //         setCurrentComponent("Home")
+    //     }
+    // }
 
     const handleFooterBar = (page) => {
         switch (page) {
             case "favorites":
-                setCurrentComponent("Favorites")
+                // history.push("/account", { subroute:"Favorites"});
+                setCurrentComponent("Favorites");
                 break;
             case "trips":
                 history.push("/account", { subroute: "trips" });
+                break;
+            case "messaging":
+                setCurrentComponent("Messages");
+                // history.push("/messaging", { subroute: "messages" });
                 break;
         }
     };
@@ -67,16 +74,16 @@ export default function Index(props) {
                 history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory });
                 break;
             case "bookStay":
-                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch, backHistory});
+                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch, backHistory });
                 break;
             case "trips":
-                history.push("/account", { subroute: "trips",currentSearch: currentSearch, backHistory});
+                history.push("/account", { subroute: "trips", currentSearch: currentSearch, backHistory });
                 break;
             case "myKashrut":
-                history.push("/account", { subroute: "editMyKashrut", currentSearch: currentSearch, backHistory})
+                history.push("/account", { subroute: "editMyKashrut", currentSearch: currentSearch, backHistory })
                 break;
             case "createStay":
-                history.push("/createStay", { currentSearch: currentSearch, backHistory});
+                history.push("/createStay", { currentSearch: currentSearch, backHistory });
                 break;
         }
     };
@@ -99,8 +106,8 @@ export default function Index(props) {
                     }}
 
                     searchText={currentSearch}
-                    
-                    goHome={()=>{
+
+                    goHome={() => {
                         setCurrentSearch("")
                     }}
 
@@ -109,7 +116,7 @@ export default function Index(props) {
                     }}
 
                     onUserPress={(page) => {
-                        handleCard(page, currentComponent );
+                        handleCard(page, currentComponent);
                     }}
 
                     bookStay={() => {
@@ -169,6 +176,47 @@ export default function Index(props) {
                 //replace this string with the string 
                 //in componentKeys related to this import
 
+                currentComponent === "Messages"
+                &&
+                //change component name to the new import 
+                <Messages
+
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
+
+                    handleFooterBar={(page) => {
+                        handleFooterBar(page)
+                    }}
+
+                    showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
+
+                    //if builder x component has back button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    // onBack={() => {
+                    //     onBack();
+                    // }}
+
+                    onHome={() => {
+                        setCurrentComponent("Home");
+                    }}
+                    //if builder x component has skip button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onSkip={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+                />
+            }
+            {
+                //replace this string with the string 
+                //in componentKeys related to this import
+
                 currentComponent === "SearchResults"
                 &&
                 //change component name to the new import 
@@ -182,8 +230,6 @@ export default function Index(props) {
                     handleFooterMenu={(menuItem) => {
                         handleFooterMenu(menuItem);
                     }}
-
-         
 
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
