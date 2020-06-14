@@ -20,6 +20,7 @@ import EditStay from "./src/editStay"
 
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       Orientation.lockToPortrait();
@@ -42,7 +43,8 @@ export default function App() {
   }, []);
 
   function onAuthStateChanged(user) {
-    console.warn("auth state did change with:",user)
+    if(user){setLoggedIn(!!user)}else {setLoggedIn(false)}
+    console.warn("auth state did change with:", user)
   }
 
   return (
@@ -51,12 +53,14 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route path="/" exact component={Login}/>
-            <Route path="/account" component={Account}/>
-            <Route path="/editStay" component={EditStay}/>
-            <Route path="/CreateAccount" component={CreateAccount}/>
-            <Route path="/createStay" component={CreateStay}/>
-            <Route path="/home" component={Home}/>
+            <Route exact path="/">
+              {loggedIn ? <Redirect to="/home" /> : <Login />}
+            </Route>
+            <Route path="/account" component={Account} />
+            <Route path="/editStay" component={EditStay} />
+            <Route path="/CreateAccount" component={CreateAccount} />
+            <Route path="/createStay" component={CreateStay} />
+            <Route path="/home" component={Home} />
           </BackButton>
         </Switch>
       </NativeRouter>

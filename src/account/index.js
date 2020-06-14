@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native"
 import { useHistory } from "react-router-dom";
 
+
+import auth from '@react-native-firebase/auth';
+
 //import all builder x files related to this directory
 
 import Cancelation from "./Cancelation";
@@ -61,15 +64,23 @@ export default function Index(props) {
     };
 
     const onLogout = () => {
-        history.push("/")
+
+        auth()
+            .signOut()
+            .then(() => {console.log('User signed out!')
+            setTimeout(()=>{
+                history.push("/")
+            })
+        }
+        );
     }
-    
+
     const onCreateStay = (from) => {
-        history.push("/createStay",{route:"/account",subroute:from })
+        history.push("/createStay", { route: "/account", subroute: from })
     }
 
     const onEditStay = (from) => {
-        history.push("/editStay", { subroute:from })
+        history.push("/editStay", { subroute: from })
     }
 
     useEffect(() => {
@@ -91,7 +102,7 @@ export default function Index(props) {
             const prevPage = props.location.state.backHistory;
             console.warn(prevPage)
             const currentSearch = props.location.state.currentSearch;
-                history.push("/home", { currentSearch: currentSearch, backHistory: prevPage })
+            history.push("/home", { currentSearch: currentSearch, backHistory: prevPage })
         } else {
             setCurrentPage(backHistory[historyIndex - 1]);
             setHistoryIndex(historyIndex - 1);
@@ -113,25 +124,25 @@ export default function Index(props) {
                 onBack();
             }}
 
-            onCreateStay={(requestSource)=>{
+            onCreateStay={(requestSource) => {
                 onCreateStay(requestSource);
             }}
 
-            onEditStay={(page)=>{
+            onEditStay={(page) => {
                 onEditStay(page);
             }}
 
             goHome={() => {
                 onHome();
             }}
-            deleteStay={()=>{
+            deleteStay={() => {
                 console.warn("create delete stay behavior");
                 onBack();
             }}
-            onDeleteAccount={()=>{
+            onDeleteAccount={() => {
                 onLogout();
             }}
-            onLogout={()=>{
+            onLogout={() => {
                 onLogout();
             }}
             onUserPress={(page) => onUserPress(page)}
@@ -141,7 +152,7 @@ export default function Index(props) {
     return (
         <View style={styles.container}>
             {/*dynamic component*/}
-                <CurrentComponentRouter />
+            <CurrentComponentRouter />
         </View>
     );
 }

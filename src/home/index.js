@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet } from "react-native"
 import { useHistory } from "react-router-dom";
 
+import auth from '@react-native-firebase/auth';
+
 //import all builder x files related to this directory
 import Home from "./Home";
 import Favorites from "./Favorites"
@@ -28,7 +30,12 @@ export default function Index(props) {
                 history.push("/createStay");
                 break;
             case "logout":
-                history.push("/");
+                auth()
+                .signOut()
+                .then(() => {console.log('User signed out!')
+                setTimeout(()=>{
+                    history.push("/")
+                })})
                 break;
             case "profile":
                 history.push("/account", { subroute: "myProfile" });
