@@ -5,37 +5,49 @@ import SkipButton from "../components/SkipButton";
 import JstayLogoFullDark from "../components/JstayLogoFullDark";
 import HeaderBarDark from "../components/HeaderBarDark";
 import DoneCreateAccount from "../components/DoneCreateAccount";
+import { Center } from "@builderx/utils";
 
 function ProfilePicture(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.button4Column}>
-        <TouchableOpacity style={styles.button4}>
-          <AddProfileProfilePictureButton
-            style={styles.addProfileProfilePictureButton}
-          ></AddProfileProfilePictureButton>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button2}>
-          <SkipButton style={styles.skipButton}></SkipButton>
-        </TouchableOpacity>
-        <View style={styles.addRecentPictureStack}>
-          <Text style={styles.addRecentPicture}>
-            Please add a recent picture
+      <Center horizontal>
+        <HeaderBarDark
+          onBack={props.onBack}
+          text1=""
+          style={styles.headerBarDark1}
+        ></HeaderBarDark>
+        <View style={styles.button4Column}>
+
+          <TouchableOpacity style={styles.button4}>
+            <AddProfileProfilePictureButton
+              style={styles.addProfileProfilePictureButton}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button2}>
+            <SkipButton
+              style={styles.skipButton}
+              onPress={props.onNext}
+              // onPress={props.onSkip}
+            />
+          </TouchableOpacity>
+          <View style={styles.addRecentPictureStack}>
+            <Text style={styles.addRecentPicture}>
+              Please add a recent picture
           </Text>
-          <JstayLogoFullDark
-            style={styles.jstayLogoFullDark}
-          ></JstayLogoFullDark>
+            <JstayLogoFullDark
+              style={styles.jstayLogoFullDark}
+            ></JstayLogoFullDark>
+          </View>
         </View>
         <Image
           source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
           resizeMode="stretch"
           style={styles.image1}
         ></Image>
-       
-      </View>
+      </Center>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
-      onPress={props.onNext}
+        onPress={props.onNext}
         style={styles.createAccountDoneButton1}
       ></DoneCreateAccount>
     </View>
@@ -51,8 +63,8 @@ const styles = StyleSheet.create({
   button4: {
     height: 62,
     marginTop: 525,
-    marginLeft: 29,
-    marginRight: 30
+    // marginLeft: 29,
+    // marginRight: 30
   },
   addProfileProfilePictureButton: {
     height: 62
@@ -60,44 +72,41 @@ const styles = StyleSheet.create({
   button2: {
     height: 36,
     marginTop: 26,
-    marginLeft: 115,
-    marginRight: 116
+    // marginLeft: 115,
+    // marginRight: 116
   },
   skipButton: {
     height: 36
   },
   addRecentPicture: {
-    top: 140,
-    left: 77,
+    top: 160,
+    // left: 77,
     color: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 81,
+    // position: "absolute",
+    // right: 81,
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"
   },
   jstayLogoFullDark: {
     top: 0,
-    left: 0,
+    // left: 0,
     height: 150,
-    position: "absolute",
-    right: 0,
-    width: "auto"
+    // position: "absolute",
+    // right: 0,
+    // width: "auto"
   },
   addRecentPictureStack: {
     height: 168,
-    marginTop: -512
+    marginTop: -552,
+    width: "auto",
   },
   image1: {
     width: 150,
     height: 150,
     borderRadius: 100,
-    marginTop: 35,
-    marginLeft: 127,
-  },
-  group1: {
-    height: 90,
-    marginTop: -490
+    marginTop: 60,
+    // marginLeft: 127,
   },
   headerBarDark1: {
     top: 0,
@@ -126,11 +135,11 @@ const styles = StyleSheet.create({
     flex: 1
   },
   createAccountDoneButton1: {
-    width: 154,
+    width: 150,
     height: 36,
     alignSelf: "flex-end",
     marginBottom: 30,
-    marginRight: 30
+    marginRight: 36
   }
 });
 
