@@ -5,14 +5,13 @@ import FooterMenuDropdown from "../components/FooterMenuDropdown";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 function MaterialBasicFooter1(props) {
-  const [showFooterMenu, setShowFooterMenu] = useState(false);
 
   return (
     <View style={[styles.container, props.style]}>
 
       {/*dropdown menu for account */}
       {
-        showFooterMenu &&
+        props.showFooterMenu &&
         <FooterMenuDropdown handleFooterMenu={(menuItem)=>{props.handleFooterMenu(menuItem)}} style={styles.materialBasicFooter1} />
       }
 
@@ -48,7 +47,7 @@ function MaterialBasicFooter1(props) {
 
       <TouchableOpacity
         onPress={() => {
-          setShowFooterMenu(!showFooterMenu);
+          props.setShowFooterMenu(!props.showFooterMenu);
         }}
         style={styles.btnWrapper3}>
 
