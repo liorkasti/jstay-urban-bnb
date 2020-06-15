@@ -45,15 +45,11 @@ const components = {
     reviews: Reviews,
 };
 
-const user = auth().currentUser;
-
-
 export default function Index(props) {
     const [render, rerender] = useState(0);
     const [backHistory, addBackHistory] = useState([])
     const [historyIndex, setHistoryIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState("");
-    const [url, setURL] = useState("");
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -68,15 +64,15 @@ export default function Index(props) {
     };
 
     const onLogout = () => {
+
         auth()
             .signOut()
-            .then(() => {
-                console.log('User signed out!')
-                setTimeout(() => {
-                    history.push("/")
-                })
-            }
-            );
+            .then(() => {console.log('User signed out!')
+            setTimeout(()=>{
+                history.push("/")
+            })
+        }
+        );
     }
 
     const onCreateStay = (from) => {
@@ -87,9 +83,8 @@ export default function Index(props) {
         history.push("/editStay", { subroute: from })
     }
 
-  
     useEffect(() => {
-         let newBackHistory = [...backHistory];
+        let newBackHistory = [...backHistory];
         newBackHistory[historyIndex] = props.location.state.subroute;
         addBackHistory(newBackHistory);
     }, []);
@@ -100,16 +95,6 @@ export default function Index(props) {
         newBackHistory[historyIndex + 1] = page;
         addBackHistory(newBackHistory);
         setHistoryIndex(historyIndex + 1)
-    }
-
-    const onDeleteAccount = () => {
-        user.delete().then(function () {
-            setTimeout(() => {
-                history.push("/")
-            })
-        }).catch(function (error) {
-            console.warn("error from delete account", error)
-        });
     }
 
     const onBack = () => {
@@ -155,7 +140,7 @@ export default function Index(props) {
                 onBack();
             }}
             onDeleteAccount={() => {
-                onDeleteAccount();
+                onLogout();
             }}
             onLogout={() => {
                 onLogout();

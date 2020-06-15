@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import KosherSelect from "../components/KosherSelect";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
 import { Center } from "@builderx/utils";
 
-let selectedKashrutState = "";
-
 function MyKashrut(props) {
-  const [selectedKashrut, setSelectedKashrut] = useState("");
-
-
-  useEffect(()=>{
-    selectedKashrutState=selectedKashrut;
-    props.saveKashrut(selectedKashrutState)
-  },[selectedKashrut]);
-
-
   return (
     <View style={styles.container}>
       <View style={styles.myLevelOfKashrutStackColumn}>
@@ -30,13 +19,7 @@ function MyKashrut(props) {
             ></Image>
           </Center>
         </View>
-
-        <KosherSelect
-          setSelectedKashrut={(selection) => setSelectedKashrut(selection)}
-          selectedKashrut={selectedKashrut}
-          style={styles.kosherSelect}>
-        </KosherSelect>
-
+        <KosherSelect style={styles.kosherSelect}></KosherSelect>
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
@@ -57,8 +40,7 @@ function MyKashrut(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)",
-    zIndex: 1,
+    backgroundColor: "rgba(0,88,155,1)"
   },
   myLevelOfKashrut: {
     top: 147,
@@ -80,8 +62,7 @@ const styles = StyleSheet.create({
     width: 394,
     height: 343,
     marginTop: 22,
-    marginLeft: 20,
-    zIndex: 20
+    marginLeft: 20
   },
   group1: {
     height: 90,
@@ -109,9 +90,7 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  myLevelOfKashrutStackColumn: {
-    zIndex: 1
-  },
+  myLevelOfKashrutStackColumn: {},
   myLevelOfKashrutStackColumnFiller: {
     flex: 1
   },

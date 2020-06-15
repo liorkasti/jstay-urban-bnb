@@ -40,7 +40,6 @@ function AccountDetails(props) {
         <View style={styles.group2}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
-              onBack={props.onBack}
               text1=""
               style={styles.headerBarDark1}
             ></HeaderBarDark>
