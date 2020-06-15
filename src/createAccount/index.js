@@ -33,7 +33,7 @@ export default function CreateAccountIndex(props) {
         if (props.location.state) {
             console.warn("props for create account index", props.location.state)
         };
-    }, [])
+    }, []);
 
     const addProfilePicture = () => {
         ImagePicker.showImagePicker(imagePickerOptionsoptions, (response) => {
@@ -203,7 +203,10 @@ export default function CreateAccountIndex(props) {
                     onBack={() => {
                         setComponentIndex(componentIndex - 1)
                     }}
-                    addProfilePicture={() => { addProfilePicture() }}
+
+                    addProfilePicture={() => { 
+                        addProfilePicture();
+                     }}
                     //if builder x component has skip button
                     //it's button should have onPress={()=>{props.onNext}}
                     onSkip={() => {
