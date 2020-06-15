@@ -3,6 +3,7 @@ import { StyleSheet, View, TextInput } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialIconTextbox(props) {
+
   return (
     <View style={[styles.container, props.style]}>
       <Icon
@@ -10,6 +11,8 @@ function MaterialIconTextbox(props) {
         style={styles.iconStyle}
       ></Icon>
       <TextInput
+      onChangeText={props.onChangeText}
+        value={props.value}
         placeholder={props.textInput1 || "Label"}
         placeholderTextColor="rgba(177,177,177,1)"
         style={styles.inputStyle}

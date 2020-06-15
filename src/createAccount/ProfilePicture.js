@@ -11,7 +11,7 @@ function ProfilePicture(props) {
     <View style={styles.container}>
       <View style={styles.button4Column}>
 
-        <TouchableOpacity onPress={()=>{props.addProfilePicture()}} style={styles.button4}>
+        <TouchableOpacity onPress={() => { props.addProfilePicture() }} style={styles.button4}>
           <AddProfileProfilePictureButton
             onPress={() => { props.addProfilePicture() }}
             style={styles.addProfileProfilePictureButton}
@@ -30,11 +30,11 @@ function ProfilePicture(props) {
             style={styles.jstayLogoFullDark}
           ></JstayLogoFullDark>
         </View>
-        <Image 
-        resizeMode="stretch"
+        <Image
+          resizeMode="stretch"
           style={styles.image1}
-           source={props.profilePictureUri ? { uri: props.profilePictureUri }: require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")} 
-       />
+          source={props.photoPath.builtIn ? require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg") : props.photoPath.isUri ? { uri: props.photoPath.uri } : { url: props.photoPath.url }}
+        />
 
       </View>
       <View style={styles.button4ColumnFiller}></View>
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 420,
     backgroundColor: "rgba(0,88,155,1)",
-    zIndex:1,
+    zIndex: 1,
   },
   button4: {
     height: 62,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     height: 90
   },
   button4Column: {
-    zIndex:1,
+    zIndex: 1,
   },
   button4ColumnFiller: {
     flex: 1

@@ -21,6 +21,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key> 
+	<string>This app requires access to the photo library.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera.</string>
 	<key>FacebookAppID</key>
 	<string>1289911237871726</string>
 	<key>CFBundleGetInfoString</key>
