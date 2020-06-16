@@ -7,7 +7,7 @@ import Home from "./Home";
 // import Favorites from "./Favorites";
 import Favorites from "../account/Favorites";
 import Messages from "../messaging/messages";
-import Messaging from "../messaging/messaging";
+import Messaging from "../messaging/chat";
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");

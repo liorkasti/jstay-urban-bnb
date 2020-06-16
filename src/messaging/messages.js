@@ -1,15 +1,58 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
-import UnreadMessage from "../components/UnreadMessage";
-import UnreadMessages from "../components/UnreadMessages";
+import React, { Component, useState } from "react";
+import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView, FlatList } from "react-native";
+
+import ReadMessage from "./components/ReadMessage";
+import UnreadMessage from "./components/UnreadMessage";
 import Icon from "react-native-vector-icons/Entypo";
 import MessageSearchBar from "../components/MessageSearchBar";
 
-function Messages(props) {
+const messages = [
+    {
+        from: "Sholli",
+        unreadMessage: false,
+        lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+        index: 0
+    },
+]
+
+export default function Messages(props) {
+
+    const [messages, setMessages] = useState([
+        {
+            from: "Sholli",
+            unreadMessage: false,
+            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+            index: 0
+        }, {
+            from: "Sholli",
+            unreadMessage: false,
+            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+            index: 1
+        }, {
+            from: "Sholli",
+            unreadMessage: false,
+            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+            index: 2
+        }, {
+            from: "Nachum",
+            unreadMessage: true,
+            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+            index: 3
+        }, {
+            from: "Nachum",
+            unreadMessage: true,
+            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
+            index: 4
+        }, {
+            from: "Nachum",
+            unreadMessage: true,
+            lastMessaged: "epoc",/* I'll deal with the ordering of the messages*/
+            index: 5
+        }
+    ]);
+
     return (
         <View style={styles.container}>
-            <UnreadMessage style={styles.unreadMessage}></UnreadMessage>
-            <UnreadMessages style={styles.unreadMessages}></UnreadMessages>
             <View style={styles.group1}>
                 <View style={styles.rect233}>
                     <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -24,7 +67,7 @@ function Messages(props) {
                         </View>
                         <View style={styles.button4RowFiller}></View>
                         <TouchableOpacity onPress={props.onHome} style={styles.button3}>
-                            <View  onPress={props.onHome} style={styles.image1Filler}></View>
+                            <View onPress={props.onHome} style={styles.image1Filler}></View>
                             <Image
                                 source={require("../assets/images/jstay-icon-inverted8.png")}
                                 resizeMode="contain"
@@ -35,9 +78,33 @@ function Messages(props) {
                 </View>
             </View>
             <MessageSearchBar style={styles.messageSearchBar}></MessageSearchBar>
-            <UnreadMessages style={styles.unreadMessages1}></UnreadMessages>
-            <UnreadMessages style={styles.unreadMessages2}></UnreadMessages>
-            <UnreadMessages style={styles.unreadMessages3}></UnreadMessages>
+            <View>
+                <View style={styles.groupMessagesStack}>
+                    {
+                        messages.map((messages) => {
+                            if (messages.unreadMessage) {
+                                return (
+                                    // <FlatList>
+                                        <TouchableOpacity style={styles.groupMessage} >
+                                            <UnreadMessage onPress={props.onNext} style={styles.unreadMessages} from={messages.from}></UnreadMessage>
+                                            {/* <Text >{messages.from}</Text>{messages.unreadMessage && <Text style={styles.unreadSymbol}> ! </Text>} */}
+                                        </TouchableOpacity>
+                                    // </FlatList>
+                                )
+                            } else {
+                                return (
+                                    <TouchableOpacity style={styles.groupMessage}>
+                                        <ReadMessage onPress={props.onNext} style={styles.unreadMessage} from={messages.from}></ReadMessage>
+                                        {/* <Text >{messages.from}</Text>{messages.unreadMessage} */}
+                                    </TouchableOpacity>
+                                )
+                            }
+                        })
+                    }
+                </View>
+                {/* </ScrollView> */}
+            </View>
+
         </View>
     );
 }
@@ -48,99 +115,131 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(2,172,235,1)"
     },
     unreadMessage: {
+        position: "absolute",
+        top: 164,
+        left: 0,
         height: 60,
-        marginTop: 164
+        right: 0
     },
     unreadMessages: {
+        position: "absolute",
+        top: 229,
+        left: 0,
         height: 60,
-        marginTop: 5
+        right: 0
     },
     group1: {
+        top: 0,
+        left: 0,
         height: 91,
-        marginTop: -289
+        position: "absolute",
+        right: 0
     },
     rect233: {
+        top: 0,
+        left: 0,
         height: 91,
+        position: "absolute",
         borderColor: "rgba(0,88,155,1)",
         borderWidth: 0,
-        borderBottomWidth: 4
+        borderBottomWidth: 4,
+        right: 0
     },
-    bsD1: {
-        color: "rgba(177,177,177,1)",
-        opacity: 0.35,
-        fontSize: 10,
-        fontFamily: "roboto-regular",
-        alignSelf: "flex-end",
-        marginTop: 13,
-        marginRight: 38
+    text: {
+        top: 48,
+        left: "37.57%",
+        color: "rgba(0,88,155,1)",
+        position: "absolute",
+        fontSize: 25,
+        fontFamily: "roboto-700",
+        textAlign: "center"
     },
     button4: {
+        top: 40,
+        left: 6,
         width: 29,
-        height: 40
+        height: 40,
+        position: "absolute"
     },
     button5: {
+        top: 0,
+        left: 0,
         width: 29,
-        height: 40
+        height: 40,
+        position: "absolute"
     },
     icon1: {
+        top: 0,
+        left: 0,
+        position: "absolute",
         color: "rgba(0,88,155,1)",
         fontSize: 40
     },
-    text: {
-        color: "rgba(0,88,155,1)",
-        fontSize: 25,
-        fontFamily: "roboto-700",
-        textAlign: "center",
-        marginLeft: 121,
-        marginTop: 8
-    },
-    button4Row: {
-        height: 40,
-        flexDirection: "row",
-        marginTop: 10
-    },
-    button4RowFiller: {
-        flex: 1,
-        flexDirection: "row"
-    },
     button3: {
+        top: 30,
         width: 62,
         height: 62,
-        flexDirection: "row"
-    },
-    image1Filler: {
-        flex: 1,
-        flexDirection: "row"
+        position: "absolute",
+        right: 4
     },
     image1: {
+        top: 0,
+        left: "-0.01%",
         height: 62,
-        width: 62
+        position: "absolute",
+        right: 0
     },
-    button4RowRow: {
-        height: 62,
-        flexDirection: "row",
-        marginTop: 5,
-        marginLeft: 6,
-        marginRight: 4
+    bsD1: {
+        top: 13,
+        color: "rgba(177,177,177,1)",
+        position: "absolute",
+        right: 38,
+        opacity: 0.35,
+        fontSize: 10,
+        fontFamily: "roboto-regular"
     },
     messageSearchBar: {
+        position: "absolute",
+        top: 98,
+        left: 20,
         height: 56,
-        marginTop: 7,
-        marginLeft: 20,
-        marginRight: 20
+        right: 20
     },
     unreadMessages1: {
+        position: "absolute",
+        top: 424,
+        left: 0,
         height: 60,
-        marginTop: 269
+        right: 0
     },
     unreadMessages2: {
+        position: "absolute",
+        top: 359,
+        left: 0,
         height: 60,
-        marginTop: -125
+        right: 0
     },
     unreadMessages3: {
+        position: "absolute",
+        top: 294,
+        left: 0,
         height: 60,
-        marginTop: -125
+        right: 0
+    },
+    groupMessagesStack: {
+        // position: "absolute",
+        // left: 20,
+        // top: 520,
+        // height: 80,
+        flex: 1,
+        top: 170,
+    },
+    groupMessage: {
+        // position: "absolute",
+        // left: 20,
+        top: 20,
+    },
+    unreadSymbol: {
+        color: 'red',
     }
 });
-
-export default Messages;

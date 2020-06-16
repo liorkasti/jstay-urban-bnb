@@ -4,22 +4,23 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 function UnreadMessage(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
-      <View style={styles.rect24}></View>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+      <View style={styles.rect22}></View>
       <Image
         source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
         resizeMode="stretch"
-        style={styles.image24}
+        style={styles.image22}
       ></Image>
-      <Text style={styles.sholli14}>Sholli</Text>
-      <Icon name="md-mail-unread" style={styles.icon24}></Icon>
+      {/* <Text style={styles.nachum}>Nachum</Text> */}
+      <Text style={styles.nachum}>{props.from}</Text>
+      <Icon name="md-mail-open" style={styles.icon22}></Icon>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {},
-  rect24: {
+  rect22: {
     top: 0,
     left: 0,
     height: 60,
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.01,
     right: 0
   },
-  image24: {
+  image22: {
     top: "8.02%",
     left: 22,
     width: 50,
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     borderRadius: 100
   },
-  sholli14: {
+  nachum: {
     top: "26.88%",
     left: 85,
     color: "rgba(0,88,155,1)",
@@ -45,12 +46,12 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular",
     textAlign: "center"
   },
-  icon24: {
-    top: 16,
+  icon22: {
+    top: "26.15%",
     position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 30,
-    right: 35
+    right: 36
   }
 });
 

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
 import { useHistory } from "react-router-dom";
-
 //import all builder x files related to this directory
-import Messages from "./messages";
-import Messaging from "./messaging";
 import HeaderBarDark from "../components/HeaderBarDark"
+import Messages from "./messages";
+import Chat from "./chat";
 
 export default function MessagesIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -15,8 +14,7 @@ export default function MessagesIndex(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["Messages", "Messaging"];
-    // const componentKeys = ["Messages", "Messaging"];
+    const componentKeys = ["Messages", "Chat"];
 
     useEffect(() => {
 
@@ -32,55 +30,57 @@ export default function MessagesIndex(props) {
 
     return (
         <View style={styles.container}>
-            <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Messages" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            {/* <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Messages" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} /> */}
             {/* <ScrollView style={{ height: 1600 }} > */}
-                {//Messages Component
-                    //replace this string with the string 
-                    //in componentKeys related to this import
+            {//Messages Component
+                //replace this string with the string 
+                //in componentKeys related to this import
 
-                    componentKeys[componentIndex] === "Messages"
-                    &&
-                    //change component name to the new import 
-                    <Messages
-                        style={styles.componentStyle}
+                componentKeys[componentIndex] === "Messages"
+                &&
+                //change component name to the new import 
+                <Messages
+                    style={styles.componentStyle}
 
-                        //if builder x component has next button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onNext={() => {
-                            setComponentIndex(componentIndex + 1)
-                        }}
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
 
-                        onHome={() => { goToHome() }}
+                    onHome={() => { goToHome() }}
 
-                        messaging={() => {
-                            console.warn("setcomponentIndex for Messaging ")
-                            setComponentIndex(componentIndex + 1)
-                        }}
-                    />
-                }
+                    openMessage={() => {
+                        console.warn("setcomponentIndex for Messaging ")
+                        setComponentIndex(componentIndex + 1)
+                    }}
+                />
+            }
 
-                {//Messaging Component
+            {//Messages Component
+                //replace this string with the string 
+                //in componentKeys related to this import
 
-                    componentKeys[componentIndex] === "Messaging"
-                    &&
-                    //change component name to the new import 
-                    <Messaging
-                        style={styles.componentStyle}
-                        //if builder x component has next button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onNext={() => {
-                            setComponentIndex(componentIndex + 1)
-                        }}
+                componentKeys[componentIndex] === "Chat"
+                &&
+                //change component name to the new import 
+                <Chat
+                    style={styles.componentStyle}
 
-                        //if builder x component has back button
-                        //it's button should have onPress={()=>{props.onNext}}
-                        onBack={() => {
-                            setComponentIndex(componentIndex - 1)
-                        }}
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
 
-                        onHome={() => { goToHome() }}
-                    />
-                }
+                    onHome={() => { goToHome() }}
+
+                    messaging={() => {
+                        console.warn("setcomponentIndex for Messaging ")
+                        setComponentIndex(componentIndex + 1)
+                    }}
+                />
+            }
             {/* </ScrollView> */}
         </View>
     );
