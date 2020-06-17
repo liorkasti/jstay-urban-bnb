@@ -16,15 +16,18 @@ export default function MessagesIndex(props) {
     //the array should be in the order that the screens show up
     const componentKeys = ["Messages", "Chat"];
 
-    useEffect(() => {
+    const goToHome = () => {
+        history.push("/home");
+    }
 
-        console.warn(componentKeys[componentIndex])
+    useEffect(() => {
+        console.warn(componentKeys[componentIndex], componentIndex)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
         }
         if (componentIndex < 0) {
-            history.push("/");
+            history.push("/home");
         }
     }, [componentIndex])
 
@@ -46,6 +49,9 @@ export default function MessagesIndex(props) {
                     //it's button should have onPress={()=>{props.onNext}}
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
+                    }}
+                    onBack={() => {
+                        setComponentIndex(componentIndex - 1)
                     }}
 
                     onHome={() => { goToHome() }}
@@ -72,9 +78,9 @@ export default function MessagesIndex(props) {
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
-
+                    otherUserName={"sholli"}
                     onHome={() => { goToHome() }}
-
+                    onBack={()=>{setComponentIndex(componentIndex -1)}}
                     messaging={() => {
                         console.warn("setcomponentIndex for Messaging ")
                         setComponentIndex(componentIndex + 1)

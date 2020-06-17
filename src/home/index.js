@@ -41,6 +41,7 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
+               
         }
     };
 
@@ -64,6 +65,9 @@ export default function Index(props) {
             case "messaging":
                 setCurrentComponent("Messages");
                 // history.push("/messaging", { subroute: "messages" });
+                break;
+                case"messages": 
+                history.push("/chat")
                 break;
         }
     };

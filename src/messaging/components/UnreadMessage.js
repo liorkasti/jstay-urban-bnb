@@ -19,7 +19,9 @@ function UnreadMessage(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    zIndex:1,
+  },
   rect22: {
     top: 0,
     left: 0,
@@ -27,7 +29,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(230,230,230,0.41)",
     position: "absolute",
     shadowOpacity: 0.01,
-    right: 0
+    right: 0,
   },
   image22: {
     top: "8.02%",
@@ -44,14 +46,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     fontSize: 25,
     fontFamily: "roboto-regular",
-    textAlign: "center"
+    textAlign: "center",
+    zIndex: 20
   },
   icon22: {
     top: "26.15%",
     position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 30,
-    right: 36
+    right: 36,
   }
 });
 

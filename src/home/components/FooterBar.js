@@ -32,7 +32,7 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.activeText}>My Trips</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.btnWrapper2}>
+      <TouchableOpacity onPress={()=>props.handleFooterBar("messages")} style={styles.btnWrapper2}>
         {props.hasMessages &&
           <MaterialCommunityIconsIcon
             name={`numeric-${props.ammountOfMessages}-box`}
@@ -148,13 +148,15 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     minWidth: 80,
     maxWidth: 168,
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
+    zIndex:20
   },
   icon2: {
     backgroundColor: "transparent",
     color: "rgba(230,230,230,1)",
     fontSize: 24,
-    opacity: 0.8
+    opacity: 0.8,
+    zIndex: 5
   },
   btn2Text: {
     color: "rgba(230,230,230,1)",

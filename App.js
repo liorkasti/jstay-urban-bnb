@@ -41,8 +41,8 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            {/* <Route path="/" exact component={ Login }/> */}
-            <Route path="/" exact component={ Chat }/>
+            <Route path="/" exact component={ Login }/>
+            <Route path="/chat" exact component={ Chat }/>
             <Route path="/account" component={ Account }/>
             <Route path="/editStay" component={ EditStay }/>
             <Route path="/CreateAccount" component={ CreateAccount }/>

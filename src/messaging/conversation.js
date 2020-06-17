@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 25,
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     textAlign: "center"
   },
   button4: {
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   upcomingTrips1: {
     top: 31,
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   jerusalemIsrael: {
     top: 31,
@@ -255,7 +255,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,
-    fontFamily: "roboto-700"
+    fontFamily: "roboto-regular"
   },
   group24: {
     top: 810,

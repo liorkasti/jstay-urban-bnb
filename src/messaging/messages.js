@@ -1,58 +1,90 @@
 import React, { Component, useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView, FlatList } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image, SectionList, FlatList } from "react-native";
 
 import ReadMessage from "./components/ReadMessage";
 import UnreadMessage from "./components/UnreadMessage";
 import Icon from "react-native-vector-icons/Entypo";
 import MessageSearchBar from "../components/MessageSearchBar";
 
+
 const messages = [
     {
-        from: "Sholli",
-        unreadMessage: false,
-        lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-        index: 0
+        title: "something",
+        data: [{from: "sholly"}],
     },
-]
+    {
+        title: "needs",
+        data: [{from: "sholli"}]
+    },
+    {
+        title: "to be in",
+        data: [{from: "nachum"}]
+    },
+    {
+        title: "title",
+        data: [{from: "charles"}]
+    }, 
+     {
+        title: "something",
+        data: [{from: "sholly"}],
+    },
+    {
+        title: "needs",
+        data: [{from: "sholli"}]
+    },
+    {
+        title: "to be in",
+        data: [{from: "nachum"}]
+    },
+    {
+        title: "title",
+        data: [{from: "charles"}]
+    },
+    {
+        title: "something",
+        data: [{from: "sholly"}],
+    },
+    {
+        title: "needs",
+        data: [{from: "sholli"}]
+    },
+    {
+        title: "to be in",
+        data: [{from: "nachum"}]
+    },
+    {
+        title: "title",
+        data: [{from: "charles"}]
+    }, 
+     {
+        title: "something",
+        data: [{from: "sholly"}],
+    },
+    {
+        title: "needs",
+        data: [{from: "sholli"}]
+    },
+    {
+        title: "to be in",
+        data: [{from: "nachum"}]
+    },
+    {
+        title: "title",
+        data: [{from: "charles"}]
+    }
+];
 
 export default function Messages(props) {
-
-    const [messages, setMessages] = useState([
-        {
-            from: "Sholli",
-            unreadMessage: false,
-            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-            index: 0
-        }, {
-            from: "Sholli",
-            unreadMessage: false,
-            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-            index: 1
-        }, {
-            from: "Sholli",
-            unreadMessage: false,
-            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-            index: 2
-        }, {
-            from: "Nachum",
-            unreadMessage: true,
-            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-            index: 3
-        }, {
-            from: "Nachum",
-            unreadMessage: true,
-            lastMessaged: "epoc",/* I'll deal with the time ordering of the messages*/
-            index: 4
-        }, {
-            from: "Nachum",
-            unreadMessage: true,
-            lastMessaged: "epoc",/* I'll deal with the ordering of the messages*/
-            index: 5
-        }
-    ]);
+    const Message = (props) => (
+        <TouchableOpacity onPress={()=>{props.onNext()}} style={styles.groupMessage} >
+            <UnreadMessage onPress={props.onNext}  style={styles.unreadMessages} from={props.from}/>
+            {/* <Text >{messages.from}</Text>{messages.unreadMessage && <Text style={styles.unreadSymbol}> ! </Text>} */}
+        </TouchableOpacity>
+    );
 
     return (
         <View style={styles.container}>
+
             <View style={styles.group1}>
                 <View style={styles.rect233}>
                     <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -78,30 +110,14 @@ export default function Messages(props) {
                 </View>
             </View>
             <MessageSearchBar style={styles.messageSearchBar}></MessageSearchBar>
-            <View>
-                <View style={styles.groupMessagesStack}>
-                    {
-                        messages.map((messages) => {
-                            if (messages.unreadMessage) {
-                                return (
-                                    // <FlatList>
-                                        <TouchableOpacity style={styles.groupMessage} >
-                                            <UnreadMessage onPress={props.onNext} style={styles.unreadMessages} from={messages.from}></UnreadMessage>
-                                            {/* <Text >{messages.from}</Text>{messages.unreadMessage && <Text style={styles.unreadSymbol}> ! </Text>} */}
-                                        </TouchableOpacity>
-                                    // </FlatList>
-                                )
-                            } else {
-                                return (
-                                    <TouchableOpacity style={styles.groupMessage}>
-                                        <ReadMessage onPress={props.onNext} style={styles.unreadMessage} from={messages.from}></ReadMessage>
-                                        {/* <Text >{messages.from}</Text>{messages.unreadMessage} */}
-                                    </TouchableOpacity>
-                                )
-                            }
-                        })
-                    }
-                </View>
+            <View style={{flex: 1, marginTop: 165}} >
+                    <SectionList
+                        sections={messages}
+                        contentContainerStyle={{paddingBottom:30}}
+                        keyExtractor={(message, index) => message + index}
+                        renderItem={( {item, data} ) => <Message title={item} onNext={props.onNext} from={item.from} />}
+                        
+                    />
                 {/* </ScrollView> */}
             </View>
 
@@ -110,6 +126,7 @@ export default function Messages(props) {
 }
 
 const styles = StyleSheet.create({
+
     container: {
         flex: 1,
         backgroundColor: "rgba(2,172,235,1)"
@@ -121,19 +138,39 @@ const styles = StyleSheet.create({
         height: 60,
         right: 0
     },
+    image1Filler: {
+        flex: 1,
+        flexDirection: "row",
+        zIndex:25
+      },
+    item: {
+        backgroundColor: "#f9c2ff",
+        padding: 20,
+        marginVertical: 8
+    },
+    header: {
+        fontSize: 32,
+        backgroundColor: "#fff"
+    },
+    title: {
+        fontSize: 24
+    },
     unreadMessages: {
         position: "absolute",
-        top: 229,
         left: 0,
         height: 60,
-        right: 0
+        right: 0,
+        marginVertical: 8
+
     },
     group1: {
         top: 0,
         left: 0,
         height: 91,
         position: "absolute",
-        right: 0
+        right: 0,
+        zIndex: 25,
+        backgroundColor: "rgba(2,172,235,1)"
     },
     rect233: {
         top: 0,
@@ -143,7 +180,8 @@ const styles = StyleSheet.create({
         borderColor: "rgba(0,88,155,1)",
         borderWidth: 0,
         borderBottomWidth: 4,
-        right: 0
+        right: 0,
+        zIndex:25
     },
     text: {
         top: 48,
@@ -151,7 +189,7 @@ const styles = StyleSheet.create({
         color: "rgba(0,88,155,1)",
         position: "absolute",
         fontSize: 25,
-        fontFamily: "roboto-700",
+        fontFamily: "roboto-regular",
         textAlign: "center"
     },
     button4: {
@@ -196,14 +234,16 @@ const styles = StyleSheet.create({
         right: 38,
         opacity: 0.35,
         fontSize: 10,
-        fontFamily: "roboto-regular"
+        fontFamily: "roboto-regular",
+        zIndex:25
     },
     messageSearchBar: {
         position: "absolute",
         top: 98,
         left: 20,
         height: 56,
-        right: 20
+        right: 20,
+        zIndex:25
     },
     unreadMessages1: {
         position: "absolute",
@@ -232,9 +272,9 @@ const styles = StyleSheet.create({
         // top: 520,
         // height: 80,
         flex: 1,
-        top: 170,
-    },
+  },
     groupMessage: {
+        paddingBottom: 70,
         // position: "absolute",
         // left: 20,
         top: 20,
