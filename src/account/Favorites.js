@@ -6,7 +6,6 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 export default function Favorites(props) {
   return (
     <View style={styles.container}>
-
       <TouchableOpacity onPress={() => { props.showStayProfile("Favorites") }} style={styles.group2}>
         <View style={styles.group1}>
           <View style={styles.rect2}>

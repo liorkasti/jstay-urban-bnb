@@ -13,10 +13,10 @@ function MaterialBasicFooter1(props) {
       {/*dropdown menu for account */}
       {
         showFooterMenu &&
-        <FooterMenuDropdown handleFooterMenu={(menuItem)=>{props.handleFooterMenu(menuItem)}} style={styles.materialBasicFooter1} />
+        <FooterMenuDropdown handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.materialBasicFooter1} />
       }
 
-      <TouchableOpacity onPress={()=>{props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
+      <TouchableOpacity onPress={() => { props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
         <MaterialCommunityIconsIcon
           name="home-heart"
           style={styles.icon1}
@@ -24,7 +24,7 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.btn1Text}>Favorites</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>props.handleFooterBar("trips")} style={styles.activebtnWrapper}>
+      <TouchableOpacity onPress={() => props.handleFooterBar("trips")} style={styles.activebtnWrapper}>
         <MaterialCommunityIconsIcon
           name="airplane-landing"
           style={styles.activeIcon}
@@ -32,7 +32,7 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.activeText}>My Trips</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.btnWrapper2}>
+      <TouchableOpacity onPress={()=>props.handleFooterBar("messages")} style={styles.btnWrapper2}>
         {props.hasMessages &&
           <MaterialCommunityIconsIcon
             name={`numeric-${props.ammountOfMessages}-box`}
@@ -40,6 +40,7 @@ function MaterialBasicFooter1(props) {
           ></MaterialCommunityIconsIcon>
         }
         <MaterialCommunityIconsIcon
+          onPress={() => props.handleFooterBar("messages")} style={styles.activebtnWrapper}
           name="message-processing"
           style={styles.icon2}
         ></MaterialCommunityIconsIcon>
@@ -51,7 +52,6 @@ function MaterialBasicFooter1(props) {
           setShowFooterMenu(!showFooterMenu);
         }}
         style={styles.btnWrapper3}>
-
         {
           props.needToFinishProfile &&
           <FontAwesomeIcon
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     // position: "relaative",
     right: 0,
     bottom: 48,
-    zIndex:20
+    zIndex: 20
   },
   btnWrapper1: {
     width: 104,
@@ -148,13 +148,15 @@ const styles = StyleSheet.create({
     paddingBottom: 6,
     minWidth: 80,
     maxWidth: 168,
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
+    zIndex:20
   },
   icon2: {
     backgroundColor: "transparent",
     color: "rgba(230,230,230,1)",
     fontSize: 24,
-    opacity: 0.8
+    opacity: 0.8,
+    zIndex: 5
   },
   btn2Text: {
     color: "rgba(230,230,230,1)",
