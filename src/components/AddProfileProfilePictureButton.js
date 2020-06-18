@@ -6,7 +6,7 @@ function AddProfileProfilePictureButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonViolet11 
-      onPress={()=>props.onPress()}
+      onPress={props.onPress}
         style={styles.materialButtonViolet11}
       ></MaterialButtonViolet11>
     </View>

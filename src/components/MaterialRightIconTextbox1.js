@@ -8,7 +8,7 @@ function MaterialRightIconTextbox1(props) {
       <TextInput
         placeholder="password"
         placeholderTextColor="rgba(177,177,177,1)"
-        // underlineColorAndroid="rgba(177,177,177,1)"
+        underlineColorAndroid="rgba(177,177,177,1)"
         style={styles.inputStyle}
       ></TextInput>
       <TouchableOpacity style={styles.button}>

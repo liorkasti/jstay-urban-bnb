@@ -10,7 +10,8 @@ function ProfilePicture(props) {
   return (
     <View style={styles.container}>
       <View style={styles.button4Column}>
-        <TouchableOpacity style={styles.button4}>
+
+        <TouchableOpacity onPress={()=>{props.addProfilePicture()}} style={styles.button4}>
           <AddProfileProfilePictureButton
             style={styles.addProfileProfilePictureButton}
           ></AddProfileProfilePictureButton>
@@ -26,11 +27,11 @@ function ProfilePicture(props) {
             style={styles.jstayLogoFullDark}
           ></JstayLogoFullDark>
         </View>
-        <Image
-          source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
-          resizeMode="stretch"
-          style={styles.image1}
-        ></Image>
+         <Image 
+         resizeMode="stretch"
+           style={styles.image1}
+            source={props.profilePictureUri ? { uri: props.profilePictureUri }: require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")} 
+        />
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
@@ -54,7 +55,9 @@ function ProfilePicture(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)"
+    width: 420,
+    backgroundColor: "rgba(0,88,155,1)",
+    zIndex:1,
   },
   button4: {
     height: 62,
@@ -128,7 +131,9 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  button4Column: {},
+  button4Column: {
+    zIndex:1,
+  },
   button4ColumnFiller: {
     flex: 1
   },

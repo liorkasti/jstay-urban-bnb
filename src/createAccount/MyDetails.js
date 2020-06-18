@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
 import MaterialIconTextbox from "../components/MaterialIconTextbox";
 import EmailTextInput4 from "../components/EmailTextInput4";
@@ -9,56 +9,41 @@ import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
 
 function MyDetails(props) {
-  const [firstNameValue, setFirstNameValue] = useState(props.firstName ||"" );
-  const [familyNameValue, setFamilyNameValue] = useState(props.familyName || "")
-  const [emailValue, setEmailValue] = useState(props.email || "")
-
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.group2}>
         <View style={styles.headerBarDark1Stack}>
           <HeaderBarDark
-            onBack={props.onBack}
             text1=""
             style={styles.headerBarDark1}
           />
           <Text style={styles.bsD1}>BS&quot;D</Text>
         </View>
       </View>
-
       <View style={styles.materialIconTextboxColumn}>
         <MaterialIconTextbox
-          onChangeText={setFirstNameValue}
-          value={firstNameValue}
           textInput1="first name"
           icon1Name="account"
           style={styles.materialIconTextbox}
         ></MaterialIconTextbox>
-
         <MaterialIconTextbox
-          onChangeText={setFamilyNameValue}
-          value={familyNameValue}
           textInput1="last name"
           icon1Name="account"
           style={styles.materialIconTextbox1}
         ></MaterialIconTextbox>
-
         <View style={styles.materialIconTextbox2Stack}>
           <MaterialIconTextbox
             textInput1="date of birth"
             icon1Name="calendar-search"
             style={styles.materialIconTextbox2}
           ></MaterialIconTextbox>
-
           <EmailTextInput4
-           onChangeText={setEmailValue}
-           value={emailValue}
             textInput1="email"
             style={styles.materialIconTextbox4}
           ></EmailTextInput4>
         </View>
-
+        
         <View style={styles.icon2Row}>
           <MaterialIconsIcon
             name="people"
@@ -101,8 +86,7 @@ function MyDetails(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)",
-    zIndex: 1,
+    backgroundColor: "rgba(0,88,155,1)"
   },
   materialIconTextbox: {
     height: 43,
@@ -227,9 +211,7 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  materialIconTextboxColumn: {
-    zIndex: 20
-  },
+  materialIconTextboxColumn: {},
   materialIconTextboxColumnFiller: {
     flex: 1
   },

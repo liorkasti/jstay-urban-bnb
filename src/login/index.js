@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
-import storage from '@react-native-firebase/storage';
 
 //import all builder x files related to this directory
 import Welcome from "./Welcome";
@@ -22,8 +21,13 @@ export default function LoginIndex(props) {
     //the array should be in the order that the screens show up
     const componentKeys = ["Welcome", "Login"];
 
+    //user finished create a stay
+    function onSuccessfulLogin() {
+        history.push("/home");
+    };
+
     function onCreateAccount() {
-        history.push("/createAccount");
+            history.push("/createAccount");
     }
 
     useEffect(() => {
@@ -38,85 +42,50 @@ export default function LoginIndex(props) {
     async function signInWithGoogle() {
         // Get the users ID token
         const { idToken } = await GoogleSignin.signIn();
-        console.warn("id token", idToken);
+      console.warn("id token", idToken);
         // Create a Google credential with the token
         const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-        console.warn("googleCredential", googleCredential);
+      console.warn("googleCredential", googleCredential);
         // Sign-in the user with the credential
         return auth().signInWithCredential(googleCredential);
-    }
+      }
 
 
-    async function onFacebookButtonPress() {
+      async function onFacebookButtonPress() {
         // Attempt login with permissions
         const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
-
+      
         if (result.isCancelled) {
-            throw 'User cancelled the login process';
+          throw 'User cancelled the login process';
         }
-
+      
         // Once signed in, get the users AccesToken
         const data = await AccessToken.getCurrentAccessToken();
-
+      
         if (!data) {
-            throw 'Something went wrong obtaining access token';
+          throw 'Something went wrong obtaining access token';
         }
-
+      
         // Create a Firebase credential with the AccessToken
         const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
-
+      
         // Sign-in the user with the credential
         return auth().signInWithCredential(facebookCredential);
-    };
+      };
 
-    const signInWithFacebookHandler = () => {
-        onFacebookButtonPress().then((res) => {
-            console.warn("is new user", res.additionalUserInfo.isNewUser)
-            if (res.additionalUserInfo.isNewUser) {
-                history.push("/createAccount",
-                    {
-                        familyName: res.family_name,
-                        firstName: res.given_name,
-                        email: res.email,
-                        photoUrl: res.photoURL,
-                        showEmail: res.email,
-                        showPassword: false
-                    });
-            } else {
-                downloadProfilePicture();
-                history.push("/home")
-            }
-            console.log("signed in with facebook with:", res)
-        })
-    };
-
-    const signInWithGoogleHandler = () => {
-        signInWithGoogle().then((res) => {
-            console.warn("is new user", res.additionalUserInfo.isNewUser)
-            if (res.additionalUserInfo.isNewUser) {
-                history.push("/createAccount",
-                    {
-                        familyName: res.additionalUserInfo.profile.family_name,
-                        firstName: res.additionalUserInfo.profile.given_name,
-                        email:res.additionalUserInfo.profile.email,
-                        photoUrl: res.additionalUserInfo.profile.picture,
-                        showEmail: false,
-                        showPassword: false
-                    });
-            } else {
-                history.push("/home");
-            }
+      const signInWithFacebookHandler = () => {
+        onFacebookButtonPress().then((res)=> {
+            history.push("/createAccount", {familyName: res.family_name,firstName: res.given_name, email: "email" });
             console.log("signed in with google with:", res)
         })
-    };
-    const getDownloadURL = async () => {
-        console.log("calling get download url profile picture")
-        const url = await storage()
-            .ref(`images/profilePictures/${user.uid}.png`)
-            .getDownloadURL();
+      };
 
-        return url;
-    }
+      const signInWithGoogleHandler = () => {
+        signInWithGoogle().then((res)=> {
+            history.push("/createAccount", {familyName: res.family_name,firstName: res.given_name, email: "email" });
+            console.log("signed in with google with:", res)
+        })
+      };
 
 
     return (
@@ -129,7 +98,7 @@ export default function LoginIndex(props) {
                 &&
                 //change component name to the new import 
                 <Welcome
-                    style={styles.componentStyle}
+                style={styles.componentStyle}
 
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -138,10 +107,10 @@ export default function LoginIndex(props) {
                     }}
 
                     createAccount={() => onCreateAccount()}
+                    
+                    facebookSignin={()=>{signInWithFacebookHandler()}}
 
-                    facebookSignin={() => { signInWithFacebookHandler() }}
-
-                    googleSignin={() => signInWithGoogleHandler()}
+                    googleSignin={()=>signInWithGoogleHandler()}
 
                     login={() => {
                         console.warn("setcomponentIndex for login ")
@@ -174,8 +143,8 @@ export default function LoginIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
-
-                    createAccount={() => { onCreateAccount() }}
+                    
+                    createAccount={()=>{onCreateAccount()}}
 
                     login={() => {
                         console.warn("setcomponentIndex for login ")
