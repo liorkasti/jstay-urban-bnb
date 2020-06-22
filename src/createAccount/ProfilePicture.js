@@ -45,7 +45,7 @@ function ProfilePicture(props) {
       </View>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
-      onPress={props.onNext}
+        onPress={props.onNext}
         style={styles.createAccountDoneButton1}
       ></DoneCreateAccount>
     </View>
