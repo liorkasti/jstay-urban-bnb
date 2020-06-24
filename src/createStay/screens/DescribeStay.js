@@ -37,10 +37,16 @@ function DescribeStay(props) {
             style={styles.materialButtonViolet6}
           ></MaterialButtonViolet6>
         </View>
+
+
+
+
+        {/* ready for firebase */}
+
         <View style={styles.materialRadio11ColumnRow}>
           <View style={styles.materialRadio11Column}>
-            <MaterialRadio7 style={styles.materialRadio11}></MaterialRadio7>
-            <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
+            <MaterialRadio7 onPress={(()=>{props.onUserInput({kosherLevel:1, path:"hostListing"})})} style={styles.materialRadio11}></MaterialRadio7>
+            <MaterialRadio7 onPress={(()=>{props.onUserInput({kosherLevel:2, path:"hostListing"})})} style={styles.materialRadio7}></MaterialRadio7>
           </View>
           <View style={styles.standardKosherStackColumn}>
             <View style={styles.standardKosherStack}>
@@ -60,9 +66,11 @@ function DescribeStay(props) {
             </View>
           </View>
         </View>
+        {/* /ready for firebase/ */}
+        
         <Text style={styles.stayType}>What will guests be booking?</Text>
         <View style={styles.materialRadioRow}>
-          <MaterialRadio style={styles.materialRadio}></MaterialRadio>
+          <MaterialRadio onPress={(()=>{props.onUserInput({stayDescription:2, path:"hostListing"})})} style={styles.materialRadio}></MaterialRadio>
           <View style={styles.privatePlaceStack}>
             <Text style={styles.privatePlace}>Private Place</Text>
             <Text style={styles.guestsWill}>
@@ -129,7 +137,6 @@ function DescribeStay(props) {
           <TextInput
             placeholder="e.g. David's Penthouse"
             placeholderTextColor="rgba(177,177,177,1)"
-            autoFocus={true}
             style={styles.textInput}
           ></TextInput>
         </View>
@@ -148,14 +155,18 @@ function DescribeStay(props) {
           spellCheck={true}
           style={styles.textInput2}
         ></TextInput>
+        
+
+        {/* ready for firebase */}
         <Text style={styles.isThisStayKosher1}>
           Is this stay gender specific?
         </Text>
         <View style={styles.materialRadio8StackStack}>
           <View style={styles.materialRadio8Stack}>
-            <MaterialRadio5 style={styles.materialRadio8}></MaterialRadio5>
+            <MaterialRadio5  onPress={(()=>{props.onUserInput({genderSpecfic: true, isMalesOnly: true, path:"hostListing"})})} style={styles.materialRadio8}></MaterialRadio5>
             <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
           </View>
+
           <View style={styles.maleOnlyStack}>
             <Text style={styles.maleOnly}>Male Only</Text>
             <View style={styles.group}>
@@ -166,8 +177,9 @@ function DescribeStay(props) {
             </View>
           </View>
         </View>
+
         <View style={styles.materialRadio12Row}>
-          <MaterialRadio7 style={styles.materialRadio12}></MaterialRadio7>
+          <MaterialRadio7 onPress={(()=>{props.onUserInput({genderSpecfic: true, isMalesOnly: false, path:"hostListing"})})} style={styles.materialRadio12}></MaterialRadio7>
           <View style={styles.femaleOnlyStack}>
             <Text style={styles.femaleOnly}>Female Only</Text>
             <Text style={styles.loremIpsum11}>
@@ -176,8 +188,9 @@ function DescribeStay(props) {
           </Text>
           </View>
         </View>
+
         <View style={styles.materialRadio10Row}>
-          <MaterialRadio5 style={styles.materialRadio10}></MaterialRadio5>
+          <MaterialRadio5 onPress={(()=>{props.onUserInput({kosherLevel:0, path:"hostListing"})})} style={styles.materialRadio10}></MaterialRadio5>
           <View style={styles.notKosher1Stack}>
             <Text style={styles.notKosher1}>Not Kosher</Text>
             <Text style={styles.loremIpsum13}>
@@ -186,6 +199,8 @@ function DescribeStay(props) {
           </Text>
           </View>
         </View>
+        {/* /ready for firebase/ */}
+
         <Text style={styles.stayType2}>Stay type</Text>
         <DropDown textInput1="House" style={styles.dropDown}></DropDown>
         <CupertinoStepper1
@@ -517,9 +532,9 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   materialRadio2ColumnRow: {
-    height: 109,
+    height: 139,
     flexDirection: "row",
-    marginTop: 10,
+    marginTop: -20,
     marginLeft: 28,
     marginRight: 25
   },
