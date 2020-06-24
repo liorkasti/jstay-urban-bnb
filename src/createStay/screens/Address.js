@@ -29,7 +29,6 @@ function Address(props) {
         <TextInput
           placeholder="e.g. 770 Eastern Parkway"
           placeholderTextColor="rgba(177,177,177,1)"
-          
           style={styles.textInput8}
         ></TextInput>
       </View>

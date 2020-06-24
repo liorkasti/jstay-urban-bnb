@@ -10,6 +10,7 @@ function Eruv(props) {
         <TouchableOpacity style={styles.button12}>
           <View style={styles.materialCheckbox3682Row}>
             <MaterialCheckbox1
+              onPress={(newValue) => props.onUserSelect(newValue, "localEruv")}
               style={styles.materialCheckbox3682}
             ></MaterialCheckbox1>
             <Text style={styles.localEruv}>Local Eruv</Text>
@@ -23,6 +24,7 @@ function Eruv(props) {
         <TouchableOpacity style={styles.button13}>
           <View style={styles.materialCheckbox3692Row}>
             <MaterialCheckbox1
+              onPress={(newValue) => props.onUserSelect(newValue, "propertyEruv")}
               style={styles.materialCheckbox3692}
             ></MaterialCheckbox1>
             <Text style={styles.eruvOnProperty}>Eruv on property</Text>
@@ -35,7 +37,10 @@ function Eruv(props) {
       <View style={styles.eruv2Row}>
         <Text style={styles.eruv2}>Eruv</Text>
         <View style={styles.eruv2Filler}></View>
-        <MaterialSwitch1 style={styles.materialSwitch1}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => props.onUserSelect(newValue, "eruv")}
+
+          style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
       <Text style={styles.loremIpsum17}>
         A border that permits carrying on Shabbat {"\n"}and holidays

@@ -27,186 +27,209 @@ function DescribeStay(props) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(2,172,235,1)" />
-      
-        <View style={styles.materialButtonWithVioletText1Row}>
-          <MaterialButtonWithVioletText11
-            style={styles.materialButtonWithVioletText1}
-          ></MaterialButtonWithVioletText11>
-          <View style={styles.materialButtonWithVioletText1Filler}></View>
-          <MaterialButtonViolet6 onPress={()=>props.onNext()}
-            style={styles.materialButtonViolet6}
-          ></MaterialButtonViolet6>
+
+      <View style={styles.materialButtonWithVioletText1Row}>
+        <MaterialButtonWithVioletText11
+          style={styles.materialButtonWithVioletText1}
+        ></MaterialButtonWithVioletText11>
+        <View style={styles.materialButtonWithVioletText1Filler}></View>
+        <MaterialButtonViolet6 onPress={() => props.onNext()}
+          style={styles.materialButtonViolet6}
+        ></MaterialButtonViolet6>
+      </View>
+
+
+
+
+      {/* ready for firebase */}
+
+      <View style={styles.materialRadio11ColumnRow}>
+        <View style={styles.materialRadio11Column}>
+          <MaterialRadio7 onPress={(() => { props.onUserInput({ kosherLevel: 1, path: "hostListing" }) })} style={styles.materialRadio11}></MaterialRadio7>
+          <MaterialRadio7 onPress={(() => { props.onUserInput({ kosherLevel: 2, path: "hostListing" }) })} style={styles.materialRadio7}></MaterialRadio7>
         </View>
-
-
-
-
-        {/* ready for firebase */}
-
-        <View style={styles.materialRadio11ColumnRow}>
-          <View style={styles.materialRadio11Column}>
-            <MaterialRadio7 onPress={(()=>{props.onUserInput({kosherLevel:1, path:"hostListing"})})} style={styles.materialRadio11}></MaterialRadio7>
-            <MaterialRadio7 onPress={(()=>{props.onUserInput({kosherLevel:2, path:"hostListing"})})} style={styles.materialRadio7}></MaterialRadio7>
-          </View>
-          <View style={styles.standardKosherStackColumn}>
-            <View style={styles.standardKosherStack}>
-              <Text style={styles.standardKosher}>Standard Kosher</Text>
-              <Text style={styles.loremIpsum7}>
-                This stay is kept strictly kosher to basic requirements, with
-                separate dishes and utensils for meat and milk, but available to
-                non-Kosher users (with separate dishes)
+        <View style={styles.standardKosherStackColumn}>
+          <View style={styles.standardKosherStack}>
+            <Text style={styles.standardKosher}>Standard Kosher</Text>
+            <Text style={styles.loremIpsum7}>
+              This stay is kept strictly kosher to basic requirements, with
+              separate dishes and utensils for meat and milk, but available to
+              non-Kosher users (with separate dishes)
             </Text>
-            </View>
-            <View style={styles.loremIpsum8Stack}>
-              <Text style={styles.loremIpsum8}>
-                This stay is kept strictly kosher with separate {"\n"}kitchens,
+          </View>
+          <View style={styles.loremIpsum8Stack}>
+            <Text style={styles.loremIpsum8}>
+              This stay is kept strictly kosher with separate {"\n"}kitchens,
               and is only available to other Strictly Kosher guests
             </Text>
-              <Text style={styles.strictlyKosher}>Strictly Kosher</Text>
-            </View>
+            <Text style={styles.strictlyKosher}>Strictly Kosher</Text>
           </View>
         </View>
-        {/* /ready for firebase/ */}
-        
-        <Text style={styles.stayType}>What will guests be booking?</Text>
-        <View style={styles.materialRadioRow}>
-          <MaterialRadio onPress={(()=>{props.onUserInput({stayDescription:2, path:"hostListing"})})} style={styles.materialRadio}></MaterialRadio>
-          <View style={styles.privatePlaceStack}>
-            <Text style={styles.privatePlace}>Private Place</Text>
-            <Text style={styles.guestsWill}>
-              Guests will have the entire place to themselves.{"\n"}Usually
+      </View>
+      {/* /ready for firebase/ */}
+
+      <Text style={styles.stayType}>What will guests be booking?</Text>
+      <View style={styles.materialRadioRow}>
+        <MaterialRadio
+          onPress={(() => { props.onUserInput({ character: "Private Place", path: "hostListing/suitCharacter" }) })}
+          style={styles.materialRadio}></MaterialRadio>
+        <View style={styles.privatePlaceStack}>
+          <Text style={styles.privatePlace}>Private Place</Text>
+          <Text style={styles.guestsWill}>
+            Guests will have the entire place to themselves.{"\n"}Usually
             includes a bedroom, bathroom, and kitchen
           </Text>
-          </View>
         </View>
-        <View style={styles.materialRadio1Row}>
-          <MaterialRadio1 style={styles.materialRadio1}></MaterialRadio1>
-          <View style={styles.privateRoomColumn}>
-            <Text style={styles.privateRoom}>Private Room</Text>
-            <Text style={styles.loremIpsum2}>
-              Guests have their own private room for sleeping.{"\n"}Other areas
+      </View>
+      <View style={styles.materialRadio1Row}>
+        <MaterialRadio1 onPress={(() => { props.onUserInput({ character: "Private Room", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio1}></MaterialRadio1>
+        <View style={styles.privateRoomColumn}>
+          <Text style={styles.privateRoom}>Private Room</Text>
+          <Text style={styles.loremIpsum2}>
+            Guests have their own private room for sleeping.{"\n"}Other areas
             may be shared
           </Text>
-          </View>
         </View>
-        <View style={styles.materialRadio2ColumnRow}>
-          <View style={styles.materialRadio2Column}>
-            <MaterialRadio2 style={styles.materialRadio2}></MaterialRadio2>
-            <MaterialRadio2 style={styles.materialRadio13}></MaterialRadio2>
-          </View>
-          <View style={styles.sharedRoomStackColumn}>
-            <View style={styles.sharedRoomStack}>
-              <Text style={styles.sharedRoom}>Shared Room</Text>
-              <Text style={styles.guestsSleepIn}>
-                Guests sleep in a bedroom or common area that may be shared with
-                others
+      </View>
+      <View style={styles.materialRadio2ColumnRow}>
+        <View style={styles.materialRadio2Column}>
+          <MaterialRadio2 onPress={(() => { props.onUserInput({ character: "Shared Room", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio2}></MaterialRadio2>
+          <MaterialRadio2 onPress={(() => { props.onUserInput({ character: "Hotel suite", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio13}></MaterialRadio2>
+        </View>
+        <View style={styles.sharedRoomStackColumn}>
+          <View style={styles.sharedRoomStack}>
+            <Text style={styles.sharedRoom}>Shared Room</Text>
+            <Text style={styles.guestsSleepIn}>
+              Guests sleep in a bedroom or common area that may be shared with
+              others
             </Text>
-            </View>
-            <Text style={styles.hotelSuite}>Hotel suite</Text>
-            <Text style={styles.guestsSleepIn3}>
-              How many duplicate suites do you have?
+          </View>
+          <Text style={styles.hotelSuite}>Hotel suite</Text>
+          <Text style={styles.guestsSleepIn3}>
+            How many duplicate suites do you have?
           </Text>
-          </View>
         </View>
-        <View style={styles.loremIpsum3StackStackStackStack}>
-          <View style={styles.loremIpsum3StackStackStack}>
-            <View style={styles.loremIpsum3StackStack}>
-              <View style={styles.loremIpsum3Stack}>
-                <Text style={styles.loremIpsum3}>
-                  Is this set up as a dedicated guest stay?
+      </View>
+
+
+      {/* ready for firebase */}
+
+      <View style={styles.loremIpsum3StackStackStackStack}>
+        <View style={styles.loremIpsum3StackStackStack}>
+          <View style={styles.loremIpsum3StackStack}>
+            <View style={styles.loremIpsum3Stack}>
+              <Text style={styles.loremIpsum3}>
+                Is this set up as a dedicated guest stay?
               </Text>
-                <MaterialRadio3 style={styles.materialRadio3}></MaterialRadio3>
-              </View>
-              <View style={styles.yesStack}>
-                <Text style={styles.yes}>Yes</Text>
-                <Text style={styles.guestsSleepIn1}>
-                  Its set up for guests only
-              </Text>
-              </View>
+              <MaterialRadio3
+                onPress={(() => { props.onUserInput({ dedicatedGuest: true, path: "hostListing" }) })}
+
+                style={styles.materialRadio3}></MaterialRadio3>
             </View>
-            <MaterialRadio4 style={styles.materialRadio4}></MaterialRadio4>
+            <View style={styles.yesStack}>
+              <Text style={styles.yes}>Yes</Text>
+              <Text style={styles.guestsSleepIn1}>
+                Its set up for guests only
+              </Text>
+            </View>
           </View>
-          <Text style={styles.no2}>No</Text>
+          <MaterialRadio4
+            onPress={(() => {
+              props.onUserInput({ dedicatedGuest: false, path: "hostListing" })
+            })}
+            style={styles.materialRadio4}></MaterialRadio4>
         </View>
-        <Text style={styles.isThisStayKosher}>Is this stay kosher?</Text>
-        <Text style={styles.guestsSleepIn2}>
-          I keep my personal belongings here
+        <Text style={styles.no2}>No</Text>
+      </View>
+      <Text style={styles.isThisStayKosher}>Is this stay kosher?</Text>
+      <Text style={styles.guestsSleepIn2}>
+        I keep my personal belongings here
         </Text>
-        <View style={styles.nameYourStayStack}>
-          <Text style={styles.nameYourStay}>Name your stay</Text>
-          <TextInput
-            placeholder="e.g. David's Penthouse"
-            placeholderTextColor="rgba(177,177,177,1)"
-            style={styles.textInput}
-          ></TextInput>
-        </View>
-        <Text style={styles.describeYourStay}>Describe your stay</Text>
+
+      <View style={styles.nameYourStayStack}>
+        <Text style={styles.nameYourStay}>Name your stay</Text>
         <TextInput
-          placeholder="e.g. Beautiful apartment with city views.."
+          onChangeText={((newName) => { props.onUserInput({ stayName: newName, path: "hostListing" }) })}
+          placeholder="e.g. David's Penthouse"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoCapitalize="sentences"
-          autoCorrect={true}
-          maxLength={200}
-          multiline={true}
-          returnKeyType="done"
-          inlineImagePadding={0}
-          numberOfLines={4}
-          returnKeyLabel="Save"
-          spellCheck={true}
-          style={styles.textInput2}
+          style={styles.textInput}
         ></TextInput>
-        
+      </View>
 
-        {/* ready for firebase */}
-        <Text style={styles.isThisStayKosher1}>
-          Is this stay gender specific?
+      <Text style={styles.describeYourStay}>Describe your stay</Text>
+      <TextInput
+        onChangeText={((newText) => { props.onUserInput({ stayDescription: newText, path: "hostListing" }) })}
+        placeholder="e.g. Beautiful apartment with city views.."
+        placeholderTextColor="rgba(177,177,177,1)"
+        autoCapitalize="sentences"
+        autoCorrect={true}
+        maxLength={200}
+        multiline={true}
+        returnKeyType="done"
+        inlineImagePadding={0}
+        numberOfLines={4}
+        returnKeyLabel="Save"
+        spellCheck={true}
+        style={styles.textInput2}
+      ></TextInput>
+
+
+      <Text style={styles.isThisStayKosher1}>
+        Is this stay gender specific?
         </Text>
-        <View style={styles.materialRadio8StackStack}>
-          <View style={styles.materialRadio8Stack}>
-            <MaterialRadio5  onPress={(()=>{props.onUserInput({genderSpecfic: true, isMalesOnly: true, path:"hostListing"})})} style={styles.materialRadio8}></MaterialRadio5>
-            <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
-          </View>
-
-          <View style={styles.maleOnlyStack}>
-            <Text style={styles.maleOnly}>Male Only</Text>
-            <View style={styles.group}>
-              <Text style={styles.text3}>
-                My stay is only available to men (female users will not be shown
-                this listing)
-            </Text>
-            </View>
-          </View>
+      <View style={styles.materialRadio8StackStack}>
+        <View style={styles.materialRadio8Stack}>
+          <MaterialRadio5 onPress={(() => { props.onUserInput({ genderSpecfic: true, isMalesOnly: true, path: "hostListing" }) })} style={styles.materialRadio8}></MaterialRadio5>
+          <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
         </View>
 
-        <View style={styles.materialRadio12Row}>
-          <MaterialRadio7 onPress={(()=>{props.onUserInput({genderSpecfic: true, isMalesOnly: false, path:"hostListing"})})} style={styles.materialRadio12}></MaterialRadio7>
-          <View style={styles.femaleOnlyStack}>
-            <Text style={styles.femaleOnly}>Female Only</Text>
-            <Text style={styles.loremIpsum11}>
-              My stay is only available to women (male users{"\n"}will not be
+        <View style={styles.maleOnlyStack}>
+          <Text style={styles.maleOnly}>Male Only</Text>
+          <View style={styles.group}>
+            <Text style={styles.text3}>
+              My stay is only available to men (female users will not be shown
+              this listing)
+            </Text>
+          </View>
+        </View>
+        
+      </View>
+
+      <View style={styles.materialRadio12Row}>
+        <MaterialRadio7 onPress={(() => { props.onUserInput({ genderSpecfic: true, isMalesOnly: false, path: "hostListing" }) })} style={styles.materialRadio12}></MaterialRadio7>
+        <View style={styles.femaleOnlyStack}>
+          <Text style={styles.femaleOnly}>Female Only</Text>
+          <Text style={styles.loremIpsum11}>
+            My stay is only available to women (male users{"\n"}will not be
             shown this listing)
           </Text>
-          </View>
         </View>
+      </View>
 
-        <View style={styles.materialRadio10Row}>
-          <MaterialRadio5 onPress={(()=>{props.onUserInput({kosherLevel:0, path:"hostListing"})})} style={styles.materialRadio10}></MaterialRadio5>
-          <View style={styles.notKosher1Stack}>
-            <Text style={styles.notKosher1}>Not Kosher</Text>
-            <Text style={styles.loremIpsum13}>
-              This stay is not kosher, but has kosher options {"\n"}and/or is
+      <View style={styles.materialRadio10Row}>
+        <MaterialRadio5 onPress={(() => { props.onUserInput({ kosherLevel: 0, path: "hostListing" }) })} style={styles.materialRadio10}></MaterialRadio5>
+        <View style={styles.notKosher1Stack}>
+          <Text style={styles.notKosher1}>Not Kosher</Text>
+          <Text style={styles.loremIpsum13}>
+            This stay is not kosher, but has kosher options {"\n"}and/or is
             located within the local Jewish area
           </Text>
-          </View>
         </View>
-        {/* /ready for firebase/ */}
+      </View>
+      <Text style={styles.stayType2}>Stay type</Text>
+      <DropDown
+        onChange={((newType) => { props.onUserInput({ stayType: newType, path: "hostListing" }) })}
 
-        <Text style={styles.stayType2}>Stay type</Text>
-        <DropDown textInput1="House" style={styles.dropDown}></DropDown>
-        <CupertinoStepper1
-          text1=""
-          style={styles.cupertinoStepper1}
-        ></CupertinoStepper1>
+        textInput1="House" style={styles.dropDown}></DropDown>
+
+      <CupertinoStepper1
+        onChange={((newAmount) => { props.onUserInput({ amount: newAmount, path: "hostListing/suitCharacter" }) })}
+
+        text1=""
+        style={styles.cupertinoStepper1}
+      ></CupertinoStepper1>
+      {/* /ready for firebase/ */}
+
     </View>
   );
 }
@@ -751,7 +774,6 @@ const styles = StyleSheet.create({
     marginTop: 6,
     marginLeft: 27,
     marginRight: 59,
-    borderBottomWidth: 2
   },
   materialRadio12: {
     width: 40,

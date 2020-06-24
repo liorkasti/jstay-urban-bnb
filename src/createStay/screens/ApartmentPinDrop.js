@@ -14,6 +14,10 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 
 function ApartmentPinDrop(props) {
+  const savePinDrop = (newLocation) => {
+    props.onUserInput({ location: newLocation, path: "hostListing" })
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar hidden barStyle="light-content" />
@@ -31,7 +35,7 @@ function ApartmentPinDrop(props) {
           <EntypoIcon name="location-pin" style={styles.icon}></EntypoIcon>
         </Center>
       </View>
-      
+
       <View style={styles.materialButtonWithVioletText1Row}>
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText1}
@@ -174,7 +178,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText1Row: {
     height: 45,
     flexDirection: "row",
-    marginTop:550,
+    marginTop: 550,
     marginBottom: 34,
     marginLeft: 133,
     marginRight: 14
