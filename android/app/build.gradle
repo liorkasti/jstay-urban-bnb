@@ -200,6 +200,12 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
+    implementation 'com.facebook.android:facebook-login:[5,6)'
+
+    implementation 'com.facebook.android:facebook-core:[5,6)'
+    implementation 'com.facebook.android:facebook-login:[5,6)'
+
+
     implementation 'com.android.support:multidex:1.0.3'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
