@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image, SectionList, FlatList } from "react-native";
 
 import ReadMessage from "./components/ReadMessage";
@@ -9,77 +9,78 @@ import MessageSearchBar from "../components/MessageSearchBar";
 
 const messages = [
     {
-        title: "something",
-        data: [{from: "sholly"}],
-    },
-    {
-        title: "needs",
-        data: [{from: "sholli"}]
-    },
-    {
-        title: "to be in",
-        data: [{from: "nachum"}]
-    },
-    {
-        title: "title",
-        data: [{from: "charles"}]
-    }, 
-     {
-        title: "something",
-        data: [{from: "sholly"}],
-    },
-    {
-        title: "needs",
-        data: [{from: "sholli"}]
-    },
-    {
-        title: "to be in",
-        data: [{from: "nachum"}]
-    },
-    {
-        title: "title",
-        data: [{from: "charles"}]
+        title: "search bar",
+        data: [{ from: "JewBoy", read:false, index:0}],
+
     },
     {
         title: "something",
-        data: [{from: "sholly"}],
+        data: [{ from: "Nachum", read: false, index: 1 }],
+
     },
     {
         title: "needs",
-        data: [{from: "sholli"}]
+        data: [{ from: "sholli", read: false, index: 2 }],
+
     },
     {
         title: "to be in",
-        data: [{from: "nachum"}]
+        data: [{ from: "Charles", read: true, index: 3 }],
+
     },
     {
         title: "title",
-        data: [{from: "charles"}]
-    }, 
-     {
+        data: [{ from: "Jamal", read: true, index: 4 }],
+
+    },
+    {
         title: "something",
-        data: [{from: "sholly"}],
+        data: [{ from: "Shalom", read: true, index: 5 }],
+
     },
     {
         title: "needs",
-        data: [{from: "sholli"}]
+        data: [{ from: "Moshe", read: true, index: 6 }],
+
     },
     {
         title: "to be in",
-        data: [{from: "nachum"}]
+        data: [{ from: "Ali", read: true, index: 7 }],
+
     },
     {
         title: "title",
-        data: [{from: "charles"}]
-    }
+        data: [{ from: "Yanki", read: true, index: 8 }],
+
+    },
+    {
+        title: "something",
+        data: [{ from: "Elena", read: true, index: 9 }],
+
+    },
+
 ];
 
 export default function Messages(props) {
+    const [isRefreshing, setIsRefreshing] = useState(false);
+
+    useEffect(() => {
+        if (isRefreshing) {
+            setTimeout(() => {
+                setIsRefreshing(false);
+            }, 1000)
+        }
+    }, [isRefreshing]);
+
     const Message = (props) => (
-        <TouchableOpacity onPress={()=>{props.onNext()}} style={styles.groupMessage} >
-            <UnreadMessage onPress={props.onNext}  style={styles.unreadMessages} from={props.from}/>
-            {/* <Text >{messages.from}</Text>{messages.unreadMessage && <Text style={styles.unreadSymbol}> ! </Text>} */}
-        </TouchableOpacity>
+            <TouchableOpacity onPress={() => { props.onNext() }} style={styles.groupMessage} >
+                {!props.read ?
+                    <ReadMessage onPress={props.onNext} style={styles.unreadMessages} from={props.from} /> :
+                    <UnreadMessage onPress={props.onNext} style={styles.unreadMessages} from={props.from} />
+
+                }
+            </TouchableOpacity>
+   
     );
 
     return (
@@ -109,15 +110,18 @@ export default function Messages(props) {
                     </View>
                 </View>
             </View>
-            <MessageSearchBar style={styles.messageSearchBar}></MessageSearchBar>
-            <View style={{flex: 1, marginTop: 165}} >
-                    <SectionList
-                        sections={messages}
-                        contentContainerStyle={{paddingBottom:30}}
-                        keyExtractor={(message, index) => message + index}
-                        renderItem={( {item, data} ) => <Message title={item} onNext={props.onNext} from={item.from} />}
-                        
-                    />
+
+            {/*copy below*/}
+            <View style={{ flex: 1, marginTop: 107, zIndex: 30 }} >
+                <SectionList
+                    refreshing={isRefreshing}
+                    onRefresh={() => {setIsRefreshing(true)}}
+                    progressViewOffset={100}
+                    sections={messages}
+                    contentContainerStyle={{ paddingBottom: 30 }}
+                    keyExtractor={(message, index) => index}
+                    renderItem={({ item }) => <Message itemIndex={item.index} read={item.read} title={item} onNext={props.onNext} from={item.from} />}
+                />
                 {/* </ScrollView> */}
             </View>
 
@@ -141,8 +145,8 @@ const styles = StyleSheet.create({
     image1Filler: {
         flex: 1,
         flexDirection: "row",
-        zIndex:25
-      },
+        zIndex: 25
+    },
     item: {
         backgroundColor: "#f9c2ff",
         padding: 20,
@@ -158,10 +162,9 @@ const styles = StyleSheet.create({
     unreadMessages: {
         position: "absolute",
         left: 0,
-        height: 60,
+        height: 90,
         right: 0,
-        marginVertical: 8
-
+        marginVertical: 8,
     },
     group1: {
         top: 0,
@@ -169,7 +172,7 @@ const styles = StyleSheet.create({
         height: 91,
         position: "absolute",
         right: 0,
-        zIndex: 25,
+        zIndex: 55,
         backgroundColor: "rgba(2,172,235,1)"
     },
     rect233: {
@@ -181,7 +184,7 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         borderBottomWidth: 4,
         right: 0,
-        zIndex:25
+        zIndex: 25
     },
     text: {
         top: 48,
@@ -235,49 +238,13 @@ const styles = StyleSheet.create({
         opacity: 0.35,
         fontSize: 10,
         fontFamily: "roboto-regular",
-        zIndex:25
+        zIndex: 25
     },
-    messageSearchBar: {
-        position: "absolute",
-        top: 98,
-        left: 20,
-        height: 56,
-        right: 20,
-        zIndex:25
-    },
-    unreadMessages1: {
-        position: "absolute",
-        top: 424,
-        left: 0,
-        height: 60,
-        right: 0
-    },
-    unreadMessages2: {
-        position: "absolute",
-        top: 359,
-        left: 0,
-        height: 60,
-        right: 0
-    },
-    unreadMessages3: {
-        position: "absolute",
-        top: 294,
-        left: 0,
-        height: 60,
-        right: 0
-    },
-    groupMessagesStack: {
-        // position: "absolute",
-        // left: 20,
-        // top: 520,
-        // height: 80,
-        flex: 1,
-  },
     groupMessage: {
         paddingBottom: 70,
         // position: "absolute",
         // left: 20,
-        top: 20,
+        zIndex: 20
     },
     unreadSymbol: {
         color: 'red',

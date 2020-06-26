@@ -56,9 +56,15 @@ export default function MessagesIndex(props) {
 
                     onHome={() => { goToHome() }}
 
+                    createAccount={() => {onCreateAccount()}}
+                    
+                    login={() => {
+                        console.warn("setcomponentIndex for login ")
+                    }}
+
                     openMessage={() => {
-                        console.warn("setcomponentIndex for Messaging ")
-                        setComponentIndex(componentIndex + 1)
+                        console.warn("setcomponentIndex for Messaging ");
+                        setComponentIndex(componentIndex + 1);
                     }}
                 />
             }

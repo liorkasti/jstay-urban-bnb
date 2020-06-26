@@ -15,7 +15,6 @@ function MyDetails(props) {
       <View style={styles.group2}>
         <View style={styles.headerBarDark1Stack}>
           <HeaderBarDark
-            onBack={props.onBack}
             text1=""
             style={styles.headerBarDark1}
           />
@@ -44,7 +43,7 @@ function MyDetails(props) {
             style={styles.materialIconTextbox4}
           ></EmailTextInput4>
         </View>
-
+        
         <View style={styles.icon2Row}>
           <MaterialIconsIcon
             name="people"

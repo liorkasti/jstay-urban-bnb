@@ -9,6 +9,7 @@ function WalkingDistanceOf(props) {
         <View style={styles.loremIpsum12Stack}>
           <Text style={styles.loremIpsum12}></Text>
           <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "kosherRestaurants")}
             style={styles.materialCheckbox53}
           ></MaterialCheckbox1>
         </View>
@@ -17,6 +18,7 @@ function WalkingDistanceOf(props) {
       <Text style={styles.walkingDistance1}>Within Walking Distance of..</Text>
       <View style={styles.materialCheckbox52Row}>
         <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "synagogues")}
           style={styles.materialCheckbox52}
         ></MaterialCheckbox1>
         <Text style={styles.synagogues}>Synagogues</Text>
@@ -26,6 +28,7 @@ function WalkingDistanceOf(props) {
         <TouchableOpacity style={styles.button8}>
           <View style={styles.materialCheckbox51Row}>
             <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "jewishCommunity")}
               style={styles.materialCheckbox51}
             ></MaterialCheckbox1>
             <Text style={styles.jewishCommunity}>Jewish Community</Text>
@@ -38,6 +41,7 @@ function WalkingDistanceOf(props) {
       <TouchableOpacity style={styles.button9}>
         <View style={styles.materialCheckbox54Row}>
           <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "kosherShops")}
             style={styles.materialCheckbox54}
           ></MaterialCheckbox1>
           <Text style={styles.kosherShops}>Kosher Shops</Text>
@@ -45,6 +49,7 @@ function WalkingDistanceOf(props) {
       </TouchableOpacity>
       <View style={styles.materialCheckbox55Row}>
         <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "womensMikvah")}
           style={styles.materialCheckbox55}
         ></MaterialCheckbox1>
         <Text style={styles.womensMikvah}>Women&#39;s Mikvah</Text>
@@ -52,12 +57,14 @@ function WalkingDistanceOf(props) {
       <View style={styles.mensMikvah2Stack}>
         <Text style={styles.mensMikvah2}>Men&#39;s Mikvah</Text>
         <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "mensMikvah")}
           style={styles.materialCheckbox56}
         ></MaterialCheckbox1>
       </View>
       <View style={styles.jewishDaycareStack}>
         <Text style={styles.jewishDaycare}>Jewish Daycare</Text>
         <MaterialCheckbox1
+          onPress={(newValue)=>props.onUserSelect(newValue, "jewishDaycare")}
           style={styles.materialCheckbox562}
         ></MaterialCheckbox1>
       </View>

@@ -29,7 +29,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. 770 Eastern Parkway"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput8}
         ></TextInput>
       </View>
@@ -38,7 +38,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. Apartment 1"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput9}
         ></TextInput>
       </View>
@@ -47,7 +47,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. Brookyn "
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput10}
         ></TextInput>
       </View>
@@ -56,7 +56,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. New York"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput11}
         ></TextInput>
       </View>
@@ -65,7 +65,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. 11213"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput12}
         ></TextInput>
       </View>
@@ -82,7 +82,7 @@ function Address(props) {
         <TextInput
           placeholder="e.g. Crown Heights"
           placeholderTextColor="rgba(177,177,177,1)"
-          autoFocus={true}
+          
           style={styles.textInput13}
         ></TextInput>
       </View>

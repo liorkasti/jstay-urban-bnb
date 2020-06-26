@@ -72,7 +72,7 @@ export default function Index(props) {
     const headers = {
         DescribeStay: "Describe Your Stay",
         Address: "Address",
-        ApartmentPinDrop:"Location",
+        ApartmentPinDrop: "Location",
         StayLayout: "Layouts",
         StayPictures: "Pictures",
         Amenities: "Amenties",
@@ -97,7 +97,7 @@ export default function Index(props) {
         console.warn(componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
-                history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
+            history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
         }
 
         if (componentIndex < 0) {
@@ -130,6 +130,10 @@ export default function Index(props) {
                     setComponentIndex(componentIndex + 1)
                 }}
 
+                onUserInput={(value)=>{
+                    
+                }}
+
                 onHome={() => {
                     onHome();
                 }}
@@ -138,7 +142,14 @@ export default function Index(props) {
 
     return (
         <View style={styles.container}>
-            <HeaderBarLight screenWidth={windowWidth} style={styles.header} header={headers[componentKeys[componentIndex]]} onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            <HeaderBarLight
+                screenWidth={windowWidth}
+                style={styles.header}
+                header={headers[componentKeys[componentIndex]]}
+                onHome={() => { onHome() }}
+                onBack={() => setComponentIndex(componentIndex - 1)} 
+            />
+
             <ScrollView style={styles.scrollView}>
                 <CurrentComponentRouter />
             </ScrollView>
@@ -151,7 +162,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        padding:10,
+        padding: 10,
         backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
         flexDirection: "column"

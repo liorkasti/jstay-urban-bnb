@@ -6,9 +6,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
-
+import { GoogleSignin } from '@react-native-community/google-signin';
+import auth from '@react-native-firebase/auth';
 
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
+
 import Login from "./src/login"
 import Home from "./src/home"
 import CreateStay from "./src/createStay"
@@ -18,13 +20,17 @@ import EditStay from "./src/editStay"
 import Messages from "./src/messaging";
 import Chat from "./src/messaging";
 
-
-
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       Orientation.lockToPortrait();
     });
+    GoogleSignin.configure({
+      iosClientId: "1052652425814-30q7q27a1hfljo1v8a8pvbgasho71ffl.apps.googleusercontent.com",
+      webClientId: '1052652425814-4a76tojt3tc8a92hc245qr6c3jvgcr7j.apps.googleusercontent.com',
+    });
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
 
     //this is for the icon library to work
     EntypoIcon.loadFont();
@@ -32,31 +38,25 @@ export default function App() {
     Icon.loadFont();
     FontAwesomeIcon.loadFont();
     
-    setTimeout(()=>{
-      onGoogleButtonPress()
-    })
-    
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-  }, [])
+    return subscriber;onGoogleButton
+  }, []);
 
-  async function onGoogleButtonPress() {
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
-  
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-  
-    // Sign-in the user with the credential
-    return auth().signInWithCredential(googleCredential);
+  function onAuthStateChanged(user) {
+    if(user){setLoggedIn(!!user)}else {setLoggedIn(false)}
+    console.warn("auth state did change with:", user)
   }
+
   return (
     <View style={styles.container}>
       <StatusBar animated={true} hidden={false}></StatusBar>
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route path="/" exact component={ Login }/>
+          <Route exact path="/">
+              {loggedIn ? <Redirect to="/home" /> : <Login />}
+            </Route>
             <Route path="/chat" exact component={ Chat }/>
             <Route path="/account" component={ Account }/>
             <Route path="/editStay" component={ EditStay }/>
