@@ -8,13 +8,15 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "link-android":"npx react-native run-android",
+    "link-android": "npx react-native run-android",
     "ios-device": "sudo npm install --unsafe-perm=true -g ios-deploy "
   },
   "dependencies": {
     "@builderx/utils": "^0.1.6",
     "@react-native-community/geolocation": "^2.0.2",
+    "@react-native-community/google-signin": "^4.0.3",
     "@react-native-firebase/app": "^7.3.0",
+    "@react-native-firebase/auth": "^8.0.7",
     "core-util-is": "^1.0.2",
     "react": "16.11.0",
     "react-native": "0.62.2",

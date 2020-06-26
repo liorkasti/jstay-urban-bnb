@@ -18,6 +18,8 @@ import EditStay from "./src/editStay"
 import Messages from "./src/messaging";
 import Chat from "./src/messaging";
 
+
+
 export default function App() {
   useEffect(() => {
     setTimeout(() => {
@@ -29,12 +31,25 @@ export default function App() {
     MaterialCommunityIconsIcon.loadFont();
     Icon.loadFont();
     FontAwesomeIcon.loadFont();
-
+    
+    setTimeout(()=>{
+      onGoogleButtonPress()
+    })
+    
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
   }, [])
 
-
+  async function onGoogleButtonPress() {
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+  
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  
+    // Sign-in the user with the credential
+    return auth().signInWithCredential(googleCredential);
+  }
   return (
     <View style={styles.container}>
       <StatusBar animated={true} hidden={false}></StatusBar>
