@@ -6,6 +6,11 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
 function StayLayout(props) {
+
+const onChangeLayout = (number, path) => {
+  props.onUserInput({ number, path: "hostListing" + path })
+}
+
   return (
     <View style={styles.container}>
       <View style={styles.loremIpsumStack}>
@@ -39,16 +44,19 @@ function StayLayout(props) {
         <View style={styles.loremIpsum9Stack}>
           <Text style={styles.loremIpsum9}></Text>
           <CupertinoStepper1
-            text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/master")}}
+            text1="master"
             style={styles.cupertinoStepper3}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/full")}}
+          text1="full"
           style={styles.cupertinoStepper2}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/half")}}
+          text1="half"
           style={styles.cupertinoStepper1}
         ></CupertinoStepper1>
       </View>
@@ -64,16 +72,19 @@ function StayLayout(props) {
         <View style={styles.loremIpsum11Stack}>
           <Text style={styles.loremIpsum11}></Text>
           <CupertinoStepper1
-            text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/garden")}}
+            text1="garden"
             style={styles.cupertinoStepper18}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/balcony")}}
           text1=""
           style={styles.cupertinoStepper17}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/patio")}}
+          text1="patio"
           style={styles.cupertinoStepper16}
         ></CupertinoStepper1>
       </View>
@@ -86,18 +97,21 @@ function StayLayout(props) {
           <View style={styles.loremIpsum13Stack}>
             <Text style={styles.loremIpsum13}></Text>
             <CupertinoStepper1
-              text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/diningRoom")}}
+              text1="dining room"
               style={styles.cupertinoStepper24}
             ></CupertinoStepper1>
           </View>
           <Text style={styles.loremIpsum14}></Text>
         </View>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/living")}}
+          text1="Living Room"
           style={styles.cupertinoStepper23}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/office")}}
+          text1="Office"
           style={styles.cupertinoStepper22}
         ></CupertinoStepper1>
       </View>
@@ -117,25 +131,30 @@ function StayLayout(props) {
       </View>
       <View style={styles.cupertinoStepper6Row}>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/ensuite")}}
+          text1="Ensuite"
           style={styles.cupertinoStepper6}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/full")}}
+          text1="Full"
           style={styles.cupertinoStepper5}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/half")}}
+          text1="Half"
           style={styles.cupertinoStepper10}
         ></CupertinoStepper1>
       </View>
       <View style={styles.cupertinoStepper9Row}>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "guestAmount/adult")}}
+          text1="Adults"
           style={styles.cupertinoStepper9}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "guestAmount/child")}}
+          text1="Children"
           style={styles.cupertinoStepper8}
         ></CupertinoStepper1>
       </View>
@@ -161,16 +180,21 @@ function StayLayout(props) {
         <View style={styles.loremIpsum17Stack}>
           <Text style={styles.loremIpsum17}></Text>
           <CupertinoStepper1
-            text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/single")}}
+            text1="Single"
             style={styles.cupertinoStepper27}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
-          text1=""
+          text1="Double"
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/double")}}
+
           style={styles.cupertinoStepper26}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/king")}}
+
+          text1="King"
           style={styles.cupertinoStepper25}
         ></CupertinoStepper1>
       </View>
@@ -181,15 +205,18 @@ function StayLayout(props) {
       </View>
       <View style={styles.cupertinoStepper30Row}>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/floorMattress")}}
+          text1="Floor mattress"
           style={styles.cupertinoStepper30}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
+          text1="Crib"
           style={styles.cupertinoStepper29}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          text1=""
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
+          text1="Sofa bed"
           style={styles.cupertinoStepper28}
         ></CupertinoStepper1>
       </View>

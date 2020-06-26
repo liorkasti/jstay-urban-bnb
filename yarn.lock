@@ -1017,14 +1017,14 @@
     superstruct "^0.6.2"
 
 "@react-native-firebase/auth@^8.0.5":
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.5.tgz#2086547b95ca1d2906adcd7da9f2d5fc9e7e69fa"
-  integrity sha512-Hs8WcN+1UTWWS+q7nBcmcg1A2pU3tOxauJX2yeA9hxvNQClhc6nOpFVr+gg2Dq+IGs5bKf2f3ICLmPL0DSN3FA==
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.7.tgz#d429bb60940dc155a786ad9de3b9b1aa8316c06e"
+  integrity sha512-24QsDU6zgFU9a70MAIgWfIetwKohjFr+lor1iP4DMbHT34TxhrauhSBQU5u66bMZeVVoGBKTg67VsqKheAz9Kg==
 
 "@react-native-firebase/storage@^7.1.4":
-  version "7.1.4"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-7.1.4.tgz#1be6c53381440dc1ad4b5252e14b06cded37d637"
-  integrity sha512-o4II2QQJEBqYTyiQe03qtLDsdzCKcCV/EFn323JGNa8w+NCBM/6LstkCUmFnwfrO5Lb9Pyb5Jixpwjwe0n+UvQ==
+  version "7.1.5"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-7.1.5.tgz#b37411bf30cdf6b5d3c7ab4c40d0f94e928e58f5"
+  integrity sha512-MpdZNChvljLyG42DWOd8oMj+piQUHqDYsFEkvkILj1D9HbfNMeNh0G9KTDVeaddUdzbC7B1sLI76qtbKqMPnkQ==
 
 "@types/babel__core@^7.1.0":
   version "7.1.8"

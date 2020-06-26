@@ -160,7 +160,7 @@ function DescribeStay(props) {
             <TextInput
               placeholder="e.g. David's Penthouse"
               placeholderTextColor="rgba(177,177,177,1)"
-              autoFocus={true}
+              
               style={styles.textInput}
             ></TextInput>
           </View>
