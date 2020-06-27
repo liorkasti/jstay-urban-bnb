@@ -1,8 +1,10 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialRightIconTextbox1(props) {
+  const [secureTextEntry, setSecureTextEntry] = useState(true);
+
   return (
     <View style={[styles.container, props.style]}>
       <TextInput
@@ -10,8 +12,9 @@ function MaterialRightIconTextbox1(props) {
         placeholderTextColor="rgba(177,177,177,1)"
         underlineColorAndroid="rgba(177,177,177,1)"
         style={styles.inputStyle}
+        secureTextEntry={secureTextEntry}
       ></TextInput>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={()=>{setSecureTextEntry(!secureTextEntry)}} style={styles.button}>
         <Icon name="eye" style={styles.iconStyle}></Icon>
       </TouchableOpacity>
     </View>
@@ -35,7 +38,8 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     fontSize: 16,
     fontFamily: "roboto-regular",
-    lineHeight: 16
+    lineHeight: 16,
+    zIndex: 40
   },
   button: {
     width: 32,

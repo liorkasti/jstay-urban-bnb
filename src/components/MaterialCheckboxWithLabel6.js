@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     color: "rgba(230,230,230,1)",
     alignSelf: "flex-start",
     margin: 0,
-    marginTop: 5,
+    marginTop: 20,
     marginBottom: 5,
     paddingLeft: 8,
     fontSize: 16,

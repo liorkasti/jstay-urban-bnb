@@ -14,11 +14,12 @@ function UpdatesCheckBox(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+  },
   materialCheckboxWithLabel1: {
     left: "0%",
     width: 300,
-    height: 40,
+    height: 80,
     position: "absolute",
     bottom: "0%"
   }

@@ -12,6 +12,10 @@ import MyKashrut from "./MyKashrut";
 
 import ImagePicker from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
+// import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+
+// const usersCollection = firestore().collection('Users');
 
 const imagePickerOptionsoptions = {
     title: 'Select Avatar',
@@ -26,6 +30,7 @@ const imagePickerOptionsoptions = {
 export default function CreateAccountIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [profilePictureUri, setProfilePictureUri] = useState("");
+    const [currentLoginAccount, setCurrentLoginAccount] = useState({})
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -46,7 +51,7 @@ export default function CreateAccountIndex(props) {
             } else if (response.customButton) {
                 console.log('User tapped custom button: ', response.customButton);
             } else {
-                const source = { uri: (Platform.OS==='android') ? response.uri : response.uri.replace('file://', '')};
+                const source = { uri: (Platform.OS === 'android') ? response.uri : response.uri.replace('file://', '') };
                 uploadToFireBase().then((res) => {
                     console.log("upload file to firebase response", res)
                 })
@@ -58,6 +63,7 @@ export default function CreateAccountIndex(props) {
             }
         });
     }
+
     const uploadToFireBase = async (uri) => {
         const reference = storage().ref('black-t-shirt-sm.png');
         // path to existing file on filesystem
@@ -66,7 +72,9 @@ export default function CreateAccountIndex(props) {
         const response = await reference.putFile(pathToFile);
         return response;
     }
+
     useEffect(() => {
+        // console.warn("user collection",usersCollection);
         console.warn(componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
@@ -81,6 +89,26 @@ export default function CreateAccountIndex(props) {
     //the array should be in the order that the screens show up
     const componentKeys = ["AccountDetails", "MyDetails", "MyKashrut", "ProfilePicture"];
 
+    const createAccountWithEmail = () => {
+        const { email, password } = currentLoginAccount;
+
+        auth()
+            .createUserWithEmailAndPassword(email, password)
+            .then(() => {
+                console.log('User account created & signed in!');
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    console.log('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                    console.log('That email address is invalid!');
+                }
+
+                console.error(error);
+            });
+    }
 
     return (
 
@@ -101,7 +129,10 @@ export default function CreateAccountIndex(props) {
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
                     onNext={() => {
-                        setComponentIndex(componentIndex + 1)
+                        if(currentLoginAccount.email && currentLoginAccount.email){
+                            setComponentIndex(componentIndex + 1);
+                            createAccountWithEmail();
+                        }
                     }}
 
                     onHome={() => { goToHome() }}
@@ -110,6 +141,13 @@ export default function CreateAccountIndex(props) {
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
                         setComponentIndex(componentIndex - 1)
+                    }}
+
+                    onUserInput={({ email, password }) => {
+                        const newCurrentLoginAccount = currentLoginAccount;
+                        if (email) newCurrentLoginAccount.email = email;
+                        if (password) newCurrentLoginAccount.password = password;
+                        setCurrentLoginAccount(newCurrentLoginAccount)
                     }}
 
                     //if builder x component has skip button
@@ -204,9 +242,9 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex - 1)
                     }}
 
-                    addProfilePicture={() => { 
+                    addProfilePicture={() => {
                         addProfilePicture();
-                     }}
+                    }}
                     //if builder x component has skip button
                     //it's button should have onPress={()=>{props.onNext}}
                     onSkip={() => {

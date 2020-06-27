@@ -18,6 +18,7 @@ function AccountDetails(props) {
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.emailInputColumn}>
+        
         <EmailInput style={styles.emailInput}></EmailInput>
         <View style={styles.group}>
           <Icon name={props.icon1Name || "lock"} style={styles.icon4}></Icon>
@@ -27,6 +28,7 @@ function AccountDetails(props) {
           ></MaterialRightIconTextbox1>
         </View>
         <ReEnterPassword style={styles.reEnterPassword}></ReEnterPassword>
+
         <View style={styles.textStack}>
           <Center horizontal>
             <Text style={styles.text}>Account details</Text>
@@ -37,20 +39,16 @@ function AccountDetails(props) {
             ></Image>
           </Center>
         </View>
-        <View style={styles.group2}>
-          <View style={styles.headerBarDark1Stack}>
-            <HeaderBarDark
-              text1=""
-              style={styles.headerBarDark1}
-            ></HeaderBarDark>
-          </View>
-        </View>
+
+       
+
       </View>
       <View style={styles.emailInputColumnFiller}></View>
       <View>
         {/* <NextButton style={styles.nextButton}></NextButton> */}
         <TouchableOpacity style={styles.button2}>
-          <UpdatesCheckBox style={styles.updatesCheckBox}></UpdatesCheckBox>
+          <UpdatesCheckBox style={styles.updatesCheckBox}>
+          </UpdatesCheckBox>
         </TouchableOpacity>
       </View>
 
@@ -91,7 +89,8 @@ const styles = StyleSheet.create({
   materialRightIconTextbox1: {
     height: 43,
     flex: 1,
-    marginLeft: 17
+    marginLeft: 17,
+    zIndex: 10
   },
   reEnterPassword: {
     height: 43,
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
     marginBottom: -125
   },
   button2: {
-    width: 303,
+    width: 30,
     height: 49,
     marginBottom: 76
   },
