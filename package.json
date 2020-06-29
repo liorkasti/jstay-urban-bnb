@@ -9,6 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
+    "link-android": "npx react-native run-android",
     "ios-device": "sudo npm install --unsafe-perm=true -g ios-deploy "
   },
   "dependencies": {

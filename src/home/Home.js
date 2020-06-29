@@ -67,17 +67,18 @@ function Home(props) {
               {/* HeaderBar */}
               {/* Nearby */}
               <Text style={styles.nearby}>Nearby</Text>
-              <View style={styles.footerBar1Stack}>
-                <TouchableOpacity style={styles.button4}>
-                  <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
-                </TouchableOpacity>
-              </View>
+              
             </View>
             <Text style={styles.topStays}>Top Stays</Text>
             <View style={styles.bsD1Stack}>
             </View>
             <MaterialCardWithRightButtons onUserPress={(page) => { props.onUserPress(page) }} onPress={() => { props.showStayProfile("Home") }} style={styles.materialCardWithRightButtons1} />
           </View>
+          <View style={styles.footerBar1Stack}>
+                <TouchableOpacity style={styles.button4}>
+                  <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
+                </TouchableOpacity>
+              </View>
         </ScrollView>
       }
 
@@ -208,7 +209,8 @@ const styles = StyleSheet.create({
     left: 13,
     height: 349,
     position: "absolute",
-    right: 20
+    right: 20,
+    zIndex:40
   },
   cityCardsStackStack: {
     height: 810,

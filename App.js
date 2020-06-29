@@ -20,7 +20,6 @@ import EditStay from "./src/editStay"
 import Messages from "./src/messaging";
 import Chat from "./src/messaging";
 
-
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
@@ -38,10 +37,10 @@ export default function App() {
     MaterialCommunityIconsIcon.loadFont();
     Icon.loadFont();
     FontAwesomeIcon.loadFont();
-
+    
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-    return subscriber;
+    return subscriber;onGoogleButton
   }, []);
 
   function onAuthStateChanged(user) {

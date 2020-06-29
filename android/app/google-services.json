@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1052652425814:android:6bdfe78f89435ed80d21f7",
+        "mobilesdk_app_id": "1:1052652425814:android:94a305df8d35482f0d21f7",
         "android_client_info": {
           "package_name": "com.jstay"
         }
@@ -29,7 +29,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCdog_nhog3UolqUECQEgAkxxmb6_FVyHg"
+          "current_key": "AIzaSyAj22-on4WUu6x5ytPD_TpCoJZanE8Vtis"
         }
       ],
       "services": {

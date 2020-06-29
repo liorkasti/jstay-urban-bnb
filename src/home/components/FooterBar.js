@@ -10,11 +10,6 @@ function MaterialBasicFooter1(props) {
   return (
     <View style={[styles.container, props.style]}>
 
-      {/*dropdown menu for account */}
-      {
-        showFooterMenu &&
-        <FooterMenuDropdown handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.materialBasicFooter1} />
-      }
 
       <TouchableOpacity onPress={() => { props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
         <MaterialCommunityIconsIcon
@@ -32,7 +27,7 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.activeText}>My Trips</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={()=>props.handleFooterBar("messages")} style={styles.btnWrapper2}>
+      <TouchableOpacity onPress={() => props.handleFooterBar("messages")} style={styles.btnWrapper2}>
         {props.hasMessages &&
           <MaterialCommunityIconsIcon
             name={`numeric-${props.ammountOfMessages}-box`}
@@ -65,6 +60,13 @@ function MaterialBasicFooter1(props) {
         ></MaterialCommunityIconsIcon>
         <Text style={styles.btn3Text}>Account</Text>
       </TouchableOpacity>
+      
+      {/*dropdown menu for account */}
+      {
+        showFooterMenu &&
+        <FooterMenuDropdown handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }} style={styles.materialBasicFooter1} />
+      }
+
     </View>
   );
 }
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     minWidth: 80,
     maxWidth: 168,
     paddingHorizontal: 12,
-    zIndex:20
+    zIndex: 20
   },
   icon2: {
     backgroundColor: "transparent",
