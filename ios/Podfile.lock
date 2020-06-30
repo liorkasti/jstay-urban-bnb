@@ -13,7 +13,10 @@ PODS:
   - boost-for-react-native (1.63.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaLibEvent (1.0.0)
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
   - DoubleConversion (1.1.6)
+  - Fabric (1.10.2)
   - FBLazyVector (0.62.2)
   - FBReactNativeSpec (0.62.2):
     - Folly (= 2018.10.22.00)
@@ -438,17 +441,26 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNFBApp (7.2.1):
+  - RNFBApp (7.3.1):
     - Firebase/CoreOnly (~> 6.25.0)
     - React
-  - RNFBAuth (8.0.5):
+  - RNFBAuth (8.0.8):
     - Firebase/Auth (~> 6.25.0)
     - React
     - RNFBApp
-  - RNFBStorage (7.1.4):
+  - RNFBStorage (7.1.6):
     - Firebase/Storage (~> 6.25.0)
     - React
     - RNFBApp
+  - RNFirebase (5.6.0):
+    - Firebase/Core
+    - React
+    - RNFirebase/Crashlytics (= 5.6.0)
+  - RNFirebase/Crashlytics (5.6.0):
+    - Crashlytics
+    - Fabric
+    - Firebase/Core
+    - React
   - RNGoogleSignin (4.0.3):
     - GoogleSignIn (~> 5.0.0)
     - React
@@ -523,6 +535,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
+  - RNFirebase (from `../node_modules/react-native-firebase/ios`)
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -536,6 +549,8 @@ SPEC REPOS:
     - boost-for-react-native
     - CocoaAsyncSocket
     - CocoaLibEvent
+    - Crashlytics
+    - Fabric
     - FBSDKCoreKit
     - FBSDKLoginKit
     - FBSDKShareKit
@@ -634,6 +649,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBStorage:
     :path: "../node_modules/@react-native-firebase/storage"
+  RNFirebase:
+    :path: "../node_modules/react-native-firebase/ios"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-community/google-signin"
   RNPermissions:
@@ -651,7 +668,9 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   FBLazyVector: 4aab18c93cd9546e4bfed752b4084585eca8b245
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
   FBSDKCoreKit: 9cc05bec0568a5955c82eb59ae95da0fe125b88d
@@ -710,9 +729,10 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNFBApp: def13f6392e7c9839c938879f065ec0088c4496a
-  RNFBAuth: da10602d9f8644a1669d824c862e7321b1f0fc9e
-  RNFBStorage: 7896b7e5d26ebf0b349d63c54e4cecf9eac98226
+  RNFBApp: cd70a6c061bc485994e28c7d58ab760538850f0e
+  RNFBAuth: 972d2910719feee8e2a2eb3643ad03eea5b5b24d
+  RNFBStorage: 93895571135950e106ae7b3da8c1288a4e1a742e
+  RNFirebase: 37daa9a346d070f9f6ee1f3b4aaf4c8e3b1d5d1c
   RNGoogleSignin: ccf71ee4b6cfd324fd788a41e457e2043838c0d9
   RNPermissions: ad71dd4f767ec254f2cd57592fbee02afee75467
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e

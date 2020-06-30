@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, StatusBar, Text, TouchableOpacity, ScrollView } from "react-native";
 import CityCards from "./components/CityCards";
 import SearchDropdown from "./components/SearchDropdown";
@@ -15,7 +15,10 @@ import StayResultCard from "./components/StayResultCard";
 function Home(props) {
   const [showSearchOptions, setShowSearchOptions] = useState(false);
   const [showMediumMap, setShowMediumMap] = useState(false);
+  const [showFooterMenu, setShowFooterMenu] = useState(false);
 
+
+  useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
   return (
     <View style={styles.container}>
       {/* SearchDropdown */}
@@ -30,7 +33,7 @@ function Home(props) {
           style={styles.searchBar}
         />
 
-        <HeaderBar onUserPress={(page) => { props.onUserPress(page,props.searchText) }} style={styles.headerBar}></HeaderBar>
+        <HeaderBar onUserPress={(page) => { props.onUserPress(page, props.searchText) }} style={styles.headerBar}></HeaderBar>
         <Text style={styles.bsD1}>BS"D</Text>
 
         <TouchableOpacity onPress={() => { props.goHome() }} style={styles.jstayLogoDark}>
@@ -40,8 +43,8 @@ function Home(props) {
       </View>
 
       {props.searchText ?
-      //searchResults
-        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+        //searchResults
+        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); } }}>
           <View style={{ marginTop: -4, paddingBottom: 70 }}>
 
             <MaterialCardWithRightButtons
@@ -55,7 +58,10 @@ function Home(props) {
 
         :
         //homeScreen
-        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions) setShowSearchOptions(false); }}>
+        <ScrollView style={{ marginTop: 110, zIndex: 1 }}
+          onScrollBeginDrag={() => {
+            if (showSearchOptions|| showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
+          }}>
           <View style={{ marginTop: -110, paddingBottom: 70 }}>
             <StatusBar backgroundColor="rgba(2,172,235,1)" />
             <View style={styles.cityCardsStackStack}>
@@ -92,6 +98,8 @@ function Home(props) {
       }
       {/* Footer */}
       <FooterBar
+        setShowFooterMenu={(newOption) => { setShowFooterMenu(newOption); }}
+        showFooterMenu={showFooterMenu}
         handleFooterBar={(page) => { props.handleFooterBar(page) }}
         handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
         style={styles.footerBar1}

@@ -11,6 +11,8 @@ import auth from '@react-native-firebase/auth';
 
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
 
+import StayCalender from "./src/createStay/screens/StayCalender"
+
 import Login from "./src/login"
 import Home from "./src/home"
 import CreateStay from "./src/createStay"
