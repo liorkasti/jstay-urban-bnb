@@ -28,9 +28,13 @@ function GeneralAmenities(props) {
 
       <View style={styles.buttonStackStack}>
         <View style={styles.buttonStack}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity 
+              onPress={() => updateUserBool("essentials")}
+              style={styles.button}>
             <View style={styles.materialCheckbox110Row}>
               <MaterialCheckbox1
+              onPress={() => updateUserBool("essentials")}
+              checked={userAnswers["essentials"]}
                 style={styles.materialCheckbox110}
               ></MaterialCheckbox1>
               <Text style={styles.essentials}>Essentials</Text>
@@ -40,11 +44,17 @@ function GeneralAmenities(props) {
             Towels, Bedsheets, Soap, Toilet paper, Pillows
           </Text>
         </View>
+
         <View style={styles.button2Stack}>
-          <TouchableOpacity style={styles.button2}>
+          <TouchableOpacity 
+                   onPress={() => updateUserBool("kitchen")}
+
+          style={styles.button2}>
             <View style={styles.kitchen2Stack}>
               <Text style={styles.kitchen2}>Kitchen</Text>
               <MaterialCheckbox1
+                   onPress={() => updateUserBool("kitchen")}
+                   checked={userAnswers["kitchen"]}
                 style={styles.materialCheckbox211}
               ></MaterialCheckbox1>
             </View>
@@ -53,10 +63,16 @@ function GeneralAmenities(props) {
             Full Kitchen that guests can use to cook
           </Text>
         </View>
+
         <View style={styles.button3Stack}>
-          <TouchableOpacity style={styles.button3}>
+          <TouchableOpacity
+              onPress={() => updateUserBool("kitchenette")}
+          
+          style={styles.button3}>
             <View style={styles.materialCheckbox3583Row}>
               <MaterialCheckbox1
+              onPress={() => updateUserBool("kitchenette")}
+              checked={userAnswers["kitchenette"]}
                 style={styles.materialCheckbox3583}
               ></MaterialCheckbox1>
               <Text style={styles.kitchenette}>Kitchenette</Text>
@@ -66,10 +82,15 @@ function GeneralAmenities(props) {
             Space that guests can use to cook
           </Text>
         </View>
-        <View style={styles.button4Stack}>
-          <TouchableOpacity style={styles.button4}>
+       
+        <View style={styles.button4Stack}>   
+          <TouchableOpacity 
+              onPress={() => updateUserBool("wifi")}
+              style={styles.button4}>
             <View style={styles.materialCheckbox410Row}>
               <MaterialCheckbox1
+              onPress={() => updateUserBool("wifi")}
+              checked={userAnswers["wifi"]}
                 style={styles.materialCheckbox410}
               ></MaterialCheckbox1>
               <Text style={styles.wiFi}>WiFi</Text>
@@ -318,65 +339,101 @@ function GeneralAmenities(props) {
         </View>
       </TouchableOpacity>
       
-      <TouchableOpacity style={styles.button22}>
+      <TouchableOpacity
+             onPress={() => updateUserBool("swimmingPool")}
+             style={styles.button22}>
         <View style={styles.materialCheckbox23Row}>
           <MaterialCheckbox1
+             onPress={() => updateUserBool("swimmingPool")}
+             checked={userAnswers["swimmingPool"]}
             style={styles.materialCheckbox23}
           ></MaterialCheckbox1>
           <Text style={styles.swimmingPool}>Swimming Pool</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button23}>
+
+      <TouchableOpacity 
+      onPress={() => updateUserBool("bathtup")}
+      style={styles.button23}>
         <View style={styles.bathtubStack}>
           <Text style={styles.bathtub}>Bathtub</Text>
           <MaterialCheckbox1
+           onPress={() => updateUserBool("bathtup")}
+           checked={userAnswers["bathtup"]}
             style={styles.materialCheckbox25}
           ></MaterialCheckbox1>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button24}>
+
+      <TouchableOpacity
+          onPress={() => updateUserBool("jacuzzi")}
+          style={styles.button24}>
         <View style={styles.jacuzziStack}>
           <Text style={styles.jacuzzi}>Jacuzzi</Text>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("jacuzzi")}
+          checked={userAnswers["jacuzzi"]}
             style={styles.materialCheckbox26}
           ></MaterialCheckbox1>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button25}>
+
+      <TouchableOpacity
+          onPress={() => updateUserBool("elevator")}
+          style={styles.button25}>
         <View style={styles.materialCheckbox27Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("elevator")}
+          checked={userAnswers["elevator"]}
             style={styles.materialCheckbox27}
           ></MaterialCheckbox1>
           <Text style={styles.elevator}>Elevator</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button26}>
+      <TouchableOpacity 
+           onPress={() => updateUserBool("fireplace")}
+           style={styles.button26}>
         <View style={styles.fireplaceStack}>
           <Text style={styles.fireplace}>Fireplace</Text>
           <MaterialCheckbox1
+           onPress={() => updateUserBool("fireplace")}
+           checked={userAnswers["fireplace"]}
             style={styles.materialCheckbox28}
           ></MaterialCheckbox1>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button27}>
+      <TouchableOpacity
+           onPress={() => updateUserBool("firePit")}
+      
+      style={styles.button27}>
         <View style={styles.materialCheckbox29Row}>
           <MaterialCheckbox1
+           onPress={() => updateUserBool("firePit")}
+           checked={userAnswers["firePit"]}
             style={styles.materialCheckbox29}
           ></MaterialCheckbox1>
           <Text style={styles.firePit}>Fire Pit</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button28}>
+      <TouchableOpacity
+          onPress={() => updateUserBool("bbq")}
+      style={styles.button28}>
         <View style={styles.materialCheckbox30Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("bbq")}
+          checked={userAnswers["bbq"]}
             style={styles.materialCheckbox30}
           ></MaterialCheckbox1>
           <Text style={styles.bbq}>BBQ</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button17}>
+      <TouchableOpacity
+          onPress={() => updateUserBool("shampooSoap")}
+      style={styles.button17}>
         <View style={styles.materialCheckbox17Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("shampooSoap")}
+          checked={userAnswers["shampooSoap"]}
             style={styles.materialCheckbox17}
           ></MaterialCheckbox1>
           <Text style={styles.shampooShowerSoap}>Shampoo/Shower Soap</Text>

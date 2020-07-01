@@ -4,19 +4,36 @@ import MaterialSwitch1 from "./MaterialSwitch1";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function JewishHomeAmenities(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.jewishHomeRow}>
         <Text style={styles.jewishHome}>Jewish Home</Text>
         <View style={styles.jewishHomeFiller}></View>
-        <MaterialSwitch1 style={styles.materialSwitch1}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={() => updateUserBool("jewishHome")}
+          value={userAnswers["jewishHome"]}
+          style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
+
       <View style={styles.button34StackStack}>
         <View style={styles.button34Stack}>
-          <TouchableOpacity style={styles.button34}>
+          <TouchableOpacity
+            onPress={() => updateUserBool("mezuzot")}
+            style={styles.button34}>
             <View style={styles.mezuzotStack}>
               <Text style={styles.mezuzot}>Mezuzot</Text>
               <MaterialCheckbox1
+                onPress={() => updateUserBool("mezuzot")}
+                checked={userAnswers["mezuzot"]}
                 style={styles.materialCheckbox40}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum13}></Text>
@@ -29,10 +46,15 @@ function JewishHomeAmenities(props) {
             Seperate-able beds in the master bedroom
           </Text>
         </View>
-        <TouchableOpacity style={styles.button35}>
+
+        <TouchableOpacity
+          onPress={() => updateUserBool("charityBox")}
+          style={styles.button35}>
           <View style={styles.materialCheckbox42StackRow}>
             <View style={styles.materialCheckbox42Stack}>
               <MaterialCheckbox1
+                onPress={() => updateUserBool("charityBox")}
+                checked={userAnswers["charityBox"]}
                 style={styles.materialCheckbox42}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum47}></Text>
@@ -40,19 +62,27 @@ function JewishHomeAmenities(props) {
             <Text style={styles.charityBox}>Charity Box</Text>
           </View>
         </TouchableOpacity>
+
         <View style={styles.kosherBedsStack}>
           <Text style={styles.kosherBeds}>Kosher Beds</Text>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("kosherBeds")}
+          checked={userAnswers["kosherBeds"]}
             style={styles.materialCheckbox402}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum48}></Text>
         </View>
       </View>
+
       <View style={styles.button36StackStack}>
         <View style={styles.button36Stack}>
-          <TouchableOpacity style={styles.button36}>
+          <TouchableOpacity 
+              checked={userAnswers["jewishReadingMaterial"]}
+          style={styles.button36}>
             <View style={styles.materialCheckbox43Row}>
               <MaterialCheckbox1
+              onPress={() => updateUserBool("jewishReadingMaterial")}
+              checked={userAnswers["jewishReadingMaterial"]}
                 style={styles.materialCheckbox43}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum10}>Jewish Reading Material</Text>
@@ -60,11 +90,17 @@ function JewishHomeAmenities(props) {
           </TouchableOpacity>
           <Text style={styles.loremIpsum33}>Jewish magazines and books</Text>
         </View>
+
         <View style={styles.button37Stack}>
-          <TouchableOpacity style={styles.button37}>
+          <TouchableOpacity
+                    onPress={() => updateUserBool("seforim")}
+          
+          style={styles.button37}>
             <View style={styles.seforimStack}>
               <Text style={styles.seforim}>Seforim</Text>
               <MaterialCheckbox1
+                    onPress={() => updateUserBool("seforim")}
+                    checked={userAnswers["seforim"]}
                 style={styles.materialCheckbox44}
               ></MaterialCheckbox1>
             </View>
@@ -73,27 +109,46 @@ function JewishHomeAmenities(props) {
             A selection of Jewish study books
           </Text>
         </View>
+
       </View>
-      <TouchableOpacity style={styles.button38}>
+
+      <TouchableOpacity
+          onPress={() => updateUserBool("benchers")}
+      
+      style={styles.button38}>
         <View style={styles.materialCheckbox45Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("benchers")}
+          checked={userAnswers["benchers"]}
             style={styles.materialCheckbox45}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum11}>Benchers/Birkat Hamazon</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button39}>
+
+      <TouchableOpacity
+            onPress={() => updateUserBool("siddur")}
+      
+      style={styles.button39}>
         <View style={styles.siddurStack}>
           <Text style={styles.siddur}>Siddur</Text>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("siddur")}
+            checked={userAnswers["siddur"]}
             style={styles.materialCheckbox46}
           ></MaterialCheckbox1>
         </View>
       </TouchableOpacity>
+
       <View style={styles.button40Stack}>
-        <TouchableOpacity style={styles.button40}>
+        <TouchableOpacity
+        
+        onPress={() => updateUserBool("kosherMeals")}
+        style={styles.button40}>
           <View style={styles.materialCheckbox48Row}>
             <MaterialCheckbox1
+                  onPress={() => updateUserBool("kosherMeals")}
+                  checked={userAnswers["kosherMeals"]}
               style={styles.materialCheckbox48}
             ></MaterialCheckbox1>
             <Text style={styles.kosherMeals}>Kosher Meals</Text>
@@ -103,6 +158,7 @@ function JewishHomeAmenities(props) {
           We offer a selection kosher food, free or for a fee
         </Text>
       </View>
+
       <Text style={styles.myAtay}>My stay has Jewish home options</Text>
     </View>
   );

@@ -3,49 +3,86 @@ import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function SafetyAmenities(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
   return (
     <View style={[styles.container, props.style]}>
-      <TouchableOpacity style={styles.button29}>
+      <TouchableOpacity
+        onPress={() => updateUserBool("fireExtinguisher")}
+        style={styles.button29}>
         <View style={styles.materialCheckbox3410Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("fireExtinguisher")}
+            checked={userAnswers["fireExtinguisher"]}
             style={styles.materialCheckbox3410}
           ></MaterialCheckbox1>
           <Text style={styles.fireExtinguisher}>Fire Extinguisher</Text>
         </View>
       </TouchableOpacity>
+
       <Text style={styles.text}>Safety Amenities</Text>
-      <TouchableOpacity style={styles.button31}>
+
+      <TouchableOpacity
+             onPress={() => updateUserBool("smokeDetector")}
+      style={styles.button31}>
         <View style={styles.materialCheckbox37Row}>
           <MaterialCheckbox1
+             onPress={() => updateUserBool("smokeDetector")}
+             checked={userAnswers["smokeDetector"]}
             style={styles.materialCheckbox37}
           ></MaterialCheckbox1>
           <Text style={styles.smokeDetector}>Smoke Detector</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button32}>
+
+      <TouchableOpacity 
+          onPress={() => updateUserBool("cabonMonoxideDetector")}
+      style={styles.button32}>
         <View style={styles.materialCheckbox38Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("cabonMonoxideDetector")}
+          checked={userAnswers["cabonMonoxideDetector"]}
             style={styles.materialCheckbox38}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum7}>Carbon Monoxide Detector</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button30}>
+
+      <TouchableOpacity
+          onPress={() => updateUserBool("fireEscape")}
+      
+      style={styles.button30}>
         <View style={styles.materialCheckbox3593Row}>
           <MaterialCheckbox1
+          onPress={() => updateUserBool("fireEscape")}
+          checked={userAnswers["fireEscape"]}
             style={styles.materialCheckbox3593}
           ></MaterialCheckbox1>
           <Text style={styles.fireEscape}>Fire Escape</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button33}>
+
+      <TouchableOpacity
+            onPress={() => updateUserBool("firstAid")}
+      
+      style={styles.button33}>
         <View style={styles.materialCheckbox39Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("firstAid")}
+            checked={userAnswers["firstAid"]}
             style={styles.materialCheckbox39}
           ></MaterialCheckbox1>
           <Text style={styles.firstAidKit}>First Aid Kit</Text>
         </View>
       </TouchableOpacity>
+
       <Text style={styles.loremIpsum9}>
         Check your local laws, which may require a working{"\n"}
         detector/extinguisher in every room/stay
