@@ -18,7 +18,7 @@ function HeaderBarLight(props) {
           <Text style={styles.header}>{props.header}</Text>
         </View>
         <View style={styles.button4RowFiller}></View>
-        <TouchableOpacity style={styles.button3}>
+        <TouchableOpacity onPress={props.onHome} style={styles.button3}>
           <View style={styles.image1Filler}></View>
           <Image
             source={require("../assets/images/jstay-icon-inverted8.png")}

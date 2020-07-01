@@ -12,21 +12,32 @@ import Icon from "react-native-vector-icons/Entypo";
 function Amenities(props) {
   return (
     <View style={styles.container}>
-      <GeneralAmenities style={styles.generalAmenities}></GeneralAmenities>
+      <GeneralAmenities
+        onUserInput={({ newValue, extention }) => {
+          props.onUserInput({ newValue, path: "hostListing/generalAmenities" + extention })
+
+        }}
+        style={styles.generalAmenities}></GeneralAmenities>
+
       <SafetyAmenities style={styles.safetyAmenities}></SafetyAmenities>
+
       <JewishHomeAmenities
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>
+
       <KosherKitchenAmenities
         style={styles.kosherKitchenAmenities}
       ></KosherKitchenAmenities>
+
       <MaterialButtonViolet6
         onPress={props.onNext}
         style={styles.materialButtonViolet1}
       ></MaterialButtonViolet6>
+
       <ShabbatHolidayEssentials
         style={styles.shabbatHolidayEssentials}
       ></ShabbatHolidayEssentials>
+
       <ChildFriendlyAmenities
         style={styles.childFriendlyAmenities}
       ></ChildFriendlyAmenities>

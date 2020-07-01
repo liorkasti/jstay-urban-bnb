@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialCheckbox1(props) {
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Icon
         name={props.checked ? "checkbox-marked" : "checkbox-blank-outline"}
         style={styles.checkIcon}
