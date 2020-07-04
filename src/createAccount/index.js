@@ -87,7 +87,8 @@ export default function CreateAccountIndex(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
-    const componentKeys = ["AccountDetails", "MyDetails", "MyKashrut", "ProfilePicture"];
+    const componentKeys = ["MyDetails", "MyKashrut", "ProfilePicture"];
+    // const componentKeys = ["AccountDetails", "MyDetails", "MyKashrut", "ProfilePicture"];
 
     const createAccountWithEmail = () => {
         const { email, password } = currentLoginAccount;
