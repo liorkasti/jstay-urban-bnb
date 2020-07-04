@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import KosherSelect from "../components/KosherSelect";
+import KosherSelect from "./components/KosherSelect";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
 import { Center } from "@builderx/utils";

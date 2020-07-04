@@ -15,13 +15,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
     minWidth: 88
   },
   skip: {
     width: 44,
     height: 21,
+    width: "auto",
+    height: "auto",
     color: "rgba(177,177,177,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",

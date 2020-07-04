@@ -16,10 +16,6 @@ function SkipButton(props) {
 const styles = StyleSheet.create({
   container: {},
   materialButtonWithVioletText11: {
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
     position: "absolute",
     opacity: 0.46
   }

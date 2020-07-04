@@ -108,14 +108,14 @@ const styles = StyleSheet.create({
   text: {
     paddingLeft: 16,
     paddingRight: 16,
+    textAlign: "justify",
     width: 352,
     height: 68,
     color: "rgba(168,219,243,1)",
     position: "absolute",
     bottom: 46,
     fontSize: 12,
-    fontFamily: "roboto-regular",
-    textAlign: "justify"     
+    fontFamily: "roboto-regular"
   },
   button3: {
     top: 300,
@@ -172,7 +172,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     top: 2,
-    marginLeft: 133,
+    // marginLeft: 133,
+    right: -153,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 25

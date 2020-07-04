@@ -57,7 +57,9 @@ function AccountDetails(props) {
 
       <View style={styles.materialIconTextboxColumnFiller} />
       <NextButton onPress={props.onNext} style={styles.nextButton1} />
-      <BackButton onPress={props.onBack} style={styles.onBack} />
+      <NextButton onPress={props.onNext} style={styles.onHome} />
+      <NextButton onPress={props.onNext} style={styles.onBack} />
+      <NextButton onPress={props.onNext} style={styles.onSkip} />
     </View>
   );
 }
@@ -70,6 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(0,88,155,1)",
     // width: "100%"
+  },
+  scrollView: {
+    zIndex: 1,
+    marginTop: 70
   },
   emailInput: {
     height: 43,

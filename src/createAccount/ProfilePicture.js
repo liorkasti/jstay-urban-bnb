@@ -10,7 +10,6 @@ import { Center } from "@builderx/utils";
 function ProfilePicture(props) {
   return (
     <View style={styles.container}>
-      <Center horizontal>
         <HeaderBarDark
           onBack={props.onBack}
           text1=""
@@ -44,7 +43,6 @@ function ProfilePicture(props) {
           resizeMode="stretch"
           style={styles.image1}
         ></Image>
-      </Center>
       <View style={styles.button4ColumnFiller}></View>
       <DoneCreateAccount
         onPress={props.onNext}
@@ -57,14 +55,13 @@ function ProfilePicture(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     width: 420,
     backgroundColor: "rgba(0,88,155,1)"
   },
   button4: {
     height: 62,
     marginTop: 525,
-    // marginLeft: 29,
-    // marginRight: 30
   },
   addProfileProfilePictureButton: {
     height: 62
@@ -72,29 +69,21 @@ const styles = StyleSheet.create({
   button2: {
     height: 36,
     marginTop: 26,
-    // marginLeft: 115,
-    // marginRight: 116
+
   },
   skipButton: {
     height: 36
   },
   addRecentPicture: {
     top: 160,
-    // left: 77,
     color: "rgba(2,172,235,1)",
-    // position: "absolute",
-    // right: 81,
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"
   },
   jstayLogoFullDark: {
     top: 0,
-    // left: 0,
     height: 150,
-    // position: "absolute",
-    // right: 0,
-    // width: "auto"
   },
   addRecentPictureStack: {
     height: 168,
@@ -106,7 +95,6 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 100,
     marginTop: 60,
-    // marginLeft: 127,
   },
   headerBarDark1: {
     top: 0,
