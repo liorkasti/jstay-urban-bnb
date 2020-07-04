@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions } from "react-native";
 import CalendarCard from "../components/CalendarCard";
 import MaterialButtonViolet12 from "../components/MaterialButtonViolet12";
 import Icon from "react-native-vector-icons/Entypo";
@@ -26,10 +26,16 @@ function StayCalender(props) {
   );
 }
 
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    width: windowWidth,
+    height: windowHeight
   },
   blockDates: {
     color: "rgba(0,88,155,1)",

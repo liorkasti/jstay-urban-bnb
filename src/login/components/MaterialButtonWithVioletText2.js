@@ -15,8 +15,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
     minWidth: 88
   },
   caption: {

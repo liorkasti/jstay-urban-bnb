@@ -10,6 +10,7 @@ import Home from "./Home";
 import Favorites from "../account/Favorites";
 import Messages from "../messaging/messages";
 import Messaging from "../messaging/chat";
+import Welcome from "../login/Welcome";
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");

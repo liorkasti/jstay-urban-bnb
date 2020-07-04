@@ -28,8 +28,9 @@ function WelcomePage(props) {
       ></Image>
 
       <TouchableOpacity style={styles.button6}>
-        <Icon name="chevron-down" style={styles.icon}></Icon>
         <Text style={styles.chooseLanguage}>Choose language</Text>
+        <Icon name="chevron-down" style={styles.icon}></Icon>
+
       </TouchableOpacity>
 
       <TouchableOpacity onPress={props.login} style={styles.button4}>
@@ -82,55 +83,42 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button4: {
-    top: 47,
+    top: 26,
     width: 108,
     height: 88,
     position: "absolute",
-    right: -14
+    right: -34
   },
   gotoLoginButton: {
-    top: 6,
-    left: 0,
     width: 108,
     height: 48,
-    // width: '95%',
-    // height: '95%',
     position: "absolute"
   },
   button5: {
-    top: 507,
-    // left: 31,
-    // width: '70%',
+    top: 440,
     width: 352,
     height: 62,
     position: "absolute"
   },
   createAccountButton: {
-    top: 0,
-    left: 0,
-    alignItems: 'center',
-    // width: '100%',
-    // height: '95%',
     width: 352,
     height: 62,
     position: "absolute"
   },
   text: {
-    left: "7.51%",
-    // width: '85%',
-    // height: '10%',
+    paddingLeft: 16,
+    paddingRight: 16,
     width: 352,
     height: 68,
-
     color: "rgba(168,219,243,1)",
     position: "absolute",
     bottom: 46,
     fontSize: 12,
     fontFamily: "roboto-regular",
-    textAlign: "left"
+    textAlign: "justify"     
   },
   button3: {
-    top: 350,
+    top: 300,
     width: 352,
     height: 62,
     position: "absolute"
@@ -138,14 +126,14 @@ const styles = StyleSheet.create({
   continueFacebookButton: {
     width: 352,
     height: 62,
+    paddingLeft: 16,
+    paddingRight: 16,
     position: "absolute"
   },
   button2: {
-    top: 425,
+    top: 375,
     width: 352,
     height: 62,
-    // width: '85%',
-    // height: '8%',
     position: "absolute"
   },
   continueGoogleButton: {
@@ -153,6 +141,8 @@ const styles = StyleSheet.create({
     left: 0,
     width: 352,
     height: 62,
+    paddingLeft: 16,
+    paddingRight: 16,
     position: "absolute"
   },
   bsD: {
@@ -166,22 +156,23 @@ const styles = StyleSheet.create({
   },
   image2: {
     width: "auto",
-    top: 150,
+    top: 120,
     left: 0,
     height: 150,
     position: "absolute",
     right: 0
   },
   button6: {
-    top: 56,
-    left: 31,
+    top: 26,
+    left: 16,
     width: 150,
+    width: 'auto',
     height: 33,
     position: "absolute"
   },
   icon: {
     top: 2,
-    left: 136,
+    marginLeft: 133,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 25
@@ -189,17 +180,12 @@ const styles = StyleSheet.create({
   chooseLanguage: {
     top: 3,
     left: 0,
-    width: '130%',
+    width: 'auto',
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 16,
     fontFamily: "roboto-regular",
-    width: 149,
     height: 30,
-    // alignSelf: 'center',
-    // paddingLeft: 10,
-    // paddingTop: 2,
-    // height: '95%',
   }
 });
 

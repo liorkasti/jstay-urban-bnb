@@ -42,12 +42,13 @@ function Login(props) {
       <MaterialButtonWithVioletText15
         style={styles.materialButtonWithVioletText15}
       ></MaterialButtonWithVioletText15>
-      
+
       <PasswordTextInput style={styles.passwordTextInput}></PasswordTextInput>
       <EmailTextInput style={styles.emailTextInput}></EmailTextInput>
       <Text style={styles.loremIpsum2}></Text>
       <Icon name="lock" style={styles.icon}></Icon>
 
+      {/* signupButton */}
       <TouchableOpacity style={styles.button2}>
         <SignupButton onPress={props.createAccount} style={styles.signupButton}></SignupButton>
       </TouchableOpacity>
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "rgba(0,88,155,1)"
+    backgroundColor: "rgba(0,88,155,1)",
   },
   group: {
     height: 27,
@@ -82,8 +83,8 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   loginButton: {
-    marginBottom: -316,
-    //  left: 0,
+    paddingLeft: 16,
+    paddingRight: 16,
     width: 353,
     height: 62,
     position: "absolute"
@@ -96,45 +97,46 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button4: {
-    top: 489,
-    left: 65,
+    top: 440,
+    left: 44,
     width: 139,
     height: 40,
     position: "absolute"
   },
   materialCheckboxWithLabel: {
-    left: 5,
     width: 139,
     height: 40,
     position: "absolute",
     bottom: -8
   },
   materialButtonWithVioletText15: {
-    left: 8,
-    // top: 500,
+    left: 46,
     width: 208,
     height: 36,
     position: "absolute",
-    bottom: "45.24%",
-    bottom: 286,
+    top: 430,
     opacity: 0.46
   },
   passwordTextInput: {
-    top: 405,
-    left: 69,
+    top: 370,
+    left: 46,
     width: 311,
+    width: "80%",
     height: 43,
+    paddingRight: 24,
     position: "absolute"
   },
   emailTextInput: {
-    top: 349,
+    top: 319,
     left: 21,
     width: 359,
+    width: "80%",
+    // paddingRight: 16,
     height: 43,
     position: "absolute"
   },
   loremIpsum2: {
-    top: 359,
+    top: 329,
     left: 30,
     color: "#121212",
     position: "absolute",
@@ -144,21 +146,17 @@ const styles = StyleSheet.create({
     position: "absolute",
     color: "rgba(177,177,177,1)",
     fontSize: 22,
-    left: 29,
-    top: 415,
-    // bottom: "51.18%",
+    left: 16,
+    top: 385,
   },
   button2: {
     bottom: 45,
-    left: 151,
     width: 116,
     height: 36,
     position: "absolute"
   },
   signupButton: {
-    // top: 0,
-    // bottom: "5%",
-    left: 0,
+    alignItems: "center",
     width: 116,
     height: 36,
     position: "absolute"
@@ -173,19 +171,16 @@ const styles = StyleSheet.create({
     fontFamily: "roboto-regular"
   },
   myDetails1: {
-    left: "11.71%",
-    width: "77.71%",
-    height: 30,
+    width: "auto",
     color: "rgba(2,172,235,1)",
     position: "absolute",
-    bottom: "65%",
+    top: 255,
     fontSize: 20,
     fontFamily: "roboto-regular",
-    textAlign: "center"
   },
   image1: {
     width: "auto",
-    top: "15.29%",
+    top: 120,
     left: 0,
     height: 150,
     position: "absolute",
