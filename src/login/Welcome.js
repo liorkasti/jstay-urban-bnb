@@ -131,25 +131,17 @@ const styles = StyleSheet.create({
   },
   button3: {
     top: 350,
-    left: 31,
-    // width: '85%',
-    // height: '8%',
     width: 352,
     height: 62,
     position: "absolute"
   },
   continueFacebookButton: {
-    // top: 0,
-    // left: 0,
-    // width: '100%',
-    // height: '90%',
     width: 352,
     height: 62,
     position: "absolute"
   },
   button2: {
     top: 425,
-    // left: 31,
     width: 352,
     height: 62,
     // width: '85%',
@@ -161,8 +153,6 @@ const styles = StyleSheet.create({
     left: 0,
     width: 352,
     height: 62,
-    // width: '100%',
-    // height: '90%',
     position: "absolute"
   },
   bsD: {
@@ -176,7 +166,7 @@ const styles = StyleSheet.create({
   },
   image2: {
     width: "auto",
-    top: "15.29%",
+    top: 150,
     left: 0,
     height: 150,
     position: "absolute",
@@ -185,8 +175,6 @@ const styles = StyleSheet.create({
   button6: {
     top: 56,
     left: 31,
-    // width: '38%',
-    // height: '4%',
     width: 150,
     height: 33,
     position: "absolute"

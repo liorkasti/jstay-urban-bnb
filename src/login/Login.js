@@ -21,35 +21,37 @@ function Login(props) {
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <View style={styles.group}></View>
-      <View style={styles.group2}></View>
-     
+
       <TouchableOpacity onPress={props.login} style={styles.button3}>
         <LoginButton onPress={props.login} style={styles.loginButton}></LoginButton>
       </TouchableOpacity>
-     
+
       {/* BackButton */}
       <MaterialButtonWithVioletText
         onPress={props.onBack}
         style={styles.materialButtonWithVioletText}
       ></MaterialButtonWithVioletText>
+      {/* Remember Me */}
       <TouchableOpacity style={styles.button4}>
         <MaterialCheckboxWithLabel
           text1=""
           style={styles.materialCheckboxWithLabel}
         ></MaterialCheckboxWithLabel>
       </TouchableOpacity>
+      {/* Forgot password */}
       <MaterialButtonWithVioletText15
         style={styles.materialButtonWithVioletText15}
       ></MaterialButtonWithVioletText15>
+      
       <PasswordTextInput style={styles.passwordTextInput}></PasswordTextInput>
       <EmailTextInput style={styles.emailTextInput}></EmailTextInput>
       <Text style={styles.loremIpsum2}></Text>
       <Icon name="lock" style={styles.icon}></Icon>
-      
+
       <TouchableOpacity style={styles.button2}>
         <SignupButton onPress={props.createAccount} style={styles.signupButton}></SignupButton>
       </TouchableOpacity>
-      
+
       <Text style={styles.bsD1}>BS&quot;D</Text>
       <Text style={styles.myDetails1}>
         Please enter your log in information
@@ -66,32 +68,22 @@ function Login(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
     backgroundColor: "rgba(0,88,155,1)"
   },
   group: {
-    top: "44.33%",
-    left: 30,
     height: 27,
     position: "absolute",
-    right: 35
-  },
-  group2: {
-    top: "49.03%",
-    left: 31,
-    height: 28,
-    position: "absolute",
-    right: 34
   },
   button3: {
     bottom: 95,
-    left: 32,
     width: 353,
     height: 62,
     position: "absolute"
   },
   loginButton: {
-    // bottom: "20%",
-    left: 0,
+    marginBottom: -316,
+    //  left: 0,
     width: 353,
     height: 62,
     position: "absolute"
@@ -119,10 +111,11 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText15: {
     left: 8,
+    // top: 500,
     width: 208,
     height: 36,
     position: "absolute",
-    // bottom: "45.24%",
+    bottom: "45.24%",
     bottom: 286,
     opacity: 0.46
   },
