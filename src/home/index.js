@@ -34,11 +34,13 @@ export default function Index(props) {
                 break;
             case "logout":
                 auth()
-                .signOut()
-                .then(() => {console.log('User signed out!')
-                setTimeout(()=>{
-                    history.push("/")
-                })})
+                    .signOut()
+                    .then(() => {
+                        console.log('User signed out!')
+                        setTimeout(() => {
+                            history.push("/")
+                        })
+                    })
                 break;
             case "profile":
                 history.push("/account", { subroute: "myProfile" });
@@ -49,7 +51,7 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
-               
+
         }
     };
 
@@ -74,7 +76,7 @@ export default function Index(props) {
                 setCurrentComponent("Messages");
                 // history.push("/messaging", { subroute: "messages" });
                 break;
-                case"messages": 
+            case "messages":
                 history.push("/chat")
                 break;
         }
@@ -101,7 +103,7 @@ export default function Index(props) {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.flexContainer}>
             {/* copy paste below component*/}
 
             {
@@ -264,9 +266,19 @@ export default function Index(props) {
         </View>
     );
 }
+
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
+    },
+    flexContainer: {
+        flex: 1, 
+        width: windowWidth,
+        height: windowHeight
     }
 });

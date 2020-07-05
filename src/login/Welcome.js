@@ -26,12 +26,11 @@ function WelcomePage(props) {
         resizeMode="contain"
         style={styles.image2}
       ></Image>
-
-      <TouchableOpacity style={styles.button6}>
+      {/* language selection */}
+      {/* <TouchableOpacity style={styles.button6}>
         <Text style={styles.chooseLanguage}>Choose language</Text>
         <Icon name="chevron-down" style={styles.icon}></Icon>
-
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <TouchableOpacity onPress={props.login} style={styles.button4}>
         <GotoLoginButton onPress={props.login} style={styles.gotoLoginButton}></GotoLoginButton>
@@ -46,7 +45,7 @@ function WelcomePage(props) {
 
       <TouchableOpacity style={styles.button3}>
         <ContinueFacebookButton
-        onPress={()=>props.facebookSignin()}
+          onPress={() => props.facebookSignin()}
           style={styles.continueFacebookButton}
         ></ContinueFacebookButton>
       </TouchableOpacity>
