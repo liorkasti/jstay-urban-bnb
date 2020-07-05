@@ -56,12 +56,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    width: 420,
     backgroundColor: "rgba(0,88,155,1)"
   },
   button4: {
     height: 62,
-    marginTop: 525,
+    marginTop: 480,
   },
   addProfileProfilePictureButton: {
     height: 62
@@ -75,14 +74,14 @@ const styles = StyleSheet.create({
     height: 36
   },
   addRecentPicture: {
-    top: 160,
+    top: 190,
     color: "rgba(2,172,235,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"
   },
   jstayLogoFullDark: {
-    top: 0,
+    top: 45,
     height: 150,
   },
   addRecentPictureStack: {
@@ -93,6 +92,7 @@ const styles = StyleSheet.create({
   image1: {
     width: 150,
     height: 150,
+    top: 20,
     borderRadius: 100,
     marginTop: 60,
   },
