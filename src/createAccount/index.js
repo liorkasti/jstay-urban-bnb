@@ -87,6 +87,7 @@ export default function CreateAccountIndex(props) {
 
     //add the import as a string to this array 
     //the array should be in the order that the screens show up
+    // const componentKeys = ["MyDetails", "MyKashrut", "ProfilePicture"];
     const componentKeys = ["AccountDetails", "MyDetails", "MyKashrut", "ProfilePicture"];
 
     const createAccountWithEmail = () => {
@@ -128,11 +129,15 @@ export default function CreateAccountIndex(props) {
 
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
+                    // onNext={() => {
+                    //     if(currentLoginAccount.email && currentLoginAccount.email){
+                    //         setComponentIndex(componentIndex + 1);
+                    //         createAccountWithEmail();
+                    //     }
+                    // }}
+
                     onNext={() => {
-                        if(currentLoginAccount.email && currentLoginAccount.email){
-                            setComponentIndex(componentIndex + 1);
-                            createAccountWithEmail();
-                        }
+                        setComponentIndex(componentIndex + 1)
                     }}
 
                     onHome={() => { goToHome() }}

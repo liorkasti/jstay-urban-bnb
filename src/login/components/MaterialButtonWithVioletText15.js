@@ -11,12 +11,8 @@ function MaterialButtonWithVioletText15(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "transparent",
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
+    // justifyContent: "center",
     minWidth: 88
   },
   caption: {

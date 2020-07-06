@@ -26,9 +26,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText2: {
     width: 108,
     height: 48,
-    top: 0,
     position: "absolute",
-    right: 2
   }
 });
 

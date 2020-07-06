@@ -17,7 +17,8 @@ function SignupButton(props) {
 const styles = StyleSheet.create({
   container: {},
   materialButtonWithVioletText12Filler: {
-    flex: 1
+    flex: 1,
+    position: "absolute",
   },
   materialButtonWithVioletText12: {
     height: 36,

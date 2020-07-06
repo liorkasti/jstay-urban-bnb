@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image,SafeAreaView } from "react-native";
 import ContinueGoogleButton from "./components/ContinueGoogleButton";
 import Svg, { Path } from "react-native-svg";
 import GotoLoginButton from "./components/GotoLoginButton";
@@ -28,8 +28,9 @@ function WelcomePage(props) {
       ></Image>
 
       <TouchableOpacity style={styles.button6}>
-        <Icon name="chevron-down" style={styles.icon}></Icon>
         <Text style={styles.chooseLanguage}>Choose language</Text>
+        <Icon name="chevron-down" style={styles.icon}></Icon>
+
       </TouchableOpacity>
 
       <TouchableOpacity onPress={props.login} style={styles.button4}>
@@ -63,7 +64,6 @@ function WelcomePage(props) {
         Terms of Service, Payments Terms of Service, Privacy Policy and
         Non-Discrimination Policy.
       </Text>
-
     </View>
   );
 }
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "rgba(0,88,155,1)"
+    backgroundColor: "rgba(0,88,155,1)",
   },
   path: {
     top: 151,
@@ -82,78 +82,57 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button4: {
-    top: 47,
+    top: 26,
     width: 108,
     height: 88,
     position: "absolute",
-    right: -14
+    right: -34
   },
   gotoLoginButton: {
-    top: 6,
-    left: 0,
     width: 108,
     height: 48,
-    // width: '95%',
-    // height: '95%',
     position: "absolute"
   },
   button5: {
-    top: 507,
-    // left: 31,
-    // width: '70%',
+    top: 440,
     width: 352,
     height: 62,
     position: "absolute"
   },
   createAccountButton: {
-    top: 0,
-    left: 0,
-    alignItems: 'center',
-    // width: '100%',
-    // height: '95%',
     width: 352,
     height: 62,
     position: "absolute"
   },
   text: {
-    left: "7.51%",
-    // width: '85%',
-    // height: '10%',
+    paddingLeft: 16,
+    paddingRight: 16,
+    textAlign: "justify",
     width: 352,
     height: 68,
-
     color: "rgba(168,219,243,1)",
     position: "absolute",
     bottom: 46,
     fontSize: 12,
-    fontFamily: "roboto-regular",
-    textAlign: "left"
+    fontFamily: "roboto-regular"
   },
   button3: {
-    top: 350,
-    left: 31,
-    // width: '85%',
-    // height: '8%',
+    top: 300,
     width: 352,
     height: 62,
     position: "absolute"
   },
   continueFacebookButton: {
-    // top: 0,
-    // left: 0,
-    // width: '100%',
-    // height: '90%',
     width: 352,
     height: 62,
+    paddingLeft: 16,
+    paddingRight: 16,
     position: "absolute"
   },
   button2: {
-    top: 425,
-    // left: 31,
+    top: 375,
     width: 352,
     height: 62,
-    // width: '85%',
-    // height: '8%',
     position: "absolute"
   },
   continueGoogleButton: {
@@ -161,8 +140,8 @@ const styles = StyleSheet.create({
     left: 0,
     width: 352,
     height: 62,
-    // width: '100%',
-    // height: '90%',
+    paddingLeft: 16,
+    paddingRight: 16,
     position: "absolute"
   },
   bsD: {
@@ -176,24 +155,24 @@ const styles = StyleSheet.create({
   },
   image2: {
     width: "auto",
-    top: "15.29%",
+    top: 120,
     left: 0,
     height: 150,
     position: "absolute",
     right: 0
   },
   button6: {
-    top: 56,
-    left: 31,
-    // width: '38%',
-    // height: '4%',
+    top: 26,
+    left: 16,
     width: 150,
+    width: 'auto',
     height: 33,
     position: "absolute"
   },
   icon: {
     top: 2,
-    left: 136,
+    // marginLeft: 133,
+    right: -153,
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 25
@@ -201,17 +180,12 @@ const styles = StyleSheet.create({
   chooseLanguage: {
     top: 3,
     left: 0,
-    width: '130%',
+    width: 'auto',
     color: "rgba(2,172,235,1)",
     position: "absolute",
     fontSize: 16,
     fontFamily: "roboto-regular",
-    width: 149,
     height: 30,
-    // alignSelf: 'center',
-    // paddingLeft: 10,
-    // paddingTop: 2,
-    // height: '95%',
   }
 });
 

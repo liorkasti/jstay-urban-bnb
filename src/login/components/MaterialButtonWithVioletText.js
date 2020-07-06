@@ -13,27 +13,23 @@ function MaterialButtonWithVioletText(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "transparent",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
-    minWidth: 88
+    width: 100,
+    height: 36,
   },
   caption: {
     width: 52,
     height: "55%",
     color: "rgba(2,172,235,1)",
     fontSize: 16,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
+    left: 28,
+    top: -1
   },
   icon: {
     left: "10%",
     position: "absolute",
     color: "rgba(2,172,235,1)",
     fontSize: 20,
-    top: "30%"
   }
 });
 

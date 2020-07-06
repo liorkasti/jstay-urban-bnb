@@ -7,6 +7,7 @@ function SkipButton(props) {
     <View style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText11
         style={styles.materialButtonWithVioletText11}
+        onPress={props.onNext}
       ></MaterialButtonWithVioletText11>
     </View>
   );
@@ -15,8 +16,8 @@ function SkipButton(props) {
 const styles = StyleSheet.create({
   container: {},
   materialButtonWithVioletText11: {
-    opacity: 0.46,
-    flex: 1
+    position: "absolute",
+    opacity: 0.46
   }
 });
 
