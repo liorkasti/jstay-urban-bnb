@@ -19,7 +19,6 @@ import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
 import Account from "./src/account"
 import EditStay from "./src/editStay"
-import Messages from "./src/messaging";
 import Chat from "./src/messaging";
 
 export default function App() {
@@ -65,7 +64,7 @@ export default function App() {
             <Route path="/CreateAccount" component={ CreateAccount }/>
             <Route path="/createStay" component={ CreateStay }/>
             <Route path="/home" component={Home}/>
-            {/* <Route path="/messaging" component={Messages}/> */}
+            <Route path="/chat" component={Chat}/>
           </BackButton>
         </Switch>
       </NativeRouter>
