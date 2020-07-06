@@ -19,9 +19,17 @@ function Amenities(props) {
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
-      <SafetyAmenities style={styles.safetyAmenities}></SafetyAmenities>
+      <SafetyAmenities
+        onUserInput={({ newValue, extention }) => {
+          props.onUserInput({ newValue, path: "hostListing/safetyAmenities" + extention })
+        }}
+        style={styles.safetyAmenities}>
+      </SafetyAmenities>
 
       <JewishHomeAmenities
+         onUserInput={({ newValue, extention }) => {
+          props.onUserInput({ newValue, path: "hostListing/jewishAmenities" + extention })
+        }}
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>
 

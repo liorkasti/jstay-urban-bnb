@@ -5,6 +5,7 @@ function MaterialSwitch1(props) {
   return (
     <View style={[styles.container, props.style]}>
       <Switch
+      onValueChange={props.onPress}
         value={props.value ? true : false}
         thumbColor={props.value ? "#3F51B5" : "#FFF"}
         trackColor={{
