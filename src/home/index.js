@@ -277,7 +277,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     flexContainer: {
-        flex: 1, 
+        flex: 1,
         width: windowWidth,
         height: windowHeight
     }

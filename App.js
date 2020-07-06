@@ -60,6 +60,7 @@ export default function App() {
               {loggedIn ? <Redirect to="/home" /> : <Login />}
             </Route>
             {/* <Route path="/" exact component={ StayCalender }/> */}
+            <Route path="/chat" exact component={Chat} />
             <Route path="/account" component={ Account }/>
             <Route path="/editStay" component={ EditStay }/>
             <Route path="/CreateAccount" component={ CreateAccount }/>

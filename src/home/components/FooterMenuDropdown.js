@@ -84,10 +84,11 @@ const styles = StyleSheet.create({
   group1: {
     width: 207,
     height: 350,
-    // position: "absolute",
+    position: "absolute",
     right: 0,
     left: "48.5%",
-    bottom: -12
+    bottom: -12,
+    top: 0
   },
   rect9: {
     width: 207,

@@ -4,19 +4,19 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 
 function SearchBar(props) {
-  const [search,setSearch] = useState("")
+  const [search, setSearch] = useState("")
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.group2}>
         <View style={styles.textInput42Stack}>
           <TextInput
-          value={search || props.searchText}
-            onChangeText={(text)=>{setSearch(text)}}
+            value={search || props.searchText}
+            onChangeText={(text) => { setSearch(text) }}
             onFocus={() => { props.onPress() }}
             placeholder="Location, neighbourhood, or address"
             style={styles.textInput42}
           ></TextInput>
-          <TouchableOpacity onPress={()=>props.onPress()} style={styles.button1082}>
+          <TouchableOpacity onPress={() => props.onPress()} style={styles.button1082}>
             <FontAwesomeIcon
               name="sliders"
               style={styles.icon252}
@@ -37,17 +37,13 @@ function SearchBar(props) {
 const styles = StyleSheet.create({
   container: {},
   group2: {
-    height: "10%",
-    // position: "absolute",
-    alignItems: "center"
+    alignItems: "center",
   },
   textInput42: {
-    top: 0,
-    width: 340,
-    height: "100%",
+    width: 300,
+    height: 39,
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",
-    // position: "absolute",
     borderRadius: 10,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 3,
