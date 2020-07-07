@@ -12,7 +12,9 @@ function MaterialBasicFooter1(props) {
       {/*dropdown menu for account */}
       {
         props.showFooterMenu &&
-        <FooterMenuDropdown handleFooterMenu={(menuItem)=>{props.handleFooterMenu(menuItem)}} style={styles.materialBasicFooter1} />
+        <FooterMenuDropdown
+          handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+          style={styles.materialBasicFooter1} />
       }
 
       <TouchableOpacity onPress={() => { props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
@@ -64,18 +66,19 @@ function MaterialBasicFooter1(props) {
         ></MaterialCommunityIconsIcon>
         <Text style={styles.btn3Text}>Account</Text>
       </TouchableOpacity>
-      
-
-
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 4,
     backgroundColor: "rgba(0,88,155,1)",
     flexDirection: "row",
-    alignItems: "center",
+    // width: "100%",
     elevation: 3,
     shadowOffset: {
       height: -2,

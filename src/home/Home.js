@@ -111,12 +111,11 @@ function Home(props) {
 
         :
         //homeScreen
-        <ScrollView style={{ marginTop: 110, zIndex: 1 }}
-
+        <ScrollView
+          style={{ marginTop: 110, zIndex: 1 }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
           }}>
-
           <View style={styles.searchBarContainer}>
             {/* City Cards */}
             <View style={styles.cityCardsStackStack}>
@@ -173,7 +172,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: "center",
     backgroundColor: "rgba(2,172,235,1)",
-    // paddingHorizontal: 16,
+    // marginHorizontal: Dimensions.get('window').width  < 400 ?  2 : 0,
   },
   cityCards: {
     top: 162,
@@ -266,9 +265,10 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   footerBar1: {
-    left: "0%",
-    width: "100%",
-    height: 81,
+    left: 0,
+    // right: 0,
+    // width: "100%",
+    height: 86,
     position: "absolute",
     bottom: -15
   },

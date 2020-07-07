@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     // position: "absolute",
     width: "100%",
     justifyContent: 'center',
-    // width: Dimensions.get('window').width * 0.9,
+    // marginHorizontal: Dimensions.get('window').width  < 400 ?  6 : 0,
     // height: Dimensions.get('window').width * 0.9,
   }
 });
