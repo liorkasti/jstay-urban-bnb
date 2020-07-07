@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
   },
   textAdded: {
     width: 528,
-    height: 17,
+    marginTop: 6,
+    height: 30,
     color: "rgba(2,172,235,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",

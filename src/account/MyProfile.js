@@ -41,38 +41,9 @@ function MyProfile(props) {
   }
   return (
     <View style={styles.container}>
-      <View style={styles.rect1Stack}>
-        <View style={styles.rect1}>
-          <View style={styles.materialButtonViolet22Stack}>
-            <MaterialButtonViolet33
-              style={styles.materialButtonViolet22}
-            ></MaterialButtonViolet33>
-            <MaterialButtonViolet28
-              editAccount="Change Language"
-              style={styles.materialButtonViolet27}
-            ></MaterialButtonViolet28>
-          </View>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text}>My Profile</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <MaterialButtonTransparentHamburger
-              onPress={() => {
-                setShowMenu(!showMenu)
-              }}
-              style={styles.materialButtonTransparentHamburger}
-            ></MaterialButtonTransparentHamburger>
-          </View>
-        </View>
+      
+     
 
-      </View>
       <View style={styles.image2StackStack}>
 
 
@@ -184,9 +155,7 @@ function MyProfile(props) {
       ></MaterialButtonWithVioletText46>
       <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
       <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
-      <MaterialButtonViolet28
-        style={styles.materialButtonViolet25}
-      ></MaterialButtonViolet28>
+  
     </View>
   );
 }
@@ -194,7 +163,7 @@ function MyProfile(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
   },
   rect1: {
     top: 0,
@@ -289,7 +258,8 @@ const styles = StyleSheet.create({
   },
   rect1Stack: {
     width: 629,
-    height: 91
+    height: 91,
+    zIndex:40
   },
   image2: {
     top: 29,

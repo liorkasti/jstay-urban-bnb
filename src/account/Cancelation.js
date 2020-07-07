@@ -36,31 +36,6 @@ function Untitled6(props) {
       onPress={() =>props.goHome()}
         style={styles.materialButtonPrimary5}
       ></MaterialButtonPrimary5>
-
-      <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.cancelation}>Cancelation</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={()=>props.goHome()} style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
@@ -68,14 +43,13 @@ function Untitled6(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
   },
   lengthOfStay1: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     alignSelf: "flex-end",
-    marginTop: 120,
     marginRight: 42
   },
   textInput1: {

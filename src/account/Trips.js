@@ -74,33 +74,6 @@ function Trips(props) {
       <PastTripCard onUserPress={(page) => { props.onUserPress(page) }}
         onPress={() => { props.onUserPress("previous") }} style={styles.pastTripCard}></PastTripCard>
 
-      <View style={styles.group223}>
-        <View style={styles.rect1023}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
-                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon1}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.myTrips}>My Trips</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={() => { props.goHome() }} style={styles.button3}>
-              <View style={styles.image123Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image123}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
     </View>
   );
 }
@@ -108,7 +81,8 @@ function Trips(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    zIndex: 1
   },
   upcomingTrips: {
     top: 5,
@@ -265,7 +239,6 @@ const styles = StyleSheet.create({
   },
   upcomingTripsStack: {
     height: 222,
-    marginTop: 115,
     marginLeft: 8,
     marginRight: 7
   },

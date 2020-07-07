@@ -33,26 +33,11 @@ function Untitled12(props) {
         </View>
       </TouchableOpacity>
       <SaveAndExit style={styles.saveAndExit1}></SaveAndExit>
+      
       <View style={styles.button1Stack}>
-        <TouchableOpacity onPress={()=>{props.gnHome()}} style={styles.button1}>
-          <View style={styles.image1Filler}></View>
-          <Image
-            source={require("../assets/images/jstay-icon-inverted8.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
-        </TouchableOpacity>
-        <View style={styles.rect1}>
-          <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button2}>
-            <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button3}>
-              <EntypoIcon name="chevron-left" style={styles.icon6}></EntypoIcon>
-            </TouchableOpacity>
-          </TouchableOpacity>
-          <View style={styles.button2Filler}>
-            <Text style={styles.text1}>Edit Profile</Text>
-          </View>
-        </View>
+        
       </View>
+
       <Text style={styles.loremIpsum}></Text>
       <TextInput placeholder="Last Name" style={styles.textInput1}></TextInput>
       <TextInput placeholder="First Name" style={styles.textInput2}></TextInput>
@@ -84,7 +69,7 @@ const styles = StyleSheet.create({
   icon1: {
     color: "rgba(0,88,155,1)",
     fontSize: 24,
-    marginTop: 169,
+    marginTop: 50,
     marginLeft: 29
   },
   dateGroup1: {
