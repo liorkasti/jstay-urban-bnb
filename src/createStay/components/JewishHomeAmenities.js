@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import MaterialSwitch1 from "./MaterialSwitch1";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
