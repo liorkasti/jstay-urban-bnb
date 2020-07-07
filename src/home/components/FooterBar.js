@@ -10,13 +10,16 @@ function MaterialBasicFooter1(props) {
     <View style={[styles.container, props.style]}>
 
       {/*dropdown menu for account */}
-      {
-        props.showFooterMenu &&
-        <FooterMenuDropdown
-          handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
-          style={styles.materialBasicFooter1} />
-      }
-
+      <View
+        onPress={(menuItem) => { props.handleFooterMenu(menuItem) }}
+        style={styles.materialBasicFooterStock} >
+        {
+          props.showFooterMenu &&
+          <FooterMenuDropdown
+            handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+            style={styles.materialBasicFooter1} />
+        }
+      </View>
       <TouchableOpacity onPress={() => { props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
         <MaterialCommunityIconsIcon
           name="home-heart"
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     backgroundColor: "rgba(0,88,155,1)",
     flexDirection: "row",
-    // width: "100%",
+    width: "100%",
     elevation: 3,
     shadowOffset: {
       height: -2,
@@ -88,12 +91,15 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.2
   },
-  materialBasicFooter1: {
+  materialBasicFooterStock: {
     left: 210,
     height: 700,
-    // position: "relaative",
     right: 0,
-    bottom: 48,
+    bottom: 0,
+    zIndex: 20
+  },
+  materialBasicFooter1: {
+    bottom: 42,
     zIndex: 20
   },
   btnWrapper1: {

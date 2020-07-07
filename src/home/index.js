@@ -30,6 +30,7 @@ export default function Index(props) {
     const handleFooterMenu = (menuItem) => {
         switch (menuItem) {
             case "createStay":
+                console.warn("hello createStay")
                 history.push("/createStay");
                 break;
             case "logout":
@@ -51,7 +52,6 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
-
         }
     };
 
