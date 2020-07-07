@@ -282,8 +282,8 @@ const styles = StyleSheet.create({
   },
   jstayLogoDark: {
     width: 'auto',
-    right: -20,
-    top: 34,
+    right: -12,
+    top: 36,
   },
   loremIpsum2: {
     top: 302,

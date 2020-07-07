@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textInput42: {
-    width: 300,
+    width: 'auto',
+    width: 286,
     height: 39,
     backgroundColor: "rgba(230, 230, 230,1)",
     color: "#121212",
@@ -54,15 +55,15 @@ const styles = StyleSheet.create({
   button1082: {
     top: 8,
     height: 23,
+    height: 20,
     position: "absolute",
-    right: 12,
+    right: 10,
     width: 21,
-    // right: "12%",
-
+    width: 'auto',
   },
   icon252: {
     color: "rgba(128,128,128,1)",
-    fontSize: 24
+    fontSize: 21
   },
   button1072: {
     top: 9,
