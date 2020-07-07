@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image, StatusBar } from "react-native";
 import ContinueGoogleButton from "./components/ContinueGoogleButton";
 import Svg, { Path } from "react-native-svg";
 import GotoLoginButton from "./components/GotoLoginButton";
@@ -11,6 +11,7 @@ import Icon from "react-native-vector-icons/Entypo";
 function WelcomePage(props) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <Svg viewBox="0 0 44 63.01159786070548" style={styles.path}>
         <Path
           strokeWidth={1}

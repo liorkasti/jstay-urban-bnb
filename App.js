@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar, Dimensions } from 'react-native';
 import Orientation from 'react-native-orientation-locker';
 import Geocoder from 'react-native-geocoding';
 import Icon from 'react-native-vector-icons/MaterialIcons'
@@ -78,6 +78,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    width: "100%"
+    // paddingHorizontal: 16,
+    // position: "absolute",
+    width: "100%",
+    justifyContent: 'center',
+    // width: Dimensions.get('window').width * 0.9,
+    // height: Dimensions.get('window').width * 0.9,
   }
 });

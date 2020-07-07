@@ -6,6 +6,7 @@ import {
   Text,
   TouchableOpacity,
   ScrollView,
+  Dimensions,
   ListView
 } from "react-native";
 import CityCards from "./components/CityCards";
@@ -39,7 +40,10 @@ function Home(props) {
       <StatusBar backgroundColor="rgba(2,172,235,1)" />
 
       {/* HeaderBar */}
-      <HeaderBar style={styles.headerBar}></HeaderBar>
+      <HeaderBar
+        onUserPress={(page) => { props.onUserPress(page, props.searchText) }}
+        style={styles.headerBar}
+      />
 
       {/* SearchDropdown */}
       {showSearchOptions &&
@@ -61,23 +65,28 @@ function Home(props) {
 
         {/* todo: fix scrollView: */}
         {/*  City Cards - todo: cut past this inside the scrollView */}
-        <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-          style={styles.cityCards} />
+        <CityCards
+          showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
+          style={styles.cityCards}
+        />
 
         {/* Nearby - todo: cut past this inside the scrollView */}
         <Text style={styles.nearby}>Nearby</Text>
+
+        {/* todo: fix scrollView: */}
+        {/*  City Cards - todo: cut past this inside the scrollView */}
+        <CityCards
+          showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
+          style={styles.cityCards}
+        />
+
+        {/* Top Stays - todo: cut past this inside the scrollView */}
+        <Text style={styles.topStays}>Top Stays</Text>
         <TouchableOpacity style={styles.button4}>
           <MaterialCard5
             onPress={() => { props.showSearchResultsFor("local") }}
             style={styles.materialCard5} />
         </TouchableOpacity>
-
-        {/* Top Stays - todo: cut past this inside the scrollView */}
-        <Text style={styles.topStays}>Top Stays</Text>
-        <TouchableOpacity style={styles.button4}>
-          <MaterialCard5 onPress={() => { props.showSearchResultsFor("local") }} style={styles.materialCard5}></MaterialCard5>
-        </TouchableOpacity>
-
       </View>
 
       {props.searchText ?
@@ -92,7 +101,7 @@ function Home(props) {
               onUserPress={(page) => props.onUserPress(page)}
               onPress={() => { props.showStayProfile("Home") }}
               style={styles.materialCardWithRightButtons}
-            ></MaterialCardWithRightButtons>
+            />
             <StayResultCard
               bookStay={() => props.bookStay()}
               onPress={() => { props.showStayProfile() }}
@@ -154,58 +163,6 @@ function Home(props) {
         handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
         style={styles.footerBar1}
       />
-
-      {/* <Text allowFontScaling={false} style={styles.topStays}>Top Stays</Text>
-      <Text allowFontScaling={false} style={styles.nearby}>Nearby</Text>
-      <Text allowFontScaling={false} style={styles.bsD1}>BS&quot;D</Text>
-      <Text allowFontScaling={false} style={styles.bsD2}>BS&quot;D</Text>
-
-      <Text allowFontScaling={false} style={styles.loremIpsum2}></Text>
-      <FooterBar style={styles.footerBar1}></FooterBar> */}
-      {/* <SearchDropdown style={styles.searchDropdown}></SearchDropdown> */}
-      {/* <MaterialCardWithRightButtons
-        style={styles.materialCardWithRightButtons1}
-      ></MaterialCardWithRightButtons> */}
-      {/* <TouchableOpacity style={styles.button4}>
-        <MaterialCard5 style={styles.materialCard5}></MaterialCard5>
-      </TouchableOpacity>
-      <MapButton2 style={styles.mapButton2}></MapButton2>
-      <View style={styles.group1}>
-        <View style={styles.rect9}></View>
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("MyStaysList")}
-          style={styles.button54}
-        >
-          <MaterialButtonWithVioletText21
-            style={styles.materialButtonWithVioletText21}
-          ></MaterialButtonWithVioletText21>
-        </TouchableOpacity>
-        <MaterialButtonWithVioletText22
-          style={styles.materialButtonWithVioletText22}
-        ></MaterialButtonWithVioletText22>
-        <MaterialButtonWithVioletText23
-          style={styles.materialButtonWithVioletText23}
-        ></MaterialButtonWithVioletText23>
-        <MaterialButtonWithVioletText24
-          style={styles.materialButtonWithVioletText24}
-        ></MaterialButtonWithVioletText24>
-        <MaterialButtonWithVioletText25
-          style={styles.materialButtonWithVioletText25}
-        ></MaterialButtonWithVioletText25>
-        <MaterialButtonWithVioletText26
-          style={styles.materialButtonWithVioletText26}
-        ></MaterialButtonWithVioletText26>
-        <View style={styles.rect3}></View>
-        <View style={styles.rect4}></View>
-        <View style={styles.rect5}></View>
-        <View style={styles.rect6}></View>
-        <View style={styles.rect7}></View>
-        <View style={styles.rect8}></View>
-        <MaterialButtonWithVioletText28
-          style={styles.materialButtonWithVioletText28}
-        ></MaterialButtonWithVioletText28>
-      </View>
-      <FooterBar style={styles.footerBar2}></FooterBar> */}
     </View>
   );
 }
@@ -216,6 +173,7 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: "center",
     backgroundColor: "rgba(2,172,235,1)",
+    // paddingHorizontal: 16,
   },
   cityCards: {
     top: 162,
@@ -242,7 +200,8 @@ const styles = StyleSheet.create({
     left: -13,
     height: 56,
     position: "absolute",
-    right: -13
+    right: -13,
+    fontSize: Dimensions.get('window').height < 400 ? 16 : 20
   },
   topStays: {
     top: 931,
@@ -295,6 +254,7 @@ const styles = StyleSheet.create({
   },
   searchBarContainer: {
     position: "absolute",
+    // paddingHorizontal: 16,
     flex: 1,
     width: '100%',
     alignItems: "center",
@@ -362,10 +322,12 @@ const styles = StyleSheet.create({
   },
   mapButton2: {
     position: "absolute",
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
     bottom: 80,
-    left: 5,
     height: 60,
-    width: 405,
+    width: '100%',
     zIndex: 20
   },
   group1: {

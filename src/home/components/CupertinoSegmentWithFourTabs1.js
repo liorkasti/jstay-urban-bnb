@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Dimensions } from "react-native";
 
 function CupertinoSegmentWithFourTabs1(props) {
   return (
@@ -26,19 +26,21 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFF",
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
   },
   textWrapper: {
     height: 29,
     flex: 1,
     flexDirection: "row",
     paddingRight: 8,
-    paddingLeft: 8
+    paddingLeft: 8,
+    
   },
   segmentTextWrapper1: {
     flex: 1,
     backgroundColor: "rgba(0,88,155,1)",
     alignItems: "center",
+    justifyContent: 'center',
     padding: 6,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 1,
@@ -47,13 +49,18 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: "rgba(177,177,177,1)",
-    fontSize: 13,
-    fontFamily: "roboto-regular"
+    // fontSize: 13,
+    fontSize: Dimensions.get('window').height < 400 ? 12 : 13,
+    fontFamily: "roboto-regular",
+    paddingVertical: 6,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   segmentTextWrapper2: {
     flex: 1,
     backgroundColor: "rgba(0,88,155,1)",
     alignItems: "center",
+    justifyContent: 'center',
     padding: 6,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 1,
@@ -61,13 +68,14 @@ const styles = StyleSheet.create({
   },
   text2: {
     color: "rgba(177,177,177,1)",
-    fontSize: 13,
-    fontFamily: "roboto-regular"
+    fontSize: Dimensions.get('window').height < 400 ? 12 : 13,
+    fontFamily: "roboto-regular",
   },
   segmentTextWrapper3: {
     flex: 1,
     backgroundColor: "rgba(0,88,155,1)",
     alignItems: "center",
+    justifyContent: 'center',
     padding: 6,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 1,
@@ -76,13 +84,14 @@ const styles = StyleSheet.create({
   },
   text3: {
     color: "rgba(177,177,177,1)",
-    fontSize: 13,
+    fontSize: Dimensions.get('window').height < 400 ? 12 : 13,
     fontFamily: "roboto-regular"
   },
   segmentTextWrapper4: {
     flex: 1,
     backgroundColor: "rgba(0,88,155,1)",
     alignItems: "center",
+    justifyContent: 'center',
     padding: 6,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 1,
@@ -91,7 +100,7 @@ const styles = StyleSheet.create({
   },
   text4: {
     color: "rgba(177,177,177,1)",
-    fontSize: 13,
+    fontSize: Dimensions.get('window').height < 400 ? 12 : 13,
     fontFamily: "roboto-regular"
   }
 });
