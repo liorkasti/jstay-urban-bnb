@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView } from "react-native"
+import { View, StyleSheet, Dimensions, Text, ScrollView,RefreshControl } from "react-native"
 import { useHistory } from "react-router-dom";
 
 
@@ -76,6 +76,7 @@ export default function Index(props) {
     const [historyIndex, setHistoryIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState("");
     const [showMenu, setShowMenu] = useState(false);
+    const [refreshing, setRefreshing] = useState(false);
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -83,6 +84,12 @@ export default function Index(props) {
     //add the import as a string to this array
     //the array should be in the order that the screens show up
 
+
+    function wait(timeout) {
+        return new Promise(resolve => {
+          setTimeout(resolve, timeout);
+        });
+      }
 
     //user finished create a stay
     function onHome() {
@@ -203,7 +210,12 @@ export default function Index(props) {
         />)
     };
 
-
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+    
+        wait(2000).then(() => setRefreshing(false));
+      }, [refreshing]);
+    
 
     return (
         <View style={styles.container}>
@@ -232,7 +244,10 @@ export default function Index(props) {
             }}
                 onScrollBeginDrag={() => {
                     if (showMenu) { setShowMenu(false); }
-                }}>
+                }}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                  }>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
