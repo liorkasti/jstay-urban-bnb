@@ -14,7 +14,7 @@ function CupertinoSegmentWithFourTabs1(props) {
         <TouchableOpacity onPress={()=>{props.onUserPress("newRequest")}} style={styles.segmentTextWrapper3}>
           <Text style={styles.text3}>{props.text3 || "New Request"}</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={()=>{props.onUserPress("trips")}} style={styles.segmentTextWrapper4}>
+        <TouchableOpacity onPress={()=>{props.onUserPress("bookings")}} style={styles.segmentTextWrapper4}>
           <Text style={styles.text4}>{props.text4 || "Bookings"}</Text>
         </TouchableOpacity>
       </View>

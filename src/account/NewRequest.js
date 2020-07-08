@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -16,6 +16,7 @@ import MaterialSlider1 from "../components/MaterialSlider1";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
 function NewRequest(props) {
+  const [discount, setDiscount]= useState(0);
   return (
     <View style={styles.container}>
       <View style={styles.button1Stack}>
@@ -60,10 +61,12 @@ function NewRequest(props) {
       
       <View style={styles.materialButtonViolet4Row}>
         <MaterialButtonViolet20
+        onPress={()=>{props.messageGuest("decline")}}
           text1="Decline"
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet20>
         <MaterialButtonViolet25
+        onPress={()=>{props.messageGuest("accept")}}
           text1="Accept"
           style={styles.materialButtonViolet5}
         ></MaterialButtonViolet25> 
@@ -101,6 +104,7 @@ function NewRequest(props) {
         </View>
         <View style={styles.textInput1StackRowFiller}></View>
         <MaterialButtonViolet25
+        onPress={()=>{props.messageGuest("hears a disscount of")}}
           text1="Send"
           style={styles.materialButtonViolet6}
         ></MaterialButtonViolet25>

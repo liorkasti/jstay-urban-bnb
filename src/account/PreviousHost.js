@@ -5,7 +5,7 @@ import MaterialButtonViolet13 from "../components/MaterialButtonViolet13";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
-function Untitled9(props) {
+function PreviousHost(props) {
   return (
     <View style={styles.container}>
       <View style={styles.button6}>
@@ -37,7 +37,7 @@ function Untitled9(props) {
                   resizeMode="stretch"
                   style={styles.image11}
                 ></Image>
-                <Text style={styles.host}>Host</Text>
+                <Text style={styles.host}>Guest</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -52,13 +52,9 @@ function Untitled9(props) {
         <Text style={styles.checkOut2}>20 March 2021</Text>
       </View>
       <View style={styles.materialButtonViolet23Row}>
-        <MaterialButtonViolet23
-        tag="Book Again"
-        onPress={() => { props.onUserPress("bookStay")}}
-          style={styles.materialButtonViolet23}
-        ></MaterialButtonViolet23>
         <MaterialButtonViolet13
-          text1="Message Host"
+        onPress={() =>props.messageGuest()}
+          text1="Message Guest"
           style={styles.materialButtonViolet1}
         ></MaterialButtonViolet13>
 
@@ -143,7 +139,7 @@ function Untitled9(props) {
           </View>
         </View>
       </View>
-      <Text style={styles.priceForYourStay1}>Pricing for your stay</Text>
+      <Text style={styles.priceForYourStay1}>Pricing for this stay</Text>
       <View style={styles.night1Row}>
         <Text style={styles.night1}>Nightly rate</Text>
         <Text style={styles.night8}>$0.00</Text>
@@ -161,7 +157,7 @@ function Untitled9(props) {
         <Text style={styles.night11}>$0.00</Text>
       </View>
       <Text style={styles.night5}>
-        These charges may have been refunded if host&#39;s requirements were met
+        These charges may have been refunded
       </Text>
       <View style={styles.night6Row}>
         <Text style={styles.night6}>Jstay fee</Text>
@@ -273,7 +269,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginLeft: 77
+    marginLeft: 82.2
   },
   checkedInRow: {
     height: 24,
@@ -306,9 +302,9 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   materialButtonViolet1: {
-    width: 173,
+    width: 356,
     height: 45,
-    marginLeft: 15
+    marginLeft: 3.5
   },
   materialButtonViolet23Row: {
     height: 45,
@@ -320,20 +316,21 @@ const styles = StyleSheet.create({
   checkOut5: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
-    fontFamily: "roboto-regular"
+    fontFamily: "roboto-regular",
+    marginLeft:-1
   },
   checkOut4: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginLeft: 133
+    marginLeft: 132
   },
   checkOut5Row: {
     height: 24,
     flexDirection: "row",
     marginTop: -550,
     marginLeft: 26,
-    marginRight: 154
+    marginRight: 134
   },
   group23: {
     height: 91,
@@ -736,4 +733,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled9;
+export default PreviousHost;

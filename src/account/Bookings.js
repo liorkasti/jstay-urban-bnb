@@ -10,11 +10,11 @@ function Trips(props) {
   return (
     <View style={styles.container}>
       <View style={styles.upcomingTripsStack}>
-        <Text style={styles.upcomingTrips}>Upcoming trips</Text>
+        <Text style={styles.upcomingTrips}>Upcoming bookings</Text>
 
         <View style={styles.group3Stack}>
           <View style={styles.group3}>
-            <TouchableOpacity onPress={() => { props.onUserPress("confirmedGuest") }} style={styles.group2}>
+            <TouchableOpacity onPress={() => { props.onUserPress("confirmedHost") }} style={styles.group2}>
               <View style={styles.rect10}>
                 <View style={styles.image10Row}>
                   <Image
@@ -45,17 +45,8 @@ function Trips(props) {
             </View>
 
             <View style={styles.materialButtonWithVioletText52StackRow}>
-              <View style={styles.materialButtonWithVioletText52Stack}>
-                <MaterialButtonWithVioletText52
-                  style={styles.materialButtonWithVioletText52}
-                ></MaterialButtonWithVioletText52>
-                <MaterialButtonWithVioletText58
-                  onPress={() => { props.onUserPress("checkIn") }}
-                  style={styles.materialButtonWithVioletText58}
-                ></MaterialButtonWithVioletText58>
-              </View>
               <MaterialButtonWithVioletText54
-                onPress={() => { props.onUserPress("cancelationGuest") }}
+                onPress={() => { props.onUserPress("cancelationHost") }}
                 style={styles.materialButtonWithVioletText54}
               ></MaterialButtonWithVioletText54>
             </View>
@@ -65,14 +56,14 @@ function Trips(props) {
       </View>
 
       <View style={styles.pastTripsStack}>
-        <Text style={styles.pastTrips}>Previous trips</Text>
+        <Text style={styles.pastTrips}>Previous bookings</Text>
         <EntypoIcon name="chevron-down" style={styles.icon2}></EntypoIcon>
         <PastTripCard onUserPress={(page) => { props.onUserPress(page) }}
-          onPress={() => { props.onUserPress("previousGuest") }} style={styles.pastTripCard1}></PastTripCard>
+          onPress={() => { props.onUserPress("previousHost") }} style={styles.pastTripCard1}></PastTripCard>
       </View>
 
       <PastTripCard onUserPress={(page) => { props.onUserPress(page) }}
-        onPress={() => { props.onUserPress("previousGuest") }} style={styles.pastTripCard}></PastTripCard>
+        onPress={() => { props.onUserPress("previousHost") }} style={styles.pastTripCard}></PastTripCard>
 
     </View>
   );
@@ -213,7 +204,7 @@ const styles = StyleSheet.create({
   materialButtonWithVioletText54: {
     width: 143,
     height: 36,
-    marginLeft: 10,
+    marginLeft: -20,
     marginTop: 1
   },
   materialButtonWithVioletText52StackRow: {
@@ -225,7 +216,7 @@ const styles = StyleSheet.create({
   },
   icon3: {
     top: 0,
-    left: 160,
+    left: 200,
     position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 30
@@ -253,7 +244,7 @@ const styles = StyleSheet.create({
   },
   icon2: {
     top: 0,
-    left: 144,
+    left: 185,
     position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 30

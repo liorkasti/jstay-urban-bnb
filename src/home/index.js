@@ -54,6 +54,9 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
+                case "contactUs":
+                    history.push("/account", { subroute: "contactUs" });
+                    break;
 
         }
     };
@@ -108,6 +111,10 @@ export default function Index(props) {
             case "newRequest":
                 history.push("/account", { subroute: "newRequest", currentSearch: currentSearch, backHistory });
                 break;
+            case "bookings":
+                history.push("/account", { subroute: "bookings", currentSearch: currentSearch, backHistory });
+                break;
+
         }
     };
 

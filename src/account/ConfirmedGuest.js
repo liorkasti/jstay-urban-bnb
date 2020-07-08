@@ -5,7 +5,7 @@ import MaterialButtonViolet25 from "../components/MaterialButtonViolet25";
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialButtonViolet26 from "../components/MaterialButtonViolet26";
 
-function Untitled10(props) {
+function ConfirmedGuest(props) {
   return (
     <View style={styles.container}>
       <View style={styles.group24}>
@@ -37,7 +37,7 @@ function Untitled10(props) {
                   resizeMode="stretch"
                   style={styles.image11}
                 ></Image>
-                <Text style={styles.guest}>Guest</Text>
+                <Text style={styles.guest}>Host</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -62,13 +62,15 @@ function Untitled10(props) {
           style={styles.materialButtonViolet20}
         ></MaterialButtonViolet20>
         <MaterialButtonViolet25
+          text1={"Message Host"}
           style={styles.materialButtonViolet25}
         ></MaterialButtonViolet25>
       </View>
       <View style={styles.group23}>
       </View>
       <MaterialButtonViolet26
-        onPress={() =>props.onUserPress("holdACharge")}
+      text1={"Check In"}
+        onPress={() =>props.onUserPress("checkIn")}
         style={styles.materialButtonViolet26}
       ></MaterialButtonViolet26>
       <Text style={styles.pricingForStay}>Pricing for stay</Text>
@@ -93,7 +95,8 @@ function Untitled10(props) {
         <Text style={styles.night11}>$0.00</Text>
       </View>
       <Text style={styles.night5}>
-        These charges will be refunded if no claim has been made
+  These charges will be refunded {"\n"}
+  if host requirements are met
       </Text>
       <View style={styles.night6Row}>
         <Text style={styles.night6}>Jstay fee</Text>
@@ -110,7 +113,7 @@ function Untitled10(props) {
       </Text>
       <Text style={styles.loremIpsum1}>$0.00/night x 0 nights</Text>
       <Text style={styles.text4}>
-        Note: guest will receive full address and check-in information on day of
+        Note: You will receive full address and check-in information on day of
         arrival
       </Text>
     </View>
@@ -212,7 +215,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginLeft: 100
+    marginLeft: 105
   },
   checkIn1Row: {
     height: 24,
@@ -248,7 +251,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginLeft: 133
+    marginLeft: 132
   },
   checkOut5Row: {
     height: 24,
@@ -464,7 +467,8 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 14,
     fontFamily: "roboto-regular",
-    marginLeft: 27
+    marginLeft: 27,
+    paddingBottom:35
   },
   night6: {
     width: 103,
@@ -527,7 +531,7 @@ const styles = StyleSheet.create({
   loremIpsum1: {
     color: "rgba(0,88,155,1)",
     fontFamily: "roboto-regular",
-    marginTop: -281,
+    marginTop: -271,
     marginLeft: 26
   },
   text4: {
@@ -541,4 +545,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled10;
+export default ConfirmedGuest;

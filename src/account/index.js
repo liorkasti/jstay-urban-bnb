@@ -10,8 +10,11 @@ import HeaderBarLight from "./components/HeaderBarLight";
 import MyProfileHeader from "./components/MyProfileHeader";
 import MyProfileMenu from "./components/MyProfileMenu";
 
-import Cancelation from "./Cancelation";
-import Confirmed from "./Confirmed";
+import CancelationGuest from "./CancelationGuest";
+import CancelationHost from "./CancelationHost";
+
+import ConfirmedGuest from "./ConfirmedGuest";
+import ConfirmedHost from "./ConfirmedHost";
 import EditeProfile from "./EditeProfile";
 import EditMyKashrut from "./EditMyKashrut";
 import GuestCardInfo from "./GuestCardInfo";
@@ -19,7 +22,8 @@ import HoldACharge from "./HoldACharge";
 import MyProfile from "./MyProfile";
 import MyStaysList from "./MyStaysList";
 import NewRequest from "./NewRequest";
-import Previous from "./Previous";
+import PreviousGuest from "./PreviousGuest";
+import PreviousHost from "./PreviousHost";
 import Trips from "./Trips";
 import StayProfile from "./StayProfile";
 import BookStay from "./BookStay";
@@ -27,12 +31,16 @@ import PreBookingProfile from "./PreBookingProfile";
 import CheckIn from "./CheckIn";
 import EditMyListings from "./EditMyListings";
 import Reviews from "./Reviews";
-
-
+import Bookings from "./Bookings";
+import ContactUs from "./ContactUs";
 
 const components = {
-    cancelation: Cancelation,
-    confirmed: Confirmed,
+    bookings: Bookings,
+    cancelationGuest: CancelationGuest,
+    cancelationHost: CancelationHost,
+    confirmedGuest: ConfirmedGuest,
+    confirmedHost: ConfirmedHost,
+    contactUs: ContactUs,
     editeProfile: EditeProfile,
     editMyKashrut: EditMyKashrut,
     guestCardInfo: GuestCardInfo,
@@ -40,7 +48,8 @@ const components = {
     myProfile: MyProfile,
     myStaysList: MyStaysList,
     newRequest: NewRequest,
-    previous: Previous,
+    previousHost: PreviousHost,
+    previousGuest: PreviousGuest,
     trips: Trips,
     stayProfile: StayProfile,
     bookStay: BookStay,
@@ -52,8 +61,12 @@ const components = {
 
 
 const headers = {
-    cancelation: "Cancelation",
-    confirmed: "Confirmed",
+    bookings: "Bookings",
+    cancelationGuest: "Cancelation",
+    cancelationHost: "Cancelation",
+    confirmedHost: "Confirmed",
+    confirmedGuest: "Confirmed",
+    contactUs:"Support",
     editeProfile: "Edit Profile",
     editMyKashrut: "Kashrut",
     guestCardInfo: "Payments",
@@ -61,7 +74,8 @@ const headers = {
     myProfile: "My Profile",
     myStaysList: "My Stays",
     newRequest: "New Request",
-    previous: "Previous",
+    previousGuest: "Previous",
+    previousHost: "Previous",
     trips: "My Trips",
     stayProfile: "Stay Profile",
     bookStay: "Book This Stay",
@@ -180,6 +194,9 @@ export default function Index(props) {
             }}
 
             messageHost={(message)=>{onNewMessage(message)}}
+            messageSupport={()=>{onNewMessage({support:true})}}
+
+            messageGuest={(message)=>{onNewMessage(message)}}
 
             onEditStay={(page) => {
                 onEditStay(page);

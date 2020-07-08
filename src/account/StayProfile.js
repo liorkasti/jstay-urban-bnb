@@ -126,6 +126,7 @@ function StayProfile(props) {
         <View style={styles.materialButtonWithVioletText16StackStack}>
           <View style={styles.materialButtonWithVioletText16Stack}>
             <MaterialButtonWithVioletText16
+            tag="Amenities"
               style={styles.materialButtonWithVioletText16}
             ></MaterialButtonWithVioletText16>
             <Text style={styles.night1}>
@@ -490,8 +491,8 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText16: {
     top: 80,
-    left: 3,
-    width: 100,
+    left: -15,
+    width: 130,
     height: 36,
     position: "absolute"
   },

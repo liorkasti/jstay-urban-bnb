@@ -10,7 +10,7 @@ import {
 import MaterialButtonPrimary5 from "../components/MaterialButtonPrimary5";
 import Icon from "react-native-vector-icons/Entypo";
 
-function Untitled6(props) {
+function CancelationGuest(props) {
   return (
     <View style={styles.container}>
       <Text style={styles.lengthOfStay1}>
@@ -33,7 +33,7 @@ function Untitled6(props) {
       <Text style={styles.pleaseTellUsWhy}>Please tell us why:</Text>
       <Text style={styles.night1}>Total refund: $0.00</Text>
       <MaterialButtonPrimary5
-      onPress={() =>props.goHome()}
+      onPress={() =>props.messageHost("cancelation")}
         style={styles.materialButtonPrimary5}
       ></MaterialButtonPrimary5>
     </View>
@@ -164,4 +164,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled6;
+export default CancelationGuest;

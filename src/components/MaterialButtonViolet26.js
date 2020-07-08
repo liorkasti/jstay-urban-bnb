@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 function MaterialButtonViolet26(props) {
   return (
     <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
-      <Text style={styles.textAdded}>Collect a Deductible Charge</Text>
+      <Text style={styles.textAdded}>{props.text1 || "Collect a Deductible Charge"}</Text>
     </TouchableOpacity>
   );
 }

@@ -59,6 +59,7 @@ function FooterMenuDropdown(props) {
             ></MaterialButtonWithVioletText25>
 
             <MaterialButtonWithVioletText26
+            onPress={()=>props.handleFooterMenu("contactUs")}
               style={styles.materialButtonWithVioletText26}
             ></MaterialButtonWithVioletText26>
 

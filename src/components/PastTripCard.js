@@ -15,11 +15,7 @@ function PastTripCard(props) {
         ></Image>
         <Text style={styles.theCottage92}>The Cottage</Text>
       </View>
-      <MaterialButtonWithVioletText53
-  tag="Book Again"
-  onPress={() => { props.onUserPress("bookStay")}}
-        style={styles.materialButtonWithVioletText532}
-      ></MaterialButtonWithVioletText53>
+
       <Text style={styles.upcomingTrips12}></Text>
       <Text style={styles.jerusalemIsrael2}>Jerusalem, Israel</Text>
       <Text style={styles.checkOut22}>04 March 2021</Text>
@@ -189,7 +185,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontFamily: "roboto-regular",
-    right: 191
+    right: 238.5
   }
 });
 

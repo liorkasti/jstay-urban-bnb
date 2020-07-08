@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
   actionText1: {
     color: "rgba(0,88,155,1)",
     opacity: 0.9,
-    fontSize: 14
+    fontSize: 14,
+    minWidth: 70
   },
   actionButton2: {
     height: 36,
