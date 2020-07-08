@@ -37,9 +37,11 @@ function GuestCardInfo(props) {
         </Text>
       </View>
       <MaterialButtonWithVioletText51
+        onPress={() => { props.saveAndExit(); }}
+        tag="Save"
         style={styles.materialButtonWithVioletText51}
       ></MaterialButtonWithVioletText51>
-      
+
 
       <MaterialButtonViolet28
         style={styles.materialButtonViolet32}
@@ -181,7 +183,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

@@ -163,6 +163,7 @@ export default function Index(props) {
 
 
     const onBack = () => {
+        if(showMenu)setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
             console.warn(prevPage)
@@ -193,6 +194,9 @@ export default function Index(props) {
                 onCreateStay(requestSource);
             }}
 
+            saveAndExit={()=>{
+                onBack();
+            }}
             messageHost={(message)=>{onNewMessage(message)}}
             messageSupport={()=>{onNewMessage({support:true})}}
 

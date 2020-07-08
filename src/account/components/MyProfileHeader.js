@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
       position: "absolute",
       borderColor: "rgba(0,88,155,1)",
       borderWidth: 0,
-      borderBottomWidth: 4
+      borderBottomWidth: .7
     },
     materialButtonViolet22: {
       height: 0,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     },
     text: {
       color: "rgba(0,88,155,1)",
-      fontSize: 25,
+      fontSize: 20,
       fontFamily: "roboto-regular",
       textAlign: "center",
       marginLeft: 115,

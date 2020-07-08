@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   materialButtonViolet22: {
     height: 0,

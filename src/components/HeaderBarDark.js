@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     position: "absolute",
     right: 0,
-    fontSize: 25,
+    fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"
   },

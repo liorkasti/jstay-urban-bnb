@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, StatusBar, Text, TouchableOpacity, ScrollView } from "react-native";
+import { StyleSheet, View, StatusBar, Text, TouchableOpacity, ScrollView,RefreshControl } from "react-native";
 import CityCards from "./components/CityCards";
 import SearchDropdown from "./components/SearchDropdown";
 import HeaderBar from "./components/HeaderBar";
@@ -16,6 +16,21 @@ function Home(props) {
   const [showSearchOptions, setShowSearchOptions] = useState(false);
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+
+  function wait(timeout) {
+    return new Promise(resolve => {
+      setTimeout(resolve, timeout);
+    });
+  }
+
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+
+    wait(2000).then(() => setRefreshing(false));
+  }, [refreshing]);
+
 
 
   useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
@@ -44,7 +59,9 @@ function Home(props) {
 
       {props.searchText ?
         //searchResults
-        <ScrollView style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); } }}>
+        <ScrollView   refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }> style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); } }}>
           <View style={{ marginTop: -4, paddingBottom: 70 }}>
 
             <MaterialCardWithRightButtons
@@ -59,6 +76,8 @@ function Home(props) {
         :
         //homeScreen
         <ScrollView style={{ marginTop: 110, zIndex: 1 }}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>}
           onScrollBeginDrag={() => {
             if (showSearchOptions|| showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
           }}>

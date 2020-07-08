@@ -32,7 +32,7 @@ function Untitled12(props) {
           <TitleDetails style={styles.titleDetails1}></TitleDetails>
         </View>
       </TouchableOpacity>
-      <SaveAndExit style={styles.saveAndExit1}></SaveAndExit>
+      <SaveAndExit onPress={props.saveAndExit} style={styles.saveAndExit1}></SaveAndExit>
       
       <View style={styles.button1Stack}>
         
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4,
+    borderBottomWidth: .7,
     right: 0,
     flexDirection: "row"
   },
