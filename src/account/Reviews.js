@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import ReviewCardUL from "../createStay/components/ReviewCardUL";
+import ReviewCard from "../createStay/components/ReviewCard";
 
 function Reviews(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group3}>
-      </View>
-      <ReviewCardUL style={styles.reviewCardUl}></ReviewCardUL>
+      <ReviewCard style={styles.reviewCard1}></ReviewCard>
     </View>
   );
 }
@@ -16,13 +15,14 @@ function Reviews(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    marginTop: 20
   },
-  group3: {
-    height: 91
+  reviewCard3: {
+    height: 117,
+    marginTop: 50,  
   },
   rect15: {
-    height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
     borderBottomWidth: 4
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   },
   reviewCardUl: {
     height: 757,
-    marginTop: 15 - 87,
+    marginTop: 15,
     marginLeft: 28,
     marginRight: 28
   }

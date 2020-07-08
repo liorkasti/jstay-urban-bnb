@@ -5,7 +5,6 @@ import ReviewCard from "./ReviewCard";
 function ReviewCardUL(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <ReviewCard style={styles.reviewCard1}></ReviewCard>
       <ReviewCard style={styles.reviewCard2}></ReviewCard>
       <ReviewCard style={styles.reviewCard3}></ReviewCard>
       <ReviewCard style={styles.reviewCard4}></ReviewCard>

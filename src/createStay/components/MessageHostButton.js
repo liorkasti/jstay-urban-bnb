@@ -6,6 +6,7 @@ function MessageHostButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonViolet13
+      onPress={()=>{props.onPress()}}
         text1="Message Host"
         style={styles.materialButtonViolet132}
       ></MaterialButtonViolet13>

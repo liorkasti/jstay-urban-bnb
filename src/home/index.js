@@ -13,6 +13,7 @@ import Messages from "../messaging/messages";
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [currentSearch, setCurrentSearch] = useState("");
+    const [newFavorites, setNewFavorites] = useState("");
 
     const history = useHistory();
 
@@ -23,6 +24,10 @@ export default function Index(props) {
         if (props.location.state && props.location.state.currentSearch) {
             setCurrentSearch(props.location.state.currentSearch);
         }
+        if (props.location.state && props.location.state.favorites) {
+            setNewFavorites(props.location.state.favorites);
+            setCurrentComponent("Favorites");
+        }
     }, [])
 
     const handleFooterMenu = (menuItem) => {
@@ -32,11 +37,13 @@ export default function Index(props) {
                 break;
             case "logout":
                 auth()
-                .signOut()
-                .then(() => {console.log('User signed out!')
-                setTimeout(()=>{
-                    history.push("/")
-                })})
+                    .signOut()
+                    .then(() => {
+                        console.log('User signed out!')
+                        setTimeout(() => {
+                            history.push("/")
+                        })
+                    })
                 break;
             case "profile":
                 history.push("/account", { subroute: "myProfile" });
@@ -47,7 +54,7 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
-               
+
         }
     };
 
@@ -72,7 +79,7 @@ export default function Index(props) {
                 setCurrentComponent("Messages");
                 // history.push("/messaging", { subroute: "messages" });
                 break;
-                case"messages": 
+            case "messages":
                 history.push("/chat")
                 break;
         }
@@ -95,12 +102,12 @@ export default function Index(props) {
             case "createStay":
                 history.push("/createStay", { currentSearch: currentSearch, backHistory });
                 break;
-                case "myStaysList":
-                    history.push("/account", { subroute:"myStaysList",currentSearch: currentSearch, backHistory });
-                    break;
-                    case "newRequest":
-                        history.push("/account", { subroute:"newRequest",currentSearch: currentSearch, backHistory });
-                        break;
+            case "myStaysList":
+                history.push("/account", { subroute: "myStaysList", currentSearch: currentSearch, backHistory });
+                break;
+            case "newRequest":
+                history.push("/account", { subroute: "newRequest", currentSearch: currentSearch, backHistory });
+                break;
         }
     };
 

@@ -35,7 +35,11 @@ function ReviewCard(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    left: 8,
+    width: "96%"
+  },
   group1: {
     height: 117
   },

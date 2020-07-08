@@ -106,6 +106,10 @@ export default function Index(props) {
         history.push("/chat", { route: "/account", subroute: message })
     }
 
+    const addToFavorites = (stay)=>{
+        history.push("/home", { subroute: "/favorites", newData: stay, favorites: true, backHistory })
+    }
+
     const onCreateStay = (from) => {
         history.push("/createStay", { route: "/account", subroute: from })
     }
@@ -134,6 +138,8 @@ export default function Index(props) {
         addBackHistory(newBackHistory);
         setHistoryIndex(historyIndex + 1)
     }
+
+
 
     const onBack = () => {
         if (historyIndex - 1 < 0) {
@@ -181,9 +187,15 @@ export default function Index(props) {
                 console.warn("create delete stay behavior");
                 onBack();
             }}
+
+            addToFavorites={()=>{
+                addToFavorites();
+            }}
+
             onDeleteAccount={() => {
                 onLogout();
             }}
+
             onLogout={() => {
                 onLogout();
             }}

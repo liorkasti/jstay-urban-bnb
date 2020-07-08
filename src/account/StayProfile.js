@@ -111,6 +111,7 @@ function StayProfile(props) {
             ></OveralKashrutRating>
           </View>
           <AddToFavoritesButton
+          onPress={() =>props.addToFavorites()}
             style={styles.addToFavoritesButton}
           ></AddToFavoritesButton>
         </View>
@@ -120,7 +121,7 @@ function StayProfile(props) {
             onPress={() => { props.onUserPress("bookStay"); }}
             style={styles.requestToBookButton}
           ></RequestToBookButton>
-          <MessageHostButton style={styles.messageHostButton}></MessageHostButton>
+          <MessageHostButton onPress={()=>props.messageHost()} style={styles.messageHostButton}></MessageHostButton>
         </View>
         <View style={styles.materialButtonWithVioletText16StackStack}>
           <View style={styles.materialButtonWithVioletText16Stack}>

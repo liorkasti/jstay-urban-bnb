@@ -6,6 +6,7 @@ function AddToFavoritesButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonShare3
+      onPress={()=>{props.onPress()}}
         style={styles.materialButtonShare1}
       ></MaterialButtonShare3>
       <Text style={styles.addToFavorites1}>Add to favorites</Text>
