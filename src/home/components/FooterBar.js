@@ -10,13 +10,11 @@ function MaterialBasicFooter1(props) {
     <View style={[styles.container, props.style]}>
 
       {/*dropdown menu for account */}
-      <View
-        onPress={(menuItem) => { props.handleFooterMenu(menuItem) }}
-        style={styles.materialBasicFooterStock} >
+      <View>
         {
           props.showFooterMenu &&
           <FooterMenuDropdown
-            handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+            handleFooterMenu={(menuItem) => { props.handleFooterMenu("Account") }}
             style={styles.materialBasicFooter1} />
         }
       </View>
@@ -99,7 +97,10 @@ const styles = StyleSheet.create({
     zIndex: 20
   },
   materialBasicFooter1: {
-    bottom: 42,
+    left: 210,
+    height: 700,
+    right: 10,
+    bottom: 342,
     zIndex: 20
   },
   btnWrapper1: {

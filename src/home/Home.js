@@ -32,6 +32,8 @@ function Home(props) {
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
 
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
   useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
 
@@ -92,7 +94,7 @@ function Home(props) {
       {props.searchText ?
         // searchResults
         <ScrollView
-          style={{ marginTop: 110, zIndex: 1 }}
+          style={{ marginTop: 110, zIndex: 1, width: windowWidth, height: windowHeight }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
           }}>

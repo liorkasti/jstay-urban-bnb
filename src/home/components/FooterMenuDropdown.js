@@ -15,10 +15,10 @@ function FooterMenuDropdown(props) {
         <View style={styles.rect9}>
           <View style={styles.button54Stack}>
             <TouchableOpacity
-              // onPress={(menuItem) => { props.handleFooterMenu(menuItem) }}
+              // onPress={(menuItem) => { props.handleFooterMenu("createStay") }}
               style={styles.button54}
             >
-              <View style={styles.materialButtonWithVioletText21Stack} >
+              <View style={styles.materialButtonWithVioletText21Stack}>
                 <MaterialButtonWithVioletText21
                   onPress={(menuItem) => { props.handleFooterMenu("createStay") }}
                   style={styles.materialButtonWithVioletText21}
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     width: 207,
     width: '100%',
     height: 350,
-    // position: "absolute",
+    position: "absolute",
     right: 0,
     left: "48.5%",
     bottom: -12,

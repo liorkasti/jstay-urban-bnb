@@ -79,6 +79,9 @@ export default function Index(props) {
             case "messages":
                 history.push("/chat")
                 break;
+            case "Account":
+                {handleFooterMenu(page)}
+                break;
         }
     };
 
