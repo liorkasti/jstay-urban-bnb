@@ -13,7 +13,7 @@ function ContactUs(props) {
       ></CupertinoButtonInfo>
       <View style={styles.cupertinoButtonInfo2Stack}>
         <CupertinoButtonInfo1
-        onPress={() =>{Linking.openURL('https://wa.me/442038076318?text=I\'m%20interested%20in%20your%20car%20for%20sale')      }}
+        onPress={() =>{Linking.openURL('https://wa.me/442038076318?text=Hi%20Jstay%20team!%20Please%20help%20me%20with...')      }}
           saveChanges="WhatsApp Us"
           style={styles.cupertinoButtonInfo2}
         ></CupertinoButtonInfo1>
