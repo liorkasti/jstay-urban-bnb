@@ -15,7 +15,7 @@ import MaterialSwitch1 from "../components/MaterialSwitch1";
 import MaterialSlider1 from "../components/MaterialSlider1";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
-function Untitled11(props) {
+function NewRequest(props) {
   return (
     <View style={styles.container}>
       <View style={styles.button1Stack}>
@@ -47,33 +47,11 @@ function Untitled11(props) {
           <Text style={styles.guest}>Guest</Text>
         </TouchableOpacity>
       </View>
+      
       <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD12}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon1}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.newRequest}>New Request</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
+        
       </View>
+
       <MaterialButtonViolet26
       onPress={() =>props.onUserPress("holdACharge")}
       text="Collect a Deductable Charge"
@@ -163,7 +141,8 @@ function Untitled11(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    height:850,
   },
   button1: {
     top: 0,
@@ -239,7 +218,6 @@ const styles = StyleSheet.create({
   },
   button1Stack: {
     height: 90,
-    marginTop: 91,
     marginRight: 27
   },
   group1: {
@@ -610,4 +588,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled11;
+export default NewRequest;

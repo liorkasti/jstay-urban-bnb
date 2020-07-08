@@ -16,9 +16,7 @@ import EditeProfile from "./EditeProfile";
 import EditMyKashrut from "./EditMyKashrut";
 import GuestCardInfo from "./GuestCardInfo";
 import HoldACharge from "./HoldACharge";
-
 import MyProfile from "./MyProfile";
-
 import MyStaysList from "./MyStaysList";
 import NewRequest from "./NewRequest";
 import Previous from "./Previous";
@@ -103,6 +101,11 @@ export default function Index(props) {
             );
     }
 
+
+    const onNewMessage = (message) => {
+        history.push("/chat", { route: "/account", subroute: message })
+    }
+
     const onCreateStay = (from) => {
         history.push("/createStay", { route: "/account", subroute: from })
     }
@@ -111,15 +114,16 @@ export default function Index(props) {
         history.push("/editStay", { subroute: from })
     }
     useEffect(() => {
-        console.warn(currentPage)
-    }, [currentPage])
+        console.warn(backHistory)
+    }, [backHistory])
 
     useEffect(() => {
+        if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
+
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex] = props.location.state.subroute;
         addBackHistory(newBackHistory);
-        if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
-            onUserPress(props.location.state.subroute);
+        setCurrentPage(props.location.state.subroute);
         }
     }, []);
 
@@ -161,6 +165,8 @@ export default function Index(props) {
             onCreateStay={(requestSource) => {
                 onCreateStay(requestSource);
             }}
+
+            messageHost={(message)=>{onNewMessage(message)}}
 
             onEditStay={(page) => {
                 onEditStay(page);
@@ -205,17 +211,16 @@ export default function Index(props) {
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
                         setShowMenu={() => { setShowMenu(!showMenu) }}
-                        onBack={() => onBack()}
+                        onBack={() => { onBack()}}
                     />
             }
             <ScrollView style={{
                 zIndex: 1,
                 backgroundColor: "rgba(2,172,235,1)",
-                marginTop: 70
             }}
-            onScrollBeginDrag={() => {
-                if (showMenu) { setShowMenu(false);}
-              }}>
+                onScrollBeginDrag={() => {
+                    if (showMenu) { setShowMenu(false); }
+                }}>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -234,6 +239,6 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        zIndex: 20,
+        zIndex: 3000,
     },
 });

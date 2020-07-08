@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     minWidth: 88
   },
   caption: {
-    color: "rgba(2,172,235,1)",
+    color:  "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"

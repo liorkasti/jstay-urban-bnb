@@ -57,6 +57,7 @@ function BookStay(props) {
       <Text style={styles.howManyGuests1}>How many guests?</Text>
       <Text style={styles.howManyGuests2}>Add a message to host</Text>
       <MaterialButtonViolet14
+      onPress={() =>props.messageHost()}
         style={styles.materialButtonViolet1}
       ></MaterialButtonViolet14>
       <LargeTextInput
@@ -70,31 +71,6 @@ function BookStay(props) {
         Free cancellations until 3 days prior to check-in
       </Text>
       <View style={styles.group1}>
-        <View style={styles.rect}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon1}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.bookThisStay}>Book This Stay</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={()=> { props.goHome() }}style={styles.button32}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
       </View>
       <Text style={styles.priceForYourStay1}>Pricing for your stay</Text>
       <View style={styles.night1Row}>
@@ -136,7 +112,9 @@ function BookStay(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    marginTop: -87,
+    height: 1100
   },
   button1: {
     width: 41,

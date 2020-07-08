@@ -15,7 +15,7 @@ export default function MyProfileHeader(props) {
     <View style={{  
         width: 414,
         height: 91,
-        marginBottom:-70
+        marginBottom:-70,
       }}>
    
 

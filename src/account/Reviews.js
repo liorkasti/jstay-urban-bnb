@@ -7,28 +7,6 @@ function Reviews(props) {
   return (
     <View style={styles.container}>
       <View style={styles.group3}>
-        <View style={styles.rect15}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1254}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text23}>Reviews</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={()=> { props.goHome() }}style={styles.button3}>
-              <View style={styles.image134Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image134}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
       </View>
       <ReviewCardUL style={styles.reviewCardUl}></ReviewCardUL>
     </View>
@@ -109,7 +87,7 @@ const styles = StyleSheet.create({
   },
   reviewCardUl: {
     height: 757,
-    marginTop: 15,
+    marginTop: 15 - 87,
     marginLeft: 28,
     marginRight: 28
   }

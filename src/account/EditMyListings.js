@@ -136,32 +136,6 @@ function EditMyListings(props) {
       </TouchableOpacity>
 
       <View style={styles.group3}>
-        <View style={styles.group2}>
-          <View style={styles.group1}>
-            <View style={styles.rect106}>
-              <Text style={styles.bsD1}>BS&quot;D</Text>
-              <View style={styles.button4Row}>
-                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
-                  <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                    <EntypoIcon
-                      name="chevron-left"
-                      style={styles.icon1}
-                    ></EntypoIcon>
-                  </TouchableOpacity>
-                </TouchableOpacity>
-                <Text style={styles.editStay}>Edit Stay</Text>
-                <View style={styles.button3Stack}>
-                  <TouchableOpacity onPress={() => { props.goHome() }} style={styles.button3}></TouchableOpacity>
-                  <Image
-                    source={require("../assets/images/jstay-icon-light-dark-blue.png")}
-                    resizeMode="contain"
-                    style={styles.image1}
-                  ></Image>
-                </View>
-              </View>
-            </View>
-          </View>
-        </View>
       </View>
       <View style={styles.materialButtonWithVioletText57Stack}>
         <MaterialButtonWithVioletText57
@@ -201,7 +175,7 @@ function EditMyListings(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)"
+    zIndex: 500
   },
   materialButtonWithVioletText35: {
     top: 0,
@@ -219,7 +193,7 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText35Stack: {
     height: 36,
-    marginTop: 221
+    marginTop: 221 - 87
   },
   materialButtonWithVioletText36: {
     top: 0,

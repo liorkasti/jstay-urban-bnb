@@ -20,11 +20,11 @@ function ReviewCard(props) {
           </View>
           <View style={styles.stayRatingSmallRow}>
             <StayRatingSmall
-              stay12="Stay"
+              tag="Stay"
               style={styles.stayRatingSmall}
             ></StayRatingSmall>
             <StayRatingSmall
-              stay12="Kashrut"
+              tag="Kashrut"
               style={styles.stayRatingSmall1}
             ></StayRatingSmall>
           </View>

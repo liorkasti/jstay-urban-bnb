@@ -34,24 +34,26 @@ const MyProfileMenu = function MyProfileMenu(props) {
                             ></MaterialButtonWithVioletText21>
                         </TouchableOpacity>
                         <MaterialButtonWithVioletText22
-                            onPress={() => props.onUserPress("newRequest")}
-                            tag="Booking Requests"
+                       
+                            tag="Kashrut"
+                            onPress={() => { props.onUserPress("editMyKashrut") }}
                             style={styles.materialButtonWithVioletText48}
                         ></MaterialButtonWithVioletText22>
                         <View style={styles.rect4}></View>
                     </View>
                     <View style={styles.materialButtonWithVioletText49Stack}>
                         <MaterialButtonWithVioletText23
-                            tag="Kashrut"
-                            onPress={() => { props.onUserPress("editMyKashrut") }}
+                            
+                            tag="Payment Details"
+                            onPress={() => { props.onUserPress("guestCardInfo"); }}
                             style={styles.materialButtonWithVioletText49}
                         ></MaterialButtonWithVioletText23>
                         <View style={styles.rect5}></View>
                     </View>
                     <View style={styles.materialButtonWithVioletText50Stack}>
                         <MaterialButtonWithVioletText24
-                            tag="Payment Details"
-                            onPress={() => { props.onUserPress("guestCardInfo"); }}
+                              onPress={() => console.error("coming soon link to zendesk")}
+                              tag="FAQ"
                             style={styles.materialButtonWithVioletText50}
                         ></MaterialButtonWithVioletText24>
                         <View style={styles.rect6}></View>
@@ -60,8 +62,10 @@ const MyProfileMenu = function MyProfileMenu(props) {
                     <View style={styles.materialButtonWithVioletText51Stack}>
                         <TouchableOpacity onPress={() => { props.onUserPress("editeProfile") }}>
                             <MaterialButtonWithVioletText25
-                                tag="Edit Profile"
-                                onPress={() => { props.onUserPress("editeProfile") }}
+                                       tag="Edit Profile"
+                                       onPress={() => { props.onUserPress("editeProfile") }}
+       
+                        
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>
@@ -91,6 +95,7 @@ const MyProfileMenu = function MyProfileMenu(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        zIndex: 500,
         backgroundColor: "rgba(2,172,235,1)",
     },
     rect1: {

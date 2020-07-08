@@ -12,7 +12,7 @@ function StayRatingSmall(props) {
               name="star"
               style={styles.icon111}
             ></FontAwesomeIcon>
-            <Text style={styles.stay12}>Stay</Text>
+            <Text style={styles.stay12}>{props.tag || "Stay"}</Text>
           </View>
           <View style={styles.icon112Stack}>
             <FontAwesomeIcon
@@ -25,10 +25,12 @@ function StayRatingSmall(props) {
             ></FontAwesomeIcon>
           </View>
         </View>
+
         <View style={styles.icon114Stack}>
           <FontAwesomeIcon name="star" style={styles.icon114}></FontAwesomeIcon>
           <FontAwesomeIcon name="star" style={styles.icon115}></FontAwesomeIcon>
         </View>
+        
       </View>
     </View>
   );
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
   stay12: {
     top: 0,
     left: 0,
+    width: 100,
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontFamily: "roboto-regular"

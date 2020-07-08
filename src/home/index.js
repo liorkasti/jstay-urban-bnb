@@ -95,6 +95,12 @@ export default function Index(props) {
             case "createStay":
                 history.push("/createStay", { currentSearch: currentSearch, backHistory });
                 break;
+                case "myStaysList":
+                    history.push("/account", { subroute:"myStaysList",currentSearch: currentSearch, backHistory });
+                    break;
+                    case "newRequest":
+                        history.push("/account", { subroute:"newRequest",currentSearch: currentSearch, backHistory });
+                        break;
         }
     };
 

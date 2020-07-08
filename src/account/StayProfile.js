@@ -5,7 +5,8 @@ import {
   Image,
   Text,
   TouchableOpacity,
-  ImageBackground
+  ImageBackground,
+  ScrollView
 } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
@@ -27,159 +28,143 @@ import CheckAvailabilityButton from "../createStay/components/CheckAvailabilityB
 function StayProfile(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.image2StackStackStack}>
-        <View style={styles.image2StackStack}>
-          <View style={styles.image2Stack}>
-            <Image
-              source={require("../assets/images/Cottage.jpg")}
-              resizeMode="contain"
-              style={styles.image2}
-            ></Image>
-            <Text style={styles.theCottage}>The Cottage</Text>
-            <View style={styles.group1}>
-              <View style={styles.rect}>
-                <Text style={styles.bsD12}>BS&quot;D</Text>
-                <View style={styles.button4RowRow}>
-                  <View style={styles.button4Row}>
-                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                      <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                        <EntypoIcon
-                          name="chevron-left"
-                          style={styles.icon110}
-                        ></EntypoIcon>
-                      </TouchableOpacity>
-                    </TouchableOpacity>
-                    <Text style={styles.stayInfo}>Stay Info</Text>
-                  </View>
-                  <View style={styles.button4RowFiller}></View>
-                  <TouchableOpacity style={styles.button3}>
-                    <View style={styles.image1Filler}></View>
-                    <Image
-                      source={require("../assets/images/jstay-icon-inverted8.png")}
-                      resizeMode="contain"
-                      style={styles.image1}
-                    ></Image>
-                  </TouchableOpacity>
-                </View>
+      <View style={{ marginBottom: 850 }}>
+        <View style={styles.image2StackStackStack}>
+          <View style={styles.image2StackStack}>
+            <View style={styles.image2Stack}>
+
+              <Text style={styles.theCottage}>The Cottage</Text>
+              <View style={styles.group1}>
               </View>
             </View>
+
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+               horizontal={true}
+                contentContainerStyle={{ width: 630 }}>
+              <Image
+                source={require("../assets/images/Cottage.jpg")}
+                resizeMode="contain"
+                style={styles.image2}
+              ></Image>
+              <ImageBackground
+                source={require("../assets/images/Cottage_2.jpg")}
+                resizeMode="contain"
+                style={styles.image3}
+                imageStyle={styles.image3_imageStyle}
+              >
+              </ImageBackground>
+            </ScrollView>
+
+            <TouchableOpacity onPress={() => props.onUserPress("preBookingProfile")} style={styles.button6}>
+              <Image
+                source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
+                resizeMode="stretch"
+                style={styles.image11}
+              ></Image>
+              <Text style={styles.host}>Host</Text>
+            </TouchableOpacity>
           </View>
-          <ImageBackground
-            source={require("../assets/images/Cottage_2.jpg")}
-            resizeMode="contain"
-            style={styles.image3}
-            imageStyle={styles.image3_imageStyle}
-          >
-            <EntypoIcon name="chevron-right" style={styles.icon7}></EntypoIcon>
-          </ImageBackground>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <TouchableOpacity onPress={()=>props.onUserPress("preBookingProfile")} style={styles.button6}>
-            <Image
-              source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
-              resizeMode="stretch"
-              style={styles.image11}
-            ></Image>
-            <Text style={styles.host}>Host</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.loremIpsumStack}>
-          <Text style={styles.loremIpsum}></Text>
-          <Text style={styles.text}>
-            Beautiful cozy cottage in Central Jerusalem, within walking distance
-            to the Shuk, beautiful parks and the Central Bus Station
+          <View style={styles.loremIpsumStack}>
+            <Text style={styles.loremIpsum}></Text>
+            <Text style={styles.text}>
+              Beautiful cozy cottage in Central Jerusalem, within walking distance
+              to the Shuk, beautiful parks and the Central Bus Station
           </Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.icon2Row}>
-        <FontAwesomeIcon
-          name="certificate"
-          style={styles.icon2}
-        ></FontAwesomeIcon>
-        <Text style={styles.listedAsKosher}>Listed as{"\n"}Kosher</Text>
-        <StayLocationDetails style={styles.stayLocation}></StayLocationDetails>
-      </View>
-      <View style={styles.icon4Row}>
-        <MaterialCommunityIconsIcon
-          name="cellphone-key"
-          style={styles.icon4}
-        ></MaterialCommunityIconsIcon>
-        <Text style={styles.selfCheckIn}>Self {"\n"}check-in</Text>
-        <EntypoIcon name="home" style={styles.icon33}></EntypoIcon>
-        <Text style={styles.entirePlace}>Entire place</Text>
-      </View>
-      <View style={styles.icon5Row}>
-        <FeatherIcon name="sunset" style={styles.icon5}></FeatherIcon>
-        <Text style={styles.shabbatFriendly}>Shabbat {"\n"}friendly</Text>
-        <MaxStayDetails style={styles.maxStayDetails}></MaxStayDetails>
-      </View>
-      <View style={styles.icon6Row}>
-        <MaterialCommunityIconsIcon
-          name="bank"
-          style={styles.icon6}
-        ></MaterialCommunityIconsIcon>
-        <Text style={styles.sukkahInclueded}>Sukkah options</Text>
-        <BedroomDetails style={styles.bedroomDetails}></BedroomDetails>
-      </View>
-      <View style={styles.overalStayRatingColumnRow}>
-        <View style={styles.overalStayRatingColumn}>
-          <OveralStayRating style={styles.overalStayRating}></OveralStayRating>
-          <OveralKashrutRating
-            style={styles.overalKashrutRating}
-          ></OveralKashrutRating>
+        <View style={styles.icon2Row}>
+          <FontAwesomeIcon
+            name="certificate"
+            style={styles.icon2}
+          ></FontAwesomeIcon>
+          <Text style={styles.listedAsKosher}>Listed as{"\n"}Kosher</Text>
+          <StayLocationDetails style={styles.stayLocation}></StayLocationDetails>
         </View>
-        <AddToFavoritesButton
-          style={styles.addToFavoritesButton}
-        ></AddToFavoritesButton>
-      </View>
-      <Text style={styles.rating}>Rating</Text>
-      <View style={styles.requestToBookButtonRow}>
-        <RequestToBookButton
-        onPress={()=>{props.onUserPress("bookStay");}}
-          style={styles.requestToBookButton}
-        ></RequestToBookButton>
-        <MessageHostButton style={styles.messageHostButton}></MessageHostButton>
-      </View>
-      <View style={styles.materialButtonWithVioletText16StackStack}>
-        <View style={styles.materialButtonWithVioletText16Stack}>
-          <MaterialButtonWithVioletText16
-            style={styles.materialButtonWithVioletText16}
-          ></MaterialButtonWithVioletText16>
-          <Text style={styles.night1}>
-            You must clean and turn off AC when leaving etc..
+        <View style={styles.icon4Row}>
+          <MaterialCommunityIconsIcon
+            name="cellphone-key"
+            style={styles.icon4}
+          ></MaterialCommunityIconsIcon>
+          <Text style={styles.selfCheckIn}>Self {"\n"}check-in</Text>
+          <EntypoIcon name="home" style={styles.icon33}></EntypoIcon>
+          <Text style={styles.entirePlace}>Entire place</Text>
+        </View>
+        <View style={styles.icon5Row}>
+          <FeatherIcon name="sunset" style={styles.icon5}></FeatherIcon>
+          <Text style={styles.shabbatFriendly}>Shabbat {"\n"}friendly</Text>
+          <MaxStayDetails style={styles.maxStayDetails}></MaxStayDetails>
+        </View>
+        <View style={styles.icon6Row}>
+          <MaterialCommunityIconsIcon
+            name="bank"
+            style={styles.icon6}
+          ></MaterialCommunityIconsIcon>
+          <Text style={styles.sukkahInclueded}>Sukkah options</Text>
+          <BedroomDetails style={styles.bedroomDetails}></BedroomDetails>
+        </View>
+        <View style={styles.overalStayRatingColumnRow}>
+          <View style={styles.overalStayRatingColumn}>
+            <OveralStayRating style={styles.overalStayRating}></OveralStayRating>
+            <OveralKashrutRating
+              style={styles.overalKashrutRating}
+            ></OveralKashrutRating>
+          </View>
+          <AddToFavoritesButton
+            style={styles.addToFavoritesButton}
+          ></AddToFavoritesButton>
+        </View>
+        <Text style={styles.rating}>Rating</Text>
+        <View style={styles.requestToBookButtonRow}>
+          <RequestToBookButton
+            onPress={() => { props.onUserPress("bookStay"); }}
+            style={styles.requestToBookButton}
+          ></RequestToBookButton>
+          <MessageHostButton style={styles.messageHostButton}></MessageHostButton>
+        </View>
+        <View style={styles.materialButtonWithVioletText16StackStack}>
+          <View style={styles.materialButtonWithVioletText16Stack}>
+            <MaterialButtonWithVioletText16
+              style={styles.materialButtonWithVioletText16}
+            ></MaterialButtonWithVioletText16>
+            <Text style={styles.night1}>
+              You must clean and turn off AC when leaving etc..
           </Text>
+          </View>
+          <EntypoIcon name="chevron-down" style={styles.icon32}></EntypoIcon>
+          <MaterialButtonWithVioletText50
+            style={styles.materialButtonWithVioletText31}
+          ></MaterialButtonWithVioletText50>
         </View>
-        <EntypoIcon name="chevron-down" style={styles.icon32}></EntypoIcon>
-        <MaterialButtonWithVioletText50
-          style={styles.materialButtonWithVioletText31}
-        ></MaterialButtonWithVioletText50>
-      </View>
-      <Text style={styles.essentials}>Essentials</Text>
-      <View style={styles.kitchen2Stack}>
-        <Text style={styles.kitchen2}>Kitchen</Text>
-        <Text style={styles.loremIpsum1}>
-          Full kitchen that guests can use to cook
+        <Text style={styles.essentials}>Essentials</Text>
+        <View style={styles.kitchen2Stack}>
+          <Text style={styles.kitchen2}>Kitchen</Text>
+          <Text style={styles.loremIpsum1}>
+            Full kitchen that guests can use to cook
         </Text>
-      </View>
-      <Text style={styles.wiFi}>WiFi</Text>
-      <Text style={styles.text1}>
-        Towels, bedsheets, soap, toilet paper, pillows
+        </View>
+        <Text style={styles.wiFi}>WiFi</Text>
+        <Text style={styles.text1}>
+          Towels, bedsheets, soap, toilet paper, pillows
       </Text>
-      <Text style={styles.shabbatLampS}>Shabbat Lamp(s)</Text>
-      <Text style={styles.loremIpsum16}>Candlesticks And Candles</Text>
-      <Text style={styles.kiddushCup}>Kiddush Cup</Text>
-      <View style={styles.materialButtonWithVioletText30Stack}>
-        <MaterialButtonWithVioletText30
-          style={styles.materialButtonWithVioletText30}
-        ></MaterialButtonWithVioletText30>
-        <Text style={styles.hostsRules3}>Host&#39;s Rules</Text>
-      </View>
-      <Text style={styles.text2}>
-        Free cancellations until 3 days prior to check-in
+        <Text style={styles.shabbatLampS}>Shabbat Lamp(s)</Text>
+        <Text style={styles.loremIpsum16}>Candlesticks And Candles</Text>
+        <Text style={styles.kiddushCup}>Kiddush Cup</Text>
+        <View style={styles.materialButtonWithVioletText30Stack}>
+          <MaterialButtonWithVioletText30
+          onPress={() =>props.onUserPress("reviews")}
+            style={styles.materialButtonWithVioletText30}
+          ></MaterialButtonWithVioletText30>
+          <Text style={styles.hostsRules3}>Host&#39;s Rules</Text>
+        </View>
+        <Text style={styles.text2}>
+          Free cancellations until 3 days prior to check-in
       </Text>
-      <Text style={styles.shabbatHolliday1}>Shabbat/Holiday Essentials</Text>
-      <CheckAvailabilityButton
-        style={styles.checkAvailabilityButton}
-      ></CheckAvailabilityButton>
+        <Text style={styles.shabbatHolliday1}>Shabbat/Holiday Essentials</Text>
+        <CheckAvailabilityButton
+          style={styles.checkAvailabilityButton}
+        ></CheckAvailabilityButton>
+      </View>
     </View>
   );
 }
@@ -187,7 +172,8 @@ function StayProfile(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    marginTop: -90,
+    backgroundColor: "rgba(2,172,235,1)",
   },
   image2: {
     top: 87,

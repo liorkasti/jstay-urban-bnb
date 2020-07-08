@@ -31,7 +31,7 @@ function MyProfile(props) {
   return (
     <View style={styles.container}>
             {props.showMenu &&
-                    <MyProfileMenu style={styles.headerMenu} />
+                    <MyProfileMenu onUserPress={(action)=>props.onUserPress(action)} style={styles.headerMenu} />
                 }
       <View style={styles.image2StackStack}>
 

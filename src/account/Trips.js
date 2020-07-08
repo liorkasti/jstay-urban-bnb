@@ -239,6 +239,7 @@ const styles = StyleSheet.create({
   },
   upcomingTripsStack: {
     height: 222,
+    marginTop:20,
     marginLeft: 8,
     marginRight: 7
   },

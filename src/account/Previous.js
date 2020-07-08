@@ -67,32 +67,9 @@ function Untitled9(props) {
         <Text style={styles.checkOut5}>15:00</Text>
         <Text style={styles.checkOut4}>11:00</Text>
       </View>
+      
       <View style={styles.group23}>
-        <View style={styles.rect106}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon1}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.previous}>Previous</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
+        
       </View>
       <View style={styles.group24}>
         <View style={styles.rect13}>
@@ -207,7 +184,7 @@ const styles = StyleSheet.create({
   button6: {
     width: 380,
     height: 90,
-    marginTop: 100,
+    marginTop: 20,
     marginLeft: 10
   },
   group22: {
