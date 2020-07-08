@@ -61,7 +61,7 @@ function Home(props) {
         //searchResults
         <ScrollView   refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-        }> style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); } }}>
+        } style={{ marginTop: 110, zIndex: 1 }} onScrollBeginDrag={() => { if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); } }}>
           <View style={{ marginTop: -4, paddingBottom: 70 }}>
 
             <MaterialCardWithRightButtons
