@@ -144,8 +144,8 @@ function Pricing(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
-    height: 1100,
+    flex: 1,
+    height: 1200,
     backgroundColor: "rgba(2,172,235,1)"
   },
   group5: {

@@ -93,6 +93,7 @@ function StayRules(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    height: 1000,
     backgroundColor: "rgba(2,172,235,1)"
   },
   textInput1: {

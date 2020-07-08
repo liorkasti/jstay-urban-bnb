@@ -99,7 +99,7 @@ function Address(props) {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    height: 200,
+    height: 900,
     backgroundColor: "rgba(2,172,235,1)",
   },
   text: {
