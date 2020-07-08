@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingRight: 16,
-    paddingLeft: 16,
+    paddingLeft: 26,
+    paddingTop: 24,
     minWidth: 88
   },
   seeMyReviews: {
     width: 196,
-    height: 21,
+    height: 26,
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",

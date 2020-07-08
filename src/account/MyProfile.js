@@ -7,19 +7,9 @@ import {
   Image,
   ImageBackground
 } from "react-native";
-import MaterialButtonViolet33 from "../components/MaterialButtonViolet33";
-import MaterialButtonViolet28 from "../components/MaterialButtonViolet28";
-import Icon from "react-native-vector-icons/Entypo";
-import MaterialButtonTransparentHamburger from "../components/MaterialButtonTransparentHamburger";
 import MaterialButtonWithVioletText32 from "../components/MaterialButtonWithVioletText32";
-import MaterialButtonViolet30 from "../components/MaterialButtonViolet30";
-import MaterialButtonWithVioletText21 from "../components/MaterialButtonWithVioletText21";
-import MaterialButtonWithVioletText22 from "../components/MaterialButtonWithVioletText22";
-import MaterialButtonWithVioletText23 from "../components/MaterialButtonWithVioletText23";
-import MaterialButtonWithVioletText24 from "../components/MaterialButtonWithVioletText24";
-import MaterialButtonWithVioletText25 from "../components/MaterialButtonWithVioletText25";
-import MaterialButtonWithVioletText26 from "../components/MaterialButtonWithVioletText26";
-import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithVioletText28";
+import MyProfileMenu from "./components/MyProfileMenu";
+
 import MyNameDetails from "../components/MyNameDetails";
 import DateBirthDetails from "../components/DateBirthDetails";
 import MyLocationDetails from "../components/MyLocationDetails";
@@ -34,103 +24,32 @@ import MyStaysRating from "../components/MyStaysRating";
 import MyKosherRating from "../components/MyKosherRating";
 
 function MyProfile(props) {
-  const [showMenu, setShowMenu] = useState(false);
 
   const changeProfilePic = () => {
     console.warn("add change profile pic behavior")
   }
   return (
     <View style={styles.container}>
-      
-     
-
+            {props.showMenu &&
+                    <MyProfileMenu style={styles.headerMenu} />
+                }
       <View style={styles.image2StackStack}>
-
 
         {/*TODO: add image picker for single image*/}
         <TouchableOpacity onPress={()=>{changeProfilePic()}} style={styles.image2Stack}>
-          <ImageBackground
+          <Image
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
             style={styles.image2}
             imageStyle={styles.image2_imageStyle}
           >
-            <MaterialButtonWithVioletText32
+       
+          </Image>
+          <MaterialButtonWithVioletText32
             onPress={() =>{changeProfilePic()}}
               style={styles.materialButtonWithVioletText39}
             ></MaterialButtonWithVioletText32>
-          </ImageBackground>
         </TouchableOpacity>
-
-        {showMenu &&
-          <View style={styles.rect2}>
-            <View style={styles.groupFiller}></View>
-            <View style={styles.group}>
-              <View style={styles.button6Stack}>
-                <TouchableOpacity
-                  style={styles.button6}
-                >
-                  <View
-                    style={styles.materialButtonWithVioletText47Filler}
-                  ></View>
-
-                  <MaterialButtonWithVioletText21
-                    onPress={() => props.onUserPress("myStaysList")}
-                    caption="My Stays"
-                    style={styles.materialButtonWithVioletText47}
-                  ></MaterialButtonWithVioletText21>
-                </TouchableOpacity>
-                <MaterialButtonWithVioletText22
-                  onPress={() => props.onUserPress("newRequest")}
-                  tag="Booking Requests"
-                  style={styles.materialButtonWithVioletText48}
-                ></MaterialButtonWithVioletText22>
-                <View style={styles.rect4}></View>
-              </View>
-              <View style={styles.materialButtonWithVioletText49Stack}>
-                <MaterialButtonWithVioletText23
-                  tag="Kashrut"
-                  onPress={() => { props.onUserPress("editMyKashrut") }}
-                  style={styles.materialButtonWithVioletText49}
-                ></MaterialButtonWithVioletText23>
-                <View style={styles.rect5}></View>
-              </View>
-              <View style={styles.materialButtonWithVioletText50Stack}>
-                <MaterialButtonWithVioletText24
-                  tag="Payment Details"
-                  onPress={() => { props.onUserPress("guestCardInfo"); }}
-                  style={styles.materialButtonWithVioletText50}
-                ></MaterialButtonWithVioletText24>
-                <View style={styles.rect6}></View>
-              </View>
-
-              <View style={styles.materialButtonWithVioletText51Stack}>
-                <TouchableOpacity onPress={()=>{props.onUserPress("editeProfile")}}>
-                <MaterialButtonWithVioletText25
-                  tag="Edit Profile"
-                  onPress={() => { props.onUserPress("editeProfile") }}
-                  style={styles.materialButtonWithVioletText51}
-                ></MaterialButtonWithVioletText25>
-                </TouchableOpacity>
-                <MaterialButtonWithVioletText26
-                  onPress={() => { props.onDeleteAccount() }}
-                  tag="Delete Account"
-                  style={styles.materialButtonWithVioletText52}
-                ></MaterialButtonWithVioletText26>
-                <MaterialButtonWithVioletText28
-                  onPress={() => props.onLogout()}
-                  tag="logout"
-                  style={styles.materialButtonWithVioletText53}
-                ></MaterialButtonWithVioletText28>
-                <View style={styles.rect3}></View>
-                <View style={styles.rect7}></View>
-                <View style={styles.rect8}></View>
-              </View>
-
-            </View>
-          </View>
-        }
-
 
 
         <Text style={styles.loremIpsum}></Text>
@@ -139,6 +58,7 @@ function MyProfile(props) {
         <MyLocationDetails style={styles.myLocationDetails}></MyLocationDetails>
         <TitleDetails style={styles.titleDetails}></TitleDetails>
       </View>
+
       <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
       <EmailDetails style={styles.emailDetails}></EmailDetails>
       <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
@@ -181,6 +101,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 0,
     top: 0
+  },
+  headerMenu: {
+position: "absolute",
+    zIndex: 200,
   },
   materialButtonViolet27: {
     height: 0,
@@ -268,14 +192,20 @@ const styles = StyleSheet.create({
     position: "absolute",
     borderRadius: 100,
     left: 130,
+    zIndex: 1,
+
     overflow: "hidden"
   },
-  image2_imageStyle: {},
+  image2_imageStyle: {
+    zIndex: 1,
+  },
   materialButtonWithVioletText39: {
-    width: 100,
+    maxWidth: 100,
     height: 36,
-    marginTop: 114,
-    marginLeft: 25
+    zIndex:5,
+
+    marginTop: 138,
+    marginLeft: 155
   },
   materialButtonViolet30: {
     height: 50,
@@ -433,7 +363,7 @@ const styles = StyleSheet.create({
   image2Stack: {
     top: 0,
     left: 0,
-    width: 412,
+    maxWidth: 100,
     height: 350,
     position: "absolute"
   },
@@ -483,7 +413,7 @@ const styles = StyleSheet.create({
   },
   image2StackStack: {
     height: 360,
-    marginTop: 1,
+    marginTop: 0,
     marginLeft: 2
   },
   kashrutDetails: {
@@ -524,9 +454,10 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText46: {
     height: 30,
-    marginTop: -156,
+    marginTop: -190,
     marginLeft: 14,
-    marginRight: 153
+    marginRight: 153,
+    marginBottom: 34
   },
   myStaysRating: {
     height: 48,

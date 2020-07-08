@@ -31,6 +31,8 @@ const styles = StyleSheet.create({
   caption: {
     color: "rgba(2,172,235,1)",
     fontSize: 20,
+    height: 40,
+    paddingTop: 16.5,
     fontFamily: "roboto-regular",
     lineHeight: 14,
     textAlign: "center"

@@ -7,6 +7,8 @@ import auth from '@react-native-firebase/auth';
 
 //import all builder x files related to this directory
 import HeaderBarLight from "./components/HeaderBarLight";
+import MyProfileHeader from "./components/MyProfileHeader";
+import MyProfileMenu from "./components/MyProfileMenu";
 
 import Cancelation from "./Cancelation";
 import Confirmed from "./Confirmed";
@@ -75,6 +77,7 @@ export default function Index(props) {
     const [backHistory, addBackHistory] = useState([])
     const [historyIndex, setHistoryIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState("");
+    const [showMenu, setShowMenu] = useState(false);
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -115,6 +118,9 @@ export default function Index(props) {
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex] = props.location.state.subroute;
         addBackHistory(newBackHistory);
+        if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
+            onUserPress(props.location.state.subroute);
+        }
     }, []);
 
     const onUserPress = (page) => {
@@ -160,6 +166,8 @@ export default function Index(props) {
                 onEditStay(page);
             }}
 
+            showMenu={showMenu}
+
             goHome={() => {
                 onHome();
             }}
@@ -183,42 +191,31 @@ export default function Index(props) {
         <View style={styles.container}>
             {/*dynamic component*/}
             {
-                console.warn(props.location.state.subroute) || 
-                currentPage === "myProfile" ||
-                props.location.state.subroute === "myProfile" ? 
-                <HeaderBarLight
-                    screenWidth={windowWidth}
-                    style={styles.header}
-                    header={headers[currentPage || props.location.state.subroute]}
-                    onHome={() => { onHome() }}
-                    onBack={() => onBack()}
-                /> : <View style={styles.rect1Stack}>
-        <View style={styles.rect1}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text}>My Profile</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <MaterialButtonTransparentHamburger
-              onPress={() => {
-                setShowMenu(!showMenu)
-              }}
-              style={styles.materialButtonTransparentHamburger}
-            ></MaterialButtonTransparentHamburger>
-          </View>
-        </View>
-      </View>
+                currentPage !== "myProfile" ?
+                    <HeaderBarLight
+                        screenWidth={windowWidth}
+                        style={styles.header}
+                        header={headers[currentPage || props.location.state.subroute]}
+                        onHome={() => { onHome() }}
+                        onBack={() => onBack()}
+                    />
+                    :
+                    <MyProfileHeader
+                        screenWidth={windowWidth}
+                        style={styles.header}
+                        header={headers[currentPage || props.location.state.subroute]}
+                        setShowMenu={() => { setShowMenu(!showMenu) }}
+                        onBack={() => onBack()}
+                    />
             }
-            
-            <ScrollView style={{   zIndex: 1,
-        backgroundColor: "rgba(2,172,235,1)",
-        marginTop:  70}}>
+            <ScrollView style={{
+                zIndex: 1,
+                backgroundColor: "rgba(2,172,235,1)",
+                marginTop: 70
+            }}
+            onScrollBeginDrag={() => {
+                if (showMenu) { setShowMenu(false);}
+              }}>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -236,9 +233,6 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
 
-    scrollView: {
-     
-    },
     header: {
         zIndex: 20,
     },

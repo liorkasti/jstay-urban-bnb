@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Dimensions, Text, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 
 function HeaderBarLight(props) {
   return (
-    <View style={[styles.container, props.style]}>
     <View style={styles.group1}>
     <View style={styles.rect}>
       <Text style={styles.bsD1}>BS&quot;D</Text>
@@ -15,10 +14,10 @@ function HeaderBarLight(props) {
               <Icon name="chevron-left" style={styles.icon1}></Icon>
             </TouchableOpacity>
           </TouchableOpacity>
-          <Text style={styles.header}>{props.header}</Text>
+          <Text style={styles.text14}>{props.header}</Text>
         </View>
         <View style={styles.button4RowFiller}></View>
-        <TouchableOpacity onPress={props.onHome} style={styles.button3}>
+        <TouchableOpacity style={styles.button3}>
           <View style={styles.image1Filler}></View>
           <Image
             source={require("../assets/images/jstay-icon-inverted8.png")}
@@ -29,20 +28,14 @@ function HeaderBarLight(props) {
       </View>
     </View>
   </View>
-  </View>
   );
 }
-
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 
 const styles = StyleSheet.create({
   group1: {
     width: 414,
-    height: 0,
-    paddingBottom: 30
+    height: 91,
+    marginTop: -258
   },
   rect: {
     height: 91,
@@ -71,15 +64,12 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 40
   },
-  header: {
+  text14: {
     color: "rgba(0,88,155,1)",
     fontSize: 25,
     fontFamily: "roboto-regular",
     textAlign: "center",
-    //TODO: do these better
-    width: 270,
-    marginLeft: 35,
-    
+    marginLeft: 126,
     marginTop: 8
   },
   button4Row: {
