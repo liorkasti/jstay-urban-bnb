@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     right: 0,
     borderColor: "rgba(2,172,235,1)",
     borderWidth: 0,
-    borderBottomWidth: 90,
+    borderBottomWidth: .7,
     left: 0
   },
   headerBarDark1Stack: {

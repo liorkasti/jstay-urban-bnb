@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     borderColor: "rgba(2,172,235,1)",
     borderWidth: 0,
-    borderBottomWidth: 90,
+    borderBottomWidth: .7,
     right: 0
   },
   bsD1: {
