@@ -9,6 +9,7 @@ import Home from "./Home";
 // import Favorites from "./Favorites";
 import Favorites from "../account/Favorites";
 import Messages from "../messaging/messages";
+import MyProfile from "../account/MyProfile";
 import Messaging from "../messaging/chat";
 import Welcome from "../login/Welcome";
 
@@ -27,8 +28,8 @@ export default function Index(props) {
         }
     }, [])
 
-    const handleFooterMenu = (menuItem) => {
-        switch (menuItem) {
+    const handleFooterMenu = (page) => {
+        switch (page) {
             case "createStay":
                 console.warn("hello createStay")
                 history.push("/createStay");
@@ -79,8 +80,9 @@ export default function Index(props) {
             case "messages":
                 history.push("/chat")
                 break;
-            case "Account":
-                {handleFooterMenu(page)}
+            case "account":
+                // { handleFooterMenu(page) }
+                setCurrentComponent("Account");
                 break;
         }
     };
@@ -128,9 +130,9 @@ export default function Index(props) {
                         setCurrentSearch("")
                     }}
 
-                    handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
-                    }}
+                    // handleFooterMenu={(menuItem) => {
+                    //     handleFooterMenu(menuItem)
+                    // }}
 
                     onUserPress={(page) => {
                         handleCard(page, currentComponent);
@@ -145,6 +147,10 @@ export default function Index(props) {
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
                     }}
+
+                // handleCard={(page) => {
+                //     handleCard(page, backHistory);
+                // }}
 
                 />
             }
@@ -197,6 +203,47 @@ export default function Index(props) {
                 &&
                 //change component name to the new import 
                 <Messages
+
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
+
+                    handleFooterBar={(page) => {
+                        handleFooterBar(page)
+                    }}
+
+                    showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
+
+                    //if builder x component has back button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    // onBack={() => {
+                    //     onBack();
+                    // }}
+
+                    onHome={() => {
+                        setCurrentComponent("Home");
+                    }}
+                    //if builder x component has skip button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onSkip={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+                />
+            }
+            {
+                //replace this string with the string 
+                //in componentKeys related to this import
+
+                currentComponent === "Account"
+                &&
+                //change component name to the new import 
+                <MyProfile
 
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}

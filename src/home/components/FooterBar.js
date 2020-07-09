@@ -10,15 +10,17 @@ function MaterialBasicFooter1(props) {
     <View style={[styles.container, props.style]}>
 
       {/*dropdown menu for account */}
-      <View>
+      {/* <View>
         {
           props.showFooterMenu &&
           <FooterMenuDropdown
             handleFooterMenu={(menuItem) => { props.handleFooterMenu("Account") }}
             style={styles.materialBasicFooter1} />
         }
-      </View>
-      <TouchableOpacity onPress={() => { props.handleFooterBar("favorites"); }} style={styles.btnWrapper1}>
+      </View> */}
+      <TouchableOpacity
+        onPress={() => { props.handleFooterBar("favorites"); }}
+        style={styles.btnWrapper1}>
         <MaterialCommunityIconsIcon
           name="home-heart"
           style={styles.icon1}
@@ -26,7 +28,9 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.btn1Text}>Favorites</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => props.handleFooterBar("trips")} style={styles.activebtnWrapper}>
+      <TouchableOpacity
+        onPress={() => props.handleFooterBar("trips")}
+        style={styles.activebtnWrapper}>
         <MaterialCommunityIconsIcon
           name="airplane-landing"
           style={styles.activeIcon}
@@ -34,7 +38,9 @@ function MaterialBasicFooter1(props) {
         <Text style={styles.activeText}>My Trips</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => props.handleFooterBar("messages")} style={styles.btnWrapper2}>
+      <TouchableOpacity
+        onPress={() => props.handleFooterBar("messages")}
+        style={styles.btnWrapper2}>
         {props.hasMessages &&
           <MaterialCommunityIconsIcon
             name={`numeric-${props.ammountOfMessages}-box`}
@@ -42,7 +48,8 @@ function MaterialBasicFooter1(props) {
           ></MaterialCommunityIconsIcon>
         }
         <MaterialCommunityIconsIcon
-          onPress={() => props.handleFooterBar("messages")} style={styles.activebtnWrapper}
+          onPress={() => props.handleFooterBar("messages")}
+          style={styles.activebtnWrapper}
           name="message-processing"
           style={styles.icon2}
         ></MaterialCommunityIconsIcon>
@@ -63,6 +70,8 @@ function MaterialBasicFooter1(props) {
         }
         <MaterialCommunityIconsIcon
           name="account"
+          onPress={() => props.handleFooterBar("account")}
+          style={styles.activebtnWrapper}
           style={styles.icon3}
         ></MaterialCommunityIconsIcon>
         <Text style={styles.btn3Text}>Account</Text>
