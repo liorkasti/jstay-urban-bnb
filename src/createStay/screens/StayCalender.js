@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
   },
   calendarCard: {
     position: "absolute",
-    top: 22,
+    top: 72,
+    maxWidth: 450,
     left: 0,
     height: 420,
     right: 0
@@ -62,8 +63,8 @@ const styles = StyleSheet.create({
   text: {
     top: 0,
     left: 0,
-    width: 275,
-    height: 28,
+    width: 'auto',
+    height: 'auto',
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 14,

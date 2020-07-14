@@ -141,7 +141,7 @@ export default function Index(props) {
     }
 
     return (
-        <View style={styles.container}>
+        <View styles={{zIndex: 1, marginTop: 70}}>
             <HeaderBarLight
                 screenWidth={windowWidth}
                 style={styles.header}

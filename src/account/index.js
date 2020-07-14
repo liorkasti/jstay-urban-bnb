@@ -67,12 +67,13 @@ export default function Index(props) {
 
         auth()
             .signOut()
-            .then(() => {console.log('User signed out!')
-            setTimeout(()=>{
-                history.push("/")
-            })
-        }
-        );
+            .then(() => {
+                console.log('User signed out!')
+                setTimeout(() => {
+                    history.push("/")
+                })
+            }
+            );
     }
 
     const onCreateStay = (from) => {
@@ -90,12 +91,52 @@ export default function Index(props) {
     }, []);
 
     const onUserPress = (page) => {
-        setCurrentPage(page);
-        let newBackHistory = [...backHistory];
-        newBackHistory[historyIndex + 1] = page;
-        addBackHistory(newBackHistory);
-        setHistoryIndex(historyIndex + 1)
+        console.log("hello handleHamburgerMenu request page: ", (page))
+
+        // let newBackHistory = [...backHistory];
+        // setCurrentPage(page);
+        // newBackHistory[historyIndex + 1] = page;
+        // addBackHistory(newBackHistory);
+        // setHistoryIndex(historyIndex + 1)
     }
+
+
+    const handleHamburgerMenu = (page) => {
+        console.log("hello handleHamburgerMenu request page: ", (page))
+
+        switch (page) {
+            case "myStaysList":
+                console.log("hello handleHamburgerMenu myStpage request: ", (page))
+                // setCurrentPage(page);
+
+                let newBackHistory = [...backHistory];
+                newBackHistory[historyIndex + 1] = page;
+                addBackHistory(newBackHistory);
+                setHistoryIndex(historyIndex + 1)
+                handleHamburgerMenu("/MyStaysList");
+                history.push("/MyStaysList");                
+                break;
+            case "logout":
+                auth()
+                    .signOut()
+                    .then(() => {
+                        console.log('User signed out!')
+                        setTimeout(() => {
+                            history.push("/")
+                        })
+                    })
+                break;
+            case "profile":
+                history.push("/account", { subroute: "myProfile" });
+                break;
+            case "kashrut":
+                history.push("/account", { subroute: "editMyKashrut" })
+                break;
+            case "paymentDetails":
+                history.push("/account", { subroute: "guestCardInfo" })
+                break;
+        }
+    };
 
     const onBack = () => {
         if (historyIndex - 1 < 0) {
@@ -110,43 +151,46 @@ export default function Index(props) {
     }
 
     const CurrentComponentRouter = () => {
-        if (!components[props.location.state.subroute]) return <View />
+        if (!components[props.location.state.subroute]) return
+        <View />
         const CurrentComponent = components[currentPage || props.location.state.subroute];
-        return (<CurrentComponent
-            style={styles.componentStyle}
-            //if builder x component has next button
-            //it's button should have onPress={()=>{props.onNext}}
+        return (
+            <CurrentComponent
+                style={styles.componentStyle}
+                //if builder x component has next button
+                //it's button should have onPress={()=>{props.onNext}}
 
 
-            //if builder x component has back button
-            //it's button should have onPress={()=>{props.onNext}}
-            onBack={() => {
-                onBack();
-            }}
+                //if builder x component has back button
+                //it's button should have onPress={()=>{props.onNext}}
+                onBack={() => {
+                    onBack();
+                }}
 
-            onCreateStay={(requestSource) => {
-                onCreateStay(requestSource);
-            }}
+                onCreateStay={(requestSource) => {
+                    onCreateStay(requestSource);
+                }}
 
-            onEditStay={(page) => {
-                onEditStay(page);
-            }}
+                onEditStay={(page) => {
+                    onEditStay(page);
+                }}
 
-            goHome={() => {
-                onHome();
-            }}
-            deleteStay={() => {
-                console.warn("create delete stay behavior");
-                onBack();
-            }}
-            onDeleteAccount={() => {
-                onLogout();
-            }}
-            onLogout={() => {
-                onLogout();
-            }}
-            onUserPress={(page) => onUserPress(page)}
-        />)
+                goHome={() => {
+                    onHome();
+                }}
+                deleteStay={() => {
+                    console.warn("create delete stay behavior");
+                    onBack();
+                }}
+                onDeleteAccount={() => {
+                    onLogout();
+                }}
+                onLogout={() => {
+                    onLogout();
+                }}
+                onUserPress={(page) => onUserPress(page)}
+            />
+        )
     }
 
     return (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions } from "react-native"
+import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
 import { useHistory } from "react-router-dom";
 
 import auth from '@react-native-firebase/auth';
@@ -28,42 +28,6 @@ export default function Index(props) {
         }
     }, [])
 
-    const handleFooterMenu = (page) => {
-        switch (page) {
-            case "createStay":
-                console.warn("hello createStay")
-                history.push("/createStay");
-                break;
-            case "logout":
-                auth()
-                    .signOut()
-                    .then(() => {
-                        console.log('User signed out!')
-                        setTimeout(() => {
-                            history.push("/")
-                        })
-                    })
-                break;
-            case "profile":
-                history.push("/account", { subroute: "myProfile" });
-                break;
-            case "kashrut":
-                history.push("/account", { subroute: "editMyKashrut" })
-                break;
-            case "paymentDetails":
-                history.push("/account", { subroute: "guestCardInfo" })
-                break;
-        }
-    };
-
-    onBack = () => {
-        if (currentSearch) {
-            setCurrentComponent("SearchResults")
-        } else {
-            setCurrentComponent("Home")
-        }
-    }
-
     const handleFooterBar = (page) => {
         switch (page) {
             case "favorites":
@@ -82,6 +46,8 @@ export default function Index(props) {
                 break;
             case "account":
                 // { handleFooterMenu(page) }
+                console.warn("from index passing: ", (page))
+                // console.warn("props values: ", (props))
                 setCurrentComponent("Account");
                 break;
         }
@@ -107,6 +73,7 @@ export default function Index(props) {
         }
     };
 
+
     return (
         <View style={styles.flexContainer}>
             {/* copy paste below component*/}
@@ -130,9 +97,9 @@ export default function Index(props) {
                         setCurrentSearch("")
                     }}
 
-                    // handleFooterMenu={(menuItem) => {
-                    //     handleFooterMenu(menuItem)
-                    // }}
+                    handleFooterMenu={(menuItem) => {
+                        handleFooterMenu(menuItem)
+                    }}
 
                     onUserPress={(page) => {
                         handleCard(page, currentComponent);
@@ -147,10 +114,6 @@ export default function Index(props) {
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
                     }}
-
-                // handleCard={(page) => {
-                //     handleCard(page, backHistory);
-                // }}
 
                 />
             }
@@ -329,6 +292,7 @@ const styles = StyleSheet.create({
     flexContainer: {
         flex: 1,
         width: windowWidth,
-        height: windowHeight
+        height: windowHeight,
+        backgroundColor: "rgba(2,172,235,1)",
     }
 });

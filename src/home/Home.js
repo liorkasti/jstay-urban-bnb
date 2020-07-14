@@ -18,6 +18,8 @@ import SearchDropdown from "./components/SearchDropdown";
 import MaterialCardWithRightButtons from "./components/MaterialCardWithRightButtons";
 import MaterialCard5 from "./components/MaterialCard5";
 import MapButton2 from "./components/MapButton2";
+import StayResultCard from "./components/StayResultCard";
+
 import MaterialButtonWithVioletText21 from "./components/MaterialButtonWithVioletText21";
 import MaterialButtonWithVioletText22 from "./components/MaterialButtonWithVioletText22";
 import MaterialButtonWithVioletText23 from "./components/MaterialButtonWithVioletText23";
@@ -26,8 +28,12 @@ import MaterialButtonWithVioletText25 from "./components/MaterialButtonWithViole
 import MaterialButtonWithVioletText26 from "./components/MaterialButtonWithVioletText26";
 import MaterialButtonWithVioletText28 from "./components/MaterialButtonWithVioletText28";
 
-
 function Home(props) {
+  const doseShow = {
+    showSearchOptions: false,
+    showMediumMap: false,
+  }
+
   const [showSearchOptions, setShowSearchOptions] = useState(false);
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
@@ -35,7 +41,10 @@ function Home(props) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
 
+  useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
+  useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
   useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
+
 
   return (
     <View style={styles.container}>
@@ -55,7 +64,7 @@ function Home(props) {
       <View style={styles.searchBarContainer}>
         <SearchBar
           searchText={props.searchText}
-          onPress={() => { setShowSearchOptions(true); }}
+          onPress={() => { setShowSearchOptions(!showSearchOptions); }}
           style={styles.searchBar}
         />
 
@@ -64,6 +73,7 @@ function Home(props) {
         <TouchableOpacity onPress={() => { props.goHome() }} style={styles.jstayLogoDark}>
           <JstayLogoDark onPress={() => { props.goHome() }} />
         </TouchableOpacity>
+
 
         {/* todo: fix scrollView: */}
         {/*  City Cards - todo: cut past this inside the scrollView */}
@@ -77,10 +87,6 @@ function Home(props) {
 
         {/* todo: fix scrollView: */}
         {/*  City Cards - todo: cut past this inside the scrollView */}
-        <CityCards
-          showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-          style={styles.cityCards}
-        />
 
         {/* Top Stays - todo: cut past this inside the scrollView */}
         <Text style={styles.topStays}>Top Stays</Text>
@@ -96,7 +102,10 @@ function Home(props) {
         <ScrollView
           style={{ marginTop: 110, zIndex: 1, width: windowWidth, height: windowHeight }}
           onScrollBeginDrag={() => {
-            if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
+            if (showSearchOptions || showFooterMenu) {
+              setShowSearchOptions(false);
+              setShowFooterMenu(false);
+            }
           }}>
           <View style={styles.searchBarContainer}>
             <MaterialCardWithRightButtons
@@ -116,34 +125,12 @@ function Home(props) {
         <ScrollView
           style={{ marginTop: 110, zIndex: 1 }}
           onScrollBeginDrag={() => {
-            if (showSearchOptions || showFooterMenu) { setShowSearchOptions(false); setShowFooterMenu(false); }
+            if (showSearchOptions || showFooterMenu) {
+              setShowSearchOptions(false);
+              setShowFooterMenu(false);
+            }
           }}>
           <View style={styles.searchBarContainer}>
-            {/* City Cards */}
-            <View style={styles.cityCardsStackStack}>
-              <View style={styles.cityCardsStack}>
-                {/* Around the globe */}
-                <CityCards showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-                  style={styles.cityCards} />
-                <Text style={styles.loremIpsum2}></Text>
-              </View>
-              {/* Nearby */}
-              <Text style={styles.nearby}>Nearby</Text>
-            </View>
-            <Text style={styles.topStays}>Top Stays</Text>
-            <View style={styles.bsD1Stack}>
-            </View>
-            <MaterialCardWithRightButtons
-              onUserPress={(page) => { props.onUserPress(page) }}
-              onPress={() => { props.showStayProfile("Home") }}
-              style={styles.materialCardWithRightButtons1} />
-          </View>
-          <View style={styles.footerBar1Stack}>
-            <TouchableOpacity style={styles.button4}>
-              <MaterialCard5
-                onPress={() => { props.showSearchResultsFor("local") }}
-                style={styles.materialCard5} />
-            </TouchableOpacity>
           </View>
         </ScrollView>
       }
@@ -151,10 +138,12 @@ function Home(props) {
       {/* Map */}
       {!showMediumMap ?
         <MapButton2
-          onPress={() => setShowMediumMap(true)}
+          // showMediumMap = {showMediumMap}
+          onPress={() => setShowMediumMap(!showMediumMap)}
           style={styles.mapButton2}
         />
         : null //TODO: replace map with half screen map 
+        // showMediumMap = {showMediumMap}
       }
       {/* Footer */}
       <FooterBar

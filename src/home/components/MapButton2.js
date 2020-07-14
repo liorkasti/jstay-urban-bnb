@@ -5,7 +5,10 @@ import DragableMap from "./DragableMap";
 function MapButton2(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <TouchableOpacity onPress={props.onPress} style={styles.button55}>
+      <TouchableOpacity
+        onPress={props.onPress}
+        // onPress={() => setShowMediumMap(!showMediumMap)}
+        style={styles.button55}>
         <DragableMap style={styles.dragableMap}></DragableMap>
         <Text style={styles.loremIpsum3}>Find Stays With Map View</Text>
       </TouchableOpacity>

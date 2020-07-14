@@ -77,7 +77,7 @@ function MyProfile(props) {
 
 
         {/*TODO: add image picker for single image*/}
-        <TouchableOpacity onPress={()=>{changeProfilePic()}} style={styles.image2Stack}>
+        <TouchableOpacity onPress={() => { changeProfilePic() }} style={styles.image2Stack}>
           <ImageBackground
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
@@ -85,7 +85,7 @@ function MyProfile(props) {
             imageStyle={styles.image2_imageStyle}
           >
             <MaterialButtonWithVioletText32
-            onPress={() =>{changeProfilePic()}}
+              onPress={() => { changeProfilePic() }}
               style={styles.materialButtonWithVioletText39}
             ></MaterialButtonWithVioletText32>
           </ImageBackground>
@@ -102,13 +102,15 @@ function MyProfile(props) {
                   <View
                     style={styles.materialButtonWithVioletText47Filler}
                   ></View>
-
-                  <MaterialButtonWithVioletText21
-                    onPress={() => props.onUserPress("myStaysList")}
-                    caption="My Stays"
-                    style={styles.materialButtonWithVioletText47}
-                  ></MaterialButtonWithVioletText21>
+                  <View>
+                    <MaterialButtonWithVioletText21
+                      onPress={() => props.onUserPress("myStaysList"), console.log("handleHamburgerMenu myStpage sends: 'myStaysList' | /n /n props: ", (props))}
+                      caption="My Stays"
+                      style={styles.materialButtonWithVioletText47}
+                    ></MaterialButtonWithVioletText21>
+                  </View>
                 </TouchableOpacity>
+
                 <MaterialButtonWithVioletText22
                   onPress={() => props.onUserPress("newRequest")}
                   tag="Booking Requests"
@@ -134,12 +136,12 @@ function MyProfile(props) {
               </View>
 
               <View style={styles.materialButtonWithVioletText51Stack}>
-                <TouchableOpacity onPress={()=>{props.onUserPress("editeProfile")}}>
-                <MaterialButtonWithVioletText25
-                  tag="Edit Profile"
-                  onPress={() => { props.onUserPress("editeProfile") }}
-                  style={styles.materialButtonWithVioletText51}
-                ></MaterialButtonWithVioletText25>
+                <TouchableOpacity onPress={() => { props.onUserPress("editeProfile") }}>
+                  <MaterialButtonWithVioletText25
+                    tag="Edit Profile"
+                    onPress={() => { props.onUserPress("editeProfile") }}
+                    style={styles.materialButtonWithVioletText51}
+                  ></MaterialButtonWithVioletText25>
                 </TouchableOpacity>
                 <MaterialButtonWithVioletText26
                   onPress={() => { props.onDeleteAccount() }}
@@ -482,7 +484,7 @@ const styles = StyleSheet.create({
     left: 33,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
   },
   dateBirthDetails: {
     position: "absolute",
@@ -490,7 +492,7 @@ const styles = StyleSheet.create({
     left: 29,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   myLocationDetails: {
@@ -499,7 +501,7 @@ const styles = StyleSheet.create({
     left: 35,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   titleDetails: {
@@ -508,7 +510,7 @@ const styles = StyleSheet.create({
     left: 28,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   image2StackStack: {
@@ -520,7 +522,7 @@ const styles = StyleSheet.create({
     height: 36,
     marginTop: 3,
     marginLeft: 33,
-    zIndex:0
+    zIndex: 0
 
   },
   emailDetails: {
@@ -533,7 +535,7 @@ const styles = StyleSheet.create({
     height: 38,
     marginTop: 8,
     marginLeft: 31,
-    zIndex:0
+    zIndex: 0
 
   },
   materialButtonViolet15: {
