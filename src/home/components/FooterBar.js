@@ -57,9 +57,11 @@ function MaterialBasicFooter1(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => {
-          props.setShowFooterMenu(!props.showFooterMenu);
-        }}
+        // onPress={() => {
+        //   props.setShowFooterMenu(!props.showFooterMenu);
+        // }}
+        onPress={() => props.handleFooterBar("account")}
+
         style={styles.btnWrapper3}>
         {
           props.needToFinishProfile &&
@@ -70,7 +72,7 @@ function MaterialBasicFooter1(props) {
         }
         <MaterialCommunityIconsIcon
           name="account"
-          onPress={() => props.handleFooterBar("account")}
+          // onPress={() => props.handleFooterBar("account")}
           style={styles.activebtnWrapper}
           style={styles.icon3}
         ></MaterialCommunityIconsIcon>

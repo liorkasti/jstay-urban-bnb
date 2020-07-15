@@ -4,7 +4,10 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialButtonTransparentHamburger(props) {
   return (
-    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={[styles.container, props.style]}
+    >
       <Icon name="menu" style={styles.caption}></Icon>
     </TouchableOpacity>
   );

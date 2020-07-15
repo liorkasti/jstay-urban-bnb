@@ -53,14 +53,23 @@ function MyProfile(props) {
             ></MaterialButtonViolet28>
           </View>
           <Text style={styles.bsD1}>BS&quot;D</Text>
+
+          {/* Header */}
           <View style={styles.button4RowRow}>
             <View style={styles.button4Row}>
               <TouchableOpacity style={styles.button4}>
-                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
+                <TouchableOpacity
+                  onPress={() => {
+                    props.onBack()
+                  }}
+                  style={styles.button5}
+                >
                   <Icon name="chevron-left" style={styles.icon1}></Icon>
                 </TouchableOpacity>
               </TouchableOpacity>
+
               <Text style={styles.text}>My Profile</Text>
+
             </View>
             <View style={styles.button4RowFiller}></View>
             <MaterialButtonTransparentHamburger
@@ -70,6 +79,7 @@ function MyProfile(props) {
               style={styles.materialButtonTransparentHamburger}
             ></MaterialButtonTransparentHamburger>
           </View>
+
         </View>
 
       </View>

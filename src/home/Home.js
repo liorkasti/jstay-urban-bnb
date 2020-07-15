@@ -147,10 +147,10 @@ function Home(props) {
       }
       {/* Footer */}
       <FooterBar
-        setShowFooterMenu={(newOption) => { setShowFooterMenu(newOption); }}
-        showFooterMenu={showFooterMenu}
+        // setShowFooterMenu={(newOption) => { setShowFooterMenu(newOption); }}
+        // showFooterMenu={showFooterMenu}
         handleFooterBar={(page) => { props.handleFooterBar(page) }}
-        handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
+        // handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }}
         style={styles.footerBar1}
       />
     </View>

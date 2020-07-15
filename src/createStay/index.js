@@ -94,7 +94,7 @@ export default function Index(props) {
     };
 
     useEffect(() => {
-        console.warn(componentKeys[componentIndex])
+        console.warn("createStay/index.js componentKeys pic: " +  componentKeys[componentIndex], componentIndex)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
@@ -103,6 +103,7 @@ export default function Index(props) {
         if (componentIndex < 0) {
             onHome()
         }
+
     }, [componentIndex]);
 
     const CurrentComponentRouter = (props) => {
@@ -141,7 +142,7 @@ export default function Index(props) {
     }
 
     return (
-        <View styles={{zIndex: 1, marginTop: 70}}>
+        <View style={styles.container}>
             <HeaderBarLight
                 screenWidth={windowWidth}
                 style={styles.header}
@@ -175,4 +176,3 @@ const styles = StyleSheet.create({
         marginTop: 70
     },
 });
-
