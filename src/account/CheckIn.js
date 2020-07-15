@@ -20,10 +20,12 @@ function Untitled2(props) {
           You must clean and turn off AC when leaving etc..
         </Text>
         <MaterialButtonViolet13
+        onPress={() =>props.messageHost("I'm in")}
           text1="I'm In!"
           style={styles.materialButtonViolet20}
         ></MaterialButtonViolet13>
         <MaterialButtonViolet20
+          onPress={() =>props.messageHost("Hi can you please help me")}
           text1="Message Host"
           style={styles.materialButtonViolet21}
         ></MaterialButtonViolet20>
@@ -55,30 +57,10 @@ function Untitled2(props) {
       <Text style={styles.night2}>
         51 Harav Shmuel Baruch{"\n"}Jerusalem{"\n"}Israel{"\n"}15253
       </Text>
+
+
       <View style={styles.group1}>
-        <View style={styles.rect2}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.checkIn2}>Check-In</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
         </View>
-      </View>
     </View>
   );
 }
@@ -92,7 +74,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    marginTop: 580,
+    marginTop: 580 - 87,
     marginLeft: 40
   },
   name: {
@@ -139,7 +121,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "roboto-regular",
     marginTop: 5,
-    marginLeft: 40
+    marginLeft: 40,
+    paddingBottom: 12
   },
   night5: {
     top: 0,
@@ -278,7 +261,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

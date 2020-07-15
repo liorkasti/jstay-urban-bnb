@@ -8,27 +8,6 @@ import MaterialButtonViolet27 from "../components/MaterialButtonViolet27";
 function Untitled7(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group1}>
-        <View style={styles.rect106}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4Row}>
-            <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                <Icon name="chevron-left" style={styles.icon1}></Icon>
-              </TouchableOpacity>
-            </TouchableOpacity>
-            <Text style={styles.holdACharge}>Hold A Charge</Text>
-            <TouchableOpacity onPress={()=>props.goHome()} style={styles.button3}>
-              <View style={styles.image1Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image1}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
       <Text style={styles.priceForThisStay2}>
         Which charge would you like to hold?
       </Text>
@@ -39,6 +18,7 @@ function Untitled7(props) {
         style={styles.securityDepositCheckBox}
       ></SecurityDepositCheckBox>
       <MaterialButtonViolet27
+      onPress={() =>{props.onBack()}}
         style={styles.materialButtonViolet27}
       ></MaterialButtonViolet27>
       <Text style={styles.loremIpsum1}>
@@ -61,7 +41,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

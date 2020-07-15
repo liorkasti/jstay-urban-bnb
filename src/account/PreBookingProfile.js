@@ -64,33 +64,7 @@ function PreBookingProfile(props) {
         ></FontAwesomeIcon>
         <Text style={styles.kosherStandard1}>Kosher (standard)</Text>
       </View>
-      <View style={styles.group2}>
-        <View style={styles.rect14}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <EntypoIcon
-                    name="chevron-left"
-                    style={styles.icon127}
-                  ></EntypoIcon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.profile}>Profile</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity style={styles.button3}>
-              <View style={styles.image14Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image14}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
+
     </View>
   );
 }
@@ -104,7 +78,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 100,
-    marginTop: 121,
+    marginTop: 121 - 87,
     marginLeft: 30
   },
   icon1: {
@@ -287,7 +261,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

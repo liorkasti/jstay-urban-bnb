@@ -114,7 +114,12 @@ export default function CreateAccountIndex(props) {
     return (
 
         <View style={styles.container}>
-            <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Create Account" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            <HeaderBarDark screenWidth={windowWidth}
+                style={styles.header} header="Create Account"
+                onHome={() => { onHome() }} 
+                onBack={() => setComponentIndex(componentIndex - 1)}
+            />
+
             {/* <ScrollView style={styles.scrollView}> */}
 
             {/* copy paste below component*/}

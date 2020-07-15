@@ -21,7 +21,9 @@ export default function Index(props) {
     const history = useHistory();
 
     useEffect(() => {
+
         if (props.location.state && props.location.state.backHistory) {
+            
             setCurrentComponent(props.location.state.backHistory)
         }
         if (props.location.state && props.location.state.currentSearch) {
@@ -31,6 +33,12 @@ export default function Index(props) {
             setNewFavorites(props.location.state.favorites);
             setCurrentComponent("Favorites");
         }
+
+        if(props.location.state){
+            console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
+    }
+        
+
     }, [])
 
 
@@ -86,9 +94,9 @@ export default function Index(props) {
             case "newRequest":
                 history.push("/account", { subroute: "newRequest", currentSearch: currentSearch, backHistory });
                 break;
-            case "bookings":
-                history.push("/account", { subroute: "bookings", currentSearch: currentSearch, backHistory });
-                break;
+            // case "bookings":
+            //     history.push("/account", { subroute: "bookings", currentSearch: currentSearch, backHistory });
+            //     break;
 
         }
     };
@@ -198,9 +206,9 @@ export default function Index(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
-                    }}
+                    // handleFooterMenu={(menuItem) => {
+                    //     handleFooterMenu(menuItem)
+                    // }}
 
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
@@ -211,8 +219,8 @@ export default function Index(props) {
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
-                        onBack();
-                    }}
+                        // onBack();
+                        setCurrentComponent("Home");                    }}
 
                     onHome={() => {
                         setCurrentComponent("Home");
@@ -292,9 +300,15 @@ export default function Index(props) {
 
                     //if builder x component has back button
                     //it's button should have onPress={()=>{props.onNext}}
-                    onBack={() => {
-                        onBack();
-                    }}
+                    // onBack={() => {
+                    //     // onBack();
+                    //     // componentIndex = setComponentIndex(componentIndex - 1);
+                    //     console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
+
+                    //     setCurrentComponent("Home");
+
+                    // }}
+                    onBack={() => setComponentIndex(componentIndex - 1)}
 
                     onHome={() => {
                         setCurrentComponent("Home");

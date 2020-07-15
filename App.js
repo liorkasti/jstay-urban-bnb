@@ -58,9 +58,8 @@ export default function App() {
         <Switch>
           <BackButton>
           <Route exact path="/">
-              {loggedIn ? <Redirect to="/home" /> : <Login />}
-              {/* {loggedIn ? <Account /> : <Account />} */}
-              {/* {loggedIn ? <StayCalender /> : <StayCalender />} */}
+              {/* {loggedIn ? <Redirect to="/home" /> : <Login />} */}
+              {loggedIn ? <StayCalender /> : <StayCalender />}
             </Route>
             <Route path="/chat" exact component={Chat} />
             <Route path="/account" component={ Account }/>
@@ -69,8 +68,7 @@ export default function App() {
             <Route path="/createStay" component={ CreateStay }/>
             <Route path="/home" component={Home}/>
             {/* <Route path="/messaging" component={Messages}/> */}
-            {/* <Route exact path="/createStay" component={ StayCalender }/> */}
-            {/* <Route exact path="/account" component={ Account }/> */}
+            <Route exact path="/createStay" component={ StayCalender }/>
           </BackButton>
         </Switch>
       </NativeRouter>

@@ -16,33 +16,7 @@ function EditMyKashrut(props) {
         <Text style={styles.myLevelOfKashrut1}>My level of kashrut is</Text>
       </View>
 
-      <View style={styles.group1}>
-        <View style={styles.group2}>
-          <View style={styles.group12}>
-            <View style={styles.rect106}>
-              <Text style={styles.bsD1}>BS&quot;D</Text>
-              <View style={styles.button4RowRow}>
-                <View style={styles.button4Row}>
-                  <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                    <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                      <Icon name="chevron-left" style={styles.icon1}></Icon>
-                    </TouchableOpacity>
-                  </TouchableOpacity>
-                  <Text style={styles.kashrut}>Kashrut</Text>
-                </View>
-                <View style={styles.button4RowFiller}></View>
-                <TouchableOpacity onPress={()=>{props.goHome()}}>
-                <Image
-                  source={require("../assets/images/jstay-icon-light-dark-blue.png")}
-                  resizeMode="contain"
-                  style={styles.image1}
-                ></Image>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </View>
-      </View>
+  
     </View>
   );
 }
@@ -50,7 +24,6 @@ function EditMyKashrut(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)"
   },
   kosherSelect1: {
     top: 14,
@@ -76,7 +49,7 @@ const styles = StyleSheet.create({
   },
   kosherSelect1Stack: {
     height: 397,
-    marginTop: 230,
+    marginTop: 175,
     marginLeft: 5
   },
   group1: {
@@ -93,7 +66,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(2,172,235,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

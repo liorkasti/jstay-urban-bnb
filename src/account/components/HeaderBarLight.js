@@ -14,10 +14,10 @@ function HeaderBarLight(props) {
               <Icon name="chevron-left" style={styles.icon1}></Icon>
             </TouchableOpacity>
           </TouchableOpacity>
-          <Text style={styles.text14}>{props.header}</Text>
         </View>
+          <Text style={styles.text14}>{props.header}</Text>
         <View style={styles.button4RowFiller}></View>
-        <TouchableOpacity style={styles.button3}>
+        <TouchableOpacity onPress={props.onHome} style={styles.button3}>
           <View style={styles.image1Filler}></View>
           <Image
             source={require("../assets/images/jstay-icon-inverted8.png")}
@@ -35,13 +35,12 @@ const styles = StyleSheet.create({
   group1: {
     width: 414,
     height: 91,
-    marginTop: -258
   },
   rect: {
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",
@@ -66,12 +65,12 @@ const styles = StyleSheet.create({
   },
   text14: {
     color: "rgba(0,88,155,1)",
-    fontSize: 25,
+    fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center",
-    marginLeft: 126,
-    marginTop: 8
-  },
+    marginTop: 8,
+    width: 330
+    },
   button4Row: {
     height: 40,
     flexDirection: "row",

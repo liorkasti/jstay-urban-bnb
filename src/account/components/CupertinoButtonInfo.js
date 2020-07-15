@@ -1,29 +1,28 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonWithVioletText25(props) {
+function CupertinoButtonInfo(props) {
   return (
     <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
-      <Text style={styles.caption}>{props.tag || FAQ}</Text>
+      <Text style={styles.bookings}>{props.bookings || "Bookings"}</Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "transparent",
-    flexDirection: "row",
-    alignItems: "center",
+    backgroundColor: "rgba(0,88,155,1)",
     justifyContent: "center",
-    paddingRight: 16,
+    alignItems: "center",
+    flexDirection: "row",
+    borderRadius: 5,
     paddingLeft: 16,
-    minWidth: 88
+    paddingRight: 16
   },
-  caption: {
+  bookings: {
     color: "rgba(2,172,235,1)",
-    fontSize: 20,
-    fontFamily: "roboto-regular"
+    fontSize: 20
   }
 });
 
-export default MaterialButtonWithVioletText25;
+export default CupertinoButtonInfo;

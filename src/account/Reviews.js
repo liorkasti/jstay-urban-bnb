@@ -2,35 +2,12 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 import ReviewCardUL from "../createStay/components/ReviewCardUL";
+import ReviewCard from "../createStay/components/ReviewCard";
 
 function Reviews(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.group3}>
-        <View style={styles.rect15}>
-          <Text style={styles.bsD1}>BS&quot;D</Text>
-          <View style={styles.button4RowRow}>
-            <View style={styles.button4Row}>
-              <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-                <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-                  <Icon name="chevron-left" style={styles.icon1254}></Icon>
-                </TouchableOpacity>
-              </TouchableOpacity>
-              <Text style={styles.text23}>Reviews</Text>
-            </View>
-            <View style={styles.button4RowFiller}></View>
-            <TouchableOpacity onPress={()=> { props.goHome() }}style={styles.button3}>
-              <View style={styles.image134Filler}></View>
-              <Image
-                source={require("../assets/images/jstay-icon-inverted8.png")}
-                resizeMode="contain"
-                style={styles.image134}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
-      <ReviewCardUL style={styles.reviewCardUl}></ReviewCardUL>
+      <ReviewCard style={styles.reviewCard1}></ReviewCard>
     </View>
   );
 }
@@ -38,16 +15,17 @@ function Reviews(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    marginTop: 20
   },
-  group3: {
-    height: 91
+  reviewCard3: {
+    height: 117,
+    marginTop: 50,  
   },
   rect15: {
-    height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",
