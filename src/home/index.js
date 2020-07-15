@@ -187,7 +187,7 @@ export default function Index(props) {
                 //replace this string with the string 
                 //in componentKeys related to this import
 
-                currentComponent === "trips"
+                currentComponent === "Trips"
                 &&
                 //change component name to the new import 
                 <Trips
