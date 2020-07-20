@@ -1021,6 +1021,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.8.tgz#0b399c47151371a7c70c5a4d8ffed8483032fd70"
   integrity sha512-b5yNss1OIl2Wx91ai9o226GCfG+1DmQS1ADTMQS9RJpLwTiBU58AuQO9K2IWdTFKIhMif/LB4cE3UQSASie7VA==
 
+"@react-native-firebase/in-app-messaging@^7.2.2":
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/in-app-messaging/-/in-app-messaging-7.2.2.tgz#d183c83b15b83cdb9c91070bea2bce20f86f383b"
+  integrity sha512-5QY3CYddkkPy2HeGDVHmTBqPZXTmUstlJsjStpV4mehOakOsyEB+7isnR8T9mBhkeIDa9NUATiKyk0z4RVSj7g==
+
 "@react-native-firebase/storage@^7.1.4":
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-7.1.6.tgz#b7eb04fd31818fad2cd2771635b78db2b6d4d6c2"
