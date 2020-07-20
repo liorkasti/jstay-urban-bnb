@@ -23,7 +23,6 @@ export default function Index(props) {
     useEffect(() => {
 
         if (props.location.state && props.location.state.backHistory) {
-            
             setCurrentComponent(props.location.state.backHistory)
         }
         if (props.location.state && props.location.state.currentSearch) {
@@ -34,11 +33,9 @@ export default function Index(props) {
             setCurrentComponent("Favorites");
         }
 
-        if(props.location.state){
+        if (props.location.state) {
             console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
-    }
-        
-
+        }
     }, [])
 
 
@@ -70,7 +67,7 @@ export default function Index(props) {
                 break;
         }
     };
-    
+
     const handleCard = (action, backHistory) => {
         switch (action) {
             case "stayProfile":
@@ -220,7 +217,8 @@ export default function Index(props) {
                     //it's button should have onPress={()=>{props.onNext}}
                     onBack={() => {
                         // onBack();
-                        setCurrentComponent("Home");                    }}
+                        setCurrentComponent("Home");
+                    }}
 
                     onHome={() => {
                         setCurrentComponent("Home");
@@ -367,10 +365,10 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        // alignItems: "center",
     },
     flexContainer: {
-        flex: 1,
+        // flex: 1,
         width: windowWidth,
         height: windowHeight,
         backgroundColor: "rgba(2,172,235,1)",

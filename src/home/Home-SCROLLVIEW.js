@@ -27,15 +27,16 @@ import MaterialButtonWithVioletText25 from "./components/MaterialButtonWithViole
 import MaterialButtonWithVioletText26 from "./components/MaterialButtonWithVioletText26";
 import MaterialButtonWithVioletText28 from "./components/MaterialButtonWithVioletText28";
 
+
 function Home(props) {
   const [showSearchOptions, setShowSearchOptions] = useState(false);
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
 
-  // const doseShow = {
-  //   showSearchOptions: false,
-  //   showMediumMap: false,
-  // }
+  const doseShow = {
+    showSearchOptions: false,
+    showMediumMap: false,
+  }
 
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
@@ -55,48 +56,21 @@ function Home(props) {
       />
 
       <Text style={styles.bsD1}>BS"D</Text>
+
       <TouchableOpacity onPress={() => { props.goHome() }} style={styles.jstayLogoDark}>
         <JstayLogoDark onPress={() => { props.goHome() }} />
       </TouchableOpacity>
 
-      {/* todo: add toggleFilterHandler */}
       {/* SearchDropdown */}
       {showSearchOptions &&
         <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
       }
+      {/* todo: add toggleFilterHandler */}
       <View style={styles.searchBarContainer}>
         <SearchBar
           searchText={props.searchText}
           onPress={() => { setShowSearchOptions(!showSearchOptions); }}
           style={styles.searchBar}
-        />
-      </View>
-
-      <View style={styles.searchBarContainer}>
-        {/* todo: fix scrollView: */}
-        {/*  City Cards - todo: cut past this inside the scrollView */}
-        <CityCards
-          showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-          style={styles.cityCards}
-        />
-
-        {/* Nearby - todo: cut past this inside the scrollView */}
-        <Text style={styles.nearby}>Nearby</Text>
-        <TouchableOpacity style={styles.button4}>
-          <MaterialCard5
-            onPress={() => { props.showSearchResultsFor("local") }}
-            style={styles.materialCard5} />
-        </TouchableOpacity>
-
-        {/* todo: fix scrollView: */}
-        {/*  City Cards - todo: cut past this inside the scrollView */}
-
-        {/* Top Stays - todo: cut past this inside the scrollView */}
-        <Text style={styles.topStays}>Top Stays</Text>
-        <MaterialCardWithRightButtons
-          onUserPress={(page) => { props.onUserPress(page) }}
-          onPress={() => { props.showStayProfile("Home") }}
-          style={styles.materialCardWithRightButtons1}
         />
       </View>
 
@@ -135,30 +109,27 @@ function Home(props) {
           }}>
             
           <View style={styles.scrollInterContainer}>
-            <View >
-              {/*  City Cards */}
-              <CityCards
-                showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-                style={styles.cityCards}
-              />
+            {/*  City Cards */}
+            <CityCards
+              showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
+              style={styles.cityCards}
+            />
 
-              {/* Nearby - todo: cut past this inside the scrollView */}
-              <Text style={styles.nearby}>Nearby</Text>
-              <TouchableOpacity style={styles.button4}>
-                <MaterialCard5
-                  onPress={() => { props.showSearchResultsFor("local") }}
-                  style={styles.materialCard5} />
-              </TouchableOpacity>
+            {/* Nearby - todo: cut past this inside the scrollView */}
+            <Text style={styles.nearby}>Nearby</Text>
+            <TouchableOpacity style={styles.button4}>
+              <MaterialCard5
+                onPress={() => { props.showSearchResultsFor("local") }}
+                style={styles.materialCard5} />
+            </TouchableOpacity>
 
-              {/* Top Stays */}
-              <Text style={styles.topStays}>Top Stays</Text>
-              <MaterialCardWithRightButtons
-                onUserPress={(page) => { props.onUserPress(page) }}
-                onPress={() => { props.showStayProfile("Home") }}
-                style={styles.materialCardWithRightButtons1}
-              />
-
-            </View>
+            {/* Top Stays */}
+            <Text style={styles.topStays}>Top Stays</Text>
+            <MaterialCardWithRightButtons
+              onUserPress={(page) => { props.onUserPress(page) }}
+              onPress={() => { props.showStayProfile("Home") }}
+              style={styles.materialCardWithRightButtons1}
+            />
           </View>
         </ScrollView>
       }
@@ -189,12 +160,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    alignItems: "center",
-    backgroundColor: "rgba(2,172,235,1)",
+    // alignItems: "center",    
+    // backgroundColor: "rgba(2,172,235,1)",
     marginHorizontal: Dimensions.get('window').width < 400 ? 2 : 0,
   },
   cityCards: {
-    top: 162,
+    top: 62,
     left: 4,
     height: 342,
     position: "absolute",
@@ -236,6 +207,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     fontSize: 18,
     fontFamily: "roboto-regular"
+  },
+  scrollInterContainer: {
+    height: 1500
   },
   bsD1: {
     top: 14,
