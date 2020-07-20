@@ -365,10 +365,10 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // alignItems: "center",
+        alignItems: "center",
     },
     flexContainer: {
-        // flex: 1,
+        flex: 1,
         width: windowWidth,
         height: windowHeight,
         backgroundColor: "rgba(2,172,235,1)",

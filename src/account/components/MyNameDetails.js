@@ -13,7 +13,11 @@ function MyNameDetails(props) {
 const styles = StyleSheet.create({
   container: {},
   nameDetails: {
-    height: 36
+    position: "absolute",
+    top: "0%",
+    left: 0,
+    height: 36,
+    right: 0
   }
 });
 

@@ -13,9 +13,11 @@ function MyLocationDetails(props) {
 const styles = StyleSheet.create({
   container: {},
   myLocation: {
+    position: "absolute",
+    top: "10.53%",
+    left: 0,
     height: 25,
-    width: 185,
-    marginTop: 4
+    width: 185
   }
 });
 

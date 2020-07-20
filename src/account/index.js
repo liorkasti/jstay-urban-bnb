@@ -178,7 +178,9 @@ export default function Index(props) {
     const CurrentComponentRouter = () => {
         if (!components[props.location.state.subroute]) return <View />
         const CurrentComponent = components[currentPage || props.location.state.subroute];
-        return (<CurrentComponent
+        return (
+        
+        <CurrentComponent
             style={styles.componentStyle}
             //if builder x component has next button
             //it's button should have onPress={()=>{props.onNext}}
@@ -230,7 +232,8 @@ export default function Index(props) {
                 onLogout();
             }}
             onUserPress={(page) => onUserPress(page)}
-        />)
+        />
+        )
     };
 
     const onRefresh = React.useCallback(() => {

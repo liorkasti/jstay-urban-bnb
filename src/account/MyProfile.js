@@ -5,23 +5,24 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  ImageBackground
+  ImageBackground,
+  ScrollView,
+  Dimensions
 } from "react-native";
-import MaterialButtonWithVioletText32 from "../components/MaterialButtonWithVioletText32";
+import MaterialButtonWithVioletText32 from "./components/MaterialButtonWithVioletText32";
 import MyProfileMenu from "./components/MyProfileMenu";
-
-import MyNameDetails from "../components/MyNameDetails";
-import DateBirthDetails from "../components/DateBirthDetails";
-import MyLocationDetails from "../components/MyLocationDetails";
-import TitleDetails from "../components/TitleDetails";
-import KashrutDetails from "../components/KashrutDetails";
-import EmailDetails from "../components/EmailDetails";
-import PhoneDetails from "../components/PhoneDetails";
-import MaterialButtonViolet15 from "../components/MaterialButtonViolet15";
-import MaterialButtonViolet16 from "../components/MaterialButtonViolet16";
+import MyNameDetails from "./components/MyNameDetails";
+import DateBirthDetails from "./components/DateBirthDetails";
+import MyLocationDetails from "./components/MyLocationDetails";
+import TitleDetails from "./components/TitleDetails";
+import KashrutDetails from "./components/KashrutDetails";
+import EmailDetails from "./components/EmailDetails";
+import PhoneDetails from "./components/PhoneDetails";
+import MaterialButtonViolet15 from "./components/MaterialButtonViolet15";
+import MaterialButtonViolet16 from "./components/MaterialButtonViolet16";
 import MaterialButtonWithVioletText46 from "../components/MaterialButtonWithVioletText46";
-import MyStaysRating from "../components/MyStaysRating";
-import MyKosherRating from "../components/MyKosherRating";
+import MyStaysRating from "./components/MyStaysRating";
+import MyKosherRating from "./components/MyKosherRating";
 
 function MyProfile(props) {
 
@@ -30,44 +31,52 @@ function MyProfile(props) {
   }
   return (
     <View style={styles.container}>
-            {props.showMenu &&
-                    <MyProfileMenu onUserPress={(action)=>props.onUserPress(action)} style={styles.headerMenu} />
-                }
+      {/* <ScrollView style={{
+        zIndex: 1,
+        backgroundColor: "rgba(2,172,235,1)",
+        width: windowWidth,
+        height: 1000
+      }}></ScrollView> */}
+      {props.showMenu &&
+        <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} />
+      }
       <View style={styles.image2StackStack}>
 
         {/*TODO: add image picker for single image*/}
-        <TouchableOpacity onPress={()=>{changeProfilePic()}} style={styles.image2Stack}>
+        <TouchableOpacity onPress={() => { changeProfilePic() }} style={styles.image2Stack}>
           <Image
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
             style={styles.image2}
             imageStyle={styles.image2_imageStyle}
           >
-       
           </Image>
+
           <MaterialButtonWithVioletText32
-            onPress={() =>{changeProfilePic()}}
-              style={styles.materialButtonWithVioletText39}
-            ></MaterialButtonWithVioletText32>
+            onPress={() => { changeProfilePic() }}
+            style={styles.materialButtonWithVioletText39}
+          ></MaterialButtonWithVioletText32>
         </TouchableOpacity>
-
-
-        <Text style={styles.loremIpsum}></Text>
-        <MyNameDetails style={styles.myNameDetails}></MyNameDetails>
-        <DateBirthDetails style={styles.dateBirthDetails}></DateBirthDetails>
-        <MyLocationDetails style={styles.myLocationDetails}></MyLocationDetails>
-        <TitleDetails style={styles.titleDetails}></TitleDetails>
       </View>
 
+      <Text style={styles.loremIpsum}></Text>
+      <MyNameDetails style={styles.myNameDetails}></MyNameDetails>
+      <DateBirthDetails style={styles.dateBirthDetails}></DateBirthDetails>
+      <MyLocationDetails style={styles.myLocationDetails}></MyLocationDetails>
+      <TitleDetails style={styles.titleDetails}></TitleDetails>
       <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
       <EmailDetails style={styles.emailDetails}></EmailDetails>
       <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
+
+      {/* Facebook btn */}
       <MaterialButtonViolet15
         style={styles.materialButtonViolet15}
       ></MaterialButtonViolet15>
+      {/* Google btn */}
       <MaterialButtonViolet16
         style={styles.materialButtonViolet16}
       ></MaterialButtonViolet16>
+
       <MaterialButtonWithVioletText46
         tag="See my reviews"
         onPress={() => { props.onUserPress("reviews") }}
@@ -75,15 +84,15 @@ function MyProfile(props) {
       ></MaterialButtonWithVioletText46>
       <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
       <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
-  
     </View>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 800,
+    // height: 800,
     backgroundColor: "rgba(2,172,235,1)",
   },
   rect1: {
@@ -104,7 +113,7 @@ const styles = StyleSheet.create({
     top: 0
   },
   headerMenu: {
-position: "absolute",
+    position: "absolute",
     zIndex: 200,
   },
   materialButtonViolet27: {
@@ -184,7 +193,7 @@ position: "absolute",
   rect1Stack: {
     width: 629,
     height: 91,
-    zIndex:40
+    zIndex: 40
   },
   image2: {
     top: 29,
@@ -203,7 +212,7 @@ position: "absolute",
   materialButtonWithVioletText39: {
     maxWidth: 100,
     height: 36,
-    zIndex:5,
+    zIndex: 5,
 
     marginTop: 138,
     marginLeft: 155
@@ -383,7 +392,7 @@ position: "absolute",
     left: 33,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
   },
   dateBirthDetails: {
     position: "absolute",
@@ -391,7 +400,7 @@ position: "absolute",
     left: 29,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   myLocationDetails: {
@@ -400,7 +409,7 @@ position: "absolute",
     left: 35,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   titleDetails: {
@@ -409,7 +418,7 @@ position: "absolute",
     left: 28,
     height: 36,
     right: 0,
-    zIndex:0
+    zIndex: 0
 
   },
   image2StackStack: {
@@ -421,7 +430,7 @@ position: "absolute",
     height: 36,
     marginTop: 3,
     marginLeft: 33,
-    zIndex:0
+    zIndex: 0
 
   },
   emailDetails: {
@@ -434,7 +443,7 @@ position: "absolute",
     height: 38,
     marginTop: 8,
     marginLeft: 31,
-    zIndex:0
+    zIndex: 0
 
   },
   materialButtonViolet15: {
