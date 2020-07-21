@@ -23,6 +23,8 @@ import MaterialButtonViolet16 from "./components/MaterialButtonViolet16";
 import MaterialButtonWithVioletText46 from "../components/MaterialButtonWithVioletText46";
 import MyStaysRating from "./components/MyStaysRating";
 import MyKosherRating from "./components/MyKosherRating";
+import ContinueFacebookButton from "./components/ContinueFacebookButton";
+import ContinueGoogleButton from "./components/ContinueGoogleButton";
 
 function MyProfile(props) {
 
@@ -69,13 +71,29 @@ function MyProfile(props) {
       <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
 
       {/* Facebook btn */}
-      <MaterialButtonViolet15
+      <TouchableOpacity style={styles.button3}>
+        <ContinueFacebookButton
+          onPress={() => props.facebookSignin()}
+          style={styles.continueFacebookButton}
+        ></ContinueFacebookButton>
+      </TouchableOpacity>
+      {/* <MaterialButtonViolet15
         style={styles.materialButtonViolet15}
-      ></MaterialButtonViolet15>
+      ></MaterialButtonViolet15> */}
       {/* Google btn */}
-      <MaterialButtonViolet16
+
+
+      <TouchableOpacity style={styles.button2}>
+        <ContinueGoogleButton
+          onPress={props.googleSignin}
+          style={styles.continueGoogleButton}
+        ></ContinueGoogleButton>
+      </TouchableOpacity>
+      {/* <MaterialButtonViolet16
         style={styles.materialButtonViolet16}
-      ></MaterialButtonViolet16>
+      ></MaterialButtonViolet16> */}
+
+
 
       <MaterialButtonWithVioletText46
         tag="See my reviews"
