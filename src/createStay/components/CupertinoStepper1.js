@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Center } from "@builderx/utils";
 
 function CupertinoStepper1(props) {
+
   return (
     <View style={[styles.container, props.style]}>
       <TouchableOpacity
@@ -13,6 +14,11 @@ function CupertinoStepper1(props) {
             backgroundColor: props.decrement ? "rgba(0, 122, 255,0.1)" : null
           }
         ]}
+        onPress={() => {
+          if (props.currentValue > 0) {
+            props.onChange(props.currentValue - 1);
+          }
+        }}
       >
         <MaterialCommunityIconsIcon
           name="minus"
@@ -26,6 +32,10 @@ function CupertinoStepper1(props) {
             backgroundColor: props.increment ? "rgba(0, 122, 255,0.1)" : null
           }
         ]}
+        onPress={() => {
+            props.onChange(props.currentValue ? props.currentValue + 1 : 1);
+          
+        }}
       >
         <MaterialCommunityIconsIcon
           name="plus"
@@ -33,7 +43,7 @@ function CupertinoStepper1(props) {
         ></MaterialCommunityIconsIcon>
       </TouchableOpacity>
       <Center vertical>
-        <Text style={styles.loremIpsum}>0</Text>
+        <Text style={styles.loremIpsum}>{props.currentValue || 0}</Text>
       </Center>
     </View>
   );
