@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonViolet16(props) {
+
+  console.warn("props.googleSignin", props.googleSignin)
+
   return (
-    <TouchableOpacity style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={props.googleSignin} style={[styles.container, props.style]}>
       <Text style={styles.caption}>Connect Google Account</Text>
     </TouchableOpacity>
   );

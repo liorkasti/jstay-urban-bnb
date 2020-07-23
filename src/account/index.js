@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView,RefreshControl } from "react-native"
+import {
+    View, StyleSheet, Dimensions, Image,
+    TouchableOpacity, Text, ScrollView, SafeAreaView, Constants
+} from "react-native"
 import { useHistory } from "react-router-dom";
 
-
+import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
+import { LoginManager, AccessToken } from 'react-native-fbsdk';
 
 //import all builder x files related to this directory
 import HeaderBarLight from "./components/HeaderBarLight";
@@ -15,7 +19,7 @@ import CancelationHost from "./CancelationHost";
 
 import ConfirmedGuest from "./ConfirmedGuest";
 import ConfirmedHost from "./ConfirmedHost";
-import EditeProfile from "./EditeProfile";
+import EditProfile from "./EditProfile";
 import EditMyKashrut from "./EditMyKashrut";
 import GuestCardInfo from "./GuestCardInfo";
 import HoldACharge from "./HoldACharge";
@@ -35,86 +39,130 @@ import Bookings from "./Bookings";
 import ContactUs from "./ContactUs";
 
 const components = {
-    bookings: Bookings,
-    cancelationGuest: CancelationGuest,
-    cancelationHost: CancelationHost,
-    confirmedGuest: ConfirmedGuest,
-    confirmedHost: ConfirmedHost,
-    contactUs: ContactUs,
-    editeProfile: EditeProfile,
-    editMyKashrut: EditMyKashrut,
-    guestCardInfo: GuestCardInfo,
-    holdACharge: HoldACharge,
-    myProfile: MyProfile,
-    myStaysList: MyStaysList,
-    newRequest: NewRequest,
-    previousHost: PreviousHost,
-    previousGuest: PreviousGuest,
-    trips: Trips,
-    stayProfile: StayProfile,
-    bookStay: BookStay,
-    preBookingProfile: PreBookingProfile,
-    checkIn: CheckIn,
-    editMyListings: EditMyListings,
-    reviews: Reviews,
+    MyStaysList,
+    MyProfile,
+    EditProfile,
+    EditMyKashrut,
+    ContactUs,
+    Bookings,
+    CancelationGuest,
+    CancelationHost,
+    ConfirmedGuest,
+    ConfirmedHost,
+    GuestCardInfo,
+    HoldACharge,
+    NewRequest,
+    PreviousHost,
+    PreviousGuest,
+    Trips,
+    StayProfile,
+    BookStay,
+    PreBookingProfile,
+    CheckIn,
+    EditMyListings,
+    Reviews,
 };
 
-
-const headers = {
-    bookings: "Bookings",
-    cancelationGuest: "Cancelation",
-    cancelationHost: "Cancelation",
-    confirmedHost: "Confirmed",
-    confirmedGuest: "Confirmed",
-    contactUs:"Support",
-    editeProfile: "Edit Profile",
-    editMyKashrut: "Kashrut",
-    guestCardInfo: "Payments",
-    holdACharge: "Hold A Charge",
-    myProfile: "My Profile",
-    myStaysList: "My Stays",
-    newRequest: "New Request",
-    previousGuest: "Previous",
-    previousHost: "Previous",
-    trips: "My Trips",
-    stayProfile: "Stay Profile",
-    bookStay: "Book This Stay",
-    preBookingProfile: "Profile",
-    checkIn: "Check-In",
-    editMyListings: "Edit Stay",
-    reviews: "Reviews",
-}
-
 export default function Index(props) {
+    const [componentIndex, setComponentIndex] = useState(0);
+
     const [backHistory, addBackHistory] = useState([])
     const [historyIndex, setHistoryIndex] = useState(0);
-    const [currentPage, setCurrentPage] = useState("");
+    // const [currentPage, setCurrentPage] = useState("");
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 
-    //this send user to route if they want to create a stay
+    const componentKeys = [
+        "MyStaysList","MyProfile","EditProfile","EditMyKashrut","ContactUs",
+        "Bookings","CancelationGuest","CancelationHost","ConfirmedGuest",
+        "ConfirmedHost","EditMyKashrut","GuestCardInfo","HoldACharge",
+        "NewRequest","PreviousHost","PreviousGuest","Trips",
+        "StayProfile","BookStay","PreBookingProfile","CheckIn",
+        "EditMyListings","Reviews",
+    ];
+
+
+    const headers = {
+        MyStaysList: "My Stays",
+        MyProfile: "My Profile",
+        EditeProfile: "Edit Profile",
+        EditMyKashrut: "Kashrut",
+        ContactUs: "Support",
+        Bookings: "Bookings",
+        CancelationGuest: "Cancelation",
+        CancelationHost: "Cancelation",
+        ConfirmedHost: "Confirmed",
+        ConfirmedGuest: "Confirmed",
+        GuestCardInfo: "Payments",
+        HoldACharge: "Hold A Charge",
+        NewRequest: "New Request",
+        PreviousGuest: "Previous",
+        PreviousHost: "Previous",
+        Trips: "My Trips",
+        StayProfile: "Stay Profile",
+        BookStay: "Book This Stay",
+        PreBookingProfile: "Profile",
+        CheckIn: "Check-In",
+        EditMyListings: "Edit Stay",
+        Reviews: "Reviews",
+    }
+
     let history = useHistory();
-
-    //add the import as a string to this array
-    //the array should be in the order that the screens show up
-
 
     function wait(timeout) {
         return new Promise(resolve => {
-          setTimeout(resolve, timeout);
+            setTimeout(resolve, timeout);
         });
-      }
+    }
 
     //user finished create a stay
     function onHome() {
         history.push("/home");
     };
 
+    async function signInWithGoogle() {
+        // Get the users ID token
+        const { idToken } = await GoogleSignin.signIn();
+        //   console.warn("id token", idToken);
+        // Create a Google credential with the token
+        const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+        console.warn("googleCredential", googleCredential);
+        // Sign-in the user with the credential
+        return auth().signInWithCredential(googleCredential);
+    }
+
+    async function onFacebookButtonPress() {
+        // Attempt login with permissions
+        const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+
+        if (result.isCancelled) {
+            throw 'User cancelled the login process';
+        }
+
+        // Once signed in, get the users AccesToken
+        const data = await AccessToken.getCurrentAccessToken();
+
+        if (!data) {
+            throw 'Something went wrong obtaining access token';
+        }
+
+        // Create a Firebase credential with the AccessToken
+        const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+
+        // Sign-in the user with the credential
+        return auth().signInWithCredential(facebookCredential);
+    };
+
     const onLogout = () => {
         auth()
             .signOut()
             .then(() => {
-                console.log('User signed out!')
+                firebase.auth().signOut().then(function () {
+                    console.log('Signed Out');
+                }, function (error) {
+                    console.error('Sign Out Error', error);
+                });
+                console.log('User signed out!', user)
                 setTimeout(() => {
                     history.push("/")
                 })
@@ -123,11 +171,25 @@ export default function Index(props) {
     }
 
 
+    const signInWithFacebookHandler = () => {
+        onFacebookButtonPress().then((res) => {
+            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
+            console.log("signed in with Facebook with:", res)
+        })
+    };
+
+    const signInWithGoogleHandler = () => {
+        signInWithGoogle().then((res) => {
+            console.log("signed in with google with:", res)
+            history.push("/", { familyName: res.family_name, firstName: res.given_name, email: "email" });
+        })
+    };
+
     const onNewMessage = (message) => {
         history.push("/chat", { route: "/account", subroute: message })
     }
 
-    const addToFavorites = (stay)=>{
+    const addToFavorites = (stay) => {
         history.push("/home", { subroute: "/favorites", newData: stay, favorites: true, backHistory })
     }
 
@@ -138,20 +200,42 @@ export default function Index(props) {
     const onEditStay = (from) => {
         history.push("/editStay", { subroute: from })
     }
-    useEffect(() => {
-        console.warn(backHistory)
-    }, [backHistory])
+
+
+    // useEffect(() => {
+    //     console.warn(backHistory)
+    // }, [backHistory])
+
+    // useEffect(() => {
+    //     if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
+
+    //         let newBackHistory = [...backHistory];
+    //         newBackHistory[historyIndex] = props.location.state.subroute;
+    //         addBackHistory(newBackHistory);
+    //         setCurrentPage(props.location.state.subroute);
+    //     }
+    // }, []);
 
     useEffect(() => {
+        console.warn("ACCOUNT/index.js componentKeys pic: " +  componentKeys[componentIndex], componentIndex)
+        //this is if they press next on the last screen in the list
+        if (componentIndex > componentKeys.length - 1) {
+            history.push("/account", { subroute: "MyProfile", backHistory: "Home" })
+        }
+
+        if (componentIndex < 0) {
+            onHome()
+        }
+
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
 
-        let newBackHistory = [...backHistory];
-        newBackHistory[historyIndex] = props.location.state.subroute;
-        addBackHistory(newBackHistory);
-        setCurrentPage(props.location.state.subroute);
+            let newBackHistory = [...backHistory];
+            newBackHistory[historyIndex] = props.location.state.subroute;
+            addBackHistory(newBackHistory);
+            setCurrentPage(props.location.state.subroute);
         }
-    }, []);
-
+    }, [componentIndex]);
+    
     const onUserPress = (page) => {
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
@@ -160,10 +244,8 @@ export default function Index(props) {
         setHistoryIndex(historyIndex + 1)
     }
 
-
-
     const onBack = () => {
-        if(showMenu)setShowMenu(false);
+        if (showMenu) setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
             console.warn(prevPage)
@@ -179,72 +261,84 @@ export default function Index(props) {
         if (!components[props.location.state.subroute]) return <View />
         const CurrentComponent = components[currentPage || props.location.state.subroute];
         return (
-        
-        <CurrentComponent
-            style={styles.componentStyle}
-            //if builder x component has next button
-            //it's button should have onPress={()=>{props.onNext}}
+
+            <CurrentComponent
+                style={styles.componentStyle}
+                //if builder x component has next button
+                //it's button should have onPress={()=>{props.onNext}}
 
 
-            //if builder x component has back button
-            //it's button should have onPress={()=>{props.onNext}}
-            onBack={() => {
-                // onBack();
-                setCurrentComponent("Home");
-            }}
+                //if builder x component has back button
+                //it's button should have onPress={()=>{props.onNext}}
+                onBack={() => {
+                    // onBack();
+                    setCurrentComponent("Home");
+                }}
 
-            onCreateStay={(requestSource) => {
-                onCreateStay(requestSource);
-            }}
+                onCreateStay={(requestSource) => {
+                    onCreateStay(requestSource);
+                }}
 
-            saveAndExit={()=>{
-                setCurrentComponent("Home");
-                // onBack();
-            }}
-            messageHost={(message)=>{onNewMessage(message)}}
-            messageSupport={()=>{onNewMessage({support:true})}}
+                saveAndExit={() => {
+                    setCurrentComponent("Home");
+                    // onBack();
+                }}
+                messageHost={(message) => { onNewMessage(message) }}
+                messageSupport={() => { onNewMessage({ support: true }) }}
 
-            messageGuest={(message)=>{onNewMessage(message)}}
+                messageGuest={(message) => { onNewMessage(message) }}
 
-            onEditStay={(page) => {
-                onEditStay(page);
-            }}
+                onEditStay={(page) => {
+                    onEditStay(page);
+                }}
 
-            showMenu={showMenu}
+                showMenu={() => setShowMenu(true)}
+                onShowMenu={() => {setShowMenu(!showMenu)}, console.warn("show menu status: ", showMenu),showMenu}
 
-            goHome={() => {
-                onHome();
-            }}
-            deleteStay={() => {
-                console.warn("create delete stay behavior");
-                onBack();
-            }}
+                goHome={() => {
+                    onHome();
+                }}
 
-            addToFavorites={()=>{
-                addToFavorites();
-            }}
+                deleteStay={() => {
+                    console.warn("create delete stay behavior");
+                    onBack();
+                }}
 
-            onDeleteAccount={() => {
-                onLogout();
-            }}
+                addToFavorites={() => {
+                    addToFavorites();
+                }}
 
-            onLogout={() => {
-                onLogout();
-            }}
-            onUserPress={(page) => onUserPress(page)}
-        />
+                onDeleteAccount={() => {
+                    onLogout();
+                }}
+
+                onLogout={() => {
+                    onLogout();
+                }}
+                onUserPress={(page) => onUserPress(page)}
+
+                facebookSignin={() => { signInWithFacebookHandler() }}
+
+                googleSignin={() => signInWithGoogleHandler()}
+
+                login={() => {
+                    // console.warn("0000000000000 index/account setcomponentIndex for login ", props.user)
+                    setHistoryIndex(historyIndex + 1)
+                }}
+            />
         )
     };
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
-    
+
         wait(2000).then(() => setRefreshing(false));
-      }, [refreshing]);
-    
+    }, [refreshing]);
+
 
     return (
         <View style={styles.container}>
+
             {/*dynamic component*/}
             {
                 currentPage !== "myProfile" ?
@@ -252,16 +346,20 @@ export default function Index(props) {
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
+                        showMenu={() => { setShowMenu(showMenu) }}
                         onHome={() => { onHome() }}
                         onBack={() => onBack()}
+                        onPress={props.googleSignin()}
                     />
                     :
                     <MyProfileHeader
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
-                        setShowMenu={() => { setShowMenu(!showMenu) }}
-                        onBack={() => { onBack()}}
+                        showMenu={() => { setShowMenu(showMenu) }}
+                        onHome={() => { onHome() }}
+                        onBack={() => onBack()}
+                        onPress={props.googleSignin()}
                     />
             }
             <ScrollView style={{
@@ -273,7 +371,7 @@ export default function Index(props) {
                 }}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                  }>
+                }>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -285,13 +383,18 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
         backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
-        flexDirection: "column"
+        flexDirection: "column",
+        // height: windowHeight,
+        // width: windowWidth,
+        // width: '100%',
+        // width: 'auto',
+        // marginHorizontal: Dimensions.get('window').width < 400 ? 4 : 0,
     },
 
     header: {
         zIndex: 3000,
+        width: '100%',
     },
 });

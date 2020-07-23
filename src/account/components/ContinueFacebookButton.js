@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   container: {},
   materialButtonViolet: {
     height: 62,
-    backgroundColor: "rgba(2,172,235,1)",
+    backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10,
     borderColor: "#000000",
     borderWidth: 0

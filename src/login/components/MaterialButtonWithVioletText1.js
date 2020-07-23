@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
 function MaterialButtonWithVioletText1(props) {
+  // console.warn("on Welcome.js passing:", props.text1);
+
   return (
     <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
       <Text style={styles.caption}>

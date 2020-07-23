@@ -40,9 +40,9 @@ function Home(props) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
 
-  useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
-  useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
-  useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
+  // useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
+  // useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
+  // useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
 
   return (
     <View style={styles.container}>

@@ -3,12 +3,15 @@ import { StyleSheet, View } from "react-native";
 import MaterialButtonWithVioletText1 from "./MaterialButtonWithVioletText1";
 
 function ContinueGoogleButton(props) {
+  // console.warn("on Welcome.js google sign btn in press:", props);
+
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText1
-      onPress={props.onPress}
+        onPress={props.onPress}        
         text1="Continue with Google"
         style={styles.materialButtonWithVioletText12}
+
       ></MaterialButtonWithVioletText1>
     </View>
   );

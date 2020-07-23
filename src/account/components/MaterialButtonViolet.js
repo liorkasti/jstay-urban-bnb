@@ -12,7 +12,7 @@ function MaterialButtonViolet(props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#3F51B5",
+    backgroundColor: "rgba(2,172,235,1)",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     shadowRadius: 5
   },
   caption: {
-    color: "rgba(0,88,155,1)",
+    color: "rgba(2,172,235,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center"

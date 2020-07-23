@@ -4,37 +4,39 @@ import Icon from "react-native-vector-icons/Entypo";
 
 function HeaderBarLight(props) {
   return (
-    <View style={styles.group1}>
-    <View style={styles.rect}>
-      <Text style={styles.bsD1}>BS&quot;D</Text>
-      <View style={styles.button4RowRow}>
-        <View style={styles.button4Row}>
-          <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button4}>
-            <TouchableOpacity onPress={()=>{props.onBack()}} style={styles.button5}>
-              <Icon name="chevron-left" style={styles.icon1}></Icon>
+    <View style={[styles.container, props.style]}>
+      <View style={styles.group1}>
+        <View style={styles.rect}>
+          <Text style={styles.bsD1}>BS&quot;D</Text>
+          <View style={styles.button4RowRow}>
+            <View style={styles.button4Row}>
+              <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
+                <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
+                  {/* <Icon name="chevron-left" style={styles.icon1}></Icon> */}
+                </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.text14}>{props.header}</Text>
+            <View style={styles.button4RowFiller}></View>
+            <TouchableOpacity onPress={props.onHome} style={styles.button3}>
+              <View style={styles.image1Filler}></View>
+              <Image
+                source={require("../assets/images/jstay-icon-inverted8.png")}
+                resizeMode="contain"
+                style={styles.image1}
+              ></Image>
             </TouchableOpacity>
-          </TouchableOpacity>
+          </View>
         </View>
-          <Text style={styles.text14}>{props.header}</Text>
-        <View style={styles.button4RowFiller}></View>
-        <TouchableOpacity onPress={props.onHome} style={styles.button3}>
-          <View style={styles.image1Filler}></View>
-          <Image
-            source={require("../assets/images/jstay-icon-inverted8.png")}
-            resizeMode="contain"
-            style={styles.image1}
-          ></Image>
-        </TouchableOpacity>
       </View>
     </View>
-  </View>
   );
 }
 
 const styles = StyleSheet.create({
   group1: {
-    width: 414,
-    height: 91,
+    // width: 414,
+    // height: 91,
   },
   rect: {
     height: 91,
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 8,
     width: 330
-    },
+  },
   button4Row: {
     height: 40,
     flexDirection: "row",

@@ -57,12 +57,12 @@ export default function Index(props) {
                 history.push("/chat")
                 break;
             case "account":
-                // { handleFooterMenu(page) }
-                console.warn("from index/home passing current page: ", (page))
-                console.warn("from index/home passing props.history: ", (history))
-                history.push("/home")
-                // history.push("/account")
-                // console.warn("props values: ", (props))
+                { handleProfileMenu(page) }
+                // console.warn("from index/home passing current page: ", (page))
+                // console.warn("from index/home passing props.history: ", (history))
+                // console.warn("0000000000000 home/index to /account: ", props)
+                // history.push("/home")
+                history.push("/account")
                 setCurrentComponent("Account");
                 break;
         }
@@ -98,6 +98,32 @@ export default function Index(props) {
         }
     };
 
+    
+    const handleProfileMenu = (menuItem) => {
+        switch (menuItem) {
+            case "createStay":
+                history.push("/createStay");
+                break;
+            case "logout":
+                auth()
+                .signOut()
+                .then(() => {console.log('User signed out!')
+                setTimeout(()=>{
+                    history.push("/")
+                })})
+                break;
+            case "profile":
+                history.push("/account", { subroute: "myProfile" });
+                break;
+            case "kashrut":
+                history.push("/account", { subroute: "editMyKashrut" })
+                break;
+            case "paymentDetails":
+                history.push("/account", { subroute: "guestCardInfo" })
+                break;
+               
+        }
+    };
 
 
     return (
@@ -286,8 +312,8 @@ export default function Index(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
+                    handleProfileMenu={(menuItem) => {
+                        handleProfileMenu(menuItem)
                     }}
 
                     handleFooterBar={(page) => {
@@ -297,16 +323,17 @@ export default function Index(props) {
                     showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
 
                     //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    // onBack={() => {
-                    //     // onBack();
-                    //     // componentIndex = setComponentIndex(componentIndex - 1);
-                    //     console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
-
-                    //     setCurrentComponent("Home");
-
-                    // }}
-                    onBack={() => setComponentIndex(componentIndex - 1)}
+                    //it's button should have onPress={()=>{props.onNrext}}
+                    onBack={() => {
+                        history.push("/home")
+                        // onBack();
+                        // componentIndex = setComponentIndex(componentIndex - 1);
+                        // console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
+                        // onBack(setComponentIndex(componentIndex - 1));
+                        // setCurrentComponent("Home");
+                        console.warn("props", props)
+                    }}
+                    // onBack={() => setComponentIndex(componentIndex - 1)}
 
                     onHome={() => {
                         setCurrentComponent("Home");
@@ -332,8 +359,8 @@ export default function Index(props) {
 
                     showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
 
-                    handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem);
+                    handleProfileMenu={(menuItem) => {
+                        handleProfileMenu(menuItem);
                     }}
 
                     handleFooterBar={(page) => {

@@ -34,7 +34,7 @@ const MyProfileMenu = function MyProfileMenu(props) {
                             ></MaterialButtonWithVioletText21>
                         </TouchableOpacity>
                         <MaterialButtonWithVioletText22
-                       
+
                             tag="Kashrut"
                             onPress={() => { props.onUserPress("editMyKashrut") }}
                             style={styles.materialButtonWithVioletText48}
@@ -43,7 +43,7 @@ const MyProfileMenu = function MyProfileMenu(props) {
                     </View>
                     <View style={styles.materialButtonWithVioletText49Stack}>
                         <MaterialButtonWithVioletText23
-                            
+
                             tag="Payment Details"
                             onPress={() => { props.onUserPress("guestCardInfo"); }}
                             style={styles.materialButtonWithVioletText49}
@@ -52,8 +52,8 @@ const MyProfileMenu = function MyProfileMenu(props) {
                     </View>
                     <View style={styles.materialButtonWithVioletText50Stack}>
                         <MaterialButtonWithVioletText24
-                              onPress={() => console.error("coming soon link to zendesk")}
-                              tag="FAQ"
+                            onPress={() => console.error("coming soon link to zendesk")}
+                            tag="FAQ"
                             style={styles.materialButtonWithVioletText50}
                         ></MaterialButtonWithVioletText24>
                         <View style={styles.rect6}></View>
@@ -62,10 +62,10 @@ const MyProfileMenu = function MyProfileMenu(props) {
                     <View style={styles.materialButtonWithVioletText51Stack}>
                         <TouchableOpacity onPress={() => { props.onUserPress("editeProfile") }}>
                             <MaterialButtonWithVioletText25
-                                       tag="Edit Profile"
-                                       onPress={() => { props.onUserPress("editeProfile") }}
-       
-                        
+                                tag="Edit Profile"
+                                onPress={() => { props.onUserPress("editeProfile") }}
+
+
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>
@@ -88,7 +88,7 @@ const MyProfileMenu = function MyProfileMenu(props) {
             </View>
 
         </View>
-        )
+    )
 };
 
 
@@ -99,8 +99,9 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(2,172,235,1)",
     },
     rect1: {
+        position: "absolute",
+        right: 0,
         top: 0,
-        left: 0,
         width: 414,
         height: 91,
         position: "absolute",
@@ -195,20 +196,20 @@ const styles = StyleSheet.create({
         zIndex: 40
     },
     image2: {
-        top: 29,
+        // top: 29,
         width: 150,
         height: 150,
         position: "absolute",
         borderRadius: 100,
-        left: 130,
+        // left: 130,
         overflow: "hidden"
     },
     image2_imageStyle: {},
     materialButtonWithVioletText39: {
         width: 100,
         height: 36,
-        marginTop: 114,
-        marginLeft: 25
+        // marginTop: 114,
+        // marginLeft: 25
     },
     materialButtonViolet30: {
         height: 50,
@@ -219,7 +220,6 @@ const styles = StyleSheet.create({
     },
     rect2: {
         top: 0,
-        left: 205,
         width: 207,
         height: 350,
         backgroundColor: "rgba(0,88,155,1)",
@@ -364,11 +364,11 @@ const styles = StyleSheet.create({
         height: 145
     },
     image2Stack: {
-        top: 0,
-        left: 0,
+        // top: 0,
+        // left: 0,
         width: 412,
         height: 350,
-        position: "absolute"
+        // position: "absolute"
     },
     loremIpsum: {
         top: 188,
@@ -415,9 +415,9 @@ const styles = StyleSheet.create({
 
     },
     image2StackStack: {
-        height: 360,
-        marginTop: 1,
-        marginLeft: 2
+        // height: 360,
+        // marginTop: 1,
+        // marginLeft: 2
     },
     kashrutDetails: {
         height: 36,

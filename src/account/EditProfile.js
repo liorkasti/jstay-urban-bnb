@@ -15,7 +15,7 @@ import SaveAndExit from "../components/SaveAndExit";
 import MaterialSpinner from "../components/MaterialSpinner";
 import MaterialButtonViolet15 from "../components/MaterialButtonViolet15";
 
-function Untitled12(props) {
+function EditProfile(props) {
   return (
     <View style={styles.container}>
       <FontAwesomeIcon name="user" style={styles.icon1}></FontAwesomeIcon>
@@ -269,4 +269,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled12;
+export default EditProfile;

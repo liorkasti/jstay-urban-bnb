@@ -18,7 +18,7 @@ import Login from "./src/login"
 import Home from "./src/home"
 import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
-import Account from "./src/account"
+import Account from "./src/account/MyProfile"
 import EditStay from "./src/editStay"
 import Messages from "./src/messaging";
 import Chat from "./src/messaging";
@@ -48,7 +48,7 @@ export default function App() {
 
   function onAuthStateChanged(user) {
     if(user){setLoggedIn(!!user)}else {setLoggedIn(false)}
-    console.warn("auth state did change with:", user)
+    // console.warn("auth state did change with:", user)
   }
 
   return (
