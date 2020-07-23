@@ -196,20 +196,20 @@ const styles = StyleSheet.create({
         zIndex: 40
     },
     image2: {
-        // top: 29,
+        top: 29,
         width: 150,
         height: 150,
         position: "absolute",
         borderRadius: 100,
-        // left: 130,
+        left: 130,
         overflow: "hidden"
     },
     image2_imageStyle: {},
     materialButtonWithVioletText39: {
         width: 100,
         height: 36,
-        // marginTop: 114,
-        // marginLeft: 25
+        marginTop: 114,
+        marginLeft: 25
     },
     materialButtonViolet30: {
         height: 50,
@@ -364,11 +364,11 @@ const styles = StyleSheet.create({
         height: 145
     },
     image2Stack: {
-        // top: 0,
-        // left: 0,
+        top: -90,
+        left: 0,
         width: 412,
         height: 350,
-        // position: "absolute"
+        position: "absolute"
     },
     loremIpsum: {
         top: 188,
@@ -415,9 +415,9 @@ const styles = StyleSheet.create({
 
     },
     image2StackStack: {
-        // height: 360,
-        // marginTop: 1,
-        // marginLeft: 2
+        height: 360,
+        marginTop: 1,
+        marginLeft: 2
     },
     kashrutDetails: {
         height: 36,

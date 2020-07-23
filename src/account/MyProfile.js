@@ -45,7 +45,7 @@ function MyProfile(props) {
       <MyProfileHeader
         // onUserPress={(action) => props.onUserPress(action)}
         onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
-        style={styles.headerMenu}
+        // style={styles.headerMenu}
       />
 
       {/* {props.showMenu &&
@@ -54,7 +54,7 @@ function MyProfile(props) {
           onPress={() => onShowMenu(!showMenu), console.warn("show menu status: ", showMenu)}
           style={styles.headerMenu} />
       } */}
-      {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
+      <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} />
 
       <View style={styles.image2Stack}>
         {/*TODO: add image picker for single image*/}
@@ -129,7 +129,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)",
     alignItems: "center",
-    // position: "absolute"
+  },
+  headerMenu: {
+    // position: "absolute",
+    // top: -90,
+    // right: 0,
   },
   image2Stack: {
     top: 120,
