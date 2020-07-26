@@ -15,7 +15,7 @@ export default function MyProfileHeader(props) {
   return (
     <View style={styles.container}>
       <View style={styles.rect1}>
-        <Text style={styles.bsD1}>BS&quot;D</Text>
+        {/* <Text style={styles.bsD1}>BS&quot;D</Text> */}
         <View style={styles.button4RowRow}>
           <View style={styles.button4Row}>
             <TouchableOpacity style={styles.button4}>
@@ -42,20 +42,23 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
+    position: "absolute",
     backgroundColor: "rgba(2,172,235,1)",
     flex: 1,
     flexDirection: "column",
     height: windowHeight,
     width: windowWidth,
+    width: '100%',
   },
   headerMenu: {
     zIndex: 100,
-    position: "absolute",
+    // position: "absolute",
   },
   rect1: {
     top: 0,
     left: 0,
     width: 414,
+    width: '100%',
     height: 91,
     position: "absolute",
     borderColor: "rgba(0,88,155,1)",
@@ -176,16 +179,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     zIndex: 20
 
-  },
-  groupFiller: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  group: {
-    width: 207,
-    height: 344,
-    alignItems: "flex-end",
-    marginTop: 1
   },
   button6: {
     top: 0,

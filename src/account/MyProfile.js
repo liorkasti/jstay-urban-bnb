@@ -11,10 +11,7 @@ import {
 } from "react-native";
 import MaterialButtonWithVioletText32 from "./components/MaterialButtonWithVioletText32";
 import MyProfileMenu from "./components/MyProfileMenu";
-import MyNameDetails from "./components/MyNameDetails";
-import DateBirthDetails from "./components/DateBirthDetails";
-import MyLocationDetails from "./components/MyLocationDetails";
-import TitleDetails from "./components/TitleDetails";
+import AccountDetails from "./components/AccountDetails";
 import KashrutDetails from "./components/KashrutDetails";
 import EmailDetails from "./components/EmailDetails";
 import PhoneDetails from "./components/PhoneDetails";
@@ -25,7 +22,6 @@ import MyStaysRating from "./components/MyStaysRating";
 import MyKosherRating from "./components/MyKosherRating";
 import ContinueFacebookButton from "./components/ContinueFacebookButton";
 import ContinueGoogleButton from "./components/ContinueGoogleButton";
-
 import HeaderBarLight from "./components/HeaderBarLight";
 import MyProfileHeader from "./components/MyProfileHeader";
 
@@ -45,17 +41,16 @@ function MyProfile(props) {
       <MyProfileHeader
         // onUserPress={(action) => props.onUserPress(action)}
         onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
-        // style={styles.headerMenu}
+        style={styles.headerMenu}
       />
 
-      {/* {props.showMenu &&
+      {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
           onPress={() => onShowMenu(!showMenu), console.warn("show menu status: ", showMenu)}
           style={styles.headerMenu} />
-      } */}
-      <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} />
-
+      }
+      {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
       <View style={styles.image2Stack}>
         {/*TODO: add image picker for single image*/}
         <TouchableOpacity onPress={() => { changeProfilePic() }} >
@@ -71,51 +66,46 @@ function MyProfile(props) {
           ></MaterialButtonWithVioletText32>
         </TouchableOpacity>
       </View>
+      <View style={styles.accountDetailsStack}>
+        <Text style={styles.loremIpsum}></Text>
+        <AccountDetails style={styles.myNameDetails}></AccountDetails>
+        <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
+        <EmailDetails style={styles.emailDetails}></EmailDetails>
+        <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
+        <MaterialButtonWithVioletText46
+          tag="See my reviews"
+          onPress={() => { props.onUserPress("reviews") }}
+          style={styles.materialButtonWithVioletText46}
+        ></MaterialButtonWithVioletText46>
+        <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
+        <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
+      </View>
 
-      <Text style={styles.loremIpsum}></Text>
-      <MyNameDetails style={styles.myNameDetails}></MyNameDetails>
-      <DateBirthDetails style={styles.dateBirthDetails}></DateBirthDetails>
-      <MyLocationDetails style={styles.myLocationDetails}></MyLocationDetails>
-      <TitleDetails style={styles.titleDetails}></TitleDetails>
-      <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
-      <EmailDetails style={styles.emailDetails}></EmailDetails>
-      <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
-
-      {/* Facebook btn */}
-      <TouchableOpacity style={styles.button3}>
-        <ContinueFacebookButton
-          // onPress={() => props.facebookSignin}
-          style={styles.continueFacebookButton}
-        ></ContinueFacebookButton>
-      </TouchableOpacity>
-      {/* <MaterialButtonViolet15
+      <View style={styles.buttonStack}>
+        {/* Facebook btn */}
+        <TouchableOpacity style={styles.button3}>
+          <ContinueFacebookButton
+            // onPress={() => props.facebookSignin}
+            style={styles.continueFacebookButton}
+          ></ContinueFacebookButton>
+        </TouchableOpacity>
+        {/* <MaterialButtonViolet15
         style={styles.materialButtonViolet15}
       ></MaterialButtonViolet15> */}
-      {/* Google btn */}
-
-
-      <TouchableOpacity
-        onPress={props.googleSignin}
-        style={styles.button2}>
-        <ContinueGoogleButton
+        {/* Google btn */}
+        <TouchableOpacity
           onPress={props.googleSignin}
-          style={styles.continueGoogleButton}
-        ></ContinueGoogleButton>
-      </TouchableOpacity>
-      {/* <MaterialButtonViolet16
+          style={styles.button2}>
+          <ContinueGoogleButton
+            onPress={props.googleSignin}
+            style={styles.continueGoogleButton}
+          ></ContinueGoogleButton>
+        </TouchableOpacity>
+        {/* <MaterialButtonViolet16
         onPress={props.googleSignin}
         style={styles.materialButtonViolet16}
       ></MaterialButtonViolet16> */}
-
-
-
-      <MaterialButtonWithVioletText46
-        tag="See my reviews"
-        onPress={() => { props.onUserPress("reviews") }}
-        style={styles.materialButtonWithVioletText46}
-      ></MaterialButtonWithVioletText46>
-      <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
-      <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
+      </View>
     </View>
 
   );
@@ -129,9 +119,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)",
     alignItems: "center",
+    position: "absolute",
+    width: '100%',
+    top: 0
   },
   headerMenu: {
     // position: "absolute",
+    width: '100%',
+    // zIndex: 600,
     // top: -90,
     // right: 0,
   },
@@ -139,6 +134,8 @@ const styles = StyleSheet.create({
     top: 120,
     // maxWidth: 100,
     // height: 350,
+    // zIndex: 200,
+
     position: "absolute"
   },
   image2: {
@@ -148,27 +145,34 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   materialButtonWithVioletText39: {
-    top: 120,
-    // left: 0,
+    top: 50,
+    top: -30,
+    alignItems: "center",
+    // left: 60,
     // right: 0,
     // width: 100,
     // height: 36,
   },
-  loremIpsum: {
-    top: 280,
-    left: 52,
-    color: "rgba(230,230,230,1)",
+  accountDetailsStack: {
     position: "absolute",
+    top: 300,
+    left: 28,
+    zIndex: 1,
+  },
+  loremIpsum: {
+    // top: 280,
+    // left: 52,
+    color: "rgba(230,230,230,1)",
+    // position: "absolute",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    lineHeight: 20
+    // lineHeight: 20
   },
   myNameDetails: {
     position: "absolute",
     top: "37.39%",
-    left: 35,
+    top: 0,
     height: 36,
-    right: 0
   },
   dateBirthDetails: {
     position: "absolute",
@@ -185,23 +189,30 @@ const styles = StyleSheet.create({
     right: 0
   },
   kashrutDetails: {
+    // top: "50.73%",
+    // left: 33,
+    top: 160,
+    left: 0,
     position: "absolute",
-    top: "50.73%",
-    left: 33,
+    height: 26,
     height: 36,
     right: 0
   },
   emailDetails: {
     position: "absolute",
     top: "55.2%",
+    top: 200,
     left: 31,
+    left: 0,
     height: 36,
     right: 0
   },
   phoneDetails: {
     position: "absolute",
-    top: "60.13%",
-    left: 31,
+    // top: "60.13%",
+    // left: 31,
+    top: 250,
+    left: 0,
     height: 38,
     right: 0
   },
@@ -231,18 +242,15 @@ const styles = StyleSheet.create({
     right: 28
   },
   materialButtonWithVioletText46: {
-    top: "77.04%",
-    top: 600,
-    // height: 40,
-    // height: 'auto',
+    top: 405,
     position: "absolute",
-    right: 153,
-    left: 28
   },
   myStaysRating: {
     position: "absolute",
-    top: "64.84%",
-    left: 29,
+    // top: "64.84%",
+    // left: 29,
+    top: 290,
+    left: 0,
     height: 48,
     width: 159
   },
@@ -250,6 +258,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "71.25%",
     left: 30,
+    top: 350,
+    left: 0,
     height: 49,
     width: 159
   },
@@ -432,8 +442,14 @@ const styles = StyleSheet.create({
     marginTop: -692
   },
 
+  buttonStack: {
+    top: 760,
+    position: "absolute",
+    alignItems: "center",
+  },
+
   button3: {
-    top: 680,
+    top: 0,
     width: 352,
     height: 62,
     position: "absolute"
@@ -446,7 +462,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button2: {
-    top: 755,
+    top: 75,
     width: 352,
     height: 62,
     position: "absolute"

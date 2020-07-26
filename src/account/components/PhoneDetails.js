@@ -16,8 +16,6 @@ const styles = StyleSheet.create({
   text2: {
     top: 2,
     left: 34,
-    width: 115,
-    height: 20,
     color: "rgba(0,88,155,1)",
     position: "absolute",
     fontSize: 20,

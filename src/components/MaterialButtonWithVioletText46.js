@@ -13,20 +13,13 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "transparent",
     flexDirection: "row",
-    alignItems: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
-    minWidth: 88
   },
   seeMyReviews: {
-    width: 196,
-    height: 21,
+
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "justify",
-    top: 18,
-    left: -9
   }
 });
 

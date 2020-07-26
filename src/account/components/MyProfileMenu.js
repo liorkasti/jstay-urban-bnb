@@ -95,13 +95,14 @@ const MyProfileMenu = function MyProfileMenu(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        zIndex: 500,
+        zIndex: 5000,
+        position: "absolute",
+        top: 90,
         backgroundColor: "rgba(2,172,235,1)",
     },
     rect1: {
         position: "absolute",
         right: 0,
-        top: 0,
         width: 414,
         height: 91,
         position: "absolute",
