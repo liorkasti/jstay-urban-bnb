@@ -20,7 +20,7 @@ function ContinueGoogleButton(props) {
 const styles = StyleSheet.create({
   container: {},
   materialButtonWithVioletText12: {
-    height: 62,
+    height: 45,
     backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10
   }

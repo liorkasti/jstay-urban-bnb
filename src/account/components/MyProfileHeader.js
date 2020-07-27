@@ -9,13 +9,14 @@ import {
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialButtonTransparentHamburger from "../components/MaterialButtonTransparentHamburger";
 import MyProfileMenu from "./MyProfileMenu";
+import { Center } from "@builderx/utils";
 
 export default function MyProfileHeader(props) {
 
   return (
     <View style={styles.container}>
       <View style={styles.rect1}>
-        {/* <Text style={styles.bsD1}>BS&quot;D</Text> */}
+        <Text style={styles.bsD1}>BS&quot;D</Text>
         <View style={styles.button4RowRow}>
           <View style={styles.button4Row}>
             <TouchableOpacity style={styles.button4}>
@@ -23,14 +24,15 @@ export default function MyProfileHeader(props) {
                 <Icon name="chevron-left" style={styles.icon1}></Icon>
               </TouchableOpacity>
             </TouchableOpacity>
-            <Text style={styles.text}>My Profile</Text>
           </View>
           <View style={styles.button4RowFiller}></View>
+          <Center>
+              <Text style={styles.text}>My Profile</Text>
+            </Center>
           <MaterialButtonTransparentHamburger
             onPress={() => onShowMenu(!showMenu)}
             style={styles.materialButtonTransparentHamburger}
           ></MaterialButtonTransparentHamburger>
-
         </View>
       </View>
     </View>
@@ -51,13 +53,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   headerMenu: {
-    zIndex: 100,
+    zIndex: 20,
     // position: "absolute",
   },
   rect1: {
-    top: 0,
-    left: 0,
-    width: 414,
     width: '100%',
     height: 91,
     position: "absolute",
@@ -109,6 +108,8 @@ const styles = StyleSheet.create({
     fontSize: 40
   },
   text: {
+    position: "absolute",
+    alignItems: "center",
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
@@ -117,8 +118,8 @@ const styles = StyleSheet.create({
     marginTop: 8
   },
   button4Row: {
-    height: 40,
-    flexDirection: "row"
+    // height: 30,
+    flexDirection: "row",
   },
   button4RowFiller: {
     flex: 1,
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
   },
   materialButtonViolet26: {
     height: 50,
-    width: 412,
+    width: '100%',
     position: "absolute",
     left: 217,
     top: 0,

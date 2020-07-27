@@ -16,7 +16,7 @@ function ContinueFacebookButton(props) {
 const styles = StyleSheet.create({
   container: {},
   materialButtonViolet: {
-    height: 62,
+    height: 45,
     backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10,
     borderColor: "#000000",

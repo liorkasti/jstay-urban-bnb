@@ -15,14 +15,11 @@ import AccountDetails from "./components/AccountDetails";
 import KashrutDetails from "./components/KashrutDetails";
 import EmailDetails from "./components/EmailDetails";
 import PhoneDetails from "./components/PhoneDetails";
-import MaterialButtonViolet15 from "./components/MaterialButtonViolet15";
-import MaterialButtonViolet16 from "./components/MaterialButtonViolet16";
 import MaterialButtonWithVioletText46 from "../components/MaterialButtonWithVioletText46";
 import MyStaysRating from "./components/MyStaysRating";
 import MyKosherRating from "./components/MyKosherRating";
 import ContinueFacebookButton from "./components/ContinueFacebookButton";
 import ContinueGoogleButton from "./components/ContinueGoogleButton";
-import HeaderBarLight from "./components/HeaderBarLight";
 import MyProfileHeader from "./components/MyProfileHeader";
 
 
@@ -51,6 +48,7 @@ function MyProfile(props) {
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
+
       <View style={styles.image2Stack}>
         {/*TODO: add image picker for single image*/}
         <TouchableOpacity onPress={() => { changeProfilePic() }} >
@@ -89,9 +87,6 @@ function MyProfile(props) {
             style={styles.continueFacebookButton}
           ></ContinueFacebookButton>
         </TouchableOpacity>
-        {/* <MaterialButtonViolet15
-        style={styles.materialButtonViolet15}
-      ></MaterialButtonViolet15> */}
         {/* Google btn */}
         <TouchableOpacity
           onPress={props.googleSignin}
@@ -101,13 +96,8 @@ function MyProfile(props) {
             style={styles.continueGoogleButton}
           ></ContinueGoogleButton>
         </TouchableOpacity>
-        {/* <MaterialButtonViolet16
-        onPress={props.googleSignin}
-        style={styles.materialButtonViolet16}
-      ></MaterialButtonViolet16> */}
       </View>
     </View>
-
   );
 }
 
@@ -124,34 +114,23 @@ const styles = StyleSheet.create({
     top: 0
   },
   headerMenu: {
-    // position: "absolute",
-    width: '100%',
-    // zIndex: 600,
-    // top: -90,
-    // right: 0,
+    position: "absolute",
+    zIndex: 3000,
+    alignItems: "center",
   },
   image2Stack: {
     top: 120,
-    // maxWidth: 100,
-    // height: 350,
-    // zIndex: 200,
-
     position: "absolute"
   },
   image2: {
     width: 150,
     height: 150,
-    // position: "absolute",
     borderRadius: 100
   },
   materialButtonWithVioletText39: {
     top: 50,
     top: -30,
     alignItems: "center",
-    // left: 60,
-    // right: 0,
-    // width: 100,
-    // height: 36,
   },
   accountDetailsStack: {
     position: "absolute",
@@ -160,26 +139,14 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   loremIpsum: {
-    // top: 280,
-    // left: 52,
     color: "rgba(230,230,230,1)",
-    // position: "absolute",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    // lineHeight: 20
   },
   myNameDetails: {
     position: "absolute",
-    top: "37.39%",
     top: 0,
     height: 36,
-  },
-  dateBirthDetails: {
-    position: "absolute",
-    top: "41.8%",
-    left: 31,
-    height: 36,
-    right: 0
   },
   myLocationDetails: {
     position: "absolute",
@@ -189,8 +156,6 @@ const styles = StyleSheet.create({
     right: 0
   },
   kashrutDetails: {
-    // top: "50.73%",
-    // left: 33,
     top: 160,
     left: 0,
     position: "absolute",
@@ -200,7 +165,6 @@ const styles = StyleSheet.create({
   },
   emailDetails: {
     position: "absolute",
-    top: "55.2%",
     top: 200,
     left: 31,
     left: 0,
@@ -209,8 +173,6 @@ const styles = StyleSheet.create({
   },
   phoneDetails: {
     position: "absolute",
-    // top: "60.13%",
-    // left: 31,
     top: 250,
     left: 0,
     height: 38,
@@ -223,32 +185,12 @@ const styles = StyleSheet.create({
     height: 36,
     right: 0
   },
-  materialButtonViolet15: {
-    top: "83.1%",
-    left: 31,
-    height: 45,
-    position: "absolute",
-    borderRadius: 10,
-    right: 28
-  },
-  materialButtonViolet16: {
-    top: "89.39%",
-    left: 30,
-    height: 45,
-    position: "absolute",
-    borderRadius: 10,
-    borderColor: "#000000",
-    borderWidth: 0,
-    right: 28
-  },
   materialButtonWithVioletText46: {
     top: 405,
     position: "absolute",
   },
   myStaysRating: {
     position: "absolute",
-    // top: "64.84%",
-    // left: 29,
     top: 290,
     left: 0,
     height: 48,
@@ -256,8 +198,6 @@ const styles = StyleSheet.create({
   },
   myKosherRating: {
     position: "absolute",
-    top: "71.25%",
-    left: 30,
     top: 350,
     left: 0,
     height: 49,
@@ -462,7 +402,7 @@ const styles = StyleSheet.create({
     position: "absolute"
   },
   button2: {
-    top: 75,
+    top: 55,
     width: 352,
     height: 62,
     position: "absolute"

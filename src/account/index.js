@@ -73,12 +73,12 @@ export default function Index(props) {
     const [refreshing, setRefreshing] = useState(false);
 
     const componentKeys = [
-        "MyStaysList","MyProfile","EditProfile","EditMyKashrut","ContactUs",
-        "Bookings","CancelationGuest","CancelationHost","ConfirmedGuest",
-        "ConfirmedHost","EditMyKashrut","GuestCardInfo","HoldACharge",
-        "NewRequest","PreviousHost","PreviousGuest","Trips",
-        "StayProfile","BookStay","PreBookingProfile","CheckIn",
-        "EditMyListings","Reviews",
+        "MyStaysList", "MyProfile", "EditProfile", "EditMyKashrut", "ContactUs",
+        "Bookings", "CancelationGuest", "CancelationHost", "ConfirmedGuest",
+        "ConfirmedHost", "EditMyKashrut", "GuestCardInfo", "HoldACharge",
+        "NewRequest", "PreviousHost", "PreviousGuest", "Trips",
+        "StayProfile", "BookStay", "PreBookingProfile", "CheckIn",
+        "EditMyListings", "Reviews",
     ];
 
 
@@ -217,7 +217,7 @@ export default function Index(props) {
     // }, []);
 
     useEffect(() => {
-        console.warn("ACCOUNT/index.js componentKeys pic: " +  componentKeys[componentIndex], componentIndex)
+        console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "MyProfile", backHistory: "Home" })
@@ -235,7 +235,7 @@ export default function Index(props) {
             setCurrentPage(props.location.state.subroute);
         }
     }, [componentIndex]);
-    
+
     const onUserPress = (page) => {
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
@@ -293,7 +293,7 @@ export default function Index(props) {
                 }}
 
                 showMenu={() => setShowMenu(true)}
-                onShowMenu={() => {setShowMenu(!showMenu)}, console.warn("show menu status: ", showMenu),showMenu}
+                onShowMenu={() => { setShowMenu(!showMenu) }, console.warn("show menu status: ", showMenu), showMenu}
 
                 goHome={() => {
                     onHome();
