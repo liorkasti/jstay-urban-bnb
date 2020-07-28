@@ -185,7 +185,7 @@ export default function Index(props) {
                     }}
 
                     handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
+                        handleMenu(menuItem)
                     }}
 
                     handleFooterBar={(page) => {
@@ -229,10 +229,6 @@ export default function Index(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    // handleFooterMenu={(menuItem) => {
-                    //     handleFooterMenu(menuItem)
-                    // }}
-
                     handleFooterBar={(page) => {
                         handleFooterBar(page)
                     }}
@@ -271,8 +267,8 @@ export default function Index(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    handleFooterMenu={(menuItem) => {
-                        handleFooterMenu(menuItem)
+                    handleMenu={(menuItem) => {
+                        handleMenu(menuItem)
                     }}
 
                     handleFooterBar={(page) => {

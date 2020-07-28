@@ -31,20 +31,22 @@ function MyProfile(props) {
     console.warn("add change profile pic behavior")
   }
 
-  useEffect(() => { console.warn("show menu status: ", showMenu) }, showMenu)
+  // useEffect(() => { console.warn("show menu status: ", showMenu) }, showMenu)
 
   return (
     <View style={styles.container}>
       <MyProfileHeader
         // onUserPress={(action) => props.onUserPress(action)}
-        onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
+        // onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
+        // setShowMenu={() => { setShowMenu(!showMenu) }}
+        onPress={() => { props.setShowMenu() }, console.warn('onPress')}
         style={styles.headerMenu}
       />
 
       {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
-          onPress={() => onShowMenu(!showMenu), console.warn("show menu status: ", showMenu)}
+          handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }, console.warn(": ", showMenu)}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}

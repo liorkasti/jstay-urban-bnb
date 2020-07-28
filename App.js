@@ -19,6 +19,8 @@ import Home from "./src/home"
 import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
 import Account from "./src/account/MyProfile"
+// todo: fix this root 
+// import Account from "./src/account"
 import EditStay from "./src/editStay"
 import Messages from "./src/messaging";
 import Chat from "./src/messaging";

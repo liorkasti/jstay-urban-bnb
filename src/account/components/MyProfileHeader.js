@@ -12,6 +12,7 @@ import MyProfileMenu from "./MyProfileMenu";
 import { Center } from "@builderx/utils";
 
 export default function MyProfileHeader(props) {
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -27,10 +28,13 @@ export default function MyProfileHeader(props) {
           </View>
           <View style={styles.button4RowFiller}></View>
           <Center>
-              <Text style={styles.text}>My Profile</Text>
-            </Center>
+            <Text style={styles.text}>My Profile</Text>
+          </Center>
           <MaterialButtonTransparentHamburger
-            onPress={() => onShowMenu(!showMenu)}
+            onPress={() => { props.setShowMenu() }}
+            // onPress={() => onShowMenu(!showMenu)}
+            // onPress={() => {props.setShowMenu()}}
+            // setShowMenu={() => { setShowMenu(!showMenu) }}
             style={styles.materialButtonTransparentHamburger}
           ></MaterialButtonTransparentHamburger>
         </View>

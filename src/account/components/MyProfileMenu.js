@@ -28,7 +28,8 @@ const MyProfileMenu = function MyProfileMenu(props) {
                             ></View>
 
                             <MaterialButtonWithVioletText21
-                                onPress={() => props.onUserPress("myStaysList")}
+                                // onPress={() => props.onUserPress("myStaysList")}
+                                onPress={() => props.handleMenu("myStaysList")}
                                 caption="My Stays"
                                 style={styles.materialButtonWithVioletText47}
                             ></MaterialButtonWithVioletText21>
@@ -36,7 +37,7 @@ const MyProfileMenu = function MyProfileMenu(props) {
                         <MaterialButtonWithVioletText22
 
                             tag="Kashrut"
-                            onPress={() => { props.onUserPress("editMyKashrut") }}
+                            onPress={() => { props.handleMenu("editMyKashrut") }}
                             style={styles.materialButtonWithVioletText48}
                         ></MaterialButtonWithVioletText22>
                         <View style={styles.rect4}></View>
@@ -45,7 +46,8 @@ const MyProfileMenu = function MyProfileMenu(props) {
                         <MaterialButtonWithVioletText23
 
                             tag="Payment Details"
-                            onPress={() => { props.onUserPress("guestCardInfo"); }}
+                            onPress={() => { props.handleMenu("guestCardInfo"); }}
+                            // onPress={() => { props.onUserPress("guestCardInfo") }}
                             style={styles.materialButtonWithVioletText49}
                         ></MaterialButtonWithVioletText23>
                         <View style={styles.rect5}></View>
@@ -60,12 +62,11 @@ const MyProfileMenu = function MyProfileMenu(props) {
                     </View>
 
                     <View style={styles.materialButtonWithVioletText51Stack}>
-                        <TouchableOpacity onPress={() => { props.onUserPress("editeProfile") }}>
+                        <TouchableOpacity
+                            onPress={() => { props.onUserPress("editeProfile") }}>
                             <MaterialButtonWithVioletText25
                                 tag="Edit Profile"
                                 onPress={() => { props.onUserPress("editeProfile") }}
-
-
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>

@@ -68,14 +68,14 @@ export default function Index(props) {
 
     const [backHistory, addBackHistory] = useState([])
     const [historyIndex, setHistoryIndex] = useState(0);
-    // const [currentPage, setCurrentPage] = useState("");
+    const [currentPage, setCurrentPage] = useState("");
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 
     const componentKeys = [
         "MyStaysList", "MyProfile", "EditProfile", "EditMyKashrut", "ContactUs",
         "Bookings", "CancelationGuest", "CancelationHost", "ConfirmedGuest",
-        "ConfirmedHost", "EditMyKashrut", "GuestCardInfo", "HoldACharge",
+        "ConfirmedHost", "GuestCardInfo", "HoldACharge",
         "NewRequest", "PreviousHost", "PreviousGuest", "Trips",
         "StayProfile", "BookStay", "PreBookingProfile", "CheckIn",
         "EditMyListings", "Reviews",
@@ -108,6 +108,42 @@ export default function Index(props) {
     }
 
     let history = useHistory();
+
+    const handleMenu = (menuItem) => {
+        switch (menuItem) {
+            case "myStaysList":
+                consol.warn("Menu 'MyStaysList' call")
+                // history.push("/MyStaysList");
+                setComponentIndex("MyStaysList");
+                break;
+            case "editMyKashrut":
+                consol.warn("Menu 'EditMyKashrut' call")
+                // history.push("/EditMyKashrut");
+                setComponentIndex("EditMyKashrut");
+                break;
+            case "guestCardInfo":
+                consol.warn("Menu 'ConfirmedGuest' call")
+                // history.push("/ConfirmedGuest");
+                setComponentIndex("ConfirmedGuest");
+                break;
+            case "editeProfile":
+                consol.warn("Menu 'EditeProfile' call")
+                // history.push("/EditeProfile");
+                setComponentIndex("EditeProfile");
+                break;
+
+            case "logout":
+                auth()
+                    .signOut()
+                    .then(() => {
+                        console.log('User signed out!')
+                        setTimeout(() => {
+                            history.push("/")
+                        })
+                    })
+                break;
+        }
+    };
 
     function wait(timeout) {
         return new Promise(resolve => {
@@ -202,22 +238,16 @@ export default function Index(props) {
     }
 
 
-    // useEffect(() => {
-    //     console.warn(backHistory)
-    // }, [backHistory])
-
-    // useEffect(() => {
-    //     if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
-
-    //         let newBackHistory = [...backHistory];
-    //         newBackHistory[historyIndex] = props.location.state.subroute;
-    //         addBackHistory(newBackHistory);
-    //         setCurrentPage(props.location.state.subroute);
-    //     }
-    // }, []);
-
     useEffect(() => {
         console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
+
+        if (props.location.state && props.location.state.backHistory) {
+            setCurrentComponent(props.location.state.backHistory)
+        }
+        if (props.location.state && props.location.state.currentSearch) {
+            setCurrentSearch(props.location.state.currentSearch);
+        }
+
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "MyProfile", backHistory: "Home" })
@@ -237,6 +267,7 @@ export default function Index(props) {
     }, [componentIndex]);
 
     const onUserPress = (page) => {
+        console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -292,8 +323,9 @@ export default function Index(props) {
                     onEditStay(page);
                 }}
 
-                showMenu={() => setShowMenu(true)}
-                onShowMenu={() => { setShowMenu(!showMenu) }, console.warn("show menu status: ", showMenu), showMenu}
+                showMenu={showMenu} 
+                // showMenu={() => setShowMenu(true)}
+                // onShowMenu={() => { setShowMenu(!showMenu) }, console.warn("show menu status: ", showMenu), showMenu}
 
                 goHome={() => {
                     onHome();
@@ -316,6 +348,10 @@ export default function Index(props) {
                     onLogout();
                 }}
                 onUserPress={(page) => onUserPress(page)}
+
+                handleMenu={(menuItem) => {
+                    handleMenu(menuItem)
+                }}
 
                 facebookSignin={() => { signInWithFacebookHandler() }}
 
@@ -346,20 +382,24 @@ export default function Index(props) {
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
-                        showMenu={() => { setShowMenu(showMenu) }}
                         onHome={() => { onHome() }}
                         onBack={() => onBack()}
                         onPress={props.googleSignin()}
+                        handleMenu={(menuItem) => {
+                            handleMenu(menuItem)
+                        }}
                     />
                     :
                     <MyProfileHeader
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
-                        showMenu={() => { setShowMenu(showMenu) }}
-                        onHome={() => { onHome() }}
+                        setShowMenu={() => { setShowMenu(!showMenu) }}                        onHome={() => { onHome() }}
                         onBack={() => onBack()}
                         onPress={props.googleSignin()}
+                        handleMenu={(menuItem) => {
+                            handleMenu(menuItem)
+                        }}
                     />
             }
             <ScrollView style={{
