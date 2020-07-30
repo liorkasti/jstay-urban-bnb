@@ -39,14 +39,14 @@ function MyProfile(props) {
         // onUserPress={(action) => props.onUserPress(action)}
         // onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
         // setShowMenu={() => { setShowMenu(!showMenu) }}
-        onPress={() => { props.setShowMenu() }, console.warn('onPress')}
+        onPress={() => { props.setShowMenu() }, console.warn('onPress setShowMenu status', showMenu)}
         style={styles.headerMenu}
       />
 
       {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
-          handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem) }, console.warn(": ", showMenu)}
+          handleMenu={(menuItem) => { props.handleMenu(menuItem) }, console.warn("handleMenu status: ", showMenu)}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}

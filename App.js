@@ -27,6 +27,7 @@ import Chat from "./src/messaging";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       Orientation.lockToPortrait();
@@ -42,15 +43,15 @@ export default function App() {
     MaterialCommunityIconsIcon.loadFont();
     Icon.loadFont();
     FontAwesomeIcon.loadFont();
-    
+
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-    return subscriber;onGoogleButton
+    return subscriber; onGoogleButton
   }, []);
 
   function onAuthStateChanged(user) {
-    if(user){setLoggedIn(!!user)}else {setLoggedIn(false)}
-    // console.warn("auth state did change with:", user)
+    if (user) { setLoggedIn(!!user) } else { setLoggedIn(false) }
+    console.warn("auth state did change with:", user)
   }
 
   return (
@@ -59,16 +60,16 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-          <Route exact path="/">
+            <Route exact path="/">
               {loggedIn ? <Redirect to="/home" /> : <Login />}
               {/* {loggedIn ? <StayCalender /> : <StayCalender />} */}
             </Route>
             <Route path="/chat" exact component={Chat} />
-            <Route path="/account" component={ Account }/>
-            <Route path="/editStay" component={ EditStay }/>
-            <Route path="/CreateAccount" component={ CreateAccount }/>
-            <Route path="/createStay" component={ CreateStay }/>
-            <Route path="/home" component={Home}/>
+            <Route path="/account" component={Account} />
+            <Route path="/editStay" component={EditStay} />
+            <Route path="/CreateAccount" component={CreateAccount} />
+            <Route path="/createStay" component={CreateStay} />
+            <Route path="/home" component={Home} />
             {/* <Route path="/messaging" component={Messages}/> */}
             {/* <Route exact path="/createStay" component={ StayCalender }/> */}
           </BackButton>

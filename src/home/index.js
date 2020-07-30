@@ -327,7 +327,7 @@ export default function Index(props) {
                         // console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
                         // onBack(setComponentIndex(componentIndex - 1));
                         // setCurrentComponent("Home");
-                        console.warn("props", props)
+                        // console.warn("props", props)
                     }}
                     // onBack={() => setComponentIndex(componentIndex - 1)}
 

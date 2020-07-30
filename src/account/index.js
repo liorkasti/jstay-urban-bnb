@@ -156,39 +156,6 @@ export default function Index(props) {
         history.push("/home");
     };
 
-    async function signInWithGoogle() {
-        // Get the users ID token
-        const { idToken } = await GoogleSignin.signIn();
-        //   console.warn("id token", idToken);
-        // Create a Google credential with the token
-        const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-        console.warn("googleCredential", googleCredential);
-        // Sign-in the user with the credential
-        return auth().signInWithCredential(googleCredential);
-    }
-
-    async function onFacebookButtonPress() {
-        // Attempt login with permissions
-        const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
-
-        if (result.isCancelled) {
-            throw 'User cancelled the login process';
-        }
-
-        // Once signed in, get the users AccesToken
-        const data = await AccessToken.getCurrentAccessToken();
-
-        if (!data) {
-            throw 'Something went wrong obtaining access token';
-        }
-
-        // Create a Firebase credential with the AccessToken
-        const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
-
-        // Sign-in the user with the credential
-        return auth().signInWithCredential(facebookCredential);
-    };
-
     const onLogout = () => {
         auth()
             .signOut()
@@ -206,20 +173,6 @@ export default function Index(props) {
             );
     }
 
-
-    const signInWithFacebookHandler = () => {
-        onFacebookButtonPress().then((res) => {
-            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
-            console.log("signed in with Facebook with:", res)
-        })
-    };
-
-    const signInWithGoogleHandler = () => {
-        signInWithGoogle().then((res) => {
-            console.log("signed in with google with:", res)
-            history.push("/", { familyName: res.family_name, firstName: res.given_name, email: "email" });
-        })
-    };
 
     const onNewMessage = (message) => {
         history.push("/chat", { route: "/account", subroute: message })
@@ -239,7 +192,7 @@ export default function Index(props) {
 
 
     useEffect(() => {
-        console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
+        // console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
 
         if (props.location.state && props.location.state.backHistory) {
             setCurrentComponent(props.location.state.backHistory)
@@ -267,7 +220,7 @@ export default function Index(props) {
     }, [componentIndex]);
 
     const onUserPress = (page) => {
-        console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
+        // console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -279,7 +232,7 @@ export default function Index(props) {
         if (showMenu) setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
-            console.warn(prevPage)
+            // console.warn(prevPage)
             const currentSearch = props.location.state.currentSearch;
             history.push("/home", { currentSearch: currentSearch, backHistory: prevPage })
         } else {

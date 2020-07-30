@@ -8,7 +8,7 @@ function FooterBar(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialBasicFooter1
-      handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem), console.warn("hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo myStaysList" + page, ...props) }}
+        handleFooterBar={(page) => { props.handleFooterBar(page) }} handleFooterMenu={(menuItem) => { props.handleFooterMenu(menuItem), console.warn("hellooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo myStaysList" + page, ...props) }}
         style={styles.materialBasicFooter1}
       ></MaterialBasicFooter1>
     </View>

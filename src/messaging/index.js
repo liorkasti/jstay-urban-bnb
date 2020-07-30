@@ -3,11 +3,19 @@ import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
 import { useHistory } from "react-router-dom";
 //import all builder x files related to this directory
 import HeaderBarDark from "../components/HeaderBarDark"
+
+import auth, { firebase } from '@react-native-firebase/auth';
+// import messaging from '@react-native-firebase/messaging';
+// import firebase from 'firebase'; // 4.8.1
+
 import Messages from "./messages";
 import Chat from "./chat";
+import Fire from "./Fire";
 
 export default function MessagesIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
+
+    // const denodefaultAppMessaging = firebase.messaging();
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -16,12 +24,13 @@ export default function MessagesIndex(props) {
     //the array should be in the order that the screens show up
     const componentKeys = ["Messages", "Chat"];
 
-    const goToHome = () => {
-        history.push("/home");
-    }
 
+    const user = auth().currentUser;  
+    
     useEffect(() => {
-        console.warn(componentKeys[componentIndex], componentIndex)
+        // console.warn("MessagesIndex page - ' " + componentKeys[componentIndex], "' page number - "  + componentIndex)
+        console.warn("firebase current user data: ", user)
+        // console.warn("firebase current user messaging: ", defaultAppMessaging)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
@@ -30,6 +39,47 @@ export default function MessagesIndex(props) {
             history.push("/home");
         }
     }, [componentIndex])
+
+    const goToHome = () => {
+        history.push("/home");
+    }
+
+    checkAuth = () => {
+        firebase.auth().onAuthStateChanged(user => {
+            if(!user) {
+                firebase.auth().signInAnonymously();
+            }
+        })
+    }
+    
+    send = messages => {
+        messages.forEach(item => {
+            const message = { 
+                text: item.text,
+                timestamp: firebase.database.ServerValue.TIMESTAMP,
+                user: item.user
+          }
+    
+          this.db.push(message)
+        });
+    };
+    
+    parse = message => {
+        const { user, text, timestamp } = message.val()
+        const { key: _id} = message
+        const createdAt = new Date(timestamp)
+    
+        return {
+            _id,
+            createdAt,
+            text,
+            user
+        };
+    };
+    
+    get = callback => {
+      this.db.on('child_added', snapshot => callback(this.parse(snapshot)));
+    }
 
     return (
         <View style={styles.container}>
@@ -66,6 +116,7 @@ export default function MessagesIndex(props) {
                         console.warn("setcomponentIndex for Messaging ");
                         setComponentIndex(componentIndex + 1);
                     }}
+                    
                 />
             }
 
@@ -91,6 +142,9 @@ export default function MessagesIndex(props) {
                         console.warn("setcomponentIndex for Messaging ")
                         setComponentIndex(componentIndex + 1)
                     }}
+
+                    checkAuth= {checkAuth}
+                    // on= {on}
                 />
             }
             {/* </ScrollView> */}
