@@ -17,7 +17,7 @@ function MaterialButtonTransparentHamburger(props) {
       <Hamburger
         type="cross"
         active={showMenu}
-        onPress={() => { this.setState({ active: !showMenu }), console.warn("show menu status: ", showMenu) }}
+        onPress={() => { setShowMenu(!showMenu) }}
         underlayColor="transparent" style={[styles.container, props.style]}
       >
       </Hamburger>
