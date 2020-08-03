@@ -22,6 +22,7 @@ function Accessibility(props) {
     setUserAnswers({ ...newUserAnswer });
     props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
   };
+  
   return (
     <View style={styles.container}>
       <View style={styles.wheelchairAccesableStackStack}>
