@@ -192,7 +192,7 @@ function DescribeStay(props) {
             </Text>
           </View>
         </View>
-        
+
       </View>
 
       <View style={styles.materialRadio12Row}>
