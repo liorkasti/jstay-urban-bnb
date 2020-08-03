@@ -11,13 +11,13 @@ function Nearby(props) {
     <View style={styles.container}>
       <View style={styles.walkingDistanceOfColumn}>
         <WalkingDistanceOf
-          onUserSelect={(newValue, extention) => {
+          onUserInput={({newValue, extention}) => {
             props.onUserInput({ newValue, path: "hostListing/nearby" + extention })
           }}
 
           style={styles.walkingDistanceOf}></WalkingDistanceOf>
         <Eruv
-          onUserSelect={(newValue, extention) => {
+          onUserInput={({newValue, extention}) => {
             props.onUserInput({ newValue, path: "hostListing/nearby" + extention })
           }}
           style={styles.eruv}></Eruv>

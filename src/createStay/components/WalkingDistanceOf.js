@@ -1,34 +1,56 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function WalkingDistanceOf(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.loremIpsum12StackRow}>
+      
+      <TouchableOpacity 
+          onPress={(newValue)=>updateUserBool( "kosherRestaurants")}
+      style={styles.loremIpsum12StackRow}>
         <View style={styles.loremIpsum12Stack}>
           <Text style={styles.loremIpsum12}></Text>
           <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "kosherRestaurants")}
+          checked={userAnswers["kosherRestaurants"]}
+
+          onPress={(newValue)=>updateUserBool( "kosherRestaurants")}
             style={styles.materialCheckbox53}
           ></MaterialCheckbox1>
         </View>
         <Text style={styles.kosherRestaurants}>Kosher Restaurants</Text>
-      </View>
+      </TouchableOpacity>
+
       <Text style={styles.walkingDistance1}>Within Walking Distance of..</Text>
-      <View style={styles.materialCheckbox52Row}>
+      <TouchableOpacity 
+          onPress={(newValue)=>updateUserBool( "synagogues")}
+      style={styles.materialCheckbox52Row}>
         <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "synagogues")}
+          checked={userAnswers["synagogues"]}
+          onPress={(newValue)=>updateUserBool( "synagogues")}
           style={styles.materialCheckbox52}
         ></MaterialCheckbox1>
         <Text style={styles.synagogues}>Synagogues</Text>
         <Text style={styles.loremIpsum13}></Text>
-      </View>
+      </TouchableOpacity>
       <View style={styles.button8Stack}>
-        <TouchableOpacity style={styles.button8}>
+        <TouchableOpacity 
+          onPress={(newValue)=>updateUserBool( "jewishCommunity")}
+          style={styles.button8}>
           <View style={styles.materialCheckbox51Row}>
             <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "jewishCommunity")}
+          checked={userAnswers["jewishCommunity"]}
+
+          onPress={(newValue)=>updateUserBool( "jewishCommunity")}
               style={styles.materialCheckbox51}
             ></MaterialCheckbox1>
             <Text style={styles.jewishCommunity}>Jewish Community</Text>
@@ -38,36 +60,50 @@ function WalkingDistanceOf(props) {
           My stay is within a 10 minute walk of the following
         </Text>
       </View>
-      <TouchableOpacity style={styles.button9}>
+      <TouchableOpacity
+          onPress={(newValue)=>updateUserBool( "kosherShops")}
+          style={styles.button9}>
         <View style={styles.materialCheckbox54Row}>
           <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "kosherShops")}
+          checked={userAnswers["kosherShops"]}
+          onPress={(newValue)=>updateUserBool( "kosherShops")}
             style={styles.materialCheckbox54}
           ></MaterialCheckbox1>
           <Text style={styles.kosherShops}>Kosher Shops</Text>
         </View>
       </TouchableOpacity>
-      <View style={styles.materialCheckbox55Row}>
+      <TouchableOpacity
+          onPress={(newValue)=>updateUserBool( "womensMikvah")}
+          style={styles.materialCheckbox55Row}>
         <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "womensMikvah")}
+          checked={userAnswers["womensMikvah"]}
+          onPress={(newValue)=>updateUserBool( "womensMikvah")}
           style={styles.materialCheckbox55}
         ></MaterialCheckbox1>
         <Text style={styles.womensMikvah}>Women&#39;s Mikvah</Text>
-      </View>
-      <View style={styles.mensMikvah2Stack}>
+      </TouchableOpacity>
+      <TouchableOpacity
+          onPress={(newValue)=>updateUserBool( "mensMikvah")}
+      style={styles.mensMikvah2Stack}>
         <Text style={styles.mensMikvah2}>Men&#39;s Mikvah</Text>
         <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "mensMikvah")}
+          checked={userAnswers["mensMikvah"]}
+          onPress={(newValue)=>updateUserBool( "mensMikvah")}
           style={styles.materialCheckbox56}
         ></MaterialCheckbox1>
-      </View>
-      <View style={styles.jewishDaycareStack}>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+          onPress={(newValue)=>updateUserBool( "jewishDaycare")}
+      
+      style={styles.jewishDaycareStack}>
         <Text style={styles.jewishDaycare}>Jewish Daycare</Text>
         <MaterialCheckbox1
-          onPress={(newValue)=>props.onUserSelect(newValue, "jewishDaycare")}
+          checked={userAnswers["jewishDaycare"]}
+          onPress={(newValue)=>updateUserBool( "jewishDaycare")}
           style={styles.materialCheckbox562}
         ></MaterialCheckbox1>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

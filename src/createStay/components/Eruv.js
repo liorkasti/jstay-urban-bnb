@@ -1,16 +1,28 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 import MaterialSwitch1 from "./MaterialSwitch1";
 
 function Eruv(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.button12Stack}>
-        <TouchableOpacity style={styles.button12}>
+        <TouchableOpacity
+          onPress={() => updateUserBool("localEruv")}
+          style={styles.button12}>
           <View style={styles.materialCheckbox3682Row}>
             <MaterialCheckbox1
-              onPress={(newValue) => props.onUserSelect(newValue, "localEruv")}
+              onPress={() => updateUserBool("localEruv")}
+              checked={userAnswers["localEruv"]}
               style={styles.materialCheckbox3682}
             ></MaterialCheckbox1>
             <Text style={styles.localEruv}>Local Eruv</Text>
@@ -21,10 +33,13 @@ function Eruv(props) {
         </Text>
       </View>
       <View style={styles.button13Stack}>
-        <TouchableOpacity style={styles.button13}>
+        <TouchableOpacity
+          onPress={() => updateUserBool("propertyEruv")}
+          style={styles.button13}>
           <View style={styles.materialCheckbox3692Row}>
             <MaterialCheckbox1
-              onPress={(newValue) => props.onUserSelect(newValue, "propertyEruv")}
+              onPress={() => updateUserBool("propertyEruv")}
+              checked={userAnswers["propertyEruv"]}
               style={styles.materialCheckbox3692}
             ></MaterialCheckbox1>
             <Text style={styles.eruvOnProperty}>Eruv on property</Text>
@@ -38,7 +53,8 @@ function Eruv(props) {
         <Text style={styles.eruv2}>Eruv</Text>
         <View style={styles.eruv2Filler}></View>
         <MaterialSwitch1
-          onPress={(newValue) => props.onUserSelect(newValue, "eruv")}
+          onPress={(newValue) => updateUserBool("eruv")}
+          value={userAnswers["eruv"]}
 
           style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
