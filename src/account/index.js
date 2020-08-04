@@ -252,7 +252,7 @@ export default function Index(props) {
                     /> : 
                     <MyProfileHeader
                     onBack={() => onBack()}
-                    onPress={() => { props.setShowMenu(); }}
+                    onPress={() => { setShowMenu(!showMenu); }}
                     style={styles.header}
                   />
             }
