@@ -13,7 +13,7 @@ import MaterialButtonWithVioletText25 from "../components/MaterialButtonWithViol
 import MaterialButtonWithVioletText26 from "../components/MaterialButtonWithVioletText26";
 import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithVioletText28";
 
-const MyProfileMenu = function MyProfileMenu(props) {
+const MyProfileMenu = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.rect2}>
