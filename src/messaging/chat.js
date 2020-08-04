@@ -13,7 +13,7 @@ import auth from '@react-native-firebase/auth';
 
 const reference = database().ref('/user/messaging');
 
-const user = auth().currentUser;
+const currentUser = auth().currentUser;
 
 const messagesToMe = [{
   message: "hi",
@@ -55,7 +55,7 @@ export default function Chat(props) {
       })
     )
 
-    console.warn("firebase current user data: ", user);
+    console.warn("firebase current user data: ", currentUser);
     console.warn("firebase current user messages: ", messages);
    
     return () => {
@@ -71,13 +71,13 @@ export default function Chat(props) {
   }
 
   const send = messages => {
-    messages.forEach(message => {
+    messages.forEach(i => {
       const message = {
-        text: message.text,
+        text: i.text,
         timestamp: database.ServerValue.TIMESTAMP,
-        user: message.user
+        user: i.user
       }
-      console.warn('message: ', message);
+      console.warn('message: ', i);
 
       reference.push(message)
     });
@@ -141,8 +141,8 @@ export default function Chat(props) {
         // onSend={(message)=>{send(message)}}
         onSend={send}
         user={{ 
-          _id: user.uid,
-          name: user.displayName
+          _id: currentUser.uid,
+          name: currentUser.displayName
          }}
       />
     </>
