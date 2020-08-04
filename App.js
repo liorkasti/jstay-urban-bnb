@@ -18,11 +18,8 @@ import Login from "./src/login"
 import Home from "./src/home"
 import CreateStay from "./src/createStay"
 import CreateAccount from "./src/createAccount"
-import Account from "./src/account/MyProfile"
-// todo: fix this root 
-// import Account from "./src/account"
+import Account from "./src/account"
 import EditStay from "./src/editStay"
-import Messages from "./src/messaging";
 import Chat from "./src/messaging";
 
 export default function App() {
@@ -62,7 +59,6 @@ export default function App() {
           <BackButton>
             <Route exact path="/">
               {loggedIn ? <Redirect to="/home" /> : <Login />}
-              {/* {loggedIn ? <StayCalender /> : <StayCalender />} */}
             </Route>
             <Route path="/chat" exact component={Chat} />
             <Route path="/account" component={Account} />
@@ -70,8 +66,6 @@ export default function App() {
             <Route path="/CreateAccount" component={CreateAccount} />
             <Route path="/createStay" component={CreateStay} />
             <Route path="/home" component={Home} />
-            {/* <Route path="/messaging" component={Messages}/> */}
-            {/* <Route exact path="/createStay" component={ StayCalender }/> */}
           </BackButton>
         </Switch>
       </NativeRouter>

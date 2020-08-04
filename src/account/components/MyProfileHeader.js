@@ -30,6 +30,7 @@ export default function MyProfileHeader(props) {
           <Center>
             <Text style={styles.text}>My Profile</Text>
           </Center>
+          
           <MaterialButtonTransparentHamburger
             onPress={() => { props.setShowMenu() }}
             // onPress={() => onShowMenu(!showMenu)}
@@ -48,25 +49,12 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    backgroundColor: "rgba(2,172,235,1)",
-    flex: 1,
-    flexDirection: "column",
-    height: windowHeight,
-    width: windowWidth,
-    width: '100%',
   },
   headerMenu: {
     zIndex: 20,
     // position: "absolute",
   },
   rect1: {
-    width: '100%',
-    height: 91,
-    position: "absolute",
-    borderColor: "rgba(0,88,155,1)",
-    borderWidth: 0,
-    borderBottomWidth: .7
   },
   materialButtonViolet22: {
     height: 0,

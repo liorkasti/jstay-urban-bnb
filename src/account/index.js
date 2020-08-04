@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-    View, StyleSheet, Dimensions, Image,
-    TouchableOpacity, Text, ScrollView, SafeAreaView, Constants
-} from "react-native"
+import { View, StyleSheet, Dimensions, Text, ScrollView,RefreshControl } from "react-native"
 import { useHistory } from "react-router-dom";
-
 import { GoogleSignin } from '@react-native-community/google-signin';
-import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
+import auth from '@react-native-firebase/auth';
 
 //import all builder x files related to this directory
 import HeaderBarLight from "./components/HeaderBarLight";
@@ -39,117 +35,75 @@ import Bookings from "./Bookings";
 import ContactUs from "./ContactUs";
 
 const components = {
-    MyStaysList,
-    MyProfile,
-    EditProfile,
-    EditMyKashrut,
-    ContactUs,
-    Bookings,
-    CancelationGuest,
-    CancelationHost,
-    ConfirmedGuest,
-    ConfirmedHost,
-    GuestCardInfo,
-    HoldACharge,
-    NewRequest,
-    PreviousHost,
-    PreviousGuest,
-    Trips,
-    StayProfile,
-    BookStay,
-    PreBookingProfile,
-    CheckIn,
-    EditMyListings,
-    Reviews,
+    bookings: Bookings,
+    cancelationGuest: CancelationGuest,
+    cancelationHost: CancelationHost,
+    confirmedGuest: ConfirmedGuest,
+    confirmedHost: ConfirmedHost,
+    contactUs: ContactUs,
+    editProfile: EditProfile,
+    editMyKashrut: EditMyKashrut,
+    guestCardInfo: GuestCardInfo,
+    holdACharge: HoldACharge,
+    myProfile: MyProfile,
+    myStaysList: MyStaysList,
+    newRequest: NewRequest,
+    previousHost: PreviousHost,
+    previousGuest: PreviousGuest,
+    trips: Trips,
+    stayProfile: StayProfile,
+    bookStay: BookStay,
+    preBookingProfile: PreBookingProfile,
+    checkIn: CheckIn,
+    editMyListings: EditMyListings,
+    reviews: Reviews,
 };
 
-export default function Index(props) {
-    const [componentIndex, setComponentIndex] = useState(0);
 
+const headers = {
+    bookings: "Bookings",
+    cancelationGuest: "Cancelation",
+    cancelationHost: "Cancelation",
+    confirmedHost: "Confirmed",
+    confirmedGuest: "Confirmed",
+    contactUs:"Support",
+    editProfile: "Edit Profile",
+    editMyKashrut: "Kashrut",
+    guestCardInfo: "Payments",
+    holdACharge: "Hold A Charge",
+    myProfile: "My Profile",
+    myStaysList: "My Stays",
+    newRequest: "New Request",
+    previousGuest: "Previous",
+    previousHost: "Previous",
+    trips: "My Trips",
+    stayProfile: "Stay Profile",
+    bookStay: "Book This Stay",
+    preBookingProfile: "Profile",
+    checkIn: "Check-In",
+    editMyListings: "Edit Stay",
+    reviews: "Reviews",
+}
+
+export default function Index(props) {
     const [backHistory, addBackHistory] = useState([])
     const [historyIndex, setHistoryIndex] = useState(0);
     const [currentPage, setCurrentPage] = useState("");
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
 
-    const componentKeys = [
-        "MyStaysList", "MyProfile", "EditProfile", "EditMyKashrut", "ContactUs",
-        "Bookings", "CancelationGuest", "CancelationHost", "ConfirmedGuest",
-        "ConfirmedHost", "GuestCardInfo", "HoldACharge",
-        "NewRequest", "PreviousHost", "PreviousGuest", "Trips",
-        "StayProfile", "BookStay", "PreBookingProfile", "CheckIn",
-        "EditMyListings", "Reviews",
-    ];
-
-
-    const headers = {
-        MyStaysList: "My Stays",
-        MyProfile: "My Profile",
-        EditeProfile: "Edit Profile",
-        EditMyKashrut: "Kashrut",
-        ContactUs: "Support",
-        Bookings: "Bookings",
-        CancelationGuest: "Cancelation",
-        CancelationHost: "Cancelation",
-        ConfirmedHost: "Confirmed",
-        ConfirmedGuest: "Confirmed",
-        GuestCardInfo: "Payments",
-        HoldACharge: "Hold A Charge",
-        NewRequest: "New Request",
-        PreviousGuest: "Previous",
-        PreviousHost: "Previous",
-        Trips: "My Trips",
-        StayProfile: "Stay Profile",
-        BookStay: "Book This Stay",
-        PreBookingProfile: "Profile",
-        CheckIn: "Check-In",
-        EditMyListings: "Edit Stay",
-        Reviews: "Reviews",
-    }
-
+    //this send user to route if they want to create a stay
     let history = useHistory();
 
-    const handleMenu = (menuItem) => {
-        switch (menuItem) {
-            case "myStaysList":
-                consol.warn("Menu 'MyStaysList' call")
-                // history.push("/MyStaysList");
-                setComponentIndex("MyStaysList");
-                break;
-            case "editMyKashrut":
-                consol.warn("Menu 'EditMyKashrut' call")
-                // history.push("/EditMyKashrut");
-                setComponentIndex("EditMyKashrut");
-                break;
-            case "guestCardInfo":
-                consol.warn("Menu 'ConfirmedGuest' call")
-                // history.push("/ConfirmedGuest");
-                setComponentIndex("ConfirmedGuest");
-                break;
-            case "editeProfile":
-                consol.warn("Menu 'EditeProfile' call")
-                // history.push("/EditeProfile");
-                setComponentIndex("EditeProfile");
-                break;
+    //add the import as a string to this array
+    //the array should be in the order that the screens show up
 
-            case "logout":
-                auth()
-                    .signOut()
-                    .then(() => {
-                        console.log('User signed out!')
-                        setTimeout(() => {
-                            history.push("/")
-                        })
-                    })
-                break;
-        }
-    };
 
     function wait(timeout) {
         return new Promise(resolve => {
-            setTimeout(resolve, timeout);
+          setTimeout(resolve, timeout);
         });
-    }
+      }
 
     //user finished create a stay
     function onHome() {
@@ -160,12 +114,7 @@ export default function Index(props) {
         auth()
             .signOut()
             .then(() => {
-                firebase.auth().signOut().then(function () {
-                    console.log('Signed Out');
-                }, function (error) {
-                    console.error('Sign Out Error', error);
-                });
-                console.log('User signed out!', user)
+                console.log('User signed out!')
                 setTimeout(() => {
                     history.push("/")
                 })
@@ -178,7 +127,7 @@ export default function Index(props) {
         history.push("/chat", { route: "/account", subroute: message })
     }
 
-    const addToFavorites = (stay) => {
+    const addToFavorites = (stay)=>{
         history.push("/home", { subroute: "/favorites", newData: stay, favorites: true, backHistory })
     }
 
@@ -189,38 +138,21 @@ export default function Index(props) {
     const onEditStay = (from) => {
         history.push("/editStay", { subroute: from })
     }
-
+    useEffect(() => {
+        console.warn(backHistory)
+    }, [backHistory])
 
     useEffect(() => {
-        // console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
-
-        if (props.location.state && props.location.state.backHistory) {
-            setCurrentComponent(props.location.state.backHistory)
-        }
-        if (props.location.state && props.location.state.currentSearch) {
-            setCurrentSearch(props.location.state.currentSearch);
-        }
-
-        //this is if they press next on the last screen in the list
-        if (componentIndex > componentKeys.length - 1) {
-            history.push("/account", { subroute: "MyProfile", backHistory: "Home" })
-        }
-
-        if (componentIndex < 0) {
-            onHome()
-        }
-
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
 
-            let newBackHistory = [...backHistory];
-            newBackHistory[historyIndex] = props.location.state.subroute;
-            addBackHistory(newBackHistory);
-            setCurrentPage(props.location.state.subroute);
+        let newBackHistory = [...backHistory];
+        newBackHistory[historyIndex] = props.location.state.subroute;
+        addBackHistory(newBackHistory);
+        setCurrentPage(props.location.state.subroute);
         }
-    }, [componentIndex]);
+    }, []);
 
     const onUserPress = (page) => {
-        // console.warn("ACCOUNT/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -228,11 +160,13 @@ export default function Index(props) {
         setHistoryIndex(historyIndex + 1)
     }
 
+
+
     const onBack = () => {
-        if (showMenu) setShowMenu(false);
+        if(showMenu)setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
-            // console.warn(prevPage)
+            console.warn(prevPage)
             const currentSearch = props.location.state.currentSearch;
             history.push("/home", { currentSearch: currentSearch, backHistory: prevPage })
         } else {
@@ -244,116 +178,85 @@ export default function Index(props) {
     const CurrentComponentRouter = () => {
         if (!components[props.location.state.subroute]) return <View />
         const CurrentComponent = components[currentPage || props.location.state.subroute];
-        return (
-
-            <CurrentComponent
-                style={styles.componentStyle}
-                //if builder x component has next button
-                //it's button should have onPress={()=>{props.onNext}}
+        return (<CurrentComponent
+            style={styles.componentStyle}
+            //if builder x component has next button
+            //it's button should have onPress={()=>{props.onNext}}
 
 
-                //if builder x component has back button
-                //it's button should have onPress={()=>{props.onNext}}
-                onBack={() => {
-                    // onBack();
-                    setCurrentComponent("Home");
-                }}
+            //if builder x component has back button
+            //it's button should have onPress={()=>{props.onNext}}
+            onBack={() => {
+                onBack();
+            }}
 
-                onCreateStay={(requestSource) => {
-                    onCreateStay(requestSource);
-                }}
+            onCreateStay={(requestSource) => {
+                onCreateStay(requestSource);
+            }}
 
-                saveAndExit={() => {
-                    setCurrentComponent("Home");
-                    // onBack();
-                }}
-                messageHost={(message) => { onNewMessage(message) }}
-                messageSupport={() => { onNewMessage({ support: true }) }}
+            saveAndExit={()=>{
+                onBack();
+            }}
+            messageHost={(message)=>{onNewMessage(message)}}
+            messageSupport={()=>{onNewMessage({support:true})}}
 
-                messageGuest={(message) => { onNewMessage(message) }}
+            messageGuest={(message)=>{onNewMessage(message)}}
 
-                onEditStay={(page) => {
-                    onEditStay(page);
-                }}
+            onEditStay={(page) => {
+                onEditStay(page);
+            }}
 
-                showMenu={showMenu} 
-                // showMenu={() => setShowMenu(true)}
-                // onShowMenu={() => { setShowMenu(!showMenu) }, console.warn("show menu status: ", showMenu), showMenu}
+            showMenu={showMenu}
 
-                goHome={() => {
-                    onHome();
-                }}
+            goHome={() => {
+                onHome();
+            }}
+            deleteStay={() => {
+                console.warn("create delete stay behavior");
+                onBack();
+            }}
 
-                deleteStay={() => {
-                    console.warn("create delete stay behavior");
-                    onBack();
-                }}
+            addToFavorites={()=>{
+                addToFavorites();
+            }}
 
-                addToFavorites={() => {
-                    addToFavorites();
-                }}
+            onDeleteAccount={() => {
+                onLogout();
+            }}
 
-                onDeleteAccount={() => {
-                    onLogout();
-                }}
-
-                onLogout={() => {
-                    onLogout();
-                }}
-                onUserPress={(page) => onUserPress(page)}
-
-                handleMenu={(menuItem) => {
-                    handleMenu(menuItem)
-                }}
-
-                facebookSignin={() => { signInWithFacebookHandler() }}
-
-                googleSignin={() => signInWithGoogleHandler()}
-
-                login={() => {
-                    // console.warn("0000000000000 index/account setcomponentIndex for login ", props.user)
-                    setHistoryIndex(historyIndex + 1)
-                }}
-            />
-        )
+            onLogout={() => {
+                onLogout();
+            }}
+            onUserPress={(page) => onUserPress(page)}
+        />)
     };
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
-
+    
         wait(2000).then(() => setRefreshing(false));
-    }, [refreshing]);
-
+      }, [refreshing]);
+    
 
     return (
         <View style={styles.container}>
-
             {/*dynamic component*/}
             {
-                currentPage !== "myProfile" ?
+                currentPage !== "myProfile" ? 
                     <HeaderBarLight
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
                         onHome={() => { onHome() }}
                         onBack={() => onBack()}
-                        onPress={props.googleSignin()}
-                        handleMenu={(menuItem) => {
-                            handleMenu(menuItem)
-                        }}
-                    />
-                    :
+                    /> : 
                     <MyProfileHeader
-                        screenWidth={windowWidth}
-                        style={styles.header}
-                        header={headers[currentPage || props.location.state.subroute]}
-                        setShowMenu={() => { setShowMenu(!showMenu) }}                        onHome={() => { onHome() }}
-                        onBack={() => onBack()}
-                        onPress={props.googleSignin()}
-                        handleMenu={(menuItem) => {
-                            handleMenu(menuItem)
-                        }}
-                    />
+                    // onUserPress={(action) => props.onUserPress(action)}
+                    // onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
+                    // setShowMenu={() => { setShowMenu(!showMenu) }}
+                    onPress={() => { props.setShowMenu(); }}
+                    style={styles.header}
+                  />
             }
             <ScrollView style={{
                 zIndex: 1,
@@ -364,7 +267,7 @@ export default function Index(props) {
                 }}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                }>
+                  }>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -376,18 +279,14 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
+        padding: 10,
+        backgroundColor: "rgba(2,172,235,1)",
         flexDirection: "column",
-        // height: windowHeight,
-        // width: windowWidth,
-        // width: '100%',
-        // width: 'auto',
-        // marginHorizontal: Dimensions.get('window').width < 400 ? 4 : 0,
+        width: "100%"
     },
 
     header: {
         zIndex: 3000,
-        width: '100%',
     },
 });

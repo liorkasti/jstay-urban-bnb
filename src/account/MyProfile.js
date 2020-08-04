@@ -35,18 +35,11 @@ function MyProfile(props) {
 
   return (
     <View style={styles.container}>
-      <MyProfileHeader
-        // onUserPress={(action) => props.onUserPress(action)}
-        // onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
-        // setShowMenu={() => { setShowMenu(!showMenu) }}
-        onPress={() => { props.setShowMenu() }, console.warn('onPress setShowMenu status', showMenu)}
-        style={styles.headerMenu}
-      />
 
       {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
-          handleMenu={(menuItem) => { props.handleMenu(menuItem) }, console.warn("handleMenu status: ", showMenu)}
+          handleMenu={(menuItem) => { props.handleMenu(menuItem); console.warn("handleMenu status: ", showMenu)}}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
@@ -66,6 +59,7 @@ function MyProfile(props) {
           ></MaterialButtonWithVioletText32>
         </TouchableOpacity>
       </View>
+      
       <View style={styles.accountDetailsStack}>
         <Text style={styles.loremIpsum}></Text>
         <AccountDetails style={styles.myNameDetails}></AccountDetails>
@@ -111,9 +105,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)",
     alignItems: "center",
-    position: "absolute",
     width: '100%',
-    top: 0
   },
   headerMenu: {
     position: "absolute",
@@ -130,7 +122,6 @@ const styles = StyleSheet.create({
     borderRadius: 100
   },
   materialButtonWithVioletText39: {
-    top: 50,
     top: -30,
     alignItems: "center",
   },

@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 function MaterialButtonWithVioletText25(props) {
   return (
     <TouchableOpacity
-      onPress={() => { props.onUserPress("editeProfile") }}
+      onPress={() => { props.onUserPress("editProfile") }}
       style={[styles.container, props.style]}>
       <Text style={styles.caption}>{props.tag || FAQ}</Text>
     </TouchableOpacity>

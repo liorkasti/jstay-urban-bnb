@@ -63,10 +63,10 @@ const MyProfileMenu = function MyProfileMenu(props) {
 
                     <View style={styles.materialButtonWithVioletText51Stack}>
                         <TouchableOpacity
-                            onPress={() => { props.onUserPress("editeProfile") }}>
+                            onPress={() => { props.onUserPress("editProfile") }}>
                             <MaterialButtonWithVioletText25
                                 tag="Edit Profile"
-                                onPress={() => { props.onUserPress("editeProfile") }}
+                                onPress={() => { props.onUserPress("editProfile") }}
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>

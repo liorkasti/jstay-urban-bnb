@@ -9,9 +9,6 @@ import Home from "./Home";
 import Favorites from "../account/Favorites";
 import Trips from "../account/Trips";
 import Messages from "../messaging/messages";
-import MyProfile from "../account/MyProfile";
-import Messaging from "../messaging/chat";
-import Welcome from "../login/Welcome";
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
@@ -49,21 +46,11 @@ export default function Index(props) {
                 setCurrentComponent("Trips");
                 // history.push("/account", { subroute: "trips" });
                 break;
-            case "messaging":
-                setCurrentComponent("Messages");
-                // history.push("/messaging", { subroute: "messages" });
-                break;
             case "messages":
                 history.push("/chat")
                 break;
             case "account":
-                { handleProfileMenu(page) }
-                // console.warn("from index/home passing current page: ", (page))
-                // console.warn("from index/home passing props.history: ", (history))
-                // console.warn("0000000000000 home/index to /account: ", props)
-                // history.push("/home")
-                history.push("/account")
-                setCurrentComponent("Account");
+                history.push("/account", { subroute: "myProfile" })
                 break;
         }
     };
@@ -98,7 +85,7 @@ export default function Index(props) {
         }
     };
 
-    
+
     const handleProfileMenu = (menuItem) => {
         switch (menuItem) {
             case "createStay":
@@ -106,11 +93,13 @@ export default function Index(props) {
                 break;
             case "logout":
                 auth()
-                .signOut()
-                .then(() => {console.log('User signed out!')
-                setTimeout(()=>{
-                    history.push("/")
-                })})
+                    .signOut()
+                    .then(() => {
+                        console.log('User signed out!')
+                        setTimeout(() => {
+                            history.push("/")
+                        })
+                    })
                 break;
             case "profile":
                 history.push("/account", { subroute: "myProfile" });
@@ -121,7 +110,7 @@ export default function Index(props) {
             case "paymentDetails":
                 history.push("/account", { subroute: "guestCardInfo" })
                 break;
-               
+
         }
     };
 
@@ -241,95 +230,6 @@ export default function Index(props) {
                         // onBack();
                         setCurrentComponent("Home");
                     }}
-
-                    onHome={() => {
-                        setCurrentComponent("Home");
-                    }}
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
-
-                currentComponent === "Messages"
-                &&
-                //change component name to the new import 
-                <Messages
-
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-
-                    handleMenu={(menuItem) => {
-                        handleMenu(menuItem)
-                    }}
-
-                    handleFooterBar={(page) => {
-                        handleFooterBar(page)
-                    }}
-
-                    showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
-
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    // onBack={() => {
-                    //     onBack();
-                    // }}
-
-                    onHome={() => {
-                        setCurrentComponent("Home");
-                    }}
-                    //if builder x component has skip button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onSkip={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-                />
-            }
-            {
-                //replace this string with the string 
-                //in componentKeys related to this import
-
-                currentComponent === "Account"
-                &&
-                //change component name to the new import 
-                <MyProfile
-
-                    //if builder x component has next button
-                    //it's button should have onPress={()=>{props.onNext}}
-                    onNext={() => {
-                        setComponentIndex(componentIndex + 1)
-                    }}
-
-                    handleProfileMenu={(menuItem) => {
-                        handleProfileMenu(menuItem)
-                    }}
-
-                    handleFooterBar={(page) => {
-                        handleFooterBar(page)
-                    }}
-
-                    showStayProfile={(backHistory) => { handleCard("stayProfile", backHistory); }}
-
-                    //if builder x component has back button
-                    //it's button should have onPress={()=>{props.onNrext}}
-                    onBack={() => {
-                        history.push("/home")
-                        // onBack();
-                        // componentIndex = setComponentIndex(componentIndex - 1);
-                        // console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
-                        // onBack(setComponentIndex(componentIndex - 1));
-                        // setCurrentComponent("Home");
-                        // console.warn("props", props)
-                    }}
-                    // onBack={() => setComponentIndex(componentIndex - 1)}
 
                     onHome={() => {
                         setCurrentComponent("Home");

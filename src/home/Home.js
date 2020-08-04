@@ -126,7 +126,7 @@ function Home(props) {
         :
         //homeScreen
         <ScrollView
-          style={{ marginTop: 110, zIndex: 1 }}
+          style={{ marginTop: 110, zIndex: 60 }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) {
               setShowSearchOptions(false);
