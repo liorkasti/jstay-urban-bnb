@@ -7,8 +7,13 @@ import MaterialButtonViolet22 from "../components/MaterialButtonViolet22";
 import MaterialButtonViolet17 from "../components/MaterialButtonViolet17";
 
 import Fire from "./Fire";
-import auth, { firebase } from '@react-native-firebase/auth';
-// import firebase from 'firebase'; // 4.8.1
+
+import database from '@react-native-firebase/database';
+import auth from '@react-native-firebase/auth';
+
+const reference = database().ref('/user/messaging');
+
+const user = auth().currentUser;
 
 const messagesToMe = [{
   message: "hi",
@@ -41,92 +46,44 @@ const user = auth().currentUser;
 export default function Chat(props) {
   const [messages, setMessages] = useState([])
 
-  // static navigationOptions = ({ navigation }) => ({
-  //   title: (navigation.state.params || {}).name || 'Chat!',
-  // });
-
-  // state = {
-  //   messages: [],
-  // };
-
-  // get user() {
-  //   return {
-  //     _id: Fire.uid,
-  //     name: this.props.navigation.state.params.name,
-  //   }
-  // }
-
   useEffect(() => {
-    setMessages([
-      {
-        _id: 3,
-        text: 'Hello',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-      {
-        _id: 2,
-        text: 'shuup yeah',
-        createdAt: new Date(),
-        user: {
-          _id: 1,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-      {
-        _id: 1,
-        text: 'you what?',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-    ]),
+    setMessages([]);
 
-      on(message =>
-        this.setState(previousState => ({
-          messages: GiftedChat.append(previousState.messages, message),
-        }))
-      );
-    off();
+    on(message =>
+      setMessages(previousState => {
+        GiftedChat.append(previousState.messages, message);
+      })
+    )
 
-    console.warn("firebase current user data: ", user)
-    console.warn("firebase current user messages: ", messages)
-
-
-
+    console.warn("firebase current user data: ", user);
+    console.warn("firebase current user messages: ", messages);
+   
+    return () => {
+      off();
+    }
   }, [])
 
 
-  checkAuth = () => {
-    firebase.auth().onAuthStateChanged(user => {
-      if (!user) {
-        firebase.auth().signInAnonymously();
-      }
-    })
+  const on = callback => {
+    reference
+      .limitToLast(20)
+      .on('child_added', snapshot => callback(parse(snapshot)));
   }
 
-  send = messages => {
-    messages.forEach(item => {
+  const send = messages => {
+    messages.forEach(message => {
       const message = {
-        text: item.text,
-        timestamp: firebase.database.ServerValue.TIMESTAMP,
-        user: item.user
+        text: message.text,
+        timestamp: database.ServerValue.TIMESTAMP,
+        user: message.user
       }
-      console.warn('messages: ', messages);
+      console.warn('message: ', message);
 
-      this.db.push(message)
+      reference.push(message)
     });
   };
 
-  parse = message => {
+  const parse = message => {
     const { user, text, timestamp } = message.val()
     const { key: _id } = message
     const createdAt = new Date(timestamp)
@@ -142,28 +99,13 @@ export default function Chat(props) {
 
 
 
-  get = callback => {
-    this.db.on('child_added', snapshot => callback(this.parse(snapshot)));
+  const get = callback => {
+    reference.on('child_added', snapshot => callback(parse(snapshot)));
     console.warn('get: ', callback);
   }
 
-
-
-  // get db() {
-  //   return firebase.database().ref("messages");
-  // }
-
-  // off() {
-  //   this.db.off();
-  // }
-
-  // get uid() {
-  //   return (firebase.auth().currentUser || {}).uid
-  // }
-
-  // helper method that is sends a message
-  function handleSend(newMessage = []) {
-    setMessages(GiftedChat.append(messages, newMessage));
+  const off = () => {
+    reference.off();
   }
 
   return (
@@ -194,9 +136,14 @@ export default function Chat(props) {
       </View>
       <GiftedChat
         messages={messages}
-        // onSend={newMessage => handleSend(newMessage)}
-        onSend={{ send }}
-        user={{ _id: 1 }}
+        //below are 2 different ways of calling a function from a callback.
+
+        // onSend={(message)=>{send(message)}}
+        onSend={send}
+        user={{ 
+          _id: user.uid,
+          name: user.displayName
+         }}
       />
     </>
 
