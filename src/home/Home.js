@@ -71,35 +71,7 @@ function Home(props) {
           style={styles.searchBar}
         />
       </View>
-
-      <View style={styles.searchBarContainer}>
-        {/* todo: fix scrollView: */}
-        {/*  City Cards - todo: cut past this inside the scrollView */}
-        <CityCards
-          showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-          style={styles.cityCards}
-        />
-
-        {/* Nearby - todo: cut past this inside the scrollView */}
-        <Text style={styles.nearby}>Nearby</Text>
-        <TouchableOpacity style={styles.button4}>
-          <MaterialCard5
-            onPress={() => { props.showSearchResultsFor("local") }}
-            style={styles.materialCard5} />
-        </TouchableOpacity>
-
-        {/* todo: fix scrollView: */}
-        {/*  City Cards - todo: cut past this inside the scrollView */}
-
-        {/* Top Stays - todo: cut past this inside the scrollView */}
-        <Text style={styles.topStays}>Top Stays</Text>
-        <MaterialCardWithRightButtons
-          onUserPress={(page) => { props.onUserPress(page) }}
-          onPress={() => { props.showStayProfile("Home") }}
-          style={styles.materialCardWithRightButtons1}
-        />
-      </View>
-
+      
       {props.searchText ?
         // searchResults
         <ScrollView
@@ -126,7 +98,7 @@ function Home(props) {
         :
         //homeScreen
         <ScrollView
-          style={{ marginTop: 110, zIndex: 60 }}
+          style={{width: "100%",overflow: "hidden" ,zIndex: 1}}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) {
               setShowSearchOptions(false);
@@ -161,6 +133,7 @@ function Home(props) {
             </View>
           </View>
         </ScrollView>
+      
       }
 
       {/* Map */}
@@ -182,8 +155,7 @@ function Home(props) {
         style={styles.footerBar1}
       />
     </View>
-  );
-}
+  );}
 
 const styles = StyleSheet.create({
   container: {
@@ -213,12 +185,17 @@ const styles = StyleSheet.create({
   //   position: "absolute",
   //   right: 13
   // },
+  scrollInterContainer: {
+    height: 1500
+  },
   headerBar: {
     top: 103,
     left: -13,
     height: 56,
     position: "absolute",
     right: -13,
+    zIndex: 101,
+    backgroundColor: "rgba(2,172,235,1)",
     fontSize: Dimensions.get('window').height < 400 ? 16 : 20
   },
   topStays: {
@@ -274,7 +251,10 @@ const styles = StyleSheet.create({
     position: "absolute",
     // paddingHorizontal: 16,
     flex: 1,
+    backgroundColor: "rgba(2,172,235,1)",
     width: '100%',
+    height: "15%",
+    zIndex:100,
     alignItems: "center",
   },
   searchBar: {
@@ -287,6 +267,7 @@ const styles = StyleSheet.create({
     left: 0,
     // right: 0,
     // width: "100%",
+    zIndex: 20,
     height: 86,
     position: "absolute",
     bottom: -15

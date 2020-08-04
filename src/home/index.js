@@ -8,7 +8,6 @@ import auth from '@react-native-firebase/auth';
 import Home from "./Home";
 import Favorites from "../account/Favorites";
 import Trips from "../account/Trips";
-import Messages from "../messaging/messages";
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");

@@ -251,9 +251,7 @@ export default function Index(props) {
                         onBack={() => onBack()}
                     /> : 
                     <MyProfileHeader
-                    // onUserPress={(action) => props.onUserPress(action)}
-                    // onPress={() => onShowMenu(!showMenu), console.log('onShowMenu', showMenu)}
-                    // setShowMenu={() => { setShowMenu(!showMenu) }}
+                    onBack={() => onBack()}
                     onPress={() => { props.setShowMenu(); }}
                     style={styles.header}
                   />
