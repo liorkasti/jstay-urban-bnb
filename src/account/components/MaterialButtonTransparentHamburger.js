@@ -9,7 +9,7 @@ function MaterialButtonTransparentHamburger(props) {
 
   return (
     <TouchableOpacity
-      onPress={() => { props.setShowMenu() }}
+      onPress={() => { props.onPress() }}
     // onPress={() => showMenu(), console.warn("MaterialButtonTransparentHamburger show menu status: ", showMenu)}
     >
       {/* <Icon name="menu" style={styles.caption}></Icon> */}
@@ -17,7 +17,7 @@ function MaterialButtonTransparentHamburger(props) {
       <Hamburger
         type="cross"
         active={showMenu}
-        onPress={() => { setShowMenu(!showMenu) }}
+        onPress={() => {props.onPress(); setShowMenu(!showMenu); }}
         underlayColor="transparent" style={[styles.container, props.style]}
       >
       </Hamburger>
