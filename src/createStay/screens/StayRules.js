@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -13,6 +13,16 @@ import Icon from "react-native-vector-icons/Entypo";
 import MaterialSwitch1 from "../components/MaterialSwitch1";
 
 function StayRules(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -39,51 +49,76 @@ function StayRules(props) {
           style={styles.materialButtonViolet4}
         ></MaterialButtonViolet6>
       </View>
-      
-   
+
+
 
       <View style={styles.petsAllowed1Stack}>
         <Text style={styles.petsAllowed1}>Pets allowed</Text>
-        <MaterialSwitch1 style={styles.materialSwitch5}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("petsAllowed")}
+          value={userAnswers["petsAllowed"]}
+          style={styles.materialSwitch5}></MaterialSwitch1>
       </View>
       <View style={styles.loremIpsum3Row}>
         <Text style={styles.loremIpsum3}>
           Suitable for large families {"\n"}(7+)
         </Text>
         <View style={styles.loremIpsum3Filler}></View>
-        <MaterialSwitch1 style={styles.materialSwitch1}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("largeFamilies")}
+          value={userAnswers["largeFamilies"]}
+          style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
       <View style={styles.materialSwitch2Stack}>
-        <MaterialSwitch1 style={styles.materialSwitch2}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("suitableInfants")}
+          value={userAnswers["suitableInfants"]}
+          style={styles.materialSwitch2}></MaterialSwitch1>
         <Text style={styles.loremIpsum4}>
           Suitable for infants {"\n"}(under 2 yrs)
         </Text>
       </View>
       <View style={styles.materialSwitch3Stack}>
-        <MaterialSwitch1 style={styles.materialSwitch3}></MaterialSwitch1>
+        <MaterialSwitch1
+
+          onPress={(newValue) => updateUserBool("suitableChildren")}
+          value={userAnswers["suitableChildren"]}
+          style={styles.materialSwitch3}></MaterialSwitch1>
         <Text style={styles.loremIpsum5}>
           Suitable for children {"\n"}(ages 2-13)
         </Text>
       </View>
       <View style={styles.materialSwitch4Stack}>
-        <MaterialSwitch1 style={styles.materialSwitch4}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("suitableStudents")}
+          value={userAnswers["suitableStudents"]}
+          style={styles.materialSwitch4}></MaterialSwitch1>
         <Text style={styles.petsAllowed2}>Suitable for students</Text>
       </View>
       <View style={styles.loremIpsum1Stack}>
         <Text style={styles.loremIpsum1}>
           Guests must clean before {"\n"}leaving
         </Text>
-        <MaterialSwitch1 style={styles.materialSwitch6}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("guestsClean")}
+          value={userAnswers["guestsClean"]}
+          style={styles.materialSwitch6}></MaterialSwitch1>
       </View>
       <View style={styles.loremIpsum2Row}>
         <Text style={styles.loremIpsum2}>Suitable for hosting meals</Text>
         <View style={styles.loremIpsum2Filler}></View>
-        <MaterialSwitch1 style={styles.materialSwitch8}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("suitableHosting")}
+          value={userAnswers["suitableHosting"]}
+          style={styles.materialSwitch8}></MaterialSwitch1>
       </View>
       <View style={styles.smokingAllowed1Row}>
         <Text style={styles.smokingAllowed1}>Smoking allowed</Text>
         <View style={styles.smokingAllowed1Filler}></View>
-        <MaterialSwitch1 style={styles.materialSwitch7}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("smoking")}
+          value={userAnswers["smoking"]}
+          style={styles.materialSwitch7}></MaterialSwitch1>
       </View>
       <Text style={styles.whatAmenities1}>Add guidelines for guests</Text>
     </View>

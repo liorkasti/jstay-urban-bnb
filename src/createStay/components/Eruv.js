@@ -55,7 +55,6 @@ function Eruv(props) {
         <MaterialSwitch1
           onPress={(newValue) => updateUserBool("eruv")}
           value={userAnswers["eruv"]}
-
           style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
       <Text style={styles.loremIpsum17}>

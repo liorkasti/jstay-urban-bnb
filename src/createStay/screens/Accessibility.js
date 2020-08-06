@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -14,6 +14,15 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
 function Accessibility(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+  
   return (
     <View style={styles.container}>
       <View style={styles.wheelchairAccesableStackStack}>
@@ -21,7 +30,10 @@ function Accessibility(props) {
           <Text style={styles.wheelchairAccesable}>Wheelchair accessible</Text>
           <Text style={styles.text1}>My stay has wheelchair access</Text>
         </View>
-        <MaterialSwitch1 style={styles.materialSwitch1}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("wheelchairAccessible")}
+          value={userAnswers["wheelchairAccessible"]}
+          style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
       <TextInput
         placeholder="e.g. There are ramps and elevators but no access to our loft"
@@ -60,7 +72,10 @@ function Accessibility(props) {
       <View style={styles.guestsMustKno2Row}>
         <Text style={styles.guestsMustKno2}>Some spaces are shared</Text>
         <View style={styles.guestsMustKno2Filler}></View>
-        <MaterialSwitch1 style={styles.materialSwitch2}></MaterialSwitch1>
+        <MaterialSwitch1
+          onPress={(newValue) => updateUserBool("sharedSpaces")}
+          value={userAnswers["sharedSpaces"]} 
+          style={styles.materialSwitch2}></MaterialSwitch1>
       </View>
       <Text style={styles.tellUsMore1}>Tell us more</Text>
       <View style={styles.materialButtonWithVioletText2Row}>

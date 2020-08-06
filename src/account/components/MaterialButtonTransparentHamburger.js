@@ -5,7 +5,6 @@ import Hamburger from 'react-native-animated-hamburger';
 import MyProfileMenu from "./MyProfileMenu";
 
 function MaterialButtonTransparentHamburger(props) {
-  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <TouchableOpacity
@@ -16,8 +15,8 @@ function MaterialButtonTransparentHamburger(props) {
 
       <Hamburger
         type="cross"
-        active={showMenu}
-        onPress={() => { props.onPress(); setShowMenu(!showMenu); }}
+        active={props.showMenu}
+        onPress={() => { props.onPress(); }}
         underlayColor="transparent" style={[styles.container, props.style]}
       >
       </Hamburger>

@@ -138,6 +138,7 @@ export default function Index(props) {
     const onEditStay = (from) => {
         history.push("/editStay", { subroute: from })
     }
+
     useEffect(() => {
         console.warn(backHistory)
     }, [backHistory])
@@ -159,7 +160,36 @@ export default function Index(props) {
         addBackHistory(newBackHistory);
         setHistoryIndex(historyIndex + 1)
     }
+   
+    const handleCard = (action, backHistory) => {
+        switch (action) {
+            case "stayProfile":
+                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory });
+                break;
+            case "bookStay":
+                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch, backHistory });
+                break;
+            case "trips":
+                history.push("/account", { subroute: "trips", currentSearch: currentSearch, backHistory });
+                break;
+            case "myKashrut":
+                history.push("/account", { subroute: "editMyKashrut", currentSearch: currentSearch, backHistory })
+                break;
+            case "createStay":
+                history.push("/createStay", { currentSearch: currentSearch, backHistory });
+                break;
+            case "myStaysList":
+                history.push("/account", { subroute: "myStaysList", currentSearch: currentSearch, backHistory });
+                break;
+            case "newRequest":
+                history.push("/account", { subroute: "newRequest", currentSearch: currentSearch, backHistory });
+                break;
+            // case "bookings":
+            //     history.push("/account", { subroute: "bookings", currentSearch: currentSearch, backHistory });
+            //     break;
 
+        }
+    };
 
 
     const onBack = () => {
@@ -183,6 +213,9 @@ export default function Index(props) {
             //if builder x component has next button
             //it's button should have onPress={()=>{props.onNext}}
 
+            handleMenu={(subroute)=>{
+                handleCard(subroute);
+            }}
 
             //if builder x component has back button
             //it's button should have onPress={()=>{props.onNext}}
@@ -251,6 +284,7 @@ export default function Index(props) {
                         onBack={() => onBack()}
                     /> :
                     <MyProfileHeader
+                        showMenu={showMenu}
                         setShowMenu={() => { setShowMenu(!showMenu) }}
                         onBack={() => onBack()}
                         style={styles.header}

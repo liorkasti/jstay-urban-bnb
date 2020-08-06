@@ -32,6 +32,7 @@ export default function MyProfileHeader(props) {
           </Center>
           
           <MaterialButtonTransparentHamburger
+          showMenu={props.showMenu}
             onPress={() => { props.setShowMenu() }}
             // onPress={() => onShowMenu(!showMenu)}
             // onPress={() => {props.setShowMenu()}}

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
 import MaterialButtonViolet10 from "../components/MaterialButtonViolet10";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
 function StayPictures(props) {
-  const [pictures, setPictures] = useState([1, 2, 3, 4, 5]);
+  const [pictures, setPictures] = useState([1,2,3,4,5]);
 
   const openImageSelect = () => {
-
+    
   }
 
   return (
@@ -20,23 +20,19 @@ function StayPictures(props) {
       <Text style={styles.loremIpsum6}>
         Adding clear and bright pictures will increase chances of stay bookings
       </Text>
-
-      <MaterialButtonViolet10
-        onPress={() => { openImageSelect() }}
-        style={styles.materialButtonViolet10}
-      ></MaterialButtonViolet10>
-
-      <View style={styles.listView}>
-        <View style={styles.materialButtonViolet10Stack}>
-          {pictures.map((picture, index) => {
-            return (<Image
-              source={require("../assets/images/Cottage_21.jpg")}
-              resizeMode="contain"
-              style={index < 4 ? styles.image : styles.image2}
-            ></Image>)
-          })
-          }
-        </View>
+      <View style={styles.materialButtonViolet10Stack}>
+        <MaterialButtonViolet10
+          onPress={()=>{openImageSelect()}}
+          style={styles.materialButtonViolet10}
+        ></MaterialButtonViolet10>
+        {pictures.map((picture, index)=>{
+          return(<Image
+          source={require("../assets/images/Cottage_21.jpg")}
+          resizeMode="contain"
+          style={index < 4 ? styles.image : styles.image2}
+        ></Image>)
+        })
+        }
       </View>
 
       <View style={styles.materialButtonWithVioletText1Row}>
@@ -112,9 +108,6 @@ const styles = StyleSheet.create({
   image: {
     // left: 0,
     height: 150,
-    marginTop: windowWidth < 500 ? -40 : 10,
-    width: (windowWidth / 2) - (windowWidth / 7),
-    marginLeft: 10,
   },
   image2: {
     // left: 0,
