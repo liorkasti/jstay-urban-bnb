@@ -94,7 +94,7 @@ export default function Index(props) {
     };
 
     useEffect(() => {
-        console.warn("createStay/index.js componentKeys pic: " +  componentKeys[componentIndex], componentIndex)
+        console.warn("createStay/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
@@ -131,11 +131,12 @@ export default function Index(props) {
                     setComponentIndex(componentIndex + 1)
                 }}
 
-                onUserInput={(value)=>{
-                    
-                }}
+                // onUserInput={(value) => {
 
-                // showTypeMenu={showTypeMenu}
+                // }}
+
+                // setShowTypeDropDown={() => { setShowTypeDropDown(!showTypeDropDown) }}
+                // showTypeDropDown={showTypeDropDown}
 
                 onHome={() => {
                     onHome();
@@ -146,11 +147,11 @@ export default function Index(props) {
     return (
         <View style={styles.container}>
             <HeaderBarLight
-                screenWidth={windowWidth}
+                // screenWidth={windowWidth}
                 style={styles.header}
                 header={headers[componentKeys[componentIndex]]}
                 onHome={() => { onHome() }}
-                onBack={() => setComponentIndex(componentIndex - 1)} 
+                onBack={() => setComponentIndex(componentIndex - 1)}
             />
 
             <ScrollView style={styles.scrollView}>
@@ -165,10 +166,14 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
+        // padding: 10,
         backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
-        flexDirection: "column"
+        flexDirection: "column",
+        height: windowHeight,
+        width: windowWidth,
+        alignItems: "center",
+        // width: windowWidth < 400 ? windowWidth*.9 : windowWidth,
     },
     header: {
         zIndex: 20,

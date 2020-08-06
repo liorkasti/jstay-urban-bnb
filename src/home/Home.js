@@ -32,14 +32,6 @@ function Home(props) {
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
 
-  // const doseShow = {
-  //   showSearchOptions: false,
-  //   showMediumMap: false,
-  // }
-
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
-
   // useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
   // useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
   // useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
@@ -156,6 +148,10 @@ function Home(props) {
       />
     </View>
   );}
+
+  
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {

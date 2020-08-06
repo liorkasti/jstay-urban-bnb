@@ -40,6 +40,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
+    // height: windowHeight,
     width: windowWidth,
     // height: 0,
     // paddingBottom: 30
