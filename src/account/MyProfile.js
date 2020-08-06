@@ -39,7 +39,7 @@ function MyProfile(props) {
       {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
-          handleMenu={(menuItem) => { props.handleMenu(menuItem); console.warn("handleMenu status: ", showMenu) }}
+          handleMenu={(menuItem) => {console.warn("what"); props.handleMenu(menuItem);  }}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}

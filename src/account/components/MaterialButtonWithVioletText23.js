@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from "react-native";
 function MaterialButtonWithVioletText23(props) {
   return (
     <TouchableOpacity
-      onPress={() => { props.handleMenu("guestCardInfo"); }}
+      onPress={() => { props.onPress()}}
       style={[styles.container, props.style]}>
       <Text style={styles.caption}>{props.tag || "Kashrut"}</Text>
     </TouchableOpacity>

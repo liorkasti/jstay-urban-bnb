@@ -46,9 +46,6 @@ export default function MessagesIndex(props) {
 
     checkAuth = () => {
         firebase.auth().onAuthStateChanged(user => {
-            if(!user) {
-                firebase.auth().signInAnonymously();
-            }
         })
     }
     

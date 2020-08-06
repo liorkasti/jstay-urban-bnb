@@ -22,6 +22,7 @@ const MyProfileMenu = (props) => {
                     <View style={styles.button6Stack}>
                         <TouchableOpacity
                             style={styles.button6}
+                            onPress={() => {props.handleMenu("myStaysList")}}
                         >
                             <View
                                 style={styles.materialButtonWithVioletText47Filler}
@@ -35,7 +36,6 @@ const MyProfileMenu = (props) => {
                             ></MaterialButtonWithVioletText21>
                         </TouchableOpacity>
                         <MaterialButtonWithVioletText22
-
                             tag="Kashrut"
                             onPress={() => { props.handleMenu("editMyKashrut") }}
                             style={styles.materialButtonWithVioletText48}
@@ -63,20 +63,20 @@ const MyProfileMenu = (props) => {
 
                     <View style={styles.materialButtonWithVioletText51Stack}>
                         <TouchableOpacity
-                            onPress={() => { props.onUserPress("editProfile") }}>
+                            onPress={() => { props.handleMenu("editProfile") }}>
                             <MaterialButtonWithVioletText25
                                 tag="Edit Profile"
-                                onPress={() => { props.onUserPress("editProfile") }}
+                                onPress={() => { props.handleMenu("editProfile") }}
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>
                         <MaterialButtonWithVioletText26
-                            onPress={() => { props.onDeleteAccount() }}
+                            onPress={() => { props.handleMenu("deleteAccount") }}
                             tag="Delete Account"
                             style={styles.materialButtonWithVioletText52}
                         ></MaterialButtonWithVioletText26>
                         <MaterialButtonWithVioletText28
-                            onPress={() => props.onLogout()}
+                            onPress={() => props.handleMenu("logout")}
                             tag="logout"
                             style={styles.materialButtonWithVioletText53}
                         ></MaterialButtonWithVioletText28>

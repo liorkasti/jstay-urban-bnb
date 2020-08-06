@@ -120,6 +120,18 @@ export default function Index(props) {
                 })
             }
             );
+    };
+
+    const onDeleteAccount = () => {
+        auth().currentUser
+            .delete()
+            .then(() => {
+                console.log('User deleted account!')
+                setTimeout(() => {
+                    history.push("/")
+                })
+            }
+            );
     }
 
 
@@ -160,33 +172,37 @@ export default function Index(props) {
         addBackHistory(newBackHistory);
         setHistoryIndex(historyIndex + 1)
     }
-   
+
     const handleCard = (action, backHistory) => {
         switch (action) {
             case "stayProfile":
-                history.push("/account", { subroute: "stayProfile", currentSearch: currentSearch, backHistory });
+                onUserPress("stayProfile");
                 break;
             case "bookStay":
-                history.push("/account", { subroute: "bookStay", currentSearch: currentSearch, backHistory });
+                onUserPress("bookStay");
                 break;
             case "trips":
-                history.push("/account", { subroute: "trips", currentSearch: currentSearch, backHistory });
+                onUserPress("trips");
                 break;
             case "myKashrut":
-                history.push("/account", { subroute: "editMyKashrut", currentSearch: currentSearch, backHistory })
+                onUserPress("editMyKashrut");
                 break;
             case "createStay":
-                history.push("/createStay", { currentSearch: currentSearch, backHistory });
+                history.push("/createStay", { backHistory });
                 break;
             case "myStaysList":
-                history.push("/account", { subroute: "myStaysList", currentSearch: currentSearch, backHistory });
+                onUserPress("myStaysList");
                 break;
             case "newRequest":
-                history.push("/account", { subroute: "newRequest", currentSearch: currentSearch, backHistory });
+                onUserPress("newRequest");
                 break;
-            // case "bookings":
-            //     history.push("/account", { subroute: "bookings", currentSearch: currentSearch, backHistory });
-            //     break;
+            case "logout":
+                onLogout();
+                break;
+            case "deleteAccount":
+
+                onDeleteAccount();
+                break;
 
         }
     };
@@ -213,7 +229,7 @@ export default function Index(props) {
             //if builder x component has next button
             //it's button should have onPress={()=>{props.onNext}}
 
-            handleMenu={(subroute)=>{
+            handleMenu={(subroute) => {
                 handleCard(subroute);
             }}
 
