@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import MaterialButtonViolet10 from "../components/MaterialButtonViolet10";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
@@ -6,6 +6,12 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
 function StayPictures(props) {
+  const [pictures, setPictures] = useState([1,2,3,4,5]);
+
+  const openImageSelect = () => {
+    
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.loremIpsum4}>
@@ -16,48 +22,17 @@ function StayPictures(props) {
       </Text>
       <View style={styles.materialButtonViolet10Stack}>
         <MaterialButtonViolet10
+          onPress={()=>{openImageSelect()}}
           style={styles.materialButtonViolet10}
         ></MaterialButtonViolet10>
-        <Image
+        {pictures.map((picture, index)=>{
+          return(<Image
           source={require("../assets/images/Cottage_21.jpg")}
           resizeMode="contain"
-          style={styles.image}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image2}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image3}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image4}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image5}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image6}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image7}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image8}
-        ></Image>
+          style={index < 4 ? styles.image : styles.image2}
+        ></Image>)
+        })
+        }
       </View>
       <View style={styles.materialButtonWithVioletText1Row}>
         <MaterialButtonWithVioletText11
@@ -106,14 +81,12 @@ const styles = StyleSheet.create({
     left: 0,
     width: 150,
     height: 150,
-    position: "absolute"
   },
   image2: {
     top: 39,
     left: 192,
     width: 150,
     height: 150,
-    position: "absolute"
   },
   image3: {
     top: 174,
