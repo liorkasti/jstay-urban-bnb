@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, Image,SafeAreaView } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, Image, StatusBar } from "react-native";
 import ContinueGoogleButton from "./components/ContinueGoogleButton";
 import Svg, { Path } from "react-native-svg";
 import GotoLoginButton from "./components/GotoLoginButton";
@@ -11,6 +11,7 @@ import Icon from "react-native-vector-icons/Entypo";
 function WelcomePage(props) {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="rgba(0,88,155,1)" />
       <Svg viewBox="0 0 44 63.01159786070548" style={styles.path}>
         <Path
           strokeWidth={1}
@@ -26,12 +27,11 @@ function WelcomePage(props) {
         resizeMode="contain"
         style={styles.image2}
       ></Image>
-
-      <TouchableOpacity style={styles.button6}>
+      {/* language selection */}
+      {/* <TouchableOpacity style={styles.button6}>
         <Text style={styles.chooseLanguage}>Choose language</Text>
         <Icon name="chevron-down" style={styles.icon}></Icon>
-
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       <TouchableOpacity onPress={props.login} style={styles.button4}>
         <GotoLoginButton onPress={props.login} style={styles.gotoLoginButton}></GotoLoginButton>
@@ -46,7 +46,7 @@ function WelcomePage(props) {
 
       <TouchableOpacity style={styles.button3}>
         <ContinueFacebookButton
-        onPress={()=>props.facebookSignin()}
+          onPress={() => props.facebookSignin()}
           style={styles.continueFacebookButton}
         ></ContinueFacebookButton>
       </TouchableOpacity>

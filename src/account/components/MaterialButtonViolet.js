@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 
-function MaterialButtonViolet16(props) {
-
-  // console.warn("props.googleSignin", props.googleSignin)
-
+function MaterialButtonViolet(props) {
   return (
-    <TouchableOpacity onPress={props.googleSignin} style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Connect Google Account</Text>
+    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
+      <Text style={styles.caption}>Continue with Facebook</Text>
+      <Text style={styles.loremIpsum}></Text>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "rgba(0,88,155,1)",
+    backgroundColor: "rgba(2,172,235,1)",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
@@ -35,9 +33,16 @@ const styles = StyleSheet.create({
     color: "rgba(2,172,235,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
-    lineHeight: 14,
     textAlign: "center"
+  },
+  loremIpsum: {
+    top: 17,
+    left: 62,
+    color: "rgba(2,172,235,1)",
+    position: "absolute",
+    fontSize: 14,
+    fontFamily: "roboto-regular"
   }
 });
 
-export default MaterialButtonViolet16;
+export default MaterialButtonViolet;

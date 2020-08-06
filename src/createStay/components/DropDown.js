@@ -1,16 +1,36 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
+import DropDownPicker from 'react-native-dropdown-picker';
+
+
+
+const hostListing = [
+  { label: 'House', value: 'House' },
+  { label: 'Appartment', value: 'Appartment' }
+];
+
 
 function DropDown(props) {
+
+  const [stayType, setStayType] = useState(hostListing[0]);
+
+  useEffect(() => {
+    console.warn("stayType: ", stayType);
+
+  }, [stayType]);
+
+
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.textInput7Stack}>
-        <TextInput
-          placeholder={props.textInput1 || "United States of America"}
+
+        <DropDownPicker
+          items={hostListing}
+          defaultValue={hostListing[0].label}
+          // placeholder={props.textInput1 || "United States of America"}
           style={styles.textInput7}
-        ></TextInput>
-        <Icon name="chevron-down" style={styles.icon4}></Icon>
+          onChangeItem={item => setStayType(item)} />
       </View>
     </View>
   );

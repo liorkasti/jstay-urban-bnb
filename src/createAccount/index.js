@@ -36,7 +36,7 @@ export default function CreateAccountIndex(props) {
 
     useEffect(() => {
         if (props.location.state) {
-            console.warn("props for create account index", props.location.state)
+            // console.warn("props for create account index", props.location.state)
         };
     }, []);
 
@@ -75,7 +75,7 @@ export default function CreateAccountIndex(props) {
 
     useEffect(() => {
         // console.warn("user collection",usersCollection);
-        console.warn(componentKeys[componentIndex])
+        console.warn("CreateAccountIndex page: ", componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
@@ -114,7 +114,12 @@ export default function CreateAccountIndex(props) {
     return (
 
         <View style={styles.container}>
-            <HeaderBarDark screenWidth={windowWidth} style={styles.header} header="Create Account" onHome={() => { onHome() }} onBack={() => setComponentIndex(componentIndex - 1)} />
+            <HeaderBarDark screenWidth={windowWidth}
+                style={styles.header} header="Create Account"
+                onHome={() => { onHome() }} 
+                onBack={() => setComponentIndex(componentIndex - 1)}
+            />
+
             {/* <ScrollView style={styles.scrollView}> */}
 
             {/* copy paste below component*/}

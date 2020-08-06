@@ -15,11 +15,12 @@ function FooterMenuDropdown(props) {
         <View style={styles.rect9}>
           <View style={styles.button54Stack}>
             <TouchableOpacity
+              // onPress={(menuItem) => { props.handleFooterMenu("createStay") }}
               style={styles.button54}
             >
               <View style={styles.materialButtonWithVioletText21Stack}>
                 <MaterialButtonWithVioletText21
-                 onPress={(menuItem) =>{props.handleFooterMenu(menuItem)}}
+                  onPress={(menuItem) => { props.handleFooterMenu("createStay") }}
                   style={styles.materialButtonWithVioletText21}
                 ></MaterialButtonWithVioletText21>
                 <View style={styles.rect3}></View>
@@ -27,16 +28,16 @@ function FooterMenuDropdown(props) {
             </TouchableOpacity>
 
             <MaterialButtonWithVioletText22
-            onPress={()=>{props.handleFooterMenu("profile")}}
+              onPress={() => { props.handleFooterMenu("profile") }}
               style={styles.materialButtonWithVioletText22}
             ></MaterialButtonWithVioletText22>
 
             <View style={styles.rect4}></View>
           </View>
-          
+
           <View style={styles.materialButtonWithVioletText23Stack}>
             <MaterialButtonWithVioletText23
-            onPress={()=>{props.handleFooterMenu("kashrut")}}
+              onPress={() => { props.handleFooterMenu("kashrut") }}
               style={styles.materialButtonWithVioletText23}
             ></MaterialButtonWithVioletText23>
             <View style={styles.rect5}></View>
@@ -45,7 +46,7 @@ function FooterMenuDropdown(props) {
           <View style={styles.materialButtonWithVioletText24Stack}>
 
             <MaterialButtonWithVioletText24
-            onPress={()=>{props.handleFooterMenu("paymentDetails")}}
+              onPress={() => { props.handleFooterMenu("paymentDetails") }}
 
               style={styles.materialButtonWithVioletText24}
             ></MaterialButtonWithVioletText24>
@@ -67,7 +68,7 @@ function FooterMenuDropdown(props) {
             <View style={styles.rect8}></View>
 
             <MaterialButtonWithVioletText28
-            onPress={()=>props.handleFooterMenu("logout")}
+              onPress={() => props.handleFooterMenu("logout")}
               style={styles.materialButtonWithVioletText28}
             ></MaterialButtonWithVioletText28>
 
@@ -83,12 +84,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   group1: {
+    flex: 1,
     width: 207,
+    width: '100%',
     height: 350,
-    // position: "absolute",
+    position: "absolute",
     right: 0,
     left: "48.5%",
-    bottom: -12
+    bottom: -12,
+    top: 0
   },
   rect9: {
     width: 207,

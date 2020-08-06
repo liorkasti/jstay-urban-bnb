@@ -1,12 +1,34 @@
-import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, TouchableOpacity, } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import Hamburger from 'react-native-animated-hamburger';
+import MyProfileMenu from "./MyProfileMenu";
 
 function MaterialButtonTransparentHamburger(props) {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
-      <Icon name="menu" style={styles.caption}></Icon>
-    </TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => { props.onPress() }}
+    // onPress={() => showMenu(), console.warn("MaterialButtonTransparentHamburger show menu status: ", showMenu)}
+    >
+      {/* <Icon name="menu" style={styles.caption}></Icon> */}
+
+      <Hamburger
+        type="cross"
+        active={showMenu}
+        onPress={() => { props.onPress(); setShowMenu(!showMenu); }}
+        underlayColor="transparent" style={[styles.container, props.style]}
+      >
+      </Hamburger>
+
+      {/* {props.showMenu &&
+        <MyProfileMenu
+          // onUserPress={(action) => props.onUserPress(action)}
+          onPress={() => onShowMenu(!showMenu), console.warn("show menu status: ", showMenu)}
+          style={styles.headerMenu} />
+      } */}
+    </TouchableOpacity >
   );
 }
 

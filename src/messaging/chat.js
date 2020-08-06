@@ -1,10 +1,19 @@
 import React, { Component, useState, useEffect } from "react";
-import { StyleSheet, TouchableOpacity, View, Image, Text, Dimensions } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Image, Text, Dimensions, Platform, KeyboardAvoidingView, SafeAreaView } from "react-native";
 import { GiftedChat } from 'react-native-gifted-chat';
 
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialButtonViolet22 from "../components/MaterialButtonViolet22";
 import MaterialButtonViolet17 from "../components/MaterialButtonViolet17";
+
+import Fire from "./Fire";
+
+import database from '@react-native-firebase/database';
+import auth from '@react-native-firebase/auth';
+
+const reference = database().ref('/user/messaging');
+
+const currentUser = auth().currentUser;
 
 const messagesToMe = [{
   message: "hi",
@@ -32,47 +41,71 @@ const massagesFromMe = [{
   index: 5
 }];
 
+const user = auth().currentUser;
+
 export default function Chat(props) {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    setMessages([
-      {
-        _id: 3,
-        text: 'Hello',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-      {
-        _id: 2,
-        text: 'shuup yeah',
-        createdAt: new Date(),
-        user: {
-          _id: 1,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-      {
-        _id: 1,
-        text: 'you what?',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-    ])
+    setMessages([]);
+
+    on(message =>
+      setMessages(previousState => {
+        GiftedChat.append(previousState.messages, message);
+      })
+    )
+
+    console.warn("firebase current user data: ", currentUser);
+    console.warn("firebase current user messages: ", messages);
+   
+    return () => {
+      off();
+    }
   }, [])
 
-  // helper method that is sends a message
-  function handleSend(newMessage = []) {
-    setMessages(GiftedChat.append(messages, newMessage));
+
+  const on = callback => {
+    reference
+      .limitToLast(20)
+      .on('child_added', snapshot => callback(parse(snapshot)));
+  }
+
+  const send = messages => {
+    messages.forEach(i => {
+      const message = {
+        text: i.text,
+        timestamp: database.ServerValue.TIMESTAMP,
+        user: i.user
+      }
+      console.warn('message: ', i);
+
+      reference.push(message)
+    });
+  };
+
+  const parse = message => {
+    const { user, text, timestamp } = message.val()
+    const { key: _id } = message
+    const createdAt = new Date(timestamp)
+    console.warn('message: ', message);
+
+    return {
+      _id,
+      createdAt,
+      text,
+      user
+    };
+  };
+
+
+
+  const get = callback => {
+    reference.on('child_added', snapshot => callback(parse(snapshot)));
+    console.warn('get: ', callback);
+  }
+
+  const off = () => {
+    reference.off();
   }
 
   return (
@@ -103,8 +136,14 @@ export default function Chat(props) {
       </View>
       <GiftedChat
         messages={messages}
-        onSend={newMessage => handleSend(newMessage)}
-        user={{ _id: 1 }}
+        //below are 2 different ways of calling a function from a callback.
+
+        // onSend={(message)=>{send(message)}}
+        onSend={send}
+        user={{ 
+          _id: currentUser.uid,
+          name: currentUser.displayName
+         }}
       />
     </>
 
@@ -118,14 +157,14 @@ const styles = StyleSheet.create({
     height: 91,
     backgroundColor: "#02aceb",
     borderBottomColor: "rgba(0,88,155,1)",
-    borderBottomWidth: 1.4
+    borderBottomWidth: 5
 
   },
   rect: {
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: .7
+    borderBottomWidth: 4
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

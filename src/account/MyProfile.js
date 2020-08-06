@@ -5,252 +5,284 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  ImageBackground
+  ImageBackground,
+  ScrollView,
+  Dimensions
 } from "react-native";
-import MaterialButtonWithVioletText32 from "../components/MaterialButtonWithVioletText32";
+import MaterialButtonWithVioletText32 from "./components/MaterialButtonWithVioletText32";
 import MyProfileMenu from "./components/MyProfileMenu";
-
-import MyNameDetails from "../components/MyNameDetails";
-import DateBirthDetails from "../components/DateBirthDetails";
-import MyLocationDetails from "../components/MyLocationDetails";
-import TitleDetails from "../components/TitleDetails";
-import KashrutDetails from "../components/KashrutDetails";
-import EmailDetails from "../components/EmailDetails";
-import PhoneDetails from "../components/PhoneDetails";
-import MaterialButtonViolet15 from "../components/MaterialButtonViolet15";
-import MaterialButtonViolet16 from "../components/MaterialButtonViolet16";
+import AccountDetails from "./components/AccountDetails";
+import KashrutDetails from "./components/KashrutDetails";
+import EmailDetails from "./components/EmailDetails";
+import PhoneDetails from "./components/PhoneDetails";
 import MaterialButtonWithVioletText46 from "../components/MaterialButtonWithVioletText46";
-import MyStaysRating from "../components/MyStaysRating";
-import MyKosherRating from "../components/MyKosherRating";
+import MyStaysRating from "./components/MyStaysRating";
+import MyKosherRating from "./components/MyKosherRating";
+import ContinueFacebookButton from "./components/ContinueFacebookButton";
+import ContinueGoogleButton from "./components/ContinueGoogleButton";
+import MyProfileHeader from "./components/MyProfileHeader";
+
 
 function MyProfile(props) {
+  // console.warn("MyProfile : ", {props})
+  const [showMenu, setShowMenu] = useState(false);
 
   const changeProfilePic = () => {
     console.warn("add change profile pic behavior")
   }
+
+  // useEffect(() => { console.warn("show menu status: ", showMenu) }, showMenu)
+
   return (
     <View style={styles.container}>
-            {props.showMenu &&
-                    <MyProfileMenu onUserPress={(action)=>props.onUserPress(action)} style={styles.headerMenu} />
-                }
-      <View style={styles.image2StackStack}>
 
+      {props.showMenu &&
+        <MyProfileMenu
+          // onUserPress={(action) => props.onUserPress(action)}
+          handleMenu={(menuItem) => { props.handleMenu(menuItem); console.warn("handleMenu status: ", showMenu) }}
+          style={styles.headerMenu} />
+      }
+      {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
+
+      <View style={styles.image2Stack}>
         {/*TODO: add image picker for single image*/}
-        <TouchableOpacity onPress={()=>{changeProfilePic()}} style={styles.image2Stack}>
+        <TouchableOpacity onPress={() => { changeProfilePic() }} >
           <Image
             source={require("../assets/images/a349af9c-4f91-4501-b494-4d0971940c24.jpg")}
             resizeMode="stretch"
             style={styles.image2}
-            imageStyle={styles.image2_imageStyle}
           >
-       
           </Image>
           <MaterialButtonWithVioletText32
-            onPress={() =>{changeProfilePic()}}
-              style={styles.materialButtonWithVioletText39}
-            ></MaterialButtonWithVioletText32>
+            onPress={() => { changeProfilePic() }}
+            style={styles.materialButtonWithVioletText39}
+          ></MaterialButtonWithVioletText32>
         </TouchableOpacity>
-
-
-        <Text style={styles.loremIpsum}></Text>
-        <MyNameDetails style={styles.myNameDetails}></MyNameDetails>
-        <DateBirthDetails style={styles.dateBirthDetails}></DateBirthDetails>
-        <MyLocationDetails style={styles.myLocationDetails}></MyLocationDetails>
-        <TitleDetails style={styles.titleDetails}></TitleDetails>
       </View>
 
-      <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
-      <EmailDetails style={styles.emailDetails}></EmailDetails>
-      <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
-      <MaterialButtonViolet15
-        style={styles.materialButtonViolet15}
-      ></MaterialButtonViolet15>
-      <MaterialButtonViolet16
-        style={styles.materialButtonViolet16}
-      ></MaterialButtonViolet16>
-      <MaterialButtonWithVioletText46
-        tag="See my reviews"
-        onPress={() => { props.onUserPress("reviews") }}
-        style={styles.materialButtonWithVioletText46}
-      ></MaterialButtonWithVioletText46>
-      <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
-      <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
-  
+      <View style={styles.accountDetailsStack}>
+        <Text style={styles.loremIpsum}></Text>
+        <AccountDetails style={styles.myNameDetails}></AccountDetails>
+        <KashrutDetails style={styles.kashrutDetails}></KashrutDetails>
+        <EmailDetails style={styles.emailDetails}></EmailDetails>
+        <PhoneDetails style={styles.phoneDetails}></PhoneDetails>
+        <MaterialButtonWithVioletText46
+          tag="See my reviews"
+          onPress={() => { props.onUserPress("reviews") }}
+          style={styles.materialButtonWithVioletText46}
+        ></MaterialButtonWithVioletText46>
+        <MyStaysRating style={styles.myStaysRating}></MyStaysRating>
+        <MyKosherRating style={styles.myKosherRating}></MyKosherRating>
+      </View>
+
+      <View style={styles.buttonStack}>
+        {/* Facebook btn */}
+        <TouchableOpacity style={styles.button3}>
+          <ContinueFacebookButton
+            // onPress={() => props.facebookSignin}
+            style={styles.continueFacebookButton}
+          ></ContinueFacebookButton>
+        </TouchableOpacity>
+        {/* Google btn */}
+        <TouchableOpacity
+          onPress={props.googleSignin}
+          style={styles.button2}>
+          <ContinueGoogleButton
+            onPress={props.googleSignin}
+            style={styles.continueGoogleButton}
+          ></ContinueGoogleButton>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 800,
     backgroundColor: "rgba(2,172,235,1)",
+    alignItems: "center",
+    // width: '100%',
+    width: windowWidth,
+    // height: windowHeight+120,
+    height: windowHeight * 1.15,
+    height: 850,
   },
-  rect1: {
-    top: 0,
-    left: 0,
-    width: 414,
-    height: 91,
+  headerMenu: {
     position: "absolute",
-    borderColor: "rgba(0,88,155,1)",
-    borderWidth: 0,
-    borderBottomWidth: .7
+    // zIndex: 3000,
+    // top: 20,
+    right: 0,
+    // alignItems: "center",
+  },
+  image2Stack: {
+    // top: 120,
+    top: 40,
+    // position: "absolute"
+  },
+  image2: {
+    width: 150,
+    height: 150,
+    borderRadius: 100
+  },
+  materialButtonWithVioletText39: {
+    top: -30,
+    alignItems: "center",
+  },
+  accountDetailsStack: {
+    position: "absolute",
+    top: 230,
+    // left: 28,
+    left: '8%',
+    zIndex: 1,
+  },
+  loremIpsum: {
+    color: "rgba(230,230,230,1)",
+    fontSize: 20,
+    fontFamily: "roboto-regular",
+  },
+  myNameDetails: {
+    position: "absolute",
+    top: 0,
+    height: 36,
+  },
+  myLocationDetails: {
+    position: "absolute",
+    top: "46.41%",
+    left: 37,
+    height: 36,
+    right: 0
+  },
+  kashrutDetails: {
+    top: 160,
+    left: 0,
+    position: "absolute",
+    height: 26,
+    height: 36,
+    right: 0
+  },
+  emailDetails: {
+    position: "absolute",
+    top: 200,
+    left: 31,
+    left: 0,
+    height: 36,
+    right: 0
+  },
+  phoneDetails: {
+    position: "absolute",
+    top: 250,
+    left: 0,
+    height: 38,
+    right: 0
+  },
+  titleDetails: {
+    position: "absolute",
+    top: "32.88%",
+    left: 30,
+    height: 36,
+    right: 0
+  },
+  materialButtonWithVioletText46: {
+    top: 405,
+    position: "absolute",
+  },
+  myStaysRating: {
+    position: "absolute",
+    top: 290,
+    left: 0,
+    height: 48,
+    width: 159
+  },
+  myKosherRating: {
+    position: "absolute",
+    top: 350,
+    left: 0,
+    height: 49,
+    width: 159
+  },
+  materialButtonTransparentHamburger: {
+    height: 36,
+    width: 36,
+    position: "absolute",
+    top: 46,
+    right: 20
   },
   materialButtonViolet22: {
     height: 0,
     width: 0,
     position: "absolute",
-    left: 0,
-    top: 0
+    left: "0%",
+    top: 5
   },
-  headerMenu: {
-position: "absolute",
-    zIndex: 200,
-  },
-  materialButtonViolet27: {
+  materialButtonViolet25: {
     height: 0,
-    width: 32,
+    width: "0%",
     position: "absolute",
-    left: 0,
-    top: 0,
+    left: "0%",
+    top: -5,
     borderWidth: 0,
     borderColor: "rgba(2,172,235,1)",
     borderBottomWidth: 1
-  },
-  materialButtonViolet22Stack: {
-    width: 32,
-    height: 1,
-    marginTop: 5
-  },
-  bsD1: {
-    color: "rgba(177,177,177,1)",
-    opacity: 0.35,
-    fontSize: 10,
-    fontFamily: "roboto-regular",
-    alignSelf: "flex-end",
-    marginTop: 7,
-    marginRight: 38
-  },
-  button4: {
-    width: 29,
-    height: 40
-  },
-  button5: {
-    width: 29,
-    height: 40
-  },
-  icon1: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 40
-  },
-  text: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 25,
-    fontFamily: "roboto-regular",
-    textAlign: "center",
-    marginLeft: 115,
-    marginTop: 8
-  },
-  button4Row: {
-    height: 40,
-    flexDirection: "row"
-  },
-  button4RowFiller: {
-    flex: 1,
-    flexDirection: "row"
-  },
-  materialButtonTransparentHamburger: {
-    height: 36,
-    width: 36,
-    marginTop: 6
-  },
-  button4RowRow: {
-    height: 42,
-    flexDirection: "row",
-    marginTop: 15,
-    marginLeft: 6,
-    marginRight: 20
   },
   materialButtonViolet26: {
     height: 50,
-    width: 412,
+    width: "99.52%",
     position: "absolute",
-    left: 217,
+    left: "52.3%",
     top: 0,
     borderWidth: 0,
     borderColor: "rgba(2,172,235,1)",
     borderBottomWidth: 1
   },
-  rect1Stack: {
-    width: 629,
-    height: 91,
-    zIndex:40
-  },
-  image2: {
-    top: 29,
-    width: 150,
-    height: 150,
+  materialButtonViolet27: {
+    height: 0,
+    width: "0%",
     position: "absolute",
-    borderRadius: 100,
-    left: 130,
-    zIndex: 1,
-
-    overflow: "hidden"
-  },
-  image2_imageStyle: {
-    zIndex: 1,
-  },
-  materialButtonWithVioletText39: {
-    maxWidth: 100,
-    height: 36,
-    zIndex:5,
-
-    marginTop: 138,
-    marginLeft: 155
+    left: "0%",
+    top: 5,
+    borderWidth: 0,
+    borderColor: "rgba(2,172,235,1)",
+    borderBottomWidth: 1
   },
   materialButtonViolet30: {
     height: 50,
     width: 180,
     position: "absolute",
-    left: 0,
-    top: 107
+    left: "0.5%",
+    top: 199
   },
   rect2: {
-    top: 0,
-    left: 205,
+    top: 92,
+    left: 207,
     width: 207,
     height: 350,
     backgroundColor: "rgba(0,88,155,1)",
-    position: "absolute",
-    flexDirection: "row",
-    zIndex: 20
-
-  },
-  groupFiller: {
-    flex: 1,
-    flexDirection: "row"
+    position: "absolute"
   },
   group: {
+    top: 93,
     width: 207,
     height: 344,
-    alignItems: "flex-end",
-    marginTop: 1
+    position: "absolute",
+    right: 0
   },
   button6: {
     top: 0,
     width: 207,
     height: 50,
     position: "absolute",
-    right: 0,
-    flexDirection: "row"
-  },
-  materialButtonWithVioletText47Filler: {
-    flex: 1,
-    flexDirection: "row"
+    right: 0
   },
   materialButtonWithVioletText47: {
+    top: 0,
     width: 207,
-    height: 50
+    height: 50,
+    position: "absolute",
+    right: 0
   },
   materialButtonWithVioletText48: {
     top: 49,
@@ -259,82 +291,67 @@ position: "absolute",
     position: "absolute",
     right: 0
   },
-  rect4: {
-    top: 50,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  button6Stack: {
-    width: 207,
-    height: 99
-  },
   materialButtonWithVioletText49: {
-    top: 0,
+    top: 99,
     width: 207,
     height: 50,
     position: "absolute",
     right: 0
-  },
-  rect5: {
-    top: 1,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText49Stack: {
-    width: 207,
-    height: 50
   },
   materialButtonWithVioletText50: {
-    top: 0,
+    top: 149,
     width: 207,
     height: 50,
     position: "absolute",
     right: 0
   },
-  rect6: {
-    top: 1,
-    width: 174,
-    height: 1,
-    backgroundColor: "rgba(2,172,235,1)",
-    position: "absolute",
-    right: 20
-  },
-  materialButtonWithVioletText50Stack: {
-    width: 207,
-    height: 50
-  },
   materialButtonWithVioletText51: {
-    top: 0,
+    top: 199,
     width: 207,
     height: 50,
     position: "absolute",
     right: 0
   },
   materialButtonWithVioletText52: {
-    top: 49,
+    top: 248,
     width: 207,
     height: 50,
     position: "absolute",
-    right: 0,
-    zIndex: 20
+    right: 0
   },
   materialButtonWithVioletText53: {
-    top: 95,
+    top: 294,
     width: 207,
     height: 50,
     position: "absolute",
-    right: 0,
-    zIndex: 20
-
+    right: 0
   },
   rect3: {
-    top: 93,
+    top: 385,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  rect4: {
+    top: 143,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  rect5: {
+    top: 193,
+    width: 174,
+    height: 1,
+    backgroundColor: "rgba(2,172,235,1)",
+    position: "absolute",
+    right: 20
+  },
+  rect6: {
+    top: 243,
     width: 174,
     height: 1,
     backgroundColor: "rgba(2,172,235,1)",
@@ -342,7 +359,7 @@ position: "absolute",
     right: 20
   },
   rect7: {
-    top: 1,
+    top: 293,
     width: 174,
     height: 1,
     backgroundColor: "rgba(2,172,235,1)",
@@ -350,127 +367,12 @@ position: "absolute",
     right: 20
   },
   rect8: {
-    top: 46,
+    top: 338,
     width: 174,
     height: 1,
     backgroundColor: "rgba(2,172,235,1)",
     position: "absolute",
     right: 20
-  },
-  materialButtonWithVioletText51Stack: {
-    width: 207,
-    height: 145
-  },
-  image2Stack: {
-    top: 0,
-    left: 0,
-    maxWidth: 100,
-    height: 350,
-    position: "absolute"
-  },
-  loremIpsum: {
-    top: 188,
-    left: 50,
-    color: "rgba(230,230,230,1)",
-    position: "absolute",
-    fontSize: 20,
-    fontFamily: "roboto-regular",
-    lineHeight: 20
-  },
-  myNameDetails: {
-    position: "absolute",
-    top: 243,
-    left: 33,
-    height: 36,
-    right: 0,
-    zIndex:0
-  },
-  dateBirthDetails: {
-    position: "absolute",
-    top: 283,
-    left: 29,
-    height: 36,
-    right: 0,
-    zIndex:0
-
-  },
-  myLocationDetails: {
-    position: "absolute",
-    top: 324,
-    left: 35,
-    height: 36,
-    right: 0,
-    zIndex:0
-
-  },
-  titleDetails: {
-    position: "absolute",
-    top: 203,
-    left: 28,
-    height: 36,
-    right: 0,
-    zIndex:0
-
-  },
-  image2StackStack: {
-    height: 360,
-    marginTop: 0,
-    marginLeft: 2
-  },
-  kashrutDetails: {
-    height: 36,
-    marginTop: 3,
-    marginLeft: 33,
-    zIndex:0
-
-  },
-  emailDetails: {
-    height: 36,
-    marginTop: 4,
-    marginLeft: 31,
-
-  },
-  phoneDetails: {
-    height: 38,
-    marginTop: 8,
-    marginLeft: 31,
-    zIndex:0
-
-  },
-  materialButtonViolet15: {
-    height: 45,
-    borderRadius: 10,
-    marginTop: 168,
-    marginLeft: 31,
-    marginRight: 28
-  },
-  materialButtonViolet16: {
-    height: 45,
-    borderRadius: 10,
-    borderColor: "#000000",
-    borderWidth: 0,
-    marginTop: 11,
-    marginLeft: 30,
-    marginRight: 28
-  },
-  materialButtonWithVioletText46: {
-    height: 30,
-    marginTop: -190,
-    marginLeft: 14,
-    marginRight: 153,
-    marginBottom: 34
-  },
-  myStaysRating: {
-    height: 48,
-    width: 159,
-    marginTop: -139,
-    marginLeft: 29
-  },
-  myKosherRating: {
-    height: 49,
-    width: 159,
-    marginTop: 9,
-    marginLeft: 30
   },
   materialButtonViolet25: {
     height: 0,
@@ -479,7 +381,45 @@ position: "absolute",
     borderColor: "rgba(2,172,235,1)",
     borderBottomWidth: 1,
     marginTop: -692
-  }
+  },
+
+  buttonStack: {
+    top: 690,
+    bottom: '5%',
+    // bottom: 300,
+    // marginTop: '20%',
+    position: "absolute",
+    alignItems: "center",
+  },
+
+  button3: {
+    top: 0,
+    width: 352,
+    height: 62,
+    position: "absolute"
+  },
+  continueFacebookButton: {
+    width: 352,
+    height: 62,
+    paddingLeft: 16,
+    paddingRight: 16,
+    position: "absolute"
+  },
+  button2: {
+    top: 55,
+    width: 352,
+    height: 62,
+    position: "absolute"
+  },
+  continueGoogleButton: {
+    top: 0,
+    left: 0,
+    width: 352,
+    height: 62,
+    paddingLeft: 16,
+    paddingRight: 16,
+    position: "absolute"
+  },
 });
 
 export default MyProfile;

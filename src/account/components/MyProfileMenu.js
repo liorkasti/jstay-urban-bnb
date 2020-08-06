@@ -13,7 +13,7 @@ import MaterialButtonWithVioletText25 from "../components/MaterialButtonWithViol
 import MaterialButtonWithVioletText26 from "../components/MaterialButtonWithVioletText26";
 import MaterialButtonWithVioletText28 from "../components/MaterialButtonWithVioletText28";
 
-const MyProfileMenu = function MyProfileMenu(props) {
+const MyProfileMenu = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.rect2}>
@@ -28,44 +28,45 @@ const MyProfileMenu = function MyProfileMenu(props) {
                             ></View>
 
                             <MaterialButtonWithVioletText21
-                                onPress={() => props.onUserPress("myStaysList")}
+                                // onPress={() => props.onUserPress("myStaysList")}
+                                onPress={() => props.handleMenu("myStaysList")}
                                 caption="My Stays"
                                 style={styles.materialButtonWithVioletText47}
                             ></MaterialButtonWithVioletText21>
                         </TouchableOpacity>
                         <MaterialButtonWithVioletText22
-                       
+
                             tag="Kashrut"
-                            onPress={() => { props.onUserPress("editMyKashrut") }}
+                            onPress={() => { props.handleMenu("editMyKashrut") }}
                             style={styles.materialButtonWithVioletText48}
                         ></MaterialButtonWithVioletText22>
                         <View style={styles.rect4}></View>
                     </View>
                     <View style={styles.materialButtonWithVioletText49Stack}>
                         <MaterialButtonWithVioletText23
-                            
+
                             tag="Payment Details"
-                            onPress={() => { props.onUserPress("guestCardInfo"); }}
+                            onPress={() => { props.handleMenu("guestCardInfo"); }}
+                            // onPress={() => { props.onUserPress("guestCardInfo") }}
                             style={styles.materialButtonWithVioletText49}
                         ></MaterialButtonWithVioletText23>
                         <View style={styles.rect5}></View>
                     </View>
                     <View style={styles.materialButtonWithVioletText50Stack}>
                         <MaterialButtonWithVioletText24
-                              onPress={() => console.error("coming soon link to zendesk")}
-                              tag="FAQ"
+                            onPress={() => console.error("coming soon link to zendesk")}
+                            tag="FAQ"
                             style={styles.materialButtonWithVioletText50}
                         ></MaterialButtonWithVioletText24>
                         <View style={styles.rect6}></View>
                     </View>
 
                     <View style={styles.materialButtonWithVioletText51Stack}>
-                        <TouchableOpacity onPress={() => { props.onUserPress("editeProfile") }}>
+                        <TouchableOpacity
+                            onPress={() => { props.onUserPress("editProfile") }}>
                             <MaterialButtonWithVioletText25
-                                       tag="Edit Profile"
-                                       onPress={() => { props.onUserPress("editeProfile") }}
-       
-                        
+                                tag="Edit Profile"
+                                onPress={() => { props.onUserPress("editProfile") }}
                                 style={styles.materialButtonWithVioletText51}
                             ></MaterialButtonWithVioletText25>
                         </TouchableOpacity>
@@ -88,19 +89,22 @@ const MyProfileMenu = function MyProfileMenu(props) {
             </View>
 
         </View>
-        )
+    )
 };
 
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        zIndex: 500,
+        zIndex: 5000,
+        position: "absolute",
+        top: 0,
+        // right: 0,
         backgroundColor: "rgba(2,172,235,1)",
     },
     rect1: {
-        top: 0,
-        left: 0,
+        position: "absolute",
+        right: 0,
         width: 414,
         height: 91,
         position: "absolute",
@@ -219,7 +223,6 @@ const styles = StyleSheet.create({
     },
     rect2: {
         top: 0,
-        left: 205,
         width: 207,
         height: 350,
         backgroundColor: "rgba(0,88,155,1)",
@@ -364,7 +367,7 @@ const styles = StyleSheet.create({
         height: 145
     },
     image2Stack: {
-        top: 0,
+        top: -90,
         left: 0,
         width: 412,
         height: 350,

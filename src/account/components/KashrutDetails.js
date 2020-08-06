@@ -5,35 +5,28 @@ import Icon from "react-native-vector-icons/FontAwesome";
 function KashrutDetails(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.icon5Row}>
-        <Icon name="certificate" style={styles.icon5}></Icon>
-        <Text style={styles.kosherStandard}>Kosher (standard)</Text>
-      </View>
+      <Text style={styles.kosherStandard}>Kosher (standard)</Text>
+      <Icon name="certificate" style={styles.icon5}></Icon>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row"
+  container: {},
+  kosherStandard: {
+    top: 6,
+    left: 36,
+    color: "rgba(0,88,155,1)",
+    position: "absolute",
+    fontSize: 20,
+    fontFamily: "roboto-regular"
   },
   icon5: {
+    top: 4,
+    left: 0,
+    position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 24
-  },
-  kosherStandard: {
-    color: "rgba(0,88,155,1)",
-    fontSize: 20,
-    fontFamily: "roboto-regular",
-    marginLeft: 15,
-    marginTop: 2
-  },
-  icon5Row: {
-    height: 26,
-    flexDirection: "row",
-    flex: 1,
-    marginRight: 184,
-    marginTop: 4
   }
 });
 

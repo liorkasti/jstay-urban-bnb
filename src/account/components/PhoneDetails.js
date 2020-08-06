@@ -5,36 +5,28 @@ import Icon from "react-native-vector-icons/FontAwesome";
 function PhoneDetails(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.icon7Row}>
-        <Icon name="phone" style={styles.icon7}></Icon>
-        <Text style={styles.text2}>0522339278</Text>
-      </View>
+      <Text style={styles.text2}>0522339278</Text>
+      <Icon name="phone" style={styles.icon7}></Icon>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row"
+  container: {},
+  text2: {
+    top: 2,
+    left: 34,
+    color: "rgba(0,88,155,1)",
+    position: "absolute",
+    fontSize: 20,
+    fontFamily: "roboto-regular"
   },
   icon7: {
+    top: 0,
+    left: 0,
+    position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 24
-  },
-  text2: {
-    width: 115,
-    height: 20,
-    color: "rgba(0,88,155,1)",
-    fontSize: 20,
-    fontFamily: "roboto-regular",
-    marginLeft: 14,
-    marginTop: 2
-  },
-  icon7Row: {
-    height: 24,
-    flexDirection: "row",
-    flex: 1,
-    marginRight: 234
   }
 });
 

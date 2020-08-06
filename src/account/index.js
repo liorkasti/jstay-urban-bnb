@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView,RefreshControl } from "react-native"
+import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl } from "react-native"
 import { useHistory } from "react-router-dom";
-
-
+import { GoogleSignin } from '@react-native-community/google-signin';
+import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import auth from '@react-native-firebase/auth';
 
 //import all builder x files related to this directory
@@ -15,7 +15,7 @@ import CancelationHost from "./CancelationHost";
 
 import ConfirmedGuest from "./ConfirmedGuest";
 import ConfirmedHost from "./ConfirmedHost";
-import EditeProfile from "./EditeProfile";
+import EditProfile from "./EditProfile";
 import EditMyKashrut from "./EditMyKashrut";
 import GuestCardInfo from "./GuestCardInfo";
 import HoldACharge from "./HoldACharge";
@@ -41,7 +41,7 @@ const components = {
     confirmedGuest: ConfirmedGuest,
     confirmedHost: ConfirmedHost,
     contactUs: ContactUs,
-    editeProfile: EditeProfile,
+    editProfile: EditProfile,
     editMyKashrut: EditMyKashrut,
     guestCardInfo: GuestCardInfo,
     holdACharge: HoldACharge,
@@ -66,8 +66,8 @@ const headers = {
     cancelationHost: "Cancelation",
     confirmedHost: "Confirmed",
     confirmedGuest: "Confirmed",
-    contactUs:"Support",
-    editeProfile: "Edit Profile",
+    contactUs: "Support",
+    editProfile: "Edit Profile",
     editMyKashrut: "Kashrut",
     guestCardInfo: "Payments",
     holdACharge: "Hold A Charge",
@@ -101,9 +101,9 @@ export default function Index(props) {
 
     function wait(timeout) {
         return new Promise(resolve => {
-          setTimeout(resolve, timeout);
+            setTimeout(resolve, timeout);
         });
-      }
+    }
 
     //user finished create a stay
     function onHome() {
@@ -127,7 +127,7 @@ export default function Index(props) {
         history.push("/chat", { route: "/account", subroute: message })
     }
 
-    const addToFavorites = (stay)=>{
+    const addToFavorites = (stay) => {
         history.push("/home", { subroute: "/favorites", newData: stay, favorites: true, backHistory })
     }
 
@@ -145,10 +145,10 @@ export default function Index(props) {
     useEffect(() => {
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
 
-        let newBackHistory = [...backHistory];
-        newBackHistory[historyIndex] = props.location.state.subroute;
-        addBackHistory(newBackHistory);
-        setCurrentPage(props.location.state.subroute);
+            let newBackHistory = [...backHistory];
+            newBackHistory[historyIndex] = props.location.state.subroute;
+            addBackHistory(newBackHistory);
+            setCurrentPage(props.location.state.subroute);
         }
     }, []);
 
@@ -163,7 +163,7 @@ export default function Index(props) {
 
 
     const onBack = () => {
-        if(showMenu)setShowMenu(false);
+        if (showMenu) setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
             console.warn(prevPage)
@@ -194,13 +194,13 @@ export default function Index(props) {
                 onCreateStay(requestSource);
             }}
 
-            saveAndExit={()=>{
+            saveAndExit={() => {
                 onBack();
             }}
-            messageHost={(message)=>{onNewMessage(message)}}
-            messageSupport={()=>{onNewMessage({support:true})}}
+            messageHost={(message) => { onNewMessage(message) }}
+            messageSupport={() => { onNewMessage({ support: true }) }}
 
-            messageGuest={(message)=>{onNewMessage(message)}}
+            messageGuest={(message) => { onNewMessage(message) }}
 
             onEditStay={(page) => {
                 onEditStay(page);
@@ -216,7 +216,7 @@ export default function Index(props) {
                 onBack();
             }}
 
-            addToFavorites={()=>{
+            addToFavorites={() => {
                 addToFavorites();
             }}
 
@@ -233,10 +233,10 @@ export default function Index(props) {
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
-    
+
         wait(2000).then(() => setRefreshing(false));
-      }, [refreshing]);
-    
+    }, [refreshing]);
+
 
     return (
         <View style={styles.container}>
@@ -249,14 +249,11 @@ export default function Index(props) {
                         header={headers[currentPage || props.location.state.subroute]}
                         onHome={() => { onHome() }}
                         onBack={() => onBack()}
-                    />
-                    :
+                    /> :
                     <MyProfileHeader
-                        screenWidth={windowWidth}
-                        style={styles.header}
-                        header={headers[currentPage || props.location.state.subroute]}
                         setShowMenu={() => { setShowMenu(!showMenu) }}
-                        onBack={() => { onBack()}}
+                        onBack={() => onBack()}
+                        style={styles.header}
                     />
             }
             <ScrollView style={{
@@ -268,7 +265,7 @@ export default function Index(props) {
                 }}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                  }>
+                }>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -283,10 +280,16 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: "rgba(2,172,235,1)",
         flex: 1,
-        flexDirection: "column"
+        // padding: 10,
+        // width: windowWidth,
+        // height: windowHeight,
+        backgroundColor: "rgba(2,172,235,1)",
+        // flexDirection: "column",
+        // width: "100%"
     },
 
     header: {
         zIndex: 3000,
+        // width: windowWidth
     },
 });

@@ -27,11 +27,11 @@ export default function LoginIndex(props) {
     };
 
     function onCreateAccount() {
-            history.push("/createAccount");
+        history.push("/createAccount");
     }
 
     useEffect(() => {
-        console.warn(componentKeys[componentIndex])
+        // console.warn(componentKeys[componentIndex])
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
@@ -42,50 +42,50 @@ export default function LoginIndex(props) {
     async function signInWithGoogle() {
         // Get the users ID token
         const { idToken } = await GoogleSignin.signIn();
-      console.warn("id token", idToken);
+        //   console.warn("id token", idToken);
         // Create a Google credential with the token
         const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      console.warn("googleCredential", googleCredential);
+        console.warn("googleCredential", googleCredential);
         // Sign-in the user with the credential
         return auth().signInWithCredential(googleCredential);
-      }
+    }
 
 
-      async function onFacebookButtonPress() {
+    async function onFacebookButtonPress() {
         // Attempt login with permissions
         const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
-      
+
         if (result.isCancelled) {
-          throw 'User cancelled the login process';
+            throw 'User cancelled the login process';
         }
-      
+
         // Once signed in, get the users AccesToken
         const data = await AccessToken.getCurrentAccessToken();
-      
+
         if (!data) {
-          throw 'Something went wrong obtaining access token';
+            throw 'Something went wrong obtaining access token';
         }
-      
+
         // Create a Firebase credential with the AccessToken
         const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
-      
+
         // Sign-in the user with the credential
         return auth().signInWithCredential(facebookCredential);
-      };
+    };
 
-      const signInWithFacebookHandler = () => {
-        onFacebookButtonPress().then((res)=> {
-            history.push("/createAccount", {familyName: res.family_name,firstName: res.given_name, email: "email" });
-            console.log("signed in with google with:", res)
+    const signInWithFacebookHandler = () => {
+        onFacebookButtonPress().then((res) => {
+            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
+            // console.log("signed in with google with:", res)
         })
-      };
+    };
 
-      const signInWithGoogleHandler = () => {
-        signInWithGoogle().then((res)=> {
-            history.push("/createAccount", {familyName: res.family_name,firstName: res.given_name, email: "email" });
-            console.log("signed in with google with:", res)
+    const signInWithGoogleHandler = () => {
+        signInWithGoogle().then((res) => {
+            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
+            // console.log("signed in with google with:", res)
         })
-      };
+    };
 
 
     return (
@@ -98,7 +98,7 @@ export default function LoginIndex(props) {
                 &&
                 //change component name to the new import 
                 <Welcome
-                style={styles.componentStyle}
+                    style={styles.componentStyle}
 
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
@@ -107,13 +107,13 @@ export default function LoginIndex(props) {
                     }}
 
                     createAccount={() => onCreateAccount()}
-                    
-                    facebookSignin={()=>{signInWithFacebookHandler()}}
 
-                    googleSignin={()=>signInWithGoogleHandler()}
+                    facebookSignin={() => { signInWithFacebookHandler() }}
+
+                    googleSignin={() => signInWithGoogleHandler()}
 
                     login={() => {
-                        console.warn("setcomponentIndex for login ")
+                        // console.warn("setcomponentIndex for login ")
                         setComponentIndex(componentIndex + 1)
                     }}
                 />
@@ -143,11 +143,11 @@ export default function LoginIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
-                    
-                    createAccount={()=>{onCreateAccount()}}
+
+                    createAccount={() => { onCreateAccount() }}
 
                     login={() => {
-                        console.warn("setcomponentIndex for login ")
+                        // console.warn("setcomponentIndex for login ")
                         setComponentIndex(componentIndex + 1)
                     }}
                 />

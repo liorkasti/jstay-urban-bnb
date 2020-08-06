@@ -11,13 +11,14 @@ function MaterialButtonWithVioletText32(props) {
 
 const styles = StyleSheet.create({
   container: {
+    // position: "absolute",
     backgroundColor: "transparent",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingRight: 16,
-    paddingLeft: 16,
-    minWidth: 88
+    // flexDirection: "row",
+    // alignItems: "center",
+    // justifyContent: "center",    
+    // paddingRight: 16,
+    // paddingLeft: 16,
+    // minWidth: 88
   },
   caption: {
     color: "rgba(230,230,230,1)",

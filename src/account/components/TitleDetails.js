@@ -13,8 +13,11 @@ function TitleDetails(props) {
 const styles = StyleSheet.create({
   container: {},
   title: {
+    position: "absolute",
+    top: "0%",
+    left: 0,
     height: 24,
-    width: 15
+    width: "17.4%"
   }
 });
 

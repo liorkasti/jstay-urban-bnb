@@ -27,29 +27,23 @@ import MaterialButtonWithVioletText25 from "./components/MaterialButtonWithViole
 import MaterialButtonWithVioletText26 from "./components/MaterialButtonWithVioletText26";
 import MaterialButtonWithVioletText28 from "./components/MaterialButtonWithVioletText28";
 
+
 function Home(props) {
   const [showSearchOptions, setShowSearchOptions] = useState(false);
   const [showMediumMap, setShowMediumMap] = useState(false);
   const [showFooterMenu, setShowFooterMenu] = useState(false);
-  const [refreshing, setRefreshing] = useState(false);
 
-  function wait(timeout) {
-    return new Promise(resolve => {
-      setTimeout(resolve, timeout);
-    });
+  const doseShow = {
+    showSearchOptions: false,
+    showMediumMap: false,
   }
 
+  const windowWidth = Dimensions.get('window').width;
+  const windowHeight = Dimensions.get('window').height;
 
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
-
-    wait(2000).then(() => setRefreshing(false));
-  }, [refreshing]);
-
-
-  // useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
-  // useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
-  // useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
+  useEffect(() => { console.warn("show filter menu status: ", showSearchOptions) }, [showSearchOptions])
+  useEffect(() => { console.warn("show map menu", showMediumMap) }, [showMediumMap])
+  useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
 
   return (
     <View style={styles.container}>
@@ -62,15 +56,16 @@ function Home(props) {
       />
 
       <Text style={styles.bsD1}>BS"D</Text>
+
       <TouchableOpacity onPress={() => { props.goHome() }} style={styles.jstayLogoDark}>
         <JstayLogoDark onPress={() => { props.goHome() }} />
       </TouchableOpacity>
 
-      {/* todo: add toggleFilterHandler */}
       {/* SearchDropdown */}
       {showSearchOptions &&
         <SearchDropdown style={styles.searchDropdown}></SearchDropdown>
       }
+      {/* todo: add toggleFilterHandler */}
       <View style={styles.searchBarContainer}>
         <SearchBar
           searchText={props.searchText}
@@ -78,7 +73,7 @@ function Home(props) {
           style={styles.searchBar}
         />
       </View>
-      
+
       {props.searchText ?
         // searchResults
         <ScrollView
@@ -105,7 +100,7 @@ function Home(props) {
         :
         //homeScreen
         <ScrollView
-          style={{width: "100%",overflow: "hidden" ,zIndex: 1}}
+          style={{ marginTop: 110, zIndex: 1 }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) {
               setShowSearchOptions(false);
@@ -114,33 +109,29 @@ function Home(props) {
           }}>
             
           <View style={styles.scrollInterContainer}>
-            <View >
-              {/*  City Cards */}
-              <CityCards
-                showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
-                style={styles.cityCards}
-              />
+            {/*  City Cards */}
+            <CityCards
+              showSearchResultsFor={(search) => { props.showSearchResultsFor(search) }}
+              style={styles.cityCards}
+            />
 
-              {/* Nearby - todo: cut past this inside the scrollView */}
-              <Text style={styles.nearby}>Nearby</Text>
-              <TouchableOpacity style={styles.button4}>
-                <MaterialCard5
-                  onPress={() => { props.showSearchResultsFor("local") }}
-                  style={styles.materialCard5} />
-              </TouchableOpacity>
+            {/* Nearby - todo: cut past this inside the scrollView */}
+            <Text style={styles.nearby}>Nearby</Text>
+            <TouchableOpacity style={styles.button4}>
+              <MaterialCard5
+                onPress={() => { props.showSearchResultsFor("local") }}
+                style={styles.materialCard5} />
+            </TouchableOpacity>
 
-              {/* Top Stays */}
-              <Text style={styles.topStays}>Top Stays</Text>
-              <MaterialCardWithRightButtons
-                onUserPress={(page) => { props.onUserPress(page) }}
-                onPress={() => { props.showStayProfile("Home") }}
-                style={styles.materialCardWithRightButtons1}
-              />
-
-            </View>
+            {/* Top Stays */}
+            <Text style={styles.topStays}>Top Stays</Text>
+            <MaterialCardWithRightButtons
+              onUserPress={(page) => { props.onUserPress(page) }}
+              onPress={() => { props.showStayProfile("Home") }}
+              style={styles.materialCardWithRightButtons1}
+            />
           </View>
         </ScrollView>
-      
       }
 
       {/* Map */}
@@ -162,22 +153,19 @@ function Home(props) {
         style={styles.footerBar1}
       />
     </View>
-  );}
-
-  
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    alignItems: "center",
-    backgroundColor: "rgba(2,172,235,1)",
+    // alignItems: "center",    
+    // backgroundColor: "rgba(2,172,235,1)",
     marginHorizontal: Dimensions.get('window').width < 400 ? 2 : 0,
   },
   cityCards: {
-    top: 162,
+    top: 62,
     left: 4,
     height: 342,
     position: "absolute",
@@ -196,17 +184,12 @@ const styles = StyleSheet.create({
   //   position: "absolute",
   //   right: 13
   // },
-  scrollInterContainer: {
-    height: 1500
-  },
   headerBar: {
     top: 103,
     left: -13,
     height: 56,
     position: "absolute",
     right: -13,
-    zIndex: 101,
-    backgroundColor: "rgba(2,172,235,1)",
     fontSize: Dimensions.get('window').height < 400 ? 16 : 20
   },
   topStays: {
@@ -224,6 +207,9 @@ const styles = StyleSheet.create({
     position: "absolute",
     fontSize: 18,
     fontFamily: "roboto-regular"
+  },
+  scrollInterContainer: {
+    height: 1500
   },
   bsD1: {
     top: 14,
@@ -262,10 +248,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     // paddingHorizontal: 16,
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)",
     width: '100%',
-    height: "15%",
-    zIndex:100,
     alignItems: "center",
   },
   searchBar: {
@@ -278,7 +261,6 @@ const styles = StyleSheet.create({
     left: 0,
     // right: 0,
     // width: "100%",
-    zIndex: 20,
     height: 86,
     position: "absolute",
     bottom: -15

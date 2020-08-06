@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
-  Dimensions
+  Dimensions,
+  Picker
 } from "react-native";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
@@ -21,9 +22,34 @@ import MaterialRadio5 from "../components/MaterialRadio5";
 import DropDown from "../components/DropDown";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 
-const screenHeight = Dimensions.get('window').height + 100;
 
 function DescribeStay(props) {
+
+  const [showDropDown, setShowDropDown] = useState(false);
+  const [stayTypeSelection, setStayTypeSelection] = useState([]);
+  const [selectedValue, setSelectedValue] = useState("house");
+
+
+  useEffect(() => {
+    // if (props.showDropDown.staten && props.showDropDown.state.backHistory) {
+    //   setShowDropDown(props.location.state.backHistory)
+    //   console.warn("show menu status: ", showDropDown)
+    // }
+    // if (props.showDropDown.staten && props.showDropDown.state.backHistory) {
+    //   setShowDropDown(props.location.state.backHistory)
+    //   console.warn("show menu status: ", showDropDown)
+    // }
+
+    console.warn("show menu status: ", showDropDown)
+  }, [])
+
+
+  // const doseShow = {
+  //   showSearchOptions: false,
+  //   showMediumMap: false,
+  // }
+
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(2,172,235,1)" />
@@ -37,8 +63,6 @@ function DescribeStay(props) {
           style={styles.materialButtonViolet6}
         ></MaterialButtonViolet6>
       </View>
-
-
 
 
       {/* ready for firebase */}
@@ -192,7 +216,7 @@ function DescribeStay(props) {
             </Text>
           </View>
         </View>
-        
+
       </View>
 
       <View style={styles.materialRadio12Row}>
@@ -216,11 +240,32 @@ function DescribeStay(props) {
           </Text>
         </View>
       </View>
-      <Text style={styles.stayType2}>Stay type</Text>
-      <DropDown
-        onChange={((newType) => { props.onUserInput({ stayType: newType, path: "hostListing" }) })}
 
-        textInput1="House" style={styles.dropDown}></DropDown>
+      {/* Stay type */}
+      <Text style={styles.stayType2}>Stay type</Text>
+
+      <DropDown
+        onChange={
+          ((newType) => {
+            props.onUserInput({
+              stayType: newType, path: "hostListing"
+            })
+          })}
+        textInput1="House" style={styles.dropDown}>
+      </DropDown>
+
+
+      {/* <Picker
+        selectedValue={selectedValue}
+        // style={{ height: 50, width: 150 }}
+        style={styles.dropDown}
+        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="house" value="house" />
+        <Picker.Item label="appartment" value="appartment" />
+      </Picker> */}
+
+
 
       <CupertinoStepper1
         onChange={((newAmount) => { props.onUserInput({ amount: newAmount, path: "hostListing/suitCharacter" }) })}
@@ -234,11 +279,17 @@ function DescribeStay(props) {
   );
 }
 
+const screenHeight = Dimensions.get('window').height + 100;
+const windowWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    // flex: 1,
     height: 1600,
+    width: windowWidth,
     backgroundColor: "rgba(2,172,235,1)",
+
   },
 
   icon2: {

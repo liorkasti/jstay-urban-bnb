@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   container: {},
   cupertinoSegmentWithFourTabs1: {
     height: 56,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",    
   }
 });
 
