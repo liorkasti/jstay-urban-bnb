@@ -10,6 +10,7 @@ function MaterialIconTextbox(props) {
         style={styles.iconStyle}
       ></Icon>
       <TextInput
+        onChangeText={(text)=>{props.onChangeText(text);}}
         placeholder={props.textInput1 || "Label"}
         placeholderTextColor="rgba(177,177,177,1)"
         style={styles.inputStyle}

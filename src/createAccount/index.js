@@ -177,6 +177,8 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
+                    onUserInput={()=>{}}
+
                     onHome={() => { goToHome() }}
 
                     //if builder x component has back button
