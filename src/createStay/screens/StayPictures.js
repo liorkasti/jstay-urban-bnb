@@ -1,11 +1,17 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import MaterialButtonViolet10 from "../components/MaterialButtonViolet10";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
 function StayPictures(props) {
+  const [pictures, setPictures] = useState([1, 2, 3, 4, 5]);
+
+  const openImageSelect = () => {
+
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.loremIpsum4}>
@@ -14,51 +20,25 @@ function StayPictures(props) {
       <Text style={styles.loremIpsum6}>
         Adding clear and bright pictures will increase chances of stay bookings
       </Text>
-      <View style={styles.materialButtonViolet10Stack}>
-        <MaterialButtonViolet10
-          style={styles.materialButtonViolet10}
-        ></MaterialButtonViolet10>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image2}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image3}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image4}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image5}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image6}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage_21.jpg")}
-          resizeMode="contain"
-          style={styles.image7}
-        ></Image>
-        <Image
-          source={require("../assets/images/Cottage2.jpg")}
-          resizeMode="contain"
-          style={styles.image8}
-        ></Image>
+
+      <MaterialButtonViolet10
+        onPress={() => { openImageSelect() }}
+        style={styles.materialButtonViolet10}
+      ></MaterialButtonViolet10>
+
+      <View style={styles.listView}>
+        <View style={styles.materialButtonViolet10Stack}>
+          {pictures.map((picture, index) => {
+            return (<Image
+              source={require("../assets/images/Cottage_21.jpg")}
+              resizeMode="contain"
+              style={index < 4 ? styles.image : styles.image2}
+            ></Image>)
+          })
+          }
+        </View>
       </View>
+
       <View style={styles.materialButtonWithVioletText1Row}>
         <MaterialButtonWithVioletText11
           style={styles.materialButtonWithVioletText1}
@@ -72,48 +52,82 @@ function StayPictures(props) {
   );
 }
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(2,172,235,1)"
+    backgroundColor: "rgba(2,172,235,1)",
+    width: windowWidth,
+    height: windowHeight
   },
   loremIpsum4: {
     color: "rgba(0,88,155,1)",
     fontSize: 20,
+    width: '80%',
     fontFamily: "roboto-regular",
     marginTop: 35,
     marginLeft: 33
   },
   loremIpsum6: {
     color: "rgba(0,88,155,1)",
+    width: '80%',
     fontSize: 14,
     fontFamily: "roboto-regular",
-    marginTop: 5,
-    marginLeft: 35,
-    marginRight: 59
+    marginTop: 10,
+    marginLeft: 33,
+    marginRight: 34
   },
   materialButtonViolet10: {
-    top: 0,
-    left: 1,
+    // position: "absolute",
+    // top: 150,
+    width: '80%',
     height: 44,
     backgroundColor: "rgba(0,88,155,1)",
-    position: "absolute",
     borderRadius: 10,
-    right: 2
+    marginTop: 30,
+    marginLeft: 33,
+    marginRight: 34
+  },
+  listView: {
+    // position: "absolute",
+    flex: 1,
+    width: '80%',
+    // alignItems: 'center',
+    // alignContent: "center",
+    // marginTop: 30,
+    marginLeft: 33,
+    // marginRight: 34
+    // top: 95,
+  },
+  materialButtonViolet10Stack: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: windowWidth < 500 ? 30 : 10,
+    // width: '80%',
+        // position: "absolute",
+    // top: 50,
   },
   image: {
-    top: 39,
-    left: 0,
-    width: 150,
+    // left: 0,
     height: 150,
-    position: "absolute"
+    marginTop: windowWidth < 500 ? -40 : 10,
+    width: (windowWidth / 2) - (windowWidth / 7),
+    marginLeft: 10,
   },
   image2: {
+    // left: 0,
+    marginTop: windowWidth < 500 ? -40 : 10,
+    height: 150,
+    width: (windowWidth / 2) - (windowWidth / 7),
+    marginLeft: 10,
+  },
+  image2222222222: {
     top: 39,
     left: 192,
     width: 150,
     height: 150,
-    position: "absolute"
   },
   image3: {
     top: 174,
@@ -157,12 +171,6 @@ const styles = StyleSheet.create({
     height: 150,
     position: "absolute"
   },
-  materialButtonViolet10Stack: {
-    height: 594,
-    marginTop: 15,
-    marginLeft: 34,
-    marginRight: 38
-  },
   materialButtonWithVioletText1: {
     height: 36,
     opacity: 0.46,
@@ -177,11 +185,13 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end"
   },
   materialButtonWithVioletText1Row: {
+    position: "absolute",
+    bottom: 60, 
     height: 45,
     flexDirection: "row",
-    marginTop: 9,
-    marginLeft: 162,
-    marginRight: 3
+    // marginTop: 9,
+    // marginLeft: 162,
+    right: 30
   },
   group1: {
     height: 91,
@@ -191,7 +201,7 @@ const styles = StyleSheet.create({
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: .7
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

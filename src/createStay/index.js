@@ -52,6 +52,7 @@ export default function Index(props) {
     //the array should be in the order that the screens show up
 
     const componentKeys = [
+        "StayPictures",
         "DescribeStay",
         "Address",
         "ApartmentPinDrop",
@@ -95,6 +96,7 @@ export default function Index(props) {
 
     useEffect(() => {
         console.warn("createStay/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
+        // console.warn("windowWidth: " + windowWidth)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
@@ -172,8 +174,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         height: windowHeight,
         width: windowWidth,
-        alignItems: "center",
-        // width: windowWidth < 400 ? windowWidth*.9 : windowWidth,
+        alignItems: "center",        
     },
     header: {
         zIndex: 20,
