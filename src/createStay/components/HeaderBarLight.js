@@ -40,14 +40,12 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    // height: windowHeight,
     width: windowWidth,
-    // height: 0,
-    // paddingBottom: 30
+
   },
   group1: {
     height: 0,
-    paddingBottom: 40
+    paddingBottom: 10
   },
   rect: {
     height: 91,
@@ -83,8 +81,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     //TODO: do these better
     width: 270,
-    marginLeft: 35,
-    
+    // marginLeft: 35,  
+    right: windowWidth > 500 ? (-windowWidth*.16) : windowWidth > 400 ? (-windowWidth*.06) : 0,
     marginTop: 8
   },
   button4Row: {
@@ -106,6 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   image1: {
+    right: windowWidth < 400 ? 8 : 3,
     height: 62,
     width: 62
   },
