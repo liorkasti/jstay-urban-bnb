@@ -49,12 +49,19 @@ const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
+    width: windowWidth,
+    // height: 0,
+    paddingBottom: 3
   },
   headerMenu: {
     zIndex: 20,
     // position: "absolute",
   },
   rect1: {
+    height: 91,
+    borderColor: "rgba(0,88,155,1)",
+    borderWidth: 0,
+    borderBottomWidth: 1
   },
   materialButtonViolet22: {
     height: 0,

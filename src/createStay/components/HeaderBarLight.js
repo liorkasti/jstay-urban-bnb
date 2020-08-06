@@ -39,16 +39,20 @@ const windowHeight = Dimensions.get('window').height;
 
 
 const styles = StyleSheet.create({
+  container: {
+    width: windowWidth,
+    // height: 0,
+    // paddingBottom: 30
+  },
   group1: {
-    width: 414,
     height: 0,
-    paddingBottom: 30
+    paddingBottom: 40
   },
   rect: {
     height: 91,
     borderColor: "rgba(0,88,155,1)",
     borderWidth: 0,
-    borderBottomWidth: 4
+    borderBottomWidth: 1
   },
   bsD1: {
     color: "rgba(177,177,177,1)",

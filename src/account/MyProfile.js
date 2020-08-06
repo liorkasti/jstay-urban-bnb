@@ -39,7 +39,7 @@ function MyProfile(props) {
       {props.showMenu &&
         <MyProfileMenu
           // onUserPress={(action) => props.onUserPress(action)}
-          handleMenu={(menuItem) => { props.handleMenu(menuItem); console.warn("handleMenu status: ", showMenu)}}
+          handleMenu={(menuItem) => { props.handleMenu(menuItem); console.warn("handleMenu status: ", showMenu) }}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
@@ -59,7 +59,7 @@ function MyProfile(props) {
           ></MaterialButtonWithVioletText32>
         </TouchableOpacity>
       </View>
-      
+
       <View style={styles.accountDetailsStack}>
         <Text style={styles.loremIpsum}></Text>
         <AccountDetails style={styles.myNameDetails}></AccountDetails>
@@ -105,16 +105,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)",
     alignItems: "center",
-    width: '100%',
+    // width: '100%',
+    width: windowWidth,
+    // height: windowHeight+120,
+    height: windowHeight * 1.15,
+    height: 850,
   },
   headerMenu: {
     position: "absolute",
-    zIndex: 3000,
-    alignItems: "center",
+    // zIndex: 3000,
+    // top: 20,
+    right: 0,
+    // alignItems: "center",
   },
   image2Stack: {
-    top: 120,
-    position: "absolute"
+    // top: 120,
+    top: 40,
+    // position: "absolute"
   },
   image2: {
     width: 150,
@@ -127,8 +134,9 @@ const styles = StyleSheet.create({
   },
   accountDetailsStack: {
     position: "absolute",
-    top: 300,
-    left: 28,
+    top: 230,
+    // left: 28,
+    left: '8%',
     zIndex: 1,
   },
   loremIpsum: {
@@ -376,7 +384,10 @@ const styles = StyleSheet.create({
   },
 
   buttonStack: {
-    top: 760,
+    top: 690,
+    bottom: '5%',
+    // bottom: 300,
+    // marginTop: '20%',
     position: "absolute",
     alignItems: "center",
   },

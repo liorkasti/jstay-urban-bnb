@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView,RefreshControl } from "react-native"
+import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl } from "react-native"
 import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
@@ -66,7 +66,7 @@ const headers = {
     cancelationHost: "Cancelation",
     confirmedHost: "Confirmed",
     confirmedGuest: "Confirmed",
-    contactUs:"Support",
+    contactUs: "Support",
     editProfile: "Edit Profile",
     editMyKashrut: "Kashrut",
     guestCardInfo: "Payments",
@@ -101,9 +101,9 @@ export default function Index(props) {
 
     function wait(timeout) {
         return new Promise(resolve => {
-          setTimeout(resolve, timeout);
+            setTimeout(resolve, timeout);
         });
-      }
+    }
 
     //user finished create a stay
     function onHome() {
@@ -127,7 +127,7 @@ export default function Index(props) {
         history.push("/chat", { route: "/account", subroute: message })
     }
 
-    const addToFavorites = (stay)=>{
+    const addToFavorites = (stay) => {
         history.push("/home", { subroute: "/favorites", newData: stay, favorites: true, backHistory })
     }
 
@@ -145,10 +145,10 @@ export default function Index(props) {
     useEffect(() => {
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
 
-        let newBackHistory = [...backHistory];
-        newBackHistory[historyIndex] = props.location.state.subroute;
-        addBackHistory(newBackHistory);
-        setCurrentPage(props.location.state.subroute);
+            let newBackHistory = [...backHistory];
+            newBackHistory[historyIndex] = props.location.state.subroute;
+            addBackHistory(newBackHistory);
+            setCurrentPage(props.location.state.subroute);
         }
     }, []);
 
@@ -163,7 +163,7 @@ export default function Index(props) {
 
 
     const onBack = () => {
-        if(showMenu)setShowMenu(false);
+        if (showMenu) setShowMenu(false);
         if (historyIndex - 1 < 0) {
             const prevPage = props.location.state.backHistory;
             console.warn(prevPage)
@@ -194,13 +194,13 @@ export default function Index(props) {
                 onCreateStay(requestSource);
             }}
 
-            saveAndExit={()=>{
+            saveAndExit={() => {
                 onBack();
             }}
-            messageHost={(message)=>{onNewMessage(message)}}
-            messageSupport={()=>{onNewMessage({support:true})}}
+            messageHost={(message) => { onNewMessage(message) }}
+            messageSupport={() => { onNewMessage({ support: true }) }}
 
-            messageGuest={(message)=>{onNewMessage(message)}}
+            messageGuest={(message) => { onNewMessage(message) }}
 
             onEditStay={(page) => {
                 onEditStay(page);
@@ -216,7 +216,7 @@ export default function Index(props) {
                 onBack();
             }}
 
-            addToFavorites={()=>{
+            addToFavorites={() => {
                 addToFavorites();
             }}
 
@@ -233,28 +233,28 @@ export default function Index(props) {
 
     const onRefresh = React.useCallback(() => {
         setRefreshing(true);
-    
+
         wait(2000).then(() => setRefreshing(false));
-      }, [refreshing]);
-    
+    }, [refreshing]);
+
 
     return (
         <View style={styles.container}>
             {/*dynamic component*/}
             {
-                currentPage !== "myProfile" ? 
+                currentPage !== "myProfile" ?
                     <HeaderBarLight
                         screenWidth={windowWidth}
                         style={styles.header}
                         header={headers[currentPage || props.location.state.subroute]}
                         onHome={() => { onHome() }}
                         onBack={() => onBack()}
-                    /> : 
+                    /> :
                     <MyProfileHeader
-                    setShowMenu={()=>{setShowMenu(!showMenu)}}
-                    onBack={() => onBack()}
-                    style={styles.header}
-                  />
+                        setShowMenu={() => { setShowMenu(!showMenu) }}
+                        onBack={() => onBack()}
+                        style={styles.header}
+                    />
             }
             <ScrollView style={{
                 zIndex: 1,
@@ -265,7 +265,7 @@ export default function Index(props) {
                 }}
                 refreshControl={
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-                  }>
+                }>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>
@@ -278,13 +278,16 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 10,
+        // padding: 10,
+        // width: windowWidth,
+        // height: windowHeight,
         backgroundColor: "rgba(2,172,235,1)",
-        flexDirection: "column",
-        width: "100%"
+        // flexDirection: "column",
+        // width: "100%"
     },
 
     header: {
         zIndex: 3000,
+        // width: windowWidth
     },
 });

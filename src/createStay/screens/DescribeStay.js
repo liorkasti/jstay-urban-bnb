@@ -21,9 +21,12 @@ import MaterialRadio5 from "../components/MaterialRadio5";
 import DropDown from "../components/DropDown";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 
-const screenHeight = Dimensions.get('window').height + 100;
 
 function DescribeStay(props) {
+
+  // const [showFooterMenu, setShowFooterMenu] = useState(false);
+  // useEffect(() => { console.warn("show footer menu", showFooterMenu) }, [showFooterMenu])
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(2,172,235,1)" />
@@ -234,10 +237,15 @@ function DescribeStay(props) {
   );
 }
 
+const screenHeight = Dimensions.get('window').height + 100;
+const windowWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    // flex: 1,
     height: 1600,
+    width: windowWidth,    
     backgroundColor: "rgba(2,172,235,1)",
   },
 

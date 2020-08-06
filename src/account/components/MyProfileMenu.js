@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
         flex: 1,
         zIndex: 5000,
         position: "absolute",
-        top: 90,
+        top: 0,
+        // right: 0,
         backgroundColor: "rgba(2,172,235,1)",
     },
     rect1: {

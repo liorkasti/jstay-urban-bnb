@@ -135,6 +135,8 @@ export default function Index(props) {
                     
                 }}
 
+                // showTypeMenu={showTypeMenu}
+
                 onHome={() => {
                     onHome();
                 }}
