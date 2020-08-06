@@ -28,10 +28,6 @@ export default function Index(props) {
             setNewFavorites(props.location.state.favorites);
             setCurrentComponent("Favorites");
         }
-
-        if (props.location.state) {
-            console.warn("home/index.js componentKeys pic: ", componentKeys[componentIndex]);
-        }
     }, [])
 
 
