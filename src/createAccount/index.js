@@ -26,15 +26,25 @@ const imagePickerOptionsoptions = {
         waitUntilSaved: true
     },
 };
+const currentUser = auth().currentUser;
 
 export default function CreateAccountIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [profilePictureUri, setProfilePictureUri] = useState("");
-    const [currentLoginAccount, setCurrentLoginAccount] = useState({})
+    const [currentLoginAccount, setCurrentLoginAccount] = useState({});
+    const [didCreateAccount, setDidCreateAccount] = useState(true);
+    const [showNothing, setShowNothing] = useState(false);
     //this send user to route if they want to create a stay
     let history = useHistory();
 
     useEffect(() => {
+        setTimeout(() => {
+            if (currentUser) {
+                setComponentIndex(componentIndex + 1);
+                setDidCreateAccount(false);
+            }
+        }, 300)
+
         if (props.location.state) {
             // console.warn("props for create account index", props.location.state)
         };
@@ -80,9 +90,15 @@ export default function CreateAccountIndex(props) {
         if (componentIndex > componentKeys.length - 1) {
             history.push("/home");
         };
-        if (componentIndex < 0) {
-            history.push("/");
+        if (componentIndex < 1 && !didCreateAccount) {
+            setShowNothing(true);
+            currentUser.delete().then(() => {
+                history.push("/");
+            })
         };
+        if (componentIndex < 0) {
+            history.push("/")
+        }
     }, [componentIndex])
 
     //add the import as a string to this array 
@@ -110,13 +126,13 @@ export default function CreateAccountIndex(props) {
                 console.error(error);
             });
     }
-
+    if (showNothing) return <View />;
     return (
 
         <View style={styles.container}>
             <HeaderBarDark screenWidth={windowWidth}
                 style={styles.header} header="Create Account"
-                onHome={() => { onHome() }} 
+                onHome={() => { onHome() }}
                 onBack={() => setComponentIndex(componentIndex - 1)}
             />
 

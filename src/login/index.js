@@ -11,6 +11,8 @@ import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import Welcome from "./Welcome";
 import Login from "./Login";
 
+const currentUser = auth().currentUser;
+
 export default function LoginIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
 
@@ -29,6 +31,8 @@ export default function LoginIndex(props) {
     function onCreateAccount() {
         history.push("/createAccount");
     }
+
+   
 
     useEffect(() => {
         // console.warn(componentKeys[componentIndex])
