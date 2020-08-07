@@ -5,6 +5,9 @@ import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
 import { Center } from "@builderx/utils";
 
+import auth from '@react-native-firebase/auth';
+import database from '@react-native-firebase/database';
+
 function MyKashrut(props) {
   return (
     <View style={styles.container}>

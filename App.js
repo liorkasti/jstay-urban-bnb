@@ -43,7 +43,7 @@ export default function App() {
 
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-    return subscriber; onGoogleButton
+    return subscriber; 
   }, []);
 
   function onAuthStateChanged(user) {

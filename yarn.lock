@@ -1007,17 +1007,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
   integrity sha512-8IeHfDwJ9/CTUwFs6x90VlobV3BfuPgNLjTgC6dRZovfCWigaZwVNIFFJnHBakK3pW2xErAPwhdvNR4JeNoYbw==
 
-"@react-native-firebase/app-types@6.7.2":
-  version "6.7.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.7.2.tgz#d2e1530af5702e00578914b41468898c10d3289c"
-  integrity sha512-pIwc6e0ZINw6PJqNVsAxzOVJUDg6au2TdulY+ZOYQ11SPDs5I2n9likoGrElPmJjajT4s9h87uz/6PWP2k9PxQ==
-
-"@react-native-firebase/app@^7.2.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-7.3.1.tgz#432a93cae79295df7e881437029a5eeb522a1b79"
-  integrity sha512-pQM4YnPRl1PaXqdFEfJSSCB5ETM303Rwucy015K1YKANtcB4r5VlXYgVHOx7BesXMxOjkzYfXH8WLtnC8PD/Xw==
+"@react-native-firebase/app@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-8.3.0.tgz#06becb503d220a1429cd27ff70c65611e00008ca"
+  integrity sha512-ORalRJ97NXerKie5tTdcHXldq1Ri4DY4/dOW0WqluluZgTqifxkMzsxuM0gRZEe64khG9/5uC7DoCt0JyGjFjQ==
   dependencies:
-    "@react-native-firebase/app-types" "6.7.2"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
@@ -1030,6 +1024,11 @@
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-7.4.1.tgz#d066f189620a86778a98ab614465847e3a0fb875"
   integrity sha512-NjBS1rRrQPmL+Dfmpp+kb+1u1ktzSMM2LKBOCzwMWcg6yIubmy8c0E+Jq8C9ZfB/bN1Uoft6jAyxA7lLxqibuw==
+
+"@react-native-firebase/in-app-messaging@^7.2.2":
+  version "7.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/in-app-messaging/-/in-app-messaging-7.2.2.tgz#d183c83b15b83cdb9c91070bea2bce20f86f383b"
+  integrity sha512-5QY3CYddkkPy2HeGDVHmTBqPZXTmUstlJsjStpV4mehOakOsyEB+7isnR8T9mBhkeIDa9NUATiKyk0z4RVSj7g==
 
 "@react-native-firebase/storage@^7.1.4":
   version "7.1.6"

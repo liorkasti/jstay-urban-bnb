@@ -22,76 +22,80 @@ PODS:
     - React-Core (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/turbomodule/core (= 0.62.2)
-  - FBSDKCoreKit (7.0.1):
-    - FBSDKCoreKit/Basics (= 7.0.1)
-    - FBSDKCoreKit/Core (= 7.0.1)
-  - FBSDKCoreKit/Basics (7.0.1)
-  - FBSDKCoreKit/Core (7.0.1):
+  - FBSDKCoreKit (7.1.1):
+    - FBSDKCoreKit/Basics (= 7.1.1)
+    - FBSDKCoreKit/Core (= 7.1.1)
+  - FBSDKCoreKit/Basics (7.1.1)
+  - FBSDKCoreKit/Core (7.1.1):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (7.0.1):
-    - FBSDKLoginKit/Login (= 7.0.1)
-  - FBSDKLoginKit/Login (7.0.1):
-    - FBSDKCoreKit (~> 7.0.1)
-  - FBSDKShareKit (7.0.1):
-    - FBSDKShareKit/Share (= 7.0.1)
-  - FBSDKShareKit/Share (7.0.1):
-    - FBSDKCoreKit (~> 7.0.1)
-  - Firebase/Analytics (6.25.0):
+  - FBSDKLoginKit (7.1.1):
+    - FBSDKLoginKit/Login (= 7.1.1)
+  - FBSDKLoginKit/Login (7.1.1):
+    - FBSDKCoreKit (~> 7.1.1)
+  - FBSDKShareKit (7.1.1):
+    - FBSDKShareKit/Share (= 7.1.1)
+  - FBSDKShareKit/Share (7.1.1):
+    - FBSDKCoreKit (~> 7.1.1)
+  - Firebase/Analytics (6.28.1):
     - Firebase/Core
-  - Firebase/Auth (6.25.0):
+  - Firebase/Auth (6.28.1):
     - Firebase/CoreOnly
-    - FirebaseAuth (~> 6.5.3)
-  - Firebase/Core (6.25.0):
+    - FirebaseAuth (~> 6.7.0)
+  - Firebase/Core (6.28.1):
     - Firebase/CoreOnly
-    - FirebaseAnalytics (= 6.5.1)
-  - Firebase/CoreOnly (6.25.0):
-    - FirebaseCore (= 6.7.1)
-  - Firebase/Database (6.25.0):
+    - FirebaseAnalytics (= 6.6.2)
+  - Firebase/CoreOnly (6.28.1):
+    - FirebaseCore (= 6.9.1)
+  - Firebase/Database (6.28.1):
     - Firebase/CoreOnly
-    - FirebaseDatabase (~> 6.2.1)
-  - Firebase/Storage (6.25.0):
+    - FirebaseDatabase (~> 6.4.0)
+  - Firebase/InAppMessaging (6.28.1):
     - Firebase/CoreOnly
-    - FirebaseStorage (~> 3.6.1)
-  - FirebaseAnalytics (6.5.1):
-    - FirebaseCore (~> 6.7)
-    - FirebaseInstallations (~> 1.2)
-    - GoogleAppMeasurement (= 6.5.1)
+    - FirebaseInAppMessaging (~> 0.22.0)
+  - Firebase/Storage (6.28.1):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.8.0)
+  - FirebaseABTesting (4.1.0):
+    - FirebaseCore (~> 6.8)
+  - FirebaseAnalytics (6.6.2):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.4)
+    - GoogleAppMeasurement (= 6.6.2)
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
-  - FirebaseAuth (6.5.3):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.6)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
-    - GoogleUtilities/Environment (~> 6.5)
+  - FirebaseAuth (6.7.1):
+    - FirebaseCore (~> 6.8)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
+    - GoogleUtilities/Environment (~> 6.7)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseAuthInterop (1.1.0)
-  - FirebaseCore (6.7.1):
+  - FirebaseCore (6.9.1):
     - FirebaseCoreDiagnostics (~> 1.3)
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
-  - FirebaseCoreDiagnostics (1.3.0):
-    - FirebaseCoreDiagnosticsInterop (~> 1.2)
-    - GoogleDataTransportCCTSupport (~> 3.1)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GoogleUtilities/Logger (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
+  - FirebaseCoreDiagnostics (1.5.0):
+    - GoogleDataTransport (~> 7.0)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/Logger (~> 6.7)
     - nanopb (~> 1.30905.0)
-  - FirebaseCoreDiagnosticsInterop (1.2.0)
-  - FirebaseDatabase (6.2.1):
-    - FirebaseAuthInterop (~> 1.0)
-    - FirebaseCore (~> 6.0)
+  - FirebaseDatabase (6.4.0):
+    - FirebaseCore (~> 6.8)
     - leveldb-library (~> 1.22)
-  - FirebaseInstallations (1.3.0):
-    - FirebaseCore (~> 6.6)
-    - GoogleUtilities/Environment (~> 6.6)
-    - GoogleUtilities/UserDefaults (~> 6.6)
+  - FirebaseInAppMessaging (0.22.0):
+    - FirebaseABTesting (~> 4.0)
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleUtilities/Environment (~> 6.7)
+    - nanopb (~> 1.30905.0)
+  - FirebaseInstallations (1.5.0):
+    - FirebaseCore (~> 6.8)
+    - GoogleUtilities/Environment (~> 6.7)
+    - GoogleUtilities/UserDefaults (~> 6.7)
     - PromisesObjC (~> 1.2)
-  - FirebaseStorage (3.6.1):
-    - FirebaseAuthInterop (~> 1.1)
-    - FirebaseCore (~> 6.6)
+  - FirebaseStorage (3.8.0):
+    - FirebaseCore (~> 6.8)
     - GTMSessionFetcher/Core (~> 1.1)
   - Flipper (0.33.1):
     - Flipper-Folly (~> 2.1)
@@ -149,38 +153,36 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - GoogleAppMeasurement (6.5.1):
+  - GoogleAppMeasurement (6.6.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
-  - GoogleDataTransport (6.2.1)
-  - GoogleDataTransportCCTSupport (3.1.0):
-    - GoogleDataTransport (~> 6.1)
+  - GoogleDataTransport (7.1.0):
     - nanopb (~> 1.30905.0)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleUtilities/AppDelegateSwizzler (6.6.0):
+  - GoogleUtilities/AppDelegateSwizzler (6.7.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
-  - GoogleUtilities/Environment (6.6.0):
+  - GoogleUtilities/Environment (6.7.1):
     - PromisesObjC (~> 1.2)
-  - GoogleUtilities/Logger (6.6.0):
+  - GoogleUtilities/Logger (6.7.1):
     - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (6.6.0):
+  - GoogleUtilities/MethodSwizzler (6.7.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/Network (6.6.0):
+  - GoogleUtilities/Network (6.7.1):
     - GoogleUtilities/Logger
     - "GoogleUtilities/NSData+zlib"
     - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (6.6.0)"
-  - GoogleUtilities/Reachability (6.6.0):
+  - "GoogleUtilities/NSData+zlib (6.7.1)"
+  - GoogleUtilities/Reachability (6.7.1):
     - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (6.6.0):
+  - GoogleUtilities/UserDefaults (6.7.1):
     - GoogleUtilities/Logger
   - GTMAppAuth (1.0.0):
     - AppAuth/Core (~> 1.0)
@@ -448,19 +450,24 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNFBApp (7.3.1):
-    - Firebase/CoreOnly (~> 6.25.0)
+  - RNFBApp (8.3.0):
+    - Firebase/CoreOnly (~> 6.28.1)
     - React
   - RNFBAuth (8.0.8):
-    - Firebase/Auth (~> 6.25.0)
+    - Firebase/Auth (~> 6.28.1)
     - React
     - RNFBApp
   - RNFBDatabase (7.4.1):
-    - Firebase/Database (~> 6.25.0)
+    - Firebase/Database (~> 6.28.1)
+    - React
+    - RNFBApp
+  - RNFBInAppMessaging (7.2.2):
+    - Firebase/Analytics (~> 6.28.1)
+    - Firebase/InAppMessaging (~> 6.28.1)
     - React
     - RNFBApp
   - RNFBStorage (7.1.6):
-    - Firebase/Storage (~> 6.25.0)
+    - Firebase/Storage (~> 6.28.1)
     - React
     - RNFBApp
   - RNGoogleSignin (4.0.3):
@@ -538,6 +545,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBDatabase (from `../node_modules/@react-native-firebase/database`)"
+  - "RNFBInAppMessaging (from `../node_modules/@react-native-firebase/in-app-messaging`)"
   - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
@@ -556,13 +564,13 @@ SPEC REPOS:
     - FBSDKLoginKit
     - FBSDKShareKit
     - Firebase
+    - FirebaseABTesting
     - FirebaseAnalytics
     - FirebaseAuth
-    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
-    - FirebaseCoreDiagnosticsInterop
     - FirebaseDatabase
+    - FirebaseInAppMessaging
     - FirebaseInstallations
     - FirebaseStorage
     - Flipper
@@ -574,7 +582,6 @@ SPEC REPOS:
     - FlipperKit
     - GoogleAppMeasurement
     - GoogleDataTransport
-    - GoogleDataTransportCCTSupport
     - GoogleSignIn
     - GoogleUtilities
     - GTMAppAuth
@@ -654,6 +661,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBDatabase:
     :path: "../node_modules/@react-native-firebase/database"
+  RNFBInAppMessaging:
+    :path: "../node_modules/@react-native-firebase/in-app-messaging"
   RNFBStorage:
     :path: "../node_modules/@react-native-firebase/storage"
   RNGoogleSignin:
@@ -676,19 +685,19 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 4aab18c93cd9546e4bfed752b4084585eca8b245
   FBReactNativeSpec: 5465d51ccfeecb7faa12f9ae0024f2044ce4044e
-  FBSDKCoreKit: 9cc05bec0568a5955c82eb59ae95da0fe125b88d
-  FBSDKLoginKit: ecc6fd43c81b60f5b5e9388d58f137aff4a5d00b
-  FBSDKShareKit: 45c37aa481681762ac453462fca117bd75eaebbe
-  Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
-  FirebaseAnalytics: 93565f3f0f0f50a5d8770850bfe6a82eaba5db27
-  FirebaseAuth: 7047aec89c0b17ecd924a550c853f0c27ac6015e
-  FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
-  FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
-  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
-  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
-  FirebaseDatabase: 4e99c0c475d1ee0aa64ae2b53c93f80b7b60d7d9
-  FirebaseInstallations: 6f5f680e65dc374397a483c32d1799ba822a395b
-  FirebaseStorage: f4f39ae834a7145963b913f54e2f24a9db1d8fac
+  FBSDKCoreKit: b46507dc8b8cefed31d644e74d7cc30e2a715ef8
+  FBSDKLoginKit: 1a61d79e2b25e2fc0d03dccab1e34b38bbdf2546
+  FBSDKShareKit: 00a055c1999b099596e00212dd1c0600c6697019
+  Firebase: ed042590caa0029392257529a8003c25ee82bc18
+  FirebaseABTesting: 9e368b88c2f1c5d7a433828d9d224779b53207b6
+  FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
+  FirebaseAuth: a818d73466d51db897d3bf3c0f3baa3dae7fd4c0
+  FirebaseCore: 687b8e6a0a4337b898a6326d68254c2f80c143af
+  FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
+  FirebaseDatabase: 55e69fe802ccb438d9c6ee51eb32fd425d5409d3
+  FirebaseInAppMessaging: 417ef2696fcf7dc79dfcb0adc46fdb2f3bd0e12e
+  FirebaseInstallations: 3c520c951305cbf9ca54eb891ff9e6d1fd384881
+  FirebaseStorage: 3ef81ca5fa7817f85451ca09d516a34d2c7542a7
   Flipper: 6c1f484f9a88d30ab3e272800d53688439e50f69
   Flipper-DoubleConversion: 38631e41ef4f9b12861c67d17cb5518d06badc41
   Flipper-Folly: c12092ea368353b58e992843a990a3225d4533c3
@@ -698,11 +707,10 @@ SPEC CHECKSUMS:
   FlipperKit: 6dc9b8f4ef60d9e5ded7f0264db299c91f18832e
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  GoogleAppMeasurement: 137afe68bfa406c3f4221b9395253d9e5d4654cf
-  GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
-  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
+  GoogleAppMeasurement: 8cd1f289d60e629cf16ab03363b9e89c776b9651
+  GoogleDataTransport: af0c79193dc59acd37630b4833d0dc6912ae6bd5
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
-  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
+  GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -735,10 +743,11 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNFBApp: cd70a6c061bc485994e28c7d58ab760538850f0e
-  RNFBAuth: 972d2910719feee8e2a2eb3643ad03eea5b5b24d
-  RNFBDatabase: 074e8ea4c251168f3740dec4b0933f31bcb75dd1
-  RNFBStorage: 93895571135950e106ae7b3da8c1288a4e1a742e
+  RNFBApp: d55b3a69d199cff25ecf4f3bf41a86c47aa37d57
+  RNFBAuth: 4568085b47d784ca150af388f5c7790e2d157403
+  RNFBDatabase: 2de49cc2b01698412b231b2e369af88c33465d73
+  RNFBInAppMessaging: c5369d908e4373763e5cb6e3ef2d0da2053ed474
+  RNFBStorage: 5b7034e3998f46b8c06e221577d5473c92091404
   RNGoogleSignin: ccf71ee4b6cfd324fd788a41e457e2043838c0d9
   RNPermissions: ad71dd4f767ec254f2cd57592fbee02afee75467
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e

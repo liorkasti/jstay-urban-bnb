@@ -19,6 +19,7 @@ function ProfilePicture(props) {
 
           <TouchableOpacity style={styles.button4}>
             <AddProfileProfilePictureButton
+            onPress={props.addProfilePicture}
               style={styles.addProfileProfilePictureButton}
             />
           </TouchableOpacity>

@@ -14,7 +14,7 @@ import ImagePicker from 'react-native-image-picker';
 import storage from '@react-native-firebase/storage';
 // import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
-
+import database from "@react-native-firebase/database";
 // const usersCollection = firestore().collection('Users');
 
 const imagePickerOptionsoptions = {
@@ -27,7 +27,12 @@ const imagePickerOptionsoptions = {
     },
 };
 
-const currentUser = auth().currentUser;
+const user = auth().currentUser;
+let refrence = "";
+
+const setRefrence = () => {
+    refrence = database().ref('/users/generalInfo/' + user.uid);
+};
 
 export default function CreateAccountIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -38,19 +43,47 @@ export default function CreateAccountIndex(props) {
     //this send user to route if they want to create a stay
     let history = useHistory();
 
+
+
+    const updateUserInput = (value, extention) => {
+        refrence.update({ [extention]: value }).then((res) => {
+            console.warn("this is the response for update", res)
+        })
+    };
+
     useEffect(() => {
+        const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
         setTimeout(() => {
-            setShowNothing(false);
-            if (currentUser) {
-                setComponentIndex(componentIndex + 1);
-                setDidCreateAccount(false);
+            if (user) {
+                console.warn("user id",user.uid)
+                database()
+                    .ref(`/users/generalInfo/${user.uid}`)
+                    .once('value')
+                    .then(snapshot => {
+                        snapshot.val();
+                        console.warn(snapshot)
+                        if (snapshot.didFinishAccountSetup) {
+                            history.push("/home");
+                        }else{
+                            setComponentIndex(componentIndex + 1);
+                            setDidCreateAccount(false);
+                            setShowNothing(false);
+                        }
+                    });
             }
         }, 300)
 
         if (props.location.state) {
             // console.warn("props for create account index", props.location.state)
         };
+        return subscriber;
     }, []);
+
+    function onAuthStateChanged(user) {
+        if (user) {
+            setRefrence();
+        }
+    }
 
     const addProfilePicture = () => {
         ImagePicker.showImagePicker(imagePickerOptionsoptions, (response) => {
@@ -94,7 +127,7 @@ export default function CreateAccountIndex(props) {
         };
         if (componentIndex < 1 && !didCreateAccount) {
             setShowNothing(true);
-            currentUser.delete().then(() => {
+            user.delete().then(() => {
                 history.push("/");
             })
         };
@@ -199,6 +232,9 @@ export default function CreateAccountIndex(props) {
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+                    onUserInput={(value, key) => { updateUserInput(value, key) }}
+
+                    onUserInput={() => { }}
 
                     onHome={() => { goToHome() }}
 
@@ -230,7 +266,7 @@ export default function CreateAccountIndex(props) {
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    onUserPress={(value)=>{onUserPress(value, "kashrutLevel")}}
+                    onUserPress={(value) => { updateUserInput(value, "kashrutLevel") }}
 
                     onHome={() => { goToHome() }}
 
@@ -259,6 +295,7 @@ export default function CreateAccountIndex(props) {
                     //if builder x component has next button
                     //it's button should have onPress={()=>{props.onNext}}
                     onNext={() => {
+                        updateUserInput(true, "didFinishAccountSetup")
                         setComponentIndex(componentIndex + 1)
                     }}
 

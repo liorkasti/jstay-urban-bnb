@@ -7,6 +7,7 @@ function EmailTextInput4(props) {
     <View style={[styles.container, props.style]}>
       <Icon name="email-outline" style={styles.iconStyle}></Icon>
       <TextInput
+        onChangeText={(text)=>props.onChangeText(text)}
         placeholder={props.textInput1 || "Label"}
         placeholderTextColor="rgba(177,177,177,1)"
         style={styles.inputStyle}
