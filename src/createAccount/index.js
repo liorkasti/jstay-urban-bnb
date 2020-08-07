@@ -26,6 +26,7 @@ const imagePickerOptionsoptions = {
         waitUntilSaved: true
     },
 };
+
 const currentUser = auth().currentUser;
 
 export default function CreateAccountIndex(props) {
@@ -33,12 +34,13 @@ export default function CreateAccountIndex(props) {
     const [profilePictureUri, setProfilePictureUri] = useState("");
     const [currentLoginAccount, setCurrentLoginAccount] = useState({});
     const [didCreateAccount, setDidCreateAccount] = useState(true);
-    const [showNothing, setShowNothing] = useState(false);
+    const [showNothing, setShowNothing] = useState(true);
     //this send user to route if they want to create a stay
     let history = useHistory();
 
     useEffect(() => {
         setTimeout(() => {
+            setShowNothing(false);
             if (currentUser) {
                 setComponentIndex(componentIndex + 1);
                 setDidCreateAccount(false);
@@ -227,6 +229,8 @@ export default function CreateAccountIndex(props) {
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+
+                    onUserPress={(value)=>{onUserPress(value, "kashrutLevel")}}
 
                     onHome={() => { goToHome() }}
 

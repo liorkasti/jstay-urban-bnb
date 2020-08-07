@@ -19,7 +19,9 @@ function MyKashrut(props) {
             ></Image>
           </Center>
         </View>
-        <KosherSelect style={styles.kosherSelect}></KosherSelect>
+        
+        <KosherSelect onUserPress={props.onUserPress} style={styles.kosherSelect}></KosherSelect>
+        
         <View style={styles.group1}>
           <View style={styles.headerBarDark1Stack}>
             <HeaderBarDark
@@ -40,7 +42,8 @@ function MyKashrut(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "rgba(0,88,155,1)"
+    backgroundColor: "rgba(0,88,155,1)",
+    zIndex: 1
   },
   myLevelOfKashrut: {
     top: 147,
@@ -59,6 +62,7 @@ const styles = StyleSheet.create({
     marginTop: 137
   },
   kosherSelect: {
+    zIndex: 20,
     width: 394,
     height: 343,
     marginTop: 22,
@@ -90,7 +94,9 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  myLevelOfKashrutStackColumn: {},
+  myLevelOfKashrutStackColumn: {
+    zIndex: 1,
+  },
   myLevelOfKashrutStackColumnFiller: {
     flex: 1
   },

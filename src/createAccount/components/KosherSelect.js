@@ -8,12 +8,12 @@ import MaterialRadio7 from "./MaterialRadio7";
 function KosherSelect(props) {
   return (
     <View style={[styles.container, props.style]}>
-        <TouchableOpacity style={styles.button4}>
+        <TouchableOpacity onPress={()=>{props.onUserPress(3)}} style={styles.button4}>
           <MaterialRadio8 style={styles.materialRadio4}></MaterialRadio8>
           <Text style={styles.text4}>I&#39;d rather not say</Text>
           <Text style={styles.idoNotKeep1}>This can be added later</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button3}>
+        <TouchableOpacity onPress={()=>{props.onUserPress(2)}} style={styles.button3}>
           <MaterialRadio5 style={styles.materialRadio5}></MaterialRadio5>
           <Text style={styles.notKosher1}>Not Kosher</Text>
         </TouchableOpacity>
@@ -21,7 +21,7 @@ function KosherSelect(props) {
           I do not keep kosher, but I am looking for or listing a stay
           within a Jewish community
       </Text>
-        <TouchableOpacity style={styles.button2}>
+        <TouchableOpacity onPress={()=>{props.onUserPress(1)}} style={styles.button2}>
           <Text style={styles.strictlyKosher}>Strictly Kosher</Text>
           <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
         </TouchableOpacity>
@@ -33,7 +33,7 @@ function KosherSelect(props) {
           is open to non-Kosher users (with separate kosher and non-kosher
           utensils)
       </Text>
-        <TouchableOpacity style={styles.button5}>
+        <TouchableOpacity onPress={()=>{props.onUserPress(0)}} style={styles.button5}>
           <Text style={styles.kosherStandard}>Standard Kosher</Text>
           <MaterialRadio7 style={styles.materialRadio8}></MaterialRadio7>
         </TouchableOpacity>
