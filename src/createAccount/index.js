@@ -55,21 +55,9 @@ export default function CreateAccountIndex(props) {
         const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
         setTimeout(() => {
             if (user) {
-                console.warn("user id",user.uid)
-                database()
-                    .ref(`/users/generalInfo/${user.uid}`)
-                    .once('value')
-                    .then(snapshot => {
-                        snapshot.val();
-                        console.warn(snapshot)
-                        if (snapshot.didFinishAccountSetup) {
-                            history.push("/home");
-                        }else{
-                            setComponentIndex(componentIndex + 1);
-                            setDidCreateAccount(false);
-                            setShowNothing(false);
-                        }
-                    });
+                setComponentIndex(componentIndex + 1);
+                setDidCreateAccount(false);
+                setShowNothing(false);
             }
         }, 300)
 

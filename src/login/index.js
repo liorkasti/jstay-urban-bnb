@@ -6,16 +6,17 @@ import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
+import database from "@react-native-firebase/database";
 
 //import all builder x files related to this directory
 import Welcome from "./Welcome";
 import Login from "./Login";
 
-const currentUser = auth().currentUser;
 
 export default function LoginIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
-
+    const [currentUser, setCurrentUser] = useState();
+    
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -27,6 +28,29 @@ export default function LoginIndex(props) {
     function onSuccessfulLogin() {
         history.push("/home");
     };
+
+    useState(()=>{
+        const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+        
+        return subscriber;
+    },[]);
+
+    useEffect(() => {
+        if(currentUser){
+        database()
+        .ref(`/users/generalInfo/${currentUser.uid}`)
+        .once('value')
+        .then(snapshot => {
+            snapshot.val();
+            console.error(snapshot)
+            if (snapshot.didFinishAccountSetup) {
+                history.push("/home");
+            }else{
+                history.push("/createAccount");
+            }
+        });
+    }
+    },[currentUser])
 
     function onCreateAccount() {
         history.push("/createAccount");
@@ -42,6 +66,13 @@ export default function LoginIndex(props) {
         }
     }, [componentIndex])
 
+
+    function onAuthStateChanged(user) {
+        if (user) { 
+            setCurrentUser(user);
+         } 
+        console.warn("auth state did change with:", user)
+      }
 
     async function signInWithGoogle() {
         // Get the users ID token
@@ -79,14 +110,12 @@ export default function LoginIndex(props) {
 
     const signInWithFacebookHandler = () => {
         onFacebookButtonPress().then((res) => {
-            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
             // console.log("signed in with google with:", res)
         })
     };
 
     const signInWithGoogleHandler = () => {
         signInWithGoogle().then((res) => {
-            history.push("/createAccount", { familyName: res.family_name, firstName: res.given_name, email: "email" });
             // console.log("signed in with google with:", res)
         })
     };
