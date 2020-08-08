@@ -42,7 +42,6 @@ export default function LoginIndex(props) {
         .once('value')
         .then(snapshot => {
             snapshot.val();
-            console.error(snapshot)
             if (snapshot.didFinishAccountSetup) {
                 history.push("/home");
             }else{

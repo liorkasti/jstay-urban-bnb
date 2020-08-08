@@ -145,8 +145,6 @@ export default function CreateAccountIndex(props) {
                 if (error.code === 'auth/invalid-email') {
                     console.log('That email address is invalid!');
                 }
-
-                console.error(error);
             });
     }
     if (showNothing) return <View />;
