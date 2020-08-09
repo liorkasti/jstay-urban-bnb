@@ -6,7 +6,7 @@ function MaterialButtonWithVioletText21(props) {
     <TouchableOpacity
       onPress={() => props.onPress()}
       style={[styles.container, props.style]}>
-      <Text style={styles.caption}>My Stay/s</Text>
+      <Text style={styles.caption}>{props.caption}</Text>
     </TouchableOpacity>
   );
 }

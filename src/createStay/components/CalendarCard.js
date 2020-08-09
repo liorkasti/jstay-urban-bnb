@@ -57,7 +57,6 @@ export default function CalendarCard(props) {
     // You can turn it in to your desired format
     return year + '-' + month + '-' + date;//format: dd-mm-yyyy;
   }
-  console.log("Hello Jstay! ", getCurrentDate());
 
   return (
     <View style={[styles.container, props.style]}>

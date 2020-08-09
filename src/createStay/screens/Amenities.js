@@ -14,21 +14,21 @@ function Amenities(props) {
     <View style={styles.container}>
       <GeneralAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput({ newValue, path: "hostListing/generalAmenities" + extention })
+          props.onUserInput( newValue, extention, "hostListing/generalAmenities")
 
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
       <SafetyAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput({ newValue, path: "hostListing/safetyAmenities" + extention })
+          props.onUserInput(newValue, extention, "hostListing/safetyAmenities")
         }}
         style={styles.safetyAmenities}>
       </SafetyAmenities>
 
       <JewishHomeAmenities
          onUserInput={({ newValue, extention }) => {
-          props.onUserInput({ newValue, path: "hostListing/jewishAmenities" + extention })
+          props.onUserInput(newValue, extention, "hostListing/jewishAmenities")
         }}
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>

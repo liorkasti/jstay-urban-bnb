@@ -5,8 +5,13 @@ import {
 } from "react-native"
 import { useHistory } from "react-router-dom";
 
+import storage from '@react-native-firebase/storage';
+import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database";
+
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import HeaderBarLight from "./components/HeaderBarLight";
+
 //import all builder x files related to this directory
 import Accessibility from "./screens/Accessibility";
 import Address from "./screens/Address";
@@ -41,15 +46,34 @@ const components = {
     StayPictures,
     StayRules,
 };
+const currentUser = auth().currentUser;
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
+    const [totalAnswers, setTotalAnswers] = useState([]);
+    const [currentStayIndex, setCurrentStayIndex] = useState();
 
     //this send user to route if they want to create a stay
     let history = useHistory();
 
     //add the import as a string to this array
     //the array should be in the order that the screens show up
+
+    useEffect(() => {
+        database()
+            .ref(`/users/generalInfo/${currentUser.uid}`)
+            .once('value')
+            .then(snapshot => {
+                const response = snapshot.val();
+                console.warn("total stays", response.totalStays)
+                setCurrentStayIndex(snapshot.totalStays || 0);
+            });
+        database()
+            .ref(`/users/generalInfo/${currentUser.uid}`)
+            .update({ totalStays: currentStayIndex + 1 })
+            .then((res) => { console.log("response from update", res) })
+
+    }, [])
 
     const componentKeys = [
         "DescribeStay",
@@ -99,13 +123,23 @@ export default function Index(props) {
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
+
         }
 
         if (componentIndex < 0) {
-            onHome()
+            onHome();
         }
 
     }, [componentIndex]);
+
+    const updateUserInput = (value, key, route) => {
+        database()
+            .ref("stays", currentUser.uid + currentStayIndex, route)
+            .update({ [key]: value })
+            .then((res) => {
+                console.warn("this is the response for update", res)
+            })
+    };
 
     const CurrentComponentRouter = (props) => {
         const CurrentComponent = components[componentKeys[componentIndex]];
@@ -132,9 +166,11 @@ export default function Index(props) {
                     setComponentIndex(componentIndex + 1)
                 }}
 
-                // onUserInput={(value) => {
+                onUserInput={(value, key, route) => {
+                    updateUserInput(value, key, route);
+                }}
 
-                // }}
+                currentAnswers={totalAnswers[componentIndex]}
 
                 // setShowTypeDropDown={() => { setShowTypeDropDown(!showTypeDropDown) }}
                 // showTypeDropDown={showTypeDropDown}
@@ -173,7 +209,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         height: windowHeight,
         width: windowWidth,
-        alignItems: "center",        
+        alignItems: "center",
     },
     header: {
         zIndex: 20,
