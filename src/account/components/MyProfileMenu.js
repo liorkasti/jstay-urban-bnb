@@ -30,8 +30,8 @@ const MyProfileMenu = (props) => {
 
                             <MaterialButtonWithVioletText21
                                 // onPress={() => props.onUserPress("myStaysList")}
-                                onPress={() => props.handleMenu("createStay")}
-                                caption="Create Stay"
+                                onPress={() => props.handleMenu(props.totalStays > 0 ? "myStaysList": "createStay")}
+                                caption={props.totalStays > 0 ? "My Stay/s": "Create Stay"}
                                 style={styles.materialButtonWithVioletText47}
                             ></MaterialButtonWithVioletText21>
                         </TouchableOpacity>

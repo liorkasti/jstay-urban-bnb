@@ -3,7 +3,10 @@ import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl } from "
 import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
+
 import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database";
+const currentUser = auth().currentUser;
 
 //import all builder x files related to this directory
 import HeaderBarLight from "./components/HeaderBarLight";
@@ -91,7 +94,8 @@ export default function Index(props) {
     const [currentPage, setCurrentPage] = useState("");
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
-
+    const [totalStays, setTotalStays] = useState(0);
+    
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -156,6 +160,15 @@ export default function Index(props) {
     }, [backHistory])
 
     useEffect(() => {
+        database()
+        .ref(`/users/generalInfo/${currentUser.uid}`)
+        .once('value')
+        .then(snapshot => {
+            const response = snapshot.val();
+            console.warn("total stays", response.totalStays)
+            setTotalStays(response.totalStays || 0);
+        })
+
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
 
             let newBackHistory = [...backHistory];
@@ -228,6 +241,8 @@ export default function Index(props) {
             style={styles.componentStyle}
             //if builder x component has next button
             //it's button should have onPress={()=>{props.onNext}}
+
+            totalStays={totalStays}
 
             handleMenu={(subroute) => {
                 handleCard(subroute);

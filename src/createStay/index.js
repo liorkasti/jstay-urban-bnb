@@ -66,13 +66,8 @@ export default function Index(props) {
             .then(snapshot => {
                 const response = snapshot.val();
                 console.warn("total stays", response.totalStays)
-                setCurrentStayIndex(snapshot.totalStays || 0);
+                setCurrentStayIndex(response.totalStays || 0);
             });
-        database()
-            .ref(`/users/generalInfo/${currentUser.uid}`)
-            .update({ totalStays: currentStayIndex + 1 })
-            .then((res) => { console.log("response from update", res) })
-
     }, [])
 
     const componentKeys = [
@@ -123,7 +118,10 @@ export default function Index(props) {
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
-
+            database()
+            .ref(`/users/generalInfo/${currentUser.uid}`)
+            .update({ totalStays: currentStayIndex + 1 })
+            .then((res) => { console.log("response from update", res) })
         }
 
         if (componentIndex < 0) {
@@ -134,7 +132,7 @@ export default function Index(props) {
 
     const updateUserInput = (value, key, route) => {
         database()
-            .ref("stays", currentUser.uid + currentStayIndex, route)
+            .ref("stays/" +currentUser.uid + currentStayIndex, route)
             .update({ [key]: value })
             .then((res) => {
                 console.warn("this is the response for update", res)
