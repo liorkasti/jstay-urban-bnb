@@ -51,6 +51,9 @@ function Amenities(props) {
       ></ShabbatHolidayEssentials>
 
       <ChildFriendlyAmenities
+        onUserInput={({ newValue, extention }) => {
+          props.onUserInput(newValue, "hostListing/childAmenities/" + extention)
+        }}
         style={styles.childFriendlyAmenities}
       ></ChildFriendlyAmenities>
     </View>

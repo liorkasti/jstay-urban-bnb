@@ -9,7 +9,7 @@ import MaterialCheckbox5 from "./MaterialCheckbox5";
 function KosherKitchenAmenities(props) {
   return (
     <View style={[styles.container, props.style]}>
-      <View style={styles.kosherKitchenRow}>
+      {/* <View style={styles.kosherKitchenRow}>
         <Text style={styles.kosherKitchen}>Kosher Kitchen</Text>
         <View style={styles.kosherKitchenFiller}></View>
         <MaterialSwitch1 style={styles.materialSwitch2}></MaterialSwitch1>
@@ -423,7 +423,7 @@ function KosherKitchenAmenities(props) {
       </View>
       <Text style={styles.loremIpsum46}>
         Please select in accordance to what you provide guests
-      </Text>
+      </Text> */}
     </View>
   );
 }
