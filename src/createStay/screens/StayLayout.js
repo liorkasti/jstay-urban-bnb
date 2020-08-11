@@ -9,11 +9,7 @@ function StayLayout(props) {
 const [answers, setAnswers] = useState({});
 
 const onChangeLayout = (number, path) => {
-<<<<<<< HEAD
-  props.onUserInput(number, path, "hostListing")
-=======
   props.onUserInput({ number, path: "hostListing" + path })
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   const newUserAnswer = answers;
   newUserAnswer[path] = number || 0;
   setAnswers({ ...newUserAnswer });
@@ -236,17 +232,6 @@ const onChangeLayout = (number, path) => {
           style={styles.cupertinoStepper30}
         ></CupertinoStepper1>
         <CupertinoStepper1
-<<<<<<< HEAD
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
-          text1="Crib"
-          currentValue={answers["beds/sofa"]}
-          style={styles.cupertinoStepper29}
-        ></CupertinoStepper1>
-        <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
-          text1="Sofa bed"
-          currentValue={answers["beds/crib"]}
-=======
           onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
           currentValue={answers["beds/crib"]}
           text1="Crib"
@@ -256,7 +241,6 @@ const onChangeLayout = (number, path) => {
           onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
           text1="Sofa bed"
           currentValue={answers["beds/sofa"]}
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
           style={styles.cupertinoStepper28}
         ></CupertinoStepper1>
       </View>
