@@ -54,6 +54,8 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
+
     backgroundColor: "rgba(2,172,235,1)",
     width: windowWidth,
     height: windowHeight
@@ -64,7 +66,7 @@ const styles = StyleSheet.create({
     width: '80%',
     fontFamily: "roboto-regular",
     marginTop: 35,
-    marginLeft: 33
+    // marginLeft: 33
   },
   loremIpsum6: {
     color: "rgba(0,88,155,1)",
@@ -76,51 +78,42 @@ const styles = StyleSheet.create({
     marginRight: 34
   },
   materialButtonViolet10: {
-    // position: "absolute",
-    // top: 150,
     width: '80%',
     height: 44,
     backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10,
     marginTop: 30,
+    marginBottom: 30,
     marginLeft: 33,
     marginRight: 34
   },
   listView: {
-    // position: "absolute",
     flex: 1,
     width: '80%',
-    // alignItems: 'center',
-    // alignContent: "center",
-    // marginTop: 30,
-    marginLeft: 33,
-    // marginRight: 34
-    // top: 95,
+    // marginLeft: 33,
   },
   materialButtonViolet10Stack: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     marginTop: windowWidth < 500 ? 30 : 10,
-    // width: '80%',
-        // position: "absolute",
-    // top: 50,
+    width: '80%',
+    // alignItems: 'center',
+    justifyContent: "center",
+    justifyContent: 'space-between',
   },
   image: {
-    // left: 0,
     height: 150,
+    marginTop: windowWidth < 500 ? -40 : 10,
+    width: (windowWidth / 2) - (windowWidth / 6),
+    marginLeft: 10,
+    marginRight: 10,
   },
   image2: {
-    // left: 0,
     marginTop: windowWidth < 500 ? -40 : 10,
     height: 150,
-    width: (windowWidth / 2) - (windowWidth / 7),
+    width: (windowWidth / 2) - (windowWidth / 6),
     marginLeft: 10,
-  },
-  image2222222222: {
-    top: 39,
-    left: 192,
-    width: 150,
-    height: 150,
+    marginRight: 10,
   },
   image3: {
     top: 174,
@@ -179,12 +172,12 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText1Row: {
     position: "absolute",
-    bottom: 60, 
+    bottom: 60,
     height: 45,
     flexDirection: "row",
     // marginTop: 9,
     // marginLeft: 162,
-    right: 30
+    right: "20%"
   },
   group1: {
     height: 91,

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import MaterialButtonWithVioletText10 from "./MaterialButtonWithVioletText10";
 
 function NextButton(props) {
   return (
-    <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
-      <View style={styles.materialButtonWithVioletText1Filler}></View>
+    <TouchableOpacity onPress={()=>props.onPress} style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText10
-      onPress={props.onPress}
+      onPress={()=>props.onPress()}
         style={styles.materialButtonWithVioletText1}
       ></MaterialButtonWithVioletText10>
     </TouchableOpacity>
@@ -15,16 +14,13 @@ function NextButton(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row"
-  },
-  materialButtonWithVioletText1Filler: {
-    flex: 1,
-    flexDirection: "row"
-  },
+  container: {},
   materialButtonWithVioletText1: {
+    top: "0%",
     width: 100,
-    height: 36
+    height: 36,
+    position: "absolute",
+    right: 0
   }
 });
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
+import DropDownPicker from 'react-native-dropdown-picker';
+
 import MaterialIconTextbox from "../components/MaterialIconTextbox";
 import EmailTextInput4 from "../components/EmailTextInput4";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
@@ -8,8 +10,13 @@ import { Center } from "@builderx/utils";
 import HeaderBarDark from "../components/HeaderBarDark";
 import NextButton from "../components/NextButton";
 
+const accountTitle = [
+  { label: 'title1', value: 'title1' },
+  { label: 'title2', value: 'title2' }
+];
 
 function MyDetails(props) {
+  const [title, setTitle] = useState(accountTitle[0]);
   const [userAnswers, setUserAnswers] = useState({});
 
   const updateUserInput = (value, extention) => {
@@ -18,6 +25,13 @@ function MyDetails(props) {
     setUserAnswers({ ...newUserAnswer });
     props.onUserInput({ newValue: value, extention: extention });
   };
+
+
+
+  useEffect(() => {
+    console.warn("title: ", title);
+
+  }, [title]);
 
   return (
     <View style={styles.container}>
@@ -64,15 +78,23 @@ function MyDetails(props) {
             name="people"
             style={styles.icon2}
           ></MaterialIconsIcon>
+
           <View style={styles.rect2Stack}>
             <View style={styles.rect2}>
-              <Text style={styles.title}>title</Text>
+              {/* <Text style={styles.title}>title</Text> */}
+              <DropDownPicker
+                items={accountTitle}
+                defaultValue={accountTitle[0].label}
+                style={styles.title}
+                onChangeItem={item => setTitle(item)} />
             </View>
-            <EntypoIcon
+            {/* <EntypoIcon
               name="chevron-small-down"
               style={styles.icon4}
-            ></EntypoIcon>
+            ></EntypoIcon> */}
           </View>
+
+
         </View>
 
         <View style={styles.textStack}>
@@ -153,8 +175,13 @@ const styles = StyleSheet.create({
   title: {
     color: "#121212",
     fontFamily: "roboto-regular",
-    marginTop: 13,
-    marginLeft: 7
+    top: 0,
+    left: 0,
+    width: 100,
+    height: 35,
+    backgroundColor: "rgba(230, 230, 230,1)",
+    position: "absolute",
+    borderRadius: 10
   },
   icon4: {
     top: 3,

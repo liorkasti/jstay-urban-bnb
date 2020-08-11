@@ -216,6 +216,6 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         zIndex: 1,
-        marginTop: 70
+        marginTop: 80
     },
 });
