@@ -92,11 +92,11 @@ function Address(props) {
         ></TextInput>
       </View>
 
-      <DropDown
+      {/* <DropDown
       hostListing={hostListing}
         textInput1="User's current country"
         style={styles.dropDown}
-      ></DropDown>
+      ></DropDown> */}
 
 
 

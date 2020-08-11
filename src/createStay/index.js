@@ -211,7 +211,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     header: {
-        zIndex: 20,
+        zIndex: 100000,
+        paddingBottom: 15
     },
     scrollView: {
         zIndex: 1,
