@@ -47,6 +47,7 @@ const components = {
     StayRules,
 };
 const currentUser = auth().currentUser;
+const createdAt = new Date().getTime();
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -132,7 +133,7 @@ export default function Index(props) {
 
     const updateUserInput = (value, key, route) => {
         database()
-            .ref("stays/" +currentUser.uid + currentStayIndex, route)
+            .ref("stays/" +currentUser.uid + createdAt, route)
             .update({ [key]: value })
             .then((res) => {
                 console.warn("this is the response for update", res)
