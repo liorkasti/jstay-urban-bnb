@@ -1,22 +1,26 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions, StatusBar } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Image, TouchableOpacity, Dimensions, StatusBar, CheckBox } from "react-native";
 import EmailInput from "../components/EmailInput";
 import Icon from "react-native-vector-icons/Feather";
 import MaterialRightIconTextbox1 from "../components/MaterialRightIconTextbox1";
 import ReEnterPassword from "../components/ReEnterPassword";
 import { Center } from "@builderx/utils";
-import HeaderBarDark from "../components/HeaderBarDark";
 
-import NextButton from "../components/NextButton";
-import BackButton from "../components/BackButton";
+import HeaderBarDark from "./components/HeaderBarDark";
+import NextButton from "./components/NextButton";
+import BackButton from "./components/BackButton";
 // import HomeButton from "../components/HomeButton";
 // import SkipButton from "../components/SkipButton";
 import UpdatesCheckBox from "../components/UpdatesCheckBox";
 
 function AccountDetails(props) {
+
+  const [isSelected, setSelection] = useState(false);
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(0,88,155,1)" />
+
       <View style={styles.emailInputColumn}>
         <EmailInput style={styles.emailInput}></EmailInput>
         <View style={styles.group}>
@@ -26,6 +30,7 @@ function AccountDetails(props) {
             style={styles.materialRightIconTextbox1}
           ></MaterialRightIconTextbox1>
         </View>
+
         <ReEnterPassword style={styles.reEnterPassword}></ReEnterPassword>
         <View style={styles.textStack}>
           <Center horizontal>
@@ -37,23 +42,27 @@ function AccountDetails(props) {
             ></Image>
           </Center>
         </View>
-        <View style={styles.group2}>
-          <View style={styles.headerBarDark1Stack}>
-            <HeaderBarDark
-              onBack={props.onBack}
-              text1=""
-              style={styles.headerBarDark1}
-            ></HeaderBarDark>
-          </View>
-        </View>
       </View>
+
+      <View style={styles.checkboxContainer}>
+        <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+          // onValueChange={(isSelected) => setSelection(!isSelected)}
+          style={styles.checkbox}
+          tintColors={{ true: "rgba(230,230,230,1)", false: "rgba(230,230,230,1)" }}
+
+        />
+        <Text style={styles.label}>I wish to receive updates and news via email</Text>
+      </View>
+
       <View style={styles.emailInputColumnFiller}></View>
-      <View>
-        {/* <NextButton style={styles.nextButton}></NextButton> */}
+
+      {/* <View>
         <TouchableOpacity style={styles.button2}>
           <UpdatesCheckBox style={styles.updatesCheckBox}></UpdatesCheckBox>
         </TouchableOpacity>
-      </View>
+      </View> */}
 
       <View style={styles.materialIconTextboxColumnFiller} />
       <NextButton onPress={props.onNext} style={styles.nextButton1} />
@@ -76,6 +85,37 @@ const styles = StyleSheet.create({
   scrollView: {
     zIndex: 1,
     marginTop: 70
+  },
+  checkboxContainer: {
+    flex: 1,
+    position: "absolute",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    bottom: 80,
+    width: 300,
+  },
+  checkbox: {
+    height: 43,
+    top: -10,
+    left: 40,
+    textAlign: "left",
+    color: "rgba(230,230,230,1)",
+    fontFamily: "Roboto",
+    fontSize: 28,
+    textAlign: "left",
+    // boxSize: 30
+    // fontSize: "normal"
+    // lineHeight: 28,
+  },
+  label: {
+    left: 50, 
+    // top: 650,
+    color: "rgba(230,230,230,1)",
+    fontFamily: "Roboto",
+    fontSize: 16,
+    textAlign: "left",
+    // lineHeight: 28,
   },
   emailInput: {
     height: 43,
@@ -138,7 +178,7 @@ const styles = StyleSheet.create({
   headerBarDark1Stack: {
     height: 90
   },
-  emailInputColumn: {},
+  // emailInputColumn: {},
   emailInputColumnFiller: {
     flex: 1
   },

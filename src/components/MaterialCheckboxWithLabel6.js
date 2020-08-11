@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, CheckBox } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 function MaterialCheckboxWithLabel6(props) {

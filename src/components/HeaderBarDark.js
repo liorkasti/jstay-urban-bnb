@@ -20,10 +20,13 @@ const styles = StyleSheet.create({
   rect1: {
     top: 0,
     left: 0,
-    height: 85,
+    height: 95,
     backgroundColor: "rgba(0,88,155,1)",
     position: "absolute",
-    right: 0
+    right: 0,
+    borderBottomWidth: 1,
+    borderColor: "rgba(2,172,235,1)",
+
   },
   createAccount: {
     top: 48,
