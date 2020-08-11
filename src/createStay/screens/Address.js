@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
+=======
+import React, { Component } from "react";
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
 import {
   StyleSheet,
   View,
@@ -12,6 +16,7 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import DropDown from "../components/DropDown";
 import Icon from "react-native-vector-icons/Entypo";
 
+<<<<<<< HEAD
 import hostListing from "../components/CountryList"
 
 function Address(props) {
@@ -19,6 +24,9 @@ function Address(props) {
     console.log(hostListing);
   },[]);
 
+=======
+function Address(props) {
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   return (
     <View style={styles.container}>
       <View style={styles.textStack}>
@@ -91,12 +99,19 @@ function Address(props) {
           style={styles.textInput13}
         ></TextInput>
       </View>
+<<<<<<< HEAD
 
       {/* <DropDown
       hostListing={hostListing}
         textInput1="User's current country"
         style={styles.dropDown}
       ></DropDown> */}
+=======
+      <DropDown
+        textInput1="User's current country"
+        style={styles.dropDown}
+      ></DropDown>
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
 
 
 

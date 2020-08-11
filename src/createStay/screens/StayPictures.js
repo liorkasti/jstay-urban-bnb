@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+=======
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
 import MaterialButtonViolet10 from "../components/MaterialButtonViolet10";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
+<<<<<<< HEAD
 import ImagePicker from 'react-native-image-picker';
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
@@ -65,6 +71,16 @@ function StayPictures(props) {
     setPictures(newPictures);
   }
   
+=======
+
+function StayPictures(props) {
+  const [pictures, setPictures] = useState([1,2,3,4,5]);
+
+  const openImageSelect = () => {
+    
+  }
+
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   return (
     <View style={styles.container}>
       <Text style={styles.loremIpsum4}>
@@ -75,6 +91,7 @@ function StayPictures(props) {
       </Text>
       <View style={styles.materialButtonViolet10Stack}>
         <MaterialButtonViolet10
+<<<<<<< HEAD
           onPress={() => { openImageSelect() }}
           style={styles.materialButtonViolet10}
         ></MaterialButtonViolet10>
@@ -96,6 +113,17 @@ function StayPictures(props) {
               </TouchableOpacity>
             </>
           )
+=======
+          onPress={()=>{openImageSelect()}}
+          style={styles.materialButtonViolet10}
+        ></MaterialButtonViolet10>
+        {pictures.map((picture, index)=>{
+          return(<Image
+          source={require("../assets/images/Cottage_21.jpg")}
+          resizeMode="contain"
+          style={index < 4 ? styles.image : styles.image2}
+        ></Image>)
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
         })
         }
       </View>
@@ -119,8 +147,11 @@ const windowHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     alignItems: 'center',
 
+=======
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
     backgroundColor: "rgba(2,172,235,1)",
     width: windowWidth,
     height: windowHeight
@@ -131,7 +162,11 @@ const styles = StyleSheet.create({
     width: '80%',
     fontFamily: "roboto-regular",
     marginTop: 35,
+<<<<<<< HEAD
     // marginLeft: 33
+=======
+    marginLeft: 33
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   },
   loremIpsum6: {
     color: "rgba(0,88,155,1)",
@@ -143,24 +178,45 @@ const styles = StyleSheet.create({
     marginRight: 34
   },
   materialButtonViolet10: {
+<<<<<<< HEAD
+=======
+    // position: "absolute",
+    // top: 150,
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
     width: '80%',
     height: 44,
     backgroundColor: "rgba(0,88,155,1)",
     borderRadius: 10,
     marginTop: 30,
+<<<<<<< HEAD
     marginBottom: 50,
+=======
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
     marginLeft: 33,
     marginRight: 34
   },
   listView: {
+<<<<<<< HEAD
     flex: 1,
     width: '80%',
     // marginLeft: 33,
+=======
+    // position: "absolute",
+    flex: 1,
+    width: '80%',
+    // alignItems: 'center',
+    // alignContent: "center",
+    // marginTop: 30,
+    marginLeft: 33,
+    // marginRight: 34
+    // top: 95,
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   },
   materialButtonViolet10Stack: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     marginTop: windowWidth < 500 ? 30 : 10,
+<<<<<<< HEAD
     width: '80%',
     // alignItems: 'center',
     justifyContent: "center",
@@ -179,6 +235,28 @@ const styles = StyleSheet.create({
     width: (windowWidth / 2) - (windowWidth / 6),
     marginLeft: 10,
     marginRight: 10,
+=======
+    // width: '80%',
+        // position: "absolute",
+    // top: 50,
+  },
+  image: {
+    // left: 0,
+    height: 150,
+  },
+  image2: {
+    // left: 0,
+    marginTop: windowWidth < 500 ? -40 : 10,
+    height: 150,
+    width: (windowWidth / 2) - (windowWidth / 7),
+    marginLeft: 10,
+  },
+  image2222222222: {
+    top: 39,
+    left: 192,
+    width: 150,
+    height: 150,
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   },
   image3: {
     top: 174,
@@ -237,12 +315,20 @@ const styles = StyleSheet.create({
   },
   materialButtonWithVioletText1Row: {
     position: "absolute",
+<<<<<<< HEAD
     bottom: 60,
+=======
+    bottom: 60, 
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
     height: 45,
     flexDirection: "row",
     // marginTop: 9,
     // marginLeft: 162,
+<<<<<<< HEAD
     right: "20%"
+=======
+    right: 30
+>>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
   },
   group1: {
     height: 91,

@@ -26,13 +26,6 @@ function MyDetails(props) {
     props.onUserInput({ newValue: value, extention: extention });
   };
 
-
-
-  useEffect(() => {
-    console.warn("title: ", title);
-
-  }, [title]);
-
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(0,88,155,1)" />

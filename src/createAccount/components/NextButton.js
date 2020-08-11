@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import MaterialButtonWithVioletText10 from "./MaterialButtonWithVioletText10";
 
 function NextButton(props) {
   return (
-    <TouchableOpacity onPress={()=>props.onPress} style={[styles.container, props.style]}>
+    <TouchableOpacity onPress={()=>props.onPress()} style={[styles.container, props.style]}>
       <MaterialButtonWithVioletText10
       onPress={()=>props.onPress()}
         style={styles.materialButtonWithVioletText1}
