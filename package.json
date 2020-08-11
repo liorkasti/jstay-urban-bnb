@@ -5,11 +5,11 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "link-ios": "npx pod-install && npx react-native run-ios",
+    "link-i": "npx pod-install && npx react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "link-android": "npx react-native run-android",
+    "link-a": "npx react-native run-android",
     "ios-device": "sudo npm install --unsafe-perm=true -g ios-deploy "
   },
   "dependencies": {
