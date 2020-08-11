@@ -232,15 +232,15 @@ const onChangeLayout = (number, path) => {
           style={styles.cupertinoStepper30}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
-          currentValue={answers["beds/crib"]}
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
           text1="Crib"
+          currentValue={answers["beds/sofa"]}
           style={styles.cupertinoStepper29}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
+          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
           text1="Sofa bed"
-          currentValue={answers["beds/sofa"]}
+          currentValue={answers["beds/crib"]}
           style={styles.cupertinoStepper28}
         ></CupertinoStepper1>
       </View>

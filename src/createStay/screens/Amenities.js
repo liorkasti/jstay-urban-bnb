@@ -14,34 +14,39 @@ function Amenities(props) {
     <View style={styles.container}>
       <GeneralAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput( newValue, "hostListing/generalAmenities/" +extention)
+          props.onUserInput(newValue, "hostListing/generalAmenities/" + extention)
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
       <SafetyAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue,  "hostListing/safetyAmenities/"+ extention)
+          props.onUserInput(newValue, "hostListing/safetyAmenities/" + extention)
         }}
         style={styles.safetyAmenities}>
       </SafetyAmenities>
 
       <JewishHomeAmenities
-         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/jewishAmenities/"+extention)
+        onUserInput={({ newValue, extention }) => {
+          props.onUserInput(newValue, "hostListing/jewishAmenities/" + extention)
         }}
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>
 
+      {/* todo: remove this for now */}
       <KosherKitchenAmenities
         style={styles.kosherKitchenAmenities}
       ></KosherKitchenAmenities>
 
+      {/* NextButton */}
       <MaterialButtonViolet6
         onPress={props.onNext}
         style={styles.materialButtonViolet1}
       ></MaterialButtonViolet6>
 
       <ShabbatHolidayEssentials
+        onUserInput={({ newValue, extention }) => {
+          props.onUserInput(newValue, "hostListing/holidayAmenities/" + extention)
+        }}
         style={styles.shabbatHolidayEssentials}
       ></ShabbatHolidayEssentials>
 

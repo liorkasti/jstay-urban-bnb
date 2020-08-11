@@ -131,9 +131,9 @@ export default function Index(props) {
 
     }, [componentIndex]);
 
-    const updateUserInput = (value, key, route) => {
+    const updateUserInput = (value, key) => {
         database()
-            .ref("stays/" +currentUser.uid + createdAt, route)
+            .ref(`stays/${currentUser.uid}+${createdAt}`)
             .update({ [key]: value })
             .then((res) => {
                 console.warn("this is the response for update", res)
@@ -165,8 +165,8 @@ export default function Index(props) {
                     setComponentIndex(componentIndex + 1)
                 }}
 
-                onUserInput={(value, key, route) => {
-                    updateUserInput(value, key, route);
+                onUserInput={(value, key) => {
+                    updateUserInput(value, key);
                 }}
 
                 currentAnswers={totalAnswers[componentIndex]}

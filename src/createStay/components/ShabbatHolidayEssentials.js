@@ -1,15 +1,29 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function ShabbatHolidayEssentials(props) {
+  const [userAnswers, setUserAnswers] = useState({});
+
+  const updateUserBool = (extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = !userAnswers[extention]
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+  };
+
   return (
     <View style={[styles.container, props.style]}>
       <Text style={styles.shabbatHolliday1}>Shabbat/Holiday Essentials</Text>
+      {/* Shabbat Lamp */}
       <View style={styles.button990Stack}>
-        <TouchableOpacity style={styles.button990}>
+        <TouchableOpacity
+          onPress={() => updateUserBool("shabbatLamps")}
+          style={styles.button990}>
           <View style={styles.materialCheckbox351Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("shabbatLamps")}
+              checked={userAnswers["shabbatLamps"]}
               style={styles.materialCheckbox351}
             ></MaterialCheckbox1>
             <Text style={styles.shabbatLampS}>Shabbat Lamp(s)</Text>
@@ -19,65 +33,93 @@ function ShabbatHolidayEssentials(props) {
           Please select what extras you provide to guests for Shabbat/holidays
         </Text>
       </View>
-      <TouchableOpacity style={styles.button991}>
+      {/* Candlesticks And Candles */}
+      <TouchableOpacity style={styles.button991}
+        onPress={() => updateUserBool("candlesCandlesticks")}>
         <View style={styles.materialCheckbox352Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("candlesCandlesticks")}
+            checked={userAnswers["candlesCandlesticks"]}
             style={styles.materialCheckbox352}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum16}>Candlesticks And Candles</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button992}>
+      {/* Kiddush Cup */}
+      <TouchableOpacity style={styles.button992}
+        onPress={() => updateUserBool("kiddushCup")}>
         <View style={styles.materialCheckbox353Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("kiddushCup")}
+            checked={userAnswers["kiddushCup"]}
             style={styles.materialCheckbox353}
           ></MaterialCheckbox1>
           <Text style={styles.kiddushCup}>Kiddush Cup</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button993}>
+      {/* Challah Board/Knife/Cover */}
+      <TouchableOpacity style={styles.button993}
+        onPress={() => updateUserBool("challahBoardKnife")}>
         <View style={styles.materialCheckbox354Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("challahBoardKnife")}
+            checked={userAnswers["challahBoardKnife"]}
             style={styles.materialCheckbox354}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum17}>Challah Board/Knife/Cover</Text>
         </View>
       </TouchableOpacity>
+      {/* Havdala Set */}
       <View style={styles.button994Stack}>
-        <TouchableOpacity style={styles.button994}>
+        <TouchableOpacity style={styles.button994}
+          onPress={() => updateUserBool("havdala")}>
           <View style={styles.havdalaSetStack}>
             <Text style={styles.havdalaSet}>Havdala Set</Text>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("havdala")}
+              checked={userAnswers["havdala"]}
               style={styles.materialCheckbox356}
             ></MaterialCheckbox1>
           </View>
         </TouchableOpacity>
+        {/* Shabbat Friendly Fridge */}
         <Text style={styles.candleSpices1}>Candle &amp; spices</Text>
-        <TouchableOpacity style={styles.button995}>
+        <TouchableOpacity style={styles.button995}
+          onPress={() => updateUserBool("shabbatFridge")}>
           <View style={styles.materialCheckbox355Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("shabbatFridge")}
+              checked={userAnswers["shabbatFridge"]}
               style={styles.materialCheckbox355}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum18}>Shabbat Friendly Fridge</Text>
           </View>
         </TouchableOpacity>
+        {/* Time Switch */}
         <Text style={styles.loremIpsum50}>
           Alarm and lights may be disabled
         </Text>
-        <TouchableOpacity style={styles.button996}>
+        <TouchableOpacity style={styles.button996}
+          onPress={() => updateUserBool("timeswitch")}>
           <View style={styles.materialCheckbox357Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("timeswitch")}
+              checked={userAnswers["timeswitch"]}
               style={styles.materialCheckbox357}
             ></MaterialCheckbox1>
             <Text style={styles.timeSwitch}>Time Switch</Text>
           </View>
         </TouchableOpacity>
       </View>
+      {/* Shabbat Elevator */}
       <View style={styles.button997StackStack}>
         <View style={styles.button997Stack}>
-          <TouchableOpacity style={styles.button997}>
+          <TouchableOpacity style={styles.button997}
+            onPress={() => updateUserBool("shabbatElevator")}>
             <View style={styles.materialCheckbox360Row}>
               <MaterialCheckbox1
+                onPress={() => updateUserBool("shabbatElevator")}
+                checked={userAnswers["shabbatElevator"]}
                 style={styles.materialCheckbox360}
               ></MaterialCheckbox1>
               <Text style={styles.shabbatElevator}>Shabbat Elevator</Text>
@@ -87,19 +129,27 @@ function ShabbatHolidayEssentials(props) {
             Non-electric entrance key/code
           </Text>
         </View>
-        <TouchableOpacity style={styles.button999}>
+        {/* Shabbat Friendly Entry */}
+        <TouchableOpacity style={styles.button999}
+          onPress={() => updateUserBool("shabbatEntry")}>
           <View style={styles.materialCheckbox3592Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("shabbatEntry")}
+              checked={userAnswers["shabbatEntry"]}
               style={styles.materialCheckbox3592}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum22}>Shabbat Friendly Entry</Text>
           </View>
         </TouchableOpacity>
       </View>
+      {/* Shabbat Friendly Parking */}
       <View style={styles.button998Stack}>
-        <TouchableOpacity style={styles.button998}>
+        <TouchableOpacity style={styles.button998}
+          onPress={() => updateUserBool("shabbatParking")}>
           <View style={styles.materialCheckbox3582Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("shabbatParking")}
+              checked={userAnswers["shabbatParking"]}
               style={styles.materialCheckbox3582}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum21}>Shabbat Friendly Parking</Text>
@@ -109,42 +159,62 @@ function ShabbatHolidayEssentials(props) {
           Guests can park nearby without having to move over{"\n"}the weekend
         </Text>
       </View>
-      <TouchableOpacity style={styles.button1000}>
+      {/* Ground Floor */}
+      <TouchableOpacity style={styles.button1000}
+        onPress={() => updateUserBool("groundFloor")}>
         <View style={styles.materialCheckbox361Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("groundFloor")}
+            checked={userAnswers["groundFloor"]}
             style={styles.materialCheckbox361}
           ></MaterialCheckbox1>
           <Text style={styles.groundFloor}>Ground Floor</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button1001}>
+      {/* Liquid Soap */}
+      <TouchableOpacity style={styles.button1001}
+        onPress={() => updateUserBool("liquidSoap")}>
         <View style={styles.materialCheckbox362Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("liquidSoap")}
+            checked={userAnswers["liquidSoap"]}
             style={styles.materialCheckbox362}
           ></MaterialCheckbox1>
           <Text style={styles.liquidSoap}>Liquid Soap</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button1002}>
+      {/* Shabbat Kettle */}
+      <TouchableOpacity style={styles.button1002}
+        onPress={() => updateUserBool("shabbatKettle")}>
         <View style={styles.materialCheckbox363Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("shabbatKettle")}
+            checked={userAnswers["shabbatKettle"]}
             style={styles.materialCheckbox363}
           ></MaterialCheckbox1>
           <Text style={styles.shabbatKettle}>Shabbat Kettle</Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button1003}>
+      {/* Hot Plate/Food Warmer */}
+      <TouchableOpacity style={styles.button1003}
+        onPress={() => updateUserBool("hotplate")}>
         <View style={styles.materialCheckbox364Row}>
           <MaterialCheckbox1
             style={styles.materialCheckbox364}
+            onPress={() => updateUserBool("hotplate")}
+            checked={userAnswers["hotplate"]}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum23}>Hot Plate/Food Warmer</Text>
         </View>
       </TouchableOpacity>
+      {/* Sukkah */}
       <View style={styles.button1004Stack}>
-        <TouchableOpacity style={styles.button1004}>
+        <TouchableOpacity style={styles.button1004}
+          onPress={() => updateUserBool("sukkah")}>
           <View style={styles.materialCheckbox365Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("sukkah")}
+              checked={userAnswers["sukkah"]}
               style={styles.materialCheckbox365}
             ></MaterialCheckbox1>
             <Text style={styles.sukkah}>Sukkah</Text>
@@ -154,10 +224,14 @@ function ShabbatHolidayEssentials(props) {
           My stay comes with a ready built Sukkah during Sukkot
         </Text>
       </View>
+      {/* Sukkah Balcony/Garden */}
       <View style={styles.button1005Stack}>
-        <TouchableOpacity style={styles.button1005}>
+        <TouchableOpacity style={styles.button1005}
+          onPress={() => updateUserBool("sukkahBalcony")}>
           <View style={styles.materialCheckbox366Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("sukkahBalcony")}
+              checked={userAnswers["sukkahBalcony"]}
               style={styles.materialCheckbox366}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum24}>Sukkah Balcony/Garden</Text>
@@ -167,18 +241,26 @@ function ShabbatHolidayEssentials(props) {
           My stay has space where guests can build a kosher {"\n"}sukkah
         </Text>
       </View>
-      <TouchableOpacity style={styles.button1006}>
+      {/* Menorah */}
+      <TouchableOpacity style={styles.button1006}
+        onPress={() => updateUserBool("menorah")}>
         <View style={styles.materialCheckbox367Row}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("menorah")}
+            checked={userAnswers["menorah"]}
             style={styles.materialCheckbox367}
           ></MaterialCheckbox1>
           <Text style={styles.menorah}>Menorah</Text>
         </View>
       </TouchableOpacity>
+      {/* Kosher For Passover */}
       <View style={styles.button1007Stack}>
-        <TouchableOpacity style={styles.button1007}>
+        <TouchableOpacity style={styles.button1007}
+          onPress={() => updateUserBool("kosherPassover")}>
           <View style={styles.materialCheckbox368Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("kosherPassover")}
+              checked={userAnswers["kosherPassover"]}
               style={styles.materialCheckbox368}
             ></MaterialCheckbox1>
             <Text style={styles.kosherForPassover}>Kosher For Passover</Text>
@@ -188,10 +270,14 @@ function ShabbatHolidayEssentials(props) {
           My stay is Kashered and cleaned for Passover
         </Text>
       </View>
+      {/* Passover Kitchen */}
       <View style={styles.button1008Stack}>
-        <TouchableOpacity style={styles.button1008}>
+        <TouchableOpacity style={styles.button1008}
+          onPress={() => updateUserBool("passoverKitchen")}>
           <View style={styles.materialCheckbox369Row}>
             <MaterialCheckbox1
+              onPress={() => updateUserBool("passoverKitchen")}
+              checked={userAnswers["passoverKitchen"]}
               style={styles.materialCheckbox369}
             ></MaterialCheckbox1>
             <Text style={styles.passoverKitchen}>Passover Kitchen</Text>
@@ -201,13 +287,17 @@ function ShabbatHolidayEssentials(props) {
           My stay has a separated kitchen with Passover-only {"\n"}equipment
         </Text>
       </View>
+      {/* Seder Plate */}
       <View style={styles.group12}>
-        <View style={styles.materialCheckbox370Row}>
+        <TouchableOpacity style={styles.materialCheckbox370Row}
+          onPress={() => updateUserBool("sederPlate")}>
           <MaterialCheckbox1
+            onPress={() => updateUserBool("sederPlate")}
+            checked={userAnswers["sederPlate"]}
             style={styles.materialCheckbox370}
           ></MaterialCheckbox1>
           <Text style={styles.sederPlate}>Seder Plate</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
