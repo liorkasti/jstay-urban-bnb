@@ -831,7 +831,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = native.live.Jstay;
+				PRODUCT_BUNDLE_IDENTIFIER = native.live.JSTAY;
 				PRODUCT_NAME = Jstay;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -860,7 +860,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = native.live.Jstay;
+				PRODUCT_BUNDLE_IDENTIFIER = native.live.JSTAY;
 				PRODUCT_NAME = Jstay;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -12,7 +12,13 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import DropDown from "../components/DropDown";
 import Icon from "react-native-vector-icons/Entypo";
 
+import hostListing from "../components/CountryList"
+
 function Address(props) {
+  useEffect(()=>{
+    console.log(hostListing);
+  },[]);
+
   return (
     <View style={styles.container}>
       <View style={styles.textStack}>
@@ -85,7 +91,9 @@ function Address(props) {
           style={styles.textInput13}
         ></TextInput>
       </View>
+
       <DropDown
+      hostListing={hostListing}
         textInput1="User's current country"
         style={styles.dropDown}
       ></DropDown>

@@ -5,29 +5,22 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 
 
-const hostListing = [
-  { label: 'House', value: 'House' },
-  { label: 'Appartment', value: 'Appartment' }
-];
-
 
 function DropDown(props) {
-
-  const [stayType, setStayType] = useState(hostListing[0]);
+  const [stayType, setStayType] = useState(props.hostListing[0]);
 
   useEffect(() => {
     console.warn("stayType: ", stayType);
-
   }, [stayType]);
 
-
+  if(!props.hostListing) return(<View/>)
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.textInput7Stack}>
 
         <DropDownPicker
-          items={hostListing}
-          defaultValue={hostListing[0].label}
+          items={props.hostListing}
+          defaultValue={props.hostListing[0].label}
           // placeholder={props.textInput1 || "United States of America"}
           style={styles.textInput7}
           onChangeItem={item => setStayType(item)} />

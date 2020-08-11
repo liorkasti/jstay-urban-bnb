@@ -29,6 +29,10 @@ function DescribeStay(props) {
   const [stayTypeSelection, setStayTypeSelection] = useState([]);
   const [selectedValue, setSelectedValue] = useState("house");
 
+const hostListing = [
+  { label: 'House', value: 'House' },
+  { label: 'Appartment', value: 'Appartment' }
+];
 
   useEffect(() => {
     // if (props.showDropDown.staten && props.showDropDown.state.backHistory) {
@@ -245,6 +249,7 @@ function DescribeStay(props) {
       <Text style={styles.stayType2}>Stay type</Text>
 
       <DropDown
+      hostListing={hostListing}
         onChange={
           ((newType) => {
             props.onUserInput({
