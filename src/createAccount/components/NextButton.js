@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity } from "react-native";
 import MaterialButtonWithVioletText10 from "./MaterialButtonWithVioletText10";
 
 function NextButton(props) {

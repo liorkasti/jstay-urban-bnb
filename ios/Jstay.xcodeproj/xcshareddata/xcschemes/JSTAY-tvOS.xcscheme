@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "JSTAY-tvOS.app"
-               BlueprintName = "JSTAY-tvOS"
-               ReferencedContainer = "container:JSTAY.xcodeproj">
+               BuildableName = "Jstay-tvOS.app"
+               BlueprintName = "Jstay-tvOS"
+               ReferencedContainer = "container:Jstay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "JSTAY-tvOSTests.xctest"
-               BlueprintName = "JSTAY-tvOSTests"
-               ReferencedContainer = "container:JSTAY.xcodeproj">
+               BuildableName = "Jstay-tvOSTests.xctest"
+               BlueprintName = "Jstay-tvOSTests"
+               ReferencedContainer = "container:Jstay.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "JSTAY-tvOS.app"
-            BlueprintName = "JSTAY-tvOS"
-            ReferencedContainer = "container:JSTAY.xcodeproj">
+            BuildableName = "Jstay-tvOS.app"
+            BlueprintName = "Jstay-tvOS"
+            ReferencedContainer = "container:Jstay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "JSTAY-tvOS.app"
-            BlueprintName = "JSTAY-tvOS"
-            ReferencedContainer = "container:JSTAY.xcodeproj">
+            BuildableName = "Jstay-tvOS.app"
+            BlueprintName = "Jstay-tvOS"
+            ReferencedContainer = "container:Jstay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

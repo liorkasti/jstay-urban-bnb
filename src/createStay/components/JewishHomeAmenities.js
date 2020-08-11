@@ -63,7 +63,6 @@ function JewishHomeAmenities(props) {
           </View>
         </TouchableOpacity>
 
-<<<<<<< HEAD
         <TouchableOpacity
             onPress={() => updateUserBool("kosherBeds")}
             style={styles.kosherBedsStack}>
@@ -76,22 +75,10 @@ function JewishHomeAmenities(props) {
           <Text style={styles.loremIpsum48}></Text>
         </TouchableOpacity>
 
-=======
-        <View style={styles.kosherBedsStack}>
-          <Text style={styles.kosherBeds}>Kosher Beds</Text>
-          <MaterialCheckbox1
-          onPress={() => updateUserBool("kosherBeds")}
-          checked={userAnswers["kosherBeds"]}
-            style={styles.materialCheckbox402}
-          ></MaterialCheckbox1>
-          <Text style={styles.loremIpsum48}></Text>
-        </View>
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
       </View>
 
       <View style={styles.button36StackStack}>
         <View style={styles.button36Stack}>
-<<<<<<< HEAD
           <TouchableOpacity
                 onPress={() => updateUserBool("jewishReadingMaterial")}
             style={styles.button36}>
@@ -99,15 +86,6 @@ function JewishHomeAmenities(props) {
               <MaterialCheckbox1
                 onPress={() => updateUserBool("jewishReadingMaterial")}
                 checked={userAnswers["jewishReadingMaterial"]}
-=======
-          <TouchableOpacity 
-              checked={userAnswers["jewishReadingMaterial"]}
-          style={styles.button36}>
-            <View style={styles.materialCheckbox43Row}>
-              <MaterialCheckbox1
-              onPress={() => updateUserBool("jewishReadingMaterial")}
-              checked={userAnswers["jewishReadingMaterial"]}
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
                 style={styles.materialCheckbox43}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum10}>Jewish Reading Material</Text>
@@ -118,7 +96,6 @@ function JewishHomeAmenities(props) {
 
         <View style={styles.button37Stack}>
           <TouchableOpacity
-<<<<<<< HEAD
             onPress={() => updateUserBool("seforim")}
             style={styles.button37}>
             <View style={styles.seforimStack}>
@@ -126,16 +103,6 @@ function JewishHomeAmenities(props) {
               <MaterialCheckbox1
                 onPress={() => updateUserBool("seforim")}
                 checked={userAnswers["seforim"]}
-=======
-                    onPress={() => updateUserBool("seforim")}
-          
-          style={styles.button37}>
-            <View style={styles.seforimStack}>
-              <Text style={styles.seforim}>Seforim</Text>
-              <MaterialCheckbox1
-                    onPress={() => updateUserBool("seforim")}
-                    checked={userAnswers["seforim"]}
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
                 style={styles.materialCheckbox44}
               ></MaterialCheckbox1>
             </View>
@@ -148,7 +115,6 @@ function JewishHomeAmenities(props) {
       </View>
 
       <TouchableOpacity
-<<<<<<< HEAD
         onPress={() => updateUserBool("benchers")}
 
         style={styles.button38}>
@@ -156,15 +122,6 @@ function JewishHomeAmenities(props) {
           <MaterialCheckbox1
             onPress={() => updateUserBool("benchers")}
             checked={userAnswers["benchers"]}
-=======
-          onPress={() => updateUserBool("benchers")}
-      
-      style={styles.button38}>
-        <View style={styles.materialCheckbox45Row}>
-          <MaterialCheckbox1
-          onPress={() => updateUserBool("benchers")}
-          checked={userAnswers["benchers"]}
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
             style={styles.materialCheckbox45}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum11}>Benchers/Birkat Hamazon</Text>
@@ -172,15 +129,9 @@ function JewishHomeAmenities(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-<<<<<<< HEAD
         onPress={() => updateUserBool("siddur")}
 
         style={styles.button39}>
-=======
-            onPress={() => updateUserBool("siddur")}
-      
-      style={styles.button39}>
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
         <View style={styles.siddurStack}>
           <Text style={styles.siddur}>Siddur</Text>
           <MaterialCheckbox1
@@ -193,7 +144,6 @@ function JewishHomeAmenities(props) {
 
       <View style={styles.button40Stack}>
         <TouchableOpacity
-<<<<<<< HEAD
 
           onPress={() => updateUserBool("kosherMeals")}
           style={styles.button40}>
@@ -201,15 +151,6 @@ function JewishHomeAmenities(props) {
             <MaterialCheckbox1
               onPress={() => updateUserBool("kosherMeals")}
               checked={userAnswers["kosherMeals"]}
-=======
-        
-        onPress={() => updateUserBool("kosherMeals")}
-        style={styles.button40}>
-          <View style={styles.materialCheckbox48Row}>
-            <MaterialCheckbox1
-                  onPress={() => updateUserBool("kosherMeals")}
-                  checked={userAnswers["kosherMeals"]}
->>>>>>> 75b8edcd3af135f7c5c208c23653acb150d8ffcc
               style={styles.materialCheckbox48}
             ></MaterialCheckbox1>
             <Text style={styles.kosherMeals}>Kosher Meals</Text>

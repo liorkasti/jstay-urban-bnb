@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
                BuildableName = "Jstay.app"
-               BlueprintName = "JSTAY"
-               ReferencedContainer = "container:JSTAY.xcodeproj">
+               BlueprintName = "Jstay"
+               ReferencedContainer = "container:Jstay.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "JSTAYTests.xctest"
-               BlueprintName = "JSTAYTests"
-               ReferencedContainer = "container:JSTAY.xcodeproj">
+               BuildableName = "JstayTests.xctest"
+               BlueprintName = "JstayTests"
+               ReferencedContainer = "container:Jstay.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,8 +56,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "Jstay.app"
-            BlueprintName = "JSTAY"
-            ReferencedContainer = "container:JSTAY.xcodeproj">
+            BlueprintName = "Jstay"
+            ReferencedContainer = "container:Jstay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,8 +73,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
             BuildableName = "Jstay.app"
-            BlueprintName = "JSTAY"
-            ReferencedContainer = "container:JSTAY.xcodeproj">
+            BlueprintName = "Jstay"
+            ReferencedContainer = "container:Jstay.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

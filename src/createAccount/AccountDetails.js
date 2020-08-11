@@ -30,6 +30,7 @@ function AccountDetails(props) {
             style={styles.materialRightIconTextbox1}
           ></MaterialRightIconTextbox1>
         </View>
+
         <ReEnterPassword style={styles.reEnterPassword}></ReEnterPassword>
         <View style={styles.textStack}>
           <Center horizontal>

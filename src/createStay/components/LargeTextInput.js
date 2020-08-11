@@ -8,6 +8,8 @@ function LargeTextInput(props) {
         placeholder={
           props.textInput1 || "e.g. Difficult staircase, pets on property"
         }
+        value={props.value}
+        onChangeText={props.onChangeText}
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"
         autoCorrect={true}

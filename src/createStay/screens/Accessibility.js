@@ -22,7 +22,14 @@ function Accessibility(props) {
     setUserAnswers({ ...newUserAnswer });
     props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
   };
-  
+
+  const updateUserInput = (value, extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = value;
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput(newUserAnswer[extention], "hostListing/accessibility/" + extention);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.wheelchairAccesableStackStack}>
@@ -35,7 +42,10 @@ function Accessibility(props) {
           value={userAnswers["wheelchairAccessible"]}
           style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
+      {/* Tell us more */}
       <TextInput
+        onChangeText={(text) => updateUserInput(text, "wheelChairTellMore")}
+        value={userAnswers["wheelChairTellMore"] || ""}
         placeholder="e.g. There are ramps and elevators but no access to our loft"
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"
@@ -50,12 +60,17 @@ function Accessibility(props) {
         style={styles.textInput1}
       ></TextInput>
       <Text style={styles.tellUsMore}>Tell us more</Text>
-      <LargeTextInput style={styles.largeTextInput}></LargeTextInput>
+      <LargeTextInput 
+             onChangeText={(text) => updateUserInput(text, "generalInfo")}
+             value={userAnswers["generalInfo"] || ""}
+      style={styles.largeTextInput}></LargeTextInput>
       <Text style={styles.guestsMustKno1}>Guests must know before booking</Text>
       <Text style={styles.text3}>
         Please clearly explain anything that guests should know
       </Text>
       <TextInput
+              onChangeText={(text) => updateUserInput(text, "sharedSpacesTellMore")}
+              value={userAnswers["sharedSpacesTellMore"] || ""}
         placeholder="e.g. garden and driveway is shared with others"
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"
@@ -74,7 +89,7 @@ function Accessibility(props) {
         <View style={styles.guestsMustKno2Filler}></View>
         <MaterialSwitch1
           onPress={(newValue) => updateUserBool("sharedSpaces")}
-          value={userAnswers["sharedSpaces"]} 
+          value={userAnswers["sharedSpaces"]}
           style={styles.materialSwitch2}></MaterialSwitch1>
       </View>
       <Text style={styles.tellUsMore1}>Tell us more</Text>
