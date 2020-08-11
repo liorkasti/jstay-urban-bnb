@@ -15,7 +15,6 @@ function Amenities(props) {
       <GeneralAmenities
         onUserInput={({ newValue, extention }) => {
           props.onUserInput( newValue, "hostListing/generalAmenities/" +extention)
-
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 

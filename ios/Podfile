@@ -48,12 +48,12 @@ def flipper_post_install(installer)
   end
 end
 
-target 'JSTAY' do
+target 'Jstay' do
   #facebook
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-  # Pods for JSTAY
+  # Pods for Jstay
 
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
@@ -92,7 +92,7 @@ target 'JSTAY' do
 
   pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse.podspec"
   
-  target 'JSTAYTests' do
+  target 'JstayTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -110,10 +110,10 @@ target 'JSTAY' do
 end
 
 
-target 'JSTAY-tvOS' do
-  # Pods for JSTAY-tvOS
+target 'Jstay-tvOS' do
+  # Pods for Jstay-tvOS
 
-  target 'JSTAY-tvOSTests' do
+  target 'Jstay-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

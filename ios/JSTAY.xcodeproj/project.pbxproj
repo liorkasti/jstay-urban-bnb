@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* JSTAYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JSTAYTests.m */; };
+		00E356F31AD99517003FC87E /* JstayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JstayTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -15,14 +15,14 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* JSTAYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JSTAYTests.m */; };
-		66A153D1AF4F1EFC30120A9F /* libPods-JSTAY-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* JstayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* JstayTests.m */; };
+		66A153D1AF4F1EFC30120A9F /* libPods-Jstay-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7985E89D4A24FA4888A40E /* libPods-Jstay-tvOS.a */; };
 		6D598A342493BEF6004055F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D598A332493BEF6004055F6 /* GoogleService-Info.plist */; };
 		8672344B2457D66800938DF8 /* roboto-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 867234492457D66800938DF8 /* roboto-regular.ttf */; };
 		8672344C2457D66800938DF8 /* roboto-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8672344A2457D66800938DF8 /* roboto-700.ttf */; };
-		A981E07093741841AECB46D0 /* libPods-JSTAY-JSTAYTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */; };
-		E8E634FDDEA0889B12436E1D /* libPods-JSTAY.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9299DDDE249123A7BA3B98F1 /* libPods-JSTAY.a */; };
-		F282BCCF089B304ADC64589E /* libPods-JSTAY-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839A1872D1A229B34B1B2FA /* libPods-JSTAY-tvOSTests.a */; };
+		A981E07093741841AECB46D0 /* libPods-Jstay-JstayTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2744209A9233A6973BCD60F8 /* libPods-Jstay-JstayTests.a */; };
+		E8E634FDDEA0889B12436E1D /* libPods-Jstay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9299DDDE249123A7BA3B98F1 /* libPods-Jstay.a */; };
+		F282BCCF089B304ADC64589E /* libPods-Jstay-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8839A1872D1A229B34B1B2FA /* libPods-Jstay-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,64 +31,64 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = JSTAY;
+			remoteInfo = Jstay;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "JSTAY-tvOS";
+			remoteInfo = "Jstay-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00357241233C773F7937C52E /* Pods-JSTAY-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-JSTAY-tvOSTests/Pods-JSTAY-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		00357241233C773F7937C52E /* Pods-Jstay-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Jstay-tvOSTests/Pods-Jstay-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* JSTAYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSTAYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* JstayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JstayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* JSTAYTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSTAYTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* JstayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JstayTests.m; sourceTree = "<group>"; };
 		0BD3ABCD602847B88D19A4B7 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		132333F3E0E54AE6820FFF08 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Jstay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jstay.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = JSTAY/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = JSTAY/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Jstay/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Jstay/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = JSTAY/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = JSTAY/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = JSTAY/main.m; sourceTree = "<group>"; };
-		1569567B7C66656F7F082D60 /* Pods-JSTAY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY.release.xcconfig"; path = "Target Support Files/Pods-JSTAY/Pods-JSTAY.release.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Jstay/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Jstay/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Jstay/main.m; sourceTree = "<group>"; };
+		1569567B7C66656F7F082D60 /* Pods-Jstay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay.release.xcconfig"; path = "Target Support Files/Pods-Jstay/Pods-Jstay.release.xcconfig"; sourceTree = "<group>"; };
 		175690EDA27347258CF07D5F /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		1EB40AFE261E416C85BFFC69 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-JSTAYTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2943F63C8F6B6161A89BC171 /* Pods-JSTAY-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-JSTAY-tvOS/Pods-JSTAY-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		2744209A9233A6973BCD60F8 /* libPods-Jstay-JstayTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jstay-JstayTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2943F63C8F6B6161A89BC171 /* Pods-Jstay-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Jstay-tvOS/Pods-Jstay-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2CBC06D603684A3FAAE52C9C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* JSTAY-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSTAY-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* JSTAY-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JSTAY-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FA09FBFFC27AF1797F57CF9 /* Pods-JSTAY-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-JSTAY-tvOSTests/Pods-JSTAY-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* Jstay-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jstay-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* Jstay-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jstay-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FA09FBFFC27AF1797F57CF9 /* Pods-Jstay-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Jstay-tvOSTests/Pods-Jstay-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		36B232F52C414B369D7B1E96 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		38F8D86126544A239502B2E2 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		3C2CF6D4609D4C99AAD93B82 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		548DDA6175274D07A0C27B56 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
-		596FB2EF1A9E4225274E9906 /* Pods-JSTAY-JSTAYTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-JSTAYTests.release.xcconfig"; path = "Target Support Files/Pods-JSTAY-JSTAYTests/Pods-JSTAY-JSTAYTests.release.xcconfig"; sourceTree = "<group>"; };
+		596FB2EF1A9E4225274E9906 /* Pods-Jstay-JstayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-JstayTests.release.xcconfig"; path = "Target Support Files/Pods-Jstay-JstayTests/Pods-Jstay-JstayTests.release.xcconfig"; sourceTree = "<group>"; };
 		613CD87F8D2B44DFA9F3F47B /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B7985E89D4A24FA4888A40E /* libPods-Jstay-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jstay-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D598A332493BEF6004055F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6D6EB9D524E0CD9E009923D9 /* Jstay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Jstay.entitlements; path = JSTAY/Jstay.entitlements; sourceTree = "<group>"; };
+		6D6EB9D524E0CD9E009923D9 /* Jstay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Jstay.entitlements; path = Jstay/Jstay.entitlements; sourceTree = "<group>"; };
 		7865E189C000479EBCB750F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		867234492457D66800938DF8 /* roboto-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-regular.ttf"; path = "../../src/assets/fonts/roboto-regular.ttf"; sourceTree = "<group>"; };
 		8672344A2457D66800938DF8 /* roboto-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "roboto-700.ttf"; path = "../../src/assets/fonts/roboto-700.ttf"; sourceTree = "<group>"; };
 		86C21439244EA716001487B8 /* react-native-vector-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-vector-icons"; path = "../node_modules/react-native-vector-icons"; sourceTree = "<group>"; };
 		86C2143B244EA73B001487B8 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		8839A1872D1A229B34B1B2FA /* libPods-JSTAY-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9299DDDE249123A7BA3B98F1 /* libPods-JSTAY.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSTAY.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8839A1872D1A229B34B1B2FA /* libPods-Jstay-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jstay-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9299DDDE249123A7BA3B98F1 /* libPods-Jstay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Jstay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25AB7B4557744459D0322D0 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		A336737B63184E05A8BEB79F /* Pods-JSTAY-JSTAYTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-JSTAYTests.debug.xcconfig"; path = "Target Support Files/Pods-JSTAY-JSTAYTests/Pods-JSTAY-JSTAYTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A336737B63184E05A8BEB79F /* Pods-Jstay-JstayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-JstayTests.debug.xcconfig"; path = "Target Support Files/Pods-Jstay-JstayTests/Pods-Jstay-JstayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B711428470AC4D76A8E9556D /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		D92A8E7265C07D8C10588EE3 /* Pods-JSTAY-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY-tvOS.release.xcconfig"; path = "Target Support Files/Pods-JSTAY-tvOS/Pods-JSTAY-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D92A8E7265C07D8C10588EE3 /* Pods-Jstay-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Jstay-tvOS/Pods-Jstay-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		DBD191DE86E14EA382346892 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F030ABD616754C0B21E95AC3 /* Pods-JSTAY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSTAY.debug.xcconfig"; path = "Target Support Files/Pods-JSTAY/Pods-JSTAY.debug.xcconfig"; sourceTree = "<group>"; };
+		F030ABD616754C0B21E95AC3 /* Pods-Jstay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jstay.debug.xcconfig"; path = "Target Support Files/Pods-Jstay/Pods-Jstay.debug.xcconfig"; sourceTree = "<group>"; };
 		FBED9E4758E148FFA1D4C219 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A981E07093741841AECB46D0 /* libPods-JSTAY-JSTAYTests.a in Frameworks */,
+				A981E07093741841AECB46D0 /* libPods-Jstay-JstayTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8E634FDDEA0889B12436E1D /* libPods-JSTAY.a in Frameworks */,
+				E8E634FDDEA0889B12436E1D /* libPods-Jstay.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A153D1AF4F1EFC30120A9F /* libPods-JSTAY-tvOS.a in Frameworks */,
+				66A153D1AF4F1EFC30120A9F /* libPods-Jstay-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,20 +121,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F282BCCF089B304ADC64589E /* libPods-JSTAY-tvOSTests.a in Frameworks */,
+				F282BCCF089B304ADC64589E /* libPods-Jstay-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* JSTAYTests */ = {
+		00E356EF1AD99517003FC87E /* JstayTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* JSTAYTests.m */,
+				00E356F21AD99517003FC87E /* JstayTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = JSTAYTests;
+			path = JstayTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -145,7 +145,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* JSTAY */ = {
+		13B07FAE1A68108700A75B9A /* Jstay */ = {
 			isa = PBXGroup;
 			children = (
 				6D6EB9D524E0CD9E009923D9 /* Jstay.entitlements */,
@@ -158,17 +158,17 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = JSTAY;
+			name = Jstay;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				9299DDDE249123A7BA3B98F1 /* libPods-JSTAY.a */,
-				2744209A9233A6973BCD60F8 /* libPods-JSTAY-JSTAYTests.a */,
-				6B7985E89D4A24FA4888A40E /* libPods-JSTAY-tvOS.a */,
-				8839A1872D1A229B34B1B2FA /* libPods-JSTAY-tvOSTests.a */,
+				9299DDDE249123A7BA3B98F1 /* libPods-Jstay.a */,
+				2744209A9233A6973BCD60F8 /* libPods-Jstay-JstayTests.a */,
+				6B7985E89D4A24FA4888A40E /* libPods-Jstay-tvOS.a */,
+				8839A1872D1A229B34B1B2FA /* libPods-Jstay-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,14 +176,14 @@
 		61DF468882D9410D0C9F26D9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F030ABD616754C0B21E95AC3 /* Pods-JSTAY.debug.xcconfig */,
-				1569567B7C66656F7F082D60 /* Pods-JSTAY.release.xcconfig */,
-				A336737B63184E05A8BEB79F /* Pods-JSTAY-JSTAYTests.debug.xcconfig */,
-				596FB2EF1A9E4225274E9906 /* Pods-JSTAY-JSTAYTests.release.xcconfig */,
-				2943F63C8F6B6161A89BC171 /* Pods-JSTAY-tvOS.debug.xcconfig */,
-				D92A8E7265C07D8C10588EE3 /* Pods-JSTAY-tvOS.release.xcconfig */,
-				2FA09FBFFC27AF1797F57CF9 /* Pods-JSTAY-tvOSTests.debug.xcconfig */,
-				00357241233C773F7937C52E /* Pods-JSTAY-tvOSTests.release.xcconfig */,
+				F030ABD616754C0B21E95AC3 /* Pods-Jstay.debug.xcconfig */,
+				1569567B7C66656F7F082D60 /* Pods-Jstay.release.xcconfig */,
+				A336737B63184E05A8BEB79F /* Pods-Jstay-JstayTests.debug.xcconfig */,
+				596FB2EF1A9E4225274E9906 /* Pods-Jstay-JstayTests.release.xcconfig */,
+				2943F63C8F6B6161A89BC171 /* Pods-Jstay-tvOS.debug.xcconfig */,
+				D92A8E7265C07D8C10588EE3 /* Pods-Jstay-tvOS.release.xcconfig */,
+				2FA09FBFFC27AF1797F57CF9 /* Pods-Jstay-tvOSTests.debug.xcconfig */,
+				00357241233C773F7937C52E /* Pods-Jstay-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 				867234482457D5E100938DF8 /* Fonts */,
 				86C2143B244EA73B001487B8 /* FontAwesome.ttf */,
 				86C21439244EA716001487B8 /* react-native-vector-icons */,
-				13B07FAE1A68108700A75B9A /* JSTAY */,
+				13B07FAE1A68108700A75B9A /* Jstay */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* JSTAYTests */,
+				00E356EF1AD99517003FC87E /* JstayTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				F1EB0CFD857D4656A8155EE5 /* Resources */,
@@ -218,9 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* Jstay.app */,
-				00E356EE1AD99517003FC87E /* JSTAYTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* JSTAY-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* JSTAY-tvOSTests.xctest */,
+				00E356EE1AD99517003FC87E /* JstayTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* Jstay-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* Jstay-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -259,9 +259,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* JSTAYTests */ = {
+		00E356ED1AD99517003FC87E /* JstayTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JSTAYTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JstayTests" */;
 			buildPhases = (
 				DCF94EF9CA6B446E6E454F4D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -274,14 +274,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = JSTAYTests;
-			productName = JSTAYTests;
-			productReference = 00E356EE1AD99517003FC87E /* JSTAYTests.xctest */;
+			name = JstayTests;
+			productName = JstayTests;
+			productReference = 00E356EE1AD99517003FC87E /* JstayTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* JSTAY */ = {
+		13B07F861A680F5B00A75B9A /* Jstay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JSTAY" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Jstay" */;
 			buildPhases = (
 				D3FFD8B5371572A3E76F2923 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -296,14 +296,14 @@
 			);
 			dependencies = (
 			);
-			name = JSTAY;
-			productName = JSTAY;
+			name = Jstay;
+			productName = Jstay;
 			productReference = 13B07F961A680F5B00A75B9A /* Jstay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* JSTAY-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* Jstay-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "JSTAY-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Jstay-tvOS" */;
 			buildPhases = (
 				44491C4ECD9BF9B203FE969F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -316,14 +316,14 @@
 			);
 			dependencies = (
 			);
-			name = "JSTAY-tvOS";
-			productName = "JSTAY-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* JSTAY-tvOS.app */;
+			name = "Jstay-tvOS";
+			productName = "Jstay-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* Jstay-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* JSTAY-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* Jstay-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "JSTAY-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Jstay-tvOSTests" */;
 			buildPhases = (
 				646C4BB727946C01812C8B95 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -335,9 +335,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "JSTAY-tvOSTests";
-			productName = "JSTAY-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* JSTAY-tvOSTests.xctest */;
+			name = "Jstay-tvOSTests";
+			productName = "Jstay-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* Jstay-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -368,7 +368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JSTAY" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Jstay" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -381,10 +381,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* JSTAY */,
-				00E356ED1AD99517003FC87E /* JSTAYTests */,
-				2D02E47A1E0B4A5D006451C7 /* JSTAY-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* JSTAY-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* Jstay */,
+				00E356ED1AD99517003FC87E /* JstayTests */,
+				2D02E47A1E0B4A5D006451C7 /* Jstay-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* Jstay-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -461,7 +461,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JSTAY-JSTAYTests/Pods-JSTAY-JSTAYTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Jstay-JstayTests/Pods-Jstay-JstayTests-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInAppMessaging/InAppMessagingDisplayResources.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -506,7 +506,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSTAY-JSTAYTests/Pods-JSTAY-JSTAYTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jstay-JstayTests/Pods-Jstay-JstayTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		44491C4ECD9BF9B203FE969F /* [CP] Check Pods Manifest.lock */ = {
@@ -524,7 +524,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JSTAY-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Jstay-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -546,7 +546,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JSTAY-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Jstay-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -559,7 +559,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JSTAY/Pods-JSTAY-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Jstay/Pods-Jstay-resources.sh",
 				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInAppMessaging/InAppMessagingDisplayResources.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -604,7 +604,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSTAY/Pods-JSTAY-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jstay/Pods-Jstay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CF118B2A7641F7C2056DAAB0 /* [CP-User] [RNFB] Core Configuration */ = {
@@ -632,7 +632,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JSTAY-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Jstay-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -654,7 +654,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JSTAY-JSTAYTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Jstay-JstayTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -706,7 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* JSTAYTests.m in Sources */,
+				00E356F31AD99517003FC87E /* JstayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,7 +732,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* JSTAYTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* JstayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,12 +741,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* JSTAY */;
+			target = 13B07F861A680F5B00A75B9A /* Jstay */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* JSTAY-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* Jstay-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -758,7 +758,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = JSTAY;
+			path = Jstay;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -766,14 +766,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A336737B63184E05A8BEB79F /* Pods-JSTAY-JSTAYTests.debug.xcconfig */;
+			baseConfigurationReference = A336737B63184E05A8BEB79F /* Pods-Jstay-JstayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = JSTAYTests/Info.plist;
+				INFOPLIST_FILE = JstayTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -783,17 +783,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTAY.app/JSTAY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jstay.app/Jstay";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 596FB2EF1A9E4225274E9906 /* Pods-JSTAY-JSTAYTests.release.xcconfig */;
+			baseConfigurationReference = 596FB2EF1A9E4225274E9906 /* Pods-Jstay-JstayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = JSTAYTests/Info.plist;
+				INFOPLIST_FILE = JstayTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -803,17 +803,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTAY.app/JSTAY";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jstay.app/Jstay";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F030ABD616754C0B21E95AC3 /* Pods-JSTAY.debug.xcconfig */;
+			baseConfigurationReference = F030ABD616754C0B21E95AC3 /* Pods-Jstay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = JSTAY/Jstay.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Jstay/Jstay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
@@ -823,7 +823,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = JSTAY/Info.plist;
+				INFOPLIST_FILE = Jstay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -831,7 +831,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = native.live.JSTAY;
+				PRODUCT_BUNDLE_IDENTIFIER = native.live.Jstay;
 				PRODUCT_NAME = Jstay;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -843,16 +843,16 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1569567B7C66656F7F082D60 /* Pods-JSTAY.release.xcconfig */;
+			baseConfigurationReference = 1569567B7C66656F7F082D60 /* Pods-Jstay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = JSTAY/Jstay.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Jstay/Jstay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = YGUVU6Z66V;
-				INFOPLIST_FILE = JSTAY/Info.plist;
+				INFOPLIST_FILE = Jstay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
@@ -860,7 +860,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = native.live.JSTAY;
+				PRODUCT_BUNDLE_IDENTIFIER = native.live.Jstay;
 				PRODUCT_NAME = Jstay;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -871,7 +871,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2943F63C8F6B6161A89BC171 /* Pods-JSTAY-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 2943F63C8F6B6161A89BC171 /* Pods-Jstay-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -882,14 +882,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "JSTAY-tvOS/Info.plist";
+				INFOPLIST_FILE = "Jstay-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.JSTAY-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Jstay-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -899,7 +899,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D92A8E7265C07D8C10588EE3 /* Pods-JSTAY-tvOS.release.xcconfig */;
+			baseConfigurationReference = D92A8E7265C07D8C10588EE3 /* Pods-Jstay-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -910,14 +910,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "JSTAY-tvOS/Info.plist";
+				INFOPLIST_FILE = "Jstay-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.JSTAY-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Jstay-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -927,7 +927,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FA09FBFFC27AF1797F57CF9 /* Pods-JSTAY-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 2FA09FBFFC27AF1797F57CF9 /* Pods-Jstay-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -937,24 +937,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "JSTAY-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Jstay-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.JSTAY-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Jstay-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTAY-tvOS.app/JSTAY-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jstay-tvOS.app/Jstay-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00357241233C773F7937C52E /* Pods-JSTAY-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 00357241233C773F7937C52E /* Pods-Jstay-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -964,17 +964,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "JSTAY-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "Jstay-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.JSTAY-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.Jstay-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTAY-tvOS.app/JSTAY-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jstay-tvOS.app/Jstay-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1097,7 +1097,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JSTAYTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "JstayTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1106,7 +1106,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "JSTAY" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Jstay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1115,7 +1115,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "JSTAY-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Jstay-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1124,7 +1124,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "JSTAY-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Jstay-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1133,7 +1133,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JSTAY" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Jstay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
