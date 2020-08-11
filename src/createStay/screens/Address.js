@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -11,13 +11,22 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import DropDown from "../components/DropDown";
 import Icon from "react-native-vector-icons/Entypo";
-
-import hostListing from "../components/CountryList"
+import hostListing from "../components/CountryList";
 
 function Address(props) {
-  useEffect(()=>{
+  const [userAnswers, setUserAnswers] = useState({});
+
+
+  useEffect(() => {
     console.log(hostListing);
-  },[]);
+  }, []);
+
+  const updateUserInput = (value, extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = value;
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput(newUserAnswer[extention], "hostListing/address/" + extention);
+  };
 
   return (
     <View style={styles.container}>
@@ -30,47 +39,60 @@ function Address(props) {
         </Text>
       </View>
       <Text style={styles.country}>Country</Text>
+
+      {/* Street Address */}
       <View style={styles.streetAddressStack}>
         <Text style={styles.streetAddress}>Street Address</Text>
         <TextInput
+          onChangeText={(text) => updateUserInput(text, "streetName")}
+          value={userAnswers["streetName"] || ""}
           placeholder="e.g. 770 Eastern Parkway"
           placeholderTextColor="rgba(177,177,177,1)"
           style={styles.textInput8}
         ></TextInput>
       </View>
+      {/* Apartment No./Suite */}
       <View style={styles.apartmentNoSuiteStack}>
         <Text style={styles.apartmentNoSuite}>Apartment No./Suite</Text>
         <TextInput
+          onChangeText={(text) => updateUserInput(text, "apartmentNo")}
+          value={userAnswers["apartmentNo"] || ""}
           placeholder="e.g. Apartment 1"
           placeholderTextColor="rgba(177,177,177,1)"
-          
+
           style={styles.textInput9}
         ></TextInput>
       </View>
+      {/* City */}
       <View style={styles.cityStack}>
         <Text style={styles.city}>City</Text>
         <TextInput
+          onChangeText={(text) => updateUserInput(text, "city")}
+          value={userAnswers["city"] || ""}
           placeholder="e.g. Brookyn "
           placeholderTextColor="rgba(177,177,177,1)"
-          
           style={styles.textInput10}
         ></TextInput>
       </View>
+      {/* State (optional) */}
       <View style={styles.stateOptionalStack}>
         <Text style={styles.stateOptional}>State (optional)</Text>
         <TextInput
+          onChangeText={(text) => updateUserInput(text, "state")}
+          value={userAnswers["state"] || ""}
           placeholder="e.g. New York"
           placeholderTextColor="rgba(177,177,177,1)"
-          
           style={styles.textInput11}
         ></TextInput>
       </View>
+      {/* Postal Code */}
       <View style={styles.postalCodeStack}>
         <Text style={styles.postalCode}>Postal Code</Text>
         <TextInput
           placeholder="e.g. 11213"
           placeholderTextColor="rgba(177,177,177,1)"
-          
+          onChangeText={(text) => updateUserInput(text, "postalCode")}
+          value={userAnswers["postalCode"] || ""}
           style={styles.textInput12}
         ></TextInput>
       </View>
@@ -82,21 +104,24 @@ function Address(props) {
           style={styles.materialButtonViolet6}
         ></MaterialButtonViolet6>
       </View>
+      {/* Neighbourhood */}
       <View style={styles.neighbourhoodStack}>
         <Text style={styles.neighbourhood}>Neighbourhood</Text>
         <TextInput
           placeholder="e.g. Crown Heights"
           placeholderTextColor="rgba(177,177,177,1)"
-          
+          onChangeText={(text) => updateUserInput(text, "neighbourhood")}
+          value={userAnswers["neighbourhood"] || ""}
           style={styles.textInput13}
         ></TextInput>
       </View>
-
-      {/* <DropDown
-      hostListing={hostListing}
+      {/* country */}
+      <DropDown
+        onChange={(value) => updateUserInput(value, "country")}
+        hostListing={hostListing}
         textInput1="User's current country"
         style={styles.dropDown}
-      ></DropDown> */}
+      ></DropDown>
 
 
 

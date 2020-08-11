@@ -19,13 +19,23 @@ function StayRules(props) {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = !userAnswers[extention]
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput({ newValue: newUserAnswer[extention], extention: extention });
+    props.onUserInput(newUserAnswer[extention], "hostListing/stayRules/" + extention);
+  };
+
+  
+  const updateUserInput = (value, extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = value;
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput(newUserAnswer[extention], "hostListing/stayRules/" + extention);
   };
 
 
   return (
     <View style={styles.container}>
       <TextInput
+        onChangeText={(text) => updateUserInput(text, "additionalRules")}
+        value={userAnswers["additionalRules"] || ""}
         placeholder="e.g. Only Kosher food in the house.."
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"

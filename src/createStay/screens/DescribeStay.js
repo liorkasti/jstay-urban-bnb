@@ -24,15 +24,22 @@ import CupertinoStepper1 from "../components/CupertinoStepper1";
 
 
 function DescribeStay(props) {
-
+  const [userAnswers, setUserAnswers] = useState({});
   const [showDropDown, setShowDropDown] = useState(false);
   const [stayTypeSelection, setStayTypeSelection] = useState([]);
   const [selectedValue, setSelectedValue] = useState("house");
 
-const hostListing = [
-  { label: 'House', value: 'House' },
-  { label: 'Appartment', value: 'Appartment' }
-];
+  const updateUserInput = (value, extention) => {
+    const newUserAnswer = userAnswers;
+    newUserAnswer[extention] = value;
+    setUserAnswers({ ...newUserAnswer });
+    props.onUserInput(newUserAnswer[extention], "hostListing/" + extention);
+  };
+
+  const hostListing = [
+    { label: 'House', value: 'House' },
+    { label: 'Appartment', value: 'Appartment' }
+  ];
 
   useEffect(() => {
     // if (props.showDropDown.staten && props.showDropDown.state.backHistory) {
@@ -73,8 +80,8 @@ const hostListing = [
 
       <View style={styles.materialRadio11ColumnRow}>
         <View style={styles.materialRadio11Column}>
-          <MaterialRadio7 onPress={(() => { props.onUserInput({ kosherLevel: 1, path: "hostListing" }) })} style={styles.materialRadio11}></MaterialRadio7>
-          <MaterialRadio7 onPress={(() => { props.onUserInput({ kosherLevel: 2, path: "hostListing" }) })} style={styles.materialRadio7}></MaterialRadio7>
+          <MaterialRadio7 style={styles.materialRadio11}></MaterialRadio7>
+          <MaterialRadio7 style={styles.materialRadio7}></MaterialRadio7>
         </View>
         <View style={styles.standardKosherStackColumn}>
           <View style={styles.standardKosherStack}>
@@ -99,7 +106,6 @@ const hostListing = [
       <Text style={styles.stayType}>What will guests be booking?</Text>
       <View style={styles.materialRadioRow}>
         <MaterialRadio
-          onPress={(() => { props.onUserInput({ character: "Private Place", path: "hostListing/suitCharacter" }) })}
           style={styles.materialRadio}></MaterialRadio>
         <View style={styles.privatePlaceStack}>
           <Text style={styles.privatePlace}>Private Place</Text>
@@ -110,7 +116,8 @@ const hostListing = [
         </View>
       </View>
       <View style={styles.materialRadio1Row}>
-        <MaterialRadio1 onPress={(() => { props.onUserInput({ character: "Private Room", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio1}></MaterialRadio1>
+        <MaterialRadio1
+          style={styles.materialRadio1}></MaterialRadio1>
         <View style={styles.privateRoomColumn}>
           <Text style={styles.privateRoom}>Private Room</Text>
           <Text style={styles.loremIpsum2}>
@@ -121,8 +128,10 @@ const hostListing = [
       </View>
       <View style={styles.materialRadio2ColumnRow}>
         <View style={styles.materialRadio2Column}>
-          <MaterialRadio2 onPress={(() => { props.onUserInput({ character: "Shared Room", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio2}></MaterialRadio2>
-          <MaterialRadio2 onPress={(() => { props.onUserInput({ character: "Hotel suite", path: "hostListing/suitCharacter" }) })} style={styles.materialRadio13}></MaterialRadio2>
+          <MaterialRadio2
+            style={styles.materialRadio2}></MaterialRadio2>
+          <MaterialRadio2
+            style={styles.materialRadio13}></MaterialRadio2>
         </View>
         <View style={styles.sharedRoomStackColumn}>
           <View style={styles.sharedRoomStack}>
@@ -150,8 +159,6 @@ const hostListing = [
                 Is this set up as a dedicated guest stay?
               </Text>
               <MaterialRadio3
-                onPress={(() => { props.onUserInput({ dedicatedGuest: true, path: "hostListing" }) })}
-
                 style={styles.materialRadio3}></MaterialRadio3>
             </View>
             <View style={styles.yesStack}>
@@ -162,9 +169,6 @@ const hostListing = [
             </View>
           </View>
           <MaterialRadio4
-            onPress={(() => {
-              props.onUserInput({ dedicatedGuest: false, path: "hostListing" })
-            })}
             style={styles.materialRadio4}></MaterialRadio4>
         </View>
         <Text style={styles.no2}>No</Text>
@@ -177,7 +181,8 @@ const hostListing = [
       <View style={styles.nameYourStayStack}>
         <Text style={styles.nameYourStay}>Name your stay</Text>
         <TextInput
-          onChangeText={((newName) => { props.onUserInput({ stayName: newName, path: "hostListing" }) })}
+          onChangeText={(text) => updateUserInput(text, "stayName")}
+          value={userAnswers["stayName"] || ""}
           placeholder="e.g. David's Penthouse"
           placeholderTextColor="rgba(177,177,177,1)"
           style={styles.textInput}
@@ -186,7 +191,8 @@ const hostListing = [
 
       <Text style={styles.describeYourStay}>Describe your stay</Text>
       <TextInput
-        onChangeText={((newText) => { props.onUserInput({ stayDescription: newText, path: "hostListing" }) })}
+        onChangeText={(text) => updateUserInput(text, "stayDescription")}
+        value={userAnswers["stayDescription"] || ""}
         placeholder="e.g. Beautiful apartment with city views.."
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"
@@ -207,7 +213,8 @@ const hostListing = [
         </Text>
       <View style={styles.materialRadio8StackStack}>
         <View style={styles.materialRadio8Stack}>
-          <MaterialRadio5 onPress={(() => { props.onUserInput({ genderSpecfic: true, isMalesOnly: true, path: "hostListing" }) })} style={styles.materialRadio8}></MaterialRadio5>
+          <MaterialRadio5
+            style={styles.materialRadio8}></MaterialRadio5>
           <Text style={styles.s17}>Use this for shared dormitories, etc..</Text>
         </View>
 
@@ -224,7 +231,8 @@ const hostListing = [
       </View>
 
       <View style={styles.materialRadio12Row}>
-        <MaterialRadio7 onPress={(() => { props.onUserInput({ genderSpecfic: true, isMalesOnly: false, path: "hostListing" }) })} style={styles.materialRadio12}></MaterialRadio7>
+        <MaterialRadio7
+          style={styles.materialRadio12}></MaterialRadio7>
         <View style={styles.femaleOnlyStack}>
           <Text style={styles.femaleOnly}>Female Only</Text>
           <Text style={styles.loremIpsum11}>
@@ -235,7 +243,8 @@ const hostListing = [
       </View>
 
       <View style={styles.materialRadio10Row}>
-        <MaterialRadio5 onPress={(() => { props.onUserInput({ kosherLevel: 0, path: "hostListing" }) })} style={styles.materialRadio10}></MaterialRadio5>
+        <MaterialRadio5
+          style={styles.materialRadio10}></MaterialRadio5>
         <View style={styles.notKosher1Stack}>
           <Text style={styles.notKosher1}>Not Kosher</Text>
           <Text style={styles.loremIpsum13}>
@@ -249,13 +258,8 @@ const hostListing = [
       <Text style={styles.stayType2}>Stay type</Text>
 
       <DropDown
-      hostListing={hostListing}
-        onChange={
-          ((newType) => {
-            props.onUserInput({
-              stayType: newType, path: "hostListing"
-            })
-          })}
+        hostListing={hostListing}
+        onChange={(value) => updateUserInput(value, "stayType")}
         textInput1="House" style={styles.dropDown}>
       </DropDown>
 
@@ -273,8 +277,6 @@ const hostListing = [
 
 
       <CupertinoStepper1
-        onChange={((newAmount) => { props.onUserInput({ amount: newAmount, path: "hostListing/suitCharacter" }) })}
-
         text1=""
         style={styles.cupertinoStepper1}
       ></CupertinoStepper1>
