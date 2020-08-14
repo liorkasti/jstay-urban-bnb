@@ -48,7 +48,7 @@ const components = {
 };
 const currentUser = auth().currentUser;
 const createdAt = new Date().getTime();
-const stayUID = `stays/${currentUser.uid}+${createdAt}`;
+let stayUID = "";
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -57,19 +57,22 @@ export default function Index(props) {
 
     //this send user to route if they want to create a stay
     let history = useHistory();
+    stayUID = `stays/${currentUser.uid}+${createdAt}`;
 
     //add the import as a string to this array
     //the array should be in the order that the screens show up
 
     useEffect(() => {
-        database()
-            .ref(`/users/generalInfo/${currentUser.uid}`)
-            .once('value')
-            .then(snapshot => {
-                const response = snapshot.val();
-                console.warn("total stays", response.totalStays)
-                setCurrentStayIndex(response.totalStays || 0);
-            });
+        if (currentUser) {
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    const response = snapshot.val();
+                    console.warn("total stays", response.totalStays)
+                    setCurrentStayIndex(response.totalStays || 0);
+                });
+        }
     }, [])
 
     const componentKeys = [
@@ -121,9 +124,9 @@ export default function Index(props) {
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
             database()
-            .ref(`/users/generalInfo/${currentUser.uid}`)
-            .update({ totalStays: currentStayIndex + 1 })
-            .then((res) => { console.log("response from update", res) })
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .update({ totalStays: currentStayIndex + 1 })
+                .then((res) => { console.log("response from update", res) })
         }
 
         if (componentIndex < 0) {
@@ -148,7 +151,7 @@ export default function Index(props) {
         return (
             <CurrentComponent
                 stayUID={stayUID}
-                
+
                 style={styles.componentStyle}
                 //if builder x component has next button
                 //it's button should have onPress={()=>{props.onNext}}

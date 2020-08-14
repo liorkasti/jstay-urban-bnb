@@ -16,7 +16,7 @@ import Login from "./Login";
 export default function LoginIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [currentUser, setCurrentUser] = useState();
-    
+
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -29,33 +29,33 @@ export default function LoginIndex(props) {
         history.push("/home");
     };
 
-    useState(()=>{
+    useState(() => {
         const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-        
+
         return subscriber;
-    },[]);
+    }, []);
 
     useEffect(() => {
-        if(currentUser){
-        database()
-        .ref(`/users/generalInfo/${currentUser.uid}`)
-        .once('value')
-        .then(snapshot => {
-            snapshot.val();
-            if (snapshot.didFinishAccountSetup) {
-                history.push("/home");
-            }else{
-                history.push("/createAccount");
-            }
-        });
-    }
-    },[currentUser])
+        if (currentUser) {
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    snapshot.val();
+                    if (snapshot.didFinishAccountSetup) {
+                        history.push("/home");
+                    } else {
+                        history.push("/createAccount");
+                    }
+                });
+        }
+    }, [currentUser]);
 
     function onCreateAccount() {
         history.push("/createAccount");
     }
 
-   
+
 
     useEffect(() => {
         // console.warn(componentKeys[componentIndex])
@@ -67,11 +67,11 @@ export default function LoginIndex(props) {
 
 
     function onAuthStateChanged(user) {
-        if (user) { 
+        if (user) {
             setCurrentUser(user);
-         } 
+        }
         console.warn("auth state did change with:", user)
-      }
+    }
 
     async function signInWithGoogle() {
         // Get the users ID token

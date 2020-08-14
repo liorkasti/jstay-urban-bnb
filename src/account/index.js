@@ -95,7 +95,7 @@ export default function Index(props) {
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
     const [totalStays, setTotalStays] = useState(0);
-    
+
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -160,17 +160,18 @@ export default function Index(props) {
     }, [backHistory])
 
     useEffect(() => {
-        database()
-        .ref(`/users/generalInfo/${currentUser.uid}`)
-        .once('value')
-        .then(snapshot => {
-            const response = snapshot.val();
-            console.warn("total stays", response.totalStays)
-            setTotalStays(response.totalStays || 0);
-        })
+        if (currentUser) {
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    const response = snapshot.val();
+                    console.warn("total stays", response.totalStays)
+                    setTotalStays(response.totalStays || 0);
+                })
+        }
 
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
-
             let newBackHistory = [...backHistory];
             newBackHistory[historyIndex] = props.location.state.subroute;
             addBackHistory(newBackHistory);
