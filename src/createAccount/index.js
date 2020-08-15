@@ -40,6 +40,8 @@ export default function CreateAccountIndex(props) {
     const [currentLoginAccount, setCurrentLoginAccount] = useState({});
     const [didCreateAccount, setDidCreateAccount] = useState(true);
     const [showNothing, setShowNothing] = useState(true);
+    const [totalAnswers, setTotalAnswers] = useState([]);
+
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -235,6 +237,12 @@ export default function CreateAccountIndex(props) {
                     onSkip={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
+
+                    onUserInput={(value, key) => {
+                        updateUserInput(value, key);
+                    }}
+
+                    currentAnswers={totalAnswers[componentIndex]}
                 />
             }
             {

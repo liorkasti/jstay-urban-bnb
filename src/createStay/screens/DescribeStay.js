@@ -28,6 +28,14 @@ function DescribeStay(props) {
   const [showDropDown, setShowDropDown] = useState(false);
   const [stayTypeSelection, setStayTypeSelection] = useState([]);
   const [selectedValue, setSelectedValue] = useState("house");
+  const [answers, setAnswers] = useState({});
+
+  const onChangeLayout = (number, path) => {
+    props.onUserInput(number, path, "hostListing")
+    const newUserAnswer = answers;
+    newUserAnswer[path] = number || 0;
+    setAnswers({ ...newUserAnswer });
+  };
 
   const updateUserInput = (value, extention) => {
     const newUserAnswer = userAnswers;
@@ -53,13 +61,6 @@ function DescribeStay(props) {
 
     console.warn("show menu status: ", showDropDown)
   }, [])
-
-
-  // const doseShow = {
-  //   showSearchOptions: false,
-  //   showMediumMap: false,
-  // }
-
 
   return (
     <View style={styles.container}>
@@ -277,7 +278,9 @@ function DescribeStay(props) {
 
 
       <CupertinoStepper1
-        text1=""
+        onChange={(newNumber) => { onChangeLayout(newNumber, "suiteCharacter/amount") }}
+        text1="0"
+        currentValue={answers["suiteCharacter/amount"]}
         style={styles.cupertinoStepper1}
       ></CupertinoStepper1>
       {/* /ready for firebase/ */}

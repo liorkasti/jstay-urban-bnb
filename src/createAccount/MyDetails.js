@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, Image, StatusBar } from "react-native";
 import DropDownPicker from 'react-native-dropdown-picker';
+import DropDown from "./components/DropDown";
 
 import MaterialIconTextbox from "../components/MaterialIconTextbox";
 import EmailTextInput4 from "../components/EmailTextInput4";
@@ -12,12 +13,15 @@ import NextButton from "../components/NextButton";
 
 const accountTitle = [
   { label: 'title1', value: 'title1' },
-  { label: 'title2', value: 'title2' }
+  { label: 'title2', value: 'title2' },
+  { label: 'title3', value: 'title3' },
+  { label: 'title4', value: 'title4' }
 ];
 
 function MyDetails(props) {
   const [title, setTitle] = useState(accountTitle[0]);
   const [userAnswers, setUserAnswers] = useState({});
+  const [showDropDown, setShowDropDown] = useState(false);
 
   const updateUserInput = (value, extention) => {
     const newUserAnswer = userAnswers;
@@ -61,13 +65,13 @@ function MyDetails(props) {
         ></MaterialIconTextbox>
         <View style={styles.materialIconTextbox2Stack}>
           <MaterialIconTextbox
-          onChangeText={(value) => updateUserInput(value, "dob")}
+            onChangeText={(value) => updateUserInput(value, "dob")}
             textInput1="date of birth"
             icon1Name="calendar-search"
             style={styles.materialIconTextbox2}
           ></MaterialIconTextbox>
           <EmailTextInput4
-          onChangeText={(value) => updateUserInput(value, "email")}
+            onChangeText={(value) => updateUserInput(value, "email")}
             textInput1="email"
             style={styles.materialIconTextbox4}
           ></EmailTextInput4>
@@ -81,12 +85,21 @@ function MyDetails(props) {
 
           <View style={styles.rect2Stack}>
             <View style={styles.rect2}>
+              <DropDown
+                items={accountTitle}
+                defaultValue={accountTitle[0].label}
+                onChangeItem={item => setTitle(item)}
+                style={styles.dropDown}
+              // style={styles.title}
+              />
+
               {/* <Text style={styles.title}>title</Text> */}
               <DropDownPicker
                 items={accountTitle}
                 defaultValue={accountTitle[0].label}
                 style={styles.title}
                 onChangeItem={item => setTitle(item)} />
+
             </View>
             {/* <EntypoIcon
               name="chevron-small-down"
@@ -162,6 +175,12 @@ const styles = StyleSheet.create({
     color: "#b1b1b1",
     fontSize: 24,
     marginTop: 4
+  },
+  dropDown: {
+    width: 280,
+    height: 41,
+    marginTop: 9,
+    marginLeft: 23
   },
   rect2: {
     top: 0,
