@@ -43,7 +43,7 @@ export default function LoginIndex(props) {
                 .then(snapshot => {
                     snapshot.val();
                     if (snapshot.didFinishAccountSetup) {
-                        history.push("/home");
+                        history.push("/");
                     } else {
                         history.push("/createAccount");
                     }
