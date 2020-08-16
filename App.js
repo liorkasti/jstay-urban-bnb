@@ -29,6 +29,7 @@ export default function App() {
     setTimeout(() => {
       Orientation.lockToPortrait();
     });
+
     GoogleSignin.configure({
       iosClientId: "1052652425814-30q7q27a1hfljo1v8a8pvbgasho71ffl.apps.googleusercontent.com",
       webClientId: '1052652425814-4a76tojt3tc8a92hc245qr6c3jvgcr7j.apps.googleusercontent.com',
@@ -43,7 +44,7 @@ export default function App() {
 
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-    return subscriber; 
+    return subscriber;
   }, []);
 
   function onAuthStateChanged(user) {
@@ -57,10 +58,8 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route exact path="/">
-              {loggedIn ? <Redirect to="/home" /> : <Login />}
-            </Route>
-            <Route path="/chat" exact component={Chat} />
+            <Route exact path="/" component={Login} />
+            <Route path="/chat" component={Chat} />
             <Route path="/account" component={Account} />
             <Route path="/editStay" component={EditStay} />
             <Route path="/CreateAccount" component={CreateAccount} />

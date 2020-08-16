@@ -40,10 +40,11 @@ export default function LoginIndex(props) {
             database()
                 .ref(`/users/generalInfo/${currentUser.uid}`)
                 .once('value')
-                .then(snapshot => {
-                    snapshot.val();
-                    if (snapshot.didFinishAccountSetup) {
-                        history.push("/");
+                .then(res => {
+                    const snapshot = res.val();
+                    console.warn("snapshot", snapshot)
+                    if (snapshot && snapshot.didFinishAccountSetup) {
+                        history.push("/home");
                     } else {
                         history.push("/createAccount");
                     }
