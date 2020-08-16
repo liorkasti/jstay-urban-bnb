@@ -7,6 +7,11 @@ import Icon from "react-native-vector-icons/Entypo";
 import ImagePicker from 'react-native-image-picker';
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 
+import storage from "@react-native-firebase/storage";
+
+let uploadedFiles = 0;
+let picturesToUpload = [];
+
 const imagePickerOptions = {
   title: 'Select Stay pictures',
   mediaType: "photo",
@@ -26,45 +31,54 @@ function StayPictures(props) {
     ImagePicker.showImagePicker(imagePickerOptions, (response) => {
       console.log('Response = ', response);
       if (response.error) {
-        console.error('ImagePicker Error: ', response.error);
+        console.warn('ImagePicker Error: ', response.error);
       } else {
         const source = { uri: response.uri };
 
         // You can also display the image using data:
         // const source = { uri: 'data:image/jpeg;base64,' + response.data };
         const newPictures = pictures;
-        newPictures.push({ uri: response.uri })
+        newPictures[newPictures.length] = source;
+        console.warn(newPictures)
         setPictures([...newPictures]);
+        picturesToUpload.push(source);
       }
     })
   }
-  // useEffect(()=>{
-  //   return ()=>{
-  //     for(let i = 0; i < pictures.length; i++){
-  //       uploadToFireBase(pictures[i].uri,i)
-  //     }
-  //   }
-  // },[])
-  const uploadToFireBase = async (uri,index) => {
-    const imagePath = `stays/${props.stayUID}/${index}`;
+  useEffect(() => {
+    return () => {
+      uploadToFireBase();
+    }
+  }, [])
+
+  const uploadToFireBase = async () => {
+    if (!picturesToUpload[uploadedFiles]) {
+      return
+    }
+    const imagePath = `${props.stayUID}/${uploadedFiles}`;
     const reference = storage().ref(imagePath);
     // path to existing file on filesystem
-    const pathToFile = uri;
+    const pathToFile = picturesToUpload[uploadedFiles].uri;
     // uploads file
-    const response = await reference.putFile(pathToFile);
-    return response;
-}
+    reference.putFile(pathToFile)
+      .then((res) => {
+        uploadedFiles++;
+        uploadToFireBase();
+      })
+      .catch((err) => { console.warn("upload stay image failed ", err.val()) });
+
+  }
 
   const deletePicture = (index) => {
     let newPictures = [];
-    for(let i = 0; i < pictures.length; i++){
-      if(i !== index){
+    for (let i = 0; i < pictures.length; i++) {
+      if (i !== index) {
         newPictures.push(pictures[i]);
       }
     }
     setPictures(newPictures);
   }
-  
+
   return (
     <View style={styles.container}>
       <Text style={styles.loremIpsum4}>
@@ -87,12 +101,12 @@ function StayPictures(props) {
                 style={index < 4 ? styles.image : styles.image2}
               ></Image>
               <TouchableOpacity
-               onPress={()=>{
-                deletePicture(index);
-              }}>
-              <FontAwesomeIcon
-                name="close"
-              ></FontAwesomeIcon>
+                onPress={() => {
+                  deletePicture(index);
+                }}>
+                <FontAwesomeIcon
+                  name="close"
+                ></FontAwesomeIcon>
               </TouchableOpacity>
             </>
           )
