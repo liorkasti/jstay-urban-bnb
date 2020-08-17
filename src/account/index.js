@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl } from "react-native"
+import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl, Alert } from "react-native"
 import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
@@ -12,6 +12,7 @@ const currentUser = auth().currentUser;
 import HeaderBarLight from "./components/HeaderBarLight";
 import MyProfileHeader from "./components/MyProfileHeader";
 import MyProfileMenu from "./components/MyProfileMenu";
+import MaterialButtonShare2 from "./components/MaterialButtonShare2";
 
 import CancelationGuest from "./CancelationGuest";
 import CancelationHost from "./CancelationHost";
@@ -166,8 +167,8 @@ export default function Index(props) {
                 .once('value')
                 .then(snapshot => {
                     const response = snapshot.val();
-                    console.warn("total stays", response.totalStays)
-                    setTotalStays(response.totalStays || 0);
+                    console.warn("total stays", response.myStays)
+                    setTotalStays(response.myStays ? response.myStays.length - 1 : 0);
                 })
         }
 
@@ -179,7 +180,63 @@ export default function Index(props) {
         }
     }, []);
 
-    const onUserPress = (page) => {
+    const deleteStay = (stay) => {
+        const actualDelete = () => {
+            setRefreshing(true);
+            database()
+                .ref(`/stays/${stay}/`)
+                .set({
+                    [stay]: null
+                })
+                .then(() => {
+                    console.log("deleted stay from stays")
+                });
+
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    const response = snapshot.val();
+                    let newMyStays = [];
+                    for (let i = 0; i < response.myStays.length; i++) {
+                        if (i !== response.myStays.indexOf(stay)) {
+                            newMyStays.push(response.myStays[i])
+                        }
+                    }
+                    database()
+                        .ref(`/users/generalInfo/${currentUser.uid}/`)
+                        .set({
+                            myStays: newMyStays
+                        })
+                        .then(() => {
+                            console.log("deleted stay from account")
+                        });
+
+                    console.log(response.myStays.indexOf(stay))
+                    // setTotalStays(totalStays - 1);
+                })
+            setRefreshing(false);
+        };
+
+        Alert.alert(
+            "Are you sure",
+            "You cannot undo this action",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                },
+                { text: "Delete", onPress: () => { actualDelete(); } }
+            ],
+            { cancelable: false }
+        );
+
+    }
+
+    const onUserPress = (page, stay) => {
+        if (page === "deleteStay") return deleteStay(stay);
+
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -276,10 +333,6 @@ export default function Index(props) {
             goHome={() => {
                 onHome();
             }}
-            deleteStay={() => {
-                console.warn("create delete stay behavior");
-                onBack();
-            }}
 
             addToFavorites={() => {
                 addToFavorites();
@@ -292,7 +345,7 @@ export default function Index(props) {
             onLogout={() => {
                 onLogout();
             }}
-            onUserPress={(page) => onUserPress(page)}
+            onUserPress={(page, stay) => onUserPress(page, stay)}
         />)
     };
 
@@ -301,7 +354,6 @@ export default function Index(props) {
 
         wait(2000).then(() => setRefreshing(false));
     }, [refreshing]);
-
 
     return (
         <View style={styles.container}>
@@ -334,6 +386,12 @@ export default function Index(props) {
                 }>
                 <CurrentComponentRouter />
             </ScrollView>
+            {currentPage === "myStaysList" &&
+                <MaterialButtonShare2
+                    onPress={() => { onCreateStay("myStaysList") }}
+                    style={styles.materialButtonShare2}
+                />
+            }
         </View>
     );
 }
@@ -357,5 +415,13 @@ const styles = StyleSheet.create({
     header: {
         zIndex: 3000,
         // width: windowWidth
+    },
+    materialButtonShare2: {
+        position: "absolute",
+        bottom: 80,
+        zIndex: 300,
+        width: 56,
+        height: 56,
+        marginLeft: 326
     },
 });

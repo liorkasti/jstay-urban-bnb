@@ -47,7 +47,7 @@ const components = {
     StayRules,
 };
 const currentUser = auth().currentUser;
-const createdAt = new Date().getTime();
+let createdAt = "";
 let stayUID = "";
 
 export default function Index(props) {
@@ -57,13 +57,14 @@ export default function Index(props) {
 
     //this send user to route if they want to create a stay
     let history = useHistory();
-    stayUID = `stays/${currentUser.uid}+${createdAt}`;
+    stayUID = `${currentUser.uid}+${createdAt}`;
 
     //add the import as a string to this array
     //the array should be in the order that the screens show up
 
     useEffect(() => {
-        if (currentUser) {
+        createdAt = new Date().getTime();
+        setTimeout(() => {
             database()
                 .ref(`/users/generalInfo/${currentUser.uid}`)
                 .once('value')
@@ -71,9 +72,20 @@ export default function Index(props) {
                     const response = snapshot.val();
                     console.warn("total stays", response.totalStays)
                     setCurrentStayIndex(response.totalStays || 0);
+                    updateUserStayList(response);
                 });
-        }
+        }, 200)
     }, [])
+
+    const updateUserStayList = (userFireData) => {
+        const myStays = userFireData.myStays ? [...userFireData.myStays, stayUID] : [stayUID];
+        database()
+            .ref(`/users/generalInfo/${currentUser.uid}`)
+            .update({ myStays })
+            .then((res) => {
+                console.warn("this is the response for update", myStays)
+            })
+    };
 
     const componentKeys = [
         "DescribeStay",
@@ -137,7 +149,7 @@ export default function Index(props) {
 
     const updateUserInput = (value, key) => {
         database()
-            .ref(stayUID)
+            .ref(`stays/${stayUID}`)
             .update({ [key]: value })
             .then((res) => {
                 console.warn("this is the response for update", res)
@@ -196,7 +208,7 @@ export default function Index(props) {
                 onBack={() => setComponentIndex(componentIndex - 1)}
             />
 
-            <ScrollView style={styles.scrollView}>
+            <ScrollView contentOffset={{ x: 0 }} style={styles.scrollView}>
                 <CurrentComponentRouter />
             </ScrollView>
         </View>

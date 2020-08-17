@@ -44,16 +44,17 @@ function StayPictures(props) {
   }
   useEffect(() => {
     return () => {
-      props.onUserInput(pictures.length - 1, "hostListing/" + "totalStayImages")
+      props.onUserInput(picturesToUpload.length - 1, "hostListing/" + "totalStayImages")
       uploadToFireBase();
     }
   }, [])
 
   const uploadToFireBase = async () => {
     if (!picturesToUpload[uploadedFiles]) {
+      picturesToUpload = [];
       return
     }
-    const imagePath = `${props.stayUID}/${uploadedFiles}`;
+    const imagePath = `stays/${props.stayUID}/${uploadedFiles}`;
     const reference = storage().ref(imagePath);
     // path to existing file on filesystem
     const pathToFile = picturesToUpload[uploadedFiles].uri;

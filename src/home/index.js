@@ -3,11 +3,14 @@ import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
 import { useHistory } from "react-router-dom";
 
 import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database"
 
 //import all builder x files related to this directory
 import Home from "./Home";
 import Favorites from "../account/Favorites";
 import Trips from "../account/Trips";
+
+const currentUser = auth().currentUser;
 
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
@@ -17,17 +20,22 @@ export default function Index(props) {
     const history = useHistory();
 
     useEffect(() => {
-
         if (props.location.state && props.location.state.backHistory) {
             setCurrentComponent(props.location.state.backHistory)
-        }
+        };
         if (props.location.state && props.location.state.currentSearch) {
             setCurrentSearch(props.location.state.currentSearch);
-        }
+        };
         if (props.location.state && props.location.state.favorites) {
             setNewFavorites(props.location.state.favorites);
             setCurrentComponent("Favorites");
-        }
+        };
+        database()
+            .ref(`/stays/${currentUser.uid}`)
+            .once('value')
+            .then(snapshot => {
+                console.log('User data: ', snapshot.val());
+            });
     }, [])
 
 

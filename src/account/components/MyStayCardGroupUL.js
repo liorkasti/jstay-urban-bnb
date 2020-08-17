@@ -4,36 +4,24 @@ import MaterialButtonWithVioletText19 from "./MaterialButtonWithVioletText19";
 import MaterialButtonWithVioletText20 from "./MaterialButtonWithVioletText20";
 import Icon from "react-native-vector-icons/FontAwesome";
 
+import StayCard from "../components/StayCard";
+
 function MyStayCardGroupUL(props) {
   return (
-    <View  style={[styles.container, props.style]}>
+    <View style={[styles.container, props.style]}>
       <View style={styles.group8}>
-        <View style={styles.rect2}>
-          <TouchableOpacity onPress={()=>{props.onUserPress("stayProfile")}} style={styles.image2Row}>
-            <Image
-              source={require("../assets/images/Cottage1.jpg")}
-              resizeMode="stretch"
-              style={styles.image2}
-            ></Image>
-            <View style={styles.theCottageColumn}>
-              <Text style={styles.theCottage}>The Cottage</Text>
-              <View style={styles.materialButtonWithVioletText19Stack}>
-                <MaterialButtonWithVioletText19
-                onPress={()=>{props.onUserPress("editMyListings")}}
-                tag="Edit Stay"
-                  style={styles.materialButtonWithVioletText19}
-                ></MaterialButtonWithVioletText19>
-                <MaterialButtonWithVioletText20
-                tag="Calendar"
-                  style={styles.materialButtonWithVioletText20}
-                ></MaterialButtonWithVioletText20>
-              </View>
-            </View>
-            <Icon name="trash-o" style={styles.icon3}></Icon>
-    </TouchableOpacity>
-          </View>
-        </View>
+        {
+          props.myStays.map((stay, index) => {
+            return (
+              <StayCard
+                stayPicture={`/stays/${stay}/0`}
+                onUserPress={(action) => { props.onUserPress(action, stay) }}
+                stay={stay} />
+            )
+          })
+        }
       </View>
+    </View>
   );
 }
 
