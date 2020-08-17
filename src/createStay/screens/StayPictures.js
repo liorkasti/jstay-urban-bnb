@@ -37,11 +37,8 @@ function StayPictures(props) {
 
         // You can also display the image using data:
         // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-        const newPictures = pictures;
-        newPictures[newPictures.length] = source;
-        console.warn(newPictures)
-        setPictures([...newPictures]);
         picturesToUpload.push(source);
+        setPictures([...picturesToUpload]);
       }
     })
   }
@@ -63,6 +60,7 @@ function StayPictures(props) {
     // uploads file
     reference.putFile(pathToFile)
       .then((res) => {
+        console.log("uploaded a picture to firebase");
         uploadedFiles++;
         uploadToFireBase();
       })
