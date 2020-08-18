@@ -6,7 +6,7 @@ function ContinueFacebookButton(props) {
   return (
     <View style={[styles.container, props.style]}>
       <MaterialButtonViolet
-      onPress={props.onPress}
+        onPress={props.onPress}
         style={styles.materialButtonViolet}
       ></MaterialButtonViolet>
     </View>

@@ -218,9 +218,7 @@ export default function Index(props) {
                     console.log(response.myStays.indexOf(stay))
                     setTotalStays(totalStays - 1);
                 })
-            const reference = storage().ref(`/stays/${stay}`);
-            reference.delete()
-            setRefreshing(false);
+            console.error("implement delete images")
         };
 
         Alert.alert(

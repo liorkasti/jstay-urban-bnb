@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions } from "react-native"
+import { View, StyleSheet, Dimensions, Platform } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //login and firebase
@@ -7,6 +7,10 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import database from "@react-native-firebase/database";
+import appleAuth, {
+    AppleAuthRequestScope,
+    AppleAuthRequestOperation,
+} from '@invertase/react-native-apple-authentication';
 
 //import all builder x files related to this directory
 import Welcome from "./Welcome";
@@ -72,6 +76,26 @@ export default function LoginIndex(props) {
             setCurrentUser(user);
         }
         console.warn("auth state did change with:", user)
+    }
+
+    async function onAppleButtonPress() {
+        // Start the sign-in request
+        const appleAuthRequestResponse = await appleAuth.performRequest({
+            requestedOperation: AppleAuthRequestOperation.LOGIN,
+            requestedScopes: [AppleAuthRequestScope.EMAIL, AppleAuthRequestScope.FULL_NAME],
+        });
+
+        // Ensure Apple returned a user identityToken
+        if (!appleAuthRequestResponse.identityToken) {
+            throw 'Apple Sign-In failed - no identify token returned';
+        }
+
+        // Create a Firebase credential from the response
+        const { identityToken, nonce } = appleAuthRequestResponse;
+        const appleCredential = auth.AppleAuthProvider.credential(identityToken, nonce);
+
+        // Sign the user in with the credential
+        return auth().signInWithCredential(appleCredential);
     }
 
     async function signInWithGoogle() {
@@ -141,7 +165,13 @@ export default function LoginIndex(props) {
 
                     createAccount={() => onCreateAccount()}
 
-                    facebookSignin={() => { signInWithFacebookHandler() }}
+                    facebookSignin={() => {
+                        if (Platform.OS === "android") {
+                            signInWithFacebookHandler();
+                        } else {
+                            onAppleButtonPress();
+                        }
+                    }}
 
                     googleSignin={() => signInWithGoogleHandler()}
 
