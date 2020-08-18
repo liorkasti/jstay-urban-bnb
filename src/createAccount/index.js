@@ -220,7 +220,10 @@ export default function CreateAccountIndex(props) {
                     onNext={() => {
                         setComponentIndex(componentIndex + 1)
                     }}
-                    onUserInput={(value, key) => { updateUserInput(value, key) }}
+                    onUserInput={(value, key) => { 
+                        console.warn("onUserInput (value, key): ", value, key)
+                        // updateUserInput(value, key) 
+                    }}
 
                     onUserInput={() => { }}
 
