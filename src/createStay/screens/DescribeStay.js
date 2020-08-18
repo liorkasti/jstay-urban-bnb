@@ -31,7 +31,7 @@ function DescribeStay(props) {
   const [answers, setAnswers] = useState({});
 
   const onChangeLayout = (number, path) => {
-    props.onUserInput(number, path, "hostListing")
+    props.onUserInput(number, path)
     const newUserAnswer = answers;
     newUserAnswer[path] = number || 0;
     setAnswers({ ...newUserAnswer });
@@ -41,7 +41,7 @@ function DescribeStay(props) {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = value;
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput(newUserAnswer[extention], "hostListing/" + extention);
+    props.onUserInput(newUserAnswer[extention], extention);
   };
 
   const hostListing = [

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
+import { View, StyleSheet, Dimensions, ActivityIndicator } from "react-native"
 import { useHistory } from "react-router-dom";
 //import all builder x files related to this directory
 import HeaderBarDark from "../components/HeaderBarDark"
@@ -14,8 +14,11 @@ import Fire from "./Fire";
 
 export default function MessagesIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
-    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
-
+    const [currentUserState, setCurrentUserState] = useState({})
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
     // const denodefaultAppMessaging = firebase.messaging();
 
     //this send user to route if they want to create a stay

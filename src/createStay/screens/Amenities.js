@@ -14,20 +14,20 @@ function Amenities(props) {
     <View style={styles.container}>
       <GeneralAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/generalAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
       <SafetyAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/safetyAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.safetyAmenities}>
       </SafetyAmenities>
 
       <JewishHomeAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/jewishAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>
@@ -45,14 +45,14 @@ function Amenities(props) {
 
       <ShabbatHolidayEssentials
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/holidayAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.shabbatHolidayEssentials}
       ></ShabbatHolidayEssentials>
 
       <ChildFriendlyAmenities
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/childAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.childFriendlyAmenities}
       ></ChildFriendlyAmenities>

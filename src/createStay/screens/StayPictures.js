@@ -44,10 +44,10 @@ function StayPictures(props) {
   }
   useEffect(() => {
     return () => {
-      props.onUserInput(picturesToUpload.length - 1, "hostListing/" + "totalStayImages")
+      props.onUserInput(picturesToUpload.length - 1, "totalStayImages")
       uploadToFireBase();
     }
-  }, [])
+  }, []);
 
   const uploadToFireBase = async () => {
     if (!picturesToUpload[uploadedFiles]) {

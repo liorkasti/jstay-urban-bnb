@@ -19,21 +19,21 @@ function JewishHomeAmenities(props) {
         <Text style={styles.jewishHome}>Jewish Home</Text>
         <View style={styles.jewishHomeFiller}></View>
         <MaterialSwitch1
-          onPress={() => updateUserBool("jewishHome")}
-          value={userAnswers["jewishHome"]}
+          onPress={() => updateUserBool("jewishAmenities/jewishHome")}
+          value={userAnswers["jewishAmenities/jewishHome"]}
           style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
 
       <View style={styles.button34StackStack}>
         <View style={styles.button34Stack}>
           <TouchableOpacity
-            onPress={() => updateUserBool("mezuzot")}
+            onPress={() => updateUserBool("jewishAmenities/mezuzot")}
             style={styles.button34}>
             <View style={styles.mezuzotStack}>
               <Text style={styles.mezuzot}>Mezuzot</Text>
               <MaterialCheckbox1
-                onPress={() => updateUserBool("mezuzot")}
-                checked={userAnswers["mezuzot"]}
+                onPress={() => updateUserBool("jewishAmenities/mezuzot")}
+                checked={userAnswers["jewishAmenities/mezuzot"]}
                 style={styles.materialCheckbox40}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum13}></Text>
@@ -48,13 +48,13 @@ function JewishHomeAmenities(props) {
         </View>
 
         <TouchableOpacity
-          onPress={() => updateUserBool("charityBox")}
+          onPress={() => updateUserBool("jewishAmenities/charityBox")}
           style={styles.button35}>
           <View style={styles.materialCheckbox42StackRow}>
             <View style={styles.materialCheckbox42Stack}>
               <MaterialCheckbox1
-                onPress={() => updateUserBool("charityBox")}
-                checked={userAnswers["charityBox"]}
+                onPress={() => updateUserBool("jewishAmenities/charityBox")}
+                checked={userAnswers["jewishAmenities/charityBox"]}
                 style={styles.materialCheckbox42}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum47}></Text>
@@ -64,12 +64,12 @@ function JewishHomeAmenities(props) {
         </TouchableOpacity>
 
         <TouchableOpacity
-            onPress={() => updateUserBool("kosherBeds")}
-            style={styles.kosherBedsStack}>
+          onPress={() => updateUserBool("jewishAmenities/kosherBeds")}
+          style={styles.kosherBedsStack}>
           <Text style={styles.kosherBeds}>Kosher Beds</Text>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("kosherBeds")}
-            checked={userAnswers["kosherBeds"]}
+            onPress={() => updateUserBool("jewishAmenities/kosherBeds")}
+            checked={userAnswers["jewishAmenities/kosherBeds"]}
             style={styles.materialCheckbox402}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum48}></Text>
@@ -80,12 +80,12 @@ function JewishHomeAmenities(props) {
       <View style={styles.button36StackStack}>
         <View style={styles.button36Stack}>
           <TouchableOpacity
-                onPress={() => updateUserBool("jewishReadingMaterial")}
+            onPress={() => updateUserBool("jewishAmenities/jewishReadingMaterial")}
             style={styles.button36}>
             <View style={styles.materialCheckbox43Row}>
               <MaterialCheckbox1
-                onPress={() => updateUserBool("jewishReadingMaterial")}
-                checked={userAnswers["jewishReadingMaterial"]}
+                onPress={() => updateUserBool("jewishAmenities/jewishReadingMaterial")}
+                checked={userAnswers["jewishAmenities/jewishReadingMaterial"]}
                 style={styles.materialCheckbox43}
               ></MaterialCheckbox1>
               <Text style={styles.loremIpsum10}>Jewish Reading Material</Text>
@@ -96,13 +96,13 @@ function JewishHomeAmenities(props) {
 
         <View style={styles.button37Stack}>
           <TouchableOpacity
-            onPress={() => updateUserBool("seforim")}
+            onPress={() => updateUserBool("jewishAmenities/seforim")}
             style={styles.button37}>
             <View style={styles.seforimStack}>
               <Text style={styles.seforim}>Seforim</Text>
               <MaterialCheckbox1
-                onPress={() => updateUserBool("seforim")}
-                checked={userAnswers["seforim"]}
+                onPress={() => updateUserBool("jewishAmenities/seforim")}
+                checked={userAnswers["jewishAmenities/seforim"]}
                 style={styles.materialCheckbox44}
               ></MaterialCheckbox1>
             </View>
@@ -115,13 +115,13 @@ function JewishHomeAmenities(props) {
       </View>
 
       <TouchableOpacity
-        onPress={() => updateUserBool("benchers")}
+        onPress={() => updateUserBool("jewishAmenities/benchers")}
 
         style={styles.button38}>
         <View style={styles.materialCheckbox45Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("benchers")}
-            checked={userAnswers["benchers"]}
+            onPress={() => updateUserBool("jewishAmenities/benchers")}
+            checked={userAnswers["jewishAmenities/benchers"]}
             style={styles.materialCheckbox45}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum11}>Benchers/Birkat Hamazon</Text>
@@ -129,14 +129,14 @@ function JewishHomeAmenities(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => updateUserBool("siddur")}
+        onPress={() => updateUserBool("jewishAmenities/siddur")}
 
         style={styles.button39}>
         <View style={styles.siddurStack}>
           <Text style={styles.siddur}>Siddur</Text>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("siddur")}
-            checked={userAnswers["siddur"]}
+            onPress={() => updateUserBool("jewishAmenities/siddur")}
+            checked={userAnswers["jewishAmenities/siddur"]}
             style={styles.materialCheckbox46}
           ></MaterialCheckbox1>
         </View>
@@ -145,12 +145,12 @@ function JewishHomeAmenities(props) {
       <View style={styles.button40Stack}>
         <TouchableOpacity
 
-          onPress={() => updateUserBool("kosherMeals")}
+          onPress={() => updateUserBool("jewishAmenities/kosherMeals")}
           style={styles.button40}>
           <View style={styles.materialCheckbox48Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("kosherMeals")}
-              checked={userAnswers["kosherMeals"]}
+              onPress={() => updateUserBool("jewishAmenities/kosherMeals")}
+              checked={userAnswers["jewishAmenities/kosherMeals"]}
               style={styles.materialCheckbox48}
             ></MaterialCheckbox1>
             <Text style={styles.kosherMeals}>Kosher Meals</Text>

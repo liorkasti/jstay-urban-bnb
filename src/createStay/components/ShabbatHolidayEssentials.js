@@ -18,12 +18,12 @@ function ShabbatHolidayEssentials(props) {
       {/* Shabbat Lamp */}
       <View style={styles.button990Stack}>
         <TouchableOpacity
-          onPress={() => updateUserBool("shabbatLamps")}
+          onPress={() => updateUserBool("holidayAmenities/shabbatLamps")}
           style={styles.button990}>
           <View style={styles.materialCheckbox351Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("shabbatLamps")}
-              checked={userAnswers["shabbatLamps"]}
+              onPress={() => updateUserBool("holidayAmenities/shabbatLamps")}
+              checked={userAnswers["holidayAmenities/shabbatLamps"]}
               style={styles.materialCheckbox351}
             ></MaterialCheckbox1>
             <Text style={styles.shabbatLampS}>Shabbat Lamp(s)</Text>
@@ -35,11 +35,11 @@ function ShabbatHolidayEssentials(props) {
       </View>
       {/* Candlesticks And Candles */}
       <TouchableOpacity style={styles.button991}
-        onPress={() => updateUserBool("candlesCandlesticks")}>
+        onPress={() => updateUserBool("holidayAmenities/candlesCandlesticks")}>
         <View style={styles.materialCheckbox352Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("candlesCandlesticks")}
-            checked={userAnswers["candlesCandlesticks"]}
+            onPress={() => updateUserBool("holidayAmenities/candlesCandlesticks")}
+            checked={userAnswers["holidayAmenities/candlesCandlesticks"]}
             style={styles.materialCheckbox352}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum16}>Candlesticks And Candles</Text>
@@ -47,11 +47,11 @@ function ShabbatHolidayEssentials(props) {
       </TouchableOpacity>
       {/* Kiddush Cup */}
       <TouchableOpacity style={styles.button992}
-        onPress={() => updateUserBool("kiddushCup")}>
+        onPress={() => updateUserBool("holidayAmenities/kiddushCup")}>
         <View style={styles.materialCheckbox353Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("kiddushCup")}
-            checked={userAnswers["kiddushCup"]}
+            onPress={() => updateUserBool("holidayAmenities/kiddushCup")}
+            checked={userAnswers["holidayAmenities/kiddushCup"]}
             style={styles.materialCheckbox353}
           ></MaterialCheckbox1>
           <Text style={styles.kiddushCup}>Kiddush Cup</Text>
@@ -59,11 +59,11 @@ function ShabbatHolidayEssentials(props) {
       </TouchableOpacity>
       {/* Challah Board/Knife/Cover */}
       <TouchableOpacity style={styles.button993}
-        onPress={() => updateUserBool("challahBoardKnife")}>
+        onPress={() => updateUserBool("holidayAmenities/challahBoardKnife")}>
         <View style={styles.materialCheckbox354Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("challahBoardKnife")}
-            checked={userAnswers["challahBoardKnife"]}
+            onPress={() => updateUserBool("holidayAmenities/challahBoardKnife")}
+            checked={userAnswers["holidayAmenities/challahBoardKnife"]}
             style={styles.materialCheckbox354}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum17}>Challah Board/Knife/Cover</Text>
@@ -72,12 +72,12 @@ function ShabbatHolidayEssentials(props) {
       {/* Havdala Set */}
       <View style={styles.button994Stack}>
         <TouchableOpacity style={styles.button994}
-          onPress={() => updateUserBool("havdala")}>
+          onPress={() => updateUserBool("holidayAmenities/havdala")}>
           <View style={styles.havdalaSetStack}>
             <Text style={styles.havdalaSet}>Havdala Set</Text>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("havdala")}
-              checked={userAnswers["havdala"]}
+              onPress={() => updateUserBool("holidayAmenities/havdala")}
+              checked={userAnswers["holidayAmenities/havdala"]}
               style={styles.materialCheckbox356}
             ></MaterialCheckbox1>
           </View>
@@ -85,11 +85,11 @@ function ShabbatHolidayEssentials(props) {
         {/* Shabbat Friendly Fridge */}
         <Text style={styles.candleSpices1}>Candle &amp; spices</Text>
         <TouchableOpacity style={styles.button995}
-          onPress={() => updateUserBool("shabbatFridge")}>
+          onPress={() => updateUserBool("holidayAmenities/shabbatFridge")}>
           <View style={styles.materialCheckbox355Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("shabbatFridge")}
-              checked={userAnswers["shabbatFridge"]}
+              onPress={() => updateUserBool("holidayAmenities/shabbatFridge")}
+              checked={userAnswers["holidayAmenities/shabbatFridge"]}
               style={styles.materialCheckbox355}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum18}>Shabbat Friendly Fridge</Text>
@@ -100,11 +100,11 @@ function ShabbatHolidayEssentials(props) {
           Alarm and lights may be disabled
         </Text>
         <TouchableOpacity style={styles.button996}
-          onPress={() => updateUserBool("timeswitch")}>
+          onPress={() => updateUserBool("holidayAmenities/timeswitch")}>
           <View style={styles.materialCheckbox357Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("timeswitch")}
-              checked={userAnswers["timeswitch"]}
+              onPress={() => updateUserBool("holidayAmenities/timeswitch")}
+              checked={userAnswers["holidayAmenities/timeswitch"]}
               style={styles.materialCheckbox357}
             ></MaterialCheckbox1>
             <Text style={styles.timeSwitch}>Time Switch</Text>
@@ -115,11 +115,11 @@ function ShabbatHolidayEssentials(props) {
       <View style={styles.button997StackStack}>
         <View style={styles.button997Stack}>
           <TouchableOpacity style={styles.button997}
-            onPress={() => updateUserBool("shabbatElevator")}>
+            onPress={() => updateUserBool("holidayAmenities/shabbatElevator")}>
             <View style={styles.materialCheckbox360Row}>
               <MaterialCheckbox1
-                onPress={() => updateUserBool("shabbatElevator")}
-                checked={userAnswers["shabbatElevator"]}
+                onPress={() => updateUserBool("holidayAmenities/shabbatElevator")}
+                checked={userAnswers["holidayAmenities/shabbatElevator"]}
                 style={styles.materialCheckbox360}
               ></MaterialCheckbox1>
               <Text style={styles.shabbatElevator}>Shabbat Elevator</Text>
@@ -131,11 +131,11 @@ function ShabbatHolidayEssentials(props) {
         </View>
         {/* Shabbat Friendly Entry */}
         <TouchableOpacity style={styles.button999}
-          onPress={() => updateUserBool("shabbatEntry")}>
+          onPress={() => updateUserBool("holidayAmenities/shabbatEntry")}>
           <View style={styles.materialCheckbox3592Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("shabbatEntry")}
-              checked={userAnswers["shabbatEntry"]}
+              onPress={() => updateUserBool("holidayAmenities/shabbatEntry")}
+              checked={userAnswers["holidayAmenities/shabbatEntry"]}
               style={styles.materialCheckbox3592}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum22}>Shabbat Friendly Entry</Text>
@@ -145,11 +145,11 @@ function ShabbatHolidayEssentials(props) {
       {/* Shabbat Friendly Parking */}
       <View style={styles.button998Stack}>
         <TouchableOpacity style={styles.button998}
-          onPress={() => updateUserBool("shabbatParking")}>
+          onPress={() => updateUserBool("holidayAmenities/shabbatParking")}>
           <View style={styles.materialCheckbox3582Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("shabbatParking")}
-              checked={userAnswers["shabbatParking"]}
+              onPress={() => updateUserBool("holidayAmenities/shabbatParking")}
+              checked={userAnswers["holidayAmenities/shabbatParking"]}
               style={styles.materialCheckbox3582}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum21}>Shabbat Friendly Parking</Text>
@@ -161,11 +161,11 @@ function ShabbatHolidayEssentials(props) {
       </View>
       {/* Ground Floor */}
       <TouchableOpacity style={styles.button1000}
-        onPress={() => updateUserBool("groundFloor")}>
+        onPress={() => updateUserBool("holidayAmenities/groundFloor")}>
         <View style={styles.materialCheckbox361Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("groundFloor")}
-            checked={userAnswers["groundFloor"]}
+            onPress={() => updateUserBool("holidayAmenities/groundFloor")}
+            checked={userAnswers["holidayAmenities/groundFloor"]}
             style={styles.materialCheckbox361}
           ></MaterialCheckbox1>
           <Text style={styles.groundFloor}>Ground Floor</Text>
@@ -173,11 +173,11 @@ function ShabbatHolidayEssentials(props) {
       </TouchableOpacity>
       {/* Liquid Soap */}
       <TouchableOpacity style={styles.button1001}
-        onPress={() => updateUserBool("liquidSoap")}>
+        onPress={() => updateUserBool("holidayAmenities/liquidSoap")}>
         <View style={styles.materialCheckbox362Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("liquidSoap")}
-            checked={userAnswers["liquidSoap"]}
+            onPress={() => updateUserBool("holidayAmenities/liquidSoap")}
+            checked={userAnswers["holidayAmenities/liquidSoap"]}
             style={styles.materialCheckbox362}
           ></MaterialCheckbox1>
           <Text style={styles.liquidSoap}>Liquid Soap</Text>
@@ -185,11 +185,11 @@ function ShabbatHolidayEssentials(props) {
       </TouchableOpacity>
       {/* Shabbat Kettle */}
       <TouchableOpacity style={styles.button1002}
-        onPress={() => updateUserBool("shabbatKettle")}>
+        onPress={() => updateUserBool("holidayAmenities/shabbatKettle")}>
         <View style={styles.materialCheckbox363Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("shabbatKettle")}
-            checked={userAnswers["shabbatKettle"]}
+            onPress={() => updateUserBool("holidayAmenities/shabbatKettle")}
+            checked={userAnswers["holidayAmenities/shabbatKettle"]}
             style={styles.materialCheckbox363}
           ></MaterialCheckbox1>
           <Text style={styles.shabbatKettle}>Shabbat Kettle</Text>
@@ -197,12 +197,12 @@ function ShabbatHolidayEssentials(props) {
       </TouchableOpacity>
       {/* Hot Plate/Food Warmer */}
       <TouchableOpacity style={styles.button1003}
-        onPress={() => updateUserBool("hotplate")}>
+        onPress={() => updateUserBool("holidayAmenities/hotplate")}>
         <View style={styles.materialCheckbox364Row}>
           <MaterialCheckbox1
             style={styles.materialCheckbox364}
-            onPress={() => updateUserBool("hotplate")}
-            checked={userAnswers["hotplate"]}
+            onPress={() => updateUserBool("holidayAmenities/hotplate")}
+            checked={userAnswers["holidayAmenities/hotplate"]}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum23}>Hot Plate/Food Warmer</Text>
         </View>
@@ -210,11 +210,11 @@ function ShabbatHolidayEssentials(props) {
       {/* Sukkah */}
       <View style={styles.button1004Stack}>
         <TouchableOpacity style={styles.button1004}
-          onPress={() => updateUserBool("sukkah")}>
+          onPress={() => updateUserBool("holidayAmenities/sukkah")}>
           <View style={styles.materialCheckbox365Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("sukkah")}
-              checked={userAnswers["sukkah"]}
+              onPress={() => updateUserBool("holidayAmenities/sukkah")}
+              checked={userAnswers["holidayAmenities/sukkah"]}
               style={styles.materialCheckbox365}
             ></MaterialCheckbox1>
             <Text style={styles.sukkah}>Sukkah</Text>
@@ -227,11 +227,11 @@ function ShabbatHolidayEssentials(props) {
       {/* Sukkah Balcony/Garden */}
       <View style={styles.button1005Stack}>
         <TouchableOpacity style={styles.button1005}
-          onPress={() => updateUserBool("sukkahBalcony")}>
+          onPress={() => updateUserBool("holidayAmenities/sukkahBalcony")}>
           <View style={styles.materialCheckbox366Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("sukkahBalcony")}
-              checked={userAnswers["sukkahBalcony"]}
+              onPress={() => updateUserBool("holidayAmenities/sukkahBalcony")}
+              checked={userAnswers["holidayAmenities/sukkahBalcony"]}
               style={styles.materialCheckbox366}
             ></MaterialCheckbox1>
             <Text style={styles.loremIpsum24}>Sukkah Balcony/Garden</Text>
@@ -243,11 +243,11 @@ function ShabbatHolidayEssentials(props) {
       </View>
       {/* Menorah */}
       <TouchableOpacity style={styles.button1006}
-        onPress={() => updateUserBool("menorah")}>
+        onPress={() => updateUserBool("holidayAmenities/menorah")}>
         <View style={styles.materialCheckbox367Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("menorah")}
-            checked={userAnswers["menorah"]}
+            onPress={() => updateUserBool("holidayAmenities/menorah")}
+            checked={userAnswers["holidayAmenities/menorah"]}
             style={styles.materialCheckbox367}
           ></MaterialCheckbox1>
           <Text style={styles.menorah}>Menorah</Text>
@@ -256,11 +256,11 @@ function ShabbatHolidayEssentials(props) {
       {/* Kosher For Passover */}
       <View style={styles.button1007Stack}>
         <TouchableOpacity style={styles.button1007}
-          onPress={() => updateUserBool("kosherPassover")}>
+          onPress={() => updateUserBool("holidayAmenities/kosherPassover")}>
           <View style={styles.materialCheckbox368Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("kosherPassover")}
-              checked={userAnswers["kosherPassover"]}
+              onPress={() => updateUserBool("holidayAmenities/kosherPassover")}
+              checked={userAnswers["holidayAmenities/kosherPassover"]}
               style={styles.materialCheckbox368}
             ></MaterialCheckbox1>
             <Text style={styles.kosherForPassover}>Kosher For Passover</Text>
@@ -273,11 +273,11 @@ function ShabbatHolidayEssentials(props) {
       {/* Passover Kitchen */}
       <View style={styles.button1008Stack}>
         <TouchableOpacity style={styles.button1008}
-          onPress={() => updateUserBool("passoverKitchen")}>
+          onPress={() => updateUserBool("holidayAmenities/passoverKitchen")}>
           <View style={styles.materialCheckbox369Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("passoverKitchen")}
-              checked={userAnswers["passoverKitchen"]}
+              onPress={() => updateUserBool("holidayAmenities/passoverKitchen")}
+              checked={userAnswers["holidayAmenities/passoverKitchen"]}
               style={styles.materialCheckbox369}
             ></MaterialCheckbox1>
             <Text style={styles.passoverKitchen}>Passover Kitchen</Text>
@@ -290,10 +290,10 @@ function ShabbatHolidayEssentials(props) {
       {/* Seder Plate */}
       <View style={styles.group12}>
         <TouchableOpacity style={styles.materialCheckbox370Row}
-          onPress={() => updateUserBool("sederPlate")}>
+          onPress={() => updateUserBool("holidayAmenities/sederPlate")}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("sederPlate")}
-            checked={userAnswers["sederPlate"]}
+            onPress={() => updateUserBool("holidayAmenities/sederPlate")}
+            checked={userAnswers["holidayAmenities/sederPlate"]}
             style={styles.materialCheckbox370}
           ></MaterialCheckbox1>
           <Text style={styles.sederPlate}>Seder Plate</Text>

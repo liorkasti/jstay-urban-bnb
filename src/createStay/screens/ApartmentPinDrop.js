@@ -15,7 +15,7 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 
 function ApartmentPinDrop(props) {
   const savePinDrop = (newLocation) => {
-    props.onUserInput({ location: newLocation, path: "hostListing" })
+    props.onUserInput(newLocation, mewLocation)
   }
 
   return (

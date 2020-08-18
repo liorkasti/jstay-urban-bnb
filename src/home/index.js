@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
+import { View, StyleSheet, Dimensions, ActivityIndicator } from "react-native"
 import { useHistory } from "react-router-dom";
 
 import auth from '@react-native-firebase/auth';
@@ -16,8 +16,11 @@ export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [currentSearch, setCurrentSearch] = useState("");
     const [newFavorites, setNewFavorites] = useState("");
-    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
-
+    const [currentUserState, setCurrentUserState] = useState({})
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
     const history = useHistory();
 
     useEffect(() => {

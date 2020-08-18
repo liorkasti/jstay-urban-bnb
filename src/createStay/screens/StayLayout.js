@@ -9,7 +9,7 @@ function StayLayout(props) {
   const [answers, setAnswers] = useState({});
 
   const onChangeLayout = (number, path) => {
-    props.onUserInput(number, "hostListing/" + path)
+    props.onUserInput(number, path)
     const newUserAnswer = answers;
     newUserAnswer[path] = number || 0;
     setAnswers({ ...newUserAnswer });

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
     View, StyleSheet, Dimensions, Image,
-    TouchableOpacity, Text, ScrollView, SafeAreaView, Constants
+    TouchableOpacity, Text, ScrollView, SafeAreaView, ActivityIndicator
 } from "react-native"
 import { useHistory } from "react-router-dom";
 
@@ -49,12 +49,18 @@ const components = {
 const currentUser = auth().currentUser;
 let createdAt = "";
 let stayUID = "";
+let savedValues = {};
 
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [totalAnswers, setTotalAnswers] = useState([]);
     const [currentStayIndex, setCurrentStayIndex] = useState();
-    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    const [savedValuesState, setSavedValuesState] = useState({});
+    const [currentUserState, setCurrentUserState] = useState({})
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -148,8 +154,15 @@ export default function Index(props) {
     }, [componentIndex]);
 
     const updateUserInput = (value, key) => {
+        newSavedValues = savedValues;
+
+        newSavedValues[key] = value;
+
+        savedValues = newSavedValues;
+        setSavedValuesState(newSavedValues);
+
         database()
-            .ref(`stays/${stayUID}`)
+            .ref(`stays/${stayUID}/hostListing/`)
             .update({ [key]: value })
             .then((res) => {
                 console.warn("this is the response for update", res)
@@ -189,8 +202,7 @@ export default function Index(props) {
 
                 currentAnswers={totalAnswers[componentIndex]}
 
-                // setShowTypeDropDown={() => { setShowTypeDropDown(!showTypeDropDown) }}
-                // showTypeDropDown={showTypeDropDown}
+                savedValuesState={props.savedValuesState}
 
                 onHome={() => {
                     onHome();
@@ -209,7 +221,7 @@ export default function Index(props) {
             />
 
             <ScrollView contentOffset={{ x: 0 }} style={styles.scrollView}>
-                <CurrentComponentRouter />
+                <CurrentComponentRouter savedValuesState={savedValuesState} />
             </ScrollView>
         </View>
     );

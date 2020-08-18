@@ -15,12 +15,12 @@ function SafetyAmenities(props) {
   return (
     <View style={[styles.container, props.style]}>
       <TouchableOpacity
-        onPress={() => updateUserBool("fireExtinguisher")}
+        onPress={() => updateUserBool("safetyAmenities/fireExtinguisher")}
         style={styles.button29}>
         <View style={styles.materialCheckbox3410Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("fireExtinguisher")}
-            checked={userAnswers["fireExtinguisher"]}
+            onPress={() => updateUserBool("safetyAmenities/fireExtinguisher")}
+            checked={userAnswers["safetyAmenities/fireExtinguisher"]}
             style={styles.materialCheckbox3410}
           ></MaterialCheckbox1>
           <Text style={styles.fireExtinguisher}>Fire Extinguisher</Text>
@@ -30,25 +30,25 @@ function SafetyAmenities(props) {
       <Text style={styles.text}>Safety Amenities</Text>
 
       <TouchableOpacity
-             onPress={() => updateUserBool("smokeDetector")}
-      style={styles.button31}>
+        onPress={() => updateUserBool("safetyAmenities/smokeDetector")}
+        style={styles.button31}>
         <View style={styles.materialCheckbox37Row}>
           <MaterialCheckbox1
-             onPress={() => updateUserBool("smokeDetector")}
-             checked={userAnswers["smokeDetector"]}
+            onPress={() => updateUserBool("safetyAmenities/smokeDetector")}
+            checked={userAnswers["safetyAmenities/smokeDetector"]}
             style={styles.materialCheckbox37}
           ></MaterialCheckbox1>
           <Text style={styles.smokeDetector}>Smoke Detector</Text>
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity 
-          onPress={() => updateUserBool("cabonMonoxideDetector")}
-      style={styles.button32}>
+      <TouchableOpacity
+        onPress={() => updateUserBool("safetyAmenities/carbonMonoxideDetector")}
+        style={styles.button32}>
         <View style={styles.materialCheckbox38Row}>
           <MaterialCheckbox1
-          onPress={() => updateUserBool("cabonMonoxideDetector")}
-          checked={userAnswers["cabonMonoxideDetector"]}
+            onPress={() => updateUserBool("safetyAmenities/carbonMonoxideDetector")}
+            checked={userAnswers["safetyAmenities/carbonMonoxideDetector"]}
             style={styles.materialCheckbox38}
           ></MaterialCheckbox1>
           <Text style={styles.loremIpsum7}>Carbon Monoxide Detector</Text>
@@ -56,13 +56,13 @@ function SafetyAmenities(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-          onPress={() => updateUserBool("fireEscape")}
-      
-      style={styles.button30}>
+        onPress={() => updateUserBool("safetyAmenities/fireEscape")}
+
+        style={styles.button30}>
         <View style={styles.materialCheckbox3593Row}>
           <MaterialCheckbox1
-          onPress={() => updateUserBool("fireEscape")}
-          checked={userAnswers["fireEscape"]}
+            onPress={() => updateUserBool("safetyAmenities/fireEscape")}
+            checked={userAnswers["safetyAmenities/fireEscape"]}
             style={styles.materialCheckbox3593}
           ></MaterialCheckbox1>
           <Text style={styles.fireEscape}>Fire Escape</Text>
@@ -70,13 +70,13 @@ function SafetyAmenities(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-            onPress={() => updateUserBool("firstAid")}
-      
-      style={styles.button33}>
+        onPress={() => updateUserBool("safetyAmenities/firstAid")}
+
+        style={styles.button33}>
         <View style={styles.materialCheckbox39Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("firstAid")}
-            checked={userAnswers["firstAid"]}
+            onPress={() => updateUserBool("safetyAmenities/firstAid")}
+            checked={userAnswers["safetyAmenities/firstAid"]}
             style={styles.materialCheckbox39}
           ></MaterialCheckbox1>
           <Text style={styles.firstAidKit}>First Aid Kit</Text>

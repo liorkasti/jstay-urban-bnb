@@ -19,23 +19,23 @@ function StayRules(props) {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = !userAnswers[extention]
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput(newUserAnswer[extention], "hostListing/stayRules/" + extention);
+    props.onUserInput(newUserAnswer[extention], extention);
   };
 
-  
+
   const updateUserInput = (value, extention) => {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = value;
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput(newUserAnswer[extention], "hostListing/stayRules/" + extention);
+    props.onUserInput(newUserAnswer[extention], extention);
   };
 
 
   return (
     <View style={styles.container}>
       <TextInput
-        onChangeText={(text) => updateUserInput(text, "additionalRules")}
-        value={userAnswers["additionalRules"] || ""}
+        onChangeText={(text) => updateUserInput(text, "stayRules/additionalRules")}
+        value={userAnswers["stayRules/additionalRules"] || ""}
         placeholder="e.g. Only Kosher food in the house.."
         placeholderTextColor="rgba(177,177,177,1)"
         autoCapitalize="sentences"
@@ -65,8 +65,8 @@ function StayRules(props) {
       <View style={styles.petsAllowed1Stack}>
         <Text style={styles.petsAllowed1}>Pets allowed</Text>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("petsAllowed")}
-          value={userAnswers["petsAllowed"]}
+          onPress={(newValue) => updateUserBool("stayRules/petsAllowed")}
+          value={userAnswers["stayRules/petsAllowed"]}
           style={styles.materialSwitch5}></MaterialSwitch1>
       </View>
       <View style={styles.loremIpsum3Row}>
@@ -75,14 +75,14 @@ function StayRules(props) {
         </Text>
         <View style={styles.loremIpsum3Filler}></View>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("largeFamilies")}
-          value={userAnswers["largeFamilies"]}
+          onPress={(newValue) => updateUserBool("stayRules/largeFamilies")}
+          value={userAnswers["stayRules/largeFamilies"]}
           style={styles.materialSwitch1}></MaterialSwitch1>
       </View>
       <View style={styles.materialSwitch2Stack}>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("suitableInfants")}
-          value={userAnswers["suitableInfants"]}
+          onPress={(newValue) => updateUserBool("stayRules/suitableInfants")}
+          value={userAnswers["stayRules/suitableInfants"]}
           style={styles.materialSwitch2}></MaterialSwitch1>
         <Text style={styles.loremIpsum4}>
           Suitable for infants {"\n"}(under 2 yrs)
@@ -91,8 +91,8 @@ function StayRules(props) {
       <View style={styles.materialSwitch3Stack}>
         <MaterialSwitch1
 
-          onPress={(newValue) => updateUserBool("suitableChildren")}
-          value={userAnswers["suitableChildren"]}
+          onPress={(newValue) => updateUserBool("stayRules/suitableChildren")}
+          value={userAnswers["stayRules/suitableChildren"]}
           style={styles.materialSwitch3}></MaterialSwitch1>
         <Text style={styles.loremIpsum5}>
           Suitable for children {"\n"}(ages 2-13)
@@ -100,8 +100,8 @@ function StayRules(props) {
       </View>
       <View style={styles.materialSwitch4Stack}>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("suitableStudents")}
-          value={userAnswers["suitableStudents"]}
+          onPress={(newValue) => updateUserBool("stayRules/suitableStudents")}
+          value={userAnswers["stayRules/suitableStudents"]}
           style={styles.materialSwitch4}></MaterialSwitch1>
         <Text style={styles.petsAllowed2}>Suitable for students</Text>
       </View>
@@ -110,24 +110,24 @@ function StayRules(props) {
           Guests must clean before {"\n"}leaving
         </Text>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("guestsClean")}
-          value={userAnswers["guestsClean"]}
+          onPress={(newValue) => updateUserBool("stayRules/guestsClean")}
+          value={userAnswers["stayRules/guestsClean"]}
           style={styles.materialSwitch6}></MaterialSwitch1>
       </View>
       <View style={styles.loremIpsum2Row}>
         <Text style={styles.loremIpsum2}>Suitable for hosting meals</Text>
         <View style={styles.loremIpsum2Filler}></View>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("suitableHosting")}
-          value={userAnswers["suitableHosting"]}
+          onPress={(newValue) => updateUserBool("stayRules/suitableHosting")}
+          value={userAnswers["stayRules/suitableHosting"]}
           style={styles.materialSwitch8}></MaterialSwitch1>
       </View>
       <View style={styles.smokingAllowed1Row}>
         <Text style={styles.smokingAllowed1}>Smoking allowed</Text>
         <View style={styles.smokingAllowed1Filler}></View>
         <MaterialSwitch1
-          onPress={(newValue) => updateUserBool("smoking")}
-          value={userAnswers["smoking"]}
+          onPress={(newValue) => updateUserBool("stayRules/smoking")}
+          value={userAnswers["stayRules/smoking"]}
           style={styles.materialSwitch7}></MaterialSwitch1>
       </View>
       <Text style={styles.whatAmenities1}>Add guidelines for guests</Text>

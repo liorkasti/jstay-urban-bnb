@@ -38,7 +38,11 @@ export default function CreateAccountIndex(props) {
     const [didCreateAccount, setDidCreateAccount] = useState(true);
     const [showNothing, setShowNothing] = useState(true);
     const [totalAnswers, setTotalAnswers] = useState([]);
-    if (!user) return (<View><ActivityIndicator size="large" /></View>)
+    const [currentUserState, setCurrentUserState] = useState({})
+    if (!user || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
     //this send user to route if they want to create a stay
     let history = useHistory();
 

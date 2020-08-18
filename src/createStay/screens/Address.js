@@ -25,7 +25,7 @@ function Address(props) {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = value;
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput(newUserAnswer[extention], "hostListing/address/" + extention);
+    props.onUserInput(newUserAnswer[extention], extention);
   };
 
   return (
@@ -44,8 +44,8 @@ function Address(props) {
       <View style={styles.streetAddressStack}>
         <Text style={styles.streetAddress}>Street Address</Text>
         <TextInput
-          onChangeText={(text) => updateUserInput(text, "streetName")}
-          value={userAnswers["streetName"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/streetName")}
+          value={userAnswers["address/streetName"] || ""}
           placeholder="e.g. 770 Eastern Parkway"
           placeholderTextColor="rgba(177,177,177,1)"
           style={styles.textInput8}
@@ -55,8 +55,8 @@ function Address(props) {
       <View style={styles.apartmentNoSuiteStack}>
         <Text style={styles.apartmentNoSuite}>Apartment No./Suite</Text>
         <TextInput
-          onChangeText={(text) => updateUserInput(text, "apartmentNo")}
-          value={userAnswers["apartmentNo"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/apartmentNo")}
+          value={userAnswers["address/apartmentNo"] || ""}
           placeholder="e.g. Apartment 1"
           placeholderTextColor="rgba(177,177,177,1)"
 
@@ -67,8 +67,8 @@ function Address(props) {
       <View style={styles.cityStack}>
         <Text style={styles.city}>City</Text>
         <TextInput
-          onChangeText={(text) => updateUserInput(text, "city")}
-          value={userAnswers["city"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/city")}
+          value={userAnswers["address/city"] || ""}
           placeholder="e.g. Brookyn "
           placeholderTextColor="rgba(177,177,177,1)"
           style={styles.textInput10}
@@ -78,8 +78,8 @@ function Address(props) {
       <View style={styles.stateOptionalStack}>
         <Text style={styles.stateOptional}>State (optional)</Text>
         <TextInput
-          onChangeText={(text) => updateUserInput(text, "state")}
-          value={userAnswers["state"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/state")}
+          value={userAnswers["address/state"] || ""}
           placeholder="e.g. New York"
           placeholderTextColor="rgba(177,177,177,1)"
           style={styles.textInput11}
@@ -91,8 +91,8 @@ function Address(props) {
         <TextInput
           placeholder="e.g. 11213"
           placeholderTextColor="rgba(177,177,177,1)"
-          onChangeText={(text) => updateUserInput(text, "postalCode")}
-          value={userAnswers["postalCode"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/postalCode")}
+          value={userAnswers["address/postalCode"] || ""}
           style={styles.textInput12}
         ></TextInput>
       </View>
@@ -110,18 +110,18 @@ function Address(props) {
         <TextInput
           placeholder="e.g. Crown Heights"
           placeholderTextColor="rgba(177,177,177,1)"
-          onChangeText={(text) => updateUserInput(text, "neighbourhood")}
-          value={userAnswers["neighbourhood"] || ""}
+          onChangeText={(text) => updateUserInput(text, "address/neighbourhood")}
+          value={userAnswers["address/neighbourhood"] || ""}
           style={styles.textInput13}
         ></TextInput>
       </View>
       {/* country */}
       <DropDown
-        onChange={(value) => updateUserInput(value, "country")}
+        onChange={(value) => updateUserInput(value, "address/country")}
         hostListing={hostListing}
         textInput1="User's current country"
         style={styles.dropDown}
-      ></DropDown> 
+      ></DropDown>
 
     </View>
   );

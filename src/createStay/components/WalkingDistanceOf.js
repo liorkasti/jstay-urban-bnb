@@ -14,16 +14,16 @@ function WalkingDistanceOf(props) {
 
   return (
     <View style={[styles.container, props.style]}>
-      
-      <TouchableOpacity 
-          onPress={(newValue)=>updateUserBool( "kosherRestaurants")}
-      style={styles.loremIpsum12StackRow}>
+
+      <TouchableOpacity
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/kosherRestaurants")}
+        style={styles.loremIpsum12StackRow}>
         <View style={styles.loremIpsum12Stack}>
           <Text style={styles.loremIpsum12}></Text>
           <MaterialCheckbox1
-          checked={userAnswers["kosherRestaurants"]}
+            checked={userAnswers["nearby/WalkingDistanceOf/kosherRestaurants"]}
 
-          onPress={(newValue)=>updateUserBool( "kosherRestaurants")}
+            onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/kosherRestaurants")}
             style={styles.materialCheckbox53}
           ></MaterialCheckbox1>
         </View>
@@ -31,26 +31,26 @@ function WalkingDistanceOf(props) {
       </TouchableOpacity>
 
       <Text style={styles.walkingDistance1}>Within Walking Distance of..</Text>
-      <TouchableOpacity 
-          onPress={(newValue)=>updateUserBool( "synagogues")}
-      style={styles.materialCheckbox52Row}>
+      <TouchableOpacity
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/synagogues")}
+        style={styles.materialCheckbox52Row}>
         <MaterialCheckbox1
-          checked={userAnswers["synagogues"]}
-          onPress={(newValue)=>updateUserBool( "synagogues")}
+          checked={userAnswers["nearby/WalkingDistanceOf/synagogues"]}
+          onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/synagogues")}
           style={styles.materialCheckbox52}
         ></MaterialCheckbox1>
         <Text style={styles.synagogues}>Synagogues</Text>
         <Text style={styles.loremIpsum13}></Text>
       </TouchableOpacity>
       <View style={styles.button8Stack}>
-        <TouchableOpacity 
-          onPress={(newValue)=>updateUserBool( "jewishCommunity")}
+        <TouchableOpacity
+          onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/jewishCommunity")}
           style={styles.button8}>
           <View style={styles.materialCheckbox51Row}>
             <MaterialCheckbox1
-          checked={userAnswers["jewishCommunity"]}
+              checked={userAnswers["nearby/WalkingDistanceOf/jewishCommunity"]}
 
-          onPress={(newValue)=>updateUserBool( "jewishCommunity")}
+              onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/jewishCommunity")}
               style={styles.materialCheckbox51}
             ></MaterialCheckbox1>
             <Text style={styles.jewishCommunity}>Jewish Community</Text>
@@ -61,46 +61,46 @@ function WalkingDistanceOf(props) {
         </Text>
       </View>
       <TouchableOpacity
-          onPress={(newValue)=>updateUserBool( "kosherShops")}
-          style={styles.button9}>
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/kosherShops")}
+        style={styles.button9}>
         <View style={styles.materialCheckbox54Row}>
           <MaterialCheckbox1
-          checked={userAnswers["kosherShops"]}
-          onPress={(newValue)=>updateUserBool( "kosherShops")}
+            checked={userAnswers["nearby/WalkingDistanceOf/kosherShops"]}
+            onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/kosherShops")}
             style={styles.materialCheckbox54}
           ></MaterialCheckbox1>
           <Text style={styles.kosherShops}>Kosher Shops</Text>
         </View>
       </TouchableOpacity>
       <TouchableOpacity
-          onPress={(newValue)=>updateUserBool( "womensMikvah")}
-          style={styles.materialCheckbox55Row}>
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/womensMikvah")}
+        style={styles.materialCheckbox55Row}>
         <MaterialCheckbox1
-          checked={userAnswers["womensMikvah"]}
-          onPress={(newValue)=>updateUserBool( "womensMikvah")}
+          checked={userAnswers["nearby/WalkingDistanceOf/womensMikvah"]}
+          onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/womensMikvah")}
           style={styles.materialCheckbox55}
         ></MaterialCheckbox1>
         <Text style={styles.womensMikvah}>Women&#39;s Mikvah</Text>
       </TouchableOpacity>
       <TouchableOpacity
-          onPress={(newValue)=>updateUserBool( "mensMikvah")}
-      style={styles.mensMikvah2Stack}>
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/mensMikvah")}
+        style={styles.mensMikvah2Stack}>
         <Text style={styles.mensMikvah2}>Men&#39;s Mikvah</Text>
         <MaterialCheckbox1
-          checked={userAnswers["mensMikvah"]}
-          onPress={(newValue)=>updateUserBool( "mensMikvah")}
+          checked={userAnswers["nearby/WalkingDistanceOf/mensMikvah"]}
+          onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/mensMikvah")}
           style={styles.materialCheckbox56}
         ></MaterialCheckbox1>
       </TouchableOpacity>
 
-      <TouchableOpacity 
-          onPress={(newValue)=>updateUserBool( "jewishDaycare")}
-      
-      style={styles.jewishDaycareStack}>
+      <TouchableOpacity
+        onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/jewishDaycare")}
+
+        style={styles.jewishDaycareStack}>
         <Text style={styles.jewishDaycare}>Jewish Daycare</Text>
         <MaterialCheckbox1
-          checked={userAnswers["jewishDaycare"]}
-          onPress={(newValue)=>updateUserBool( "jewishDaycare")}
+          checked={userAnswers["nearby/WalkingDistanceOf/jewishDaycare"]}
+          onPress={(newValue) => updateUserBool("nearby/WalkingDistanceOf/jewishDaycare")}
           style={styles.materialCheckbox562}
         ></MaterialCheckbox1>
       </TouchableOpacity>

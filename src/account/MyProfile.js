@@ -38,9 +38,9 @@ function MyProfile(props) {
 
       {props.showMenu &&
         <MyProfileMenu
-        totalStays={props.totalStays}
+          totalStays={props.totalStays}
           // onUserPress={(action) => props.onUserPress(action)}
-          handleMenu={(menuItem) => {console.warn("what"); props.handleMenu(menuItem);  }}
+          handleMenu={(menuItem) => { props.handleMenu(menuItem); }}
           style={styles.headerMenu} />
       }
       {/* <MyProfileMenu onUserPress={(action) => props.onUserPress(action)} style={styles.headerMenu} /> */}
