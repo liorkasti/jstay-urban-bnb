@@ -16,9 +16,8 @@ import hostListing from "../components/CountryList";
 function Address(props) {
   const [userAnswers, setUserAnswers] = useState({});
 
-
   useEffect(() => {
-    console.log(hostListing);
+    setUserAnswers(props.savedValuesState);
   }, []);
 
   const updateUserInput = (value, extention) => {

@@ -85,7 +85,8 @@ export default function Index(props) {
                     }
                     updateUserStayList(response);
                 });
-        }, 200)
+        }, 200);
+        return () => { saveToFirebase(); }
     }, [])
 
     const updateUserStayList = (userFireData) => {
@@ -160,10 +161,11 @@ export default function Index(props) {
 
         savedValues = newSavedValues;
         setSavedValuesState(newSavedValues);
-
+    };
+    const saveToFirebase = () => {
         database()
             .ref(`stays/${stayUID}/hostListing/`)
-            .update({ [key]: value })
+            .update(savedValues)
             .then((res) => {
                 console.warn("this is the response for update", res)
             })
