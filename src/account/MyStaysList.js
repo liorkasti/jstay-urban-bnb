@@ -26,7 +26,7 @@ function MyStaysList(props) {
   const getMyStays = () => {
     database().ref(`users/generalInfo/${currentUser.uid}`).on("value", res => {
       const snapshot = res.val();
-      if (snapshot) {
+      if (snapshot.myStays) {
         setMyStays(snapshot.myStays);
         amountOfStays = snapshot.myStays.length;
       } else {

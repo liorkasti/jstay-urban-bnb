@@ -61,7 +61,7 @@ export default function Index(props) {
 
     //add the import as a string to this array
     //the array should be in the order that the screens show up
-
+    // 
     useEffect(() => {
         createdAt = new Date().getTime();
         setTimeout(() => {
@@ -70,8 +70,12 @@ export default function Index(props) {
                 .once('value')
                 .then(snapshot => {
                     const response = snapshot.val();
-                    console.warn("total stays", response.totalStays)
-                    setCurrentStayIndex(response.totalStays || 0);
+                    console.warn("total stays", response.myStays)
+                    if (response.myStays) {
+                        setCurrentStayIndex(response.myStays.length);
+                    } else {
+                        setCurrentStayIndex(0);
+                    }
                     updateUserStayList(response);
                 });
         }, 200)
@@ -130,15 +134,10 @@ export default function Index(props) {
     };
 
     useEffect(() => {
-        console.warn("createStay/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         // console.warn("windowWidth: " + windowWidth)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
-            database()
-                .ref(`/users/generalInfo/${currentUser.uid}`)
-                .update({ totalStays: currentStayIndex + 1 })
-                .then((res) => { console.log("response from update", res) })
         }
 
         if (componentIndex < 0) {

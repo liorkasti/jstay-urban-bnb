@@ -11,7 +11,7 @@ function MyStayCardGroupUL(props) {
     <View style={[styles.container, props.style]}>
       <View style={styles.group8}>
         {
-          props.myStays.map((stay, index) => {
+          props.myStays && props.myStays.map((stay, index) => {
             return (
               <StayCard
                 stayPicture={`/stays/${stay}/0`}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl, Alert } from "react-native"
+import { View, StyleSheet, Dimensions, ActivityIndicator, ScrollView, RefreshControl, Alert } from "react-native"
 import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 
 import auth from '@react-native-firebase/auth';
 import database from "@react-native-firebase/database";
+import storage from "@react-native-firebase/storage";
 const currentUser = auth().currentUser;
 
 //import all builder x files related to this directory
@@ -96,6 +97,7 @@ export default function Index(props) {
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
     const [totalStays, setTotalStays] = useState(0);
+    const [loaded, setLoaded] = useState(false);
 
     //this send user to route if they want to create a stay
     let history = useHistory();
@@ -178,6 +180,7 @@ export default function Index(props) {
             addBackHistory(newBackHistory);
             setCurrentPage(props.location.state.subroute);
         }
+        setLoaded(true);
     }, []);
 
     const deleteStay = (stay) => {
@@ -213,8 +216,10 @@ export default function Index(props) {
                         });
 
                     console.log(response.myStays.indexOf(stay))
-                    // setTotalStays(totalStays - 1);
+                    setTotalStays(totalStays - 1);
                 })
+            const reference = storage().ref(`/stays/${stay}`);
+            reference.delete()
             setRefreshing(false);
         };
 
@@ -355,6 +360,18 @@ export default function Index(props) {
         wait(2000).then(() => setRefreshing(false));
     }, [refreshing]);
 
+
+    if (!loaded) return (
+        <View style={styles.container}>
+            <HeaderBarLight
+                screenWidth={windowWidth}
+                style={styles.header}
+                header="loading"
+                onHome={() => { onHome() }}
+                onBack={() => onBack()}
+            />
+            <ActivityIndicator size="large" />
+        </View>)
     return (
         <View style={styles.container}>
             {/*dynamic component*/}
