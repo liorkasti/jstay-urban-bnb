@@ -98,6 +98,7 @@ export default function Index(props) {
     const [refreshing, setRefreshing] = useState(false);
     const [totalStays, setTotalStays] = useState(0);
     const [loaded, setLoaded] = useState(false);
+    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
 
     //this send user to route if they want to create a stay
     let history = useHistory();

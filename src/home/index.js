@@ -16,6 +16,7 @@ export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [currentSearch, setCurrentSearch] = useState("");
     const [newFavorites, setNewFavorites] = useState("");
+    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
 
     const history = useHistory();
 

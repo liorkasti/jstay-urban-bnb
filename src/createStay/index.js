@@ -54,6 +54,7 @@ export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [totalAnswers, setTotalAnswers] = useState([]);
     const [currentStayIndex, setCurrentStayIndex] = useState();
+    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
 
     //this send user to route if they want to create a stay
     let history = useHistory();

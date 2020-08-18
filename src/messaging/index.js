@@ -14,6 +14,7 @@ import Fire from "./Fire";
 
 export default function MessagesIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
+    if (!currentUser) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
 
     // const denodefaultAppMessaging = firebase.messaging();
 
@@ -25,8 +26,8 @@ export default function MessagesIndex(props) {
     const componentKeys = ["Messages", "Chat"];
 
 
-    const user = auth().currentUser;  
-    
+    const user = auth().currentUser;
+
     useEffect(() => {
         // console.warn("MessagesIndex page - ' " + componentKeys[componentIndex], "' page number - "  + componentIndex)
         console.warn("firebase current user data: ", user)
@@ -48,24 +49,24 @@ export default function MessagesIndex(props) {
         firebase.auth().onAuthStateChanged(user => {
         })
     }
-    
+
     send = messages => {
         messages.forEach(item => {
-            const message = { 
+            const message = {
                 text: item.text,
                 timestamp: firebase.database.ServerValue.TIMESTAMP,
                 user: item.user
-          }
-    
-          this.db.push(message)
+            }
+
+            this.db.push(message)
         });
     };
-    
+
     parse = message => {
         const { user, text, timestamp } = message.val()
-        const { key: _id} = message
+        const { key: _id } = message
         const createdAt = new Date(timestamp)
-    
+
         return {
             _id,
             createdAt,
@@ -73,9 +74,9 @@ export default function MessagesIndex(props) {
             user
         };
     };
-    
+
     get = callback => {
-      this.db.on('child_added', snapshot => callback(this.parse(snapshot)));
+        this.db.on('child_added', snapshot => callback(this.parse(snapshot)));
     }
 
     return (
@@ -103,8 +104,8 @@ export default function MessagesIndex(props) {
 
                     onHome={() => { goToHome() }}
 
-                    createAccount={() => {onCreateAccount()}}
-                    
+                    createAccount={() => { onCreateAccount() }}
+
                     login={() => {
                         console.warn("setcomponentIndex for login ")
                     }}
@@ -113,7 +114,7 @@ export default function MessagesIndex(props) {
                         console.warn("setcomponentIndex for Messaging ");
                         setComponentIndex(componentIndex + 1);
                     }}
-                    
+
                 />
             }
 
@@ -134,14 +135,14 @@ export default function MessagesIndex(props) {
                     }}
                     otherUserName={"sholli"}
                     onHome={() => { goToHome() }}
-                    onBack={()=>{setComponentIndex(componentIndex -1)}}
+                    onBack={() => { setComponentIndex(componentIndex - 1) }}
                     messaging={() => {
                         console.warn("setcomponentIndex for Messaging ")
                         setComponentIndex(componentIndex + 1)
                     }}
 
-                    checkAuth= {checkAuth}
-                    // on= {on}
+                    checkAuth={checkAuth}
+                // on= {on}
                 />
             }
             {/* </ScrollView> */}

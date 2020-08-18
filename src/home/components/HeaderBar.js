@@ -6,7 +6,7 @@ function HeaderBar(props) {
   return (
     <View style={[styles.container, props.style]}>
       <CupertinoSegmentWithFourTabs1
-      onUserPress={(page) =>props.onUserPress(page)}
+        onUserPress={(page) => props.onUserPress(page)}
         text1="Language"
         text2="My Stays"
         text3="New Request"
@@ -20,8 +20,7 @@ function HeaderBar(props) {
 const styles = StyleSheet.create({
   container: {},
   cupertinoSegmentWithFourTabs1: {
-    height: 56,
-    backgroundColor: "rgba(2,172,235,1)",    
+    backgroundColor: "rgba(2,172,235,1)",
   }
 });
 

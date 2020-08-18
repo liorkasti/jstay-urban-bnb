@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, ScrollView, Dimensions, Platform } from "react-native"
+import { View, StyleSheet, ActivityIndicator, Dimensions, Platform } from "react-native"
 import { useHistory } from "react-router-dom";
 
 import HeaderBarDark from "../components/HeaderBarDark"
@@ -28,11 +28,8 @@ const imagePickerOptionsoptions = {
 };
 
 const user = auth().currentUser;
-let refrence = "";
+let reference = "";
 
-const setRefrence = () => {
-    refrence = database().ref('/users/generalInfo/' + user.uid);
-};
 
 export default function CreateAccountIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
@@ -41,15 +38,15 @@ export default function CreateAccountIndex(props) {
     const [didCreateAccount, setDidCreateAccount] = useState(true);
     const [showNothing, setShowNothing] = useState(true);
     const [totalAnswers, setTotalAnswers] = useState([]);
-
+    if (!user) return (<View><ActivityIndicator size="large" /></View>)
     //this send user to route if they want to create a stay
     let history = useHistory();
 
 
 
     const updateUserInput = (value, extention) => {
-        refrence.update({ [extention]: value }).then((res) => {
-            console.warn("this is the response for update", res)
+        reference.update({ [extention]: value }).then((res) => {
+            console.warn("this is the response for update from:", user.uid)
         })
     };
 
@@ -71,9 +68,12 @@ export default function CreateAccountIndex(props) {
 
     function onAuthStateChanged(user) {
         if (user) {
-            setRefrence();
+            setReference();
         }
     }
+    const setReference = () => {
+        reference = database().ref('/users/generalInfo/' + user.uid);
+    };
 
     const addProfilePicture = () => {
         ImagePicker.showImagePicker(imagePickerOptionsoptions, (response) => {
