@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -12,7 +12,14 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 
-function HostBankInfo(props) {
+function HostBankInfo({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <TextInput placeholder="First name" style={styles.textInput1}></TextInput>

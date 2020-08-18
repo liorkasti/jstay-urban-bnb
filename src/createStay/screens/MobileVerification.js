@@ -11,7 +11,7 @@ import MaterialSpinner from "../components/MaterialSpinner";
 import MaterialButtonWithVioletText17 from "../components/MaterialButtonWithVioletText17";
 import Icon from "react-native-vector-icons/Entypo";
 
-function MobileVerification(props) {
+function MobileVerification({ props }) {
   return (
     <View style={styles.container}>
       <View style={styles.whatAmenities1Stack}>
@@ -75,7 +75,7 @@ function MobileVerification(props) {
         for the host or a management team)
       </Text>
       <Text style={styles.didNotReceiveSms}>Did not receive SMS</Text>
-      
+
     </View>
   );
 }

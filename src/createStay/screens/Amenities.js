@@ -9,25 +9,31 @@ import ShabbatHolidayEssentials from "../components/ShabbatHolidayEssentials";
 import ChildFriendlyAmenities from "../components/ChildFriendlyAmenities";
 import Icon from "react-native-vector-icons/Entypo";
 
-function Amenities(props) {
+function Amenities({ props }) {
+
   return (
     <View style={styles.container}>
       <GeneralAmenities
+        savedValuesState={props.savedValuesState}
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/generalAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
       <SafetyAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/safetyAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.safetyAmenities}>
       </SafetyAmenities>
 
       <JewishHomeAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/jewishAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.jewishHomeAmenities}
       ></JewishHomeAmenities>
@@ -44,15 +50,19 @@ function Amenities(props) {
       ></MaterialButtonViolet6>
 
       <ShabbatHolidayEssentials
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/holidayAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.shabbatHolidayEssentials}
       ></ShabbatHolidayEssentials>
 
       <ChildFriendlyAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
-          props.onUserInput(newValue, "hostListing/childAmenities/" + extention)
+          props.onUserInput(newValue, extention)
         }}
         style={styles.childFriendlyAmenities}
       ></ChildFriendlyAmenities>

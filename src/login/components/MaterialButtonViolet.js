@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, Platform } from "react-native";
 
 function MaterialButtonViolet(props) {
   return (
     <TouchableOpacity onPress={props.onPress} style={[styles.container, props.style]}>
-      <Text style={styles.caption}>Continue with Facebook</Text>
+      <Text style={styles.caption}>{Platform.OS === "android" ? "Continue with Facebook" : "Continue with Apple"}</Text>
       <Text style={styles.loremIpsum}></Text>
     </TouchableOpacity>
   );

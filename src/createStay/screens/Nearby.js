@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import WalkingDistanceOf from "../components/WalkingDistanceOf";
 import Eruv from "../components/Eruv";
@@ -6,20 +6,22 @@ import Icon from "react-native-vector-icons/Entypo";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 
-function Nearby(props) {
+function Nearby({ props }) {
+
   return (
     <View style={styles.container}>
       <View style={styles.walkingDistanceOfColumn}>
         <WalkingDistanceOf
+          savedValuesState={props.savedValuesState}
           onUserInput={({ newValue, extention }) => {
-            // props.onUserInput({ newValue, path: "hostListing/nearby" + extention })
-            props.onUserInput(newValue, "hostListing/nearby/WalkingDistanceOf/" + extention)
+            props.onUserInput(newValue, extention)
           }}
 
           style={styles.walkingDistanceOf}></WalkingDistanceOf>
         <Eruv
+          savedValuesState={props.savedValuesState}
           onUserInput={({ newValue, extention }) => {
-            props.onUserInput(newValue, "hostListing/nearby/Eruv/" + extention)
+            props.onUserInput(newValue, extention)
           }}
           style={styles.eruv}></Eruv>
 

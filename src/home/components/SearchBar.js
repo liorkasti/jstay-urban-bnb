@@ -4,7 +4,8 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 
 function SearchBar(props) {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
+  
   return (
     <View style={[styles.container, props.style]}>
       <View style={styles.group2}>

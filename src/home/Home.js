@@ -78,11 +78,11 @@ function Home(props) {
           style={styles.searchBar}
         />
       </View>
-      
+
       {props.searchText ?
         // searchResults
         <ScrollView
-          style={{ zIndex: 1, width: windowWidth, height: 1000 }}
+          style={{ zIndex: 2, width: windowWidth, height: 1000 }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) {
               setShowSearchOptions(false);
@@ -105,14 +105,14 @@ function Home(props) {
         :
         //homeScreen
         <ScrollView
-          style={{width: "100%",overflow: "hidden" ,zIndex: 1}}
+          style={{ width: "100%", overflow: "hidden", zIndex: 1 }}
           onScrollBeginDrag={() => {
             if (showSearchOptions || showFooterMenu) {
               setShowSearchOptions(false);
               setShowFooterMenu(false);
             }
           }}>
-            
+
           <View style={styles.scrollInterContainer}>
             <View >
               {/*  City Cards */}
@@ -140,7 +140,7 @@ function Home(props) {
             </View>
           </View>
         </ScrollView>
-      
+
       }
 
       {/* Map */}
@@ -162,11 +162,12 @@ function Home(props) {
         style={styles.footerBar1}
       />
     </View>
-  );}
+  );
+}
 
-  
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
@@ -200,9 +201,8 @@ const styles = StyleSheet.create({
     height: 1500
   },
   headerBar: {
-    top: 103,
+    top: 95,
     left: -13,
-    height: 56,
     position: "absolute",
     right: -13,
     zIndex: 101,
@@ -264,8 +264,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(2,172,235,1)",
     width: '100%',
-    height: "15%",
-    zIndex:100,
+    height: "8%",
+    zIndex: 100,
     alignItems: "center",
   },
   searchBar: {

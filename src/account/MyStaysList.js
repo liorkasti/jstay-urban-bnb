@@ -1,18 +1,53 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 import MyStayCardGroupUL from "./components/MyStayCardGroupUL";
-import MaterialButtonShare2 from "./components/MaterialButtonShare2";
 import Icon from "react-native-vector-icons/Entypo";
 
+
+import database from "@react-native-firebase/database"
+import auth from "@react-native-firebase/auth";
+const currentUser = auth().currentUser;
+let amountOfStays = 10;
+
 function MyStaysList(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [myStays, setMyStays] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      getMyStays();
+    }, 200)
+  }, []);
+
+  useEffect(() => {
+    console.warn(myStays);
+  }, [myStays])
+
+  const getMyStays = () => {
+    database().ref(`users/generalInfo/${currentUser.uid}`).on("value", res => {
+      const snapshot = res.val();
+      if (snapshot.myStays) {
+        setMyStays(snapshot.myStays);
+        amountOfStays = snapshot.myStays.length;
+      } else {
+        amountOfStays = 0;
+      }
+      setLoaded(true);
+    })
+  };
+
+  if (!loaded) return (<View style={styles.container}>
+    <ActivityIndicator size="large" />
+  </View>)
+
   return (
     <View style={styles.container}>
-      
-      <MyStayCardGroupUL onUserPress={(action)=>{props.onUserPress(action)}} style={styles.myStayCardGroupUl}></MyStayCardGroupUL>
-      <MaterialButtonShare2
-      onPress={()=>{props.onCreateStay("myStaysList")}}
-        style={styles.materialButtonShare2}
-      ></MaterialButtonShare2>
+
+      <MyStayCardGroupUL
+        myStays={myStays}
+        onUserPress={(action, stay) => { props.onUserPress(action, stay) }}
+        style={styles.myStayCardGroupUl}>
+      </MyStayCardGroupUL>
 
     </View>
   );
@@ -24,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(2,172,235,1)",
   },
   myStayCardGroupUl: {
-    height: 608,
+    height: 608 + (amountOfStays * 40),
     width: 350,
     marginLeft: 32
   },

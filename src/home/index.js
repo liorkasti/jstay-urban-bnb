@@ -1,33 +1,52 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, ScrollView } from "react-native"
+import { View, StyleSheet, Dimensions, ActivityIndicator } from "react-native"
 import { useHistory } from "react-router-dom";
 
 import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database"
 
 //import all builder x files related to this directory
 import Home from "./Home";
 import Favorites from "../account/Favorites";
 import Trips from "../account/Trips";
 
+const currentUser = auth().currentUser;
+
 export default function Index(props) {
     const [currentComponent, setCurrentComponent] = useState("Home");
     const [currentSearch, setCurrentSearch] = useState("");
     const [newFavorites, setNewFavorites] = useState("");
-
+    const [currentUserState, setCurrentUserState] = useState({})
+    const [loaded, setLoaded] = useState(false);
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
     const history = useHistory();
 
     useEffect(() => {
-
         if (props.location.state && props.location.state.backHistory) {
             setCurrentComponent(props.location.state.backHistory)
-        }
+        };
         if (props.location.state && props.location.state.currentSearch) {
             setCurrentSearch(props.location.state.currentSearch);
-        }
+        };
         if (props.location.state && props.location.state.favorites) {
             setNewFavorites(props.location.state.favorites);
             setCurrentComponent("Favorites");
-        }
+        };
+        database()
+            .ref(`/users/generalInfo/${currentUser.uid}`)
+            .once('value')
+            .then(res => {
+                console.log('User data: ', res.val());
+                const snapshot = res.val();
+                if (snapshot && snapshot.didFinishAccountSetup) {
+                    setLoaded(true);
+                } else {
+                    return history.push("/createAccount");
+                }
+            });
     }, [])
 
 
@@ -109,7 +128,7 @@ export default function Index(props) {
         }
     };
 
-
+    if (!loaded) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
     return (
         <View style={styles.flexContainer}>
             {/* copy paste below component*/}

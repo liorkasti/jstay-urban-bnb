@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -14,7 +14,14 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
-function CheckinInfo(props) {
+function CheckinInfo({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.whatAmenities1Stack}>

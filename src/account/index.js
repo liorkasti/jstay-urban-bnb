@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions, Text, ScrollView, RefreshControl } from "react-native"
+import { View, StyleSheet, Dimensions, ActivityIndicator, ScrollView, RefreshControl, Alert } from "react-native"
 import { useHistory } from "react-router-dom";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 
 import auth from '@react-native-firebase/auth';
 import database from "@react-native-firebase/database";
+import storage from "@react-native-firebase/storage";
 const currentUser = auth().currentUser;
 
 //import all builder x files related to this directory
 import HeaderBarLight from "./components/HeaderBarLight";
 import MyProfileHeader from "./components/MyProfileHeader";
 import MyProfileMenu from "./components/MyProfileMenu";
+import MaterialButtonShare2 from "./components/MaterialButtonShare2";
 
 import CancelationGuest from "./CancelationGuest";
 import CancelationHost from "./CancelationHost";
@@ -95,7 +97,12 @@ export default function Index(props) {
     const [showMenu, setShowMenu] = useState(false);
     const [refreshing, setRefreshing] = useState(false);
     const [totalStays, setTotalStays] = useState(0);
-    
+    const [loaded, setLoaded] = useState(false);
+    const [currentUserState, setCurrentUserState] = useState({})
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -151,8 +158,8 @@ export default function Index(props) {
         history.push("/createStay", { route: "/account", subroute: from })
     }
 
-    const onEditStay = (from) => {
-        history.push("/editStay", { subroute: from })
+    const onEditStay = (from, stayUID) => {
+        history.push("/createStay", { subroute: from, stayUID: stayUID })
     }
 
     useEffect(() => {
@@ -160,25 +167,83 @@ export default function Index(props) {
     }, [backHistory])
 
     useEffect(() => {
-        database()
-        .ref(`/users/generalInfo/${currentUser.uid}`)
-        .once('value')
-        .then(snapshot => {
-            const response = snapshot.val();
-            console.warn("total stays", response.totalStays)
-            setTotalStays(response.totalStays || 0);
-        })
+        if (currentUser) {
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    const response = snapshot.val();
+                    console.warn("total stays", response.myStays)
+                    setTotalStays(response.myStays ? response.myStays.length - 1 : 0);
+                })
+        }
 
         if (props.location.state && props.location.state.subroute && typeof props.location.state.subroute === "string") {
-
             let newBackHistory = [...backHistory];
             newBackHistory[historyIndex] = props.location.state.subroute;
             addBackHistory(newBackHistory);
             setCurrentPage(props.location.state.subroute);
         }
+        setLoaded(true);
     }, []);
 
-    const onUserPress = (page) => {
+    const deleteStay = (stay) => {
+        const actualDelete = () => {
+            setRefreshing(true);
+            database()
+                .ref(`/stays/${stay}/`)
+                .set({
+                    [stay]: null
+                })
+                .then(() => {
+                    console.log("deleted stay from stays")
+                });
+
+            database()
+                .ref(`/users/generalInfo/${currentUser.uid}`)
+                .once('value')
+                .then(snapshot => {
+                    const response = snapshot.val();
+                    let newMyStays = [];
+                    for (let i = 0; i < response.myStays.length; i++) {
+                        if (i !== response.myStays.indexOf(stay)) {
+                            newMyStays.push(response.myStays[i])
+                        }
+                    }
+                    database()
+                        .ref(`/users/generalInfo/${currentUser.uid}/`)
+                        .set({
+                            myStays: newMyStays
+                        })
+                        .then(() => {
+                            console.log("deleted stay from account")
+                        });
+
+                    console.log(response.myStays.indexOf(stay))
+                    setTotalStays(totalStays - 1);
+                })
+            console.error("implement delete images")
+        };
+
+        Alert.alert(
+            "Are you sure",
+            "You cannot undo this action",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                },
+                { text: "Delete", onPress: () => { actualDelete(); } }
+            ],
+            { cancelable: false }
+        );
+
+    }
+
+    const onUserPress = (page, stay) => {
+        if (page === "deleteStay") return deleteStay(stay);
+        if (page === "editMyListings") return onEditStay(currentPage, stay);
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -209,11 +274,13 @@ export default function Index(props) {
             case "newRequest":
                 onUserPress("newRequest");
                 break;
+            case "editMyListings":
+                onEditStay(stay);
+                break;
             case "logout":
                 onLogout();
                 break;
             case "deleteAccount":
-
                 onDeleteAccount();
                 break;
 
@@ -244,8 +311,8 @@ export default function Index(props) {
 
             totalStays={totalStays}
 
-            handleMenu={(subroute) => {
-                handleCard(subroute);
+            handleMenu={(subroute, _, stay = _) => {
+                handleCard(subroute, stay);
             }}
 
             //if builder x component has back button
@@ -275,10 +342,6 @@ export default function Index(props) {
             goHome={() => {
                 onHome();
             }}
-            deleteStay={() => {
-                console.warn("create delete stay behavior");
-                onBack();
-            }}
 
             addToFavorites={() => {
                 addToFavorites();
@@ -291,7 +354,7 @@ export default function Index(props) {
             onLogout={() => {
                 onLogout();
             }}
-            onUserPress={(page) => onUserPress(page)}
+            onUserPress={(page, stay) => onUserPress(page, stay)}
         />)
     };
 
@@ -302,6 +365,17 @@ export default function Index(props) {
     }, [refreshing]);
 
 
+    if (!loaded) return (
+        <View style={styles.container}>
+            <HeaderBarLight
+                screenWidth={windowWidth}
+                style={styles.header}
+                header="loading"
+                onHome={() => { onHome() }}
+                onBack={() => onBack()}
+            />
+            <ActivityIndicator size="large" />
+        </View>)
     return (
         <View style={styles.container}>
             {/*dynamic component*/}
@@ -333,6 +407,12 @@ export default function Index(props) {
                 }>
                 <CurrentComponentRouter />
             </ScrollView>
+            {currentPage === "myStaysList" &&
+                <MaterialButtonShare2
+                    onPress={() => { onCreateStay("myStaysList") }}
+                    style={styles.materialButtonShare2}
+                />
+            }
         </View>
     );
 }
@@ -356,5 +436,13 @@ const styles = StyleSheet.create({
     header: {
         zIndex: 3000,
         // width: windowWidth
+    },
+    materialButtonShare2: {
+        position: "absolute",
+        bottom: 80,
+        zIndex: 300,
+        width: 56,
+        height: 56,
+        marginLeft: 326
     },
 });

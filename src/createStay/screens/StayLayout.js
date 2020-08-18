@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
-function StayLayout(props) {
-const [answers, setAnswers] = useState({});
-
-const onChangeLayout = (number, path) => {
-  props.onUserInput(number, path, "hostListing")
-  const newUserAnswer = answers;
-  newUserAnswer[path] = number || 0;
-  setAnswers({ ...newUserAnswer });
-};
+function StayLayout({ props }) {
+  const [answers, setAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setAnswers(props.savedValuesState)
+    }
+  }, []);
+  const onChangeLayout = (number, path) => {
+    props.onUserInput(number, path)
+    const newUserAnswer = answers;
+    newUserAnswer[path] = number || 0;
+    setAnswers({ ...newUserAnswer });
+  };
 
 
   return (
@@ -49,20 +53,20 @@ const onChangeLayout = (number, path) => {
         <View style={styles.loremIpsum9Stack}>
           <Text style={styles.loremIpsum9}></Text>
           <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/master")}}
+            onChange={(newNumber) => { onChangeLayout(newNumber, "bedrooms/master") }}
             text1="master"
             currentValue={answers["bedrooms/master"]}
             style={styles.cupertinoStepper3}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/full")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "bedrooms/full") }}
           text1="full"
           currentValue={answers["bedrooms/full"]}
           style={styles.cupertinoStepper2}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bedrooms/half")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "bedrooms/half") }}
           text1="half"
           currentValue={answers["bedrooms/half"]}
           style={styles.cupertinoStepper1}
@@ -80,21 +84,21 @@ const onChangeLayout = (number, path) => {
         <View style={styles.loremIpsum11Stack}>
           <Text style={styles.loremIpsum11}></Text>
           <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/garden")}}
+            onChange={(newNumber) => { onChangeLayout(newNumber, "outdoorSpaces/garden") }}
             text1="garden"
-          currentValue={answers["outdoorSpaces/garden"]}
+            currentValue={answers["outdoorSpaces/garden"]}
             style={styles.cupertinoStepper18}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/balcony")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "outdoorSpaces/balcony") }}
           text1=""
           currentValue={answers["outdoorSpaces/balcony"]}
           style={styles.cupertinoStepper17}
         ></CupertinoStepper1>
         <CupertinoStepper1
           currentValue={answers["outdoorSpaces/patio"]}
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "outdoorSpaces/patio")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "outdoorSpaces/patio") }}
           text1="patio"
           style={styles.cupertinoStepper16}
         ></CupertinoStepper1>
@@ -108,8 +112,8 @@ const onChangeLayout = (number, path) => {
           <View style={styles.loremIpsum13Stack}>
             <Text style={styles.loremIpsum13}></Text>
             <CupertinoStepper1
-          currentValue={answers["commonAreas/diningRoom"]}
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/diningRoom")}}
+              currentValue={answers["commonAreas/diningRoom"]}
+              onChange={(newNumber) => { onChangeLayout(newNumber, "commonAreas/diningRoom") }}
               text1="dining room"
               style={styles.cupertinoStepper24}
             ></CupertinoStepper1>
@@ -117,13 +121,13 @@ const onChangeLayout = (number, path) => {
           <Text style={styles.loremIpsum14}></Text>
         </View>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/living")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "commonAreas/living") }}
           text1="Living Room"
           currentValue={answers["commonAreas/living"]}
           style={styles.cupertinoStepper23}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "commonAreas/office")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "commonAreas/office") }}
           text1="Office"
           currentValue={answers["commonAreas/office"]}
           style={styles.cupertinoStepper22}
@@ -145,19 +149,19 @@ const onChangeLayout = (number, path) => {
       </View>
       <View style={styles.cupertinoStepper6Row}>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/ensuite")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "bathrooms/ensuite") }}
           text1="Ensuite"
           currentValue={answers["bathrooms/ensuite"]}
           style={styles.cupertinoStepper6}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/full")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "bathrooms/full") }}
           text1="Full"
           currentValue={answers["bathrooms/full"]}
           style={styles.cupertinoStepper5}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "bathrooms/half")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "bathrooms/half") }}
           text1="Half"
           currentValue={answers["bathrooms/half"]}
           style={styles.cupertinoStepper10}
@@ -165,14 +169,14 @@ const onChangeLayout = (number, path) => {
       </View>
       <View style={styles.cupertinoStepper9Row}>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "guestAmount/adult")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "guestAmount/adult") }}
           text1="Adults"
           currentValue={answers["guestAmount/adult"]}
 
           style={styles.cupertinoStepper9}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "guestAmount/child")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "guestAmount/child") }}
           text1="Children"
           currentValue={answers["guestAmount/child"]}
           style={styles.cupertinoStepper8}
@@ -200,20 +204,20 @@ const onChangeLayout = (number, path) => {
         <View style={styles.loremIpsum17Stack}>
           <Text style={styles.loremIpsum17}></Text>
           <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/single")}}
+            onChange={(newNumber) => { onChangeLayout(newNumber, "beds/single") }}
             text1="Single"
-          currentValue={answers["beds/single"]}
+            currentValue={answers["beds/single"]}
             style={styles.cupertinoStepper27}
           ></CupertinoStepper1>
         </View>
         <CupertinoStepper1
           text1="Double"
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/double")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "beds/double") }}
           currentValue={answers["beds/double"]}
           style={styles.cupertinoStepper26}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/king")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "beds/king") }}
           currentValue={answers["beds/king"]}
           text1="King"
           style={styles.cupertinoStepper25}
@@ -226,19 +230,19 @@ const onChangeLayout = (number, path) => {
       </View>
       <View style={styles.cupertinoStepper30Row}>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/floorMattress")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "beds/floorMattress") }}
           text1="Floor mattress"
           currentValue={answers["beds/floorMattress"]}
           style={styles.cupertinoStepper30}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/sofa")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "beds/sofa") }}
           text1="Crib"
           currentValue={answers["beds/sofa"]}
           style={styles.cupertinoStepper29}
         ></CupertinoStepper1>
         <CupertinoStepper1
-          onChange={(newNumber)=>{onChangeLayout(newNumber, "beds/crib")}}
+          onChange={(newNumber) => { onChangeLayout(newNumber, "beds/crib") }}
           text1="Sofa bed"
           currentValue={answers["beds/crib"]}
           style={styles.cupertinoStepper28}

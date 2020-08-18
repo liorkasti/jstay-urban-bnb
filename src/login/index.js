@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, StyleSheet, Dimensions } from "react-native"
+import { View, StyleSheet, Dimensions, Platform } from "react-native"
 import { useHistory } from "react-router-dom";
 
 //login and firebase
@@ -7,6 +7,10 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
 import database from "@react-native-firebase/database";
+import appleAuth, {
+    AppleAuthRequestScope,
+    AppleAuthRequestOperation,
+} from '@invertase/react-native-apple-authentication';
 
 //import all builder x files related to this directory
 import Welcome from "./Welcome";
@@ -16,7 +20,7 @@ import Login from "./Login";
 export default function LoginIndex(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [currentUser, setCurrentUser] = useState();
-    
+
     //this send user to route if they want to create a stay
     let history = useHistory();
 
@@ -29,33 +33,18 @@ export default function LoginIndex(props) {
         history.push("/home");
     };
 
-    useState(()=>{
-        const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-        
-        return subscriber;
-    },[]);
+    useState(() => {
+        const subscriber = auth().onAuthStateChanged(() => { onAuthStateChanged() });
 
-    useEffect(() => {
-        if(currentUser){
-        database()
-        .ref(`/users/generalInfo/${currentUser.uid}`)
-        .once('value')
-        .then(snapshot => {
-            snapshot.val();
-            if (snapshot.didFinishAccountSetup) {
-                history.push("/home");
-            }else{
-                history.push("/createAccount");
-            }
-        });
-    }
-    },[currentUser])
+        return subscriber;
+    }, []);
+
 
     function onCreateAccount() {
         history.push("/createAccount");
     }
 
-   
+
 
     useEffect(() => {
         // console.warn(componentKeys[componentIndex])
@@ -66,12 +55,30 @@ export default function LoginIndex(props) {
     }, [componentIndex])
 
 
-    function onAuthStateChanged(user) {
-        if (user) { 
-            setCurrentUser(user);
-         } 
+    const onAuthStateChanged = (user) => {
+        setCurrentUser(user);
         console.warn("auth state did change with:", user)
-      }
+    }
+
+    async function onAppleButtonPress() {
+        // Start the sign-in request
+        const appleAuthRequestResponse = await appleAuth.performRequest({
+            requestedOperation: AppleAuthRequestOperation.LOGIN,
+            requestedScopes: [AppleAuthRequestScope.EMAIL, AppleAuthRequestScope.FULL_NAME],
+        });
+
+        // Ensure Apple returned a user identityToken
+        if (!appleAuthRequestResponse.identityToken) {
+            throw 'Apple Sign-In failed - no identify token returned';
+        }
+
+        // Create a Firebase credential from the response
+        const { identityToken, nonce } = appleAuthRequestResponse;
+        const appleCredential = auth.AppleAuthProvider.credential(identityToken, nonce);
+
+        // Sign the user in with the credential
+        return auth().signInWithCredential(appleCredential);
+    }
 
     async function signInWithGoogle() {
         // Get the users ID token
@@ -140,7 +147,13 @@ export default function LoginIndex(props) {
 
                     createAccount={() => onCreateAccount()}
 
-                    facebookSignin={() => { signInWithFacebookHandler() }}
+                    facebookSignin={() => {
+                        if (Platform.OS === "android") {
+                            signInWithFacebookHandler();
+                        } else {
+                            onAppleButtonPress();
+                        }
+                    }}
 
                     googleSignin={() => signInWithGoogleHandler()}
 

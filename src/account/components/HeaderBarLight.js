@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions } from "react-native";
 import Icon from "react-native-vector-icons/Entypo";
 
 function HeaderBarLight(props) {
@@ -12,7 +12,7 @@ function HeaderBarLight(props) {
             <View style={styles.button4Row}>
               <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button4}>
                 <TouchableOpacity onPress={() => { props.onBack() }} style={styles.button5}>
-                  {/* <Icon name="chevron-left" style={styles.icon1}></Icon> */}
+                  <Icon name="chevron-left" style={styles.icon1}></Icon>
                 </TouchableOpacity>
               </TouchableOpacity>
             </View>
@@ -32,10 +32,12 @@ function HeaderBarLight(props) {
     </View>
   );
 }
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   group1: {
-    // width: 414,
+    width: 414,
     // height: 91,
   },
   rect: {
@@ -66,12 +68,13 @@ const styles = StyleSheet.create({
     fontSize: 40
   },
   text14: {
+    position: "absolute",
     color: "rgba(0,88,155,1)",
     fontSize: 20,
     fontFamily: "roboto-regular",
     textAlign: "center",
-    marginTop: 8,
-    width: 330
+    marginTop: 15,
+    width: "100%"
   },
   button4Row: {
     height: 40,

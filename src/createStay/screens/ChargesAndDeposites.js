@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -13,7 +13,13 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import CurrencyDropdownContainer from "../components/CurrencyDropdownContainer";
 
-function ChargesAndDeposites(props) {
+function ChargesAndDeposites({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   return (
     <View style={styles.container}>
       <Text style={styles.theCottage1}>

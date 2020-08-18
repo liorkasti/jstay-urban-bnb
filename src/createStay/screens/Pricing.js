@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -15,10 +15,16 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 
-function Pricing(props) {
+function Pricing({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   return (
     <View style={styles.container}>
-     
+
       <View style={styles.loremIpsum1Stack}>
         <Text style={styles.loremIpsum1}>
           You will be able to change pricing once your stay has been published

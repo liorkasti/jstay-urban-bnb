@@ -23,15 +23,20 @@ import DropDown from "../components/DropDown";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 
 
-function DescribeStay(props) {
+function DescribeStay({ props }) {
   const [userAnswers, setUserAnswers] = useState({});
   const [showDropDown, setShowDropDown] = useState(false);
   const [stayTypeSelection, setStayTypeSelection] = useState([]);
   const [selectedValue, setSelectedValue] = useState("house");
   const [answers, setAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const onChangeLayout = (number, path) => {
-    props.onUserInput(number, path, "hostListing")
+    props.onUserInput(number, path)
     const newUserAnswer = answers;
     newUserAnswer[path] = number || 0;
     setAnswers({ ...newUserAnswer });
@@ -41,7 +46,7 @@ function DescribeStay(props) {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = value;
     setUserAnswers({ ...newUserAnswer });
-    props.onUserInput(newUserAnswer[extention], "hostListing/" + extention);
+    props.onUserInput(newUserAnswer[extention], extention);
   };
 
   const hostListing = [

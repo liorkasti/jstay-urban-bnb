@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {
     View, StyleSheet, Dimensions, Image,
-    TouchableOpacity, Text, ScrollView, SafeAreaView, Constants
+    TouchableOpacity, Text, ScrollView, SafeAreaView, ActivityIndicator
 } from "react-native"
 import { useHistory } from "react-router-dom";
 
@@ -47,29 +47,107 @@ const components = {
     StayRules,
 };
 const currentUser = auth().currentUser;
-const createdAt = new Date().getTime();
+let createdAt = "";
+let stayUID = "";
+let savedValues = {};
+let didChange = false;
 
+const CurrentComponentRouter = (props) => {
+    const CurrentComponent = props.CurrentComponent;
+    if (!CurrentComponent) return <View />
+    return (
+        <CurrentComponent
+            props={props}
+        />)
+}
 export default function Index(props) {
     const [componentIndex, setComponentIndex] = useState(0);
     const [totalAnswers, setTotalAnswers] = useState([]);
     const [currentStayIndex, setCurrentStayIndex] = useState();
+    const [savedValuesState, setSavedValuesState] = useState({});
+    const [currentUserState, setCurrentUserState] = useState({});
+    const [loaded, setLoaded] = useState(false);
+    if (!currentUser || !currentUserState) {
+        setTimeout(() => { setCurrentUserState(currentUser) }, 100)
+        return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
+    }
 
     //this send user to route if they want to create a stay
     let history = useHistory();
 
     //add the import as a string to this array
     //the array should be in the order that the screens show up
-
+    // 
     useEffect(() => {
+        setTimeout(() => {
+            if (props.location.state && props.location.state.stayUID) {
+                stayUID = props.location.state.stayUID;
+                database().ref(`/stays/${stayUID}/hostListing/`)
+                    .on("value", res => {
+                        const snapshot = res.val();
+                        function flattenObject(ob) {
+                            var toReturn = {};
+
+                            for (var i in ob) {
+                                if (!ob.hasOwnProperty(i)) continue;
+
+                                if ((typeof ob[i]) == 'object' && ob[i] !== null) {
+                                    var flatObject = flattenObject(ob[i]);
+                                    for (var x in flatObject) {
+                                        if (!flatObject.hasOwnProperty(x)) continue;
+
+                                        toReturn[i + '/' + x] = flatObject[x];
+                                    }
+                                } else {
+                                    toReturn[i] = ob[i];
+                                }
+                            }
+                            return toReturn;
+
+
+                        };
+                        const flatObject = flattenObject(snapshot);
+
+                        console.error(flatObject)
+                        setSavedValuesState(flatObject);
+                        savedValues = flatObject;
+                        setLoaded(true);
+                    })
+            } else {
+                createdAt = new Date().getTime();
+                stayUID = `${currentUser.uid}+${createdAt}`;
+                setTimeout(() => {
+                    database()
+                        .ref(`/users/generalInfo/${currentUser.uid}`)
+                        .once('value')
+                        .then(snapshot => {
+                            const response = snapshot.val();
+                            console.warn("total stays", response.myStays)
+                            if (response.myStays) {
+                                setCurrentStayIndex(response.myStays.length);
+                            } else {
+                                setCurrentStayIndex(0);
+                            }
+                            updateUserStayList(response);
+                            setLoaded(true);
+                        });
+                }, 200);
+            }
+        }, 1000);
+
+        return () => { if (didChange) saveToFirebase(); }
+
+    }, [])
+
+    const updateUserStayList = (userFireData) => {
+        const myStays = userFireData.myStays ? [...userFireData.myStays, stayUID] : [stayUID];
         database()
             .ref(`/users/generalInfo/${currentUser.uid}`)
-            .once('value')
-            .then(snapshot => {
-                const response = snapshot.val();
-                console.warn("total stays", response.totalStays)
-                setCurrentStayIndex(response.totalStays || 0);
-            });
-    }, [])
+            .update({ myStays })
+            .then((res) => {
+                console.warn("this is the response for update", myStays)
+            })
+    };
 
     const componentKeys = [
         "DescribeStay",
@@ -114,15 +192,10 @@ export default function Index(props) {
     };
 
     useEffect(() => {
-        console.warn("createStay/index.js componentKeys pic: " + componentKeys[componentIndex], componentIndex)
         // console.warn("windowWidth: " + windowWidth)
         //this is if they press next on the last screen in the list
         if (componentIndex > componentKeys.length - 1) {
             history.push("/account", { subroute: "stayProfile", backHistory: "Home" })
-            database()
-            .ref(`/users/generalInfo/${currentUser.uid}`)
-            .update({ totalStays: currentStayIndex + 1 })
-            .then((res) => { console.log("response from update", res) })
         }
 
         if (componentIndex < 0) {
@@ -132,54 +205,37 @@ export default function Index(props) {
     }, [componentIndex]);
 
     const updateUserInput = (value, key) => {
+        if (!didChange) {
+            didChange = true;
+        }
+        newSavedValues = savedValues;
+
+        newSavedValues[key] = value;
+
+        savedValues = newSavedValues;
+        setSavedValuesState(newSavedValues);
+    };
+
+    const saveToFirebase = () => {
         database()
-            .ref(`stays/${currentUser.uid}+${createdAt}`)
-            .update({ [key]: value })
+            .ref(`stays/${stayUID}/hostListing/`)
+            .update(savedValues)
             .then((res) => {
                 console.warn("this is the response for update", res)
             })
     };
 
-    const CurrentComponentRouter = (props) => {
-        const CurrentComponent = components[componentKeys[componentIndex]];
-        console.warn("current component", CurrentComponent)
-        if (!CurrentComponent) return <View />
-        return (
-            <CurrentComponent
-                style={styles.componentStyle}
-                //if builder x component has next button
-                //it's button should have onPress={()=>{props.onNext}}
-                onNext={() => {
-                    setComponentIndex(componentIndex + 1)
-                }}
-
-                //if builder x component has back button
-                //it's button should have onPress={()=>{props.onNext}}
-                onBack={() => {
-                    setComponentIndex(componentIndex - 1)
-                }}
-
-                //if builder x component has skip button
-                //it's button should have onPress={()=>{props.onNext}}
-                onSkip={() => {
-                    setComponentIndex(componentIndex + 1)
-                }}
-
-                onUserInput={(value, key) => {
-                    updateUserInput(value, key);
-                }}
-
-                currentAnswers={totalAnswers[componentIndex]}
-
-                // setShowTypeDropDown={() => { setShowTypeDropDown(!showTypeDropDown) }}
-                // showTypeDropDown={showTypeDropDown}
-
-                onHome={() => {
-                    onHome();
-                }}
-            />)
-    }
-
+    if (!loaded) return (
+        <View style={styles.container}>
+            <HeaderBarLight
+                // screenWidth={windowWidth}
+                style={styles.header}
+                header={headers[componentKeys[componentIndex]]}
+                onHome={() => { onHome() }}
+                onBack={() => setComponentIndex(componentIndex - 1)}
+            />
+        </View>
+    )
     return (
         <View style={styles.container}>
             <HeaderBarLight
@@ -190,8 +246,43 @@ export default function Index(props) {
                 onBack={() => setComponentIndex(componentIndex - 1)}
             />
 
-            <ScrollView style={styles.scrollView}>
-                <CurrentComponentRouter />
+            <ScrollView contentOffset={{ x: 0 }} style={styles.scrollView}>
+                <CurrentComponentRouter
+
+                    stayUID={stayUID}
+                    CurrentComponent={components[componentKeys[componentIndex]]}
+
+                    style={styles.componentStyle}
+                    //if builder x component has next button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onNext={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+
+                    //if builder x component has back button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onBack={() => {
+                        setComponentIndex(componentIndex - 1)
+                    }}
+
+                    //if builder x component has skip button
+                    //it's button should have onPress={()=>{props.onNext}}
+                    onSkip={() => {
+                        setComponentIndex(componentIndex + 1)
+                    }}
+
+                    onUserInput={(value, key) => {
+                        updateUserInput(value, key);
+                    }}
+
+                    currentAnswers={totalAnswers[componentIndex]}
+
+                    savedValuesState={savedValuesState}
+
+                    onHome={() => {
+                        onHome();
+                    }}
+                />
             </ScrollView>
         </View>
     );

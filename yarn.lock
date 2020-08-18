@@ -710,6 +710,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@invertase/react-native-apple-authentication@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-1.1.2.tgz#cf86364d89030f0b9970d04468fde2d204cab5df"
+  integrity sha512-eRwLOyxPtAP0ZEy1iaBf+Sle7upBnyqOkeXgScWNKLKsb4r6+6I6CvMuHNdMZ9ObSdUfAVgAbj5L09TbJRw0hQ==
+
 "@jest/console@^24.7.1", "@jest/console@^24.9.0":
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-24.9.0.tgz#79b1bc06fb74a8cfb01cbdedf945584b1b9707f0"
@@ -1024,11 +1029,6 @@
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/@react-native-firebase/database/-/database-7.4.1.tgz#d066f189620a86778a98ab614465847e3a0fb875"
   integrity sha512-NjBS1rRrQPmL+Dfmpp+kb+1u1ktzSMM2LKBOCzwMWcg6yIubmy8c0E+Jq8C9ZfB/bN1Uoft6jAyxA7lLxqibuw==
-
-"@react-native-firebase/in-app-messaging@^7.2.2":
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/in-app-messaging/-/in-app-messaging-7.2.2.tgz#d183c83b15b83cdb9c91070bea2bce20f86f383b"
-  integrity sha512-5QY3CYddkkPy2HeGDVHmTBqPZXTmUstlJsjStpV4mehOakOsyEB+7isnR8T9mBhkeIDa9NUATiKyk0z4RVSj7g==
 
 "@react-native-firebase/storage@^7.1.4":
   version "7.1.6"
@@ -5989,6 +5989,11 @@ react-native-elements@^1.2.7:
     prop-types "^15.7.2"
     react-native-ratings "^6.3.0"
     react-native-status-bar-height "^2.2.0"
+
+react-native-fast-image@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-fast-image/-/react-native-fast-image-8.3.2.tgz#e9db271b70b9634b7be054760914d80954f9898c"
+  integrity sha512-AJ0b4BEswRwa0bh4SibYUtXszEiaO88Lf4CZ1ib+t5ZfkAgsMk9Liv3L0LYnDblMJmSeGTr1+2ViIM8F2vamjg==
 
 react-native-fbsdk@^2.0.0:
   version "2.0.0"

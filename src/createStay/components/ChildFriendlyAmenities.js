@@ -4,6 +4,11 @@ import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function ChildFriendlyAmenities(props) {
   const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;
@@ -17,11 +22,11 @@ function ChildFriendlyAmenities(props) {
       <Text style={styles.childFriendly}>Child Friendly</Text>
       {/* Bars on Windows */}
       <TouchableOpacity style={styles.button1009}
-        onPress={() => updateUserBool("windowBars")}>
+        onPress={() => updateUserBool("childAmenities/windowBars")}>
         <View style={styles.materialCheckbox372Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("windowBars")}
-            checked={userAnswers["windowBars"]}
+            onPress={() => updateUserBool("childAmenities/windowBars")}
+            checked={userAnswers["childAmenities/windowBars"]}
             style={styles.materialCheckbox372}
           ></MaterialCheckbox1>
           <Text style={styles.barsOnWindows}>Bars on Windows</Text>
@@ -29,31 +34,31 @@ function ChildFriendlyAmenities(props) {
       </TouchableOpacity>
       {/* Highchair */}
       <TouchableOpacity style={styles.button1013}
-        onPress={() => updateUserBool("highChair")}>
+        onPress={() => updateUserBool("childAmenities/highChair")}>
         <MaterialCheckbox1
-          onPress={() => updateUserBool("highChair")}
-          checked={userAnswers["highChair"]}
+          onPress={() => updateUserBool("childAmenities/highChair")}
+          checked={userAnswers["childAmenities/highChair"]}
           style={styles.materialCheckbox382}
         ></MaterialCheckbox1>
         <Text style={styles.highchair}>Highchair</Text>
       </TouchableOpacity>
       {/* Crib */}
       <TouchableOpacity style={styles.button1011}
-        onPress={() => updateUserBool("crib")}>
+        onPress={() => updateUserBool("childAmenities/crib")}>
         <MaterialCheckbox1
-          onPress={() => updateUserBool("crib")}
-          checked={userAnswers["crib"]}
+          onPress={() => updateUserBool("childAmenities/crib")}
+          checked={userAnswers["childAmenities/crib"]}
           style={styles.materialCheckbox34102}
         ></MaterialCheckbox1>
         <Text style={styles.crib}>Crib</Text>
       </TouchableOpacity>
       {/* Stairwell Gat */}
       <TouchableOpacity style={styles.button1012}
-        onPress={() => updateUserBool("stairwellGate")}>
+        onPress={() => updateUserBool("childAmenities/stairwellGate")}>
         <View style={styles.materialCheckbox35932Row}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("stairwellGate")}
-            checked={userAnswers["stairwellGate"]}
+            onPress={() => updateUserBool("childAmenities/stairwellGate")}
+            checked={userAnswers["childAmenities/stairwellGate"]}
             style={styles.materialCheckbox35932}
           ></MaterialCheckbox1>
           <Text style={styles.stairwellGate}>Stairwell Gate</Text>
@@ -62,11 +67,11 @@ function ChildFriendlyAmenities(props) {
       {/* Car Seat */}
       <View style={styles.button1014Stack}>
         <TouchableOpacity style={styles.button1014}
-          onPress={() => updateUserBool("carseat")}>
+          onPress={() => updateUserBool("childAmenities/carSeat")}>
           <View style={styles.materialCheckbox392Row}>
             <MaterialCheckbox1
-              onPress={() => updateUserBool("carseat")}
-              checked={userAnswers["carseat"]}
+              onPress={() => updateUserBool("childAmenities/carSeat")}
+              checked={userAnswers["childAmenities/carSeat"]}
               style={styles.materialCheckbox392}
             ></MaterialCheckbox1>
             <Text style={styles.carSeat2}>Car Seat</Text>
@@ -74,10 +79,10 @@ function ChildFriendlyAmenities(props) {
         </TouchableOpacity>
         {/* Child Friendly Games/Toys */}
         <TouchableOpacity style={styles.button1015}
-          onPress={() => updateUserBool("childGamesToys")}>
+          onPress={() => updateUserBool("childAmenities/childGamesToys")}>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("childGamesToys")}
-            checked={userAnswers["childGamesToys"]}
+            onPress={() => updateUserBool("childAmenities/childGamesToys")}
+            checked={userAnswers["childAmenities/childGamesToys"]}
             style={styles.materialCheckbox35933}
           ></MaterialCheckbox1>
           <Text style={styles.carSeat1}>Child Friendly Games/Toys</Text>

@@ -8,6 +8,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database"
 
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
 
@@ -24,11 +25,13 @@ import Chat from "./src/messaging";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [mainComponent, setMainComponent] = useState("home")
 
   useEffect(() => {
     setTimeout(() => {
       Orientation.lockToPortrait();
     });
+
     GoogleSignin.configure({
       iosClientId: "1052652425814-30q7q27a1hfljo1v8a8pvbgasho71ffl.apps.googleusercontent.com",
       webClientId: '1052652425814-4a76tojt3tc8a92hc245qr6c3jvgcr7j.apps.googleusercontent.com',
@@ -43,11 +46,11 @@ export default function App() {
 
     // Geocoder.init("AIzaSyC9nF7BS9tSvtJaHDtTvfEYuHD6cwSBhws");
     console.disableYellowBox = true;
-    return subscriber; 
+    return subscriber;
   }, []);
 
   function onAuthStateChanged(user) {
-    if (user) { setLoggedIn(!!user) } else { setLoggedIn(false) }
+    if (user) { setLoggedIn(!!user); } else { setLoggedIn(false) }
     console.warn("auth state did change with:", user)
   }
 
@@ -60,7 +63,7 @@ export default function App() {
             <Route exact path="/">
               {loggedIn ? <Redirect to="/home" /> : <Login />}
             </Route>
-            <Route path="/chat" exact component={Chat} />
+            <Route path="/chat" component={Chat} />
             <Route path="/account" component={Account} />
             <Route path="/editStay" component={EditStay} />
             <Route path="/CreateAccount" component={CreateAccount} />
