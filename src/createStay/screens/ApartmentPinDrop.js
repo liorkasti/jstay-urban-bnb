@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -13,7 +13,14 @@ import { Center } from "@builderx/utils";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 
-function ApartmentPinDrop(props) {
+function ApartmentPinDrop({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
+
   const savePinDrop = (newLocation) => {
     props.onUserInput(newLocation, mewLocation)
   }

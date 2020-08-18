@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -13,9 +13,13 @@ import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithViol
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
-function Accessibility(props) {
+function Accessibility({ props }) {
   const [userAnswers, setUserAnswers] = useState({});
-
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = !userAnswers[extention]

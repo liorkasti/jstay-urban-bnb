@@ -8,6 +8,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import { GoogleSignin } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
+import database from "@react-native-firebase/database"
 
 import { NativeRouter, Route, Switch, BackButton, Redirect } from "react-router-native";
 
@@ -24,6 +25,7 @@ import Chat from "./src/messaging";
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [mainComponent, setMainComponent] = useState("home")
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +50,7 @@ export default function App() {
   }, []);
 
   function onAuthStateChanged(user) {
-    if (user) { setLoggedIn(!!user) } else { setLoggedIn(false) }
+    if (user) { setLoggedIn(!!user); } else { setLoggedIn(false) }
     console.warn("auth state did change with:", user)
   }
 
@@ -58,7 +60,9 @@ export default function App() {
       <NativeRouter>
         <Switch>
           <BackButton>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/">
+              {loggedIn ? <Redirect to="/home" /> : <Login />}
+            </Route>
             <Route path="/chat" component={Chat} />
             <Route path="/account" component={Account} />
             <Route path="/editStay" component={EditStay} />

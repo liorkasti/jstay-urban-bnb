@@ -34,27 +34,11 @@ export default function LoginIndex(props) {
     };
 
     useState(() => {
-        const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+        const subscriber = auth().onAuthStateChanged(() => { onAuthStateChanged() });
 
         return subscriber;
     }, []);
 
-    useEffect(() => {
-        if (currentUser) {
-            database()
-                .ref(`/users/generalInfo/${currentUser.uid}`)
-                .once('value')
-                .then(res => {
-                    const snapshot = res.val();
-                    console.warn("snapshot", snapshot)
-                    if (snapshot && snapshot.didFinishAccountSetup) {
-                        history.push("/home");
-                    } else {
-                        history.push("/createAccount");
-                    }
-                });
-        }
-    }, [currentUser]);
 
     function onCreateAccount() {
         history.push("/createAccount");
@@ -71,10 +55,8 @@ export default function LoginIndex(props) {
     }, [componentIndex])
 
 
-    function onAuthStateChanged(user) {
-        if (user) {
-            setCurrentUser(user);
-        }
+    const onAuthStateChanged = (user) => {
+        setCurrentUser(user);
         console.warn("auth state did change with:", user)
     }
 

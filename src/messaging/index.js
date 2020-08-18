@@ -48,11 +48,6 @@ export default function MessagesIndex(props) {
         history.push("/home");
     }
 
-    checkAuth = () => {
-        firebase.auth().onAuthStateChanged(user => {
-        })
-    }
-
     send = messages => {
         messages.forEach(item => {
             const message = {

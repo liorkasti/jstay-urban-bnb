@@ -24,8 +24,14 @@ const imagePickerOptions = {
   },
 };
 
-function StayPictures(props) {
+function StayPictures({ props }) {
   const [pictures, setPictures] = useState([]);
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      console.error("handle edit stay images")
+    }
+  }, []);
 
   const openImageSelect = () => {
     ImagePicker.showImagePicker(imagePickerOptions, (response) => {

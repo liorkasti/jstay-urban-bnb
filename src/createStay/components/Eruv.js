@@ -5,7 +5,11 @@ import MaterialSwitch1 from "./MaterialSwitch1";
 
 function Eruv(props) {
   const [userAnswers, setUserAnswers] = useState({});
-
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = !userAnswers[extention]

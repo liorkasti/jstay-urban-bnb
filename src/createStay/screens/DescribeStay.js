@@ -23,12 +23,17 @@ import DropDown from "../components/DropDown";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 
 
-function DescribeStay(props) {
+function DescribeStay({ props }) {
   const [userAnswers, setUserAnswers] = useState({});
   const [showDropDown, setShowDropDown] = useState(false);
   const [stayTypeSelection, setStayTypeSelection] = useState([]);
   const [selectedValue, setSelectedValue] = useState("house");
   const [answers, setAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const onChangeLayout = (number, path) => {
     props.onUserInput(number, path)

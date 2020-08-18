@@ -12,12 +12,13 @@ function MyStayCardGroupUL(props) {
       <View style={styles.group8}>
         {
           props.myStays && props.myStays.map((stay, index) => {
-            return (
-              <StayCard
-                stayPicture={`/stays/${stay}/0`}
-                onUserPress={(action) => { props.onUserPress(action, stay) }}
-                stay={stay} />
-            )
+            if (stay)
+              return (
+                <StayCard
+                  stayPicture={`/stays/${stay}/0`}
+                  onUserPress={(action) => { props.onUserPress(action, stay) }}
+                  stay={stay} />
+              )
           })
         }
       </View>

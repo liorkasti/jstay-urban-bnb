@@ -4,6 +4,11 @@ import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function ChildFriendlyAmenities(props) {
   const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;

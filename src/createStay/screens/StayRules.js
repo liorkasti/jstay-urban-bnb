@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -12,8 +12,13 @@ import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 import MaterialSwitch1 from "../components/MaterialSwitch1";
 
-function StayRules(props) {
+function StayRules({ props }) {
   const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;

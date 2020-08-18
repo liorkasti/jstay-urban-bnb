@@ -17,6 +17,7 @@ export default function Index(props) {
     const [currentSearch, setCurrentSearch] = useState("");
     const [newFavorites, setNewFavorites] = useState("");
     const [currentUserState, setCurrentUserState] = useState({})
+    const [loaded, setLoaded] = useState(false);
     if (!currentUser || !currentUserState) {
         setTimeout(() => { setCurrentUserState(currentUser) }, 100)
         return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
@@ -35,10 +36,16 @@ export default function Index(props) {
             setCurrentComponent("Favorites");
         };
         database()
-            .ref(`/stays/${currentUser.uid}`)
+            .ref(`/users/generalInfo/${currentUser.uid}`)
             .once('value')
-            .then(snapshot => {
-                console.log('User data: ', snapshot.val());
+            .then(res => {
+                console.log('User data: ', res.val());
+                const snapshot = res.val();
+                if (snapshot && snapshot.didFinishAccountSetup) {
+                    setLoaded(true);
+                } else {
+                    return history.push("/createAccount");
+                }
             });
     }, [])
 
@@ -121,7 +128,7 @@ export default function Index(props) {
         }
     };
 
-
+    if (!loaded) return (<View style={styles.container}><ActivityIndicator size="large" /></View>)
     return (
         <View style={styles.flexContainer}>
             {/* copy paste below component*/}

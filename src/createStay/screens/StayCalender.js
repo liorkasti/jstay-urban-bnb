@@ -1,10 +1,16 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image, Dimensions, StatusBar } from "react-native";
 import CalendarCard from "../components/CalendarCard";
 import MaterialButtonViolet12 from "../components/MaterialButtonViolet12";
 import Icon from "react-native-vector-icons/Entypo";
 
-function StayCalender(props) {
+function StayCalender({ props }) {
+  const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(2,172,235,1)" />

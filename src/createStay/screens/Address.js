@@ -13,11 +13,16 @@ import DropDown from "../components/DropDown";
 import Icon from "react-native-vector-icons/Entypo";
 import hostListing from "../components/CountryList";
 
-function Address(props) {
+function Address({ props }) {
   const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   useEffect(() => {
-    setUserAnswers(props.savedValuesState);
+    setUserAnswers({} + props.savedValuesState);
   }, []);
 
   const updateUserInput = (value, extention) => {

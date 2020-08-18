@@ -9,16 +9,20 @@ import ShabbatHolidayEssentials from "../components/ShabbatHolidayEssentials";
 import ChildFriendlyAmenities from "../components/ChildFriendlyAmenities";
 import Icon from "react-native-vector-icons/Entypo";
 
-function Amenities(props) {
+function Amenities({ props }) {
+
   return (
     <View style={styles.container}>
       <GeneralAmenities
+        savedValuesState={props.savedValuesState}
         onUserInput={({ newValue, extention }) => {
           props.onUserInput(newValue, extention)
         }}
         style={styles.generalAmenities}></GeneralAmenities>
 
       <SafetyAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
           props.onUserInput(newValue, extention)
         }}
@@ -26,6 +30,8 @@ function Amenities(props) {
       </SafetyAmenities>
 
       <JewishHomeAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
           props.onUserInput(newValue, extention)
         }}
@@ -44,6 +50,8 @@ function Amenities(props) {
       ></MaterialButtonViolet6>
 
       <ShabbatHolidayEssentials
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
           props.onUserInput(newValue, extention)
         }}
@@ -51,6 +59,8 @@ function Amenities(props) {
       ></ShabbatHolidayEssentials>
 
       <ChildFriendlyAmenities
+        savedValuesState={props.savedValuesState}
+
         onUserInput={({ newValue, extention }) => {
           props.onUserInput(newValue, extention)
         }}

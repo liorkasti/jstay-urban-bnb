@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function ShabbatHolidayEssentials(props) {
   const [userAnswers, setUserAnswers] = useState({});
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
 
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;

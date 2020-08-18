@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
 import CupertinoStepper1 from "../components/CupertinoStepper1";
 import MaterialButtonWithVioletText11 from "../components/MaterialButtonWithVioletText11";
 import MaterialButtonViolet6 from "../components/MaterialButtonViolet6";
 import Icon from "react-native-vector-icons/Entypo";
 
-function StayLayout(props) {
+function StayLayout({ props }) {
   const [answers, setAnswers] = useState({});
-
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setAnswers(props.savedValuesState)
+    }
+  }, []);
   const onChangeLayout = (number, path) => {
     props.onUserInput(number, path)
     const newUserAnswer = answers;

@@ -158,8 +158,8 @@ export default function Index(props) {
         history.push("/createStay", { route: "/account", subroute: from })
     }
 
-    const onEditStay = (from) => {
-        history.push("/editStay", { subroute: from })
+    const onEditStay = (from, stayUID) => {
+        history.push("/createStay", { subroute: from, stayUID: stayUID })
     }
 
     useEffect(() => {
@@ -243,7 +243,7 @@ export default function Index(props) {
 
     const onUserPress = (page, stay) => {
         if (page === "deleteStay") return deleteStay(stay);
-
+        if (page === "editMyListings") return onEditStay(currentPage, stay);
         setCurrentPage(page);
         let newBackHistory = [...backHistory];
         newBackHistory[historyIndex + 1] = page;
@@ -274,11 +274,13 @@ export default function Index(props) {
             case "newRequest":
                 onUserPress("newRequest");
                 break;
+            case "editMyListings":
+                onEditStay(stay);
+                break;
             case "logout":
                 onLogout();
                 break;
             case "deleteAccount":
-
                 onDeleteAccount();
                 break;
 
@@ -309,8 +311,8 @@ export default function Index(props) {
 
             totalStays={totalStays}
 
-            handleMenu={(subroute) => {
-                handleCard(subroute);
+            handleMenu={(subroute, _, stay = _) => {
+                handleCard(subroute, stay);
             }}
 
             //if builder x component has back button

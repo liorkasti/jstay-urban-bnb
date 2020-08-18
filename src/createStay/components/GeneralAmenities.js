@@ -4,7 +4,11 @@ import MaterialCheckbox1 from "./MaterialCheckbox1";
 
 function GeneralAmenities(props) {
   const [userAnswers, setUserAnswers] = useState({});
-
+  useEffect(() => {
+    if (props.savedValuesState) {
+      setUserAnswers(props.savedValuesState)
+    }
+  }, []);
   const updateUserBool = (extention) => {
     const newUserAnswer = userAnswers;
     newUserAnswer[extention] = !userAnswers[extention]
@@ -353,13 +357,13 @@ function GeneralAmenities(props) {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => updateUserBool("generalAmenities/bathtup")}
+        onPress={() => updateUserBool("generalAmenities/bathtub")}
         style={styles.button23}>
         <View style={styles.bathtubStack}>
           <Text style={styles.bathtub}>Bathtub</Text>
           <MaterialCheckbox1
-            onPress={() => updateUserBool("generalAmenities/bathtup")}
-            checked={userAnswers["generalAmenities/bathtup"]}
+            onPress={() => updateUserBool("generalAmenities/bathtub")}
+            checked={userAnswers["generalAmenities/bathtub"]}
             style={styles.materialCheckbox25}
           ></MaterialCheckbox1>
         </View>

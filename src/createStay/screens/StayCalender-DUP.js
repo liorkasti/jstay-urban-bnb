@@ -4,7 +4,7 @@ import CalendarCard from "../components/CalendarCard";
 import MaterialButtonViolet12 from "../components/MaterialButtonViolet12";
 import Icon from "react-native-vector-icons/Entypo";
 
-function StayCalender(props) {
+function StayCalender({ props }) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="rgba(2,172,235,1)" />
